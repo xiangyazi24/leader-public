@@ -1,0 +1,33 @@
+name = "Leader"
+version = "0.1.0"
+defaultTargets = ["Leader"]
+
+[leanOptions]
+relaxedAutoImplicit = false
+
+[[lean_lib]]
+name = "Leader"
+
+[[lean_exe]]
+name = "ppll-disk-census"
+root = "Leader.Wu.Sim.DiskClosureCensus"
+
+[[lean_exe]]
+name = "sim-claims"
+root = "Leader.Wu.Sim.OverwritingGenerationClaims"
+
+[[lean_exe]]
+name = "ppll-zdiv-walk"
+root = "Leader.Wu.Sim.ZeroDivisibleWalk"
+
+[[lean_exe]]
+name = "ppll-authf-census"
+root = "Leader.Wu.Sim.AuthDiskCensus"
+
+[[lean_exe]]
+name = "ppll-authf-walk"
+root = "Leader.Wu.Sim.AuthWalk"
+
+[[lean_exe]]
+name = "ppll-authf-replay"
+root = "Leader.Wu.Sim.AuthReplay"

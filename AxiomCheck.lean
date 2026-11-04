@@ -1,0 +1,1805 @@
+import Leader.Wu.Birth.WaitClockMassResetMass
+import Leader.Wu.Birth.ShortDoneDispatcher
+import Leader.Wu.Elimination.BirthDispatcherDoneNormalize
+import Leader.Wu.Birth.ShortWaitRawRing
+import Leader.Wu.Elimination.BirthDispatcherWriterInputObstruction
+import Leader.Wu.Birth.ShortWaitDomainWitness
+import Leader.Wu.Birth.WaitPassiveStopped
+import Leader.Wu.Birth.WaitClockMassRawMass
+import Leader.Wu.Birth.SpatialSourceSpliceCounterexample
+import Leader.Wu.Elimination.BirthDispatcherNormalizeCover
+import Leader.Wu.Elimination.BirthDispatcherDone
+import Leader.Wu.Birth.ShortWaitProjection
+import Leader.Wu.Birth.GenerationDone
+import Leader.Wu.Birth.GenerationDoneFullPhase
+import Leader.Wu.Birth.GenerationDoneHost
+import Leader.Wu.Birth.GenerationDonePhase
+import Leader.Wu.Birth.GenuineReleaseSourceContract
+import Leader.Wu.Birth.OneBitReleaseBoundary
+import Leader.Wu.Birth.ReleaseTerminalInvariant
+import Leader.Wu.Birth.ResponderHazardMass
+import Leader.Wu.Birth.ResponderHazardMassArithmetic
+import Leader.Wu.Birth.ResponderHazardMassCount
+import Leader.Wu.WriteSeq.StationaryWrite
+import Leader.Wu.WriteSeq.StationaryWriteFinite
+import Leader.Wu.WriteSeq.StationaryWritePersistent
+import Leader.Wu.WriteSeq.StationaryWritePersistentFinite
+import Leader.Wu.Birth.WaitClockCounterexample
+import Leader.Wu.Birth.WaitClockPotential
+import Leader.Wu.Birth.WaitClockRows
+import Leader.Wu.Elimination.BirthDispatcher
+import Leader.Wu.Elimination.BirthDispatcherCollision
+import Leader.Wu.Elimination.BirthDispatcherMetadata
+import Leader.Wu.Elimination.BirthDispatcherMetadataFrames
+import Leader.Wu.Elimination.BirthDispatcherMetadataSuffix
+import Leader.Wu.Elimination.BirthDispatcherObserver
+import Leader.Wu.Elimination.BirthDispatcherWitnesses
+import Leader.Wu.Elimination.MultiLeaderCleanupCheckInert
+import Leader.Wu.Elimination.MultiLeaderCleanupHiddenControl
+
+import Leader.Wu.Birth.SingleUseReleaseWitnesses
+import Leader.Wu.Birth.ResponderHazardSchedule
+import Leader.Wu.Birth.RulerBarrierHost
+import Leader.Wu.Elimination.ArbitraryInputElimination
+import Leader.Wu.Elimination.NearestSupportEntry
+import Leader.Wu.Elimination.PeacefulSignalEntry
+import Leader.Wu.Birth.TossReleaseLifecycleWitnesses
+import Leader.Wu.Elimination.SafeElimination
+import Leader.Wu.Elimination.LabelFreeSignalEntry
+import Leader.Wu.Elimination.SignalMergePrefixDebt
+import Leader.Wu.Birth.GenerationControlWitnesses
+import Leader.Wu.Birth.GenerationOverwritesPayload
+import Leader.Wu.Elimination.TwoLeaderEntrance
+import Leader.Wu.Elimination.AdjacentSeparationEntry
+import Leader.Wu.Birth.ArrivalCaptureWitnesses
+import Leader.Wu.Elimination.LeaderCountProgress
+import Leader.Wu.RaceEntrance.LocalizedRecovery
+import Leader.Wu.RaceEntrance.ModerateMass
+import Leader.Wu.Birth.DisposalRouteInvariant
+import Leader.Wu.RaceEntrance.LocalizedFinish
+import Leader.Wu.RaceEntrance.Localization
+import Leader.Wu.RaceEntrance.StageComposition
+import Leader.Wu.RaceEntrance.LongMass
+import Leader.Wu.RaceEntrance.UniformAll
+import Leader.Wu.Birth.MismatchDisposalProducer
+import Leader.Wu.Elimination.ControllerCompatibility
+import Leader.Wu.Elimination.AdjacentLeaderCollision
+import Leader.Wu.Elimination.TwoLeaderGeometry
+import Leader.Wu.Elimination.PeacefulCounterexamples
+import Leader.Wu.Elimination.NearestPeaceful
+import Leader.Wu.Elimination.ShortPairMass
+import Leader.Core.ControlledSchedulerMass
+import Leader.Wu.RaceEntrance.ControlledBirth
+import Leader.Wu.RaceEntrance.ControlledShot
+import Leader.Wu.RaceEntrance.DummyService
+import Leader.Wu.RaceEntrance.CollapseBudget
+import Leader.Core.ControlledSuccessCoverage
+import Leader.Wu.RaceEntrance.UnshieldService
+import Leader.Wu.Birth.ControlledBirthShotComposition
+import Leader.Wu.RaceEntrance.UniformMass
+import Leader.Wu.RaceEntrance.UniformConsequences
+import Leader.Wu.Elimination.CyclicLayout
+import Leader.Wu.Elimination.MinimumAttackGap
+import Leader.Wu.Elimination.LabelFreeElimination
+import Leader.Wu.Birth.CheckCongestGuardCounterexample
+import Leader.Wu.Birth.CheckParametricWait
+import Leader.Wu.Birth.SigMoveDisposalRepair
+import Leader.Wu.Birth.DisposalParametricWait
+import Leader.Wu.Elimination.OutputSafety
+import Leader.Wu.Scheduler.FixedSpanRenewalPayload
+import Leader.Core.LeaderCountDyadicTail
+import Leader.Wu.RaceEntrance.ArrivalService
+import Leader.Wu.RaceEntrance.RenewalCycle
+import Leader.Wu.RaceEntrance.ControlledTail
+import Leader.Wu.RaceEntrance.ControlledRank
+import Leader.Wu.Birth.FullHostWaitedRulerCounterexample
+import Leader.Wu.Birth.CheckCongestGuardRepair
+import Leader.Wu.Elimination.GapClosure
+import Leader.Wu.Elimination.DeletionMergeInflation
+import Leader.Wu.Safety.ConditionalClosedness
+import Leader.Wu.Elimination.SpanChargedOnce
+import Leader.Wu.Elimination.ReadSupportContact
+import Leader.Wu.Birth.RenewalSweepRankPlateau
+import Leader.Wu.Birth.CloseRenewal
+import Leader.Wu.Birth.FullHostCheckEntry
+import Leader.Wu.RaceEntrance.SupportResolution
+import Leader.Wu.Elimination.SinkFiniteRaceMass
+import Leader.Core.ThreePhaseComposition
+import Leader.Wu.Safety.ConvergencePhasePredicates
+import Leader.Wu.Scheduler.CitedBoundProfiles
+import Leader.Wu.Scheduler.ConvergenceBoundProfile
+import Leader.Wu.Protocol.Transition
+import Leader.Wu.Protocol.Algorithm
+import Leader.Wu.Protocol.TranscriptionRegression
+import Leader.Wu.Safety.Counterexamples
+import Leader.Wu.Scheduler.Probability
+import Leader.Wu.Safety.ConcreteProtocolProperties
+import Leader.Wu.Safety.SignalCoherence
+import Leader.Wu.WriteSeq.CommandProvenance
+import Leader.Wu.Protocol.Repairs
+import Leader.Wu.Protocol.BoundedState
+import Leader.Wu.Protocol.DomainClosure
+import Leader.Wu.Protocol.BoundedProtocol
+import Leader.Wu.Safety.SuppressionHistory
+import Leader.Wu.Safety.CorrectedFormulation
+import Leader.AAFJ.Centered.RawFirstClean
+import Leader.AAFJ.Centered.RawFirstCleanWhp
+import Leader.Wu.Carrier.PolylogParameters
+import Leader.Wu.Carrier.FivePassStateCount
+import Leader.Wu.Carrier.LinearPacking
+import Leader.Wu.Carrier.LinearLabelGeometry
+import Leader.Wu.Epoch.VoterPeriodColors
+import Leader.Wu.Carrier.ParallelGeometry
+import Leader.Wu.Carrier.ParallelGeometryPacked
+import Leader.Wu.Carrier.ActiveStaging
+import Leader.Wu.Carrier.RoleThreePostRoute
+import Leader.Wu.Carrier.RoleThreePostRow
+import Leader.Wu.Carrier.HeldValidatorExit
+import Leader.Wu.Carrier.HeldValidatorRankRepair
+import Leader.Wu.Carrier.ValidatorCorridorRefinement
+import Leader.Wu.Carrier.ValidatorPayloadBoundary
+import Leader.Wu.Carrier.CaptureTimeChange
+import Leader.Wu.Carrier.CaptureCompiler
+import Leader.Wu.Carrier.ClockedGapScheduler
+import Leader.Wu.Carrier.SelectorLatchObstruction
+import Leader.Wu.Carrier.PackedTableWriterObstruction
+import Leader.Wu.Carrier.PostGridScrub
+import Leader.Wu.Carrier.PostGridLocalityObstruction
+import Leader.Wu.Elimination.PairedDefectMatching
+import Leader.Wu.ShortGap.CyclicIncidenceChoice
+import Leader.Wu.Carrier.PositiveGapLocalProjectionNoGo
+import Leader.Wu.Carrier.FivePassResidual
+import Leader.Wu.Protocol.RepairRegression
+import Leader.Wu.Safety.OperationalLegitimacy
+import Leader.Wu.Scheduler.TraceConvergence
+import Leader.Wu.Safety.ErasingRefinement
+import Leader.Wu.Comparison.Lifecycle
+import Leader.Wu.Comparison.History
+import Leader.Wu.Comparison.HistoryStages
+import Leader.Wu.Comparison.HistoryCompare
+import Leader.Wu.Comparison.HistoryIntegrated
+import Leader.Wu.Comparison.WaveObstruction
+import Leader.Wu.Comparison.AuthorizedRepair
+import Leader.Wu.Comparison.AuthorizedRepairCounterexample
+import Leader.Wu.Comparison.HostAlignedRepair
+import Leader.Wu.Comparison.HostAlignedRepairCounterexample
+import Leader.Wu.Comparison.ExpiringRepair
+import Leader.Wu.Comparison.ExpiringTraceConvergence
+import Leader.Wu.Comparison.ExpiringPersistenceDiagnosis
+import Leader.Wu.Comparison.PathStallRepair
+import Leader.Wu.Comparison.PathStallCycleCounterexample
+import Leader.Wu.Comparison.MoveFuelRepair
+import Leader.Wu.Comparison.MoveFuelRegression
+import Leader.Wu.Comparison.MoveFuelPotential
+import Leader.Wu.Comparison.ZeroMoveFuelLeaderlessClass
+import Leader.Wu.Comparison.LeaderCreationCleanupRepair
+import Leader.Wu.Comparison.LeaderCreationCleanupRegression
+import Leader.Core.RemoteLeaderGuardNoGo
+import Leader.Wu.Safety.StaticDoubleCoverNoGo
+import Leader.Wu.Epoch.ProtectedProtocol
+import Leader.Wu.Epoch.ProtectedRegression
+import Leader.Wu.Epoch.ProtectedRingFourSweep
+import Leader.Wu.Epoch.ProtectedSweep
+import Leader.Wu.Epoch.FilterRepair
+import Leader.Wu.Epoch.FilterSweep
+import Leader.Wu.Epoch.FilterRegression
+import Leader.Wu.Scheduler.RepeatedBlocks
+import Leader.Wu.Epoch.FilterSweepAmplification
+import Leader.Wu.Epoch.VoterReduction
+import Leader.Wu.Epoch.VoterBellman
+import Leader.Wu.Epoch.VoterTwoDomain
+import Leader.Wu.Epoch.VoterFiniteTree
+import Leader.Wu.Epoch.VoterRuntimeObstruction
+import Leader.Wu.Epoch.FilterCubicNoGo
+import Leader.Wu.WriteSeq.IncrementGate
+import Leader.Wu.WriteSeq.IncrementGateRegression
+import Leader.Wu.WriteSeq.DeadBranches
+import Leader.Wu.WriteSeq.PersistenceRepair
+import Leader.Wu.WriteSeq.PersistenceRegression
+import Leader.Wu.WriteSeq.UnequalPhases
+import Leader.Wu.WriteSeq.UnequalSchedule
+import Leader.Wu.WriteSeq.Relocation
+import Leader.Wu.WriteSeq.RulerBridge
+import Leader.Wu.WriteSeq.RulerHistory
+import Leader.Wu.WriteSeq.SnapshotHistory
+import Leader.Wu.WallSweep.Repair
+import Leader.Wu.WallSweep.Regression
+import Leader.Wu.WallSweep.ResetSweepSchedule
+import Leader.Wu.WallSweep.FiniteIntegration
+import Leader.Wu.WallSweep.FiniteRegression
+import Leader.Wu.WallSweep.History
+import Leader.Wu.WallSweep.EchoDrain
+import Leader.Wu.Birth.PpsiLeaderCreationSchedule
+import Leader.Wu.WallSweep.HistorySchedule
+import Leader.Wu.WallSweep.FiniteCleanup
+import Leader.Wu.WallSweep.NormalResetContract
+import Leader.Wu.WallSweep.RestartableProtected
+import Leader.Wu.WallSweep.ShieldCircuit
+import Leader.Wu.WallSweep.ShieldCircuitFull
+import Leader.Wu.WallSweep.PreCheckResetRepair
+import Leader.Wu.WallSweep.PreCheckResetContractsDrain
+import Leader.Wu.Birth.PpsiLeaderCreationRepair
+import Leader.Wu.WallSweep.RestartableGeneric
+import Leader.Wu.WallSweep.EchoRank
+import Leader.Wu.WallSweep.ClockwiseRetryScheduler
+import Leader.Wu.WallSweep.UnshieldedRetry
+import Leader.Wu.WallSweep.PreCheckNoFire
+import Leader.Wu.WallSweep.ClockwiseRetry
+import Leader.Wu.WallSweep.PreCheckTerminalShieldEdge
+import Leader.Wu.Elimination.MultiLeaderCleanup
+import Leader.Wu.WallSweep.FullCleanupRegression
+import Leader.Wu.WriteSeq.LifecycleObstructions
+import Leader.Wu.WriteSeq.ConditionFourLocalityNoGo
+import Leader.Wu.Comparison.TerminalEqualSupportRepair
+import Leader.Wu.Comparison.TerminalEqualSupportRegression
+import Leader.Wu.Protocol.CombinedLocalRepair
+import Leader.Wu.Protocol.CombinedLocalRepairRegression
+import Leader.Wu.Safety.NoCheckBirthRepair
+import Leader.Wu.Safety.NoCheckBirthRegression
+import Leader.Wu.Safety.NoCheckBirthLeaderFrames
+import Leader.Wu.Safety.NoCheckBirthBoundaryFrames
+import Leader.Wu.Safety.NoCheckBirthConditionOne
+import Leader.Wu.Safety.NoCheckBirthPhysicalConditionOne
+import Leader.Wu.Safety.NoCheckBirthConditionTwoGeometry
+import Leader.Wu.Safety.NoCheckBirthConditionTwoKernel
+import Leader.Wu.Safety.NoCheckBirthConditionTwoGlobal
+import Leader.Wu.Safety.NoCheckBirthConditionTwoFrames
+import Leader.Wu.Safety.NoCheckBirthConditionTwoWriteFrames
+import Leader.Wu.Safety.NoCheckBirthConditionTwoPhysical
+import Leader.Wu.Safety.NoCheckBirthConditionTwoProtocol
+import Leader.Wu.Safety.NoCheckBirthConditionTwoRegression
+import Leader.Wu.Safety.NoCheckBirthConditionThreeProtocol
+import Leader.Wu.Safety.NoCheckBirthOutputLegitimacy
+import Leader.Wu.Safety.NoCheckBirthConditionFourRegression
+import Leader.Wu.Safety.NoCheckBirthConditionFiveRegression
+
+#print axioms PPLLTranscriptionAudit.wait_interpreted_consumes_carry
+#print axioms PPLLTranscriptionAudit.wait_interprets_plain_reset_equalities_as_updates
+#print axioms PPLLTranscriptionAudit.wait_interprets_plain_wait_equalities_as_updates
+#print axioms PPLLTranscriptionAudit.cleanSig_line13_uses_initiator_path5_bit
+#print axioms PPLLTranscriptionAudit.cleanSig_line13_not_literal_responder_path5_bit
+#print axioms PPLLTranscriptionAudit.cleanSig_line13_literal_command_dies_before_source
+#print axioms PPLLTranscriptionAudit.compareBit_interprets_terminal_guard_at_psi_pred
+#print axioms PPLLTranscriptionAudit.disappear_interpreted_consumes_carry
+#print axioms PPLLTranscriptionAudit.disappear_interprets_line3_as_whole_path2_write
+#print axioms PPLLTranscriptionAudit.eliminateLeaders_interprets_line17_as_assignment
+#print axioms PPLLTranscriptionAudit.writeSeq_interprets_leader_equalities_as_assignments
+#print axioms PPLLTranscriptionAudit.groupInfo_interpreted_consumes_last_set
+#print axioms PPLLTranscriptionAudit.moveWsig_line7_interprets_last_assignment_as_test
+#print axioms PPLLTranscriptionAudit.moveWsig_line17_uses_last_not_label
+#print axioms PPLLTranscriptionAudit.moveWsig_line17_does_not_use_label
+#print axioms PPLLTranscriptionAudit.genSig_two_labels_completes_in_one_interaction
+#print axioms PPLLTranscriptionAudit.disappear_probability_denominator_ne_example
+#print axioms PPLLTranscriptionAudit.check_less_selects_lottery_action
+#print axioms PPLLTranscriptionAudit.optional_bottom_reads_are_noops
+
+#print axioms quiescent_safe_is_closed
+#print axioms noFreeBarrier_of_stableID
+#print axioms stable_adjacent_groupID_ne
+#print axioms trailingZeros_of_even
+#print axioms trailingZeros_repeat_has_higher_between
+#print axioms trailingZeros_survivor_cannot_match
+#print axioms StableSignalHistory.payload_ne_target
+#print axioms StableSignalRoute.payload_ne_target
+#print axioms comparisonSignalID_eq_groupID_of_bits_match_between
+#print axioms CompleteComparisonCarrier.not_bits_match_target
+#print axioms SourceTaggedCompleteComparisonCarrier.not_bits_match_target
+#print axioms EqualPrefixCarrier.not_terminal_of_strict_route
+#print axioms EqualStateProvenance.checkEdgeSafe
+#print axioms EqualStateProvenance.toCheckBoundarySafe
+#print axioms checkSigCheckL_new_equal_fields
+#print axioms checkSigCheckR_new_equal_fields
+#print axioms overwritingSignalID_eq_groupID_of_bits_match_between
+#print axioms SourceTaggedCompleteOverwritingCarrier.signalID_eq_payload
+#print axioms AssignedComparisonProvenance.toCheckBoundarySafe
+#print axioms isPeacefulBullet
+#print axioms noFreeOverwritingSignal
+#print axioms RulerSignalHistory.payload_ne_target
+#print axioms RulerSignalHistory.not_equal_result
+#print axioms comparisonSignalID_eq_groupID_of_bits_match_config
+#print axioms FieldCheckHistoryCertified.toCheckHistoryCertified
+#print axioms FieldCheckHistoryCertified.toCheckBoundarySafe
+#print axioms CheckHistoryCertified.toCheckBoundarySafe
+#print axioms no_new_responder_of_noFreeBarrier_checkBoundary
+#print axioms ppll_local_labels_preserved_of_paperSafe
+#print axioms ppllStep_labels_preserved_of_paperSafe
+#print axioms noFreeBarrier_preserved_of_paperSafe
+#print axioms stableID_preserved_of_groupIDBoundary
+#print axioms ppll_local_leaders_have_input_origin
+#print axioms paperSafe_unique_leader_label_zero
+#print axioms ppllStep_unique_leader_survives
+#print axioms ppllStep_no_other_leader
+#print axioms uniqueLeader_preserved_of_checkBoundary
+#print axioms protocol_uniqueLeader_preserved_of_checkBoundary
+#print axioms paperSafe_step_of_boundary_obligations
+#print axioms protocol_paperSafe_step_of_boundary_obligations
+#print axioms BoundedAgentState.erase_inProtocolDomain
+#print axioms BoundedAgentState.erase_ofDomain
+#print axioms BoundedAgentState.ofDomain_erase
+#print axioms BoundedAgentState.eraseToDomain_bijective
+#print axioms ExhaustiveList.values_nodup_fin
+#print axioms ExhaustiveList.values_nodup_prod
+#print axioms ExhaustiveList.values_nodup_mapSurjective
+#print axioms ExhaustiveList.decode_injective_of_values_nodup
+#print axioms PPLLFinite.mem_boundedAgentState
+#print axioms PPLLFinite.boundedAgentState_values_nodup
+#print axioms PPLLFinite.boundedAgentState_decode_injective
+#print axioms PPLLFinite.boundedAgentState_decode_surjective
+#print axioms PPLLFinite.boundedAgentState_decode_bijective
+#print axioms PPLLRepair.boundedProtocol_state_decode_surjective
+#print axioms PPLLRepair.satCountSucc_le
+#print axioms PPLLRepair.satCountSucc_eq_succ_of_lt
+#print axioms PPLLRepair.satCountSucc_at_cap
+#print axioms PPLLRepair.waitSaturated_count_closed
+#print axioms PPLLDomain.inProtocolDomain_iff_path_frame
+#print axioms PPLLDomain.pPsi_inProtocolDomain
+#print axioms PPLLDomain.waitSaturated_inProtocolDomain
+#print axioms PPLLDomain.genSigSaturated_inProtocolDomain
+#print axioms PPLLDomain.eliminateSig_inProtocolDomain
+#print axioms PPLLDomain.suppressSig_inProtocolDomain
+#print axioms PPLLDomain.eliminateLeadersNoCollision_inProtocolDomain
+#print axioms PPLLDomain.checkSig_inProtocolDomain
+#print axioms PPLLDomain.disappear_inProtocolDomain
+#print axioms PPLLDomain.compareSig_inProtocolDomain
+#print axioms PPLLDomain.sigMove_inProtocolDomain
+#print axioms PPLLDomain.gensigWriteseq_inProtocolDomain
+#print axioms PPLLDomain.writeAction_inProtocolDomain
+#print axioms PPLLDomain.moveWsig_inProtocolDomain
+#print axioms PPLLDomain.writeSeq_inProtocolDomain
+#print axioms PPLLDomain.cleanSig_inProtocolDomain
+#print axioms PPLLDomain.ppllSaturatedNoCollision_inProtocolDomain
+#print axioms PPLLRepair.erase_boundedTransition
+#print axioms PPLLRepair.erase_step
+#print axioms PPLLRepair.erase_reachable
+#print axioms PPLLRepair.eliminateLeadersNoCollision
+#print axioms PPLLRepair.ppllNoBulletSignalCollision
+#print axioms PPLLRepair.genSigSaturated
+#print axioms PPLLRepair.ppllSaturatedNoCollision
+#print axioms PPLLRepair.ppllIntegratedRepair
+#print axioms PPLLRepair.no_integrated_regime_on_one
+#print axioms PPLLDomain.compareSigNoSourceRearm_inProtocolDomain
+#print axioms PPLLDomain.ppllIntegratedRepair_inProtocolDomain
+#print axioms PPLLRepair.erase_integratedBoundedTransition
+#print axioms PPLLRepair.protocol
+#print axioms PopulationProtocol.ClosedPred.reachable
+#print axioms PopulationProtocol.Reachable.trans
+#print axioms barrier_exists_of_not_dvd
+#print axioms ReachSpec.retarget
+#print axioms allSchedules_length
+#print axioms allSchedules_schedule_length
+#print axioms mem_allSchedules_of_length
+#print axioms hitProbability_lower_of_favorable_sublist
+#print axioms hitProbability_lower_of_one_schedule
+#print axioms hitsWithin_of_post_applySchedule
+#print axioms hitsWithin_append_of_left
+#print axioms padSchedule_length
+#print axioms oneScheduleProfile_semantically_valid
+#print axioms oneScheduleProfile_semantically_valid_of_hit
+#print axioms oneScheduleProfile_semantically_valid_of_bounded_schedule
+#print axioms CertifiedReachSpec.of_one_schedule
+#print axioms CertifiedReachSpec.of_bounded_schedule
+#print axioms CertifiedReachSpec.of_traversal_family
+#print axioms hitProbability_nonneg
+#print axioms hitProbability_le_one
+#print axioms ReachSpec.identity_semantically_valid
+#print axioms CertifiedReachSpec.identity
+#print axioms falseProfile_not_semantically_valid
+#print axioms traversal_bound_single
+#print axioms traversal_bound_family
+#print axioms yokota_det_to_whp_profile
+#print axioms yokota_leader_elimination_profile
+#print axioms reach_profile_from_traversal
+#print axioms convergence_profile
+#print axioms quiescent_safe_preserved
+#print axioms delayed_safe_profile
+#print axioms stable_id_has_leader
+#print axioms conditions_imply_quiescent_safe
+#print axioms phase_quiescence
+#print axioms convergence_phases_7_8
+#print axioms parallel_chernoff_profile
+#print axioms suppressed_preserved
+#print axioms noActiveSignal_preserved_under_suppressed
+#print axioms suppressed_and_nosignal_preserved
+#print axioms convergence_phases_4_5
+#print axioms Preserved.and
+#print axioms PreservedUnder.toPreserved
+#print axioms Preserved.toUnder
+#print axioms identityModel
+#print axioms hasUniqueLeader_preserved_under_conditions
+#print axioms PreservedUnder.and
+#print axioms PreservedUnder.weaken_invariant
+#print axioms optimalPsi_pos
+#print axioms convergence_profile_steps_eq_sum
+#print axioms coeff_bound
+#print axioms convergence_profile_step_bound
+#print axioms log2'_le_self
+#print axioms log2'_pos
+#print axioms log2'_rec
+#print axioms le_mul_of_ge_one
+#print axioms PPLL.ppll
+#print axioms PPLL.pPsi
+#print axioms PPLL.eliminateLeaders
+#print axioms PPLL.suppressSig
+#print axioms PPLL.eliminateSig
+#print axioms PPLL.genSig
+#print axioms PPLL.checkSig
+#print axioms PPLL.disappear
+#print axioms PPLL.cleanSig
+#print axioms PPLL.compareSig
+#print axioms PPLL.sigMove
+#print axioms PPLL.suppressSig
+#print axioms PPLL.eliminateLeaders
+#print axioms PPLL.eliminateSig
+#print axioms PPLL.writeSeq
+#print axioms PPLLCounterexample.countFamily_injective
+#print axioms PPLLCounterexample.writeAction_increment_carries_through_one
+#print axioms PPLLCounterexample.writeAction_increment_stops_at_zero
+#print axioms PPLLCounterexample.overflow_inputs_inProtocolDomain
+#print axioms PPLLCounterexample.wait_escapes_count_domain
+#print axioms PPLLCounterexample.ppll_escapes_count_domain
+#print axioms PPLLCounterexample.repaired_ppll_clamps_overflow_witness
+#print axioms PPLLCounterexample.counterConfig_locallyBitConsistent
+#print axioms PPLLCounterexample.counterConfig_inProtocolDomain
+#print axioms PPLLCounterexample.counterConfig_paper_safe
+#print axioms PPLLCounterexample.paperSafe_not_closed
+#print axioms PPLLCounterexample.combined_repair_still_creates_fake_signal_leader
+#print axioms PPLLCounterexample.selfSource_round1_rearmed_in_place
+#print axioms PPLLCounterexample.selfSource_source_self_terminal_check
+#print axioms PPLLCounterexample.combined_repair_source_self_creates_leader
+#print axioms PPLLCounterexample.integrated_repair_keeps_source_departing
+#print axioms PPLLCounterexample.integrated_repair_removes_source_self_witness
+#print axioms PPLLCounterexample.selfSourceConfig_paper_safe
+#print axioms PPLLCounterexample.selfSourceAfterOne_paper_safe
+#print axioms PPLLCounterexample.selfSourceAfterOne_eq_repaired_step
+#print axioms PPLLCounterexample.repaired_paperSafe_not_closed_by_source_self
+#print axioms PPLLCounterexample.any_strengthening_accepting_source_signal_not_closed
+#print axioms PPLLCounterexample.self_source_bad_schedule_count
+#print axioms PPLLCounterexample.self_source_bad_event_probability
+#print axioms PPLLCounterexample.paperSafe_not_closed_pred
+#print axioms PPLLCounterexample.boundedPaperSafe_not_closed_pred
+#print axioms PPLLCounterexample.locallyConsistentPaperSafe_not_closed_pred
+#print axioms PPLLCounterexample.counter_bad_schedule_count
+#print axioms PPLLCounterexample.counter_bad_event_probability
+#print axioms PPLLCounterexample.counterConfig_not_checkBoundarySafe
+#print axioms PPLLCounterexample.counterConfig_comparisonBitsMatch
+#print axioms PPLLCounterexample.counterConfig_no_strict_completeComparisonCarrier
+#print axioms PPLLCounterexample.counterConfig_no_strict_sourceTaggedCarrier
+#print axioms PPLLCounterexample.counterConfig_afterCheck_not_equalStateProvenance
+#print axioms PPLLCounterexample.counterConfig_not_fieldCheckHistoryCertified
+#print axioms PPLLCounterexample.bullet_counter_initially_peaceful
+#print axioms PPLLCounterexample.bulletCounterConfig_inProtocolDomain
+#print axioms PPLLCounterexample.bulletCounterConfig_checkBoundarySafe
+#print axioms PPLLCounterexample.bulletCounterConfig_paper_safe
+#print axioms PPLLCounterexample.bullet_counter_collision_fields
+#print axioms PPLLCounterexample.bulletCounterSuccessor_not_noNonPeaceful
+#print axioms PPLLCounterexample.paperSafe_not_closed_by_bullet
+#print axioms PPLLCounterexample.signal_coherence_alone_cannot_close_paper_safe
+#print axioms PPLLCounterexample.any_strengthening_accepting_bullet_witness_not_closed
+#print axioms PPLLCounterexample.bullet_bad_schedule_count
+#print axioms PPLLCounterexample.bullet_bad_event_probability
+#print axioms PPLLCounterexample.bullet_repair_removes_collision
+#print axioms PPLLCounterexample.bullet_repair_witness_remains_peaceful
+#print axioms PPLLCounterexample.loneLeader_repair_fires_live_bullet
+#print axioms PPLLCounterexample.loneLeaderConfig_paper_safe
+#print axioms PPLLCounterexample.loneLeaderSuccessor_not_peaceful
+#print axioms PPLLCounterexample.loneLeaderSuccessor_not_noNonPeaceful
+#print axioms PPLLCounterexample.repaired_paperSafe_not_closed_by_lone_bullet
+#print axioms PPLLCounterexample.writeCounterConfig_paper_safe
+#print axioms PPLLCounterexample.writeCounterConfig_inProtocolDomain
+#print axioms PPLLCounterexample.writeCounterConfig_checkBoundarySafe
+#print axioms PPLLWriteProvenance.writeSeqSetWriteAct_increment_origin
+#print axioms PPLLWriteProvenance.writeSeqFinalR_increment_origin
+#print axioms PPLLWriteProvenance.writeSeqPrepare_increment_supported
+#print axioms PPLLCounterexample.writeCounter_orphan_increment_not_supported
+#print axioms PPLLCounterexample.write_counter_changes_stable_group_id
+#print axioms PPLLCounterexample.writeCounterConfig_not_groupIDBoundarySafe
+#print axioms PPLLCounterexample.writeCounterSuccessor_not_stable
+#print axioms PPLLCounterexample.paperSafe_not_closed_by_orphan_write
+#print axioms PPLLCounterexample.orphan_write_bad_schedule_count
+#print axioms PPLLCounterexample.orphan_write_bad_event_probability
+#print axioms PPLLCounterexample.suppression_bad_schedule_count
+#print axioms PPLLCounterexample.suppression_hit_probability_zero
+#print axioms PPLLCounterexample.concreteSuppressionProfile_not_semantically_valid
+#print axioms PPLLSuppressionHistory.erase_transition
+#print axioms PPLLSuppressionHistory.historicallySuppressed_preserved
+#print axioms PPLLSuppressionHistory.erase_boundedTransition
+#print axioms PPLLSuppressionHistory.erase_boundedTransition_to_audit
+#print axioms PPLLSuppressionHistory.boundedReceiptCertificate
+#print axioms PPLLSuppressionHistory.boundedTransition_receives_of_preSuppress_leader
+#print axioms PPLLResearchFormulation.operationalRegime_of
+#print axioms PPLLResearchFormulation.regimeFourTwo
+#print axioms PPLLResearchFormulation.isSafe_closed
+#print axioms PPLLResearchFormulation.isSafe_of_operational_legitimacy
+#print axioms PPLLResearchFormulation.canonicalLeaderOutputConfig_isSafe
+#print axioms PPLLResearchFormulation.oneOverNFailure_budget_lt_total
+#print axioms PPLLResearchFormulation.runLocalSchedule_eq_runSchedule
+#print axioms PPLLResearchFormulation.runSchedule_reachable
+#print axioms PPLLResearchFormulation.allReceivedReset_preserved_step
+#print axioms PPLLResearchFormulation.eraseReceipt_step
+#print axioms PPLLResearchFormulation.eraseReceipt_localStep
+#print axioms PPLLResearchFormulation.eraseReceipt_runSchedule
+#print axioms PPLLResearchFormulation.eraseReceipt_protocolSchedule
+#print axioms PPLLResearchFormulation.receipt_output_eq_physical
+#print axioms PPLLRepair.erase_integrated_step
+#print axioms PPLLRepair.erase_integrated_reachable
+#print axioms PPLLRepairRegression.t2_integrated_clamps_count
+#print axioms PPLLRepairRegression.t1_not_semantically_safe_for_integrated
+#print axioms PPLLRepairRegression.t1_finite_output_changes
+#print axioms PPLLRepairRegression.t1_finite_not_semantically_safe
+#print axioms PPLLRepairRegression.t1_integrated_bad_event_probability
+#print axioms PPLLRepairRegression.t7_integrated_witness_peaceful
+#print axioms PPLLRepairRegression.t8_finite_still_changes_groupID
+#print axioms PPLLRepairRegression.t8_integrated_bad_event_probability
+#print axioms PPLLRepairRegression.t9_exact_witness_removed
+#print axioms PPLLOperationalLegitimacy.latentConfig_firstOperationalLegitimate
+#print axioms PPLLOperationalLegitimacy.latentSuccessor_not_integratedCheckBoundarySafe
+#print axioms PPLLOperationalLegitimacy.firstOperationalLegitimate_not_closed
+#print axioms PPLLOperationalLegitimacy.firstFiniteOperationalLegitimate_not_closed
+#print axioms PPLLOperationalLegitimacy.latentConfig_not_semantically_safe
+#print axioms PPLLOperationalLegitimacy.latent_bad_event_probability
+#print axioms PPLLTraceConvergence.regimeTwoTwo
+#print axioms PPLLTraceConvergence.receiptAfterLeaderEdge_allReceived
+#print axioms PPLLTraceConvergence.receiptPhase_hitCount
+#print axioms PPLLTraceConvergence.receiptPhase_hitProbability
+#print axioms PPLLTraceConvergence.receiptPhase_semantically_valid
+#print axioms PPLLTraceConvergence.receiptPhase_post_preserved
+#print axioms PPLLErasingRefinement.ErasingLocalRefinement.erase_localStep
+#print axioms PPLLErasingRefinement.ErasingLocalRefinement.erase_runLocalSchedule
+#print axioms PPLLErasingRefinement.ErasingLocalRefinement.lift_physical_reachable
+#print axioms PPLLErasingRefinement.ErasingLocalRefinement.isSafe_erases
+#print axioms PPLLErasingRefinement.ErasingLocalRefinement.trusted_isSafe
+#print axioms PPLLErasingRefinement.receiptRefinement
+#print axioms PPLLErasingRefinement.t1_survives_every_erasing_refinement
+#print axioms PPLLComparisonLifecycle.TaggedState.erase_lift
+#print axioms PPLLComparisonLifecycle.fresh_carrierTrustOK_iff_idle
+#print axioms PPLLComparisonLifecycle.t1_canonical_lift_not_trusted
+#print axioms PPLLComparisonLifecycle.latent_canonical_lift_not_trusted
+#print axioms PPLLComparisonLifecycle.no_pointwise_correct_positions
+#print axioms PPLLComparisonHistory.erase_liftConfig
+#print axioms PPLLComparisonHistory.erase_step
+#print axioms PPLLComparisonHistory.erase_runSchedule
+#print axioms PPLLComparisonHistory.lift_localHistoryTrusted_iff_idle
+#print axioms PPLLComparisonHistory.erase_boundedGenSig
+#print axioms PPLLComparisonHistory.erase_markedGenSig
+#print axioms PPLLComparisonHistory.markedWait_preserves_generationLocalTrusted
+#print axioms PPLLComparisonHistory.markedGenSigStart_preserves_generationLocalTrusted
+#print axioms PPLLComparisonHistory.markedGenSigEmit_preserves_generationLocalTrusted
+#print axioms PPLLComparisonHistory.markedGenSigPropagate_preserves_generationLocalTrusted
+#print axioms PPLLComparisonHistory.markedGenSigFinish_preserves_generationLocalTrusted
+#print axioms PPLLComparisonHistory.markedGenSig_preserves_generationLocalTrusted
+#print axioms PPLLComparisonHistory.twoAgentBirth_intermediate_compatible
+#print axioms PPLLComparisonHistory.twoAgentBirth_output_trusted
+#print axioms PPLLComparisonHistory.markedGenSig_two_agent_birth_records_source
+#print axioms PPLLComparisonHistory.cleanSig_comparison_frame
+#print axioms PPLLComparisonHistory.erase_markedCleanSig
+#print axioms PPLLComparisonHistory.markedCleanSig_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.erase_markedEliminateSig
+#print axioms PPLLComparisonHistory.markedEliminateSig_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.markedSigMoveStep1_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.markedSigMoveStep2_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.markedSigMoveStep3_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.markedSigMoveStep4_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.markedSigMoveStep5_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.markedSigMoveApplyControl_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.markedSigMoveDepart_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.erase_markedSigMove
+#print axioms PPLLComparisonHistory.markedSigMove_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.erase_markedCheckSig
+#print axioms PPLLComparisonHistory.markedCheckSig_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.erase_markedDisappear
+#print axioms PPLLComparisonHistory.markedDisappear_preserves_fullLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.erase_markedCmpUpdateStart
+#print axioms PPLLComparisonHistory.markedCmpUpdateStart_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.erase_markedCmpUpdatePropagate
+#print axioms PPLLComparisonHistory.markedCmpUpdatePropagate_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.erase_markedCmpUpdateSetPath2
+#print axioms PPLLComparisonHistory.markedCmpUpdateSetPath2_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.erase_markedCmpUpdate
+#print axioms PPLLComparisonHistory.markedCmpUpdate_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.erase_markedCompareBit
+#print axioms PPLLComparisonHistory.markedCompareBit_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.erase_markedCompareSig
+#print axioms PPLLComparisonHistory.markedCompareSig_preserves_auditLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.activeCmpSetWitness_compatible
+#print axioms PPLLComparisonHistory.activeCompareBitWitness_compatible
+#print axioms PPLLComparisonHistory.compareSigCompatible_of_initialized_path_bot
+#print axioms PPLLComparisonHistory.erase_markedPPsi
+#print axioms PPLLComparisonHistory.markedPPsi_preserves_fullLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.erase_markedSuppressSig
+#print axioms PPLLComparisonHistory.markedSuppressSig_preserves_fullLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.erase_markedEliminateLeadersNoCollision
+#print axioms PPLLComparisonHistory.markedEliminateLeadersNoCollision_preserves_fullLocalHistoryTrusted
+#print axioms PPLLComparisonHistory.writeSeq_comparisonTracked_frame
+#print axioms PPLLComparisonHistory.erase_markedWriteSeq
+#print axioms PPLLComparisonHistory.markedWriteSeq_preserves_fullLocalHistoryTrusted
+#print axioms PPLLComparisonWaveObstruction.cmpUpdate_preserves_comparisonWaveAbsent
+#print axioms PPLLComparisonWaveObstruction.cmpUpdate_step_preserves
+#print axioms PPLLComparisonWaveObstruction.cmpUpdate_schedule_preserves
+#print axioms PPLLComparisonWaveObstruction.cleanCmpConfig_invariant
+#print axioms PPLLComparisonWaveObstruction.cleanCmpConfig_never_creates_comparison
+#print axioms PPLLComparisonWaveObstruction.cmpUpdateNoSourceRearm_depart_identity
+#print axioms PPLLComparisonWaveObstruction.compareSigNoSourceRearm_depart_identity
+#print axioms PPLLAuthorizedComparisonRepair.source_depart_not_authorized
+#print axioms PPLLAuthorizedComparisonRepair.moved_depart_starts_and_consumes
+#print axioms PPLLAuthorizedComparisonRepair.labelZero_lock_reaches_compare1
+#print axioms PPLLAuthorizedComparisonRepair.compare1_return_has_priority
+#print axioms PPLLAuthorizedComparisonRepair.forged_permission_is_consumed
+#print axioms PPLLAuthorizedComparisonRepair.authorizedComparison_psi2_reaches_path2
+#print axioms PPLLAuthorizedComparisonRepair.authorizedGenSig_birth_clears_forgery
+#print axioms PPLLAuthorizedComparisonRepair.authorizedSigMove_stable_wrap_sets_permission
+#print axioms PPLLAuthorizedComparisonRepair.authorizedCmpUpdate_inProtocolDomain
+#print axioms PPLLAuthorizedComparisonRepair.authorizedCompareSig_inProtocolDomain
+#print axioms PPLLAuthorizedComparisonRepair.ppllAuthorizedRepair_inProtocolDomain
+#print axioms PPLLAuthorizedComparisonRepair.erase_authorizedBoundedTransition
+#print axioms PPLLAuthorizedComparisonRepair.authorizedBoundedAgentState_values_nodup
+#print axioms PPLLAuthorizedComparisonRepair.authorizedBoundedAgentState_values_length
+#print axioms PPLLAuthorizedComparisonRepair.authorizedBoundedAgentState_decode_surjective
+#print axioms PPLLAuthorizedComparisonRepair.authorizedBoundedAgentState_decode_bijective
+#print axioms PPLLAuthorizedComparisonRepair.authorizedCmpUpdate_differs_noSourceRearm
+#print axioms PPLLAuthorizedComparisonRepair.authorizedReconcile_canonical
+#print axioms PPLLAuthorizedComparisonRepair.ppllAuthorizedRepair_outputs_canonical
+#print axioms PPLLAuthorizedRepairCounterexample.trapStates_length
+#print axioms PPLLAuthorizedRepairCounterexample.trap_closed
+#print axioms PPLLAuthorizedRepairCounterexample.trap_marker_persists
+#print axioms PPLLAuthorizedRepairCounterexample.trap_inProtocolDomain
+#print axioms PPLLAuthorizedRepairCounterexample.trap_reifies_finitely
+#print axioms PPLLAuthorizedRepairCounterexample.trap_no_leaders
+#print axioms PPLLAuthorizedRepairCounterexample.authorizedTrap_closed
+#print axioms PPLLAuthorizedRepairCounterexample.trap_reachable_no_leader
+#print axioms PPLLAuthorizedRepairCounterexample.trap_no_semantically_safe_reachable
+#print axioms PPLLHostAlignedComparisonRepair.hostAligned_stable_wrap_sets_permission
+#print axioms PPLLHostAlignedComparisonRepair.hostAligned_moved_carrier_starts_and_consumes
+#print axioms PPLLHostAlignedComparisonRepair.hostAligned_breaks_trap_edge0
+#print axioms PPLLHostAlignedComparisonRepair.hostAligned_breaks_trap_edge1
+#print axioms PPLLHostAlignedRepairCounterexample.hostTrap_closed
+#print axioms PPLLHostAlignedRepairCounterexample.hostTrap_authorization_clean
+#print axioms PPLLHostAlignedRepairCounterexample.hostTrap_no_leaders
+#print axioms PPLLHostAlignedRepairCounterexample.hostAlignedTrap_closed
+#print axioms PPLLHostAlignedRepairCounterexample.hostTrap_reachable_no_leader
+#print axioms PPLLHostAlignedRepairCounterexample.hostTrap_no_semantically_safe_reachable
+#print axioms PPLLExpiringComparisonRepair.expireOne_of_progress
+#print axioms PPLLExpiringComparisonRepair.expireOne_zero_of_no_progress
+#print axioms PPLLExpiringComparisonRepair.expireOne_stall_decreases
+#print axioms PPLLExpiringComparisonRepair.expireOne_zero_clears_comparison
+#print axioms PPLLExpiringComparisonRepair.no_expiring_regime_two_two
+#print axioms PPLLExpiringComparisonRepair.expiringAgentState_values_nodup
+#print axioms PPLLExpiringComparisonRepair.expiringAgentState_values_length
+#print axioms PPLLExpiringComparisonRepair.expiringAgentState_decode_surjective
+#print axioms PPLLExpiringComparisonRepair.expiringAgentState_decode_bijective
+#print axioms PPLLExpiringComparisonRepair.expiring_breaks_authorized_trap
+#print axioms PPLLExpiringComparisonRepair.expiring_preserves_real_comparison_progress
+#print axioms PPLLExpiringComparisonRepair.expiring_n4_recovery_schedule_outputs
+#print axioms PPLLExpiringComparisonRepair.expiring_n4_recovery_not_output_stable
+#print axioms PPLLExpiringTraceConvergence.expiringRecoveryPostTest_decides
+#print axioms PPLLExpiringTraceConvergence.expiringRecoverySchedule_hits
+#print axioms PPLLExpiringTraceConvergence.expiringRecovery_hitCount_pos
+#print axioms PPLLExpiringTraceConvergence.expiringRecoveryPhase
+#print axioms PPLLExpiringTraceConvergence.expiringRecoveryPost_not_persistent
+#print axioms PPLLExpiringPersistenceDiagnosis.original_movement_reaches_movedCoreConfig
+#print axioms PPLLExpiringPersistenceDiagnosis.movedCoreConfig_paper_safe
+#print axioms PPLLExpiringPersistenceDiagnosis.original_moved_carrier_creates_second_leader
+#print axioms PPLLExpiringPersistenceDiagnosis.paperSafe_not_closed_by_moved_carrier
+#print axioms PPLLExpiringPersistenceDiagnosis.moved_carrier_bad_event_probability
+#print axioms PPLLExpiringPersistenceDiagnosis.movedCoreConfig_not_semantically_safe
+#print axioms PPLLExpiringPersistenceDiagnosis.persistenceAfter4_has_only_leader_zero
+#print axioms PPLLExpiringPersistenceDiagnosis.continuation_moves_carrier_across_group
+#print axioms PPLLExpiringPersistenceDiagnosis.final_input_is_authorized_check_ready
+#print axioms PPLLExpiringPersistenceDiagnosis.recovered_snapshot_has_equal_zero_group_ids
+#print axioms PPLLExpiringPersistenceDiagnosis.final_check_creates_responder_leader
+#print axioms PPLLExpiringPersistenceDiagnosis.final_write_migrates_created_leader
+#print axioms PPLLPathStallComparisonRepair.pathExpireOne_of_progress
+#print axioms PPLLPathStallComparisonRepair.pathExpireOne_decreases_of_static
+#print axioms PPLLPathStallComparisonRepair.pathExpireOne_zero_clears
+#print axioms PPLLPathStallComparisonRepair.pathStall_psi2_budget_six_reaches_path2
+#print axioms PPLLPathStallComparisonRepair.pathIdleRun_clears
+#print axioms PPLLPathStallComparisonRepair.pathStaticRun_clears
+#print axioms PPLLPathStallComparisonRepair.returnPriority_converts_at_terminal
+#print axioms PPLLPathStallComparisonRepair.returnPriority_moves_compare1
+#print axioms PPLLPathStallComparisonRepair.returnPriority_moves_compare2
+#print axioms PPLLPathStallComparisonRepair.returnPriority_creates_lock
+#print axioms PPLLPathStallComparisonRepair.returnPriority_launches_compare1
+#print axioms PPLLPathStallComparisonRepair.returnPriority_moves_forward
+#print axioms PPLLPathStallCycleCounterexample.wander_first_period_reaches_cycle
+#print axioms PPLLPathStallCycleCounterexample.wander_cycle_period_fixed
+#print axioms PPLLPathStallCycleCounterexample.wander_periods_succ_eq_cycle
+#print axioms PPLLPathStallCycleCounterexample.wander_incomplete_carrier_persists
+#print axioms PPLLMoveFuelComparisonRepair.decMoveFuel_lt
+#print axioms PPLLMoveFuelComparisonRepair.spendMoveFuelRun_clears
+#print axioms PPLLMoveFuelComparisonRepair.moveFuelSigMove_no_transfer
+#print axioms PPLLMoveFuelComparisonRepair.moveFuelSigMove_positive_transfer
+#print axioms PPLLMoveFuelComparisonRepair.moveFuelSigMove_zero_attempt_clears
+#print axioms PPLLMoveFuelComparisonRepair.moveFuelAuthorizedSigMove_inProtocolDomain
+#print axioms PPLLMoveFuelComparisonRepair.moveFuelAuthorizedRepair_inProtocolDomain
+#print axioms PPLLMoveFuelComparisonRepair.erase_moveFuelBoundedTransition
+#print axioms PPLLMoveFuelComparisonRepair.moveFuelBoundedAgentState_values_nodup
+#print axioms PPLLMoveFuelComparisonRepair.moveFuelBoundedAgentState_values_length
+#print axioms PPLLMoveFuelComparisonRepair.moveFuelBoundedAgentState_decode_surjective
+#print axioms PPLLMoveFuelComparisonRepair.moveFuelBoundedAgentState_decode_bijective
+#print axioms PPLLMoveFuelComparisonRegression.raw_sigmove_four_edge_cycle_returns_path
+#print axioms PPLLMoveFuelComparisonRegression.moveFuel_blocks_fourth_cycle_edge
+#print axioms PPLLMoveFuelComparisonRegression.moveFuel_wrap_then_starts_comparison
+#print axioms PPLLMoveFuelPotential.keepFuel_pairMoveFuel
+#print axioms PPLLMoveFuelPotential.moveFuelAuthorizedSigMove_pair_le
+#print axioms PPLLMoveFuelPotential.moveFuelAuthorizedSigMove_pair_lt_of_positive
+#print axioms PPLLMoveFuelPotential.moveFuelAuthorizedRepair_pair_le
+#print axioms PPLLMoveFuelPotential.moveFuelAuthorizedRepair_zero_closed
+#print axioms PPLLMoveFuelPotential.allMoveFuelZero_localStep
+#print axioms PPLLMoveFuelPotential.allMoveFuelZero_runLocalSchedule
+#print axioms PPLLMoveFuelCounterexample.zeroFuelTrapStep_eq_authorized
+#print axioms PPLLMoveFuelCounterexample.zeroFuelTrapStep_fuels_zero
+#print axioms PPLLMoveFuelCounterexample.zeroFuelProtocolStep_pairConfig
+#print axioms PPLLMoveFuelCounterexample.zeroFuelTrap_closed
+#print axioms PPLLMoveFuelCounterexample.zeroFuelTrap_reachable_no_leader
+#print axioms PPLLMoveFuelCounterexample.zeroFuelTrap_no_semantically_safe_reachable
+#print axioms PPLLLeaderCreationCleanupRepair.authorizedAfterCheckSuffix_staged_eq
+#print axioms PPLLLeaderCreationCleanupRepair.leaderCleanup_of_responder_deletion
+#print axioms PPLLLeaderCreationCleanupRepair.leaderCleanup_initiator_waits
+#print axioms PPLLLeaderCreationCleanupRepair.leaderCleanup_eq_authorized_of_inactive
+#print axioms PPLLLeaderCreationCleanupRepair.leaderCleanup_deletion_clears_responder
+#print axioms PPLLLeaderCreationCleanupRepair.leaderCleanup_deletion_propagates_left
+#print axioms PPLLLeaderCreationCleanupRepair.leaderCleanup_deletion_stops_at_terminal
+#print axioms PPLLLeaderCreationCleanupRepair.leaderCleanupAuthorizedTransition_inProtocolDomain
+#print axioms PPLLLeaderCreationCleanupRepair.erase_leaderCleanupBoundedTransition
+#print axioms PPLLLeaderCreationCleanupRepair.deletionPriorityExpireOne_of_active
+#print axioms PPLLLeaderCreationCleanupRepair.leaderCleanupStateCertificate_values_nodup
+#print axioms PPLLLeaderCreationCleanupRepair.leaderCleanupStateCertificate_values_length
+#print axioms PPLLLeaderCreationCleanupRepair.cleanup_recovery_creates_and_marks_leader_source
+#print axioms PPLLLeaderCreationCleanupRepair.cleanup_old_bad_continuation_prefixwise_preserves_outputs
+#print axioms PPLLLeaderCreationCleanupRepair.cleanup_old_bad_continuation_preserves_outputs
+#print axioms PPLLLeaderCreationCleanupRepair.cleanup_final_deletion_preserves_outputs_and_clears_paths
+#print axioms PPLLLeaderCreationCleanupRegression.cleanup_t1_still_creates_second_leader
+#print axioms PPLLLeaderCreationCleanupRegression.cleanup_t1_bad_schedule_count
+#print axioms PPLLLeaderCreationCleanupRegression.cleanup_t1_bad_event_probability
+#print axioms PPLLLeaderCreationCleanupRegression.cleanup_t1_not_semantically_safe
+#print axioms PPLLLeaderCreationCleanupRegression.cleanup_deletion_priority_survives_timer_and_terminates
+#print axioms PPLLLeaderCreationCleanupRegression.cleanup_preserves_t9_regression
+#print axioms PPLLLeaderCreationCleanupRegression.cleanup_breaks_authorized_trap
+#print axioms PPLLLeaderCreationCleanupRegression.cleanup_breaks_host_aligned_trap
+#print axioms PPLLLeaderCreationCleanupRegression.cleanup_does_not_mark_ordinary_leader_migration
+#print axioms PPLLLeaderCreationCleanupRegression.cleanup_detects_check_birth_masked_by_leader_merge
+#print axioms PPLLLeaderCreationCleanupRegression.cleanup_preserves_authorized_comparison_step
+#print axioms PPLLRemoteLeaderGuardNoGo.remoteProtection_forbids_follower_pair_birth
+#print axioms PPLLRemoteLeaderGuardNoGo.allFollower_closed_of_remoteProtection
+#print axioms PPLLRemoteLeaderGuardNoGo.allFollower_reachable_of_remoteProtection
+#print axioms PPLLRemoteLeaderGuardNoGo.remoteProtection_incompatible_with_first_leader
+#print axioms PPLLStaticDoubleCoverNoGo.protected_step_cert_eq
+#print axioms PPLLStaticDoubleCoverNoGo.protected_step_output_eq
+#print axioms PPLLStaticDoubleCoverNoGo.staticProtected_closed
+#print axioms PPLLStaticDoubleCoverNoGo.staticProtected_outputStable
+#print axioms PPLLStaticDoubleCoverNoGo.foldDouble_rightNeighbor
+#print axioms PPLLStaticDoubleCoverNoGo.doubleCover_protected
+#print axioms PPLLStaticDoubleCoverNoGo.doubleCover_hasTwoLeaders
+#print axioms PPLLStaticDoubleCoverNoGo.doubleCover_never_unique
+#print axioms PPLLStaticDoubleCoverNoGo.static_double_cover_no_go
+#print axioms PPLLProtectedEpochProtocol.sanitizeEpochState_idempotent
+#print axioms PPLLProtectedEpochProtocol.epochTransition_covers_selected
+#print axioms PPLLProtectedEpochProtocol.protectedEpoch_unique
+#print axioms PPLLProtectedEpochProtocol.epochTransition_eq_of_protected
+#print axioms PPLLProtectedEpochProtocol.epoch_step_eq_of_protected
+#print axioms PPLLProtectedEpochProtocol.protectedEpoch_closed
+#print axioms PPLLProtectedEpochProtocol.protectedEpoch_step_output
+#print axioms PPLLProtectedEpochProtocol.protectedEpoch_isSafe
+#print axioms PPLLProtectedEpochProtocol.canonicalEpochConfig_protected
+#print axioms PPLLProtectedEpochProtocol.epochAgentState_values_nodup
+#print axioms PPLLProtectedEpochProtocol.epochAgentState_values_length
+#print axioms PPLLProtectedEpochProtocol.epochAgentState_decode_surjective
+#print axioms PPLLProtectedEpochProtocol.epochAgentState_decode_bijective
+#print axioms PPLLProtectedEpochRegression.canonicalEpochT1_protected
+#print axioms PPLLProtectedEpochRegression.canonicalEpochT1_isSafe
+#print axioms PPLLProtectedEpochRegression.inconsistent_epoch_allows_preentry_second_leader
+#print axioms PPLLProtectedEpochRegression.inconsistentEpochT1After_edge2_fixed
+#print axioms PPLLProtectedEpochRegression.inconsistentEpochT1_unique_at_zero
+#print axioms PPLLProtectedEpochRegression.epochProtocol_not_remoteEdge2Protected
+#print axioms PPLLProtectedEpochRegression.inconsistentEpochT1_not_protected
+#print axioms PPLLProtectedEpochConvergence.epochSweep4_enters_protected
+#print axioms PPLLProtectedEpochConvergence.epochSweep4_isSafe
+#print axioms PPLLProtectedEpochConvergence.epochSweep4_reachable
+#print axioms PPLLProtectedEpochConvergence.epochSweep4_reachesSafeWithinSchedule
+#print axioms PPLLProtectedEpochConvergence.epochSweep4_stabilizingScheduleCount_pos
+#print axioms PPLLProtectedEpochConvergence.epochFour_uniformFiniteHorizon
+#print axioms PPLLProtectedEpochConvergence.epochFour_exists_reachable_safe
+#print axioms PPLLProtectedEpochSweep.epochSweepPrefix_length
+#print axioms PPLLProtectedEpochSweep.rotation_implies_covered
+#print axioms PPLLProtectedEpochSweep.epochPreWrapSweep_enters_protected
+#print axioms PPLLProtectedEpochSweep.epochPreWrapSweep_isSafe
+#print axioms PPLLProtectedEpochSweep.epochPreWrapSweep_reachable
+#print axioms PPLLProtectedEpochSweep.epochPreWrap_reachesSafeWithinSchedule
+#print axioms PPLLProtectedEpochSweep.epochPreWrap_stabilizingScheduleCount_pos
+#print axioms PPLLProtectedEpochSweep.epoch_uniformFiniteHorizon
+#print axioms PPLLProtectedEpochSweep.epoch_finite_ssle_capstone
+#print axioms PPLLProtectedEpochSweep.epoch_exists_reachable_safe
+#print axioms PPLLDerivedEpochRepair.ppllEpochFilter_retains_integrated_data
+#print axioms PPLLDerivedEpochRepair.ppllEpochFilter_local_contract
+#print axioms PPLLDerivedEpochRepair.ppllEpochFilter_output_eq_epoch
+#print axioms PPLLDerivedEpochRepair.ppllEpochFilterState_decode_bijective
+#print axioms PPLLDerivedEpochRepair.ppllEpochFilterState_values_length
+#print axioms PPLLDerivedEpochRepair.ppllEpochFilter_closed
+#print axioms PPLLDerivedEpochRepair.ppllEpochFilter_step_output
+#print axioms PPLLDerivedEpochRepair.ppllEpochFilter_unique
+#print axioms PPLLDerivedEpochRepair.ppllEpochFilter_isSafe
+#print axioms PPLLDerivedEpochSweep.ppllEpochFilter_sweep_enters_protected
+#print axioms PPLLDerivedEpochSweep.ppllEpochFilter_sweep_isSafe
+#print axioms PPLLDerivedEpochSweep.ppllEpochFilter_sweep_reachable
+#print axioms PPLLDerivedEpochSweep.ppllEpochFilter_reachesSafeWithinSchedule
+#print axioms PPLLDerivedEpochSweep.ppllEpochFilter_stabilizingScheduleCount_pos
+#print axioms PPLLDerivedEpochSweep.ppllEpochFilter_uniformFiniteHorizon
+#print axioms PPLLDerivedEpochSweep.ppllEpochFilter_finite_ssle_capstone
+#print axioms PPLLDerivedEpochRegression.filtered_epoch_really_consumes_integrated_t8_bit
+#print axioms PPLLDerivedEpochRegression.filtered_epoch_suppresses_integrated_t1_leader
+#print axioms PPLLDerivedEpochRegression.filteredCanonicalT1_protected
+#print axioms PPLLDerivedEpochRegression.filteredCanonicalT1_isSafe
+#print axioms PPLLSchedulerBlocks.allSchedules_add
+#print axioms PPLLSchedulerBlocks.runLocalSchedule_append
+#print axioms PPLLSchedulerBlocks.hitsWithinLocal_append
+#print axioms PPLLSchedulerBlocks.localMissCount_add_localHitCount
+#print axioms PPLLSchedulerBlocks.localMissCount_add_eq_sum
+#print axioms PPLLSchedulerBlocks.localMissCount_add_le_mul
+#print axioms PPLLSchedulerBlocks.localMissCount_repeatedBlock_le
+#print axioms PPLLSchedulerBlocks.uniformFinitePhase_repeatedBlock
+#print axioms PPLLDerivedEpochAmplification.protectedEpochTest_decides
+#print axioms PPLLDerivedEpochAmplification.ppllEpochFilter_sweep_hits
+#print axioms PPLLDerivedEpochAmplification.ppllEpochFilter_oneBlockPhase
+#print axioms PPLLDerivedEpochAmplification.ppllEpochFilter_repeatedBlockPhase
+#print axioms PPLLDerivedEpochAmplification.ppllEpochFilter_repeatedBlock_capstone
+#print axioms PPLLEpochVoterReduction.epochColor_eq_of_rotation
+#print axioms PPLLEpochVoterReduction.slot_rotation_of_epochColor_eq
+#print axioms PPLLEpochVoterReduction.epochColor_successor
+#print axioms PPLLEpochVoterReduction.epochColorConfig_localStep
+#print axioms PPLLEpochVoterReduction.epochColorConfig_runLocalSchedule
+#print axioms PPLLEpochVoterReduction.protectedEpoch_iff_colorConsensus_clean
+#print axioms PPLLEpochVoterBellman.doubledLazyConsensusTime_zero
+#print axioms PPLLEpochVoterBellman.doubledLazyConsensusTime_self
+#print axioms PPLLEpochVoterBellman.doubledLazyConsensusTime_bellman
+#print axioms PPLLEpochVoterBellman.doubledLazyConsensusTime_even_midpoint
+#print axioms PPLLEpochVoterBellman.doubledLazyConsensusTime_even_midpoint_cubic
+#print axioms PPLLEpochVoterBellman.doubledLazyConsensusTimeRat_bellman
+#print axioms PPLLEpochVoterBellman.LazyConsensusBellman.unique
+#print axioms PPLLEpochVoterBellman.LazyConsensusBellman.eq_cubic
+#print axioms PPLLEpochVoterTwoDomain.rightBoundary_grows
+#print axioms PPLLEpochVoterTwoDomain.leftBoundary_shrinks
+#print axioms PPLLEpochVoterTwoDomain.nonboundary_stutters
+#print axioms PPLLEpochVoterTwoDomain.leftShrunkDomain_eq_rotateRight
+#print axioms PPLLEpochVoterTwoDomain.directedVoterStep_rotateRight
+#print axioms PPLLEpochVoterTwoDomain.canonicalTwoDomain_lazy_quotient
+#print axioms PPLLEpochVoterFiniteTree.voterConsensus_rotateRight_iff
+#print axioms PPLLEpochVoterFiniteTree.voterMissTree_rotateRight
+#print axioms PPLLEpochVoterFiniteTree.canonicalTwoDomain_consensus_iff
+#print axioms PPLLEpochVoterFiniteTree.voterMissTree_canonicalTwoDomain
+#print axioms PPLLEpochVoterRuntimeObstruction.lazyDoubledCostTotal_eq
+#print axioms PPLLEpochVoterRuntimeObstruction.lazyDoubledCostTotal_le_elapsed_add_misses
+#print axioms PPLLEpochVoterRuntimeObstruction.lazyDomain_renewal_inequality
+#print axioms PPLLEpochVoterRuntimeObstruction.lazy_midpoint_failure_eighth_forces_cubic_horizon
+#print axioms PPLLEpochVoterRuntimeObstruction.voter_midpoint_failure_eighth_forces_cubic_horizon
+#print axioms PPLLDerivedEpochRuntimeNoGo.epochColorConfig_epochConfigOfColors
+#print axioms PPLLDerivedEpochRuntimeNoGo.filteredColorMissTree_eq_voterMissTree
+#print axioms PPLLDerivedEpochRuntimeNoGo.filteredColorMissTree_le_protected
+#print axioms PPLLDerivedEpochRuntimeNoGo.filteredMidpointTwoDomainStart_colors
+#print axioms PPLLDerivedEpochRuntimeNoGo.filteredProtected_failure_eighth_forces_cubic_horizon
+#print axioms PPLLWriteIncrementGate.gatePreparedIncrement_supported
+#print axioms PPLLWriteIncrementGate.writeSeqThroughPrepare_no_increment_state
+#print axioms PPLLWriteIncrementGate.writeSeqIncrementGate_eq_writeSeq_of_fixed
+#print axioms PPLLWriteIncrementGate.ppllWriteIncrementGate_inProtocolDomain
+#print axioms PPLLWriteIncrementGate.erase_boundedWriteIncrementGateTransition
+#print axioms PPLLWriteIncrementGate.writeIncrementGateStateCertificate_values_nodup
+#print axioms PPLLWriteIncrementGate.writeIncrementGateStateCertificate_values_length
+#print axioms PPLLWriteIncrementGate.writeIncrementGateState_decode_surjective
+#print axioms PPLLWriteIncrementGateRegression.write_gate_blocks_exact_t8
+#print axioms PPLLWriteIncrementGateRegression.write_gate_blocks_maximal_pathless_orphan
+#print axioms PPLLWriteIncrementGateRegression.raw_bad_flag_outside_domain
+#print axioms PPLLWriteIncrementGateRegression.prepared_gate_blocks_fresh_raw_bad_flag_increment
+#print axioms PPLLWriteIncrementGateRegression.write_gate_preserves_genuine_terminal_increment
+#print axioms PPLLWriteIncrementGateRegression.write_gate_preserves_forged_flag_zero_twin
+#print axioms PPLLWriteIncrementGateRegression.algorithm20_can_export_increment_orphan
+#print axioms PPLLWriteIncrementGateRegression.algorithm20_orphan_cannot_execute_before_next_gate
+#print axioms PPLLWriteIncrementGateRegression.prepared_gate_preserves_same_interaction_flag_zero_increment
+#print axioms PPLLWriteIncrementGateRegression.finite_write_gate_blocks_t8
+#print axioms PPLLTerminalEqualSupportRepair.sanitizeTerminalEqual_frame
+#print axioms PPLLTerminalEqualSupportRepair.terminalEqualSupport_eq_authorized_of_fixed
+#print axioms PPLLTerminalEqualSupportRepair.terminalEqualSupportAuthorizedTransition_inProtocolDomain
+#print axioms PPLLTerminalEqualSupportRepair.erase_terminalEqualSupportBoundedTransition
+#print axioms PPLLTerminalEqualSupportRepair.terminalEqualSupportStateCertificate_values_nodup
+#print axioms PPLLTerminalEqualSupportRepair.terminalEqualSupportStateCertificate_values_length
+#print axioms PPLLTerminalEqualSupportRegression.current_pathless_equal_creates_and_migrates
+#print axioms PPLLTerminalEqualSupportRegression.literal_pathless_equal_staged_creation_and_migration
+#print axioms PPLLTerminalEqualSupportRegression.literal_pathless_equal_creates_and_migrates
+#print axioms PPLLTerminalEqualSupportRegression.terminal_equal_support_blocks_pathless_hole
+#print axioms PPLLTerminalEqualSupportRegression.sanitizer_preserves_supported_check_prefix
+#print axioms PPLLTerminalEqualSupportRegression.sanitizer_keeps_supported_terminal_equal
+#print axioms PPLLTerminalEqualSupportRegression.sanitizer_does_not_claim_to_fix_t1
+#print axioms PPLLTerminalEqualSupportRegression.terminal_equal_support_preserves_t1_counterexample
+#print axioms PPLLTerminalEqualSupportRegression.pathlessEqualConfig_paper_safe
+#print axioms PPLLTerminalEqualSupportRegression.paperSafe_not_closed_by_pathless_equal
+#print axioms PPLLTerminalEqualSupportRegression.pathless_equal_bad_schedule_count
+#print axioms PPLLTerminalEqualSupportRegression.pathless_equal_bad_event_probability
+#print axioms PPLLTerminalEqualSupportRegression.finite_terminal_equal_support_blocks_pathless_hole
+#print axioms PPLLWriteIncrementGate.writeSeqIncrementGate_inProtocolDomain
+#print axioms PPLLCombinedLocalRepair.combinedAuthorizedAfterCheckSuffix_inProtocolDomain
+#print axioms PPLLCombinedLocalRepair.combinedLocalAuthorizedTransition_inProtocolDomain
+#print axioms PPLLCombinedLocalRepair.erase_combinedLocalBoundedTransition
+#print axioms PPLLCombinedLocalRepair.combinedLocalStateCertificate_values_nodup
+#print axioms PPLLCombinedLocalRepair.combinedLocalStateCertificate_values_length
+#print axioms PPLLCombinedLocalRepairRegression.combined_t1_still_creates_second_leader
+#print axioms PPLLCombinedLocalRepairRegression.combined_t1_bad_schedule_count
+#print axioms PPLLCombinedLocalRepairRegression.combined_t1_bad_event_probability
+#print axioms PPLLCombinedLocalRepairRegression.combined_t1_not_semantically_safe
+#print axioms PPLLCombinedLocalRepairRegression.combined_t8_blocks_orphan_increment
+#print axioms PPLLCombinedLocalRepairRegression.combined_t9_preserves_source_self_repair
+#print axioms PPLLCombinedLocalRepairRegression.combined_t19_recovery_marks_and_replay_preserves_outputs
+#print axioms PPLLCombinedLocalRepairRegression.combined_t20_blocks_pathless_terminal_equal
+#print axioms PPLLNoCheckBirthRepair.authorizedCheckNoBirth_leaders
+#print axioms PPLLNoCheckBirthRepair.authorizedCheckNoBirth_inProtocolDomain
+#print axioms PPLLNoCheckBirthRepair.noCheckBirthAuthorizedTransition_inProtocolDomain
+#print axioms PPLLNoCheckBirthRepair.erase_noCheckBirthBoundedTransition
+#print axioms PPLLNoCheckBirthRepair.noCheckBirthStateCertificate_values_length
+#print axioms PPLLNoCheckBirthRegression.no_check_birth_blocks_t1
+#print axioms PPLLNoCheckBirthRegression.no_check_birth_preserves_t8_gate
+#print axioms PPLLNoCheckBirthRegression.no_check_birth_preserves_t9
+#print axioms PPLLNoCheckBirthRegression.no_check_birth_blocks_t20
+#print axioms PPLLNoCheckBirthRegression.no_check_birth_preserves_barrier_recovery_writer
+#print axioms PPLLVerify.pPsi_initiator_leader_eq
+#print axioms PPLLVerify.cleanSig_leaders_eq
+#print axioms PPLLVerify.eliminateSig_leaders_eq
+#print axioms PPLLVerify.sigMove_leaders_eq
+#print axioms PPLLVerify.disappear_leaders_eq
+#print axioms PPLLVerify.compareSigDispatch_leaders_eq
+#print axioms PPLLVerify.suppressSig_leaders_eq
+#print axioms PPLLVerify.writeAction_leaders_eq
+#print axioms PPLLVerify.moveWsig_leaders_eq
+#print axioms PPLL.writeSeq_eq_afterPrepare
+#print axioms PPLLWriteIncrementGate.gatePreparedIncrement_leader_eq
+#print axioms PPLLWriteIncrementGate.writeSeqIncrementGate_leaders_eq_writeSeq
+#print axioms PPLLWriteIncrementGate.writeSeqIncrementGate_initiator_survives
+#print axioms PPLLWriteIncrementGate.writeSeqIncrementGate_responder_zero_survives
+#print axioms PPLLWriteIncrementGate.writeSeqIncrementGate_responder_origin
+#print axioms PPLLWriteIncrementGate.writeSeqIncrementGate_initiator_origin
+#print axioms PPLLVerify.writeSeq_responder_false_of_nonzero_leader
+#print axioms PPLLWriteIncrementGate.writeSeqIncrementGate_responder_false_of_nonzero_leader
+#print axioms PPLLWriteIncrementGate.writeSeqIncrementGate_left_follower_not_both
+#print axioms PPLLNoCheckBirthLeaderFrames.waitSaturated_leaders
+#print axioms PPLLNoCheckBirthLeaderFrames.genSigSaturated_leaders
+#print axioms PPLLNoCheckBirthLeaderFrames.noCheckBirthCoreBeforeCheck_leaders
+#print axioms PPLLNoCheckBirthLeaderFrames.compareSigNoSourceRearm_leaders
+#print axioms PPLLNoCheckBirthLeaderFrames.noCheckBirthBeforeEliminate_leaders
+#print axioms PPLLNoCheckBirthLeaderFrames.noCheckBirthCoreAfterBeforeEliminate_initiator_survives
+#print axioms PPLLNoCheckBirthLeaderFrames.noCheckBirthCoreAfterBeforeEliminate_responder_survives
+#print axioms PPLLNoCheckBirthLeaderFrames.noCheckBirthCoreAfterBeforeEliminate_leader_origins
+#print axioms PPLLNoCheckBirthLeaderFrames.noCheckBirthSuffix_origins_of_pPsi_boundary
+#print axioms PPLLNoCheckBirthLeaderFrames.noCheckBirth_followerPair_preserved_of_boundary
+#print axioms PPLLNoCheckBirthBoundaryFrames.noCheckBirthBeforeEliminate_labels
+#print axioms PPLLNoCheckBirthBoundaryFrames.noCheckConditionOne_responder_label
+#print axioms PPLLNoCheckBirthBoundaryFrames.noCheckBirthCoreBeforeCheck_kill_fields
+#print axioms PPLLNoCheckBirthBoundaryFrames.noCheckBirthBeforeEliminate_kill_fields
+#print axioms PPLLNoCheckBirthConditionOne.uniqueLeader_preserved_from_noCheck_local_contracts
+#print axioms PPLLNoCheckBirthConditionOne.uniqueLeader_preserved_noCheckBirth_boundaries
+#print axioms PPLLNoCheckBirthConditionOne.uniqueLeader_preserved_noCheckBirth
+#print axioms PPLLNoCheckBirthConditionOne.noCheckPeaceBoundary_of_paperSafe
+#print axioms PPLLNoCheckBirthConditionOne.uniqueLeader_preserved_noCheckBirth_paperSafe
+#print axioms PPLLNoCheckBirthPhysicalConditionOne.uniqueLeader_preserved_noCheckBirthProtocol
+#print axioms PPLLNoCheckBirthPhysicalConditionOne.uniqueLeaderOutput_preserved_noCheckBirthProtocol
+#print axioms PPLLNoCheckBirthConditionTwoGeometry.canonicalBulletFrame_of_paperSafe
+#print axioms PPLLNoCheckBirthConditionTwoGlobal.noNonPeacefulBullet_preserved_noCollisionStep
+#print axioms PPLLNoCheckBirthConditionTwoPhysical.authorizedBoundary_peaceView_of_pPsi_frame
+#print axioms PPLLNoCheckBirthConditionTwoPhysical.authorizedBoundary_peaceView_of_paperSafe
+#print axioms PPLLNoCheckBirthConditionTwoProtocol.PeaceEdgeFrame.of_outputSafe
+#print axioms PPLLNoCheckBirthConditionTwoProtocol.noCheckBirthPathStallTransition_peaceView_eq_noCollision_of_normal
+#print axioms PPLLNoCheckBirthConditionTwoProtocol.noCheckBirthProtocol_step_peaceView_eq_noCollisionStep_of_normal
+#print axioms PPLLNoCheckBirthConditionTwoProtocol.noCheckBirthProtocol_step_peaceView_classification_of_frame
+#print axioms PPLLNoCheckBirthConditionTwoProtocol.noCheckBirthProtocol_step_peaceView_classification
+#print axioms PPLLNoCheckBirthConditionTwoProtocol.noNonPeacefulBullet_preserved_noCheckBirthProtocol
+#print axioms PPLLNoCheckBirthConditionTwoRegression.noCheck_lone_successor_not_noNonPeaceful
+#print axioms PPLLNoCheckBirthConditionThreeProtocol.noCheckBirthProtocol_step_leader_eq
+#print axioms PPLLNoCheckBirthConditionThreeProtocol.noCheckBirthProtocol_step_label_eq
+#print axioms PPLLNoCheckBirthConditionThreeProtocol.noFreeBarrier_preserved_noCheckBirthProtocol
+#print axioms PaperSafeConfig.toOutputSafe
+#print axioms PPLLNoCheckBirthOutputLegitimacy.outputCore_safe
+#print axioms PPLLNoCheckBirthOutputLegitimacy.outputLegit_inhabited
+#print axioms PPLLNoCheckBirthOutputLegitimacy.outputLegit_step
+#print axioms PPLLNoCheckBirthOutputLegitimacy.outputLegit_closed
+#print axioms PPLLNoCheckBirthOutputLegitimacy.outputLegit_unique_output
+#print axioms PPLLNoCheckBirthOutputLegitimacy.outputLegit_step_output_preserving
+#print axioms PPLLNoCheckBirthOutputLegitimacy.outputLegit_isSafe
+#print axioms PPLLNoCheckBirthOutputLegitimacy.outputLegit_capstone
+#print axioms PPLLNoCheckBirthOutputLegitimacy.leaderlessTrap_closed
+#print axioms PPLLNoCheckBirthOutputLegitimacy.leaderlessTrap_reachable
+#print axioms PPLLNoCheckBirthOutputLegitimacy.noCheckBirth_no_reachable_outputLegit_of_dvd
+#print axioms PPLLNoCheckBirthOutputLegitimacy.noCheckBirth_not_all_reach_outputLegit_of_dvd
+#print axioms PPLLNoCheckBirthOutputLegitimacy.leaderlessNoBarrier_iff_dvd
+#print axioms PPLLNoCheckBirthOutputLegitimacy.twoTwo_no_reachable_outputLegit
+#print axioms PPLLNoCheckBirthOutputLegitimacy.combinedLocal_twoGroup_trap_escape
+#print axioms PPLLNoCheckBirthOutputLegitimacy.combinedLocal_twoGroup_birth_occurs_at_check
+#print axioms PPLLNoCheckBirthConditionFourRegression.conditionFourCore_paperSafe
+#print axioms PPLLNoCheckBirthConditionFourRegression.conditionFourAfter_path_fields
+#print axioms PPLLNoCheckBirthConditionFourRegression.conditionFourAfter_free_signal
+#print axioms PPLLNoCheckBirthConditionFourRegression.noCheckBirthProtocol_conditionFour_counterexample
+#print axioms PPLLNoCheckBirthConditionFiveRegression.conditionFiveCore_paperSafe
+#print axioms PPLLNoCheckBirthConditionFiveRegression.conditionFiveAfter_terminal_bit
+#print axioms PPLLNoCheckBirthConditionFiveRegression.conditionFiveAfter_groupID
+#print axioms PPLLNoCheckBirthConditionFiveRegression.conditionFiveAfter_not_stableID
+#print axioms PPLLNoCheckBirthConditionFiveRegression.noCheckBirthProtocol_conditionFive_counterexample
+#print axioms PPLLWriteSeqDeadBranches.setWriteReady_ready_or_none
+#print axioms PPLLWriteSeqDeadBranches.writeSeqCompare_second_branch_dead
+#print axioms PPLLWriteSeqDeadBranches.writeSeqPrepare_increment_is_input
+#print axioms PPLLWriteSeqDeadBranches.writeSeqPrepare_finalR_dead
+#print axioms PPLLWriteSeqPersistenceRepair.persistentReady_preserves_aligned_nonidle
+#print axioms PPLLWriteSeqPersistenceRepair.persistentReady_starts_aligned_idle
+#print axioms PPLLWriteSeqPersistenceRepair.writerTransportDistance_successor
+#print axioms PPLLWriteSeqPersistenceRepair.transportReady_preserves_depart
+#print axioms PPLLWriteSeqPersistenceRepair.moveWsigTransferStopAligned_exact
+#print axioms PPLLWriteSeqPersistenceRepair.moveWsigTransferStopAligned_inProtocolDomain
+#print axioms PPLLWriteSeqPersistenceRepair.moveWsigTransferStopAligned_phase
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentTransportLifecycle_clean_edge
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentTransportLifecycle_clean_sweep_edge
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_clean_sweep_edge
+#print axioms PPLLWriteSeqPersistenceRepair.transportReady_inProtocolDomain
+#print axioms PPLLWriteSeqPersistenceRepair.writeActionApplyIncrementAndFlip_path3_exact
+#print axioms PPLLWriteSeqPersistenceRegression.persistent_prepare_reaches_terminal_increment
+#print axioms PPLLWriteSeqPersistenceRegression.persistent_gate_preserves_same_call_increment
+#print axioms PPLLWriteSeqPersistenceRegression.persistent_entry_sanitizer_blocks_conditionFive_pair
+#print axioms PPLLWriteSeqPersistenceRegression.persistent_state_forgery_reopens_conditionFive_pair
+#print axioms PPLLWriteSeqPersistenceRegression.persistent_labelZero_equal_departs_same_call
+#print axioms PPLLWriteSeqPersistenceRegression.persistent_depart_path_still_does_not_transfer
+#print axioms PPLLWriteSeqPersistenceRegression.persistent_repair_retains_conditionFour_moveFlip
+#print axioms PPLLWriteSeqPersistenceRegression.persistentLifecycle_inside_group_path_transfer
+#print axioms PPLLWriteSeqPersistenceRegression.persistentLifecycle_terminal_wrap_path_transfer
+#print axioms PPLLWriteSeqPersistenceRegression.persistentTransport_two_edges_stops_aligned
+#print axioms PPLLWriteSeqPersistenceRegression.writerBlockTransportSchedule_length
+#print axioms PPLLWriteSeqPersistenceRegression.writerBlockSweepSchedule_eq_descending
+#print axioms PPLLWriteSeqPersistenceRegression.writerBlockTransportSchedule_eq_rounds
+#print axioms PPLLWriteSeqPersistenceRegression.stepConfig_writer_clean_sweep_edge
+#print axioms PPLLWriteSeqPersistenceRegression.writer_arrival_aligned_iff
+#print axioms PPLLWriteSeqPersistenceRegression.WriterSweepState.step
+#print axioms PPLLWriteSeqPersistenceRegression.writerBlockTransportSchedule_from_zero
+#print axioms PPLLWriteSeqPersistenceRegression.writerBlockTransportSchedule_sourceTagged
+#print axioms PPLLWriteSeqPersistenceRegression.writerBlockTransportSchedule_existsCarrier
+#print axioms PPLLWriteSeqPersistenceRegression.writerBlockTransportSchedule_existsRulerHistory
+#print axioms PPLLWriteSeqPersistenceRegression.stepConfig_global_writer_frames_of_endpoint_contract
+#print axioms PPLLWriteSeqPersistenceRegression.WriterRoundState.toEqualPrefix
+#print axioms PPLLWriteSeqPersistenceRegression.WriterEqualPrefixState.seed_step
+#print axioms PPLLWriteSeqPersistenceRegression.WriterEqualPrefixState.nonterminal_step
+#print axioms PPLLWriteSeqPersistenceRegression.writerEqualPrefixSchedule_reaches
+#print axioms PPLLWriteSeqPersistenceRegression.WriterEqualPrefixState.terminal_one_step
+#print axioms PPLLWriteSeqPersistenceRegression.WriterMoveFlipSweepState.nonzero_step
+#print axioms PPLLWriteSeqPersistenceRegression.WriterMoveFlipSweepState.zero_step
+#print axioms PPLLWriteSeqPersistenceRegression.writerMoveFlipSchedule_reaches
+#print axioms PPLLWriteSeqPersistenceRegression.writerEqualFlagOneActionSchedule_reaches
+#print axioms PPLLWriteSeqPersistenceRegression.writerFirstEqualFlagOneSchedule_reaches
+#print axioms PPLLWriteSeqPersistenceRegression.stepConfig_global_writer_clean_label_of_endpoint_contract
+#print axioms PPLLWriteSeqPersistenceRegression.writerCarryReaches_terminal
+#print axioms PPLLWriteSeqPersistenceRegression.writerCarryReaches_pred_iff
+#print axioms PPLLWriteSeqPersistenceRegression.WriterEqualPrefixState.terminal_zero_step
+#print axioms PPLLWriteSeqPersistenceRegression.WriterIncrementSweepState.nonzero_step
+#print axioms PPLLWriteSeqPersistenceRegression.WriterIncrementSweepState.zero_step
+#print axioms PPLLWriteSeqPersistenceRegression.writerIncrementSchedule_reaches
+#print axioms PPLLWriteSeqPersistenceRegression.writerEqualFlagZeroActionSchedule_reaches
+#print axioms PPLLWriteSeqPersistenceRegression.writerFirstEqualFlagZeroSchedule_reaches
+#print axioms PPLLWriteSeqPersistenceRepair.WriterUnequalCommand.ne_none
+#print axioms PPLLWriteSeqPersistenceRepair.moveWsigMoveWrite_erases_responder_command_of_empty
+#print axioms PPLLWriteSeqPersistenceRepair.moveWsigMoveWritePreservingNonempty_of_empty
+#print axioms PPLLWriteSeqPersistenceRepair.writeActionPropagateState_action_write
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_unequal_seed
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_unequal_nonterminal
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_command_forward
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_unequal_terminal
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_command_terminal
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_unequal_action_nonzero
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_unequal_action_zero
+#print axioms PPLLWriteSeqUnequalRegression.WriterEqualPrefixState.unequal_discovery_step
+#print axioms PPLLWriteSeqUnequalRegression.writerUnequalCommandSchedule_reaches
+#print axioms PPLLWriteSeqUnequalRegression.WriterUnequalForwardState.command_terminal_step
+#print axioms PPLLWriteSeqUnequalRegression.WriterUnequalSweepState.nonzero_step
+#print axioms PPLLWriteSeqUnequalRegression.WriterUnequalSweepState.zero_step
+#print axioms PPLLWriteSeqUnequalRegression.writerUnequalSweepSchedule_reaches
+#print axioms PPLLWriteSeqUnequalRegression.writerUnequalStrictActionSchedule_reaches
+#print axioms PPLLWriteSeqUnequalRegression.writerUnequalTerminalActionSchedule_reaches
+#print axioms PPLLWriteSeqUnequalRegression.writerUnequalActionSchedule_reaches
+#print axioms PPLLWriteSeqUnequalRegression.writerFirstUnequalSchedule_reaches
+#print axioms PPLLWriteSeqRelocation.groupOffset_ne_of_lt
+#print axioms PPLLWriteSeqRelocation.WriterWindowAgrees.step
+#print axioms PPLLWriteSeqRelocation.WriterWindowAgrees.applySchedule
+#print axioms PPLLWriteSeqRelocation.writerFirstUnequalSchedule_nonwrapping
+#print axioms PPLLWriteSeqRelocation.writerFirstUnequalSchedule_relocated
+#print axioms PPLLWriteSeqRelocation.writerFirstEqualFlagOneSchedule_relocated
+#print axioms PPLLWriteSeqRelocation.writerFirstEqualFlagZeroSchedule_relocated
+#print axioms PPLLWriteSeqRelocation.relocateWriterSchedule_eq_of_outside
+#print axioms PPLLWriteSeqRelocation.WriterCanonicalCompletedState.toNextRoundState
+#print axioms PPLLWriteSeqRelocation.writerFirstUnequalSchedule_relocated_toNextRoundState
+#print axioms PPLLWriteSeqRelocation.writerFirstEqualFlagOneSchedule_relocated_toNextRoundState
+#print axioms PPLLWriteSeqRelocation.writerFirstEqualFlagZeroSchedule_relocated_toNextRoundState
+#print axioms PPLLWriteSeqRulerBridge.msbBitValue_lt_of_first_mismatch
+#print axioms PPLLWriteSeqRulerBridge.groupID_lt_of_first_mismatch
+#print axioms PPLLWriteSeqRulerBridge.first_writer_comparison_or_all_equal
+#print axioms PPLLWriteSeqRulerBridge.WriterSelectedOutcome.payload_update_groupID
+#print axioms PPLLWriteSeqRulerBridge.WriterSelectedActionOutcome.payload_update_between_groupIDs
+#print axioms PPLLWriteSeqRulerBridge.writerActionSchedule_relocated_toNextRoundState_exists
+#print axioms PPLLWriteSeqRulerBridge.writerActionSchedule_relocated_toNextRoundState_with_groupID_update
+#print axioms PPLLWriteSeqRulerBridge.stableGroupStart_succ_eq_groupOffset
+#print axioms PPLLWriteSeqRulerBridge.WriterCanonicalCompletedState.toNextRoundState_frames
+#print axioms PPLLWriteSeqRulerBridge.writerBlockTransportSchedule_relocated_from_zero
+#print axioms PPLLWriteSeqRulerBridge.WriterRoundState.toOverwritingBitsMatchBetweenAt
+#print axioms PPLLWriteSeqRulerBridge.WriterRoundState.existsSourceTaggedCarrierFromReference
+#print axioms PPLLWriteSeqRulerBridge.WriterRoundState.existsSourceTaggedCarrier
+#print axioms PPLLWriteSeqRulerBridge.writerActionOnlySchedule_relocated_toNextRoundState_with_groupID_update
+#print axioms PPLLWriteSeqRulerHistory.stableSource_component_ne_later_window
+#print axioms PPLLWriteSeqRulerHistory.relocateWriterSchedule_preserves_earlier_stable_source_bits
+#print axioms PPLLWriteSeqRulerHistory.stableFuture_component_ne_earlier_window
+#print axioms PPLLWriteSeqRulerHistory.relocateWriterSchedule_preserves_later_stable_group
+#print axioms PPLLWriteSeqRulerHistory.selectedAction_preserves_stable_source_bits
+#print axioms PPLLWriteSeqRulerHistory.writerBlockTransport_preserves_earlier_stable_source_bits
+#print axioms PPLLWriteSeqRulerHistory.RulerOverwritingHistory.exists_next_physical
+#print axioms PPLLWriteSeqRulerHistory.RulerWriterAtTarget.exists_next
+#print axioms PPLLWriteSeqRulerHistory.RulerWriterAtTarget.exists_after_steps
+#print axioms PPLLWriteSeqRulerHistory.RulerWriterAtTarget.exists_target_one_base
+#print axioms PPLLWriteSeqSnapshotHistory.snapshotBirth_payload_precedes_physical_increment
+#print axioms PPLLWriteSeqSnapshotHistory.SnapshotRulerOverwritingHistory.flag_after_target
+#print axioms PPLLWriteSeqSnapshotHistory.SnapshotRulerOverwritingHistory.advance
+#print axioms PPLLWriteSeqSnapshotHistory.RulerOverwritingHistory.toSnapshot
+#print axioms PPLLWriteSeqSnapshotHistory.snapshotSourceTaggedOverwriting_not_free_at_target
+#print axioms PPLLWallSweepRepair.clearComparisonSignal_inProtocolDomain
+#print axioms PPLLWallSweepRepair.pPsiLeaderProbeWall_preserves_barrier_birth
+#print axioms PPLLWallSweepRepair.pPsiLeaderProbeWall_inProtocolDomain
+#print axioms PPLLWallSweepRepair.suppressSigResetKill_handoff
+#print axioms PPLLWallSweepRepair.suppressSigResetKill_inProtocolDomain
+#print axioms PPLLWallSweepRepair.sigMoveLeaderWall_eq_sigMove_of_no_leaders
+#print axioms PPLLWallSweepRepair.sigMoveLeaderWall_incomplete_boundary_clears_left
+#print axioms PPLLWallSweepRepair.sigMoveLeaderWall_inProtocolDomain
+#print axioms PPLLWallSweepRepair.wallSweepBeforeWrite_inProtocolDomain
+#print axioms PPLLWallSweepRegression.probe_wall_preserves_barrier_birth
+#print axioms PPLLWallSweepRegression.reset_wall_echo_collision_still_clears
+#print axioms PPLLWallSweepRegression.wallSweep_twoGroup_trap_escape
+#print axioms PPLLWallSweepSchedule.ResetSweepState.step
+#print axioms PPLLWallSweepSchedule.resetSweepSchedule_reaches
+#print axioms PPLLWallSweepSchedule.resetSweepSchedule_clears_all
+#print axioms PPLLWallSweepRepair.sigMoveLeaderPreclear_incomplete_left
+#print axioms PPLLWallSweepRepair.sigMoveLeaderBeforeControl_right_leader_neutral
+#print axioms PPLLWallSweepRegression.leader_wall_action5_is_killed_before_control
+#print axioms PPLLWallSweepFinite.authorizedSigMoveLeaderWall_core
+#print axioms PPLLWallSweepFinite.authorizedSigMoveLeaderWall_eq_authorizedSigMove_of_no_leaders
+#print axioms PPLLWallSweepFinite.authorizedSigMoveLeaderWall_right_leader_kills
+#print axioms PPLLWallSweepFinite.wallSweepAuthorizedTransition_inProtocolDomain
+#print axioms PPLLWallSweepFinite.erase_wallSweepBoundedTransition
+#print axioms PPLLWallSweepFinite.wallSweepStateCertificate_factor_one
+#print axioms PPLLWallSweepFiniteRegression.wall_t1_remains_provenance_obstruction
+#print axioms PPLLWallSweepFiniteRegression.wall_t8_blocks_orphan_increment
+#print axioms PPLLWallSweepFiniteRegression.wall_t9_preserves_source_self_repair
+#print axioms PPLLWallSweepFiniteRegression.wall_t19_recovery_marks_and_replay_preserves_outputs
+#print axioms PPLLWallSweepFiniteRegression.wall_t20_blocks_pathless_terminal_equal
+#print axioms PPLLWallSweepFiniteRegression.wallSweep_trap_escape
+#print axioms PPLLWallSweepFiniteRegression.wallSweep_birth_occurs_at_check
+#print axioms PPLLWallSweepHistory.markedClearComparisonSignal_fullLocalHistoryTrusted
+#print axioms PPLLWallSweepHistory.clearComparisonSignal_retaining_trusted_marks_not_fullTrusted
+#print axioms PPLLWallSweepHistory.erase_markedSuppressSigResetKill
+#print axioms PPLLWallSweepHistory.markedSuppressSigResetKill_handoff_rehabilitates
+#print axioms PPLLWallSweepHistory.markedComparisonLeaderWall_right_leader_rehabilitates
+#print axioms PPLLWallSweepHistorySchedule.erase_markedResetApplySchedule
+#print axioms PPLLWallSweepHistorySchedule.markedResetSweepSchedule_rehabilitates_all
+#print axioms PPLLWallSweepHistorySchedule.markedResetSweepSchedule_entry
+#print axioms PPLLWallSweepEchoDrain.suppressSigResetKill_responder_echo_false
+#print axioms PPLLWallSweepEchoDrain.echoDrainSchedule_clears_all
+#print axioms PPLLWallSweepEchoDrain.leaderReseedSchedule_echo_free_with_reset
+#print axioms PPLLWallSweepEchoDrain.leaderDrainReseedResetSweep_length
+#print axioms PPLLWallSweepEchoDrain.leaderDrainReseedResetSweep_clears_all
+#print axioms PPLLWallSweepHistorySchedule.markedLeaderDrainReseedResetSweep_entry
+#print axioms PPLLWallSweepFiniteCleanup.wallPriorityOpenAlongBool_eq_true_iff
+#print axioms PPLLWallSweepFiniteCleanup.wallSweepAuthorizedTransition_eq_normal_of_priority_open
+#print axioms PPLLWallSweepFiniteCleanup.WallPriorityOpen.of_noActiveDeletion
+#print axioms PPLLWallSweepFiniteCleanup.wallSweepPathStall_active_responder_contract
+#print axioms PPLLWallSweepFiniteCleanup.wallSweepPathStall_active_edge_decreases
+#print axioms PPLLWallSweepFiniteCleanup.comparisonPathCount_le
+#print axioms PPLLWallSweepFiniteCleanup.exists_wallSweepDeletionDrain
+#print axioms PPLLWallSweepFiniteCleanup.cleanupInterruptMeasure_interrupt_lt
+#print axioms PPLLWallSweepFiniteCleanup.cleanupInterruptMeasure_intended_lt
+#print axioms PPLLWallSweepFiniteCleanup.exists_restartableWallCleanupSchedule
+#print axioms PPLLComparisonHistory.writeSeqThroughPrepare_comparisonTracked_pair
+#print axioms PPLLComparisonHistory.writeSeqAfterPrepare_comparisonTracked_pair
+#print axioms PPLLWallSweepNormalResetContract.writeSeqIncrementGate_cleanupAux_frame
+#print axioms PPLLWallSweepNormalResetContract.writeSeqIncrementGate_comparisonTracked_pair
+#print axioms PPLLWallSweepNormalResetContract.wallSweepAuthorizedNormalBeforeSuppress_resetEchoPair
+#print axioms PPLLWallSweepNormalResetContract.postSuppress_normalReset_handoff
+#print axioms PPLLWallSweepNormalResetContract.wallSweepAuthorized_priority_open_reset_handoff
+#print axioms PPLLWallSweepNormalResetContract.wallSweepPathStall_priority_open_reset_handoff
+#print axioms PPLLAuthorizedComparisonRepair.authorizedCompareSig_leaders_eq
+#print axioms PPLLWallSweepRepair.sigMoveLeaderWall_leaders_eq
+#print axioms PPLLWallSweepRepair.sigMoveLeaderWall_labels_eq
+#print axioms PPLLWallSweepRepair.sigMoveLeaderWall_left_shield_eq
+#print axioms PPLLWallSweepNormalResetContract.wallSweepAuthorizedNormalBeforeSuppress_initiator_anchor
+#print axioms PPLLWallSweepNormalResetContract.wallSweepAuthorizedNormalBeforeSuppress_responder_zero_anchor
+#print axioms PPLLWallSweepNormalResetContract.wallSweepAuthorizedTransition_initiator_anchor
+#print axioms PPLLWallSweepNormalResetContract.wallSweepAuthorizedTransition_responder_zero_survives
+#print axioms PPLLWallSweepNormalResetContract.wallSweepPathStallTransition_initiator_anchor
+#print axioms PPLLWallSweepNormalResetContract.wallSweepPathStallTransition_responder_zero_survives
+#print axioms PPLLWallSweepFiniteCleanup.wallSweepPathStall_active_responder_shields
+#print axioms PPLLWallSweepFiniteCleanup.exists_wallSweepDeletionDrain_cleanupFrame
+#print axioms PPLLWallSweepNormalResetContract.wallSweepPathStall_priority_open_initiator_echo_false
+#print axioms PPLLWallSweepNormalResetContract.wallSweepPathStall_priority_open_leader_reseed_neutral
+#print axioms PPLLWallSweepNormalResetContract.wallSweepPathStall_priority_open_initiator_label_eq
+#print axioms PPLLWallSweepRestartableProtected.exists_protectedRestartableWallCleanupSchedule
+#print axioms PPLLWallSweepRestartableProtected.exists_restartableLeaderDrainReseedResetSweep_clears_all
+#print axioms PPLLWallSweepFiniteCleanup.RestartableWallExecution.runLocalSchedule_eq
+#print axioms PPLLWallSweepFullCleanupRegression.full_wall_cleanup_word_clears_lottery_residue
+#print axioms PPLLWallSweepFullCleanupRegression.wall_t19_final_deletion_clears_paths
+#print axioms PPLLWallSweepFullCleanupRegression.wallSweep_twoGroup_birth_drain_noActive
+#print axioms PPLLWallSweepFullCleanupRegression.wallSweep_twoGroup_trap_reaches_protected_anchor
+#print axioms PPLLWallSweepFullCleanupRegression.wallSweep_twoGroup_protected_anchor_reachable
+#print axioms PPLLWallSweepFullCleanupRegression.wallSweep_twoGroup_trap_reaches_restartable_comparison_cleanup
+#print axioms PPLLRepair.eliminateLeadersNoCollisionSignal_right_one
+#print axioms PPLLNoCheckBirthConditionTwoKernel.noCollision_right_signal_one_of_aligned_source
+#print axioms PPLLNoCheckBirthConditionTwoKernel.noCollision_left_fire_leader
+#print axioms PPLLNoCheckBirthConditionTwoKernel.noCollision_idle_propagation_frame
+#print axioms PPLLWallSweepNormalResetContract.deletionPriorityExpireOne_peaceView_frame
+#print axioms PPLLWallSweepNormalResetContract.wallSweepPathStall_peaceView_eq_authorized
+#print axioms PPLLWallSweepNormalResetContract.authorizedPostSuppress_peaceView_eq_noCollision
+#print axioms PPLLNoCheckBirthConditionTwoProtocol.noCollision_congr
+#print axioms PPLLWallSweepNormalResetContract.wallSweepAuthorizedBeforeCheck_peaceView_of_ppsi_frame
+#print axioms PPLLWallSweepNormalResetContract.WallPeaceEdgeFrame.of_aligned_check_frame
+#print axioms PPLLWallSweepNormalResetContract.wallSweepAuthorizedNormalBeforeSuppress_peaceView_of_frame
+#print axioms PPLLWallSweepNormalResetContract.wallSweepAuthorizedNormalTail_peaceView_eq_noCollision
+#print axioms PPLLWallSweepNormalResetContract.wallSweepAuthorized_priority_open_peaceView_eq_noCollision
+#print axioms PPLLWallSweepNormalResetContract.wallSweepPathStall_priority_open_peaceView_eq_noCollision
+#print axioms PPLLWallSweepNormalResetContract.wallSweepPathStall_active_responder_peaceView_frame
+#print axioms PPLLWallSweepNormalResetContract.wallSweepPathStall_active_edge_peaceView_frame
+#print axioms PPLLWallSweepNormalResetContract.exists_wallSweepDeletionDrain_peaceFrame
+#print axioms PPLLWallSweepNormalResetContract.wallSweepPathStall_priority_open_leader_fire_anchor
+#print axioms PPLLWallSweepNormalResetContract.wallSweepPathStall_priority_open_signal_propagates
+#print axioms PPLLWallSweepNormalResetContract.wallSweepPathStall_priority_open_idle_propagation_frame
+#print axioms PPLLWallSweepShieldCircuit.ShieldPropagationState.step
+#print axioms PPLLWallSweepShieldCircuit.shieldPropagationSchedule_reaches
+#print axioms PPLLWallSweepShieldCircuit.shieldCircuit_establishes_anchor
+#print axioms PPLLWallSweepShieldCircuit.checkSig_responder_leader_eq_of_safe
+#print axioms PPLLWallSweepShieldCircuit.wallSweepNormalSanitizedStage_check_safe_of_aligned_neutral
+#print axioms PPLLWallSweepShieldCircuit.WallPeaceEdgeFrame.of_aligned_neutral
+#print axioms PPLLWallSweepShieldCircuit.wallSweepPathStall_priority_open_leader_seed_handoff
+#print axioms PPLLWallSweepShieldCircuit.wallSweepPathStall_priority_open_leader_fire_neutral_anchor
+#print axioms PPLLWallSweepShieldCircuitFull.WallShieldPropagationState.step
+#print axioms PPLLWallSweepShieldCircuitFull.wallShieldPropagationSchedule_reaches
+#print axioms PPLLWallSweepShieldCircuitFull.wallShieldCircuit_establishes_anchor
+#print axioms PPLLWallSweepPreCheckResetRepair.preCheckResetWall_check_leaders_eq_of_send
+#print axioms PPLLWallSweepPreCheckResetRepair.wallSweepPreCheckResetBeforeSuppress_neutral_of_left_reset
+#print axioms PPLLWallSweepPreCheckResetRepair.wallSweepPreCheckResetAuthorizedTransition_inProtocolDomain
+#print axioms PPLLWallSweepPreCheckResetRepair.erase_wallSweepPreCheckResetBoundedTransition
+#print axioms PPLLWallSweepPreCheckResetRepair.wallSweepPreCheckResetNormalAfterSuppress_reset_handoff
+#print axioms PPLLWallSweepPreCheckResetRepair.wallSweepPreCheckResetNormalTail_reset_handoff
+#print axioms PPLLWallSweepPreCheckResetRepair.wallSweepPreCheckResetAuthorized_reset_handoff
+#print axioms PPLLWallSweepPreCheckResetRepair.wallSweepPreCheckResetPathStall_reset_handoff
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetPathStall_active_responder_contract
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetPathStall_priority_open_responder_echo_false
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetPathStall_priority_open_initiator_anchor
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetPathStall_priority_open_label_of_anchor
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetPathStall_priority_open_initiator_echo_false
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetPathStall_priority_open_leader_reseed
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetPathStall_priority_open_leader_reseed_neutral
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetPathStall_priority_open_responder_zero_survives
+#print axioms PPLLWallSweepPreCheckResetContracts.authorizedPPsiLeaderProbeWall_barrier_probe_birth
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepAuthorizedBeforeCheck_barrier_probe_birth
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetPathStall_priority_open_barrier_probe_birth
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetAuthorized_followers_not_both_leaders
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetPathStall_followers_not_both_leaders
+#print axioms PPLLWallSweepPreCheckResetContracts.exists_wallSweepPreCheckResetDeletionDrain_cleanupFrame
+#print axioms PPLLPpsiLeaderCreationSchedule.pPsiProbeChaseSchedule_creates_leader
+#print axioms PPLLPpsiLeaderCreationSchedule.exists_pPsiProbeSeed_leader_or_probe_of_not_dvd
+#print axioms PPLLPpsiLeaderCreationSchedule.exists_pPsiLeaderProbeWall_hasLeader_of_not_dvd
+#print axioms PPLLPpsiLeaderCreationRepair.wallSweepPreCheckResetAuthorized_priority_open_ppsiControlPair
+#print axioms PPLLPpsiLeaderCreationRepair.wallSweepPreCheckResetPathStall_priority_open_ppsiControlPair
+#print axioms PPLLPpsiLeaderCreationRepair.exists_wallSweepPreCheckResetDeletionDrain_ppsiControlFrame
+#print axioms PPLLPpsiLeaderCreationRepair.localStep_first_physical_leader_unique
+#print axioms PPLLPpsiLeaderCreationRepair.exists_preCheckReset_hasUniqueLeader_of_not_dvd
+#print axioms PPLLPpsiLeaderCreationRepair.exists_preCheckReset_hasLeader_of_not_dvd
+#print axioms PPLLWallSweepRestartableGeneric.preCheckResetProtectedCleanupContract
+#print axioms PPLLWallSweepRestartableGeneric.RestartableExecutionFor.runLocalSchedule_eq
+#print axioms PPLLWallSweepRestartableGeneric.exists_restartableLeaderDrainReseedResetSweep_of_contract
+#print axioms PPLLWallSweepRestartableGeneric.exists_restartablePreCheckResetLeaderDrainReseedResetSweep_clears_all
+#print axioms PPLLWallSweepPreCheckResetContracts.suppressSigResetKill_source_echo_collision
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetPathStall_priority_open_source_echo_collision
+#print axioms PPLLWallSweepEchoRank.binaryRank_lt_two_pow
+#print axioms PPLLWallSweepEchoRank.exists_firstTrue_of_binaryRank_ne_zero
+#print axioms PPLLWallSweepEchoRank.clockwiseEchoRank_eq_of_resetEchoConfigFrame
+#print axioms PPLLWallSweepEchoRank.clockwiseAttemptConfig_ahead_eq
+#print axioms PPLLWallSweepEchoRank.FirstBlockerEffect.rank_lt
+#print axioms PPLLWallSweepEchoRank.preCheckReset_firstBlockerAttempt_rank_lt
+#print axioms PPLLNoCheckBirthConditionTwoKernel.noCollision_zero_bullets_noFire_frame
+#print axioms PPLLWallSweepPreCheckResetContracts.suppressSigResetKill_source_reset_echo_exact
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetBeforeSuppress_peaceFrame_of_aligned_source
+#print axioms PPLLWallSweepPreCheckResetContracts.exists_wallSweepPreCheckResetDeletionDrain_peaceFrame
+#print axioms PPLLWallSweepClockwiseScheduler.exists_clockwiseRetrySchedule_of_rank
+#print axioms PPLLWallSweepClockwiseScheduler.exists_clockwiseRetrySchedule_after_oneDrain
+#print axioms PPLLWallSweepUnshieldedRetry.ClockwiseRetryReady.of_seed_frame
+#print axioms PPLLWallSweepUnshieldedRetry.preCheckResetOneDrainContract
+#print axioms PPLLWallSweepPreCheckNoFire.wallSweepPreCheckResetPathStall_source_noFire_zeroResponder
+#print axioms PPLLWallSweepPreCheckNoFire.wallSweepPreCheckResetPathStall_source_noFire
+#print axioms PPLLWallSweepClockwiseAttempt.preCheckResetClockwiseAttemptContractExact
+#print axioms PPLLWallSweepClockwiseAttempt.exists_preCheckResetClockwiseRetryScheduleExact_after_oneDrain
+#print axioms PPLLWallSweepPreCheckAnchor.wallSweepPreCheckResetPathStall_leader_fire
+#print axioms PPLLWallSweepPreCheckAnchor.exists_preCheckResetClockwiseShieldSchedule_after_oneDrain
+#print axioms PPLLRepair.eliminateLeadersNoCollisionLeaderSink_closing_fields
+#print axioms PPLLRepair.eliminateLeadersNoCollisionLeaderSink_leaders_eq
+#print axioms PPLLRepair.eliminateLeadersNoCollisionLeaderSink_labels_eq
+#print axioms PPLLWallSweepNormalResetContract.authorizedPostSuppressLeaderSink_eq_of_responder_follower
+#print axioms PPLLWallSweepNormalResetContract.authorizedPostSuppressLeaderSink_responder_zero_survives
+#print axioms PPLLWallSweepNormalResetContract.authorizedPostSuppressLeaderSink_responder_zero_anchor
+#print axioms PPLLWallSweepNormalResetContract.authorizedPostSuppressLeaderSink_responder_leader_zero
+#print axioms PPLLWallSweepNormalResetContract.authorizedPostSuppressLeaderSink_new_initiator_origin
+#print axioms PPLLWallSweepNormalResetContract.authorizedPostSuppressLeaderSink_new_initiator_migration
+#print axioms PPLLWallSweepPreCheckResetRepair.wallSweepPreCheckResetLeaderSinkAuthorizedTransition_inProtocolDomain
+#print axioms PPLLWallSweepPreCheckResetRepair.erase_wallSweepPreCheckResetLeaderSinkBoundedTransition
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetLeaderSinkPathStall_eq_of_responder_active
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetLeaderSinkPathStall_priority_open_barrier_probe_birth
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetLeaderSinkPathStall_priority_open_barrier_probe_birth_zero
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetLeaderSinkPathStall_priority_open_responder_leader_zero
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetLeaderSinkAuthorized_priority_open_left_follower_not_both
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetLeaderSinkPathStall_priority_open_left_follower_not_both
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetLeaderSinkPathStall_priority_open_followers_not_both
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepAuthorizedBeforeCheck_new_responder_zero
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckReset_beforeCheck_new_responder_zero
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetLeaderSinkAuthorized_priority_open_new_initiator_check_migration
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetLeaderSinkPathStall_priority_open_new_initiator_check_migration
+#print axioms PPLLWallSweepPreCheckResetContracts.exists_wallSweepPreCheckResetLeaderSinkDeletionDrain_peaceFrame
+#print axioms PPLLPpsiLeaderCreationRepair.wallSweepPreCheckResetLeaderSinkPathStall_priority_open_ppsiControlPair
+#print axioms PPLLPpsiLeaderCreationRepair.exists_wallSweepPreCheckResetLeaderSinkDeletionDrain_ppsiControlFrame
+#print axioms PPLLPpsiLeaderCreationRepair.localStepLeaderSink_first_physical_leader_unique
+#print axioms PPLLPpsiLeaderCreationRepair.localStepLeaderSink_barrier_probe_first_leader_unique_zero
+#print axioms PPLLPpsiLeaderCreationRepair.localStepLeaderSink_first_physical_leader_location
+#print axioms PPLLPpsiLeaderCreationRepair.localStepLeaderSink_first_physical_leader_initiator_check_migration
+#print axioms PPLLPpsiLeaderCreationRepair.localStepLeaderSink_first_physical_leader_classified
+#print axioms PPLLPpsiLeaderCreationRepair.localStepLeaderSink_first_physical_leader_location_strong
+#print axioms PPLLPpsiLeaderCreationRepair.exists_preCheckResetLeaderSink_firstLeader_location_of_not_dvd
+#print axioms PPLLPpsiLeaderCreationRepair.exists_preCheckResetLeaderSink_hasUniqueLeader_of_not_dvd
+#print axioms PPLLPpsiLeaderCreationRepair.exists_preCheckResetLeaderSink_hasLeader_of_not_dvd
+#print axioms PPLLWallSweepUnshieldedRetry.preCheckResetLeaderSinkRootedOneDrainContract
+#print axioms PPLLWallSweepPreCheckNoFire.wallSweepPreCheckResetLeaderSinkPathStall_eq_of_source_follower
+#print axioms PPLLWallSweepClockwiseAttempt.preCheckResetLeaderSink_rootedClockwiseFailedAttempt
+#print axioms PPLLWallSweepPreCheckAnchor.wallSweepPreCheckResetLeaderSinkPathStall_closing_delivers
+#print axioms PPLLWallSweepPreCheckAnchor.preCheckResetLeaderSink_rooted_zeroRank_fullPass_exact
+#print axioms PPLLWallSweepPreCheckAnchor.RootedLeaderSinkRetryDoneExact.fire_step
+#print axioms PPLLWallSweepPreCheckAnchor.exists_preCheckResetLeaderSinkRootedShieldSchedule
+#print axioms PPLLWallSweepPreCheckAnchor.exists_preCheckResetLeaderSinkRootedShieldSchedule_after_oneDrain
+#print axioms PPLLWallSweepClockwiseAttempt.ResetAwareLiveRetryReady.toRetryReady_of_mobileLiveRank_eq_zero
+#print axioms PPLLWallSweepClockwiseAttempt.ResetAwareNormalizedPrefixState.collision_then_liveRetryReady
+#print axioms PPLLWallSweepClockwiseAttempt.resetAwareLiveRetry_live_event_round
+#print axioms PPLLWallSweepClockwiseAttempt.resetAwareLiveRetry_echo_event_round
+#print axioms PPLLWallSweepClockwiseAttempt.exists_resetAwareLiveRetrySchedule
+#print axioms PPLLWallSweepPreCheckAnchor.exists_resetAwareShieldedProtectedOrLeaderlessSchedule
+#print axioms PPLLPpsiLeaderCreationRepair.sum_ofFn_le_add_one_of_pair_le_add_one
+#print axioms PPLLWallSweepClockwiseAttempt.resetAwareLeader_localStep_bulletTwoCount_le_add_one
+#print axioms PPLLWallSweepClockwiseAttempt.exists_resetProbeLeaderSink_outgoingSurvivor_of_not_dvd
+#print axioms PPLLWallSweepClockwiseAttempt.exists_resetProbeLeaderSink_outgoingSurvivor_from_leaderless_of_not_dvd
+#print axioms PPLLWallSweepClockwiseAttempt.exists_resetProbeLeaderSink_resetFrontier_from_leaderless_of_not_dvd
+#print axioms PPLLWallSweepClockwiseAttempt.localStep_birthSignalZero_frame
+#print axioms PPLLWallSweepClockwiseAttempt.localStep_birthSignalZero_new_leader_signal_zero
+#print axioms PPLLWallSweepClockwiseAttempt.localStep_birthSignalZero_eq_resetProbe_of_active_responder
+#print axioms PPLLWallSweepClockwiseAttempt.exists_birthSignalZeroDeletionDrain
+#print axioms PPLLWallSweepClockwiseAttempt.exists_birthSignalZeroLeaderlessResetCommandCount_lt_of_source
+#print axioms PPLLWallSweepClockwiseAttempt.exists_birthSignalZeroLeaderlessResetDrain
+#print axioms PPLLWallSweepClockwiseAttempt.exists_birthSignalZero_hasUniqueLeader_of_not_dvd
+#print axioms PPLLWallSweepClockwiseAttempt.exists_birthSignalZero_drainedUniqueLeader_bulletTwo_le_of_not_dvd
+#print axioms PPLLWallSweepClockwiseAttempt.birthSignalZero_retryStep_bulletTwo
+#print axioms PPLLWallSweepClockwiseAttempt.exists_birthSignalZero_outgoingSurvivor_of_not_dvd
+#print axioms PPLLWallSweepClockwiseAttempt.exists_birthSignalZero_outgoingSurvivor_from_leaderless_of_not_dvd
+#print axioms PPLLWallSweepClockwiseAttempt.exists_birthSignalZero_resetFrontier_from_leaderless_of_not_dvd
+#print axioms PPLLWallSweepClockwiseAttempt.exists_resetAwareLiveRetryBirthSignalZeroToShieldedSchedule
+#print axioms PPLLWallSweepClockwiseAttempt.exists_resetAwareRootedBirthSignalZeroClosingRepairSchedule
+#print axioms PPLLWallSweepPreCheckAnchor.exists_birthSignalZeroFrontierProtectedOrLeaderlessSchedule
+#print axioms PPLLWallSweepPreCheckAnchor.exists_birthSignalZeroLeaderlessProtectedOrStrictDecreaseSchedule_of_not_dvd
+#print axioms PPLLWallSweepPreCheckAnchor.exists_birthSignalZeroLeaderlessProtectedSchedule_of_not_dvd
+#print axioms PPLLWallSweepPreCheckAnchor.exists_birthSignalZeroResetFreeLeaderlessProtectedSchedule_of_not_dvd
+#print axioms PPLLWallSweepPreCheckAnchor.wallSweepBirthSignalZeroPathStall_priority_open_leaderPairMass_le
+#print axioms PPLLWallSweepPreCheckAnchor.wallSweepBirthSignalZeroPathStall_priority_open_two_leaders_nonzero_mass_lt
+#print axioms PPLLWallSweepPreCheckAnchor.localStep_birthSignalZero_physicalLeaderCount_le_of_edge_leader
+#print axioms PPLLWallSweepPreCheckAnchor.localStep_birthSignalZero_two_leaders_nonzero_physicalLeaderCount_lt
+#print axioms PPLLWallSweepClockwiseAttempt.resetAwareLiveRetry_live_event_round_to_shielded
+#print axioms PPLLWallSweepClockwiseAttempt.resetAwareLiveRetry_echo_event_round_general
+#print axioms PPLLWallSweepClockwiseAttempt.resetAwareLiveRetry_positive_round_to_shielded
+#print axioms PPLLWallSweepClockwiseAttempt.exists_resetAwareLiveRetryToShieldedSchedule_of_rank
+#print axioms PPLLWallSweepClockwiseAttempt.exists_resetAwareLiveRetryToShieldedSchedule
+#print axioms PPLLWallSweepPreCheckAnchor.exists_resetAwareFrontierProtectedOrLeaderlessSchedule
+#print axioms PPLLWallSweepPreCheckAnchor.exists_resetAwareLeaderlessProtectedOrNonincreaseSchedule_of_not_dvd
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetNormalAfterSuppress_responder_zero_anchor
+#print axioms PPLLWallSweepPreCheckAnchor.wallSweepPreCheckResetLeaderSinkNormalTail_responder_zero_unshield
+#print axioms PPLLWallSweepPreCheckAnchor.wallSweepPreCheckResetLeaderSinkAuthorized_responder_zero_unshield
+#print axioms PPLLWallSweepPreCheckAnchor.wallSweepPreCheckResetLeaderSinkPathStall_responder_zero_unshield
+#print axioms PPLLWallSweepPreCheckAnchor.wallSweepPreCheckResetLeaderSinkPathStall_closing_output_no_source
+#print axioms PPLLWallSweepPreCheckAnchor.wallSweepPreCheckResetLeaderSinkPathStall_two_edge_duplicate_unshield
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetLeaderSinkAuthorized_priority_open_responder_zero_unshield
+#print axioms PPLLWallSweepPreCheckResetContracts.wallSweepPreCheckResetLeaderSinkPathStall_priority_open_responder_zero_unshield
+#print axioms PPLLWallSweepPreCheckAnchor.preCheckResetLeaderSink_sameEdge_replay_unshields_duplicate
+#print axioms PPLLWallSweepFiniteRegression.wallSweep_existing_reset_does_not_preempt_check_birth
+#print axioms PPLLWallSweepFiniteRegression.preCheckResetWall_blocks_reset_covered_birth
+#print axioms PPLLWallSweepFiniteRegression.preCheckResetWall_preserves_uncovered_check_birth
+#print axioms PPLLWriteSeqPersistenceRegression.rulerTargetOne_equal_advance_trace
+#print axioms PPLLWriteSeqPersistenceRegression.rulerTargetOne_physical_history_advance
+#print axioms PPLLWriteSeqPersistenceRepair.writeActionPreservingComparison_equal_of_no_commands
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_equal_nonterminal
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_equal_seed
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_equal_terminal_one
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_equal_terminal_zero
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_move_flip_nonzero
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_increment_nonzero
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_move_flip_zero
+#print axioms PPLLWriteSeqPersistenceRepair.writeSeqPersistentComparisonTransportLifecycle_increment_zero
+#print axioms PPLLWriteSeqPersistenceRegression.persistentCompleteTransportSchedule_eq
+#print axioms PPLLWriteSeqPersistenceRegression.persistentCompleteTransport_crosses_group
+#print axioms PPLLWriteSeqPersistenceRegression.persistentCompleteTransport_sourceTagged
+#print axioms PPLLWriteSeqPersistenceRegression.persistentCompleteTransport_rulerHistory
+#print axioms PPLLWriteSeqPersistenceRegression.writerBlockTransportSchedule_three
+#print axioms PPLLWriteSeqPersistenceRegression.writerTransportThree_crosses_group
+#print axioms PPLLWriteSeqPersistenceRegression.writerTransportThree_sourceTagged
+#print axioms PPLLWriteSeqPersistenceRegression.writerTransportThree_rulerHistory
+#print axioms PPLLWriteSeqPersistenceRegression.persistentLifecycle_preserves_same_call_increment
+#print axioms PPLLWriteSeqPersistenceRepair.writeActionApplyIncrementAndFlip_inProtocolDomain
+#print axioms two_pow_succ_dvd_of_lt_trailingZeros
+#print axioms two_pow_dvd_iff_le_trailingZeros
+#print axioms rulerWriterFlagBefore_succ
+#print axioms rulerWriterFlagBefore_false_of_payload_lt_target
+#print axioms RulerOverwritingHistory.flag_after_target
+#print axioms RulerOverwritingHistory.advance
+#print axioms sourceTaggedOverwriting_not_free_of_ruler_history
+#print axioms noFreeOverwritingSignal_of_ruler_certified
+#print axioms PPLLWriteSeqPersistenceRegression.persistentLifecycle_increment_completes_flag_flip
+#print axioms PPLLWriteSeqLifecycleObstructions.writeAction_responder_departs_of_guard
+#print axioms PPLLWriteSeqLifecycleObstructions.writeAction_stable_successor_responder_departs
+#print axioms PPLLWriteSeqLifecycleObstructions.writeActionActivate_terminal_not_depart
+#print axioms PPLLWriteSeqLifecycleObstructions.writeAction_terminal_wrap_initiator_not_depart
+#print axioms PPLLWriteSeqLifecycleObstructions.terminal_wrap_transfer_stage_dead
+#print axioms PPLLWriteConditionFourLocalityNoGo.twinPaperSafe
+#print axioms PPLLWriteConditionFourLocalityNoGo.twinOnlyDiffersAtSix
+#print axioms PPLLWriteConditionFourLocalityNoGo.twinScheduledPairEq
+#print axioms PPLLWriteConditionFourLocalityNoGo.twinScheduledFinitePairEq
+#print axioms PPLLWriteConditionFourLocalityNoGo.twinAfterScheduledPairEq
+#print axioms PPLLWriteConditionFourLocalityNoGo.twinAfterNoFree
+#print axioms PPLLWriteConditionFourLocalityNoGo.conditionFour_pair_locality_separation
+#print axioms PPLLCounterexample.counterBadProfile_semantically_valid
+#print axioms PPLLCounterexample.certifiedCounterBadProfile
+#print axioms PPLLCounterexample.bad_trace_pPsi
+#print axioms PPLLCounterexample.bad_trace_genSig
+#print axioms PPLLCounterexample.bad_trace_clean_eliminate_move
+#print axioms PPLLCounterexample.bad_trace_check_creates_responder
+#print axioms PPLLCounterexample.bad_trace_disappear_compare
+#print axioms PPLLCounterexample.bad_trace_suppress_eliminateLeaders
+#print axioms PPLLCounterexample.bad_trace_writeSeq_migrates
+#print axioms PPLLCounterexample.bad_trace_matches_ppll
+#print axioms PPLLVerify.ppll_initiator_label_stable
+#print axioms PPLLVerify.ppll_responder_label_stable_of_nonbarrier
+#print axioms PPLLVerify.ppll_responder_label_stable_of_leader_zero
+#print axioms PPLLVerify.ppll_eq_writeSeq_after_named_prefix
+#print axioms PPLLVerify.pPsi_new_responder_leader_requires_probe_barrier
+#print axioms PPLLVerify.checkSig_new_responder_leader_requires_terminal_equal
+#print axioms PPLLVerify.writeSeq_responder_leader_was_leader
+#print axioms PPLLVerify.ppll_initiator_not_created_of_responder_leader_zero
+#print axioms PPLLVerify.writeSeq_new_initiator_requires_responder_leader
+#print axioms PPLLVerify.ppll_new_responder_leader_requires_barrier_or_check
+#print axioms PPLLVerify.ppll_initiator_leader_has_origin
+#print axioms PPLLVerify.compareSig_inert_of_right_path_bot
+#print axioms PPLLCompleteMultiLeaderCleanup.eliminateLeadersNoCollisionEgressSink_idle_propagation
+#print axioms PPLLCompleteMultiLeaderCleanup.eliminateLeadersNoCollisionEgressSink_right_leader_fire_egress
+#print axioms PPLLCompleteMultiLeaderCleanup.eliminateLeadersNoCollisionEgressSink_left_leader_fire_live
+#print axioms PPLLCompleteMultiLeaderCleanup.eliminateLeadersNoCollisionEgressSink_live_bullet_move_left
+#print axioms PPLLCompleteMultiLeaderCleanup.eliminateLeadersNoCollisionEgressSink_live_bullet_kills_left
+#print axioms PPLLCompleteMultiLeaderCleanup.erase_multiLeaderCleanupBoundedTransition
+#print axioms PPLLCompleteMultiLeaderCleanup.deletionPriorityExpireOne_cleanupPhysicalView
+#print axioms PPLLCompleteMultiLeaderCleanup.multiLeaderCleanupTransition_cleanupPhysicalView
+#print axioms PPLLCompleteMultiLeaderCleanup.cleanupPhysicalConfigRefinesRaw_localStep
+#print axioms PPLLCompleteMultiLeaderCleanup.cleanupPhysicalConfigRefinesRaw_runLocalSchedule
+#print axioms PPLLCompleteMultiLeaderCleanup.TwoLeaderCleanupReady.trace
+#print axioms PPLLCompleteMultiLeaderCleanup.TwoLeaderCleanupReady.rawPhysicalLeaderCount_lt
+#print axioms PPLLCompleteMultiLeaderCleanup.TwoLeaderCleanupReady.uniqueLeader
+#print axioms PPLLCompleteMultiLeaderCleanup.twoLeaderCleanupReady_ordinary_signal_victim_survives
+#print axioms PPLLCompleteMultiLeaderCleanup.twoLeaderCleanup_leaderSink_repairs_unaligned_regression
+#print axioms PPLLCompleteMultiLeaderCleanup.twoLeaderCleanup_leaderSink_regression_count_lt
+#print axioms PPLLCompleteMultiLeaderCleanup.twoLeaderCleanup_leaderSink_regression_uniqueLeader
+#print axioms PPLLCompleteMultiLeaderCleanup.twoLeaderCleanup_full_expiring_regression_count_lt
+#print axioms PPLLCompleteMultiLeaderCleanup.twoLeaderCleanup_full_expiring_regression_uniqueLeader
+#print axioms PPLLCompleteMultiLeaderCleanup.hasUniqueLeader_of_rawPhysicalLeaderCount_eq_one
+#print axioms PPLLCompleteMultiLeaderCleanup.hasUniqueLeader_of_expiringPhysicalLeaderCount_eq_one
+#print axioms PPLLCompleteMultiLeaderCleanup.exists_multiLeaderCleanupSchedule_to_count_one_of_count
+#print axioms PPLLCompleteMultiLeaderCleanup.exists_multiLeaderCleanupSchedule_to_count_one
+#print axioms PPLLCompleteMultiLeaderCleanup.exists_multiLeaderCleanupSchedule_to_uniqueLeader
+#print axioms PPLLCompleteMultiLeaderCleanup.exists_multiLeaderCleanupSchedule_to_count_one_with_budget
+#print axioms PPLLCompleteMultiLeaderCleanup.exists_multiLeaderCleanupSchedule_to_uniqueLeader_with_budget
+#print axioms AAFJPK.CenteredRenewal.RawFirstClean.firstZeroCostNumerator_le_of_rounded
+#print axioms AAFJPK.CenteredRenewal.RawFirstClean.physicalRawCleanCostNumerator_le_allStateRemaining
+#print axioms AAFJPK.CenteredRenewal.RawFirstClean.physicalRawCleanCostNumerator_le_540_cube
+#print axioms AAFJPK.CenteredRenewal.RawFirstCleanWhp.two_mul_physicalRawCleanMissCount_le_pow
+#print axioms AAFJPK.CenteredRenewal.RawFirstCleanWhp.pow_two_mul_physicalRawCleanMissCount_le_pow
+#print axioms PPLLPolylogCarrierParameters.rootedCarrierStateCount_le_explicit_cube
+#print axioms PPLLPairedFivePassCarrier.pairedFivePassStateCount_le_explicit_cube
+#print axioms PPLLLinearCarrierPacking.width_leastNonDivisor_dvd
+#print axioms PPLLLinearCarrierPacking.leastNonDivisor_not_dvd_blockCount
+#print axioms PPLLLinearCarrierPacking.sourceBit_injective
+#print axioms PPLLLinearCarrierPacking.sourceBit_labelSlot
+#print axioms PPLLLinearCarrierPacking.packedCellStates_length
+#print axioms PPLLLinearCarrierPacking.packedLargeBranchStateCount_le_loglog
+#print axioms PPLLLinearCarrierGeometry.exists_stopped_packed_grid_or_leader_from_root
+#print axioms PPLLLinearCarrierGeometry.exists_stopped_packed_grid_or_leader
+#print axioms PPLLLinearCarrierGeometry.geometryFramedPackedCellStates_length
+#print axioms PPLLLinearCarrierGeometry.geometryFramedLargeBranchStateCount_le_loglog
+#print axioms PPLLPeriodHColorVoter.successorGrid_iff_offset_consensus
+#print axioms PPLLPeriodHColorVoter.periodRepairStep_fixed_iff_grid
+#print axioms PPLLPeriodHColorVoter.periodGridMissTree_tail_moment
+#print axioms PPLLPeriodHColorVoter.periodGrid_truncated_expectation_le_half_cube
+#print axioms PPLLParallelGeometryLift.positions_parallelStep
+#print axioms PPLLParallelGeometryLift.positionGrid_parallelStep
+#print axioms PPLLParallelGeometryLift.positions_runParallel
+#print axioms PPLLParallelGeometryLift.rawParallelGridMissTree_eq
+#print axioms PPLLParallelGeometryLift.rawParallelGridWeightedMissTotal_eq
+#print axioms PPLLParallelGeometryLift.parallelGridMissTree_tail_moment
+#print axioms PPLLParallelGeometryLift.parallelGrid_truncated_expectation_le_half_cube
+#print axioms PPLLParallelGeometryLift.rawParallelGrid_truncated_expectation_le_half_cube
+#print axioms PPLLParallelGeometryPacked.splitPacked_bijective
+#print axioms PPLLParallelGeometryPacked.packedPositions_parallelStep
+#print axioms PPLLParallelGeometryPacked.packedPositionGrid_step
+#print axioms PPLLParallelGeometryPacked.packedGrid_truncated_expectation_le_half_cube
+#print axioms PPLLParallelGeometryPacked.packedParallelStateCount
+#print axioms PPLLFixedActiveStaging.transition_leader_at_most_one
+#print axioms PPLLFixedActiveStaging.centered_transition_source_labelBit
+#print axioms PPLLFixedActiveStaging.centered_transition_target_label_of_ready
+#print axioms PPLLFixedActiveStaging.centered_transition_target_label_of_not_ready
+#print axioms PPLLFixedActiveStaging.exists_leaderSupport
+#print axioms PPLLFixedActiveStaging.linearize_prepared_output_coherent
+#print axioms PPLLFixedActiveStaging.currentWord_linearize_prepared
+#print axioms PPLLFixedActiveStaging.runRoll_preserves_post_view
+#print axioms PPLLFixedActiveStaging.runRoll_preserves_output
+#print axioms PPLLFixedActiveStaging.linearizeRootLeader_positions
+#print axioms PPLLRole3PostRoute.routeService_debt
+#print axioms PPLLRole3PostRoute.taggedLinearizeRootLeader_payload
+#print axioms PPLLRole3PostRow.allAlignedLiteral_parallelStep
+#print axioms PPLLV2HeldValidatorExit.exitWord_length
+#print axioms PPLLV2HeldValidatorExit.drainDeny
+#print axioms PPLLV2HeldValidatorExit.heldValidator_exitWord
+#print axioms PPLLV2ValidatorRankRepair.repaired_eq_literal_of_ne
+#print axioms PPLLV2ValidatorRankRepair.rank_next_le
+#print axioms PPLLV2ValidatorRankRepair.exists_rank_drop
+#print axioms PPLLV2ValidatorRankRepair.oneStep_truncatedCostNumerator_le
+#print axioms PPLLV2ValidatorPhysicalRefinement.adjacent_grid_coherence_exclusive
+#print axioms PPLLV2ValidatorPhysicalRefinement.packed_qmat_staging_framed
+#print axioms PPLLV2ValidatorPhysicalRefinement.pure_qmat_schedule_cannot_produce_staging
+#print axioms PPLLV2ValidatorPhysicalRefinement.courierStateCode_injective
+#print axioms PPLLV2ValidatorPhysicalRefinement.courier_code_capacity_exact
+#print axioms PPLLUniformCompletedEdgeTimeChange.UniformCoreSafeRemainder.no_stutter_only_state
+#print axioms PPLLCaptureStoppedCompiler.CaptureCompiler.captureServiceContinuationCost_le_width_add
+#print axioms PPLLClockedBarrierScheduler.clockedGap_child_sum
+#print axioms PPLLClockedBarrierScheduler.clockedCoalescenceBudget_le_cube
+#print axioms PPLLSelectorLatchLocality.twoRow_double_latch
+#print axioms PPLLCurrentTableClockObstruction.prioritized_reserved_outputs_decode_none
+#print axioms PPLLCurrentTableClockObstruction.qmat_cannot_commit_payload
+#print axioms PPLLStandalonePostGridScrub.sanitationRank_localStep_lt_of_dirty
+#print axioms PPLLPostGridSanitationBoundary.total_sanitation_requires_consumptive_lease_row
+#print axioms PairedDefectMatching.terminal_iff_maximalMatching
+#print axioms PeriodHIncidenceChoice.candidate10_step
+#print axioms PeriodHIncidenceChoice.choiceRaceReserve_incidence_childSum
+#print axioms PeriodHIncidenceChoice.goodEdgeCount_ge_badEdgeCount
+#print axioms PositiveGapLocalProjectionNoGo.positiveGap_targetCommit_no_componentwise_linearization
+#print axioms PositiveGapLocalProjectionNoGo.positiveGap_sourceAck_no_componentwise_linearization
+#print axioms PPLLFivePassResidual.work_eq_succ
+#print axioms PPLLFivePassResidual.reqMove_boundary
+#print axioms PPLLFivePassResidual.ackMove_boundary
+#print axioms PPLLFivePassResidual.initial_work_le_nine_mul
+#print axioms PPLLFivePassResidual.totalWork_le_five_mul_totalSpan
+#print axioms SpanChargedOnceAudit.fixed_span_survives_retries
+#print axioms Leader.ReadSupportContact.adjacent_pair_contact_count
+#print axioms Leader.ReadSupportContact.wired_offPay
+#print axioms BirthSeedRenewal.seeded_birth_half_mass
+#print axioms BirthCloseRenewal.ready_birth_half_mass
+#print axioms BirthFullHostCheckEntry.checkWindow_creates_leader
+#print axioms BirthFullHostCheckEntry.current_host_not_closes_outputLegit
+#print axioms LDSinkTwoGapRaceSupportResolution.no_racePortResidual
+#print axioms LDSinkTwoGapRaceSupportResolution.no_entranceBellman
+#print axioms LDSinkTwoGapArrivalRaceMass.physical_race_mass
+#print axioms LDSinkTwoGapArrivalRaceMass.physical_entrance_then_race_mass
+#print axioms LDSinkFiniteRaceMass.unified_race_mass
+#print axioms LDSinkBoundedStopping.activeCost_eq
+#print axioms LDSinkUnifiedFinite.state_bound
+#print axioms ThreePhaseComposition.compose_three
+
+#print axioms K2OutputSafety.unified_isSafe
+#print axioms K2OutputSafety.outputSafe_unified_isSafe
+#print axioms FixedSpanRenewalPayload.physical_fixed_horizon_cost_row
+#print axioms FixedSpanRenewalPayload.physical_fixed_horizon_renewal_residual
+#print axioms LeaderCountDyadicTail.leader_count_whp_on_closed_domain
+#print axioms LDSinkTwoGapRaceEntranceArrivalService.gapPair_arrival_quarter
+#print axioms LDSinkTwoGapRaceEntranceRenewalCycle.no_nonrenewable_absorption_budget
+#print axioms LDSinkTwoGapRaceEntranceControlledTail.controlled_parked_half
+#print axioms BirthFullHostWaitedRulerCounterexample.waited_current_host_second_birth
+#print axioms BirthFullHostWaitedRulerCounterexample.waited_prefix_bits_labels
+#print axioms BirthCheckCongestGuardRepair.guardedFullTransition_eq_original_of_clear
+#print axioms BirthCheckCongestGuardRepair.complete_signal_creates_unique_leader
+#print axioms BirthCheckCongestGuardRepair.guarded_waited_word_has_no_second_birth
+#print axioms K2GlobalGapClosure.global_step
+#print axioms K2GlobalGapClosure.global_class_step
+#print axioms K2GlobalGapClosure.select_short_pair
+#print axioms Leader.K2MergeInflation.actual_deletion_merge
+#print axioms Leader.K2MergeInflation.six_dynamic_sum
+
+#print axioms K2GlobalGapClosure.seed8_reselection
+
+#print axioms ControlledSchedulerMass.boundedSuccessCount_le
+#print axioms ControlledSchedulerMass.raw_success_mass_lower
+#print axioms LDSinkTwoGapControlledBirthShotComposition.gapPair_unshielded_deletion_quarter
+#print axioms LDSinkTwoGapRaceEntranceUnshieldService.gapPair_unshield_half
+#print axioms LDSinkTwoGapRaceEntranceCollapseBudget.physical_audit_failure_bound
+#print axioms LDSinkTwoGapRaceEntranceUniformMass.gapPair_uniform_deletion_mass
+#print axioms LDSinkTwoGapRaceEntranceUniformConsequences.gapPair_uniform_deletion_at_span
+#print axioms LDSinkTwoGapRaceEntranceUniformConsequences.shielded_ordered_domain_nonempty
+#print axioms K2CyclicLayout.exists_realizing_layout
+#print axioms K2CyclicLayout.short_pair_of_globalClass
+#print axioms K2MinimumAttack.select_minimum_attack
+#print axioms LabelFreeElimination.observe_run
+#print axioms LabelFreeElimination.state_bound
+#print axioms LabelFreeElimination.isSafe
+#print axioms LabelFreeElimination.signalGlobal_step
+#print axioms LabelFreeElimination.race_mass
+#print axioms BirthCheckGuardAudit.guarded_second_leader
+#print axioms BirthSigMoveDisposalRepair.pending_source_cannot_escape_full
+#print axioms BirthDisposalParametricWait.disposal_family_creates_unique_leader
+#print axioms BirthDisposalParametricWait.disposal_family_generated_and_arrived
+
+#print axioms K2FiniteProgress.successful_word_count_strict
+#print axioms K2FiniteProgress.signalGlobal_count_drop_mass
+#print axioms LDSinkTwoGapRaceEntranceLocalizedRecovery.localized_raw_half
+#print axioms LDSinkTwoGapRaceEntranceModerateMass.gapPair_moderate_uniform_at_span
+#print axioms BirthDisposalRouteInvariant.complete_signal_disposal_service
+#print axioms LDSinkTwoGapRaceEntranceUniformAll.deletion_denominator_pos
+#print axioms LDSinkTwoGapRaceEntranceUniformAll.gapPair_uniform_deletion_mass
+#print axioms BirthMismatchDisposalProducer.actual_ready_terminal_larger_produces_disposal
+#print axioms BirthMismatchDisposalProducer.actionOneFull_eq_disposalFull_of_due
+#print axioms K2ControllerCompatibility.wallPeaceEdgeFrame_of_expiring_rowSafe_check_safe
+#print axioms AdjacentLeaderElimination.n2_collision_isSafe
+#print axioms AdjacentLeaderElimination.separated_run_eq_old
+#print axioms AdjacentLeaderElimination.pair_service_half
+#print axioms K2TwoLeaderGeometry.canonical_raceReady_countOne_sixteenth
+#print axioms K2PeacefulCounterexamples.global_count_one_not_safe
+#print axioms K2PeacefulCounterexamples.literal_peaceful_class_not_closed
+#print axioms K2PeacefulGlobal.peacefulGlobal_step
+#print axioms K2PeacefulGlobal.peacefulGlobal_count_pos
+#print axioms K2PeacefulGlobal.count_one_isSafe
+#print axioms K2GlobalShortPairMass.signalGlobal_count_drop_mass
+#print axioms K2GlobalShortPairMass.signalGlobal_two_leader_whp
+
+#print axioms K2TwoLeaderEntrance.globalClass_countOne_mass
+#print axioms K2TwoLeaderEntrance.shieldedSeed4_class
+#print axioms AdjacentSeparationEntry.physical_truncated_cost
+#print axioms AdjacentSeparationEntry.separation_whp
+#print axioms AdjacentSeparationEntry.peaceful_word_post
+#print axioms BirthArrivalCaptureRepair.arrivalBeforeCheck_moved_not_equal
+#print axioms BirthArrivalCaptureRepair.arrivalFull_eq_actionOneFull_of_due
+#print axioms BirthArrivalCaptureRepair.capture_terminal_source_action4
+
+#print axioms K2FiniteSafeEliminationCore.domain_step
+#print axioms K2FiniteSafeEliminationCore.isSafe_iff_count_one
+#print axioms K2FiniteSafeEliminationCore.observe_stopped_word
+#print axioms K2FiniteSafeElimination.higher_denominator_exact
+#print axioms K2FiniteSafeElimination.final_denominator_exact
+#print axioms K2FiniteSafeElimination.whp_constant_exact
+#print axioms K2FiniteSafeElimination.expected_constant_exact
+#print axioms K2FiniteSafeElimination.first_safe_payload
+#print axioms K2FiniteSafeElimination.stopped_success_iff_full_safe
+#print axioms K2FiniteSafeElimination.final_two_endpoint_mass
+#print axioms K2FiniteSafeElimination.final_semantic_tail
+#print axioms K2FiniteSafeEliminationTail.count_whp_and_clock
+#print axioms K2FiniteSafeEliminationExpected.unfinished_word_cost
+#print axioms K2FiniteSafeEliminationExpected.chargedPrefix_le_exactTariff
+#print axioms K2FiniteSafeElimination.safe_elimination
+#print axioms K2FiniteSafeElimination.nondivisible_domain_witness
+#print axioms SignalMergePrefixDebt.prefix_bad_origin
+#print axioms SignalMergePrefixDebt.prefix_debt_step
+#print axioms SignalMergePrefixDebt.prefix_debt_run
+#print axioms SignalMergePrefixDebt.cleared_badTop_le_prefix
+#print axioms SignalMergePrefixDebt.deletion_prefix_debt
+#print axioms SignalMergePrefixDebt.actual_merge_suffix_half
+#print axioms SignalMergePrefixDebt.actual_merge_suffix_cost
+#print axioms SignalMergePrefixDebt.actual_merge_suffix_residual
+#print axioms SignalMergePrefixDebt.ordered_left_merge_suffix_order
+#print axioms SignalMergePrefixDebt.Witness.old_left_dirty
+#print axioms SignalMergePrefixDebt.Witness.successor_not_done
+#print axioms SignalMergePrefixDebt.Witness.half
+#print axioms SignalMergePrefixDebt.Witness.two_edges_clear_with_old_debt
+#print axioms BirthGenerationControlWitnesses.generation_all_four_equal_words
+#print axioms BirthGenerationControlWitnesses.generation_blocks_eighteen_step_escape
+#print axioms BirthGenerationControlWitnesses.generation_blocks_forty_two_step_splice
+#print axioms BirthGenerationControlWitnesses.generation_preserves_three_bit_disposal
+#print axioms BirthGenerationControlWitnesses.generation_rooted_mismatch_inspects_and_retires
+#print axioms BirthGenerationControlWitnesses.generation_clears_all_source_opcodes
+#print axioms BirthGenerationControlWitnesses.generation_retains_actual_disappear_release
+#print axioms BirthGenerationControlWitnesses.release_has_actual_producer_and_no_generation
+#print axioms BirthGenerationOverwriteAudit.emit_overwrites_present
+#print axioms BirthGenerationOverwriteAudit.after_wait_overwrites_present
+
+#print axioms K2NearestSupportEntry.count_zero_iff
+#print axioms K2NearestSupportEntry.entry_step
+#print axioms K2NearestSupportEntry.wordSum_erases
+#print axioms K2NearestSupportEntry.observer_union
+#print axioms K2NearestSupportEntry.arbitrary_entry_tail
+#print axioms K2NearestSupportEntry.arbitrary_entry_polynomial_tail
+#print axioms K2NearestSupportEntry.polynomial_clock_le
+#print axioms K2NearestSupportEntry.singleton_count_zero
+#print axioms BirthTossReleaseLifecycleWitnesses.toss_guard_preserves_all_four_equal_words
+#print axioms BirthTossReleaseLifecycleWitnesses.toss_guard_blocks_eighteen_step_escape
+#print axioms BirthTossReleaseLifecycleWitnesses.toss_guard_blocks_forty_two_step_splice
+#print axioms BirthTossReleaseLifecycleWitnesses.toss_guard_preserves_three_bit_disposal
+#print axioms BirthTossReleaseLifecycleWitnesses.actual_prefix_reaches_fresh_toss
+#print axioms BirthTossReleaseLifecycleWitnesses.actual_fresh_comparison_produces_and_delivers_release
+#print axioms BirthTossReleaseLifecycleWitnesses.actual_release_has_no_replacement_producer
+#print axioms BirthTossReleaseLifecycleWitnesses.actual_release_moves_with_terminal
+#print axioms BirthTossReleaseLifecycleWitnesses.actual_genuine_release_exceeds_two_psi
+#print axioms BirthTossReleaseLifecycleWitnesses.actual_lifecycle_ruler_fields_preserved
+#print axioms K2PeacefulSignalEntry.psTruncatedCost
+#print axioms K2PeacefulSignalEntry.psLogTail
+#print axioms K2PeacefulSignalEntry.psCollisionSuccessfulWord
+#print axioms K2PeacefulSignalEntry.psRankStepLe
+
+#print axioms BirthSingleUseReleaseRepair.singleUseCaptureSigMove_terminal_no_five
+#print axioms BirthSingleUseReleaseRepair.singleUseFull_eq_tossFull_of_due
+#print axioms BirthSingleUseReleaseWitnesses.single_use_blocks_thirty_four_step_repeat_release
+#print axioms BirthSingleUseReleaseWitnesses.single_use_next_inspection_has_actual_source
+#print axioms ExpiringK2Projection.same_word_ucell
+#print axioms ExpiringK2Projection.state_bound_poly
+#print axioms BirthResponderHazardSchedule.actual_word_forces_residence_break
+#print axioms BirthRulerBarrier.actual_larger_group_check_no_birth
+#print axioms BirthRulerBarrier.actual_inspected_terminal_due
+#print axioms K2ArbitraryElimination.arbitrary_elimination
+#print axioms K2ArbitraryElimination.arbitrary_expected_log
+#print axioms K2ArbitraryElimination.arbitrary_polynomial_tail
+#print axioms K2ArbitraryElimination.singleton_goal
+
+#print axioms BirthOneBitReleaseBoundary.genuine_terminal_release_skips_next_arrival
+#print axioms BirthReleaseTerminalInvariant.full_preserves_no_terminal_five
+#print axioms BirthReleaseTerminalInvariant.empty_control_run_no_terminal_five
+#print axioms BirthResponderHazardMass.physical_probability
+#print axioms BirthResponderHazardMass.current_timer_probability
+#print axioms BirthWaitClockAudit.no_root_word_count_function
+#print axioms BirthWaitClockAudit.passive_departure_is_actual
+#print axioms BirthStationaryWrite.stationaryPersistentRaw_leaders
+#print axioms BirthStationaryWrite.stationaryPersistentRaw_labels
+#print axioms BirthStationaryWrite.stationaryPersistentRaw_comparison
+#print axioms BirthGenerationDone.preserveDoneCheck_of_done
+#print axioms BirthGenerationDone.authorizedDoneMove_inProtocolDomain
+#print axioms BirthGenerationDone.doneFull_eq_singleUseFull_of_due
+#print axioms K2BirthDispatcher.metadata_signal_of_no_birth
+#print axioms K2BirthDispatcher.same_word_adjacent_all_prefixes
+#print axioms K2BirthDispatcher.row_timers_once
+#print axioms K2BirthDispatcher.finite_state_bound
+#print axioms K2BirthDispatcher.singleton_leader_deleted
+
+#print axioms BirthShortWait.waitWidth_full
+#print axioms BirthShortWait.suppressWidth_full
+#print axioms BirthShortWait.genCleanWidth_full
+#print axioms BirthShortWaitDomainWitness.genCleanWidth_inProtocolDomain
+#print axioms BirthShortWaitDomainWitness.suppressSigResetKillWidth_inProtocolDomain
+#print axioms BirthShortWaitProjection.waitWidth_regs_eq_waitSaturated_prefix
+#print axioms BirthShortWaitProjection.rootIncoming_regs_frame
+#print axioms BirthWaitPassive.full_passive_below
+#print axioms BirthWaitPassive.full_cap_terminal_count
+#print axioms BirthWaitPassive.wait_stop_to_full_stop
+#print axioms BirthWaitPassive.stopped_wait_projection_of_wait_stop
+#print axioms BirthWaitClockMass.Line.hitPattern_forces_increase
+#print axioms BirthWaitClockMass.Matcher.raw_half_fiber_mass
+#print axioms BirthWaitClockMass.RawMass.raw_firstIncrease_mass
+#print axioms BirthFiniteTraceCertificate.rowPrefix_correct_valid
+#print axioms BirthSpatialSourceSpliceCertificate.certPrefix_correct
+#print axioms BirthSpatialSourceSpliceCounterexample.exactly_two_real_generation_events
+#print axioms BirthSpatialSourceSpliceCounterexample.mixed_word_causes_second_leader
+#print axioms BirthSpatialSourceSpliceCounterexample.all_prefixes_have_no_terminal_five
+#print axioms K2BirthLeaderNormalize.row_leader_labels_zero
+#print axioms K2BirthLeaderNormalize.same_word_adjacent
+#print axioms K2BirthLeaderNormalizeCover.leadersZero_run_of_initiatorCover
+#print axioms K2BirthDispatcherDone.doneMetadataAuthorized_domain
+#print axioms K2BirthDispatcherDone.doneMetadata_existing_leaders
+#print axioms K2BirthDispatcherDone.doneMetadata_bullets
+#print axioms K2BirthDispatcherDone.doneRow_timers_once
+
+#print axioms K2BirthDoneNormalize.metadata_field_frame
+#print axioms K2BirthDoneNormalize.birthEvent_eq_done
+#print axioms K2BirthDoneNormalize.row_timers_once
+#print axioms K2BirthDoneNormalize.row_domain
+#print axioms K2BirthDoneNormalize.finite_state_bound
+#print axioms K2BirthDoneNormalize.same_word_adjacent_all_prefixes
+#print axioms K2BirthDoneNormalize.step_alias
+#print axioms BirthShortWaitRawRing.raw_word_key_replay
+#print axioms K2BirthLeaderNormalizeWriterAudit.actual_writer_input_obstruction
+
+-- Original-WAIT reset entry; short full-host composition remains conditional on actual no-birth.
+#print axioms BirthWaitClockMass.ResetEntry.entry_produces
+#print axioms BirthWaitClockMass.ResetInterleaving.safe_sublist_entry_produces
+#print axioms BirthWaitClockMass.ResetMass.raw_entry_mass
+#print axioms BirthShortDoneDispatcher.row_full
+#print axioms BirthShortDoneDispatcher.row_timers_once
+#print axioms BirthShortDoneDispatcher.finite_state_bound
+#print axioms BirthShortDoneDispatcher.same_word_adjacent_all_prefixes
+#print axioms BirthShortDoneDispatcher.step_alias
