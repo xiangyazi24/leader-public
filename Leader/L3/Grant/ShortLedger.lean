@@ -1,4 +1,5 @@
 import Leader.L3.Grant.ShortBound
+import Leader.L3.Prime.SignedParams
 import Leader.L3.Headline.Assembly
 
 /-!
@@ -200,7 +201,8 @@ theorem shortLedgerBound (n : Nat) (hn : 5 ≤ n)
     exact of_decide_eq_true h
   obtain ⟨q, hqdef⟩ : ∃ q, q = ceilLogTwo n := ⟨_, rfl⟩
   rw [← hqdef] at hq3 hq79 hspec hsmall ⊢
-  have hKq : (compileAdvice q).K = shortRowK q := rfl
+  have hKq : (compileAdvice q).K = shortRowK q :=
+    compileAdvice_K_unsigned q (not_signedBand_of_small q (by omega))
   have hPq : headlinePermitRate n = shortRowP q := by
     unfold headlinePermitRate headlineSelectedLedger shortRowP
     rw [← hqdef]

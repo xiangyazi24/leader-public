@@ -1,4 +1,5 @@
 import Leader.L3.Grant.BlockSharpHitting
+import Leader.L3.Prime.SignedParams
 import Leader.L3.Headline.Stages
 import Leader.L3.Headline.GrantProducer
 
@@ -27,7 +28,8 @@ set_option Elab.async false
 /-- The compiled advice of a spatial `q`.
 
 Consumer: `grantLeaderlessCoefficientLe`. -/
-theorem grantLeaderlessAdviceShape (q : Nat) (hq : 80 ≤ q) :
+theorem grantLeaderlessAdviceShape (q : Nat) (hq : 80 ≤ q)
+    (hus : ¬ signedBand q) :
     7 ≤ ceilLogTwo q ∧
     (compileAdvice q).b = ceilLogTwo q + 11 ∧
     (compileAdvice q).K = 2 * q + kappaDot (ceilLogTwo q) := by
@@ -42,7 +44,7 @@ theorem grantLeaderlessAdviceShape (q : Nat) (hq : 80 ≤ q) :
   refine ⟨h7, ?_, ?_⟩
   · change (compileAdvice q).s + 11 = _
     rw [hs]
-  · change 2 * q + productionKappa q = _
+  · rw [compileAdvice_K_unsigned q hus]
     unfold productionKappa
     rw [if_neg (by omega : ¬ q ≤ 32)]
     unfold paddedS sourceTOfQ
@@ -78,18 +80,21 @@ private theorem grantLeaderlessKappaHigh (s : Nat) (h16 : ¬ s ≤ 16) :
   rw [if_neg (by omega), if_neg (by omega), if_neg (by omega),
     if_neg (by omega), if_neg (by omega), if_neg (by omega)]
 
-private theorem grantLeaderlessLedgerHigh (s : Nat) (h16 : ¬ s ≤ 16) :
+private theorem grantLeaderlessLedgerHigh (s : Nat) (h16 : ¬ s ≤ 16)
+    (hs40 : s < 40000) :
     (headlineLargeLedger s).1 =
       192 + 34 * (8 * s + 101) * (s + 13) * (557 * s + 119982) := by
   unfold headlineLargeLedger
   rw [if_neg h16]
+  show (if 40000 ≤ s then _ else _) = _
+  rw [if_neg (by omega)]
 
 /-- The ledger permit rate dominates `192 + 17 f w 2^kappa` for `s ≥ 7`: the
 table rows `s = 7 .. 16` equal it, and for `s ≥ 17` the formula
 `192 + 34 f w (A+1)` has `2^kappa < 2 (A+1)`.
 
 Consumer: `grantLeaderlessCoefficientLe`. -/
-theorem grantLeaderlessLedgerRow (s : Nat) (hs : 7 ≤ s) :
+theorem grantLeaderlessLedgerRow (s : Nat) (hs : 7 ≤ s) (hs40 : s < 40000) :
     192 + 17 * (8 * s + 101) * (s + 13) * 2 ^ kappaDot s ≤
       (headlineLargeLedger s).1 := by
   by_cases h16 : s ≤ 16
@@ -107,7 +112,7 @@ theorem grantLeaderlessLedgerRow (s : Nat) (hs : 7 ≤ s) :
     have hle : 2 ^ kappaDot s ≤ 2 * (557 * s + 119982) := by
       rw [hk, hpow]
       omega
-    rw [grantLeaderlessLedgerHigh s h16]
+    rw [grantLeaderlessLedgerHigh s h16 hs40]
     have hm := Nat.mul_le_mul_left (17 * (8 * s + 101) * (s + 13)) hle
     have e1 : 17 * (8 * s + 101) * (s + 13) * (2 * (557 * s + 119982)) =
         34 * (8 * s + 101) * (s + 13) * (557 * s + 119982) := by
@@ -156,6 +161,58 @@ theorem grantLeaderlessLedgerArith (n q s kappa perm : Nat)
   rw [e6] at h1
   omega
 
+/-- Signed band: the compiled spatial advice has `b = s + 11` and `K = 2 q - t_s`,
+`s = ceilLogTwo q ≥ 40000`, `1 ≤ t_s < s` (`L3PRIME-TRANSFER.tex` (P2)). -/
+theorem grantLeaderlessSignedShape (q : Nat) (hsb : signedBand q) :
+    40000 ≤ ceilLogTwo q ∧
+    (compileAdvice q).b = ceilLogTwo q + 11 ∧
+    (compileAdvice q).K = 2 * q - signedT (ceilLogTwo q) ∧
+    signedT (ceilLogTwo q) < ceilLogTwo q := by
+  obtain ⟨hs, hK, _, hlt⟩ := compileAdvice_K_signed_bounds q hsb
+  have hb : (compileAdvice q).b = max 2 (ceilLogTwo q) + 11 := rfl
+  refine ⟨hs, ?_, hK, hlt⟩
+  rw [hb]
+  congr 1
+  omega
+
+/-- `X ≤ ceil(X / d) * d` for `d > 0`, with the ceiling written `(X + d - 1) / d`. -/
+private theorem grantLeaderlessCeilMul (X d : Nat) (hd : 0 < d) :
+    X ≤ (X + d - 1) / d * d := by
+  have hmod := Nat.div_add_mod (X + d - 1) d
+  have hlt := Nat.mod_lt (X + d - 1) hd
+  rw [Nat.mul_comm] at hmod
+  generalize (X + d - 1) / d * d = m at hmod ⊢
+  generalize (X + d - 1) % d = r at hmod hlt
+  omega
+
+/-- Signed-band ledger arithmetic (T1, `lem:l3prime-bank`): with
+`perm = 192 + ceil(17 Y / 2^t)` and `2^(2q) + 4 ≤ 4 n^2`,
+`192 n^2 + (17 Y 2^(2q-t) + 3)/4 ≤ perm * n^2`. -/
+theorem grantLeaderlessSignedArith (n q t Y : Nat)
+    (hP2 : 2 ^ (2 * q) + 4 ≤ 4 * (n * n)) (ht : t ≤ 2 * q) :
+    192 * n ^ 2 + (17 * Y * 2 ^ (2 * q - t) + 3) / 4 ≤
+      (192 + (17 * Y + 2 ^ t - 1) / 2 ^ t) * n ^ 2 := by
+  have hd : 0 < 2 ^ t := Nat.two_pow_pos _
+  have hceil := grantLeaderlessCeilMul (17 * Y) (2 ^ t) hd
+  have hsplit : 2 ^ (2 * q) = 2 ^ t * 2 ^ (2 * q - t) := by
+    rw [← Nat.pow_add]; congr 1; omega
+  have hmain : 17 * Y * 2 ^ (2 * q - t) ≤
+      (17 * Y + 2 ^ t - 1) / 2 ^ t * 2 ^ (2 * q) := by
+    rw [hsplit, ← Nat.mul_assoc]
+    exact Nat.mul_le_mul_right _ hceil
+  generalize (17 * Y + 2 ^ t - 1) / 2 ^ t = c at hmain ⊢
+  generalize 17 * Y * 2 ^ (2 * q - t) = Z at hmain ⊢
+  generalize 2 ^ (2 * q) = P2 at hP2 hmain
+  rw [Nat.pow_two]
+  generalize n * n = nn at hP2 ⊢
+  have h1 := Nat.mul_le_mul_left c hP2
+  have e1 : c * (P2 + 4) = c * P2 + 4 * c := by rw [Nat.mul_add]; omega
+  have e2 : c * (4 * nn) = 4 * (c * nn) := by
+    rw [← Nat.mul_assoc, Nat.mul_comm c 4, Nat.mul_assoc]
+  rw [e1, e2] at h1
+  rw [Nat.add_mul]
+  omega
+
 /-- The BANK block coefficient is within the ledger permit rate: for a
 spatial `n`, `192 n^2 + (17 Q + 3)/4 ≤ headlinePermitRate n * n^2`.
 
@@ -165,15 +222,11 @@ theorem grantLeaderlessCoefficientLe (n : Nat) (hn : 5 ≤ n)
     192 * n ^ 2 + (17 * grantBlockEntranceCoefficient n + 3) / 4 ≤
       headlinePermitRate n * n ^ 2 := by
   have hq := grantClockSpatialAdviceEighty (ceilLogTwo n) hsp
-  obtain ⟨hs7, hb, hK⟩ := grantLeaderlessAdviceShape (ceilLogTwo n) hq
-  have hrow := grantLeaderlessLedgerRow (ceilLogTwo (ceilLogTwo n)) hs7
   have hperm : headlinePermitRate n =
       (headlineLargeLedger (ceilLogTwo (ceilLogTwo n))).1 := by
     unfold headlinePermitRate headlineSelectedLedger
     rw [if_neg (by omega)]
   rw [hperm]
-  generalize (headlineLargeLedger (ceilLogTwo (ceilLogTwo n))).1 = perm
-    at hrow ⊢
   have hspec := (ceilLogTwo_spec n (by omega)).1
   have hqpos : 1 ≤ ceilLogTwo n := by omega
   have hP2 : 2 ^ (2 * ceilLogTwo n) + 4 ≤ 4 * (n * n) := by
@@ -191,6 +244,42 @@ theorem grantLeaderlessCoefficientLe (n : Nat) (hn : 5 ≤ n)
     generalize 2 ^ (ceilLogTwo n - 1) = A at hpos hsq ⊢
     simp only [Nat.add_mul, Nat.mul_add, Nat.one_mul, Nat.mul_one] at hsq
     omega
+  by_cases hsb : signedBand (ceilLogTwo n)
+  · obtain ⟨hs40, hb, hK, htlt⟩ := grantLeaderlessSignedShape (ceilLogTwo n) hsb
+    have h16 : ¬ ceilLogTwo (ceilLogTwo n) ≤ 16 := by omega
+    have hledger : (headlineLargeLedger (ceilLogTwo (ceilLogTwo n))).1 =
+        192 + (17 * ((8 * ceilLogTwo (ceilLogTwo n) + 101) *
+            (ceilLogTwo (ceilLogTwo n) + 13)) +
+          2 ^ signedT (ceilLogTwo (ceilLogTwo n)) - 1) /
+          2 ^ signedT (ceilLogTwo (ceilLogTwo n)) := by
+      unfold headlineLargeLedger
+      rw [if_neg h16]
+      show (if 40000 ≤ ceilLogTwo (ceilLogTwo n) then _ else _) = _
+      rw [if_pos hs40, Nat.mul_assoc 17]
+    have hle := ceilLogTwo_le_self (ceilLogTwo n)
+    have key := grantLeaderlessSignedArith n (ceilLogTwo n)
+      (signedT (ceilLogTwo (ceilLogTwo n)))
+      ((8 * ceilLogTwo (ceilLogTwo n) + 101) * (ceilLogTwo (ceilLogTwo n) + 13))
+      hP2 (by omega)
+    rw [hledger]
+    unfold grantBlockEntranceCoefficient
+    rw [hb, hK]
+    have e1 : (ceilLogTwo (ceilLogTwo n) + 11 + 2) *
+        (8 * (ceilLogTwo (ceilLogTwo n) + 11) + 13) =
+        (8 * ceilLogTwo (ceilLogTwo n) + 101) * (ceilLogTwo (ceilLogTwo n) + 13) := by
+      rw [show ceilLogTwo (ceilLogTwo n) + 11 + 2 = ceilLogTwo (ceilLogTwo n) + 13 by omega,
+        show 8 * (ceilLogTwo (ceilLogTwo n) + 11) + 13 =
+          8 * ceilLogTwo (ceilLogTwo n) + 101 by omega, Nat.mul_comm]
+    rw [e1, ← Nat.mul_assoc 17]
+    exact key
+  obtain ⟨hs7, hb, hK⟩ := grantLeaderlessAdviceShape (ceilLogTwo n) hq hsb
+  have hs40 : ceilLogTwo (ceilLogTwo n) < 40000 := by
+    have h := hsb
+    rw [signedBand_iff] at h
+    omega
+  have hrow := grantLeaderlessLedgerRow (ceilLogTwo (ceilLogTwo n)) hs7 hs40
+  generalize (headlineLargeLedger (ceilLogTwo (ceilLogTwo n))).1 = perm
+    at hrow ⊢
   have key := grantLeaderlessLedgerArith n (ceilLogTwo n)
     (ceilLogTwo (ceilLogTwo n))
     (kappaDot (ceilLogTwo (ceilLogTwo n))) perm hP2 hrow

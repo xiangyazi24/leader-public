@@ -1,4 +1,5 @@
 import Leader.L3.Bank.TrialRenewal
+import Leader.L3.Prime.SignedParams
 
 /-!
 # Compiled BANK spatial integer cutoffs
@@ -128,18 +129,19 @@ private theorem grantCutoffsSquareLinear
     _ = a ^ 2 := by rw [Nat.pow_two]
     _ ≤ n := h
 
-/-- At the compiled advice K=2q+kappa, the denominator 2^K
-dominates the population square. No symbolic power enters omega. -/
+/-- Off the L3-PRIME signed band, at the compiled advice K=2q+kappa, the
+denominator 2^K dominates the population square. No symbolic power enters omega.
+(On the signed band `K = 2q - t_s` and this can fail; consumers use
+`grantCutoffsRadiusPopulationFitsHeads`.) -/
 theorem grantCutoffsPopulationSquareFitsHeads
-    (n : Nat) (hn : 5 ≤ n) :
+    (n : Nat) (hn : 5 ≤ n) (hus : ¬ signedBand (ceilLogTwo n)) :
     n * n ≤ 2 ^ (compileAdvice (ceilLogTwo n)).K := by
   have hCeil : n ≤ 2 ^ (ceilLogTwo n) :=
     (ceilLogTwo_spec n (by omega : 2 ≤ n)).2
   have hDouble :
       2 * ceilLogTwo n ≤
         (compileAdvice (ceilLogTwo n)).K := by
-    change 2 * ceilLogTwo n ≤
-      2 * ceilLogTwo n + productionKappa (ceilLogTwo n)
+    rw [compileAdvice_K_unsigned _ hus]
     omega
   calc
     n * n ≤
@@ -154,6 +156,82 @@ theorem grantCutoffsPopulationSquareFitsHeads
       Nat.pow_le_pow_right
         (by decide : 0 < (2 : Nat)) hDouble
 
+/-- `4 q^2 < 2^(q-1)` for `q ≥ 13`. -/
+private theorem grantCutoffsQuadBelowPow (q : Nat) (hq : 13 ≤ q) :
+    4 * (q * q) < 2 ^ (q - 1) := by
+  have key : ∀ k : Nat, 4 * ((k + 13) * (k + 13)) < 2 ^ (k + 12) := by
+    intro k
+    induction k with
+    | zero => decide
+    | succ k ih =>
+        have hpow : 2 ^ (k + 1 + 12) = 2 * 2 ^ (k + 12) := by
+          rw [show k + 1 + 12 = (k + 12) + 1 by omega, Nat.pow_succ, Nat.mul_comm]
+        have hsq : (k + 1 + 13) * (k + 1 + 13) = (k + 13) * (k + 13) + (2 * k + 27) := by
+          rw [show k + 1 + 13 = (k + 13) + 1 by omega, Nat.add_mul, Nat.mul_add, Nat.mul_one,
+            Nat.one_mul]
+          omega
+        have hge : 2 * k + 27 ≤ (k + 13) * (k + 13) := by
+          have : 13 * (k + 13) ≤ (k + 13) * (k + 13) := Nat.mul_le_mul_right _ (by omega)
+          omega
+        rw [hpow, hsq]
+        omega
+  have h := key (q - 13)
+  rw [show q - 13 + 13 = q by omega, show q - 13 + 12 = q - 1 by omega] at h
+  exact h
+
+/-- L3-PRIME C.17 (`L3PRIME-TRANSFER.tex` T1, C.17 via `3q - 2 ≤ 2K`): the frozen
+window numerator `R n` fits the head denominator `2^K` on both bands.  Unsigned:
+`R ≤ n` and `n^2 ≤ 2^K`.  Signed (`K = 2q - t_s`): `2^t < q` and `R q ≤ n`
+(`R^2 ≤ n` and `4 q^2 < 2^(q-1) < n`), so `R n 2^t ≤ n^2 ≤ 2^(2q) = 2^K 2^t`. -/
+theorem grantCutoffsRadiusPopulationFitsHeads
+    (n R : Nat) (hn : 5 ≤ n)
+    (hradius : (256 * R) ^ 2 ≤ n ∧ n < (256 * (R + 1)) ^ 2) :
+    R * n ≤ 2 ^ (compileAdvice (ceilLogTwo n)).K := by
+  have hRsq : R * R ≤ n := by
+    have h1 : R * R ≤ (256 * R) * (256 * R) :=
+      Nat.mul_le_mul (by omega) (by omega)
+    have h2 : (256 * R) ^ 2 = (256 * R) * (256 * R) := Nat.pow_two _
+    omega
+  have hRle : R ≤ n := by
+    by_cases hR0 : R = 0
+    · omega
+    · have : R ≤ R * R := Nat.le_mul_of_pos_left R (by omega)
+      omega
+  by_cases hsb : signedBand (ceilLogTwo n)
+  · obtain ⟨hc, hK, _, hlt⟩ := compileAdvice_K_signed_bounds (ceilLogTwo n) hsb
+    have hspecN := ceilLogTwo_spec n (by omega)
+    have hqle := ceilLogTwo_le_self (ceilLogTwo n)
+    have hq2 : 2 ≤ ceilLogTwo n := by omega
+    have hspecQ := ceilLogTwo_spec (ceilLogTwo n) hq2
+    rw [hK]
+    generalize hqdef : ceilLogTwo n = q at hK hlt hspecN hqle hspecQ hc hq2 ⊢
+    generalize hcdef : ceilLogTwo q = c at hK hlt hspecQ hc hqle ⊢
+    generalize htdef : signedT c = t at hK hlt ⊢
+    -- 2^t < q
+    have ht : 2 ^ t < q := by
+      have h1 : 2 ^ t ≤ 2 ^ (c - 1) := Nat.pow_le_pow_right (by omega) (by omega)
+      omega
+    -- R q ≤ n
+    have hRq : R * q ≤ n := by
+      by_cases hRq : q ≤ R
+      · have := Nat.mul_le_mul_left R hRq
+        omega
+      · have h1 : R * q ≤ q * q := Nat.mul_le_mul_right q (by omega)
+        have h2 := grantCutoffsQuadBelowPow q (by omega)
+        omega
+    have hmain : (R * n) * 2 ^ t ≤ 2 ^ (2 * q - t) * 2 ^ t := by
+      have e : 2 ^ (2 * q - t) * 2 ^ t = 2 ^ q * 2 ^ q := by
+        rw [← Nat.pow_add, ← Nat.pow_add]; congr 1; omega
+      rw [e]
+      calc (R * n) * 2 ^ t ≤ (R * n) * q := Nat.mul_le_mul_left _ (by omega)
+        _ = (R * q) * n := by ac_rfl
+        _ ≤ n * n := Nat.mul_le_mul_right n hRq
+        _ ≤ 2 ^ q * 2 ^ q := Nat.mul_le_mul hspecN.2 hspecN.2
+    exact Nat.le_of_mul_le_mul_right hmain (Nat.two_pow_pos t)
+  · have hsq := grantCutoffsPopulationSquareFitsHeads n hn hsb
+    have := Nat.mul_le_mul_right n hRle
+    omega
+
 /-- New C.17 upper cutoff, initially over opaque naturals. -/
 private theorem grantCutoffsFrozenUpperOpaque
     (n R W M f P : Nat)
@@ -161,10 +239,9 @@ private theorem grantCutoffsFrozenUpperOpaque
     (hR : R ≤ n)
     (hW : 8 * W ≤ R * n)
     (hf : 128 ≤ f)
-    (hP : n * n ≤ P) :
+    (hP : R * n ≤ P) :
     1024 * M * W ≤ f * n * P := by
   have hMW := Nat.mul_le_mul_right W hM
-  have hRmul := Nat.mul_le_mul_right n hR
   calc
     1024 * M * W = 1024 * (M * W) := by
       rw [Nat.mul_assoc]
@@ -175,16 +252,12 @@ private theorem grantCutoffsFrozenUpperOpaque
       simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm]
     _ ≤ (128 * n) * (R * n) :=
       Nat.mul_le_mul_left (128 * n) hW
-    _ ≤ (128 * n) * (n * n) :=
-      Nat.mul_le_mul_left (128 * n) hRmul
-    _ = 128 * (n * (n * n)) := by
+    _ ≤ (128 * n) * P :=
+      Nat.mul_le_mul_left (128 * n) hP
+    _ = 128 * (n * P) := by
       simp only [Nat.mul_assoc]
-    _ ≤ f * (n * (n * n)) :=
-      Nat.mul_le_mul_right (n * (n * n)) hf
-    _ = (f * n) * (n * n) := by
-      simp only [Nat.mul_assoc]
-    _ ≤ (f * n) * P :=
-      Nat.mul_le_mul_left (f * n) hP
+    _ ≤ f * (n * P) :=
+      Nat.mul_le_mul_right (n * P) hf
     _ = f * n * P := by rw [Nat.mul_assoc]
 
 /-- Sufficient upper smallness for C.17's selected-root union.
@@ -224,7 +297,7 @@ theorem grantCutoffsFrozenUnionSmallness
     (8 * (compileAdvice (ceilLogTwo n)).b + 13)
     (2 ^ (compileAdvice (ceilLogTwo n)).K)
     hM hR hWindow hf
-    (grantCutoffsPopulationSquareFitsHeads n hn)
+    (grantCutoffsRadiusPopulationFitsHeads n R hn hradius)
 
 /-- Attenuation of any frozen numerator bounded by W. -/
 theorem grantCutoffsFrozenUnionSmallnessOfNumerator

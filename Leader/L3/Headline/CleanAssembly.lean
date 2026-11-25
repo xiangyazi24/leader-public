@@ -14,6 +14,7 @@ import Leader.L3.Top.ClockEntrance
 import Leader.L3.Width.DigitCloseOrder
 import Leader.L3.Width.DigitWriterOrderedWave
 import Leader.L3.Width.DigitWriterOrderedClose
+import Leader.L3.Prime.SignedRenewal
 
 /-!
 The clean headline from the open rows of both branches.
@@ -178,11 +179,12 @@ theorem bankCleanDigitStageRootedRenewalCost {n : Nat}
     (hdigit : BankCleanDigitHalfOnDrain ring hbank)
     (hthreshold : L3.BankRetryCoverage.BankCutGenuineHeadThreshold ring hbank) :
     StageCleanRootedRenewalCost ring :=
-  bankCleanStageRootedRenewalCost ring hn hbank hdigit hthreshold
+  L3.Prime.bankCleanStageRootedRenewalCostOfSlots ring hn hbank hdigit hthreshold
     (BankCleanRootedStart ring hbank)
     (fun seed _ => ⟨seed, rfl⟩)
     (bankCleanInheritedRetirementStage ring hn hbank
       (bankInheritedProgressAlternativeHolds ring hn hbank))
+    (fun r e h => L3.Prime.bankSlotInvNext ring hn hbank r e h.1 h.2)
 
 /-- The SMALL clean R14 from the digit half alone (fold proved).
 Consumer: `l3HeadlineOfCleanBranches`. -/
@@ -214,9 +216,8 @@ theorem l3HeadlineOfCleanBranches {n : Nat}
     (hlaw : ∀ (root : Fin n) (first : Nat),
       L3.DigitQuiet.QuietStepLaw (c := compileAdvice (ceilLogTwo n)) ring root first)
     (hcert : L3.WriterValueCuts.WidthWriterComparisonCertificate
-      (L3.WidthDigit.bandWidthDigitReference ring hn))
-    :
-    L3Headline ring := by
+      (L3.WidthDigit.bandWidthDigitReference ring hn)) :
+    L3HeadlineAt ring (headlineStageCost n) := by
   have hord : L3.WriterOrdered.WidthWriterOrderedReceiptsClose
       (L3.WidthDigit.bandWidthDigitReference ring hn) :=
     L3.WriterOrderedClose.bandWriterOrderedClose ring hn
@@ -260,7 +261,7 @@ theorem l3HeadlineOfCleanBranches {n : Nat}
     | false =>
         exact bankCleanDigitStageRootedRenewalCost ring hn hb
           (hbankDigit hb) (L3.BankWindow.bankCutGenuineHeadThresholdAll ring hn hb)
-  exact l3HeadlineOfRequestAndCleanRenewal ring hn
+  exact l3HeadlineAtOfRequestAndCleanRenewal ring hn
     (L3.stageRequestMissingClockProved ring hn) hcost
 
 end L3.HeadlineCleanAssembly

@@ -1,4 +1,5 @@
 import Leader.L3.Bank.TrialLocal
+import Leader.L3.Prime.SignedParams
 
 /-!
 Local BANK trial probability.
@@ -11301,9 +11302,8 @@ theorem bankTrialC5RoundsStatus {n q : Nat}
           (bankTrialC5CleanRun ring root S []) 0
         exact bankTrialC5SeedArmed ring root S hw hclean
       · intro hzero
-        have hK : (compileAdvice q).K =
-            2 * q + productionKappa q := rfl
-        have hpos : 0 < (compileAdvice q).K := by omega
+        have hpos : 0 < (compileAdvice q).K :=
+          compileAdvice_K_pos q (by omega)
         omega
   | succ k ih =>
       intro hkle

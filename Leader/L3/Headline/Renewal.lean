@@ -1,4 +1,5 @@
 import Leader.L3.Headline.Stages
+import Leader.L3.Prime.SignedParams
 
 /-!
 The real-state retry shell and finite-word F.1-F.4 transfer are
@@ -295,6 +296,31 @@ def ReferenceOriginRarity {n : Nat}
     (k : Nat) : Prop :=
   Prob.OriginRarity D.referenceStop D.spawn D.win
     1 (2 ^ (2 * ceilLogTwo n + k))
+
+/-- Origin rarity at the threshold `K` itself (`P(win) <= 2^-K` per origin).
+`ReferenceOriginRarity ring D k` is the case `K = 2 ceil(log2 n) + k`; on the
+L3-PRIME signed band `K = 2q - t_s` has no unsigned offset.
+Consumer: the BANK rarity theorems, `referenceOriginRarityOfUnsigned`. -/
+def ReferenceOriginRarityK {n : Nat}
+    (ring : DirectedRing n) (D : RootedReferenceData ring)
+    (K : Nat) : Prop :=
+  Prob.OriginRarity D.referenceStop D.spawn D.win 1 (2 ^ K)
+
+/-- Off the signed band `K = 2q + kappa`. -/
+theorem compileAdviceKOfUnsigned (q : Nat) (h : ¬ signedBand q) :
+    (compileAdvice q).K = 2 * q + (compileAdvice q).kappa := by
+  rw [compileAdvice_K_unsigned q h, compileAdvice_kappa_unsigned q h]
+
+/-- Off the signed band the threshold form is the offset form. -/
+theorem referenceOriginRarityOfUnsigned {n : Nat}
+    (ring : DirectedRing n) (D : RootedReferenceData ring)
+    (hus : ¬ signedBand (ceilLogTwo n))
+    (h : ReferenceOriginRarityK ring D (compileAdvice (ceilLogTwo n)).K) :
+    ReferenceOriginRarity ring D (compileAdvice (ceilLogTwo n)).kappa := by
+  unfold ReferenceOriginRarityK at h
+  unfold ReferenceOriginRarity
+  rw [← compileAdviceKOfUnsigned _ hus]
+  exact h
 
 def ReferenceClock {n : Nat}
     (ring : DirectedRing n) (D : RootedReferenceData ring)
@@ -2393,7 +2419,12 @@ set_option Elab.async false
 
 private theorem renewalBankThresholdPositive (n : Nat) :
     0 < (compileAdvice (ceilLogTwo n)).K := by
-  change 0 < 2 * ceilLogTwo n + productionKappa (ceilLogTwo n)
+  by_cases hsb : signedBand (ceilLogTwo n)
+  · obtain ⟨_, hK, _, hlt⟩ := compileAdvice_K_signed_bounds (ceilLogTwo n) hsb
+    have hle := ceilLogTwo_le_self (ceilLogTwo n)
+    rw [hK]
+    omega
+  rw [compileAdvice_K_unsigned _ hsb]
   by_cases hq : ceilLogTwo n = 0
   · simp [hq, productionKappa, finiteKappa]
   · omega
@@ -2973,8 +3004,7 @@ theorem renewalBankValidRarityOfPotential {n : Nat}
         weight o (renewalBankFutureNext ring o r e))).sum ≤
         n * weight o r)
     (hwin : ∀ (o : RenewalBankOrigin n) (r : RenewalBankFuture o),
-      2 ^ (2 * ceilLogTwo n +
-        (compileAdvice (ceilLogTwo n)).kappa) *
+      2 ^ (compileAdvice (ceilLogTwo n)).K *
         Prob.indicator (renewalBankReached o
           (compileAdvice (ceilLogTwo n)).K r.val.2) ≤
         weight o r)
@@ -2985,9 +3015,9 @@ theorem renewalBankValidRarityOfPotential {n : Nat}
         weight born.identity
           ⟨born.afterBirth,
             renewalBankBirthFuture ring r.val e born hmem⟩ ≤ 1) :
-    ReferenceOriginRarity ring
+    ReferenceOriginRarityK ring
       (bankValidRootedReferenceData ring hbank)
-      (compileAdvice (ceilLogTwo n)).kappa := by
+      (compileAdvice (ceilLogTwo n)).K := by
   intro r _ e born hmem T
   have hfut := renewalBankBirthFuture ring r.val e born hmem
   have hmass :=
@@ -2997,8 +3027,7 @@ theorem renewalBankValidRarityOfPotential {n : Nat}
         renewalBankReached born.identity
           (compileAdvice (ceilLogTwo n)).K s.val.2)
       (weight born.identity)
-      (2 ^ (2 * ceilLogTwo n +
-        (compileAdvice (ceilLogTwo n)).kappa))
+      (2 ^ (compileAdvice (ceilLogTwo n)).K)
       (hstep born.identity) (hwin born.identity)
       ⟨born.afterBirth, hfut⟩ T
   have heq :
@@ -3183,21 +3212,15 @@ theorem renewalBankOriginPotentialReachedBound {n : Nat}
     (fun s : RenewalBankSite n => renewalBankSiteWeight o K s)
     (2 ^ K) (renewalBankSiteReachWeightBound o K) n m.sites
 
-/-- Exact specialization of hwin to the installed F.2 threshold.
-The equality K = 2*q + kappa is definitional in Compiled. -/
+/-- Exact specialization of hwin to the installed F.2 threshold `K`
+(on both bands; L3-PRIME `K = 2q - t_s` on the signed band). -/
 theorem renewalBankOriginPotentialHwin {n : Nat}
     (o : RenewalBankOrigin n) (r : RenewalBankFuture o) :
-    2 ^ (2 * ceilLogTwo n +
-        (compileAdvice (ceilLogTwo n)).kappa) *
+    2 ^ (compileAdvice (ceilLogTwo n)).K *
       Prob.indicator (renewalBankReached o
         (compileAdvice (ceilLogTwo n)).K r.val.2) ≤
       renewalBankOriginPotential o
         (compileAdvice (ceilLogTwo n)).K r.val.2 := by
-  change 2 ^ (compileAdvice (ceilLogTwo n)).K *
-      Prob.indicator (renewalBankReached o
-        (compileAdvice (ceilLogTwo n)).K r.val.2) ≤
-      renewalBankOriginPotential o
-        (compileAdvice (ceilLogTwo n)).K r.val.2
   exact renewalBankOriginPotentialReachedBound o
     (compileAdvice (ceilLogTwo n)).K r.val.2
 
@@ -3931,9 +3954,9 @@ theorem renewalBankValidRarityOfOriginPotentialOfPairMassDrift
       (r : RenewalBankFuture o),
       RenewalBankPairMassDrift ring o
         (compileAdvice (ceilLogTwo n)).K r.val) :
-    ReferenceOriginRarity ring
+    ReferenceOriginRarityK ring
       (bankValidRootedReferenceData ring hbank)
-      (compileAdvice (ceilLogTwo n)).kappa := by
+      (compileAdvice (ceilLogTwo n)).K := by
   apply renewalBankValidRarityOfPotential ring hbank
     (fun o r => renewalBankOriginPotential o
       (compileAdvice (ceilLogTwo n)).K r.val.2)
@@ -5662,9 +5685,9 @@ theorem renewalBankValidRarityOfOriginPotential {n : Nat}
     (hn : 5 ≤ n)
     (ring : DirectedRing n)
     (hbank : (compileAdvice (ceilLogTwo n)).useSmall = false) :
-    ReferenceOriginRarity ring
+    ReferenceOriginRarityK ring
       (bankValidRootedReferenceData ring hbank)
-      (compileAdvice (ceilLogTwo n)).kappa := by
+      (compileAdvice (ceilLogTwo n)).K := by
   exact renewalBankValidRarityOfOriginPotentialOfPairMassDrift
     hn ring hbank
     (fun o r => renewalBankFuturePairMassDrift ring o
@@ -5799,7 +5822,7 @@ private theorem renewalBankLargePinMargins (s : Nat)
 strict integer coefficient surplus. For s>=17 the polynomial
 ledger and F.35 supply a uniform reserve. -/
 private theorem renewalBankSpatialReserveAtWidth (s q : Nat)
-    (hs : 7 ≤ s) (hq : 80 ≤ q) :
+    (hs : 7 ≤ s) (hq : 80 ≤ q) (hs40 : s < 40000) :
     557 * s + 119981 < 2 ^ kappaDot s ∧
       (557 * s + 119981) * 2 ^ kappaDot s * 2 ^ q ≤
         ((2 ^ kappaDot s - (557 * s + 119981)) *
@@ -5830,7 +5853,8 @@ private theorem renewalBankSpatialReserveAtWidth (s q : Nat)
     have hR :
         (headlineLargeLedger s).2.1 =
           3 * (557 * s + 119981) * (557 * s + 119982) := by
-      simp [headlineLargeLedger, hsmall]
+      have hnsig : ¬ 40000 ≤ s := by omega
+      simp [headlineLargeLedger, hsmall, hnsig]
     have hqpow := Nat.pow_le_pow_right
       (by omega : 0 < (2 : Nat)) (by omega : 2 ≤ q)
     have hfour : (2 : Nat) ^ 2 = 4 := by decide
@@ -5847,7 +5871,8 @@ both exact arithmetic conjuncts of RootedReferenceRealization
 hold on the spatial (BANK) compiler branch. -/
 theorem renewalBankSpatialMargins (n : Nat)
     (hn : 5 ≤ n)
-    (hbank : (compileAdvice (ceilLogTwo n)).useSmall = false) :
+    (hbank : (compileAdvice (ceilLogTwo n)).useSmall = false)
+    (hus : ¬ signedBand (ceilLogTwo n)) :
     renewalBankReferenceCeiling n <
         2 ^ (compileAdvice (ceilLogTwo n)).kappa ∧
       renewalBankReferenceCeiling n *
@@ -5883,16 +5908,19 @@ theorem renewalBankSpatialMargins (n : Nat)
   have hkappa :
       (compileAdvice (ceilLogTwo n)).kappa =
         kappaDot (ceilLogTwo (ceilLogTwo n)) := by
-    change productionKappa (ceilLogTwo n) =
-      kappaDot (ceilLogTwo (ceilLogTwo n))
+    rw [compileAdvice_kappa_unsigned _ hus]
     simp [productionKappa, paddedS, sourceTOfQ,
       hnot32, hmax]
   have hR :
       headlineRenewalRate n =
         (headlineLargeLedger (ceilLogTwo (ceilLogTwo n))).2.1 := by
     simp [headlineRenewalRate, headlineSelectedLedger, hnot32]
+  have hs40 : ceilLogTwo (ceilLogTwo n) < 40000 := by
+    have h := hus
+    rw [signedBand_iff] at h
+    omega
   have hband := renewalBankSpatialReserveAtWidth
-    (ceilLogTwo (ceilLogTwo n)) (ceilLogTwo n) hseven hq
+    (ceilLogTwo (ceilLogTwo n)) (ceilLogTwo n) hseven hq hs40
   simpa only [hA, hkappa, hR] using hband
 
 /-- An exact clock producer for the decorated BANK reference.
@@ -5954,16 +5982,18 @@ theorem renewalBankSpatialRealizationOfCoverageAndClock {n : Nat}
       (bankValidRootedReferenceData ring hbank))
     (hclock : ReferenceClock ring
       (bankValidRootedReferenceData ring hbank)
-      (renewalBankReferenceCeiling n)) :
+      (renewalBankReferenceCeiling n))
+    (hus : ¬ signedBand (ceilLogTwo n)) :
     RootedReferenceRealization ring hn := by
-  have hmargins := renewalBankSpatialMargins n hn hbank
+  have hmargins := renewalBankSpatialMargins n hn hbank hus
   refine ⟨bankValidRootedReferenceData ring hbank,
     renewalBankReferenceCeiling n, ?_, hmargins.1, hmargins.2⟩
   exact {
     domination := bankValidReferenceAttemptDomination ring hn hbank
     coverage := hcoverage
     charge := bankValidReferenceOriginCharge ring hbank
-    rarity := renewalBankValidRarityOfOriginPotential hn ring hbank
+    rarity := referenceOriginRarityOfUnsigned ring _ hus
+      (renewalBankValidRarityOfOriginPotential hn ring hbank)
     clock := hclock }
 
 /-- Thus the only missing BANK-input predicates for the physical
@@ -5975,11 +6005,12 @@ theorem renewalBankSpatialStageCostOfCoverageAndClock {n : Nat}
       (bankValidRootedReferenceData ring hbank))
     (hclock : ReferenceClock ring
       (bankValidRootedReferenceData ring hbank)
-      (renewalBankReferenceCeiling n)) :
+      (renewalBankReferenceCeiling n))
+    (hus : ¬ signedBand (ceilLogTwo n)) :
     StageRootedRenewalCost ring := by
   exact stageRootedRenewalCost_of_referenceRealization ring hn
     (renewalBankSpatialRealizationOfCoverageAndClock
-      ring hn hbank hcoverage hclock)
+      ring hn hbank hcoverage hclock hus)
 
 end L3.HeadlineRenewal
 

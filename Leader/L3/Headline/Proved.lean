@@ -18,16 +18,23 @@ namespace L3.HeadlineCleanAssembly
 theorem l3HeadlineOfQuietLaw {n : Nat} (ring : DirectedRing n) (hn : 5 ≤ n)
     (hlaw : ∀ (root : Fin n) (first : Nat),
       L3.DigitQuiet.QuietStepLaw (c := compileAdvice (ceilLogTwo n)) ring root first) :
-    L3Headline ring :=
+    L3HeadlineAt ring (headlineStageCost n) :=
   l3HeadlineOfCleanBranches ring hn hlaw (L3.WriterCertificate.widthWriterCertificateOfBand ring hn)
 
 /-- **The L3 headline for every ring size `n ≥ 5`.**  The one-letter law of the quiet class is
 `quietStepLawProved`.  Consumer: the L3 board (H1). -/
-theorem l3HeadlineProved {n : Nat} (ring : DirectedRing n) (hn : 5 ≤ n) : L3Headline ring :=
+theorem l3HeadlineAtProved {n : Nat} (ring : DirectedRing n) (hn : 5 ≤ n) :
+    L3HeadlineAt ring (headlineStageCost n) :=
   l3HeadlineOfQuietLaw ring hn
     (fun root first => L3.DigitQuiet.quietStepLawProved hn ring root first)
+
+/-- The L3 headline (bound `linearLeaseBound`). -/
+theorem l3HeadlineProved {n : Nat} (ring : DirectedRing n) (hn : 5 ≤ n) : L3Headline ring :=
+  l3HeadlineOfAt ring (by omega) (l3HeadlineAtProved ring hn)
+    (headlineStageCost_le_linearLeaseBound n hn)
 
 end L3.HeadlineCleanAssembly
 
 #print axioms L3.HeadlineCleanAssembly.l3HeadlineOfQuietLaw
+#print axioms L3.HeadlineCleanAssembly.l3HeadlineAtProved
 #print axioms L3.HeadlineCleanAssembly.l3HeadlineProved

@@ -1,4 +1,5 @@
 import Leader.L3.Headline.Renewal
+import Leader.L3.Prime.SignedParams
 
 /-!
 SMALL renewal on the actual reference.
@@ -464,7 +465,8 @@ theorem smallWinMassBound {n : Nat}
 /-- The missing SMALL suffix producer in HeadlineRenewal,
 for every root and every finite original-clock horizon. -/
 theorem smallReferenceSuffixBound {n : Nat}
-    (ring : DirectedRing n) (hn : 5 ≤ n) :
+    (ring : DirectedRing n) (hn : 5 ≤ n)
+    (hsmall : (compileAdvice (ceilLogTwo n)).useSmall = true) :
     SmallReferenceSuffixBound ring := by
   intro root T
   change
@@ -478,7 +480,8 @@ theorem smallReferenceSuffixBound {n : Nat}
   have hK :
       (compileAdvice (ceilLogTwo n)).K =
         2 * ceilLogTwo n +
-          (compileAdvice (ceilLogTwo n)).kappa := rfl
+          (compileAdvice (ceilLogTwo n)).kappa :=
+    compileAdvice_K_eq_add_kappa _ (not_signedBand_of_useSmall _ hsmall)
   rw [← hK]
   exact hbound
 
@@ -499,7 +502,7 @@ theorem smallReferenceOriginRarity {n : Nat}
             (compileAdvice (ceilLogTwo n)).K word)) ≤
       1 * n ^ T
   simpa only [Nat.one_mul] using
-    smallReferenceSuffixBound ring hn root T
+    smallReferenceSuffixBound ring hn hsmall root T
 
 end L3.SmallRenewal
 
@@ -1531,7 +1534,7 @@ private theorem smallPairSourceResultBelow
           rw [hf] at hpost
           change some 0 = some j at hpost
           cases hpost
-          change 0 < 2 * q + (compileAdvice q).kappa
+          have := compileAdvice_K_ge_q q
           omega
 
 /-- The local reachable condition: any site with SMALL memory
@@ -1572,8 +1575,7 @@ private theorem smallSeenRunBoundStep {n : Nat}
       cases hrun
       have hthree : 3 ≤ ceilLogTwo n :=
         ceilLogTwo_ge_three n hn
-      change 0 < 2 * ceilLogTwo n +
-        (compileAdvice (ceilLogTwo n)).kappa
+      have := compileAdvice_K_ge_q (ceilLogTwo n)
       omega
     · have hf := smallReferenceOtherField ring r e site hs ht
       have hm := smallReferenceOtherSeen ring r e site hs ht

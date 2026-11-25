@@ -54,4 +54,41 @@ def L3Headline {n : Nat} (ring : DirectedRing n) : Prop :=
         (fun D e => (protocol q).step ring D e) G C0
         ((linearLeaseBound n : Nat) : Rat))
 
+/-- The headline shape with an explicit expected-time bound `B` (clauses 0-3 with `B` in place of
+`linearLeaseBound n`).  The assembly proves it at the additive stage cost; `L3Headline` (bound
+`linearLeaseBound`) and the L3-PRIME headline (bound `l3PrimeBound`) follow by monotonicity. -/
+def L3HeadlineAt {n : Nat} (ring : DirectedRing n) (B : Nat) : Prop :=
+  let q := ceilLogTwo n
+  (∃ N : Nat, N ≤ stateBudget (compileAdvice q).s ∧
+     ∃ decode : Fin N → Agent (compileAdvice q),
+       (∀ i j, decode i = decode j → i = j) ∧ (∀ a, ∃ i, decode i = a)) ∧
+  ∃ G : (protocol q).Configuration n → Prop,
+    PopulationProtocol.ClosedPred (protocol q) ring G ∧
+    (∀ C, G C → PopulationProtocol.IsSafe (protocol q) ring C (fun b => b)) ∧
+    (∀ C0 : (protocol q).Configuration n,
+      UniformFirstHit.ExpectedHittingTimeAtMost
+        (fun D e => (protocol q).step ring D e) G C0 ((B : Nat) : Rat))
+
+/-- Monotonicity in the bound. -/
+theorem l3HeadlineAtMono {n : Nat} (ring : DirectedRing n) (hn : 0 < n) {B B' : Nat}
+    (h : L3HeadlineAt ring B) (hle : B ≤ B') : L3HeadlineAt ring B' := by
+  unfold L3HeadlineAt at h ⊢
+  dsimp only at h ⊢
+  obtain ⟨hstates, G, hclosed, hsafe, hmean⟩ := h
+  refine ⟨hstates, G, hclosed, hsafe, ?_⟩
+  intro C0
+  apply (UniformFirstHit.expectedHittingTimeAtMost_iff_cost _ G hn C0 B').2
+  intro T
+  exact Nat.le_trans
+    ((UniformFirstHit.expectedHittingTimeAtMost_iff_cost _ G hn C0 B).1 (hmean C0) T)
+    (Nat.mul_le_mul_left _ hle)
+
+/-- `L3Headline` is `L3HeadlineAt` at `linearLeaseBound n`. -/
+theorem l3HeadlineOfAt {n : Nat} (ring : DirectedRing n) (hn : 0 < n) {B : Nat}
+    (h : L3HeadlineAt ring B) (hle : B ≤ linearLeaseBound n) : L3Headline ring := by
+  have h' := l3HeadlineAtMono ring hn h hle
+  unfold L3HeadlineAt at h'
+  unfold L3Headline
+  exact h'
+
 end L3

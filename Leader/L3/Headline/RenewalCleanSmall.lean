@@ -291,7 +291,7 @@ theorem smallReferenceOriginRarityClean {n : Nat}
             (compileAdvice (ceilLogTwo n)).K word)) ≤
       1 * n ^ T
   simpa only [Nat.one_mul] using
-    smallReferenceSuffixBound ring hn root T
+    smallReferenceSuffixBound ring hn hsmall root T
 
 /-! ### Retry coverage on the clean reference -/
 
@@ -859,7 +859,8 @@ theorem stageCleanRootedRenewalCostOfBranches {n : Nat}
     (hsmallFold : (compileAdvice (ceilLogTwo n)).useSmall = true →
       SmallCleanReaderFoldSound ring)
     (hsmallDigit : (compileAdvice (ceilLogTwo n)).useSmall = true →
-      SmallCleanDigitHalf ring) :
+      SmallCleanDigitHalf ring)
+    (hsigned : SignedCleanRenewal ring) :
     StageCleanRootedRenewalCost ring := by
   cases hb : (compileAdvice (ceilLogTwo n)).useSmall with
   | true =>
@@ -868,7 +869,7 @@ theorem stageCleanRootedRenewalCostOfBranches {n : Nat}
   | false =>
       obtain ⟨rooted, hstart, hOld⟩ := hbankOld hb
       exact bankCleanStageRootedRenewalCost ring hn hb
-        (hbankDigit hb) (hbankThreshold hb) rooted hstart hOld
+        (hbankDigit hb) (hbankThreshold hb) rooted hstart hOld hsigned
 
 end L3.HeadlineRenewalCleanSmall
 

@@ -344,8 +344,8 @@ private theorem famSharpConstants
 
 /-- Consumer: `grantBlockSharpBlockMassLower`. -/
 private theorem famSharpSmallScale
-    (b K R n N : Nat) (hsq : n * n ≤ 2 ^ K) (hN : N ≤ 4 * n)
-    (hR : 45 + (8 * b + 13) + K + K ≤ R) :
+    (b K R n N : Nat) (hsq : n * n ≤ 2 ^ (K + K)) (hN : N ≤ 4 * n)
+    (hR : 45 + (8 * b + 13) + (K + K) + K ≤ R) :
     65536 * (104857600 * (8 * b + 13) * n * 2 ^ K) * N ≤ 2 ^ R := by
   have hf : 8 * b + 13 ≤ 2 ^ (8 * b + 13) :=
     Nat.le_of_lt Nat.lt_two_pow_self
@@ -356,10 +356,10 @@ private theorem famSharpSmallScale
       Nat.mul_le_mul_left _ hN
     _ = (65536 * 104857600 * 4) * (8 * b + 13) * (n * n) * 2 ^ K := by
       ac_rfl
-    _ ≤ 2 ^ 45 * 2 ^ (8 * b + 13) * 2 ^ K * 2 ^ K :=
+    _ ≤ 2 ^ 45 * 2 ^ (8 * b + 13) * 2 ^ (K + K) * 2 ^ K :=
       Nat.mul_le_mul
         (Nat.mul_le_mul (Nat.mul_le_mul hc hf) hsq) (Nat.le_refl _)
-    _ = 2 ^ (45 + (8 * b + 13) + K + K) := by
+    _ = 2 ^ (45 + (8 * b + 13) + (K + K) + K) := by
       rw [← Nat.pow_add, ← Nat.pow_add, ← Nat.pow_add]
     _ ≤ 2 ^ R := Nat.pow_le_pow_right (by decide) hR
 
@@ -406,7 +406,7 @@ theorem grantBlockSharpBlockMassLower
     (fun m hm => (hmem m hm).2) hWT (Nat.le_of_eq hW)
   obtain ⟨hres, _, hRn⟩ :=
     grantCutoffsCompiledRadiusReserves n R hn hsp hradius
-  have hsq := grantCutoffsPopulationSquareFitsHeads n hn
+  have hsq := grantCutoffsRadiusPopulationFitsHeads n R hn hradius
   have hn0 : 0 < n := by omega
   have hN : Density.N (badSet ring C) ≤ 4 * n :=
     Nat.le_trans (Nat.le_mul_self (defects ring C)) hdensity
@@ -415,17 +415,25 @@ theorem grantBlockSharpBlockMassLower
     generalize R * n = z at hRn ⊢
     omega
   have hexp : 45 + (8 * (compileAdvice (ceilLogTwo n)).b + 13) +
-      (compileAdvice (ceilLogTwo n)).K +
+      ((compileAdvice (ceilLogTwo n)).K +
+        (compileAdvice (ceilLogTwo n)).K) +
       (compileAdvice (ceilLogTwo n)).K ≤ R := by
     have hQ : 32 * ((compileAdvice (ceilLogTwo n)).K + 2) ≤
         32 * ((compileAdvice (ceilLogTwo n)).b + 1) *
           ((compileAdvice (ceilLogTwo n)).K + 2) :=
       Nat.mul_le_mul_right _ (by omega)
     omega
+  have hnK : n ≤ 2 ^ (compileAdvice (ceilLogTwo n)).K :=
+    Nat.le_trans (ceilLogTwo_spec n (by omega)).2
+      (Nat.pow_le_pow_right (by decide) (compileAdvice_K_ge_q (ceilLogTwo n)))
+  have hsq2 : n * n ≤ 2 ^ ((compileAdvice (ceilLogTwo n)).K +
+      (compileAdvice (ceilLogTwo n)).K) := by
+    rw [Nat.pow_add]
+    exact Nat.mul_le_mul hnK hnK
   have hSmallScale := famSharpSmallScale
     (compileAdvice (ceilLogTwo n)).b
     (compileAdvice (ceilLogTwo n)).K R n
-    (Density.N (badSet ring C)) hsq hN hexp
+    (Density.N (badSet ring C)) hsq2 hN hexp
   have hE : 0 < 8 ^ R := Nat.pow_pos (by decide : 0 < 8)
   have s1 : 65536 * (grantBlockFamilyScale n *
       (Density.N (badSet ring C) * 3 ^ R)) ≤

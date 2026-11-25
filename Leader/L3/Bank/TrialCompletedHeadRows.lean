@@ -1,4 +1,5 @@
 import Leader.L3.Bank.TrialCompare
+import Leader.L3.Prime.SignedParams
 import Leader.L3.Bank.TrialDuration
 import Leader.L3.Bank.CounterTrialLower
 
@@ -8201,7 +8202,7 @@ theorem bankTrialC5ActualOriginHeadCountExact {n q : Nat}
     change ¬ q ≤ 79 at hn
     omega
   have hK : 0 < (compileAdvice q).K := by
-    change 0 < 2 * q + productionKappa q
+    have := compileAdvice_K_ge_q q
     omega
   have hstep : BankTrialC5CompletedHeadEdgePreservation ring root S :=
     bankTrialC5CompletedHeadEdgePreservationOfRows ring root S
@@ -8877,7 +8878,7 @@ theorem bankTrialC5ActualOriginLiveCarryBeforeFirstExit {n q : Nat}
     change ¬ q ≤ 79 at hn
     omega
   have hK : 0 < (compileAdvice q).K := by
-    change 0 < 2 * q + productionKappa q
+    have := compileAdvice_K_ge_q q
     omega
   have hstep : BankTrialC5CompletedHeadEdgePreservation ring root S :=
     bankTrialC5CompletedHeadEdgePreservationOfRows ring root S
@@ -9196,7 +9197,7 @@ theorem bankTrialC5ActualCLZeroBeforeK {n q : Nat}
     change ¬ q ≤ 79 at hn
     omega
   have hK : 0 < (compileAdvice q).K := by
-    change 0 < 2 * q + productionKappa q
+    have := compileAdvice_K_ge_q q
     omega
   have hstep : BankTrialC5CompletedHeadEdgePreservation
       ring root S :=
@@ -10421,7 +10422,7 @@ theorem bankTrialC5ActualAllWordsHeadCap {n q : Nat}
     change ¬ q ≤ 79 at hn
     omega
   have hK : 0 < (compileAdvice q).K := by
-    change 0 < 2 * q + productionKappa q
+    have := compileAdvice_K_ge_q q
     omega
   have hstep : BankTrialC5CompletedHeadEdgePreservation ring root S :=
     bankTrialC5CompletedHeadEdgePreservationOfRows ring root S
@@ -11679,7 +11680,7 @@ theorem bankTrialC5ActualFirstExitNoTopIR {n q : Nat}
     change ¬ q ≤ 79 at hn
     omega
   have hK : 0 < (compileAdvice q).K := by
-    change 0 < 2 * q + productionKappa q
+    have := compileAdvice_K_ge_q q
     omega
   have hstep : BankTrialC5CompletedHeadEdgePreservation
       ring root S :=
@@ -11969,7 +11970,7 @@ theorem bankTrialC5ActualProductionKPositive
       of_decide_eq_false (hs.symm.trans hsp)
     change ¬ q ≤ 79 at hn
     omega
-  change 0 < 2 * q + productionKappa q
+  have := compileAdvice_K_ge_q q
   omega
 
 /-- Every first-exit reachable state inherits the

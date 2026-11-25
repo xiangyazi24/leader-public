@@ -1,4 +1,5 @@
 import Leader.L3.Bank.WindowOverlapRoot
+import Leader.L3.Prime.SignedParams
 import Leader.L3.Bank.WindowOverlapInterior
 import Leader.L3.Bank.MemoryNonroot
 
@@ -5002,7 +5003,14 @@ Consumer: the M6-Q IWAIT top-IR row (an IR at the top digit would need
 V + 2^b ≤ K). -/
 theorem bankWindowJointKBelowWidth (q : Nat) :
     (compileAdvice q).K < 2 ^ (compileAdvice q).b := by
-  change 2 * q + productionKappa q < 2 ^ (paddedS (sourceTOfQ q) + 11)
+  have hKle : (compileAdvice q).K ≤ 2 * q + productionKappa q := by
+    show 2 * q + (if signedBand q then 0 else productionKappa q) -
+      (if signedBand q then signedT (paddedS (sourceTOfQ q)) else 0) ≤ _
+    by_cases h : signedBand q
+    · rw [if_pos h, if_pos h]; omega
+    · rw [if_neg h, if_neg h]; omega
+  suffices hmain : 2 * q + productionKappa q < 2 ^ (paddedS (sourceTOfQ q) + 11) from
+    Nat.lt_of_le_of_lt hKle hmain
   have hs2 : 2 ≤ paddedS (sourceTOfQ q) := Nat.le_max_left 2 _
   have hsq : ceilLogTwo q ≤ paddedS (sourceTOfQ q) := Nat.le_max_right 2 _
   have hA1 : q ≤ 2 ^ paddedS (sourceTOfQ q) :=
@@ -8718,7 +8726,7 @@ theorem bankWindowOverlapSourceResetReturnRootFieldsAt {n : Nat}
     change ¬ ceilLogTwo n ≤ 79 at hnot
     omega
   have hKpos : 0 < (compileAdvice (ceilLogTwo n)).K := by
-    change 0 < 2 * ceilLogTwo n + productionKappa (ceilLogTwo n)
+    have := compileAdvice_K_ge_q (ceilLogTwo n)
     omega
   have hown := bankWindowJointArmedOwnClausesOfReturn ring (renewalBankNext ring (rbRun ring (renewalBankStart ring seed) pre) e) e q _ hmodeP
     hactive hqo

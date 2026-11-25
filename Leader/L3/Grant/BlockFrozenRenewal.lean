@@ -1,6 +1,7 @@
 import Leader.L3.Grant.BlockFrozenRenewalInstance
 import Leader.L3.Grant.BlockFrozenRenewalCost
 import Leader.L3.Grant.BlockFrozenRenewalSums
+import Leader.L3.Prime.SignedParams
 
 /-!
 # G16: the G13 renewal argument on the frozen chain
@@ -105,9 +106,7 @@ theorem grantBlockFrozenClearedWindowMassLower
     · omega
   have hpositive :
       0 < (compileAdvice (ceilLogTwo n)).K := by
-    change 0 < 2 * ceilLogTwo n +
-      productionKappa (ceilLogTwo n)
-    omega
+    exact compileAdvice_K_pos _ (by omega)
   have hK :
       (compileAdvice (ceilLogTwo n)).K <
         2 ^ (compileAdvice (ceilLogTwo n)).b :=

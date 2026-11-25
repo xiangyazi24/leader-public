@@ -487,8 +487,8 @@ private theorem famBlockPowSmall (R Y : Nat) (hY : Y ≤ 2 ^ R) :
 
 Consumer: `grantBlockFamilyBlockMassLower`. -/
 private theorem famBlockSmallScale
-    (b K R n N : Nat) (hsq : n * n ≤ 2 ^ K) (hN : N ≤ 4 * n)
-    (hR : 38 + (8 * b + 13) + K + K ≤ R) :
+    (b K R n N : Nat) (hsq : n * n ≤ 2 ^ (K + K)) (hN : N ≤ 4 * n)
+    (hR : 38 + (8 * b + 13) + (K + K) + K ≤ R) :
     512 * (104857600 * (8 * b + 13) * n * 2 ^ K) * N ≤ 2 ^ R := by
   have hf : 8 * b + 13 ≤ 2 ^ (8 * b + 13) :=
     Nat.le_of_lt Nat.lt_two_pow_self
@@ -499,10 +499,10 @@ private theorem famBlockSmallScale
       Nat.mul_le_mul_left _ hN
     _ = (512 * 104857600 * 4) * (8 * b + 13) * (n * n) * 2 ^ K := by
       ac_rfl
-    _ ≤ 2 ^ 38 * 2 ^ (8 * b + 13) * 2 ^ K * 2 ^ K :=
+    _ ≤ 2 ^ 38 * 2 ^ (8 * b + 13) * 2 ^ (K + K) * 2 ^ K :=
       Nat.mul_le_mul
         (Nat.mul_le_mul (Nat.mul_le_mul hc hf) hsq) (Nat.le_refl _)
-    _ = 2 ^ (38 + (8 * b + 13) + K + K) := by
+    _ = 2 ^ (38 + (8 * b + 13) + (K + K) + K) := by
       rw [← Nat.pow_add, ← Nat.pow_add, ← Nat.pow_add]
     _ ≤ 2 ^ R := Nat.pow_le_pow_right (by decide) hR
 
@@ -510,12 +510,12 @@ private theorem famBlockSmallScale
 
 Consumer: `grantBlockFamilyBlockMassLower`. -/
 private theorem famBlockSmallRoots
-    (K R n : Nat) (hsq : n * n ≤ 2 ^ K) (hR : K + 5 ≤ R) :
+    (K R n : Nat) (hsq : n * n ≤ 2 ^ (K + K)) (hR : K + K + 5 ≤ R) :
     32 * (n * n) ≤ 2 ^ R :=
   calc
-    32 * (n * n) ≤ 32 * 2 ^ K := Nat.mul_le_mul_left _ hsq
-    _ = 2 ^ (5 + K) := by
-      rw [Nat.pow_add]
+    32 * (n * n) ≤ 32 * 2 ^ (K + K) := Nat.mul_le_mul_left _ hsq
+    _ = 2 ^ (5 + (K + K)) := by
+      rw [Nat.pow_add 2 5 (K + K)]
     _ ≤ 2 ^ R := Nat.pow_le_pow_right (by decide) (by omega)
 
 /-- **C.18--C.19 on the actual family.**  At every density-good,
@@ -572,7 +572,7 @@ theorem grantBlockFamilyBlockMassLower
     (fun m hm => (hmem m hm).2) hWT (Nat.le_of_eq hW)
   obtain ⟨hres, _, hRn⟩ :=
     grantCutoffsCompiledRadiusReserves n R hn hsp hradius
-  have hsq := grantCutoffsPopulationSquareFitsHeads n hn
+  have hsq := grantCutoffsRadiusPopulationFitsHeads n R hn hradius
   have hn0 : 0 < n := by omega
   have hN : Density.N (badSet ring C) ≤ 4 * n :=
     Nat.le_trans (Nat.le_mul_self (defects ring C)) hdensity
@@ -594,21 +594,30 @@ theorem grantBlockFamilyBlockMassLower
     omega
   -- exponent budget from the radius reserves
   have hexp : 38 + (8 * (compileAdvice (ceilLogTwo n)).b + 13) +
-      (compileAdvice (ceilLogTwo n)).K +
+      ((compileAdvice (ceilLogTwo n)).K +
+        (compileAdvice (ceilLogTwo n)).K) +
       (compileAdvice (ceilLogTwo n)).K ≤ R := by
     have hQ : 32 * ((compileAdvice (ceilLogTwo n)).K + 2) ≤
         32 * ((compileAdvice (ceilLogTwo n)).b + 1) *
           ((compileAdvice (ceilLogTwo n)).K + 2) :=
       Nat.mul_le_mul_right _ (by omega)
     omega
-  have hexp2 : (compileAdvice (ceilLogTwo n)).K + 5 ≤ R := by
+  have hexp2 : (compileAdvice (ceilLogTwo n)).K +
+      (compileAdvice (ceilLogTwo n)).K + 5 ≤ R := by
     omega
+  have hnK : n ≤ 2 ^ (compileAdvice (ceilLogTwo n)).K :=
+    Nat.le_trans (ceilLogTwo_spec n (by omega)).2
+      (Nat.pow_le_pow_right (by decide) (compileAdvice_K_ge_q (ceilLogTwo n)))
+  have hsq2 : n * n ≤ 2 ^ ((compileAdvice (ceilLogTwo n)).K +
+      (compileAdvice (ceilLogTwo n)).K) := by
+    rw [Nat.pow_add]
+    exact Nat.mul_le_mul hnK hnK
   have hSmallScale := famBlockSmallScale
     (compileAdvice (ceilLogTwo n)).b
     (compileAdvice (ceilLogTwo n)).K R n
-    (Density.N (badSet ring C)) hsq hN hexp
+    (Density.N (badSet ring C)) hsq2 hN hexp
   have hSmallRoots := famBlockSmallRoots
-    (compileAdvice (ceilLogTwo n)).K R n hsq hexp2
+    (compileAdvice (ceilLogTwo n)).K R n hsq2 hexp2
   -- the two smallness facts s1, s2 of the core arithmetic
   have hE : 0 < 8 ^ R := Nat.pow_pos (by decide : 0 < 8)
   have hS : 0 < grantBlockFamilyScale n := by

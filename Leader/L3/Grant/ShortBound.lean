@@ -1,4 +1,5 @@
 import Leader.L3.Grant.ShortCover
+import Leader.L3.Prime.SignedParams
 
 /-!
 # G17: the expected success time on the finite advice branch (C.22--C.25)
@@ -43,7 +44,7 @@ theorem grantShortCostBound {n : Nat} (ring : DirectedRing n) (hn : 5 ≤ n)
       omega
   have hk := compileAdvice_K_lt_kStar (ceilLogTwo n) hq3 hsmall
   have hK0 : 0 < (compileAdvice (ceilLogTwo n)).K := by
-    change 0 < 2 * ceilLogTwo n + (compileAdvice (ceilLogTwo n)).kappa
+    have := compileAdvice_K_ge_q (ceilLogTwo n)
     omega
   have h1 := grantShortPhysicalCostLe ring hn hsmall C hp T
   have h2 := shortAbsCost ring (by omega)

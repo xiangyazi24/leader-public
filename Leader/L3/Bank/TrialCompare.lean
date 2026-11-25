@@ -1,4 +1,5 @@
 import Leader.L3.Bank.TrialProbability
+import Leader.L3.Prime.SignedParams
 
 /-!
 C.5, comparator step (Appendix C, spatial-counter.tex, the paragraph
@@ -1775,7 +1776,7 @@ theorem bankTrialProbabilityC5CompletedHeadSoundOfEdgePreservation
   have hnot : ¬ q ≤ qStar := of_decide_eq_false hsp
   have hK : 0 < (compileAdvice q).K := by
     change ¬ q ≤ 79 at hnot
-    change 0 < 2 * q + productionKappa q
+    have := compileAdvice_K_ge_q q
     omega
   have hbase := bankTrialC5CompletedHeadInvariantStart
     S hK hclean

@@ -36,7 +36,7 @@ theorem complete_cells {n h H U : Nat} (N : 0<n) (I : 0<h) (W : 0<H) :
   apply (Nat.le_div_iff_mul_le I).mpr
   apply Nat.le_of_mul_le_mul_right (c:=n) _ N
   calc
-    _ = c*(n*h) := by ac_rfl
+    _ = c*(n*h) := by show _ = n*U/(2*halfCell n h H)*(n*h); ac_rfl
     _ ≤ c*(b*(40*H)) := Nat.mul_le_mul_left _ Cover
     _ = 20*H*(c*(2*b)) := by calc
       _ = 40*(c*b*H) := by ac_rfl

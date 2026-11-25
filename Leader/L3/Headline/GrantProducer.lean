@@ -509,6 +509,10 @@ spatial band; this is sufficient for K <= 3q. -/
 theorem grantClockSpatialKappaLeAdvice (q : Nat)
     (hq : 80 ≤ q) :
     (compileAdvice q).kappa ≤ q := by
+  by_cases hsb : signedBand q
+  · show (if signedBand q then 0 else productionKappa q) ≤ q
+    rw [if_pos hsb]
+    exact Nat.zero_le q
   have hs := grantClockSpatialWidthBounds q hq
   have hq32 : ¬ q ≤ 32 := by omega
   have hnotTwo : (compileAdvice q).s ≠ 2 := by omega
@@ -520,6 +524,7 @@ theorem grantClockSpatialKappaLeAdvice (q : Nat)
   have hlarge :
       (compileAdvice q).kappa =
         kappaDot (compileAdvice q).s := by
+    rw [compileAdvice_kappa_unsigned q hsb]
     change productionKappa q = kappaDot (paddedS (sourceTOfQ q))
     unfold productionKappa
     rw [if_neg hq32]
@@ -542,7 +547,7 @@ theorem grantClockSpatialKappaLeAdvice (q : Nat)
 theorem grantClockSpatialKLeTriple (q : Nat) (hq : 80 ≤ q) :
     (compileAdvice q).K ≤ 3 * q := by
   have hk := grantClockSpatialKappaLeAdvice q hq
-  change 2 * q + (compileAdvice q).kappa ≤ 3 * q
+  change 2 * q + (compileAdvice q).kappa - (compileAdvice q).kdrop ≤ 3 * q
   omega
 
 /-- Fourth powers grow by less than a factor of two after x>=8.
@@ -787,12 +792,19 @@ theorem grantClockSpatialPaperRadiusCutoff (n R : Nat)
     hradius (grantClockSpatialPaperBudgetSquareLower n hn hsp)
 
 
-/-- The spatial compiler has kappa >=17, hence K>=177.
+/-- The spatial compiler has kappa >=17 off the L3-PRIME signed band, and
+K>=177 on both bands (signed: K = 2q - t_s > q >= 40000).
 At q=80 these bounds are equalities. -/
 theorem grantClockSpatialKappaLower (q : Nat)
     (hq : 80 ≤ q) :
-    17 ≤ (compileAdvice q).kappa ∧
+    (¬ signedBand q → 17 ≤ (compileAdvice q).kappa) ∧
       177 ≤ (compileAdvice q).K := by
+  by_cases hsb : signedBand q
+  · obtain ⟨hs4, hK, _, hlt⟩ := compileAdvice_K_signed_bounds q hsb
+    have hle := ceilLogTwo_le_self q
+    refine ⟨fun h => absurd hsb h, ?_⟩
+    rw [hK]
+    omega
   have hs := grantClockSpatialWidthBounds q hq
   have hq32 : ¬ q ≤ 32 := by omega
   have hnotTwo : (compileAdvice q).s ≠ 2 := by omega
@@ -804,6 +816,7 @@ theorem grantClockSpatialKappaLower (q : Nat)
   have hlarge :
       (compileAdvice q).kappa =
         kappaDot (compileAdvice q).s := by
+    rw [compileAdvice_kappa_unsigned q hsb]
     change productionKappa q = kappaDot (paddedS (sourceTOfQ q))
     unfold productionKappa
     rw [if_neg hq32]
@@ -833,9 +846,10 @@ theorem grantClockSpatialKappaLower (q : Nat)
     rw [hlarge, hdot]
     exact hk
   have hK : (compileAdvice q).K =
-      2 * q + (compileAdvice q).kappa := rfl
+      2 * q + (compileAdvice q).kappa := by
+    rw [compileAdvice_K_unsigned q hsb, compileAdvice_kappa_unsigned q hsb]
   constructor
-  · exact hkappa
+  · exact fun _ => hkappa
   · omega
 
 /-- C.13's first cutoff is C.12 written as
@@ -898,8 +912,13 @@ theorem grantClockSpatialC14Coefficient
         (2 ^ (compileAdvice q).K - 1) := by
   have hb := (grantClockSpatialWidthBounds q hq).2.2
   have hK : q ≤ (compileAdvice q).K := by
-    change q ≤ 2 * q + (compileAdvice q).kappa
-    omega
+    by_cases hsb : signedBand q
+    · obtain ⟨_, hK, _, hlt⟩ := compileAdvice_K_signed_bounds q hsb
+      have hle := ceilLogTwo_le_self q
+      rw [hK]
+      omega
+    · rw [compileAdvice_K_unsigned q hsb]
+      omega
   have hpow := Nat.pow_le_pow_right (by omega : 0 < 2) hK
   have hlin := grantClockPowerBeatsLinear q hq
   have hbig : 8 * (compileAdvice q).b + 13 <

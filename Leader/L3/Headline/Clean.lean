@@ -134,6 +134,14 @@ def StageCleanRootedRenewalCost {n : Nat}
         (headlineCleanTarget ring) C T ≤
         n ^ T * (headlineRenewalRate n * n ^ 2)
 
+/-- L3-PRIME: the clean rooted renewal stage on the signed band `s ≥ 40000`
+(`L3PRIME-TRANSFER.tex` lem:l3prime-renewal).  The old proof uses the positive
+margin `A_s < 2^kappa` (F.35), false there; this is the open signed obligation
+carried by the headline assembly until the sharpened-count proof discharges it.
+Consumer: `bankCleanStageRootedRenewalCost`, the headline assembly. -/
+def SignedCleanRenewal {n : Nat} (ring : DirectedRing n) : Prop :=
+  signedBand (ceilLogTwo n) → StageCleanRootedRenewalCost ring
+
 /-! An accepted old-monitor target is *already physically rooted*.
 This is sufficient to migrate the earlier-stage union clocks by
 target monotonicity, without claiming AcceptedWord -> CleanWord. -/
@@ -373,14 +381,14 @@ private theorem headlineCleanComposeRates {n : Nat}
 /-- Analogue of l3Headline_of_stages using only target-swapped
 stage interfaces plus merged Gclean closure/safety.
 Consumer: the clean Q9/R14 reduction. -/
-theorem l3HeadlineOfCleanStages {n : Nat}
+theorem l3HeadlineAtOfCleanStages {n : Nat}
     (ring : DirectedRing n) (hn : 5 ≤ n)
     (hpurify : StageCleanNativePurification ring)
     (hgrant : StageCleanFirstGrant ring)
     (hrequest : StageCleanRequestChecker ring)
     (hbirth : StageCleanFirstProtectedBirth ring)
     (hrenew : StageCleanRootedRenewal ring) :
-    L3Headline ring := by
+    L3HeadlineAt ring (headlineStageCost n) := by
   have hready :
       ∀ C : HeadlineConfiguration n,
         headlineRequestReady ring C →
@@ -436,29 +444,32 @@ theorem l3HeadlineOfCleanStages {n : Nat}
         headlineStageRate n := by
     unfold headlineStageRate
     omega
-  have hfirst :
+  have htotal :
       ∀ C0 : HeadlineConfiguration n,
         UniformFirstHit.ExpectedHittingTimeAtMost
           (headlinePhysicalNext ring) (headlineCleanTarget ring)
-          C0 ((linearLeaseBound n : Nat) : Rat) := by
-    intro C0
-    have htotal :
-        UniformFirstHit.ExpectedHittingTimeAtMost
-          (headlinePhysicalNext ring) (headlineCleanTarget ring)
           C0 ((headlineStageCost n : Nat) : Rat) := by
-      simpa only [headlineStageCost, hrate] using hall C0
-    apply (UniformFirstHit.expectedHittingTimeAtMost_iff_cost
-      (headlinePhysicalNext ring) (headlineCleanTarget ring)
-      (by omega : 0 < n) C0 (linearLeaseBound n)).2
-    have hraw := (UniformFirstHit.expectedHittingTimeAtMost_iff_cost
-      (headlinePhysicalNext ring) (headlineCleanTarget ring)
-      (by omega : 0 < n) C0 (headlineStageCost n)).1 htotal
-    intro T
-    exact Nat.le_trans (hraw T)
-      (Nat.mul_le_mul_left (n ^ T)
-        (headlineStageCost_le_linearLeaseBound n hn))
-  exact l3HeadlineOfCleanFirstHit ring hn
-    (stageAlphabetBudget_of_stateCount n hn) hfirst
+    intro C0
+    simpa only [headlineStageCost, hrate] using hall C0
+  have hbudget := stageAlphabetBudget_of_stateCount n hn
+  unfold L3HeadlineAt
+  refine ⟨hbudget, headlineCleanTarget ring,
+    cleanTargetClosed hn ring, ?_, htotal⟩
+  intro C hC
+  exact cleanTargetSafe hn ring C hC
+
+/-- The L3 headline from the five clean stages (bound `linearLeaseBound`). -/
+theorem l3HeadlineOfCleanStages {n : Nat}
+    (ring : DirectedRing n) (hn : 5 ≤ n)
+    (hpurify : StageCleanNativePurification ring)
+    (hgrant : StageCleanFirstGrant ring)
+    (hrequest : StageCleanRequestChecker ring)
+    (hbirth : StageCleanFirstProtectedBirth ring)
+    (hrenew : StageCleanRootedRenewal ring) :
+    L3Headline ring :=
+  l3HeadlineOfAt ring (by omega)
+    (l3HeadlineAtOfCleanStages ring hn hpurify hgrant hrequest hbirth hrenew)
+    (headlineStageCost_le_linearLeaseBound n hn)
 
 /-- Two clean timing hypotheses suffice after the green physical
 purification, grant, and protected-birth producer theorems.
@@ -485,6 +496,20 @@ theorem l3HeadlineOfRequestAndCleanRenewal {n : Nat}
     L3Headline ring :=
   l3HeadlineOfCleanRequestAndRenewal ring hn
     (stageCleanRequestMissingClockOfMonitor ring hn hrequest) hcost
+
+/-- The same at the additive stage cost (consumer: the L3 and L3-PRIME headlines). -/
+theorem l3HeadlineAtOfRequestAndCleanRenewal {n : Nat}
+    (ring : DirectedRing n) (hn : 5 ≤ n)
+    (hrequest : StageRequestMissingClock ring)
+    (hcost : StageCleanRootedRenewalCost ring) :
+    L3HeadlineAt ring (headlineStageCost n) :=
+  l3HeadlineAtOfCleanStages ring hn
+    (stageCleanNativePurificationProved ring hn)
+    (stageCleanFirstGrantProved ring hn)
+    (stageCleanRequestCheckerOfMissingClock ring hn
+      (stageCleanRequestMissingClockOfMonitor ring hn hrequest))
+    (stageCleanFirstProtectedBirthProved ring hn)
+    (stageCleanRootedRenewalOfCost ring hn hcost)
 
 end L3
 

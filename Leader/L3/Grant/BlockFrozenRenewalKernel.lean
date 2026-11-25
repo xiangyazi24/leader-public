@@ -1,4 +1,5 @@
 import Leader.L3.Grant.BlockFrozenRenewalTree
+import Leader.L3.Prime.SignedParams
 
 /-!
 Kernel-generic first-stop layer of the G13 chain, for a stopped kernel
@@ -552,8 +553,7 @@ theorem soundIndexCutBounds
     · omega
   have hpositive :
       0 < (compileAdvice (ceilLogTwo n)).K := by
-    change 0 < 2 * ceilLogTwo n +
-      productionKappa (ceilLogTwo n)
+    have := compileAdvice_K_ge_q (ceilLogTwo n)
     omega
   have hK :
       (compileAdvice (ceilLogTwo n)).K <

@@ -1,6 +1,7 @@
 import Leader.L3.Bank.Counter
 import Leader.L3.Bank.PairNonroot
 import Leader.L3.Bank.PairRoot
+import Leader.L3.Prime.SignedParams
 
 /-!
 Arbitrary-scratch entry for the physical spatial counter.
@@ -5153,7 +5154,7 @@ theorem resetColdForeignFirstWord :
 
 theorem resetColdForeignThreshold :
     1 < (compileAdvice 80).K := by
-  change 1 < 2 * 80 + productionKappa 80
+  have := compileAdvice_K_ge_q 80
   omega
 
 private theorem resetColdOneTermLeOfFn :
@@ -5203,7 +5204,7 @@ theorem resetColdForeignMassPositive :
 theorem resetColdForeignPowerLarge :
     20 < 2 ^ (compileAdvice 80).K := by
   have hk : 5 ≤ (compileAdvice 80).K := by
-    change 5 ≤ 2 * 80 + productionKappa 80
+    have := compileAdvice_K_ge_q 80
     omega
   have hp : (2 : Nat) ^ 5 ≤ 2 ^ (compileAdvice 80).K :=
     Nat.pow_le_pow_right (by decide) hk
@@ -8466,8 +8467,7 @@ theorem resetColdPrivateKPositive (q : Nat)
   have hpositive : 0 < q := by
     unfold qStar at hq
     omega
-  change 0 < 2 * q + productionKappa q
-  omega
+  exact compileAdvice_K_pos q hpositive
 
 /-- Clean supplies the entire ARMED/empty/numeric-zero phase,
 not merely its root mode. -/
@@ -14179,32 +14179,7 @@ theorem resetColdPrivateCompiledSpatialCapacity (q : Nat)
       2 ^ (compileAdvice q).b := by
   have hq : 80 ≤ q :=
     resetColdPrivateSpatialAdviceGe q hsp
-  have hlog := resetColdHeadlineLogGeSix q (by omega)
-  have hupper :=
-    (resetColdHeadlineCeilSpec q (by omega)).2
-  have hmax :
-      max 2 (ceilLogTwo q) = ceilLogTwo q := by omega
-  have hnot32 : ¬ q ≤ 32 := by omega
-  have hk :
-      productionKappa q = kappaDot (ceilLogTwo q) := by
-    unfold productionKappa
-    rw [if_neg hnot32]
-    change kappaDot (max 2 (ceilLogTwo q)) =
-      kappaDot (ceilLogTwo q)
-    rw [hmax]
-  have hkd := resetColdHeadlineKappaBound
-    (ceilLogTwo q) hlog
-  have hg := resetColdHeadlineGrowth
-    (ceilLogTwo q) hlog
-  have h11 : (2 : Nat) ^ 11 = 2048 := by decide
-  have hpow :
-      2 ^ (ceilLogTwo q + 11) =
-        2 ^ ceilLogTwo q * 2048 := by
-    rw [Nat.pow_add, h11]
-  change 2 * q + productionKappa q + 1 <
-    2 ^ (max 2 (ceilLogTwo q) + 11)
-  rw [hmax, hk, hpow]
-  omega
+  exact compileAdvice_K_lt_two_pow_b q (by omega)
 
 /-- Exactly the width hypothesis consumed by the
 word and probability theorems. -/

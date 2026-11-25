@@ -206,13 +206,57 @@ theorem kappaDot_le (s : Nat) (hs : 6 ≤ s) : kappaDot s ≤ 557 * s + 119982 :
     have := ceilLogTwo_le_self (557 * s + 119981 + 1)
     omega
 
+/-! ## L3-PRIME band facts (`L3PRIME-TRANSFER.tex` (P1)) -/
+
+/-- The signed band in terms of `q`: `40000 ≤ max 2 (ceilLogTwo q)`. -/
+theorem signedBand_iff (q : Nat) : signedBand q ↔ 40000 ≤ max 2 (ceilLogTwo q) := Iff.rfl
+
+/-- Below padded width `40000` the band is unsigned. -/
+theorem not_signedBand_of_lt (q : Nat) (h : max 2 (ceilLogTwo q) < 40000) : ¬ signedBand q := by
+  rw [signedBand_iff]; omega
+
+/-- Off the signed band, `kappa` is the original production pin. -/
+theorem compileAdvice_kappa_unsigned (q : Nat) (h : ¬ signedBand q) :
+    (compileAdvice q).kappa = productionKappa q := by
+  show (if signedBand q then 0 else productionKappa q) = _
+  rw [if_neg h]
+
+/-- Off the signed band, the drop is zero. -/
+theorem compileAdvice_kdrop_unsigned (q : Nat) (h : ¬ signedBand q) :
+    (compileAdvice q).kdrop = 0 := by
+  show (if signedBand q then signedT (paddedS (sourceTOfQ q)) else 0) = _
+  rw [if_neg h]
+
+/-- Off the signed band, `K = 2q + kappa` as in the original L3 compiler. -/
+theorem compileAdvice_K_unsigned (q : Nat) (h : ¬ signedBand q) :
+    (compileAdvice q).K = 2 * q + productionKappa q := by
+  show 2 * q + (compileAdvice q).kappa - (compileAdvice q).kdrop = _
+  rw [compileAdvice_kappa_unsigned q h, compileAdvice_kdrop_unsigned q h]; rfl
+
+/-- On the signed band, `K = 2q - t_s` (`L3PRIME-TRANSFER.tex` (P1)). -/
+theorem compileAdvice_K_signed (q : Nat) (h : signedBand q) :
+    (compileAdvice q).K = 2 * q - signedT (max 2 (ceilLogTwo q)) := by
+  show 2 * q + (if signedBand q then 0 else productionKappa q) -
+      (if signedBand q then signedT (paddedS (sourceTOfQ q)) else 0) = _
+  rw [if_pos h, if_pos h]; rfl
+
 /-- Compiler invariant `K < 2^b` (stronger: `K + 1 < 2^b`) for all `q ≥ 3`
 (`composed-full.mjs:131`).  Structural: `b = s + 11`, `s ≥ ceilLogTwo q`, `2q ≤ 2^(s+1)`,
 `kappa ≤ 15` below `33` and `kappa ≤ 557 s + 119982` above. -/
 theorem compileAdvice_K_lt_two_pow_b (q : Nat) (h3 : 3 ≤ q) :
     (compileAdvice q).K + 1 < 2 ^ (compileAdvice q).b := by
-  have hK : (compileAdvice q).K = 2 * q + productionKappa q := rfl
   have hb : (compileAdvice q).b = max 2 (ceilLogTwo q) + 11 := rfl
+  by_cases hsb : signedBand q
+  · have hK := compileAdvice_K_signed q hsb
+    have hq := (ceilLogTwo_spec q (by omega)).2
+    rw [hK, hb]
+    have h11 : (2 : Nat) ^ 11 = 2048 := by decide
+    have hm : max 2 (ceilLogTwo q) ≥ ceilLogTwo q := Nat.le_max_right _ _
+    have hpow : 2 ^ (max 2 (ceilLogTwo q) + 11) = 2 ^ max 2 (ceilLogTwo q) * 2048 := by
+      rw [Nat.pow_add, h11]
+    have hle : 2 ^ ceilLogTwo q ≤ 2 ^ max 2 (ceilLogTwo q) := Nat.pow_le_pow_right (by omega) hm
+    omega
+  have hK : (compileAdvice q).K = 2 * q + productionKappa q := compileAdvice_K_unsigned q hsb
   rw [hK, hb]
   by_cases h32 : q ≤ 32
   · have hk : productionKappa q ≤ 15 := by

@@ -253,6 +253,7 @@ import Leader.Wu.Safety.NoCheckBirthOutputLegitimacy
 import Leader.Wu.Safety.NoCheckBirthConditionFourRegression
 import Leader.Wu.Safety.NoCheckBirthConditionFiveRegression
 import Leader.L4.AllSizeHeadline
+import Leader.L3.Prime.MainTheorem
 
 #print axioms PPLLTranscriptionAudit.wait_interpreted_consumes_carry
 #print axioms PPLLTranscriptionAudit.wait_interprets_plain_reset_equalities_as_updates
@@ -1807,3 +1808,8 @@ import Leader.L4.AllSizeHeadline
 
 -- L4: doubly logarithmic advice, expected O(n^2) interactions.
 #print axioms L4.AllSizeHeadline.allSize_fast
+
+-- L3: logarithmic advice; signed compiler, expected O(n^2 psi) interactions.
+#print axioms L3.l3MainTheorem
+#print axioms L3.l3PrimeMainTheorem
+#print axioms L3.l3PrimePolyTail

@@ -1,4 +1,5 @@
 import Leader.L3.Bank.TrialCompletedHeadRows
+import Leader.L3.Prime.SignedParams
 import Leader.L3.Bank.TrialRecovery
 
 namespace L3
@@ -1260,7 +1261,7 @@ theorem bankTrialSuccessSecondIncrementOrdinalWitness
     change ¬ q ≤ 79 at hn
     omega
   have hK : 1 < (compileAdvice q).K := by
-    change 1 < 2 * q + productionKappa q
+    have := compileAdvice_K_ge_q q
     omega
   have hb : 1 + 1 < 2 ^ (compileAdvice q).b := by
     omega
@@ -5135,7 +5136,7 @@ theorem bankTrialSuccessInitialStagePendingMarkov
     change ¬ q ≤ 79 at hh
     omega
   have hk : 0 < (compileAdvice q).K := by
-    change 0 < 2 * q + productionKappa q
+    have := compileAdvice_K_ge_q q
     omega
   calc
     T * bankTrialC5StageMass ring root S

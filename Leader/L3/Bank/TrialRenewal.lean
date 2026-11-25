@@ -1,4 +1,5 @@
 import Leader.L3.Bank.TrialSuccess
+import Leader.L3.Prime.SignedParams
 import Leader.L3.Headline.GrantProducer
 
 /-!
@@ -6666,8 +6667,7 @@ private theorem bankTrialRenewalIndexPowerDominatesPopulation
     n ≤ 2 ^ (compileAdvice (ceilLogTwo n)).K := by
   have hq : ceilLogTwo n ≤
       (compileAdvice (ceilLogTwo n)).K := by
-    change ceilLogTwo n ≤
-      2 * ceilLogTwo n + productionKappa (ceilLogTwo n)
+    have := compileAdvice_K_ge_q (ceilLogTwo n)
     omega
   have hp := Nat.pow_le_pow_right
     (by decide : 0 < (2 : Nat)) hq
@@ -7173,8 +7173,7 @@ theorem bankTrialRenewalIndexSuccessMassLower
     · omega
   have hpositive :
       0 < (compileAdvice (ceilLogTwo n)).K := by
-    change 0 < 2 * ceilLogTwo n +
-      productionKappa (ceilLogTwo n)
+    have := compileAdvice_K_ge_q (ceilLogTwo n)
     omega
   have hK :
       (compileAdvice (ceilLogTwo n)).K <
@@ -9089,8 +9088,7 @@ theorem bankTrialRenewalColdSoundIndexCutBounds
     · omega
   have hpositive :
       0 < (compileAdvice (ceilLogTwo n)).K := by
-    change 0 < 2 * ceilLogTwo n +
-      productionKappa (ceilLogTwo n)
+    have := compileAdvice_K_ge_q (ceilLogTwo n)
     omega
   have hK :
       (compileAdvice (ceilLogTwo n)).K <
@@ -10759,8 +10757,7 @@ theorem bankTrialRenewalColdSuccessMassLower_ofClearedWindow
     · omega
   have hpositive :
       0 < (compileAdvice (ceilLogTwo n)).K := by
-    change 0 < 2 * ceilLogTwo n +
-      productionKappa (ceilLogTwo n)
+    have := compileAdvice_K_ge_q (ceilLogTwo n)
     omega
   have hK :
       (compileAdvice (ceilLogTwo n)).K <

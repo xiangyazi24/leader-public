@@ -2,6 +2,7 @@ import Leader.L3.StateCount
 import Leader.L3.Closure
 import Leader.L3.SerClockCost
 import Leader.L3.ProbStages
+import Leader.L3.Prime.SignedParams
 
 /-!
 # Stage-wise assembly of the linear-lease headline
@@ -117,12 +118,18 @@ def headlineLargeTable : Nat → Nat × Nat × Nat
 /-- For s>=17, F.37 replaces the discontinuous power-of-two
     permit by 192+34(8s+101)(s+13)(A+1), and the renewal
     by 3A(A+1), A=557s+119981. Those upper rates are
-    intentionally conservative, not exact C_lin(s) values. -/
+    intentionally conservative, not exact C_lin(s) values.
+    L3-PRIME signed band s>=40000 (`L3PRIME-TRANSFER.tex` (T3.6)):
+    permit 192+ceil(17 f w / 2^t_s) (T1.1, V = 2^-t_s) and renewal
+    ceil(4 A_s / 3) (T3.2); the checker reserve is unchanged. -/
 def headlineLargeLedger (s : Nat) : Nat × Nat × Nat :=
   if s ≤ 16 then headlineLargeTable s
   else
-    (192 + 34 * (8 * s + 101) * (s + 13) * (557 * s + 119982),
-     3 * (557 * s + 119981) * (557 * s + 119982),
+    (if 40000 ≤ s then
+       192 + (17 * (8 * s + 101) * (s + 13) + 2 ^ signedT s - 1) / 2 ^ signedT s
+     else 192 + 34 * (8 * s + 101) * (s + 13) * (557 * s + 119982),
+     if 40000 ≤ s then (4 * (557 * s + 119981) + 2) / 3
+     else 3 * (557 * s + 119981) * (557 * s + 119982),
      1048576)
 
 /-- F.10 for q<=32, and F.36/F.37 for psi>=6. -/
@@ -199,8 +206,9 @@ private theorem headlineLargeLinearBridge
     polynomial majorant. Its coefficient 19617000 is below
     20407959, avoiding any false monotonicity assertion
     about the piecewise threshold pin. -/
-theorem headlineLargeRate_tail (s : Nat) (hs : 17 ≤ s) :
+theorem headlineLargeRate_tail (s : Nat) (hs : 17 ≤ s) (hus : s < 40000) :
     headlineLargeRate s ≤ 20407959 * s ^ 3 := by
+  have hnsig : ¬ 40000 ≤ s := by omega
   have hf : 8 * s + 101 ≤ 14 * s := by omega
   have hw : s + 13 ≤ 2 * s := by omega
   have ha : 557 * s + 119982 ≤ 8000 * s := by omega
@@ -264,7 +272,7 @@ theorem headlineLargeRate_tail (s : Nat) (hs : 17 ≤ s) :
           (557 * s + 119982) +
         3 * (557 * s + 119981) * (557 * s + 119982) +
         1048576 + 4 := by
-          simp [headlineLargeRate, headlineLargeLedger, hlarge]
+          simp [headlineLargeRate, headlineLargeLedger, hlarge, hnsig]
     _ ≤ 20407959 * s ^ 3 :=
       headlineLargeLinearBridge
         (34 * (8 * s + 101) * (s + 13) *
@@ -272,11 +280,80 @@ theorem headlineLargeRate_tail (s : Nat) (hs : 17 ≤ s) :
         (3 * (557 * s + 119981) * (557 * s + 119982))
         (s ^ 3) hpermit hrenew hconstant
 
+/-- Permit ceiling step: `F <= 153 B`, `B < 64 A d` give `F + d - 1 < (9792 A + 1) d`. -/
+private theorem headlineSignedPermitLt (F B A d : Nat) (hF : F ≤ 153 * B)
+    (hB : B < 64 * A * d) :
+    F + d - 1 < (9792 * A + 1) * d := by
+  have h2 : 153 * B < 9792 * A * d :=
+    calc 153 * B < 153 * (64 * A * d) := Nat.mul_lt_mul_of_pos_left hB (by decide)
+      _ = 9792 * A * d := by rw [← Nat.mul_assoc, ← Nat.mul_assoc]
+  rw [Nat.add_mul, Nat.one_mul]
+  generalize 9792 * A * d = X at h2 ⊢
+  omega
+
+/-- `ceil((4 X + 2)/3) <= 2 X` form used for the signed renewal rate. -/
+private theorem headlineSignedRenewLe (X : Nat) (h : 1 ≤ X) : (4 * X + 2) / 3 ≤ 2 * X :=
+  Nat.div_le_of_le_mul (by omega)
+
+/-- Final linear arithmetic of the signed rate, without `omega` on the large constants. -/
+private theorem headlineSignedRateArith (s P R : Nat) (hs : 40000 ≤ s)
+    (hP : P ≤ 9792 * (557 * s + 119981)) (hR : R ≤ 2 * (557 * s + 119981)) :
+    192 + P + R + 1048576 + 4 ≤ 6000000 * s := by
+  have hA : 557 * s + 119981 ≤ 560 * s := by
+    have h3 : 119981 ≤ 3 * s :=
+      Nat.le_trans (by decide : 119981 ≤ 3 * 40000) (Nat.mul_le_mul_left 3 hs)
+    calc 557 * s + 119981 ≤ 557 * s + 3 * s := Nat.add_le_add_left h3 _
+      _ = 560 * s := by rw [← Nat.add_mul]
+  have hPR : P + R ≤ 5484640 * s :=
+    calc P + R ≤ 9792 * (557 * s + 119981) + 2 * (557 * s + 119981) := Nat.add_le_add hP hR
+      _ = 9794 * (557 * s + 119981) := by rw [← Nat.add_mul]
+      _ ≤ 9794 * (560 * s) := Nat.mul_le_mul_left _ hA
+      _ = 5484640 * s := by rw [← Nat.mul_assoc]
+  have hc : 192 + 1048576 + 4 ≤ 515360 * s :=
+    Nat.le_trans (by decide : 192 + 1048576 + 4 ≤ 515360 * 40000) (Nat.mul_le_mul_left _ hs)
+  calc 192 + P + R + 1048576 + 4 = (P + R) + (192 + 1048576 + 4) := by ac_rfl
+    _ ≤ 5484640 * s + 515360 * s := Nat.add_le_add hPR hc
+    _ = 6000000 * s := by rw [← Nat.add_mul]
+
+/-- L3-PRIME (T3.6)-(T3.7): on the signed band the stage rate is linear in `s`:
+permit `ceil(17 f w / 2^t) <= 9792 A` (from `17 f w <= 153 B < 9792 A 2^t`),
+renewal `ceil(4A/3) <= 2A`, `A <= 560 s`. -/
+theorem headlineLargeRate_signed (s : Nat) (hs : 40000 ≤ s) :
+    headlineLargeRate s ≤ 6000000 * s := by
+  have hspec := signedT_spec s hs
+  have hd : 0 < 2 ^ signedT s := Nat.two_pow_pos _
+  have hlarge : ¬ s ≤ 16 := by omega
+  have hfw : 17 * (8 * s + 101) * (s + 13) ≤ 153 * signedB s := by
+    show 17 * (8 * s + 101) * (s + 13) ≤ 153 * ((s + 11) * (s + 13))
+    have : 17 * (8 * s + 101) ≤ 153 * (s + 11) := by omega
+    calc 17 * (8 * s + 101) * (s + 13) ≤ 153 * (s + 11) * (s + 13) :=
+          Nat.mul_le_mul_right _ this
+      _ = 153 * ((s + 11) * (s + 13)) := Nat.mul_assoc _ _ _
+  have hlt := headlineSignedPermitLt _ _ _ _ hfw hspec.2.2
+  have hperm : (17 * (8 * s + 101) * (s + 13) + 2 ^ signedT s - 1) / 2 ^ signedT s ≤
+      9792 * (557 * s + 119981) :=
+    Nat.le_of_lt_succ ((Nat.div_lt_iff_lt_mul hd).2 hlt)
+  have hren := headlineSignedRenewLe (557 * s + 119981) (Nat.le_add_left 1 _)
+  have heq : headlineLargeRate s =
+      192 + (17 * (8 * s + 101) * (s + 13) + 2 ^ signedT s - 1) / 2 ^ signedT s +
+        (4 * (557 * s + 119981) + 2) / 3 + 1048576 + 4 := by
+    simp [headlineLargeRate, headlineLargeLedger, hlarge, hs]
+  rw [heq]
+  exact headlineSignedRateArith s _ _ hs hperm hren
+
 theorem headlineLargeRate_bound (s : Nat) (hs : 6 ≤ s) :
     headlineLargeRate s ≤ 20407959 * s ^ 3 := by
   by_cases h : s ≤ 16
   · exact headlineLargeRate_small s hs h
-  · exact headlineLargeRate_tail s (by omega)
+  · by_cases hsig : 40000 ≤ s
+    · have h1 := headlineLargeRate_signed s hsig
+      have h2 : s ≤ s ^ 3 := by
+        have : s * 1 ≤ s * (s * s) := Nat.mul_le_mul_left s (Nat.one_le_iff_ne_zero.2
+          (Nat.mul_ne_zero (by omega) (by omega)))
+        simpa [Nat.pow_succ, Nat.mul_assoc] using this
+      exact Nat.le_trans h1 (Nat.le_trans (Nat.mul_le_mul_left 6000000 h2)
+        (Nat.mul_le_mul_right _ (by decide : 6000000 ≤ 20407959)))
+    · exact headlineLargeRate_tail s (by omega) (by omega)
 
 /-- F.14 and F.39: the actual additive stage ledger fits the
     selected linear-lease bound, in both advice regimes. -/

@@ -593,8 +593,7 @@ theorem renewalBankCleanRarityOfPotential {n : Nat}
         weight o (renewalBankFutureNext ring o r e))).sum ≤
         n * weight o r)
     (hwin : ∀ (o : RenewalBankOrigin n) (r : RenewalBankFuture o),
-      2 ^ (2 * ceilLogTwo n +
-        (compileAdvice (ceilLogTwo n)).kappa) *
+      2 ^ (compileAdvice (ceilLogTwo n)).K *
         Prob.indicator (renewalBankReached o
           (compileAdvice (ceilLogTwo n)).K r.val.2) ≤
         weight o r)
@@ -605,9 +604,9 @@ theorem renewalBankCleanRarityOfPotential {n : Nat}
         weight born.identity
           ⟨born.afterBirth,
             renewalBankBirthFuture ring r.val e born hmem⟩ ≤ 1) :
-    ReferenceOriginRarity ring
+    ReferenceOriginRarityK ring
       (bankCleanRootedReferenceData ring hbank)
-      (compileAdvice (ceilLogTwo n)).kappa := by
+      (compileAdvice (ceilLogTwo n)).K := by
   intro r _ e born hmem T
   have hfut := renewalBankBirthFuture ring r.val e born hmem
   have hmass :=
@@ -617,8 +616,7 @@ theorem renewalBankCleanRarityOfPotential {n : Nat}
         renewalBankReached born.identity
           (compileAdvice (ceilLogTwo n)).K s.val.2)
       (weight born.identity)
-      (2 ^ (2 * ceilLogTwo n +
-        (compileAdvice (ceilLogTwo n)).kappa))
+      (2 ^ (compileAdvice (ceilLogTwo n)).K)
       (hstep born.identity) (hwin born.identity)
       ⟨born.afterBirth, hfut⟩ T
   have heq :
@@ -655,9 +653,9 @@ theorem renewalBankCleanRarityOfPairMassDrift
       (r : RenewalBankFuture o),
       RenewalBankPairMassDrift ring o
         (compileAdvice (ceilLogTwo n)).K r.val) :
-    ReferenceOriginRarity ring
+    ReferenceOriginRarityK ring
       (bankCleanRootedReferenceData ring hbank)
-      (compileAdvice (ceilLogTwo n)).kappa := by
+      (compileAdvice (ceilLogTwo n)).K := by
   apply renewalBankCleanRarityOfPotential ring hbank
     (fun o r => renewalBankOriginPotential o
       (compileAdvice (ceilLogTwo n)).K r.val.2)
@@ -675,9 +673,9 @@ theorem renewalBankCleanRarity {n : Nat}
     (hn : 5 ≤ n)
     (ring : DirectedRing n)
     (hbank : (compileAdvice (ceilLogTwo n)).useSmall = false) :
-    ReferenceOriginRarity ring
+    ReferenceOriginRarityK ring
       (bankCleanRootedReferenceData ring hbank)
-      (compileAdvice (ceilLogTwo n)).kappa := by
+      (compileAdvice (ceilLogTwo n)).K := by
   exact renewalBankCleanRarityOfPairMassDrift
     hn ring hbank
     (fun o r => renewalBankFuturePairMassDrift ring o
@@ -1406,16 +1404,18 @@ theorem bankCleanRealization {n : Nat}
       (bankCleanRootedReferenceData ring hbank))
     (hclock : ReferenceClockAt ring (headlineCleanTarget ring)
       (bankCleanRootedReferenceData ring hbank)
-      (renewalBankReferenceCeiling n)) :
+      (renewalBankReferenceCeiling n))
+    (hus : ¬ signedBand (ceilLogTwo n)) :
     RootedReferenceRealizationAt ring (headlineCleanTarget ring) hn := by
-  have hmargins := renewalBankSpatialMargins n hn hbank
+  have hmargins := renewalBankSpatialMargins n hn hbank hus
   refine ⟨bankCleanRootedReferenceData ring hbank,
     renewalBankReferenceCeiling n, ?_, hmargins.1, hmargins.2⟩
   exact {
     domination := bankValidReferenceAttemptDominationClean ring hn hbank
     coverage := hcoverage
     charge := bankValidReferenceOriginChargeClean ring hbank
-    rarity := renewalBankCleanRarity hn ring hbank
+    rarity := referenceOriginRarityOfUnsigned ring _ hus
+      (renewalBankCleanRarity hn ring hbank)
     clock := hclock }
 
 /-- The BANK case of the clean R14.  Open premises: the digit half-stage
@@ -1438,12 +1438,15 @@ theorem bankCleanStageRootedRenewalCost {n : Nat}
       rooted
       (fun z => headlineRooted ring z.val.1 ∧
         InheritedAuthorityExtinct ring hbank z)
-      (ceilLogTwo n)) :
+      (ceilLogTwo n))
+    (hsigned : SignedCleanRenewal ring) :
     StageCleanRootedRenewalCost ring := by
+  by_cases hsb : signedBand (ceilLogTwo n)
+  · exact hsigned hsb
   obtain ⟨D, A, hcertificate, hmargin, hreserve⟩ :=
     bankCleanRealization ring hn hbank
       (bankReferenceRetryCoverageOfHeadThresholdClean ring hn hbank hthreshold)
-      (bankCleanReferenceClock ring hn hbank hdigit rooted hstart hOld)
+      (bankCleanReferenceClock ring hn hbank hdigit rooted hstart hOld) hsb
   intro C hC T
   exact rootedCostFromReferenceAt ring (headlineCleanTarget ring) hn D A
     (compileAdvice (ceilLogTwo n)).kappa (headlineRenewalRate n)
@@ -1465,13 +1468,14 @@ theorem bankCleanStageRootedRenewalCostOfWindowRows {n : Nat}
       rooted
       (fun z => headlineRooted ring z.val.1 ∧
         InheritedAuthorityExtinct ring hbank z)
-      (ceilLogTwo n)) :
+      (ceilLogTwo n))
+    (hsigned : SignedCleanRenewal ring) :
     StageCleanRootedRenewalCost ring :=
   bankCleanStageRootedRenewalCost ring hn hbank hdigit
     (L3.BankWindow.bankCutGenuineHeadThresholdOfWindowInv ring hn hbank
       (fun seed pre => L3.BankWindow.bankWindowInvWordOfRows
         ring hn hbank hrows seed pre))
-    rooted hstart hOld
+    rooted hstart hOld hsigned
 
 end L3.HeadlineRenewalCleanBank
 

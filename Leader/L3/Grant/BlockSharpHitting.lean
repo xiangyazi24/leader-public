@@ -51,7 +51,7 @@ theorem grantBlockSharpBlockFailure
         (17 * grantBlockEntranceCoefficient n - 4 * W) * n ^ W := by
   obtain ⟨_, _, hRn⟩ :=
     grantCutoffsCompiledRadiusReserves n R hn hsp hradius
-  have hsq := grantCutoffsPopulationSquareFitsHeads n hn
+  have hsq := grantCutoffsRadiusPopulationFitsHeads n R hn hradius
   have hWpos : 256 ≤ W := by
     rw [hW]
     generalize R * n = z at hRn ⊢

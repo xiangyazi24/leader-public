@@ -3,28 +3,32 @@
 Lean 4 (`leanprover/lean4:v4.33.0`, core only, no Mathlib) formalization of self-stabilizing leader election
 in population protocols on directed rings.
 
-## Main theorem
+## L3: logarithmic advice
 
-`L3.l3MainTheorem` (`Leader/L3/MainTheorem.lean`):
+`L3.l3PrimeMainTheorem` (`Leader/L3/Prime/MainTheorem.lean`):
 
 ```lean
-theorem l3MainTheorem :
-    (∀ {n : Nat} (ring : DirectedRing n), 5 ≤ n → L3Headline ring) ∧
+theorem l3PrimeMainTheorem :
+    (∀ {n : Nat} (ring : DirectedRing n), 5 ≤ n → L3PrimeHeadline ring) ∧
     (∀ ring : DirectedRing 4, L3FourAgentHeadline ring)
 ```
 
-For a ring of `n ≥ 5` agents with advice `q = ⌈log₂ n⌉` and `ψ = ⌈log₂ q⌉`, `L3Headline ring`
-(`Leader/L3/Headline/Statement.lean`) states:
+For a ring of `n ≥ 5` agents with advice `q = ⌈log₂ n⌉`, `ψ = ⌈log₂ q⌉` and `s = max 2 ψ`, `L3PrimeHeadline ring`
+(`Leader/L3/Prime/Statement.lean`) states:
 
-0. the local state set of the protocol is finite, of size at most an explicit bound (`stateBudget`);
+0. the local state set of the protocol is in bijection with `Fin N` for some `N ≤ stateBudget s`;
 1. there is a class `G` of configurations closed under every interaction;
 2. every configuration in `G` has exactly one leader output, frozen along every reachable configuration;
 3. from every configuration, the first entrance time into `G` under the uniform random edge scheduler is
-   almost surely finite, with expectation at most `158046 n²` when `q ≤ 32` and `20407959 ψ³ n²` otherwise.
+   almost surely finite, with expectation at most `C n² s`, `C = 32652734400000000`;
+4. from every configuration and every `k`, the probability that `G` has not been entered within `2 C n² s k`
+   interactions is at most `2^-k` (`L3.l3PrimePolyTail` gives the `n^-α` form).
 
 The case `n = 4` is covered by a separate four-state protocol (`Leader/L3/FourAgent.lean`).
+The earlier statement `L3.l3MainTheorem` (`Leader/L3/MainTheorem.lean`) bounds the same protocol family by
+`158046 n²` for `q ≤ 32` and `20407959 ψ³ n²` otherwise.
 
-`#print axioms L3.l3MainTheorem` reports `propext`, `Classical.choice`, `Quot.sound` only. The development
+`#print axioms` reports `propext`, `Classical.choice`, `Quot.sound` only for both theorems. The development
 contains no `sorry`, no `axiom` declarations and no `native_decide`.
 
 ## L4: doubly logarithmic advice
@@ -67,7 +71,7 @@ of the packed state.
 | directory | content |
 |---|---|
 | `Leader/Core` | population-protocol framework: configurations, steps, closed predicates, safety, schedulers |
-| `Leader/L3` | the protocol and the main theorem above |
+| `Leader/L3` | the logarithmic-advice protocol and its main theorems above |
 | `Leader/L4` | the doubly logarithmic advice protocol and `allSize_fast` above |
 | `Leader/Wu` | formalization of the P_PLL protocol of Cheng-Hung Wu's 2024 master's thesis (National Taiwan University): the protocol, its safety and convergence arguments, repairs, and machine-checked counterexamples to printed steps |
 | `Leader/AAFJ` | the ring leader-election protocol of Angluin, Aspnes, Fischer and Jiang, *Self-stabilizing population protocols* (TAAS 2008): barrier constructions, fair executions, and counterexamples to printed steps |
@@ -78,7 +82,7 @@ of the packed state.
 ## Building
 
 ```sh
-lake build            # all 4691 modules; the 2812 modules outside Leader/L4 take about 2 CPU-hours from scratch
+lake build            # the Leader library: 3062 modules (L3, L4 and their imports)
 lake env lean AxiomCheck.lean
 ```
 
