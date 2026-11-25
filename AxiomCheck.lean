@@ -252,6 +252,7 @@ import Leader.Wu.Safety.NoCheckBirthConditionThreeProtocol
 import Leader.Wu.Safety.NoCheckBirthOutputLegitimacy
 import Leader.Wu.Safety.NoCheckBirthConditionFourRegression
 import Leader.Wu.Safety.NoCheckBirthConditionFiveRegression
+import Leader.L4.AllSizeHeadline
 
 #print axioms PPLLTranscriptionAudit.wait_interpreted_consumes_carry
 #print axioms PPLLTranscriptionAudit.wait_interprets_plain_reset_equalities_as_updates
@@ -1803,3 +1804,6 @@ import Leader.Wu.Safety.NoCheckBirthConditionFiveRegression
 #print axioms BirthShortDoneDispatcher.finite_state_bound
 #print axioms BirthShortDoneDispatcher.same_word_adjacent_all_prefixes
 #print axioms BirthShortDoneDispatcher.step_alias
+
+-- L4: doubly logarithmic advice, expected O(n^2) interactions.
+#print axioms L4.AllSizeHeadline.allSize_fast

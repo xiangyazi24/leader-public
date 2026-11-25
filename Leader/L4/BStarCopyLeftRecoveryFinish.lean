@@ -1,0 +1,108 @@
+import Leader.L4.BStarCopyFenceCuts
+import Leader.L4.BStarCopyLeftReleaseCursor
+import Leader.L4.BStarCopyLeftGeometryWord
+import Leader.L4.BStarCopyLaunchEntry
+import Leader.L4.BStarCopyLeftFenceHold
+
+namespace L4.BStarCopyLeftRecoveryFinish
+set_option maxRecDepth 4096
+open AllSizeProtocol BStarTrace BStarLongWork BStarH6WordChart BStarLongClaims
+open BStarLongToken BStarLongDoor BStarLongCommand BStarClearanceSource BStarLongFixedRouting
+open BStarAcquireVisitOrder BStarAcquireLiteralChain BStarResetChartTouch BStarResetMarkAdapter BStarH6Ordinal
+open BStarGeneratedOwner BStarGeneratedBandScan BStarOwnerLaunchOrigin BStarSeparatingRail
+open BStarNativeReceiptTape BStarGeneratedTapeCuts BStarAcquireHistoryReturn
+open BStarCopyRightStrip (addr)
+open BStarClearanceDataChart
+open BStarCopyLeftStrip BStarCopyLeftReleaseClass BStarCopyLeftReleaseOrder BStarCopyLeftMark
+open BStarCopyLeftReturn BStarCopyLeftGeometryWord BStarCopyLeftRetained
+open BStarCopyLeftPending BStarCopyLeftInjectFold BStarCopyLeftDeposit BStarCopyLeftFence
+open BStarCopyMarkedLedger BStarCopyFenceSaturation BStarCopyLaunchEntry
+open BStarCopyLeftFenceHold BStarCopyLeftDataSweep BStarLongPackets BStarCopyFenceCuts
+
+variable {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
+local notation "B" => bStar k₁ k₂ t₂ J₁ J₂ r c p c₁ hp
+local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r c p c₁)
+local notation "ring" => AllSizeS1Geometry.step (n:=n) B
+local notation "play" => BStarResetSchedule.run ring
+
+theorem finish_left {Tag : Type} (digits : Tag→BitVec 36)
+    {base origin : X} {hh : ∃ i,oldH6 B base i=true}
+    {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
+    (chart : Chart hp base hh o S len fall) (sep : ∀ e : Fin n,e≠rightNeighbor e)
+    (a : Fin n) (width seam : Nat)
+    (strip : Strip B base a seam width) (root : a=(S.getD 0 fall).1)
+    (flags : ∀ i,(longGeometry B (base i)).inside=decide (oldOrdinal B base hh i<width) ∧
+      (longGeometry B (base i)).last=decide (oldOrdinal B base hh i+1=width))
+    (notShort : ∀ j,oldH6 B base (rightNeighbor j)=true → width≤oldOrdinal B base hh j+1)
+    (w9 gap back w11 : List (Fin n)) (ack9 turn ack10 ack11 : Fin n)
+    (G9 : GeneratedOwner hp base (fun j=>S.getD j fall) len origin .idle w9 (.busy 9 (.back 0)))
+    (event9 : Event hp (fun j=>S.getD j fall) len (play origin w9) ack9 (.busy 9 (.back 0)) .idle)
+    (accepted9 : pc (ring (play origin w9) ack9) (S.getD 0 fall).1=10) :
+    let lead := w9++ack9::gap
+    let x := play origin lead
+    let y := play (ring x turn) back
+    let z := ring y ack10
+    let bridge := gap++turn::back++[ack10]
+    let whole := (w9++ack9::bridge)++(w11++[ack11])
+    GeneratedOwner hp base (fun j=>S.getD j fall) len origin .idle lead (.busy 10 (.out len)) →
+    Event hp (fun j=>S.getD j fall) len x turn (.busy 10 (.out len)) (.busy 10 (.back len)) →
+    BusyOnly hp base (fun j=>S.getD j fall) len 10 (ring x turn) (.back len) back (.back 0) →
+    Event hp (fun j=>S.getD j fall) len y ack10 (.busy 10 (.back 0)) .idle →
+    Current hp base (fun j=>S.getD j fall) len z .idle →
+    pc z (S.getD 0 fall).1=11 →
+    GeneratedOwner hp base (fun j=>S.getD j fall) len z .idle w11 (.busy 11 (.back 0)) →
+    Hit hp base (fun j=>S.getD j fall) len (play z w11) ack11 11 →
+    GeneratedOwner hp base (fun j=>S.getD j fall) len origin .idle whole .idle →
+    (∀ u v,whole=u++v → (∀ i,Layout B base i=Layout B (play origin u) i) ∧ Band (play origin u) (S.getD 0 fall).1) →
+    ∀ (plan : List Tag) (s : Ledger Tag) (labels : Nat→Option Tag),
+      plan.length=width → s.release.pending=[] → OrderedPrefix plan s (headFirst seam labels) →
+      RetainedMatches digits x (addr a seam) width s → UpstreamMatches digits x a seam labels →
+      (∀ i sh, BStarCopyLeftFenceHold.Region a seam width i sh →
+        (readLane (Sheet.index sh) (play origin whole i).long).mobile=.empty) ∧
+      laneRead (ldRead (play origin whole) (addr a seam)) 0 width=plan.reverse.map (Digit9.data ∘ digits) := by
+  intro lead x y z bridge whole start turnEvent ret ackEvent idle11 pc11 G11 H11 all valid
+  intro plan s labels size pend P old mobile
+  have shape (w : List (Fin n)) :
+      w9++ack9::(gap++w)=lead++w := by simp only [lead,List.append_assoc,List.cons_append]
+  have wholeEq : whole=w9++ack9::(bridge++(w11++[ack11])) := by
+    simp only [whole,List.append_assoc,List.cons_append]
+  have gate := left_gates_word hp chart sep w9 (bridge++(w11++[ack11])) ack9 .idle G9 event9 accepted9
+    (wholeEq ▸ all) (fun u v E => valid u v (wholeEq.trans E)) a seam width strip root
+  have before (pre rest : List (Fin n)) (E : back=pre++rest) :
+      GeometryGates hp base (play (ring x turn) pre) a seam width := by
+    have S : bridge++(w11++[ack11])=(gap++turn::pre)++(rest++[ack10]++(w11++[ack11])) := by
+      simp only [bridge,E,List.append_assoc,List.cons_append]
+    have H := gate (gap++turn::pre) (rest++[ack10]++(w11++[ack11])) S
+    rw [shape (turn::pre),BStarResetSchedule.run_append] at H
+    exact H
+  have atTurn : GeometryGates hp base x a seam width := by
+    have H := gate gap ((turn::back++[ack10])++(w11++[ack11])) (by
+      simp only [bridge,List.append_assoc,List.cons_append])
+    exact H
+  have seat : ((lead++[turn])++back)++[ack10]=w9++ack9::bridge := by
+    simp only [lead,bridge,List.append_assoc,List.cons_append,List.nil_append]
+  have at11 : play origin (w9++ack9::bridge)=z := by
+    rw [←seat,BStarResetSchedule.run_append,BStarResetSchedule.run_append,BStarResetSchedule.run_append]
+    rfl
+  obtain ⟨_,_,t,lab,_,Q,R,U⟩ := through_turn_return_ack hp digits chart sep a seam width strip root
+    lead back [] turn ack10 start turnEvent ret ackEvent idle11 pc11 atTurn
+    (before back [] (List.append_nil _).symm) (fun pre e v E => before pre (e::v) E)
+    (fun pre e v E => by have J := congrArg List.length E; simp at J)
+    plan size s labels pend P old mobile
+  rw [List.append_nil,seat,at11] at R U
+  have ending (u : X) : play u (w11++[ack11])=ring (play u w11) ack11 := by
+    rw [BStarResetSchedule.run_append]; rfl
+  obtain ⟨_,_,_,_,_,_,_,_,_,read,_,drain⟩ := original_through_ack hp digits chart strip.width_pos flags notShort
+    strip root sep w9 bridge w11 [] ack9 ack11 .idle G9 event9 accepted9
+    (by simpa only [List.singleton_append] using all)
+    (by simpa only [List.singleton_append] using valid)
+    (by rw [at11,pc11]; decide)
+    (at11.symm ▸ G11) (at11.symm ▸ H11) plan size t lab Q (at11.symm ▸ R) (at11.symm ▸ U)
+  have endpoint : play origin whole=play z (w11++[ack11]) := by
+    change play origin ((w9++ack9::bridge)++(w11++[ack11]))=_
+    rw [BStarResetSchedule.run_append,at11]
+  rw [endpoint,ending,←at11]
+  exact ⟨drain,read⟩
+
+#print axioms finish_left
+end L4.BStarCopyLeftRecoveryFinish
