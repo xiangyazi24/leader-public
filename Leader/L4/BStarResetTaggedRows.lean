@@ -243,7 +243,4 @@ theorem reset_fault_door (g : Pair LongGeometry) (raw : Pair (BitVec LW))
     exact H
   · simp [oldDoor,hv,phase,finish,failedPayload,fault]
 
-#print axioms reset_link_joined
-#print axioms reset_terminal_joined
-#print axioms reset_reverse_joined
 end L4.BStarResetTaggedRows

@@ -186,13 +186,4 @@ theorem pinned_waiting_door {p c : Nat} (u v : Site p c) (q : Trip (2*c))
   rw [hfire]
   simpa [finishBirth,patrolWrite,hl] using And.intro hleft (And.intro hsrc hl)
 
-#print axioms body_authentic_worker
-#print axioms ordinary_worker
-#print axioms ordinary_trail
-#print axioms pinned_waiting_door
-
-#print axioms mean_of_reachable_budget
-#print axioms approach_mark_drop
-#print axioms first_admission
-#print axioms approach_mean
 end L4.WindowA0Machine

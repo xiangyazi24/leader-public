@@ -17,5 +17,4 @@ theorem capture_winner_has_grant {s n : Nat} (x : Raw s n) (e : Fin n) (j : Fin 
   rw [show (headerGrantView (x e).mis1).header=true from rfl]
   simp [W]
 
-#print axioms capture_winner_has_grant
 end L4.ShortReadGrantCapture

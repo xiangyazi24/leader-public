@@ -180,10 +180,4 @@ theorem cover_expected_of_four (step : X→Fin n→X) (Good : X→Prop)
     (fun i y Y P=>half_of_four (loss i y) (fun w=>¬Sticky i (runWord step y w)) B
       (sound i y Y P) (cap i y Y P)) x G
 
-#print axioms badCount_union
-#print axioms half_of_four
-#print axioms cover_closed
-#print axioms cover_block_tail
-#print axioms cover_expected
-#print axioms cover_expected_of_four
 end L4.FourLossStickyClock

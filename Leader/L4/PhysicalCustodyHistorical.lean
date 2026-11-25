@@ -61,7 +61,6 @@ theorem custody_of_cuts {s n : Nat} (z : Raw s n)
             packed := packed, upperWidth := upperWidth, widthRatio := widthRatio
             charts := charts, cuts := cuts, coherent := fun _ H=>H.2 }⟩
 
-
 theorem cuts_after_init {s n : Nat} (z : Raw s n)
     (Q : Raw s n→Prop) (qz : Q z) (clean : ∀ i,GrantClean z i)
     (closed : ∀ y e,Q y→Q (rawNext s y e))
@@ -105,7 +104,4 @@ theorem cuts_after_init {s n : Nat} (z : Raw s n)
     (fun y H=>fiber y H.1) heads conts offset owners allPorts ⟨qz,clean⟩ offset
   exact ⟨u,v,C⟩
 
-#print axioms cuts_after_init
-#print axioms historical_init
-#print axioms custody_of_cuts
 end L4.PhysicalCustody

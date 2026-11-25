@@ -76,5 +76,4 @@ theorem schedule_commit_of_sublist {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rw [align]
     exact ⟨ack,ready,pc,target,choice⟩
 
-#print axioms schedule_commit_of_sublist
 end L4.BStarBitReplyToCommit

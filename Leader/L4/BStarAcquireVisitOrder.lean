@@ -154,6 +154,4 @@ theorem departures_once {a : LargeParams} {n : Nat} {b : LargeRows a}
   have hle := NN (departure_order hh P)
   exact Nat.le_antisymm hle hpos
 
-#print axioms departures_once
-#print axioms departures
 end L4.BStarAcquireVisitOrder

@@ -206,7 +206,6 @@ theorem runCodes_length {r : Nat} (T : PrimTable r) (bank : Bank)
   unfold runCodes
   rw [evalProgramAux_length, List.length_map]
 
-
 /-! ## Evaluation simp set
 
 With `subst hlen` (so `base` becomes `regs.length`), `simp only [evalSimp-lemmas]`
@@ -273,7 +272,3 @@ end Native
 end Compiler
 end L4
 
-#print axioms L4.Compiler.Native.eval_prefix
-#print axioms L4.Compiler.Native.eval_new
-#print axioms L4.Compiler.Native.runCodes_new
-#print axioms L4.Compiler.Native.runCodes_append

@@ -104,8 +104,6 @@ theorem joined_numeric_lands (k₁ k₂ t₂ J₁ J₂ r n p c₁ : Nat) (hp : 0
   have G := numeric_gate (geometry g a.side) a.occurrence v H
   simp [arrive,G]
 
-#print axioms joined_numeric_lands
-
 open BStarH6WordChart BStarAcquireVisitOrder BStarNumericChronology BStarAcquireForwardTrace BStarResetRailRing
 
 /-- A recorded significant departure computes one physical digit and
@@ -205,9 +203,6 @@ theorem digit_record {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
     .forward (physicalDigit G x i c' d.offer).2
   exact FF.trans (congrArg Token.forward (congrArg Prod.snd E))
 
-#print axioms padding_record
-#print axioms digit_record
-
 /-- The read-set frame at an actual selected numeric destination is a
 mask property, including idempotent assignments. -/
 def FieldFrame {m w : Nat} (F : Field w m) (p : Patch w) : Prop :=
@@ -271,9 +266,6 @@ theorem projected_sweep {width : Nat} {geom : Fin width → LongGeometry}
   constructor
   intro j
   exact Prod.ext rfl (next j)
-
-#print axioms field_one_write
-#print axioms projected_sweep
 
 open BStarLongLiteral BStarLongCommandData
 
@@ -376,8 +368,6 @@ theorem offer_exact (g : Pair LongGeometry) (x : Pair (BitVec LW))
   have E : checkOffer g (BStarLongPrep.view x) (c,classifyOld g x c)=.advance p := G.2.symm
   exact classify_back g x c p F (checked_back g x c _ p F E)
 
-#print axioms offer_exact
-
 /-- Actual significant records furnish the outgoing side of the
 accepted DigitSweep interface. The only carry premise not discharged
 here is continuity of each next actual offer through intermediate
@@ -412,5 +402,4 @@ theorem actual_projected_sweep {k₁ k₂ t₂ J₁ J₂ r c p c₁ n width : Na
   rw [E] at H
   exact Token.forward.inj ((H (sep j) (pos j).1 (pos j).2 (healthy j)).2.symm.trans (next j))
 
-#print axioms actual_projected_sweep
 end L4.BStarNumericCarry

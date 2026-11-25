@@ -109,6 +109,4 @@ theorem flight_geometry (G : Geometry s n) (C : Chart G.P.h)
     have K := (W _ (by omega)).mp J
     omega
 
-#print axioms coordinates
-#print axioms flight_geometry
 end L4.ShortMISFlightGeometry

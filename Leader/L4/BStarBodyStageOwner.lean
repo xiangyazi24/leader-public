@@ -73,6 +73,4 @@ theorem body_custody_of_center (x : X) (e i H : Fin n) (b : Fin 3)
     · intro bad
       exact (kij bad).elim
 
-#print axioms body_stage_controller
-#print axioms body_custody_of_center
 end L4.BStarBodyStageOwner

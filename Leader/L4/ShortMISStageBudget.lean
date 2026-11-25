@@ -110,13 +110,4 @@ theorem conditional_stage_budget {s n : Nat} (D : Nat)
   rw [stageCoefficient,Nat.add_mul]
   exact AllSizeComposition.additive_stage (rawNext s) A target _ _ x prep service
 
-#print axioms rail_cap_formula
-#print axioms phase_cap_formula
-#print axioms mis1_constants
-#print axioms h3_coefficient
-#print axioms h4_coefficient
-#print axioms sheet_issue0_expected
-#print axioms mis1_rank_rows
-#print axioms mis1_sheet_fiber
-#print axioms conditional_stage_budget
 end L4.ShortMISStageBudget

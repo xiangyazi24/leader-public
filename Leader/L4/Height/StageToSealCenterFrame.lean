@@ -58,5 +58,4 @@ theorem ready_at_prefix {base origin x : X} {hh : ∃ j,oldH6 B base j=true}
   · rw [latch,seed.2.2]
     exact BStarSealWriterInterval.optional_roundtrip d valid
 
-#print axioms ready_at_prefix
 end L4.Height.StageToSealCenterFrame

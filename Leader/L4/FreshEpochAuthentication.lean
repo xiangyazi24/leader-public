@@ -62,12 +62,6 @@ theorem door_front_holds {Q : Nat} (r : Rail) :
     out.source = .i1 ∧ out.left = .ui ∧ out.fire = false := by
   cases r <;> exact ⟨rfl,rfl,rfl⟩
 
-#print axioms clean_pair
-#print axioms ui_waits_on_right
-#print axioms top_clean
-#print axioms door_clean
-
-
 inductive Auth {h : Nat} (r : Fin h → Rail) : Prop where
   | out (p : Fin h) : Outbound r p → Auth r
   | back (p : Fin h) : Inbound r p → Auth r
@@ -225,9 +219,6 @@ theorem body_preserves {Q h : Nat} (r : Fin h → Rail) (a b : Fin h)
             rw [hOff i (fun h => by subst i; omega) (fun h => by subst i; omega)]
             exact hTail i hi
 
-#print axioms body_preserves
-
-
 def top {Q h : Nat} (r : Fin h → Rail) (z : Fin h) (l : Rail) : Fin h → Rail :=
   put r z (patrol true false true (.off : Source Q) l (r z)).right
 
@@ -311,10 +302,6 @@ theorem door_di_authenticated {h : Nat} (r : Fin h → Rail) (d : Fin h)
     · have hn : d.val ≠ p.val := fun he' => he (Fin.ext he')
       have hC := H.2.2 d (by have := p.isLt; omega)
       simp [Clean,hdi] at hC
-
-#print axioms top_preserves
-#print axioms door_di_authenticated
-
 
 /-- After entering I1 by the real L1 row, the door slot contains Ui
 and there is no door-side suffix to confirm. -/
@@ -409,10 +396,6 @@ theorem door_transition {Q h : Nat} (hQ : 0<Q) (r : Fin h → Rail) (d : Fin h)
           omega
         rw [hStay i hn]
         exact H.2.1 i hi
-
-#print axioms launch_authenticated
-#print axioms door_transition
-
 
 theorem prefix_payload {p c : Nat} (u v : Site p c) :
     (stepPrefix u v).1.rail = u.rail ∧ (stepPrefix u v).2.rail = v.rail ∧
@@ -525,10 +508,6 @@ theorem ordinary_pair_projects {p c : Nat} (u v : Site p c)
   have hh := pair_projects_rails u v false false hM hL hF
   simpa [ho] using hh
 
-#print axioms pair_projects_rails
-#print axioms ordinary_pair_projects
-
-
 theorem top_pair_projects {p c : Nat} (u v : Site p c)
     (hl : v.leader = true) (ho : v.source = .off)
     (hn : ¬ TenureOrigins.nativeKill u v) :
@@ -614,10 +593,6 @@ theorem unpaid_door_projects {p c h : Nat} (hQ : 0 < 2*c)
   have hh := pair_projects_rails u v true false hm' hl' hf
   simpa [door,hR,hs] using hh
 
-#print axioms top_pair_projects
-#print axioms unpaid_door_projects
-
-
 theorem pair_left_source {p c : Nat} (u v : Site p c) :
     (pairStep u v).1.source = u.source := by
   have hMat : (materialize u v).source = u.source := by unfold materialize; split <;> rfl
@@ -694,10 +669,6 @@ theorem projected_auth_step {Q h : Nat} (hQ : 0<Q) (r r' : Fin h → Rail)
     rcases door_transition (Q:=Q) hQ r d hd l H with hh|hh
     · exact Or.inl ⟨hh.1,hh.2.2⟩
     · exact Or.inr ⟨d,hd,hh.1,hh.2.1,hh.2.2.2.1,hh.2.2.2.2⟩
-
-#print axioms pair_left_source
-#print axioms projected_auth_step
-
 
 private theorem ring_no_self {n : Nat} (hn : 4 ≤ n) (e : Fin n) : rightNeighbor e ≠ e := by
   intro he
@@ -850,9 +821,6 @@ theorem ring_projection {p c n d : Nat} (hn : 4 ≤ n) (hQ : 0<2*c)
         rw [stepO _ h1 h2]
         rfl
 
-#print axioms ring_projection
-
-
 /-- Checked physical initialization step. On any first transition out of
 I1 within the still-unpaid fixed corridor, the old return is authentic
 and COUNT zero is launched on an empty earlier sheet. -/
@@ -897,8 +865,5 @@ theorem ring_auth_word {p c n d : Nat} (hn : 4 ≤ n) (hQ : 0<2*c)
     · change (step x e (liftedSite y (d+1))).source = Source.await ⟨0,hQ⟩ at hA
       rw [hSrc] at hA
       contradiction
-
-#print axioms ring_auth_step
-#print axioms ring_auth_word
 
 end L4.FreshEpochAuthentication

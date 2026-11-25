@@ -95,5 +95,4 @@ theorem reach_clean_after_resets {base x : X} {hh : ∃ i,oldH6 B base i=true}
       (BStarResetSchedule.run step before (door::(v++[door]))) residual) w₀) w₁) w₂ = _
   rw [path]
 
-#print axioms reach_clean_after_resets
 end L4.BStarClearanceAfterSeparator

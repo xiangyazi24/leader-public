@@ -135,6 +135,4 @@ theorem write_origin_from_issue_cut (d : Sheet) (hh : ∃ i,h i=true)
   · rw [←E]
     exact S
 
-#print axioms no_restart_on_write_flight
-#print axioms write_origin_from_issue_cut
 end L4.ReportWriteBankClosure

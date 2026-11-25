@@ -117,5 +117,4 @@ theorem incident_race_exact {n : Nat} (hn : 4≤n) (d : Fin n) (t k : Nat) :
         Nat.mul_left_comm (3^(k+1)), ih (k+1), Nat.pow_succ,
         Nat.mul_comm (3^k) 3, Nat.mul_assoc, ih k]
 
-#print axioms incident_race_exact
 end L4.PhysicalDoorRace

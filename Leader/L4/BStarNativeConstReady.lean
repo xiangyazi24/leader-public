@@ -142,5 +142,4 @@ theorem ready {base initial x : X} {hh : ∃ i,oldH6 B base i=true}
         (by decide) G slot (by omega) fl notShort stable T bank sem _
       exact E
   
-#print axioms ready
 end L4.BStarNativeConstReady

@@ -157,8 +157,4 @@ theorem chart_header_coordinates (x : Raw s n) (M : rawMaximal x) (N : 9<n)
     · exact ⟨1,cover 1 (by omega) B1⟩
     · exact ⟨2,cover 2 (by omega) (by change k<d 3; omega)⟩
 
-#print axioms chart_selected_port
-#print axioms raw_header_lane_owner
-#print axioms rival_header_asks_and_grants
-#print axioms chart_header_coordinates
 end L4.ShortFiveLaneHeaders

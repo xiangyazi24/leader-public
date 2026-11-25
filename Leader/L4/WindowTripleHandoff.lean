@@ -93,8 +93,6 @@ theorem step_agrees {p c n} {x : Config p c n} {g cert : List (Fin n)}
     have bad := (birth_inv ledger g old.cert none e a post hr).2.2.1
     cases bad
 
-#print axioms step_agrees
-
 private theorem ledger_word {p c n} (g cert : List (Fin n)) (z : WindowScopedRace.Cursor p c n)
     (w : Word n) :
     (GGTiming.runMarks (cursorNext g cert) z w).1=observe z.1 w := by
@@ -180,5 +178,4 @@ theorem first_stop {p c n} {x : Config p c n} {g cert : List (Fin n)}
       rw [E] at R
       exact R.elim
 
-#print axioms first_stop
 end L4.WindowTripleHandoff

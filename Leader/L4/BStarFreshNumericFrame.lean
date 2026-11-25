@@ -129,6 +129,4 @@ theorem ring_link_trail {base x : X} {hh : ∃ z,oldH6 B base z=true}
   erw [gh,A.1,decode_encode] at J
   exact J.symm
 
-#print axioms ring_link_trail
-#print axioms ring_hold
 end L4.BStarFreshNumericFrame

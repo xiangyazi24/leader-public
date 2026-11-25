@@ -218,10 +218,4 @@ theorem physical_plan_of_middle
     WindowFrontDone.fold_cover hp hc hn hq (scope x i),?_⟩
   exact fold_fresh_mass hp hc hn hq (scope x i)
 
-#print axioms assemble
-#print axioms physical_plan_of_middle
-#print axioms protected_slot
-#print axioms entry_slot
-#print axioms entry_handoff
-
 end L4.WindowPlan

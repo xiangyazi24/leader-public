@@ -221,11 +221,3 @@ theorem reset_telescope_le (ww : List (List Mark)) :
 
 end L4.OpenQueue
 
-#print axioms L4.OpenQueue.blocked_outlet_not_ideal
-#print axioms L4.OpenQueue.oneStep
-#print axioms L4.OpenQueue.run_below_and_ingresses
-#print axioms L4.OpenQueue.ingress_same_mark_after_prefix
-#print axioms L4.OpenQueue.three_bond_sum
-#print axioms L4.OpenQueue.increment_table
-#print axioms L4.OpenQueue.scaledCurrent_telescope
-#print axioms L4.OpenQueue.reset_telescope_le

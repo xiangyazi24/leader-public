@@ -399,13 +399,4 @@ theorem views_at_inc (base : X) (hh : ∃ i,oldH6 B base i=true)
   rw [tick]
   exact BStarBiasedLift.neighborView_lift P _ _ phase _ (H _).2 (ports q)
 
-#print axioms views_at_inc
-#print axioms physical_coherent_lift
-#print axioms skew_step
-#print axioms increment_old_ports
-#print axioms physical_legit_step
-#print axioms physical_legit_word
-#print axioms physical_legit_lift
-#print axioms neighbor_back
-#print axioms legit_activate
 end L4.BStarPhysicalLegitimate

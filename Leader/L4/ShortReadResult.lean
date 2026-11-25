@@ -78,10 +78,6 @@ theorem descriptor_of_protected_reads (x : BitVec 96) (l r : Bool)
     (issuedDescriptor x % 2 == 1)= !(l || r) := by
   rw [descriptor_result,L,R]
 
-#print axioms successful_read_store
-#print axioms descriptor_result
-#print axioms descriptor_of_protected_reads
-
 /-- The retained six-bit file from READ determines the next descriptor,
 even if any number of other sites have taken physical marks. -/
 theorem descriptor_of_retained_file (x : BitVec 96) (data : BitVec 6)
@@ -104,6 +100,4 @@ theorem successful_read_descriptor {s n : Nat} (x : Raw s n) (e : Fin n)
   descriptor_of_retained_file _ _
     (successful_read_store x e sep eligible phase cmd tag op live success).2
 
-#print axioms descriptor_of_retained_file
-#print axioms successful_read_descriptor
 end L4.ShortReadResult

@@ -135,8 +135,3 @@ theorem concreteTagTail_of_horizon_weight
 
 end L4.TailCutoff
 
-#print axioms L4.TailCutoff.half_block
-#print axioms L4.TailCutoff.numerical_cutoff
-#print axioms L4.TailCutoff.cutoff_of_horizon_weight
-#print axioms L4.TailCutoff.concreteTagTail_of_horizon_weight
-#print axioms L4.TailCutoff.survival_projection_through_horizon

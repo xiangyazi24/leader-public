@@ -171,8 +171,4 @@ theorem all_serial_from_cached (d : Sheet) (N : 1<n) (S : 0<s)
   intro t
   exact Nat.le_trans (H t) (Nat.mul_le_mul_right _ up)
 
-#print axioms all_serial_closed
-#print axioms all_serial_from_cached
-#print axioms seed_at_genuine_receipt
-#print axioms all_mark
 end L4.ReportOwnerSerial

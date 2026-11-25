@@ -25,7 +25,6 @@ open BStarPhysicalDigitSem
 open BStarNativeScalarRecurrence BStarNativeOperandCustody
 open BStarNativeZeroHead BStarNumericChartCoverage
 
-
 open BStarLongRegisters
 
 set_option maxRecDepth 8192
@@ -226,5 +225,4 @@ theorem actual_scanNat_step {base x : X} {hh : ∃ i,oldH6 PROTO base i=true}
     rw [BStarNativePackedRep.chunk_head_read K' table bank regs L c' G]
     exact V.trans value.symm
 
-#print axioms actual_scanNat_step
 end L4.BStarNativeScanNat

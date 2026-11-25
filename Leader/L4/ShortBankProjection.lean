@@ -56,7 +56,6 @@ private theorem reader_work_left {s n : Nat} (x : Raw s n) (e : Fin n)
     simp [rawNext,AllSizeS1Geometry.step]]
   exact G.trans E
 
-
 theorem receiver_banks {s n : Nat} (x : Raw s n) (e : Fin n)
     (sep : e≠rightNeighbor e) (head : header x (rightNeighbor e)=true) :
     let f := lane 87 2 (by decide)
@@ -125,8 +124,4 @@ theorem guarded_commit_selected {s n : Nat} (x : Raw s n) (e : Fin n)
   selected_of_guard_write x e sep head guard
     (ShortSelectorFlip.selector_responder_raw_publish x e sep head guard)
 
-#print axioms guarded_commit_selected
-#print axioms receiver_banks
-#print axioms selector_stutter
-#print axioms selected_of_guard_write
 end L4.ShortBankProjection

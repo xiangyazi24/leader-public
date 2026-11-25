@@ -128,9 +128,6 @@ theorem data_ready_late {base x : X} {hh : ∃ i,oldH6 B base i=true}
     fun j J s loc => noPrep ⟨s,.rd⟩ (by change dataOwner _ (site e s) .rd=o.val; rw [loc]; exact rd j J),
     fun j _ J s loc => noPrep ⟨s,rail seam j⟩ (by change dataOwner _ (site e s) (rail seam j)=o.val; rw [loc]; exact up j J)⟩
 
-#print axioms gate_from_enabled
-#print axioms data_ready_late
-
 /-- ENABLE's literal right prep positions. RD uses K1 even on OUT
 padding; RS uses K2 and needs INSIDE. Every such addressed K1/K2 is
 a strict preterminal member of the chosen chart. -/
@@ -166,5 +163,4 @@ theorem chart_enable_position {base : X} {hh : ∃ i,oldH6 B base i=true}
     rcases kind with rfl|rfl <;> simp [field] at V <;> contradiction
   exact ⟨fieldPrep,k,by omega,M⟩
 
-#print axioms chart_enable_position
 end L4.BStarCopyRightReady

@@ -159,8 +159,4 @@ theorem policy_latch {α : Type} {p c n} {z0 : Config p c n}
   exact ⟨k.entry hn,latch_at_kill hn (decision hp hc hn P) start s w u e k pre hK,
     hA,rfl,hPost.symm.trans (k.post_eq hn)⟩
 
-#print axioms policy_latch
-
-#print axioms named_of_route
-#print axioms agrees_with_predecessor
 end L4.WindowNamedFront

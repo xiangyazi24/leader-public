@@ -30,8 +30,6 @@ theorem parked_admit_right_raw {s n : Nat} (x : Raw s n) (e : Fin n) (sep : e≠
   exact (work_to_raw x e sep k).2.trans
     (parked_admit_right_pair _ _ _ _ j k link upstream t old tag opcode live gate race)
 
-#print axioms parked_admit_left_raw
-#print axioms parked_admit_right_raw
 theorem ready_admit_out_raw {s n : Nat} (x : Raw s n) (e : Fin n) (sep : e≠rightNeighbor e)
     (j k : Fin 3)
     (link : destination (header x (rightNeighbor e)) j=some k) (t : Token)
@@ -45,5 +43,4 @@ theorem ready_admit_out_raw {s n : Nat} (x : Raw s n) (e : Fin n) (sep : e≠rig
   have H := ready_admit_out_pair (header x e) (header x (rightNeighbor e)) (x e).mis1 (x (rightNeighbor e)).mis1 j k link t old tag opcode live gate race
   exact ⟨(work_to_raw x e sep j).1.trans H.1,(work_to_raw x e sep k).2.trans H.2⟩
 
-#print axioms ready_admit_out_raw
 end L4.ShortAdmitMIS1Ring

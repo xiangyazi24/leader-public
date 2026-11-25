@@ -940,11 +940,6 @@ theorem frozen_stage_cover
     unfold Chain.FrSet
     exact ⟨hqu, hfreeze⟩
 
-#print axioms L4.Height.Recover.ChainTwo.shortestPath_length_le_half
-#print axioms L4.Height.Recover.ChainTwo.shortestPath_consecutive
-#print axioms L4.Height.Recover.ChainTwo.cfg_runWord
-#print axioms L4.Height.Recover.ChainTwo.frozen_stage_cover
-
 end
 
 end L4.Height.Recover.ChainTwo

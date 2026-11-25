@@ -87,7 +87,6 @@ theorem left_selected_digit_frame (d : Sheet) (N : 1<n)
           (Bool.eq_false_iff.mpr Grant) sel i I
   · exact indexed_left_no_write_bank_frame p (h e) (h (rightNeighbor e)) u v sel W
 
-
 /-- A physical mark without an accepted incoming COMMIT at the selected
 header preserves both directional values; arbitrary other words may write. -/
 theorem value_frame_without_ingress (d : Sheet) (N : 1<n)
@@ -131,6 +130,4 @@ theorem value_frame_without_ingress (d : Sheet) (N : 1<n)
   · exact S 2 (.inr rfl)
   · exact S 0 (.inl rfl)
 
-#print axioms value_frame_without_ingress
-#print axioms left_selected_digit_frame
 end L4.ReportProtectedWords

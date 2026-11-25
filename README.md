@@ -49,8 +49,8 @@ The protocol `compactDeployment s` takes one advice value `s`, the same at every
 2. for every ring size `n ≥ 4`, with advice `s = ⌈log₂ ⌈log₂ n⌉⌉` (`ceilingLogTwo`), from every initial
    configuration, under the uniform random edge scheduler on the directed ring, the expected number of interactions
    until one fixed site is the sole leader output on every continuation (`Permanent`,
-   `Leader/L4/Height/G9Spine.lean`) is at most `compactTimeCoeff g (2^32) patrol * n²`, an absolute constant times
-   `n²` (`Deployment.Expected`, `Leader/L4/Height/G9WirePart18.lean`, with `g = K_custody` and
+   `Leader/L4/Height/AllSizeSpine.lean`) is at most `compactTimeCoeff g (2^32) patrol * n²`, an absolute constant times
+   `n²` (`Deployment.Expected`, `Leader/L4/Height/AllSizeWirePart18.lean`, with `g = K_custody` and
    `patrol = patrolAllowance coefficient`). The expectation is `UniformFirstHit.ExpectedHittingTimeAtMost`
    (`Leader/Wu/Scheduler/UniformFirstHitExpectation.lean`): the first hitting time is almost surely finite and every
    partial sum of its expectation series is at most the bound.

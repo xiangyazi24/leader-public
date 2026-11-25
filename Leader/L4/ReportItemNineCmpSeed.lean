@@ -29,5 +29,4 @@ theorem raw_acq_consume_zero_cmp (d : Sheet) (C : Chart h) (N : 1<n)
     ((liftSourcePatch p (source p v t).1).apply v) E) .input
   exact B.trans Z
 
-#print axioms raw_acq_consume_zero_cmp
 end L4.ReportItemNineCmpSeed

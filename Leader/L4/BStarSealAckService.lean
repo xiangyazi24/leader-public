@@ -82,5 +82,4 @@ theorem seal_ack_of_sublist {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rw [atAck]
     exact ⟨ack,I',PC,DescR⟩
 
-#print axioms seal_ack_of_sublist
 end L4.BStarSealAckService

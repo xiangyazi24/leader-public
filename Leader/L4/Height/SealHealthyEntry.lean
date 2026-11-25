@@ -40,5 +40,4 @@ theorem actual_seal_of_stage {base start : X} {hh : ∃ i, oldH6 B base i=true}
   exact BStarSealCenterAdvance.accepted_step hp C Q fiber closed sep qx i k bound loc head
     (busy_end hp T) p W d sel D auth staged
 
-#print axioms actual_seal_of_stage
 end L4.Height.SealHealthyEntry

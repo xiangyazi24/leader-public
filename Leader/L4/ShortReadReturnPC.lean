@@ -64,5 +64,4 @@ theorem consume_pc {s n : Nat} (x : Raw s n) (e : Fin n)
     · exact .inr (by decide)
     · exact .inr (by decide)
 
-#print axioms consume_pc
 end L4.ShortReadReturnPC

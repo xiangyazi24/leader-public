@@ -64,5 +64,4 @@ theorem stage_center_mark {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have E := descriptor_of_arg argEq
   exact E.trans ((BStarStageIssue.issued_descriptor source).trans D)
 
-#print axioms stage_center_mark
 end L4.Height.StageCenterExtract

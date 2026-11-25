@@ -140,6 +140,4 @@ theorem matched_of_clear {n : Nat} (p : List (List (Fin n))) (a : List (Fin n))
     · exact matched _ a empty
     · exact ih (by omega) q h
 
-#print axioms forces
-#print axioms matched_of_clear
 end L4.Height.FenceCrossings

@@ -111,8 +111,5 @@ theorem actual_complete_pace_charge {base initial : X} {hh : ∃ i,oldH6 B base 
           | consume _ _ _ => exact (done rfl).elim
   simpa [outwardCredit,charge,addr] using aux w a (.out 0) G
 
-#print axioms rawCharge_unique
-#print axioms actual_event_le_charge
-#print axioms actual_complete_pace_charge
 end L4.BStarPaceChartLedger
 

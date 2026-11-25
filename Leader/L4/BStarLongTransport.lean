@@ -105,6 +105,4 @@ theorem no_observe_written (g : Pair LongGeometry) (old : ReadK) (ks : List KWri
     exact ⟨q,hq,beq_iff_eq.mpr e⟩
   simp [H] at E
 
-#print axioms exact_k_transfer
-#print axioms no_observe_written
 end L4.BStarLongTransport

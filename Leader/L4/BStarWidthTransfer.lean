@@ -334,8 +334,5 @@ theorem door_transfer {c : Nat} (x : BitVec (WidthByteRows.W c)) :
   · rw [if_neg H,plain_door_transfer]
     simp [doorPlain,H]
 
-#print axioms holdFlags_eq
-#print axioms plain_door_transfer
-#print axioms door_transfer
 end L4.BStarWidthTransfer
 

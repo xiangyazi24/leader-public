@@ -49,8 +49,6 @@ theorem no_incoming_on_fence_edge (g : Pair LongGeometry)
   rw [hs] at q
   exact bne_iff_ne.mp (List.all_eq_true.mp q D hD)
 
-#print axioms no_incoming_on_fence_edge
-
 open BStarLongPackets BStarLongPrep BStarLongFencePrefix
 
 private theorem offered_mem {α : Type} (key : α → Nat) (l : List α) (a : α)
@@ -89,8 +87,6 @@ theorem passing_lane_frames (g : Pair LongGeometry) (x : Pair (BitVec BStarTrace
   intro d hD hd
   exact (no_incoming_on_fence_edge g C d s (selected_command_raw g C hC)
     (selected_data_raw g _ d hD) hs hd).elim
-
-#print axioms passing_lane_frames
 
 /-- Any actual reservation of this sheet comes from a genuinely
 checked old advancing command, with the exact hardwired prep opcode
@@ -149,6 +145,4 @@ theorem passing_lane_frames_of_origin (g : Pair LongGeometry) (x : Pair (BitVec 
   obtain ⟨c,q,op,h1,h2,h3,h4,h5⟩ := reserved_from_old_advance g x _ H
   exact exclude c q op h1 h2 h3 h4 h5
 
-#print axioms reserved_from_old_advance
-#print axioms passing_lane_frames_of_origin
 end L4.BStarLongFenceTopology

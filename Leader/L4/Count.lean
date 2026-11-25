@@ -248,6 +248,4 @@ theorem stateCount_headline (p c1 : Nat) : StateCount p c1 := by
   · intro x
     exact ⟨c.encode x, c.left_inv x⟩
 
-#print axioms stateCountExact
-#print axioms stateCount_headline
 end L4

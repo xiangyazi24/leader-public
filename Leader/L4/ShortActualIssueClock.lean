@@ -124,10 +124,6 @@ theorem clean_expected_from_issue0 {s n : Nat} {h : Fin n → Bool} (C : Chart h
             rw [←Nat.mul_assoc (n-1) B (n^t), ←Nat.add_mul, ←Nat.add_mul, ←Nat.add_assoc, Eq]
           _ = _ := by ac_rfl
 
-#print axioms issuable_nondoor
-#print axioms actual_issue
-#print axioms clean_expected_from_issue0
-
 /-- The scheduler-tree formulations in the L4 statement and Height
 layers agree pointwise, including the time-zero target check. -/
 private theorem hitCost_eq {X : Type} {n : Nat} (next : X→Fin n→X) (P : X→Prop)
@@ -194,8 +190,5 @@ theorem from_inherited_expected {s n : Nat} {h : Fin n → Bool} (C : Chart h)
   have E := E' (10^8095)
   rw [←E]
   exact Nat.le_trans (clean_cost_via_issue0 C N t x Q heads) (Nat.add_le_add B D)
-
-#print axioms clean_cost_via_issue0
-#print axioms from_inherited_expected
 
 end L4.ShortActualIssueClock

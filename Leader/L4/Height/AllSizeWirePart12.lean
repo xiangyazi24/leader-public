@@ -1,9 +1,9 @@
-import Leader.L4.Height.G9WirePart11
+import Leader.L4.Height.AllSizeWirePart11
 set_option Elab.async false
 set_option pp.fullNames true
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section PackedDisplay
 
@@ -141,7 +141,7 @@ theorem packed_trial {s n : Nat} (hn : 4 ≤ n) (hs : 6 ≤ s)
     (ha : s = AllSizeProtocol.ell (AllSizeProtocol.ell n))
     (hQuiet : ClockDisplaySpec.RawLegitOfQuiet)
     (hTrial : ClockDisplaySpec.RawDisplayTrial) :
-    DotRawDisplay (packedData s n hn hs) (by omega) (2^32) (packedOrigin hn hs) := by
+    RawDisplay (packedData s n hn hs) (by omega) (2^32) (packedOrigin hn hs) := by
   classical
   let D := packedData s n hn hs
   change ∀ (j : Epoch s n) (z : TapeState j.2), Recover.Chain.LgSet (chartClock j.2 hn hs) z →
@@ -216,4 +216,4 @@ theorem packed_trial {s n : Nat} (hn : 4 ≤ n) (hs : 6 ≤ s)
 
 end PackedDisplay
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

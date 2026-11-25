@@ -15,5 +15,4 @@ theorem custody_reached {s n : Nat} (advice : s=ell (ell n)) (S : 6≤s) (x : Ra
   @custody_reached_of_quadratic_reports s n advice S ((trialCeiling (U2 6) n0)+(prepBudget+prepBudget))
     (@ReportStageEnvelope.both_from_h4 n s advice S) x
 
-#print axioms custody_reached
 end L4.PhysicalCustodyProduction

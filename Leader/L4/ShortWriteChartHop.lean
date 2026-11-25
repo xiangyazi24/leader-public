@@ -118,12 +118,6 @@ theorem terminal_turn {s n : Nat} {h : Fin n → Bool} (C : Chart h) (x : Raw s 
         · exact .inr (.inr rfl))
   exact Q.trans (by cases cmd <;> cases bad <;> rfl)
 
-#print axioms packet_decode
-#print axioms packet_tag
-#print axioms packet_opcode
-#print axioms packet_fault
-#print axioms live_hop
-#print axioms terminal_turn
 -- CHECK: ShortWriteChartHop.lean:37; original opens and options unchanged.
 theorem live_hop_fixed {s n : Nat} {h : Fin n → Bool} (x : Raw s n)
     (C : Chart h) (N : 9<n) (heads : ∀ q, header x q=h q)
@@ -190,5 +184,4 @@ theorem live_hop_fixed {s n : Nat} {h : Fin n → Bool} (x : Raw s n)
     · simpa only [advanceBad,Bool.true_or] using Q.2
     · simp [advanceBad] at H
 
-#print axioms live_hop_fixed
 end L4.ShortWriteChartHop

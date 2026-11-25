@@ -120,9 +120,6 @@ theorem raw_commit_selected (g : Pair LongGeometry) (x : Pair (BitVec LW))
   rw [H]
   exact bind_commit _ _ p F O R T W
 
-#print axioms bound_commit_selected
-#print axioms raw_commit_selected
-
 /-- Fault zero and opcode 411 alone do not imply bindability. A stale
 forward token with a nonzero outcome is canonicalized to fault. -/
 theorem raw_healthy_is_not_enough (g : LongGeometry) (k : Fin 11) (p : Payload)
@@ -133,5 +130,4 @@ theorem raw_healthy_is_not_enough (g : LongGeometry) (k : Fin 11) (p : Payload)
   dsimp only
   exact ⟨⟨F,O⟩,by simp [BStarLongCommand.bind]⟩
 
-#print axioms raw_healthy_is_not_enough
 end L4.BStarCommitHealthyOffer

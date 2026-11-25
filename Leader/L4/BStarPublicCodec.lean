@@ -227,6 +227,4 @@ example : readPub (p:=3) (c:=2) (by decide) (BitVec.allOnes 17) =
 example : sourceDecode 0 0=.off ∧ sourceDecode 0 1=.i0 ∧
     sourceDecode 0 2=.i1 ∧ sourceDecode 0 3=.off := by decide
 
-#print axioms read_pack
-
 end L4.BStarPublicCodec

@@ -204,8 +204,4 @@ theorem hit_scalar_store_next {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact receipt_scalar_store hp x e f k c' K G HH vv ph opc R F O (has_kind (by omega))
     pre sep flights _ fit alias
 
-#print axioms hit_scalar_store_next
-#print axioms flat_flight
-#print axioms to_hit_scalar_hold
-#print axioms quiet_mark
 end L4.BStarScalarFlightTrace

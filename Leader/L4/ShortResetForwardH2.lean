@@ -150,7 +150,4 @@ theorem route_exists {s n : Nat} (x : Raw s n) (M : PhysicalCustody.H1.rawMaxima
       fun i j hi hj E=>I i j (by omega) (by omega) E⟩
   exact ⟨C,rfl,by change 6≤a+b+c; omega,by change a+b+c≤9; omega⟩
 
-#print axioms route_exists
-#print axioms slot_of_bits
-#print axioms forward_step
 end L4.ShortResetForwardH2

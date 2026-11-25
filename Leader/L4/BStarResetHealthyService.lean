@@ -94,7 +94,6 @@ noncomputable def actualHealthyService (x : X) (e : Fin n) (he : e≠rightNeighb
       rcases small with rfl|rfl|rfl <;> rfl
     exact (new_read B x e he C.source).symm.trans (A.trans B'.symm)
 
-
 open BStarH6WordChart BStarAcquireForwardTrace BStarAcquireLiteralChain
 open BStarAcquireVisitOrder BStarAcquireAnchors BStarLongFixedRouting
 
@@ -154,7 +153,4 @@ theorem healthy_adapter_on {base : X} {hh : ∃ i, oldH6 B base i=true}
       have J' : j<len := by omega
       exact (mem_link hp x (edgeOf (.link j)) _ len j).mpr ⟨J',linkN x W.1 j J'⟩
 
-
-#print axioms actualHealthyService
-#print axioms healthy_adapter_on
 end L4.BStarResetHealthyService

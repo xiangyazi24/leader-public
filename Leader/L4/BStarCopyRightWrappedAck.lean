@@ -69,5 +69,4 @@ theorem packed_after_actual_ack {base x : X} {cut whole : List (Fin n)}
   exact BStarCopyRightWrappedBank.packed_before_load hp hh owner a seam tail strip ownerHead width A u after p V
     (P.symm.trans U) sep layout auth _ _ bank bank8 kept ack2 d
 
-#print axioms packed_after_actual_ack
 end L4.BStarCopyRightWrappedAck

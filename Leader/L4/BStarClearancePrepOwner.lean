@@ -139,6 +139,4 @@ theorem suppressed_nomination_actual {a : LargeParams} {n : Nat} (b : LargeRows 
   obtain ⟨c,_,q,_,_,_,_,depart,own⟩ := shared_reservation_actual b x e raw s D M hD hit
   exact ⟨c,q,depart,own⟩
 
-#print axioms suppressed_nomination_actual
-#print axioms shared_reservation_actual
 end L4.BStarClearancePrepOwner

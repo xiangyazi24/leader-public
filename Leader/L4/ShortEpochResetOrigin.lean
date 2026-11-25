@@ -62,6 +62,4 @@ theorem genuine_reset_seed {s n : Nat} {h : Fin n→Bool} (N : 5≤n)
   refine ⟨observed_first_goal_parked C N w x H heads F G,a,b,W,A,?_,B,D⟩
   exact (ShortActualIssueClock.actual_issue C N _ (lower_run N x H heads a).2 A).2
 
-#print axioms true_goal_has_launch
-#print axioms genuine_reset_seed
 end L4.ShortEpochResetOrigin

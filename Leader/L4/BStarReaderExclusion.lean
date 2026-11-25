@@ -80,7 +80,4 @@ theorem bStar_reader_step (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
       (header_reader_safe _ _ s j ne old bank h),?_⟩
   exact BStarLongGrantProjection.joined_keeps_incidence _ _ _ _ _ _ _ _ _ hp x s j h old
 
-#print axioms header_reader_safe
-#print axioms bStar_reader_step
-#print axioms reader_safe
 end L4.BStarReaderExclusion

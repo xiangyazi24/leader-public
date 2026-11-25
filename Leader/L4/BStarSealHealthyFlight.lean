@@ -127,10 +127,6 @@ theorem before_center {base x : X} {hh : ∃ i,oldH6 B base i=true}
     exact ih k' l pay rfl L bound (Nat.le_trans lower Kmon) FP H
       (fun u a v WW j J JJ => safe (e::u) a v (congrArg (List.cons e) WW) j J JJ)
 
-#print axioms before_center
-
-
-
 open BStarSealParity BStarLongPublication BStarLongLayout
 
 /-- Accepted SEAL center departure writes the exact NEED polarity to
@@ -234,9 +230,6 @@ theorem after_center {base x : X} {hh : ∃ i,oldH6 B base i=true}
     omega
   · exact .inl K
 
-#print axioms joined_accepted_seal
-#print axioms after_center
-
 /-- Same actual center mark, outward tape, selected terminal and return
 ACK. No independent old-state or same-valued payload is chosen. -/
 theorem accepted_center_to_ack {base x : X} {hh : ∃ i,oldH6 B base i=true}
@@ -282,8 +275,6 @@ theorem accepted_center_to_ack {base x : X} {hh : ∃ i,oldH6 B base i=true}
     U q mem (by rw [kind]; decide) qH rawEnd
   exact (BStarSealReturn.terminal_to_actual_ack hp C sep turn U q f addr k10 noDst offered
     qH.fault qH.opcode back Ret Ack F O).trans bit
-
-#print axioms accepted_center_to_ack
 
 open BStarLongDoor BStarClearanceSource BStarResetControllerEntry BStarLongLiteral
 
@@ -368,6 +359,4 @@ theorem selected_at_center {base start : X} {hh : ∃ i,oldH6 B base i=true}
     rwa [loc] at R
   exact ⟨p,H,selected_well g raw (centerLink g) p (center_mem g) (show Cmd.link≠Cmd.door by decide) H wire,DD⟩
 
-#print axioms launched_well
-#print axioms selected_at_center
 end L4.BStarSealHealthyFlight

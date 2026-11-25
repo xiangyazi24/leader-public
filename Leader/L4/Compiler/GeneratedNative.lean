@@ -303,7 +303,4 @@ theorem generated_native_tour (r : Nat) (hr : 3≤r) (bank : Bank) :
   rw [machine_finish (by omega)]
   exact generated_native r hr bank
 
-#print axioms build_eq_literal
-#print axioms generated_native
-#print axioms generated_native_tour
 end L4.Compiler.Native

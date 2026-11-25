@@ -114,7 +114,6 @@ theorem raw_turn (d : Sheet) (C : Chart h) (op : Nat) (Range : IndexedOp (params
     (bytesL d x (out C k)) (bytesR d x (out C k)) _
     (end_dest C k I) _ q R.bound A
 
-
 private theorem F_root_hold (d : Sheet) (C : Chart h)
     (op : Nat) (Range : IndexedOp (params d s) op) (x : Raw s n)
     (N : 1<n) (mask : ∀ i,lower d (oldHeaders (rows s) (x i))=h i)
@@ -223,8 +222,6 @@ private theorem D_outgoing_hold (d : Sheet) (C : Chart h)
   change decode p (chartGate d C x k)
     (rankNormWire p 3 (chartGate d C x k) (wire d C x k))=_
   exact (indexed_zero_race_norm p _ _ 3 (.inr rfl) Z).trans (tok_wire d C x k).symm
-
-
 
 private theorem F_hold (d : Sheet) (C : Chart h) (op : Nat) (Range : IndexedOp (params d s) op)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
@@ -353,7 +350,6 @@ theorem D_step (d : Sheet) (C : Chart h) (op : Nat) (Range : IndexedOp (params d
     · exact .inl ⟨H,PC,R.bound,(D_hold d C op Range hh G F N x X k q R e M NC).trans R.packet⟩
     · exact (M ⟨j,J,E⟩).elim
     · exact (NC.elim (fun B=>B E) (fun B=>B (rootD Z))).elim
-
 
 /-- The historical trace stores the complete accumulator at each
     old departure. All constructors are tied to the original tape;
@@ -490,9 +486,4 @@ theorem launch_from_token (d : Sheet) (C : Chart h) (op : Nat)
   · have Old : (readPC d C x).2=op := congrArg Prod.snd PC
     exact ⟨R,Prod.ext R.1.1 (J.trans Old),B,A⟩
 
-#print axioms F_step
-#print axioms D_step
-#print axioms walk_run
-#print axioms walk_successful_root
-#print axioms launch_from_token
 end L4.ReportOwnerIndexedFlight

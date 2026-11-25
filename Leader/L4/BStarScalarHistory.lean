@@ -98,7 +98,6 @@ theorem left_foreign_field (x : Pair (LargeSite A))
     Field.read_other_assign field shField _ _ (.inl (Nat.le_trans hi (by decide)))]
   exact field_hold _ _ _ H lo hi
 
-
 private theorem issue_frame (op a : Nat) (h : op≠1) : Frame (issued op a) := by
   unfold issued
   simp only [beq_iff_eq,if_neg h]
@@ -263,8 +262,4 @@ theorem receipt_scalar_store (x : X) (e : Fin n) (f : Payload) (k : Nat)
   exact ⟨fun b R => (A0.trans (allRead j)).trans ((rep j hj).1 b R),
     fun K => by simpa only [CmpRep,A0,allRead j] using (rep j hj).2 K⟩
 
-#print axioms receipt_scalar_store
-#print axioms word_scalar_hold
-#print axioms left_foreign_field
-#print axioms right_flight_field
 end L4.BStarScalarHistory

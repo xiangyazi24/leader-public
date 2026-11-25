@@ -61,5 +61,4 @@ theorem logical_projection (base initial : X) (hh : ∃ i,oldH6 B base i=true)
     (((sum_fiber reserve lo opening cap _ _).mp (I b)).symm ▸
       congrArg (fun j=>sumKey reserve lo opening cap (j.natAdd (keys reserve lo opening).length)) E)
 
-#print axioms logical_projection
 end L4.BStarMainLogicalProjection

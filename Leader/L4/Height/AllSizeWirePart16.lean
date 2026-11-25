@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart15
+import Leader.L4.Height.AllSizeWirePart15
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section PublicSuffix
 
@@ -22,7 +22,7 @@ ordinary rooted estimate on the closed packed domain. -/
 theorem packed_suffix_of_marked (hClosed : MarkedClosed) (hProjects : MarkedProjects) :
     ∃ C : Nat, ∀ {s n : Nat}, 4 ≤ n → ∀ x : Raw s n, Marked x →
       IIDExpectedHittingTimeAtMost (rawNext s) PackedElected x (C * n^2) := by
-  obtain ⟨C, hC⟩ := L4.row175_rooted_complete 12 (by decide)
+  obtain ⟨C, hC⟩ := L4.uniformEdge_rooted_complete 12 (by decide)
   refine ⟨C, ?_⟩
   intro s n hn x hx
   have hRoot : RootedEntrance.RootNonempty (pubConfig x) :=
@@ -63,4 +63,4 @@ theorem public_suffixes_of_marked (hClosed : MarkedClosed) (hProjects : MarkedPr
 
 end PublicSuffix
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

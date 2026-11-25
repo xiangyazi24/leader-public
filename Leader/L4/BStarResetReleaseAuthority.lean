@@ -128,7 +128,4 @@ theorem service_zero {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
     rw [S] at K
     exact K
 
-#print axioms service_zero
-#print axioms joined_release
-#print axioms zero_without_request
 end L4.BStarResetReleaseAuthority

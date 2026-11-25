@@ -227,11 +227,4 @@ theorem first_arrival_cap {Label : Type} (plan : List Label) (s : ReleaseHistory
   simp only [List.length_append] at h
   omega
 
-#print axioms literal_offer
-#print axioms exclusive_winner
-#print axioms selected_prep_exact
-#print axioms literal_inject
-#print axioms same_mark_reserved
-#print axioms ReleaseStep.follows
-#print axioms first_arrival_cap
 end L4.BStarCopyInjection

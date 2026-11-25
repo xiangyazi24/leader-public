@@ -102,12 +102,6 @@ theorem sink_rank {k : Nat} (j : Fin k) (J : j.val+1=k) : rank (j,k)=2*k-1 := by
   simp only [rank,if_neg K,BStarFenceCrossing.depth]
   omega
 
-#print axioms upstream_rank
-#print axioms downstream_rank
-#print axioms ranked
-#print axioms rank_bound
-#print axioms sink_rank
-
 def Feasible {k : Nat} (v : Vertex k) : Prop := v.2≤v.1.val+1
 
 theorem upstream_feasible {k : Nat} (j : Fin k) (m : Nat) (v : Vertex k)
@@ -177,5 +171,4 @@ theorem correctCuts_of_feasible {n k : Nat} (port : Fin k→Fin n)
     rw [Z]
     cases E : row port (j,m) <;> exact Nat.zero_le _
 
-#print axioms correctCuts_of_feasible
 end L4.BStarFenceCrossingGraph

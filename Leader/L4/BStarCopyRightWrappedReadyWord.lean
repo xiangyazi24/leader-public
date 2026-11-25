@@ -114,5 +114,4 @@ theorem right_ready_word {base x : X} {hh : ∃ i,oldH6 B base i=true}
     · simp [rail,inside,activeSheet,strip.rs_in j (by omega) J]
   · exact (BStarCopyRightWrappedReleaseClass.strip_same_owner strip j J).trans ownHead
 
-#print axioms right_ready_word
 end L4.BStarCopyRightWrappedReadyWord

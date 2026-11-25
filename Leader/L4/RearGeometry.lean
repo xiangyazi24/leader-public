@@ -241,10 +241,3 @@ theorem firstRear_tag_moves {p c n d : Nat} (hn : 4 ≤ n)
 
 end L4.RearTrace
 
-#print axioms L4.RearTrace.firstRear_exists
-#print axioms L4.RearTrace.rearInit_has_nearest
-#print axioms L4.RearTrace.early_debt
-
-#print axioms L4.RearTrace.firstRear_stationary
-#print axioms L4.RearTrace.firstRear_moves
-#print axioms L4.RearTrace.firstRear_tag_moves

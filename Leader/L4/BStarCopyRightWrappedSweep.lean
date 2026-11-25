@@ -17,7 +17,6 @@ open BStarCopyRightDataSweep BStarCopyRightWrappedGeometry BStarCopyRightWrapped
 open BStarCopyUpstreamTags
 local notation "updateRing" => ring
 
-
 private theorem wrapped_other_positions (x : X) (base : Fin n) (i j tail : Nat)
     (ip : 0<i) (it : i<tail) (jp : 0<j) (jt : j≤tail) (N : tail≤n)
     (a : j≠i) (b : j≠i+1) :
@@ -194,8 +193,6 @@ theorem strip_pair_claim {a : LargeParams} {n : Nat} {b : LargeRows a}
       | ld => simp [rail] at h <;> split at h <;> contradiction
       | rs => exact (rr.2 (D.trans (congrArg some (T.symm.trans (congrArg R h))))).elim
       | rd => exact (rr.1 (D.trans (congrArg some (T.symm.trans (congrArg R h))))).elim
-
-#print axioms strip_pair_claim
 
 theorem strip_pair_frame {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
     (x : Fin n→LargeSite (production k₁ k₂ t₂ J₁ J₂ r c p c₁))
@@ -413,8 +410,6 @@ theorem upstream_noningress {Tag : Type} (digits : Tag→BitVec 36)
         · exact inside ⟨j-1,by omega,by omega,E⟩
       rw [ring_exterior_frame hp x base e j jp eq pred]
       exact old j jp jt
-
-#print axioms upstream_noningress
 
 theorem ingress_quiet {Tag : Type} (digits : Tag→BitVec 36)
     (x : X) (root base : Fin n) (width seam tail : Nat)
@@ -669,9 +664,6 @@ theorem data_mark {Tag : Type} (digits : Tag→BitVec 36)
     · have new : OrderedPrefix plan (s.transfer i tag) (stripWord tail label) := .mark P step
       exact ⟨s.transfer i tag,lab,rfl,E.symm ▸ new,R,F⟩
 
-#print axioms ingress_quiet
-#print axioms data_mark
-
 structure DataReady (x : X) (root base e : Fin n) (width seam tail : Nat) : Prop where
   dest : Dest B x root width
   strip : WrappedStrip B x base seam tail
@@ -707,5 +699,4 @@ theorem data_word {Tag : Type} (digits : Tag→BitVec 36)
       (fun a f b E => ready (e::a) f b (congrArg (List.cons e) E))
     exact ⟨v,m,M.trans R,A,H,Q⟩
 
-#print axioms data_word
 end L4.BStarCopyRightWrappedSweep

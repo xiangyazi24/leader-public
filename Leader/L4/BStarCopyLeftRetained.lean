@@ -95,8 +95,6 @@ theorem retained_internal {Tag : Type} (digits : Tag→BitVec 36)
       rw [ext,show (s.transfer k tag).cells q = (if q=k then (s.cells k).send else if q=k+1 then (s.cells (k+1)).receive tag else s.cells q) by rfl,if_neg (by dsimp [k]; omega),if_neg (by dsimp [k]; omega)]
       exact old q hq
 
-#print axioms retained_internal
-
 /-- Selected END at the physical terminal LAST is harmless on the
 reachable ledger: that exact retained cell's mobile is empty.
 This proves a frame only at the old left LD LAST. Even here an
@@ -194,8 +192,4 @@ theorem deposit_and_transfer {Tag : Type} (digits : Tag→BitVec 36)
   rw [BStarCopyRightRetained.release_transfer_commute]
   exact .mark afterIssue (.interior (s.releaseOne d todo) _ i a outgoing vacant)
 
-#print axioms dest_of_strip
-#print axioms transport_and_transfer
-#print axioms deposit_and_transfer
-#print axioms retained_last_frame
 end L4.BStarCopyLeftRetained

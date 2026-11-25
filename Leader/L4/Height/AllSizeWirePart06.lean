@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart05
+import Leader.L4.Height.AllSizeWirePart05
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section PackedClock
 
@@ -171,7 +171,7 @@ theorem chart_state_tape {x : Raw s n} (g : CustodyWitness x)
 /-- Install the fixed-layout raw clock on the production packed pair rule.
 Display trial levels are provided by the separately selected display trial. -/
 noncomputable def packedData (s n : Nat) (hn : 4 ≤ n) (hs : 6 ≤ s) :
-    G9Data (PackedSite s) n where
+    AllSizeData (PackedSite s) n where
   row := largePair (rows s)
   leader := packedOutput s
   reference := packedRead s
@@ -218,4 +218,4 @@ theorem packed_liftCustody (hn : 4 ≤ n) (hs : 6 ≤ s) :
 
 end PackedClock
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

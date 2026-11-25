@@ -279,6 +279,4 @@ theorem retained_chart_site {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [Z]
   exact H ackEv midTrace band (Nat.le_of_eq PC.symm) pickEv ready411 holdTrace tailBand foreign issue flight
 
-#print axioms retained_chart_site
-#print axioms issue411_skeleton
 end L4.BStarExactStageFlight

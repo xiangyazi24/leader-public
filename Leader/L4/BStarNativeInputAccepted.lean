@@ -80,5 +80,4 @@ theorem all_accepted_from_images {base x copy : X} {hh : ∃ i,oldH6 B base i=tr
     rw [r']
     rfl
 
-#print axioms all_accepted_from_images
 end L4.BStarNativeInputAccepted

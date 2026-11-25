@@ -60,6 +60,5 @@ theorem admission_age {base y : Raw s n} {addr : Nat → Pos n} {len : Nat}
     obtain ⟨k,cur⟩ := busy_cut u (e::v) B
     cases idle_of_issue hp cur hit.2.1.1
 
-#print axioms admission_age
 end L4.Height.CandidateResidence
 

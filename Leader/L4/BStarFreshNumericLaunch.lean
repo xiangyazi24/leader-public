@@ -122,7 +122,4 @@ theorem launched_prefix_health {base x : X} {hh : ∃ b,oldH6 B base b=true}
       HealthAt op (project (fun j => S.getD j fall) (BStarResetSchedule.run step (step x e) u)) cursor :=
   busy_prefix_health hp chart sep T D (actual_launch_health hp chart e lo hi T L oldOp)
 
-#print axioms launched_prefix_health
-#print axioms actual_launch_health
-#print axioms source_health
 end L4.BStarFreshNumericLaunch

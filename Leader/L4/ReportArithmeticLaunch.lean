@@ -50,9 +50,6 @@ theorem write_source (p : Params) (v : BitVec p.w) (t : Tok)
   rw [E,PC]
   simp only [indexedF,concreteSeed,if_neg (Nat.not_lt_of_ge W),writeSeed_payload]
 
-#print axioms reader_source
-#print axioms write_source
-
 /-- The actual source door launches the indexed healthy flight. The WRITE
 guard is derived from arithmetic digit bounds, not assumed. -/
 theorem actual_seed (d : Sheet) (C : Chart h) (op : Nat)
@@ -85,5 +82,4 @@ theorem actual_seed (d : Sheet) (C : Chart h) (op : Nat)
   obtain ⟨Z,q,E,_,Seed⟩ := indexed_door_seed d C op Range hh G F N x X I PC _ H rfl
   exact ⟨Z,E ▸ Seed⟩
 
-#print axioms actual_seed
 end L4.ReportArithmeticLaunch

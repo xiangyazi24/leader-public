@@ -1934,45 +1934,4 @@ theorem released_cycle_hserial {base origin query : X}
 
 end Candidate
 
-#print axioms submask_redirect_two_hits
-#print axioms diverted_nomination_passes
-#print axioms diverted_nomination_extends
-#print axioms diversion_starts
-#print axioms actual_cursor_advance
-#print axioms physical_receipt_program_order
-#print axioms current_mode_unique
-#print axioms release_receipt_stops
-#print axioms chart_mark_selected
-#print axioms chart_mark_outbound
-#print axioms generated_pending_gate
-#print axioms recorded_side_keeps_nomination
-#print axioms physical_reverse_nominee
-#print axioms physical_return_work
-#print axioms incoming_receipt_selected
-#print axioms generated_forward_rank
-#print axioms generated_forward_rank_eq
-#print axioms physical_outbound_work
-#print axioms physical_gate_work
-#print axioms generated_pending_pays
-#print axioms generated_pending_stable
-#print axioms pending_candidate_pays
-#print axioms enabled_forward_offer
-#print axioms selected_forward_leaves_old
-#print axioms ordinary_outbound_pays
-#print axioms outbound_serial_mark
-#print axioms returned_reset_holds
-#print axioms generated_reset_healthy
-#print axioms generated_reset_receipt
-#print axioms tours_through_release_bound
-#print axioms tours_through_release_advance
-#print axioms released_cycle_budget
-#print axioms released_cycle_receipt_pays
-#print axioms released_cycle_rrel_pays
-#print axioms released_cycle_bad_issue_pays
-#print axioms released_cycle_raw_mark
-#print axioms weighted_candidate_serial_drift
-#print axioms serial_and_fence_budget
-#print axioms compensated_physical_step
-#print axioms released_cycle_hserial
-
 end L4.Height

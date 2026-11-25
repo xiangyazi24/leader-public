@@ -100,9 +100,6 @@ theorem rs_ord {base : X} {hh : ∃ i, oldH6 B base i=true}
     contradiction
   exact ⟨k,by omega,M⟩
 
-#print axioms busy_crosses
-#print axioms rs_ord
-
 /-- Exact launch cut of an original generated word, carrying the
 landing history as well as the uninterrupted BusyOnly suffix. -/
 theorem launch_cut {base x : X} {addr : Nat→Pos n} {len op : Nat}
@@ -189,5 +186,4 @@ theorem original_rs_load_visit {base x : X} {hh : ∃ i, oldH6 B base i=true}
     rw [W,spl,List.append_assoc]
   · cases bad
 
-#print axioms original_rs_load_visit
 end L4.BStarCopyRightLoadCoverage

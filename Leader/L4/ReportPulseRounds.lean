@@ -133,10 +133,6 @@ theorem closedRounds_scan (g : G) (J : Nat) (w : List (Option (Event G)))
           exact Mark
         · simp
 
-#print axioms extract_known_suffix
-#print axioms openRound_scan
-#print axioms closedRounds_scan
-
 theorem scan_next (g : G) (a : Scan) (w : List (Option (Event G))) :
     (scan g a w).next=a.next+w.length := by
   have one (a : Scan) (e : Option (Event G)) : (a.step g e).next=a.next+1 := by
@@ -215,5 +211,4 @@ theorem extract_closed_suffix {Z : Type} (g : G) (J : Nat) (s : Armed G)
   rw [extract_known_suffix g _ J prior.rounds fresh Eq L]
   exact ⟨L,Cert⟩
 
-#print axioms extract_closed_suffix
 end L4.ReportPulseRounds

@@ -43,6 +43,4 @@ theorem settled_step (h : Fin n → Bool) (hh : ∃ i,h i=true)
   ⟨closed x e I.1,stable hp h hh x e (he e) (same x I.1)
       (BStarClearanceOffsetMask.leftFrame hp x e) I.2⟩
 
-#print axioms settle
-#print axioms settled_step
 end L4.BStarClearanceSettled

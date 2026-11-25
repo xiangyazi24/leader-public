@@ -118,5 +118,4 @@ theorem issue_launch_expected (root : Fin n)
   exact ResetReturnIID.iid_of_relational_rank (observe hp root) Stop Live pos service
     (x,false) (R x) (.inr ⟨qx,issue,rfl⟩)
 
-#print axioms issue_launch_expected
 end L4.IssueLaunchIID

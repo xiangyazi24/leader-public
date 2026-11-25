@@ -97,8 +97,6 @@ theorem rs_frozen_outward {base x : X} {hh : ∃ i,oldH6 B base i=true}
         rw [Sides,siteEq,K]
       exact skip opNot (cursorAt.symm.trans E)
 
-#print axioms rs_frozen_outward
-
 /-- Lift exact freeze preservation to an original whole continuation.
 The only exclusion at PC8/10 is the actual same-site K2 cursor;
 PC9 ENABLE needs no exclusion and arbitrary exterior rows are retained. -/
@@ -186,6 +184,4 @@ theorem original_load_to_cut {base x : X} {hh : ∃ i,oldH6 B base i=true}
     (readLane (Sheet.index .rs) (ring (play x lead) e (site e side)).long).frozen at retained
   exact ⟨pre,post,launch,bank,decomp,door,index,retained.trans freeze⟩
 
-#print axioms rs_frozen_between
-#print axioms original_load_to_cut
 end L4.BStarCopyRightCapture

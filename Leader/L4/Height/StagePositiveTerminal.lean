@@ -75,5 +75,4 @@ theorem nominated_turn {base x : X} {hh : ∃ i,oldH6 B base i=true}
       | turn =>
         exact ⟨.transit _ _ _ live (.cons M go .turn G (.nil _ _)),I,lands.symm⟩
 
-#print axioms nominated_turn
 end L4.Height.StagePositiveTerminal

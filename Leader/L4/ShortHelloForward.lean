@@ -405,11 +405,4 @@ theorem clear_grant_free_before_terminal {s n : Nat} {h : Fin n → Bool} (R : R
       (before_turn_step R x e Sep heads i front E) (clear_suffix_step R x e Sep heads i clear)
       (no_grants_step R x e Sep heads i front clear G) (fun h=>missing (List.mem_cons_of_mem e h))
 
-#print axioms no_grants_step
-#print axioms clear_grant_free_before_terminal
-#print axioms clear_suffix_step
-#print axioms from_actual_issue_waits_without_terminal
-#print axioms forward_step
-#print axioms before_turn_step
-#print axioms before_terminal_run
 end L4.ShortHelloForward

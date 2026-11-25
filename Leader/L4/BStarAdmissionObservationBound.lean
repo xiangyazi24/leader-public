@@ -29,7 +29,6 @@ private theorem run_closed (Q : X→Prop) (closed : ∀ x,Q x→∀ e,Q (step x 
   | nil => exact qx
   | cons e w ih => exact ih (step x e) (closed x qx e)
 
-
 private theorem split_busy {base x : X} {addr : Nat→Pos n} {len op : Nat}
     {z d : Cursor} (pre post : List (Fin n))
     (P : BusyOnly hp base addr len op x z (pre++post) d) :
@@ -179,7 +178,4 @@ theorem gate_observations_for_return_bound {base x : X} {hh : ∃ i,oldH6 B base
       subst next
       exact ⟨pre,middle,after,e,f,s,t,by rw [W,V],noHit,atS,opp,atT,avoid,preBusy,cur,bindY,afterBusy,accepted.2⟩
 
-
-
-#print axioms gate_observations_for_return_bound
 end L4.BStarAdmissionObservationBound

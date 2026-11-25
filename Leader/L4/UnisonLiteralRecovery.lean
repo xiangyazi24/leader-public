@@ -174,8 +174,3 @@ theorem serial_covers_recover {m : Nat} (hm : 3≤m) (P : Int) (hP : (m:Int)<P)
 
 end L4.UnisonLiteralRecovery
 
-#print axioms L4.UnisonLiteralRecovery.literal_conditions
-#print axioms L4.UnisonLiteralRecovery.cycle_recovery
-
-#print axioms L4.UnisonLiteralRecovery.raw_decode_step
-#print axioms L4.UnisonLiteralRecovery.serial_covers_recover

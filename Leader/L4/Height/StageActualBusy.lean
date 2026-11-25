@@ -89,7 +89,6 @@ theorem wire_of_busy {base x : X} {hh : ∃ i,oldH6 B base i=true}
         | stay _ => exact (auth _ rfl).tail hp I (.transit _ _ _ (by intro h; cases h) (.cons (by intro h; cases h) ‹_› (.stay _) ‹_› (.nil _ _)))
         | forward => exact (auth _ rfl).tail hp I (.transit _ _ _ (by intro h; cases h) (.cons (by intro h; cases h) ‹_› (.forward _) ‹_› (.nil _ _)))
 
-
 /-- A later PC2 on the same generated word forces the first literal
 consume of the currently outstanding STAGE; no fairness premise. -/
 theorem first_stage_consume {base x : X} {addr : Nat→Pos n} {len : Nat}
@@ -118,7 +117,6 @@ theorem first_stage_consume {base x : X} {addr : Nat→Pos n} {len : Nat}
     | arrived_hold _ ne =>
       obtain ⟨pre,f,tail,W,L,F⟩ := ih (j:=.back 0) later rfl
       exact ⟨e::pre,f,tail,congrArg (List.cons e) W,.cons I (.arrived_hold stageOp ne) L,F⟩
-
 
 /-- On a real emitted continuation known to reach PC2, an already
 launched authorized STAGE necessarily first reaches idle ISSUE409. -/
@@ -162,7 +160,4 @@ theorem issue409_before_pc2 {base x : X} {hh : ∃ i,oldH6 B base i=true}
     root.2 root.1 (sep _) I E StageReplyForm.reply rfl rfl R d ((congrArg BStarLongPublication.decode folded).trans D)
   exact ⟨pre,e,tail,W,L,E,R,PC,DD⟩
 
-#print axioms wire_of_busy
-#print axioms first_stage_consume
-#print axioms issue409_before_pc2
 end L4.Height.StageActualBusy

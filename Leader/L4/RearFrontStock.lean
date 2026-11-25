@@ -144,7 +144,6 @@ theorem inventory_interval {p c n : Nat} (x : Config p c n) (b : Fin n) (d : Nat
   · rw [← show BarrierIID.edgeSum (fun _ : Fin n => 1) = (n : Int) by simp [sum_const]]
     exact sum_mono _ _ (fun i => (localB i).2)
 
-
 private theorem rn_ne {n : Nat} (hn : 4 ≤ n) (e : Fin n) : e ≠ rightNeighbor e := by
   intro hh
   apply Nat.zero_ne_one
@@ -296,7 +295,6 @@ theorem inventory_stationary {p c n d d' : Nat} (hn : 4 ≤ n) {x : Config p c n
         · have hE : ¬ InFront b d' e := fun a => he' (hsub e a)
           simp [maskedStock,he',hE]
 
-
 /-- Numerator of entering a site that held one physical stock token on the
 old mark. Used only if the existing tagged carrier actually transfers. -/
 def landingBit {p c n : Nat} (x : Config p c n) (b : Fin n) : Int :=
@@ -423,7 +421,6 @@ theorem reserve_transport {p c n d d' : Nat} (hn : 4 ≤ n) {x : Config p c n}
     have hL := (landing_range x b).2
     omega
 
-
 open TaggedTrace
 
 /-- Successful outgoing transport is counted using the physical tag observer;
@@ -499,11 +496,6 @@ theorem occupiedLandings_le_size_add_one {p c n : Nat} (hn : 4 ≤ n)
   omega
 
 end L4.RearFrontStock
-
-#print axioms L4.RearFrontStock.inventory_stationary
-#print axioms L4.RearFrontStock.inventory_transport
-#print axioms L4.RearFrontStock.occupiedLandings_reserve
-#print axioms L4.RearFrontStock.occupiedLandings_le_size_add_one
 
 namespace L4.RearFrontStock
 
@@ -707,10 +699,6 @@ theorem rearInventory_rear_drop {p c n : Nat} (hn : 4 ≤ n)
 
 end L4.RearFrontStock
 
-#print axioms L4.RearFrontStock.rearInventory_stationary
-#print axioms L4.RearFrontStock.rearInventory_tag_grow
-#print axioms L4.RearFrontStock.rearInventory_rear_drop
-
 namespace L4.RearFrontStock
 
 /-- The exact no-living-donor premise of the ghost inventory follows from
@@ -800,9 +788,6 @@ theorem CorridorWord.filled_le_size_add_landings {p c n : Nat} (hn : 4 ≤ n)
   omega
 
 end L4.RearFrontStock
-
-#print axioms L4.RearFrontStock.CorridorWord.ledger
-#print axioms L4.RearFrontStock.CorridorWord.filled_le_size_add_landings
 
 namespace L4.RearFrontStock
 open TaggedTrace
@@ -913,9 +898,6 @@ theorem CorridorWord.filled_le_twice_size_add_one
 
 end L4.RearFrontStock
 
-#print axioms L4.RearFrontStock.CorridorWord.landed_eq_observer
-#print axioms L4.RearFrontStock.CorridorWord.filled_le_twice_size_add_one
-
 namespace L4.RearFrontStock
 open RearTrace
 
@@ -951,8 +933,6 @@ theorem firstRear_corridor_marks {p c n d : Nat} {x : Config p c n} {b : Fin n}
     exact Bool.eq_false_iff.mpr (hf.before (d-(j+1)) (by omega))
 
 end L4.RearFrontStock
-
-#print axioms L4.RearFrontStock.firstRear_corridor_marks
 
 namespace L4.RearFrontStock
 open RearTrace TaggedTrace
@@ -1138,5 +1118,3 @@ theorem filledRearDepartures_bound {p c n : Nat} (hn : 4 ≤ n)
 
 end L4.RearFrontStock
 
-#print axioms L4.RearFrontStock.corridorWord_of_ghostPremarks
-#print axioms L4.RearFrontStock.filledRearDepartures_bound

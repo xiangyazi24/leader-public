@@ -104,5 +104,4 @@ theorem before_commit_issue_and_flight {base x : X} {hh : ∃ i,oldH6 B base i=t
       (no_pub_from_issue_or_pc hp C Q I fiber closed sep ready _ i issue own (.inl launch.1))
   · exact BStarCommitNoPrior.before_center hp flight sep i k hk center k rfl (Nat.le_refl _)
 
-#print axioms before_commit_issue_and_flight
 end L4.BStarBeforeCommitWindow

@@ -71,7 +71,4 @@ theorem words_on_tape {base x : X} {slot : Nat→Pos n} {len : Nat}
   have M : bank.digits q f<16^r := V q f ▸ value_bound (words q f)
   exact ⟨p,e,t,W,H,word_from_nibbles _ site _ _ _ E ((V q f).trans (Nat.mod_eq_of_lt M).symm)⟩
 
-#print axioms pc_window
-#print axioms chart_sites
-#print axioms words_on_tape
 end L4.BStarNativeLoadData

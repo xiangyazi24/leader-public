@@ -93,6 +93,4 @@ theorem root_size {n h : Nat} (F : Line n h) :
   exact ⟨Nat.le_trans sz (Nat.pow_le_pow_right (by decide) h),
     fun p mem => Nat.le_trans (len p mem) (Nat.mul_le_mul_left 2 h)⟩
 
-#print axioms root_clears
-#print axioms root_size
 end L4.Height.FenceGrid

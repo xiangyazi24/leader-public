@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart06
+import Leader.L4.Height.AllSizeWirePart06
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section PhysicalQuiet
 
@@ -66,4 +66,4 @@ theorem packed_quiet : ClockDisplaySpec.RawLegitOfQuiet := by
 
 end PhysicalQuiet
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

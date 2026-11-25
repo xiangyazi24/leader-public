@@ -140,6 +140,4 @@ theorem favorable_first_exit {p c n H : Nat} (hn : 4≤n) (hQ : 0<2*c)
   rw [eq]
   exact award
 
-#print axioms favorable_mark
-#print axioms favorable_first_exit
 end L4.WindowA0ReturnHandoff

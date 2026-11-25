@@ -214,11 +214,4 @@ theorem mean_of_count {α : Type} {p c n m d₀ : Nat} {initial : Config p c n}
   exact WindowFourHeadCap.four_head_payments hp hc hn g a b k ha hb hk hab q w
     hkeep hv hq hg hJ b₀ c₀ hi hwidth
 
-#print axioms mean_of_count
-#print axioms mean_empty
-#print axioms compare
-#print axioms compare_word
-#print axioms mean
-#print axioms heightRules
-#print axioms virtual_delta
 end L4.WindowFourHeadShadow

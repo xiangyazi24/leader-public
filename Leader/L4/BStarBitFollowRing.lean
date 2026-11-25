@@ -79,7 +79,6 @@ theorem pending_avoids (g : Pair LongGeometry) (raw : Pair (BitVec LW))
   exact (List.mem_append.mp hw).elim
     (fun N => norm_frame g raw s p B F w N E) (fun M => mid w M E)
 
-
 private theorem fold_hold (a : AtK) (ws : List KWrite) (raw : BitVec 52)
     (H : avoids a ws) : ws.foldl (fun k w => putRaw k a w) raw=raw := by
   induction ws generalizing raw with
@@ -219,7 +218,4 @@ theorem follow_mark {base x : X} {hh : ∃ i,oldH6 B base i=true}
     have U : i≠rightNeighbor e := fun E => right (by change e=RearTrace.predecessor i; rw [E,RearTrace.predecessor_right])
     simp [AllSizeS1Geometry.step,L,U]
 
-
-#print axioms joined_follow
-#print axioms follow_mark
 end L4.BStarBitFollowRing

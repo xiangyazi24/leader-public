@@ -258,5 +258,4 @@ theorem original_setup_native {base origin : X} {hh : ∃ i,oldH6 B base i=true}
     simp only [List.append_assoc,List.cons_append]
   · exact cutTape ▸ (forSetup ▸ exactPreIssue)
 
-#print axioms original_setup_native
 end L4.BStarNativeSetupTape

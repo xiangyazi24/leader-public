@@ -152,6 +152,4 @@ theorem pair_mobile (hp : 0<p)
   · have E := BStarClearanceMobileJoined.joined_view k₁ k₂ t₂ J₁ J₂ r c p c₁ hp (x e,x (rightNeighbor e))
     exact congrArg (fun f => (f D).mobile) E
 
-#print axioms pair_mobile
-#print axioms nominate
 end L4.BStarClearanceRightmost

@@ -75,6 +75,4 @@ theorem seal_to_bit_descriptor {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have same := (busy_preserves_descriptor hp C sep walk (by decide)).1
   exact (congrArg BStarLongPublication.decode same).trans desc
 
-#print axioms busy_preserves_descriptor
-#print axioms seal_to_bit_descriptor
 end L4.BStarSealBitDescriptor

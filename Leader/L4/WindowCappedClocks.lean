@@ -116,8 +116,6 @@ theorem clock {p c n : Nat} (hp : 2≤p) (hc : 12≤c) (hn : 4≤n)
     omega
   · exact Nat.le_refl _
 
-#print axioms clock
-
 end L4.WindowCappedOrdinaryClock
 
 namespace L4.WindowCappedProtectedClock
@@ -219,7 +217,6 @@ theorem clock {p c n : Nat} (hp : 2≤p) (hc : 12≤c) (hn : 4≤n)
     (V _ (by omega) (by omega)) subCert (protected_of_roster E (certified E) r b k
       T1 T2 T3 (V _ (by omega) (by omega)) (V _ (by omega) (by omega))) heQ S (Nat.le_refl _)
 
-#print axioms clock
 end L4.WindowCappedProtectedClock
 
 namespace L4.WindowCappedTripleClock
@@ -306,9 +303,7 @@ theorem clock {p c n : Nat} (hn : 4≤n)
   have coef : 2564≤4096 := by decide
   exact Nat.mul_le_mul (Nat.mul_le_mul_right n coef) (by omega)
 
-#print axioms clock
 end L4.WindowCappedTripleClock
-
 
 namespace L4.WindowCappedPlan
 open WindowPlan WindowFiveStages WindowOwnership WindowTransactions
@@ -353,7 +348,6 @@ theorem protected_slot (h7 : 7≤RankPhysical.rank x) :
   unfold done current fold
   rw [replay_run,A]
   exact hu.2
-
 
 end L4.WindowCappedPlan
 
@@ -544,6 +538,5 @@ theorem triple_slot (h7 : 7≤RankPhysical.rank x) :
       exact (WindowNamedFront.death_inv f.ledger (window7 (roster x) i) P.cert none e a post route).2.2.1
     obtain ⟨r,rpos,rbound,rEq⟩ := protectedIndex hp hc hn x hq i w F P hF hP en own
     exact .inr ⟨hspan,.inl ⟨en,r,joined.trans Q,rpos,rbound,rEq⟩⟩
-
 
 end L4.WindowCappedMiddle

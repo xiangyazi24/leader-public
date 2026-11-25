@@ -89,5 +89,4 @@ theorem strips_cover (P : Production g)
       exact (digit_from hp R.rs_header r g.notShort j small).1
     exact ⟨rs+j,by omega,bound,same_position h g.hh i (addr a (rs+j)) 2 ordR.symm (own.trans track.symm)⟩
 
-#print axioms strips_cover
 end L4.Height.FreshStripGeometry

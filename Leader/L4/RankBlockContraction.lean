@@ -617,14 +617,3 @@ theorem shortSpanOffset_budget (n L : Nat) (hn : 4≤n) (hL : 1≤L) (hLn : L≤
 
 end L4.RankBlockContraction
 
-#print axioms L4.RankBlockContraction.halfBlock_of_affine
-#print axioms L4.RankBlockContraction.physical_half_mean
-#print axioms L4.RankBlockContraction.rankOne_mean_of_boundedRank_and_block
-
-#print axioms L4.RankBlockContraction.one_block_of_group_rewards
-
-#print axioms L4.RankBlockContraction.affine_of_group_blocks
-
-#print axioms L4.RankBlockContraction.rank_block_of_seven_data
-
-#print axioms L4.RankBlockContraction.shortSpanOffset_budget

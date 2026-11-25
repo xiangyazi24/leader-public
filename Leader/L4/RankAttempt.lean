@@ -49,7 +49,6 @@ private theorem sScale {n : Nat} (a : Nat) (f : Fin n → Nat) :
   | zero => simp [sumEdge]
   | succ n ih => rw [sSucc,sSucc f,ih,Nat.mul_add]
 
-
 /-- Finite-word Markov inequality with no real-valued probability or
 limiting argument. A word which is still live pays all its marks. -/
 theorem horizon_mul_survival_le_cost {α : Type} {n : Nat} (next : α → Fin n → α)
@@ -209,8 +208,3 @@ theorem boundedRank_of_restartTrial (h : ConcreteRestartTrial) : ConcreteBounded
 
 end L4.RankPhysical
 
-#print axioms L4.RankPhysical.horizon_mul_survival_le_cost
-#print axioms L4.RankPhysical.halfBlock_of_stopped_attempt
-
-#print axioms L4.RankPhysical.block_of_restartTrial
-#print axioms L4.RankPhysical.boundedRank_of_restartTrial

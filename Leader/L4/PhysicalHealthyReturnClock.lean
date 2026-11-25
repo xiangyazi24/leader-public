@@ -75,7 +75,4 @@ theorem next_healthy_on_actual_doublet {s n : Nat} {base y : Raw s n}
   rw [EQ]
   exact ⟨closed _ d qb,launch⟩
 
-#print axioms next_healthy_on_actual_doublet
-
-#print axioms healthy_return_of_actual_launch
 end L4.PhysicalHealthyReturnClock

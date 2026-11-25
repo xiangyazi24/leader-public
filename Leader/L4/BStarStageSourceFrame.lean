@@ -135,7 +135,6 @@ theorem execute_frame (g : LongGeometry) (j : Fin 11) (x : BitVec LW) (p : Paylo
       · exact zero
   · exact zero
 
-
 theorem route_frame (w : KWrite) : Frame (lowerOne w).2 := by
   rcases w with ⟨⟨s,j⟩,t⟩
   change Frame (setToken j t)
@@ -242,7 +241,6 @@ theorem field_hold {n : Nat} (f : Field LW n) (q : Patch LW) (x : BitVec LW)
   have hold := q.hold x (f.offset+i) (h _ (by omega) (by omega))
   simpa only [Field.read,BitVec.getLsbD_extractLsb',hi',decide_true,Bool.true_and] using hold
 
-
 open BStarLongCommand BStarLongEvents BStarCommitIssue BStarH6WordChart
 
 private def Keeps (t : Bool × Patch LW) : Prop := t.1=false ∨ Frame t.2
@@ -332,10 +330,7 @@ theorem door_field {n : Nat} (f : Field LW n) (lo : 2155≤f.offset)
   change f.read (q.apply (before.foldl runWrite x).2)=_
   rw [H,fold_field f lo hi _ _ B]
 
-
-
 open BStarFinalCandidate BStarLongArithmetic
-
 
 private theorem schedule_frames {n : Nat} (f : Field LW n)
     (lo : 1764≤f.offset) (hi : f.offset+n≤2195) (x : BitVec LW) :
@@ -421,7 +416,6 @@ theorem joined_final_receipt (x : Pair (LargeSite A)) (f : Payload)
     exact door_field (capturedSelector 1) (by decide) (by decide) g raw hdr (finalEffect raw.2 hh) E' id
       (fun y => final_capture_over raw.2 y hh)
 
-
 /-- On an outgoing mark of the source header its left long endpoint
 may route arbitrary foreign work but cannot accept a source door. -/
 theorem left_foreign_field (x : Pair (LargeSite A))
@@ -464,7 +458,6 @@ theorem foreign_mark (x : Fin n → LargeSite A) (i e : Fin n)
       left_foreign_field hp pair H (capturedSelector 1) (by decide) (by decide)⟩
   · simp only [AllSizeS1Geometry.step,if_neg E,if_neg (Ne.symm ex),and_self]
 
-
 /-- Arbitrarily many interleaved marks, none acting at the source door.
 The source must still be an old H6 at each actual mark (e.g. fixed Layout). -/
 theorem foreign_word (x : Fin n → LargeSite A) (i : Fin n) (w : List (Fin n))
@@ -483,6 +476,4 @@ theorem foreign_word (x : Fin n → LargeSite A) (i : Fin n) (w : List (Fin n))
       (fun a f b E => header (e::a) f b (congrArg (List.cons e) E))
     exact ⟨T.1.trans S.1,T.2.trans S.2⟩
 
-#print axioms joined_final_receipt
-#print axioms foreign_word
 end L4.BStarStageSourceFrame

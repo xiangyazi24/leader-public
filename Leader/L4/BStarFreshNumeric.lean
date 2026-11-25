@@ -237,8 +237,4 @@ theorem ring_turn {x : X} {addr : Nat → Pos n} {len : Nat}
   have E := (new_read B x e he C.source).trans ((congrArg (atCursor (step x e)) src).symm)
   exact E.symm.trans J
 
-#print axioms selected_advance
-#print axioms visit_healthy
-#print axioms ring_link
-#print axioms ring_turn
 end L4.BStarFreshNumeric

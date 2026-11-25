@@ -79,6 +79,4 @@ theorem plan_exists {base : X} {hh : ∃ i,oldH6 B base i=true}
   obtain ⟨t,T⟩ := BStarBitPositiveTerminal.nominate_terminal hp C head cont
   exact ⟨⟨A,B1,C1,D,E,t,by omega,BS,by omega,DS,ES,AN,BN,CN,DN,EN,T⟩⟩
 
-#print axioms service_length
-#print axioms plan_exists
 end L4.BStarNeedServicePlan

@@ -195,7 +195,4 @@ theorem ring_reset_then_door {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat}
         (run (AllSizeS1Geometry.step b) x (pre++[door])) :=
   reset_prefix_then_door A x hx F door Handled handle
 
-#print axioms reset_prefix
-#print axioms reset_prefix_then_door
-#print axioms ring_reset_then_door
 end L4.BStarResetSchedule

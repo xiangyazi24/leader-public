@@ -124,11 +124,6 @@ theorem raw_seal_commit_payload (sheet : Sheet) (C : Chart h)
   rw [T] at W
   exact W
 
-#print axioms descriptor_fields
-#print axioms source_seal_commit_payload
-#print axioms raw_seal_commit_payload
-#print axioms source_seal_commit_launch_iff
-
 theorem descriptor_of_file_eq (p : Params) (x y : BitVec p.w)
     (H : drainFile p x=drainFile p y) : descriptor p x=descriptor p y := by
   change (x.extractLsb' (sourceBase p) (19+2*d p)).toNat=
@@ -218,6 +213,4 @@ theorem raw_seal_ack_keeps_descriptor (sheet : Sheet) (C : Chart h)
   exact ⟨CF.closed x e X,door_consumes_root sheet C hh G F N x X R digit,E,
     descriptor_of_file_eq p _ _ (Pair.trans D)⟩
 
-#print axioms descriptor_of_file_eq
-#print axioms raw_seal_ack_keeps_descriptor
 end L4.ReportSealDescriptor

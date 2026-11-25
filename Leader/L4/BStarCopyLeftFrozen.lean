@@ -101,8 +101,6 @@ theorem ls_frozen_outward {base x : X} {hh : ∃ i,oldH6 B base i=true}
         rw [Sides,siteEq,K]
       exact skipInject (by unfold prepOf at P; split at P <;> simp_all) (cursorAt.symm.trans E)
 
-#print axioms ls_frozen_outward
-
 /-- Lift exact freeze preservation to an original whole continuation.
 The exclusions are same-site K0 at PC8 and K5 at PC10;
 PC9 ENABLE needs no exclusion and arbitrary exterior rows are retained. -/
@@ -151,6 +149,4 @@ theorem ls_frozen_between {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rw [BStarResetSchedule.run_append]
     exact fr
 
-
-#print axioms ls_frozen_between
 end L4.BStarCopyLeftFrozen

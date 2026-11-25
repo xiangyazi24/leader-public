@@ -137,10 +137,4 @@ theorem physical_gap_bounds {n L U : Nat} {base sel : Fin n → Bool}
   simpa only [Nat.mul_comm L 2,Nat.mul_comm U 3] using H
 
 end Physical
-#print axioms next_selected
-#print axioms selected_nonempty
-#print axioms advance_eq_hop
-#print axioms hopBounds
-#print axioms nonempty_of_base
-#print axioms physical_gap_bounds
 end L4.ShortMISSpacing

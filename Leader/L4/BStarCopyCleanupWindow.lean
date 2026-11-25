@@ -111,6 +111,4 @@ theorem cleared {base y : X} {hh : ∃ i,oldH6 B base i=true}
       (fun r R J K => noInject u z v E r R (by rwa [J,K]))
       (.inl (closed u z v E i sh A own))
 
-#print axioms stopped
-#print axioms cleared
 end L4.BStarCopyCleanupWindow

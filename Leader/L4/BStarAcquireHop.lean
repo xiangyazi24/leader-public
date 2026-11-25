@@ -107,9 +107,6 @@ theorem actual_update_hop (g : Pair LongGeometry) (x : Pair (BitVec LW))
   have H := (argUpdate_fields g x O c p).2.1
   exact selected_hop g x c k _ hd ((congrArg BitVec.toNat H).trans ho)
 
-#print axioms bind_exact
-#print axioms actual_update_hop
-
 theorem argUpdate_noncapture (g : Pair LongGeometry) (x : Pair (BitVec LW))
     (O : BStarLongGrant.Offers) (c : CommandClaim) (p : Payload)
     (h : 3≤c.source.occurrence.val ∨ (geometry g c.source.side).axes.h6=false) :
@@ -163,7 +160,4 @@ theorem raw_selected_hop (g : Pair LongGeometry) (x : Pair (BitVec LW))
   intro a h1 h2
   simp [h1,h2]
 
-#print axioms argUpdate_loser
-#print axioms argUpdate_winner
-#print axioms raw_selected_hop
 end L4.BStarAcquireHop

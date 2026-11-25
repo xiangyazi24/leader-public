@@ -52,6 +52,4 @@ theorem owner_receipt_mean_of_row_cases (d : Sheet) (C : Chart h)
     simpa only [Nat.pow_two] using Nat.mul_le_mul_left 10 (Nat.mul_le_mul E E)
   exact Nat.le_trans (W t) (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left _ (Nat.add_le_add_right Z 1)))
 
-#print axioms owner_receipt_mean_of_row_cases
-#print axioms pre_project
 end L4.ReportOwnerPrelaunchAdapter

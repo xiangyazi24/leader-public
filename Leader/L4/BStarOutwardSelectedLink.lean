@@ -180,9 +180,4 @@ theorem from_idle_crossing {base x : X} {hh : ∃ i, oldH6 B base i=true}
   obtain ⟨pre,e,tail,E,seen,I,J,K,H⟩ := busy_crossing hp C sep (Nat.zero_le j) hj F
   exact ⟨s,f,pre,e,tail,W.trans (congrArg (fun t => s++f::t) E),D,L,P,seen,I,J,K,H⟩
 
-#print axioms mark_selects
-#print axioms actual_selects
-#print axioms completed_crossing
-#print axioms busy_crossing
-#print axioms from_idle_crossing
 end L4.BStarOutwardSelectedLink

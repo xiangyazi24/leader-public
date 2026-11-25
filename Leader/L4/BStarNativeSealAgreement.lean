@@ -124,7 +124,4 @@ theorem sealed_need_increments {base initial : X} (u v tail : List (Fin n))
   · have diff : j≠center := fun D=>E ((congrArg Subtype.val D).trans loc)
     simpa only [if_neg E,if_neg diff] using result.1 j
 
-#print axioms sealed_need_activation
-#print axioms sealed_need_increments
-#print axioms handoff_descriptor
 end L4.BStarNativeSealAgreement

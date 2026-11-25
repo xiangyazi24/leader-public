@@ -147,7 +147,6 @@ theorem paid_mover_or_resident {n : Nat} (hn : 4 ≤ n) (t : Slots n) (e : Fin n
       move t e (rightNeighbor e) = (t (rightNeighbor e)).or (t e) := by
   simp [move,notLoop hn e]
 
-
 structure Ledger (p c n : Nat) where
   config : Config p c n
   slots : Slots n
@@ -310,12 +309,6 @@ theorem physical_incidence {p c n : Nat} (x : Config p c n)
   rw [he] at hr
   omega
 
-#print axioms physical_slots
-#print axioms occupied_step
-#print axioms valid_word
-#print axioms physical_incidence
-
-
 def window7 {n k : Nat} (roster : Fin k → Fin n) (i : Fin k) : List (Fin n) :=
   (List.finRange 7).map fun j => roster (liftedSite i j.val)
 
@@ -375,9 +368,6 @@ theorem physical_windows7_incidence {p c n k : Nat} (x : Config p c n)
       hits (observe (initial x) w).losses (starts.map (window7 roster)) ≤ 7 * rank x :=
   physical_incidence x hn hm hc w _ (windows7_multiplicity roster inj starts hs)
 
-#print axioms windows7_multiplicity
-#print axioms physical_windows7_incidence
-
 /-- A native death is charged from the old responder slot. If P3 runs
 on the same mark, the victim is either the moved ghost at the next site,
 or the lost mover; it is never the surviving resident at the landing site. -/
@@ -429,5 +419,4 @@ theorem native_death_tag_outcome {p c n : Nat} (hn : 4 ≤ n)
     · have hF : geometricPay (x e) (x r) = false := Bool.eq_false_iff.mpr hp
       exact .inl ⟨by simp [slotsStep,hF,r,ha],by simp [lostStep,retirement,hF,r]⟩
 
-#print axioms native_death_tag_outcome
 end L4.SevenTagCharge

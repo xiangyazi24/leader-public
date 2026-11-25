@@ -135,7 +135,4 @@ theorem capped_reward (h7 : 7≤RankPhysical.rank x) (N : Nat) (hN : n≤N)
     funext (ledgerReward_indicator x _)
   rwa [hr] at H
 
-#print axioms physical_cap
-#print axioms capped_reward
-
 end L4.WindowCappedMean

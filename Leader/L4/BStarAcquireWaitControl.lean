@@ -252,6 +252,4 @@ theorem old_wait_hold_iff (x : BitVec LW) (tok : Token)
     · simp
     · split <;> simp
 
-#print axioms joined_acquire_entry
-#print axioms joined_wait_hold
 end L4.BStarAcquireWaitControl

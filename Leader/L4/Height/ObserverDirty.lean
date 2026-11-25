@@ -428,16 +428,4 @@ theorem dirty_advance {n : Nat} (hn : 2 ≤ n) (x : Line) (p : Phase n) (k : Fin
       omega
   | launched => exact False.elim (hlive rfl)
 
-#print axioms move_left
-#print axioms move_right
-#print axioms move_terminal
-#print axioms move_door
-#print axioms move_frame
-#print axioms move_launch
-#print axioms outward_prefix
-#print axioms no_front
-#print axioms reverse_suffix
-#print axioms initial_dirty
-#print axioms advance_launched_iff
-#print axioms dirty_advance
 end L4.Height.ObserverDirty

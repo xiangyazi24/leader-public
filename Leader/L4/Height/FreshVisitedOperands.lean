@@ -98,5 +98,4 @@ theorem on_retaining_visit {L R : Type} {base x : X} {hh : ∃ i,oldH6 B base i=
       obtain ⟨q,rnk,loc,mapped⟩ := destPos (width-1-t) (by omega)
       exact empty _ _ ⟨⟨q,by omega,loc⟩,mapped⟩
 
-#print axioms on_retaining_visit
 end L4.Height.FreshVisitedOperands

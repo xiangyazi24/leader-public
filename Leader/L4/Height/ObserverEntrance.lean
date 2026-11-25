@@ -82,11 +82,5 @@ theorem packed_observer_mean (k₁ k₂ t₂ J₁ J₂ width c : Nat) (hn : 4≤
       IIDExpectedHittingTimeAtMost (next b) (Marked b (show 0<2 by decide)) x (5*n^2+7*n) :=
   physical_mean hn _ (show 0<2 by decide) rfl x
 
-#print axioms mapped_word
-#print axioms marked_cut
-#print axioms clean_no_pending
-#print axioms physical_ghost
-#print axioms physical_mean
-#print axioms packed_observer_mean
 end
 end L4.Height.ObserverEntrance

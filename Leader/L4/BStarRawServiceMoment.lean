@@ -1,4 +1,4 @@
-import Leader.L4.Height.G9Core
+import Leader.L4.Height.RawPublicationService
 import Leader.L4.BStarRawPublicationHistory
 import Leader.L4.Height.Trial
 
@@ -44,7 +44,7 @@ private theorem has_cons {α : Type} (next : α→Fin n→α) (A : α→Prop)
     · exact ⟨j+1,Nat.zero_lt_succ _,Nat.succ_le_succ len,by
           simpa only [List.take_succ_cons,Thru.runWord] using h⟩
 
-/-- G9Core's positive-prefix witness is exactly the literal
+/-- RawPublicationService's positive-prefix witness is exactly the literal
 old-pair publication, for either value of the incoming query flag. -/
 theorem has_query_iff (initial : X) (history a : List (Fin n)) (i : Fin n)
     (old : Bool) (w : List (Fin n)) :
@@ -85,7 +85,7 @@ theorem wait_query_eq (initial : X) (history a : List (Fin n)) (i : Fin n)
       simp only [queryStep,decide_eq_false_iff_not.mpr hit]
       rw [ih,run_one,Nat.add_comm]
 
-/-- Exact conditional moment via accepted G9Core. At every
+/-- Exact conditional moment via accepted RawPublicationService. At every
 queried prefix we preserve the original physical execution; the sole
 external premise is uniform strict publication mass on its suffixes. -/
 theorem publication_wait_moment (initial : X) (history : List (Fin n)) (i : Fin n)
@@ -116,7 +116,4 @@ theorem publication_wait_moment (initial : X) (history : List (Fin n)) (i : Fin 
   rw [wait,Nat.min_eq_left (len ▸ publicationWait_le_length hp (run initial history) i w)]
   exact Nat.le_refl _
 
-#print axioms has_query_iff
-#print axioms wait_query_eq
-#print axioms publication_wait_moment
 end L4.BStarRawServiceMoment

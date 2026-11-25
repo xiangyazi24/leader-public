@@ -96,7 +96,6 @@ theorem seal_ack_keeps_entire_file (d : Sheet) (C : Chart h) (N : 1<n)
   rw [show rightNeighbor e=C.root from RearTrace.right_predecessor C.root,C.rootHeader] at M'
   exact M'
 
-
 private theorem wait_root_tag_of_no_consume (d : Sheet) (C : Chart h)
     (x : Raw s n) (S : Serial d C x) (P : (readPC d C x).1=2)
     (NC : NoConsume d C x (door C)) :
@@ -163,7 +162,6 @@ theorem no_door_file_control (d : Sheet) (C : Chart h) (N : 1<n)
     have ⟨Y,P,B⟩ := IH _ (CF.closed x a X) (fun e M=>E e (List.mem_cons_of_mem _ M))
     exact ⟨Y,P.trans (raw_nondoor_control d C x a N (CF.mask x X) D),
       B.trans (nondoor_file d C x a N (CF.mask x X) D)⟩
-
 
 private theorem no_door_legal (d : Sheet) (C : Chart h) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
@@ -243,11 +241,4 @@ theorem seal_to_commit_source (d : Sheet) (C : Chart h) (N : 1<n)
   rw [Desc] at Packet
   exact ⟨H0,Legal,GoalPC,Same,Packet,J,New⟩
 
-#print axioms seal_to_commit_source
-#print axioms wait_file_before_first_consume
-#print axioms no_door_file_control
-#print axioms comparison_of_file_eq
-#print axioms file_eq_if_same_pc
-#print axioms healthy_issue_keeps_file
-#print axioms seal_ack_keeps_entire_file
 end L4.ReportSealDescriptorTransport

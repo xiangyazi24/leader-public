@@ -118,11 +118,6 @@ theorem acq_prefix_centres_stable (d : Sheet) (G : GapInput h) (r : Owner h)
     exact (acq_mark_frames_centre d G r x0 ws B e N
       ((cached_fibre d N hh Q F).mask _ Y)).trans IH
 
-#print axioms forward_rail
-#print axioms reverse_rail
-#print axioms acq_mark_frames_centre
-#print axioms acq_prefix_centres_stable
-
 theorem before_consume_prefix (d : Sheet) (C : Chart h) (x0 : Raw s n)
     {u w : List (Fin n)} (T : BeforeConsume d C x0 w) (P : u <+: w) :
     BeforeConsume d C x0 u := by
@@ -193,6 +188,4 @@ theorem authentic_capture_is_current (d : Sheet) (G : GapInput h) (r : Owner h)
   exact Installed.2.2.2.trans <|
     AtWin.trans (AtReturn.symm.trans (AtConsume.symm.trans Retain.symm))
 
-#print axioms before_consume_prefix
-#print axioms authentic_capture_is_current
 end L4.ReportACQSelectedCapture

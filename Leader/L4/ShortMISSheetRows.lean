@@ -45,7 +45,4 @@ theorem mis3_from_h3 (N : 189<n) (x : Raw s n)
     L4.IIDExpectedHittingTimeAtMost (rawNext s) (PermanentH4 N) x (K_H4*n^2) :=
   permanent_h4_from_h3 N x H (assemble _ auth win)
 
-#print axioms assemble
-#print axioms mis2_from_h2
-#print axioms mis3_from_h3
 end L4.ShortMISSheetRows

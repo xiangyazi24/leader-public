@@ -425,11 +425,4 @@ theorem potential_bound_interface (m : Nat) :
           rw [Nat.mul_assoc]
     _ ≤ (122880 * m) * fact m := hscaled
 
-#print axioms five_mul_div_three
-#print axioms triples_qualify
-#print axioms gap_len_bound
-#print axioms pot_drop
-#print axioms window_step_interface
-#print axioms potential_bound_interface
-
 end L4.Height

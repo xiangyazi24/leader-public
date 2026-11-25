@@ -993,13 +993,4 @@ noncomputable def fill_loss_interface {m : Nat} (B : Nat) (hm : 0 < m)
     · rw [boundedPrefixState_eq_gapState B hm hB x u t]
       exact hlost
 
-#print axioms fillLossPath_is_path
-#print axioms heightComparison_geometry
-#print axioms scheduled_last_facts
-#print axioms fill_draw_facts
-#print axioms boundedPrefixState_eq_gapState
-#print axioms gapFixed_of_live_no_internal
-#print axioms same_value_role_window
-#print axioms fill_loss_interface
-
 end L4.Height

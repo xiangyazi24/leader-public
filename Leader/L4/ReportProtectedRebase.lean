@@ -53,7 +53,6 @@ theorem value_on_held_tape (d : Sheet) (N : 1<n)
     rcases Side with rfl|rfl <;> rfl
   exact congrArg (fun z=>z*p.beta^j) (K.trans I)
 
-
 theorem snapshot_numbers_now (d : Sheet) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
     (Dgt : 0<(params d s).digits) (Rail : RailSupplier d hh Q G)
@@ -92,7 +91,4 @@ theorem snapshot_numbers_now (d : Sheet) (N : 1<n)
   rw [nextAt_add]
   exact V
 
-#print axioms snapshot_numbers_now
-#print axioms selector_on_held_tape
-#print axioms value_on_held_tape
 end L4.ReportProtectedRebase

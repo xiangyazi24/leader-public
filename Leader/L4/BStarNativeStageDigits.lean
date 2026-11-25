@@ -102,7 +102,4 @@ theorem retained_digit (old : X) (e : Fin n) (C : CommandClaim) (pay : Payload)
   intro center sel good op dec auth kept inside digits
   exact ((retained_values hp old e C pay d which endSite center sel good op dec auth kept).1 inside f).trans digits
 
-#print axioms assembled
-#print axioms old_digit
-#print axioms retained_digit
 end L4.BStarNativeStageDigits

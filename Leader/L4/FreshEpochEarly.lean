@@ -175,6 +175,3 @@ theorem early_of_freshInit {p c n d : Nat} (hn : 4≤n) (hc : 12≤c)
 
 end L4.FreshEpochEarly
 
-#print axioms L4.FreshEpochEarly.birthWithin_le_score
-#print axioms L4.FreshEpochEarly.preA1_step
-#print axioms L4.FreshEpochEarly.early_of_freshInit

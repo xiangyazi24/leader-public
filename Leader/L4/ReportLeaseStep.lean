@@ -292,19 +292,4 @@ theorem held_run (sheet : Sheet) (hh : ∃ i,h i=true)
     have V := (held_step_iff sheet x e q N j M H O).mpr S.1
     exact ih _ ((cached_fibre sheet N hh Q F).closed x e X) V S.2
 
-#print axioms held_no_win
-#print axioms held_next_iff
-#print axioms raw_grant_pair
-#print axioms raw_pair_bytes
-#print axioms raw_low_pair
-#print axioms initiator_held_iff
-#print axioms responder_held_iff
-#print axioms held_step_iff
-#print axioms cached_held_step_iff
-#print axioms grant_hold_or_release
-#print axioms departing_reset_drops_grant
-#print axioms departing_reset_clears_seal
-#print axioms file_before_ack
-#print axioms held_run
-
 end L4.ReportLeaseStep

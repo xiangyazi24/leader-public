@@ -42,5 +42,4 @@ theorem eligible_of_seen {s n : Nat} {base y : Raw s n} {hh : ∃ i,oldH6 (rows 
   obtain ⟨q,ready,done⟩ := fold path qy F.1.1 g
   exact ⟨q,ready,⟨done.2.1,done.2.2.2⟩,done.2.1⟩
 
-#print axioms eligible_of_seen
 end L4.PhysicalEligibleReply

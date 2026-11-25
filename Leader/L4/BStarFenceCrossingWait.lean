@@ -81,8 +81,4 @@ theorem crossing_by_mem_after_cut {n k : Nat} (port : Fin k→Fin n)
   exact crossing_by_mem port injective _ _ (full_balance port injective u)
     j m pos inReady outReady v hit
 
-#print axioms trace_append
-#print axioms count_extension
-#print axioms crossing_by_mem
-#print axioms crossing_by_mem_after_cut
 end L4.BStarFenceCrossingWait

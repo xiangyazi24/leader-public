@@ -204,7 +204,4 @@ theorem routed_paid {p c n H} (hn : 4≤n) {J : Fin n} {z0 : Config p c n}
         exact hp
       simpa only [ein] using WindowA0ReturnMonitor.paid_rebase_cold hn old pay'
 
-#print axioms genuine_release
-#print axioms release_admitted
-
 end L4.WindowA0ReturnEntry

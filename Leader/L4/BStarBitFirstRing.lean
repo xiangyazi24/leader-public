@@ -132,6 +132,4 @@ theorem first_mark {base x : X} {hh : ∃ i,oldH6 B base i=true}
     have U : i≠rightNeighbor e := fun E => right (by change e=RearTrace.predecessor i; rw [E,RearTrace.predecessor_right])
     simp [AllSizeS1Geometry.step,L,U]
 
-#print axioms predecessor_trail
-#print axioms first_mark
 end L4.BStarBitFirstRing

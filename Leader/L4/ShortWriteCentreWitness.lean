@@ -119,10 +119,4 @@ theorem sampled_effect_record {s n : Nat} (cmd : Cmd) (d : Fin 8) (x : Raw s n) 
     SampledEffect cmd d x e (marks++[e]) :=
   ⟨marks,[],rfl,P⟩
 
-#print axioms Cmd.decode_packet
-#print axioms Cmd.decode_ack
-#print axioms centre_raw_exact
-#print axioms centre_wire_live_is_effect
-#print axioms sampled_effect_extend
-#print axioms sampled_effect_record
 end L4.ShortWriteCentreWitness

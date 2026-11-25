@@ -190,8 +190,6 @@ theorem reference_of_adjacent {p c n : Nat} {initial : Config p c n} (hn : 5≤n
     exact unpaid_ring_release hn x b q hMark hal has hB hTop hEmpty hWorker hwEmpty hRes hOff hToken
       (by cases q <;> exact hCold)
 
-#print axioms reference_of_adjacent
-
 /-- Six distinct physical competitors whenever the ring has at least
 six sites. This proof also covers guard wrap-around at residue zero. -/
 theorem guard_nodup {n : Nat} (hn : 6≤n) (top : Fin n) :
@@ -273,9 +271,5 @@ theorem routed_release_of_adjacent {p c n : Nat} {initial : Config p c n} (hn : 
   change Released ((routedState S z w).1.config e)
     ((routedState S z w).1.config (rightNeighbor e)) q at R
   rwa [project_word] at R
-
-#print axioms guard_nodup
-#print axioms project_word
-#print axioms routed_release_of_adjacent
 
 end L4.WindowA0AdjacentEntry

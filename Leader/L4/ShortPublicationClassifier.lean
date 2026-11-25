@@ -56,10 +56,6 @@ def FromProtectedBits (l r : Bool) (d : Nat) : Prop :=
   ∃ raw : BitVec 96, raw.getLsbD 74=l ∧ raw.getLsbD 72=r ∧
     MISByteCodec.issuedDescriptor raw=d
 
-#print axioms classify_some
-#print axioms recorded_guard
-#print axioms unrecorded_selector_stutters
-
 /-- Every eligible guarded COMMIT is counted, including identity writes
 to the public Boolean, because it takes the complementary selector. -/
 theorem guard_recorded {s n : Nat} (x : Raw s n) (e : Fin n)
@@ -71,5 +67,4 @@ theorem guard_recorded {s n : Nat} (x : Raw s n) (e : Fin n)
   rw [ShortSelectorFlip.guarded_commit_flips x e sep head G]
   cases (x (rightNeighbor e)).mis1.getLsbD 92 <;> decide
 
-#print axioms guard_recorded
 end L4.ShortPublicationClassifier

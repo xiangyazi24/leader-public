@@ -154,7 +154,6 @@ theorem unpaid_top {p c n H} (hn : 4≤n) {J : Fin n} {z0 : Config p c n}
     have AA : rightNeighbor e=e := A
     exact noleft 0 old.gapPos (by simpa only [liftedSite_zero,←sr] using AA)
 
-
 /-- Exterior labels, including J as initiator, cannot affect the
 authenticated rail. The fresh label opens the payment opportunity
 even when that interaction delivers no stock. -/
@@ -242,10 +241,6 @@ theorem separated_door {p c n H} (hn : 4≤n) {J : Fin n} {z0 : Config p c n}
     have := liftedSite_inj a.top sh (show 0<n by omega) (B.trans (liftedSite_zero _).symm)
     omega
 
-#print axioms unpaid_top
-#print axioms exterior
-#print axioms separated_door
-
 theorem exterior_of_not_initiator {p c n H} (hn : 4≤n) {J : Fin n} {z0 : Config p c n}
     {S : WindowA0Ledger.Scope n} {x : WindowA0ClosedEntry.State p c n}
     {q : Trip (2*c)} {d : Nat} {b : Bool} (e : Fin n)
@@ -281,8 +276,6 @@ theorem exterior_of_not_initiator {p c n H} (hn : 4≤n) {J : Fin n} {z0 : Confi
     | succ i =>
       rw [liftedSite_succ] at E
       exact hout i H (FreshSeparation.succ_inj E)
-
-#print axioms exterior_of_not_initiator
 
 /-- Every mark of an active physical return is classified, with routed
 stops taking priority. The contact branch retains the real inward rail
@@ -384,5 +377,4 @@ theorem step_classify {p c n H} (hn : 4≤n) (hQ : 0<2*c) {J : Fin n}
         exact (exterior_of_not_initiator hn e h ni nj
           (fun j hj E => I ⟨j,hj,E.symm⟩)).resolve_left hy
 
-#print axioms step_classify
 end L4.WindowA0ReturnRows

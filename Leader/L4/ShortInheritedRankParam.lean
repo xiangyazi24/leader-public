@@ -14,7 +14,6 @@ def railCap (D : Nat) : Nat := 2*D*D+1+D*(4*D+2)
 
 def phaseCap (D : Nat) : Nat := 15*(railCap D+1)+railCap D
 
-
 /-- All positive forward work outweighs the no-forward cleanup. -/
 def rail {n : Nat} {h : Fin n → Bool} (C : Chart h) (D : Nat)
     (b : Fin C.L → BitVec 96) : Nat :=
@@ -104,8 +103,4 @@ theorem issue0_expected {s n : Nat} {h : Fin n → Bool} (C : Chart h)
   · intro y z H
     exact congrArg (chartRank C (railCap D) (rail C D)) (H C List.mem_cons_self)
 
-#print axioms rail_cap
-#print axioms rail_nominate_held
-#print axioms chartRank_nominate
-#print axioms issue0_expected
 end L4.ShortInheritedRankParam

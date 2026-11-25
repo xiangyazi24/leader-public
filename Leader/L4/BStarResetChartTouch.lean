@@ -170,7 +170,4 @@ theorem chart_exists (base : X) (hh : ∃ i, oldH6 B base i=true) (width : Nat)
   · intro u v mu E
     exact (route_edges P (fun _ H => G.no_terminal_exit H (by rw [G.terminal_owner])) u v).mp ⟨mu,E⟩
 
-#print axioms chart_exists
-#print axioms touches
-#print axioms not_discarded
 end L4.BStarResetChartTouch

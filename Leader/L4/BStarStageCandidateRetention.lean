@@ -257,8 +257,4 @@ theorem word_keeps_owned {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have E : run x (lead++u)=run (run x lead) u := BStarResetSchedule.run_append _ _ _ _
   exact E ▸ excludes_stage hp C sep P N e i own no
 
-#print axioms word_keeps_owned
-#print axioms excludes_stage
-#print axioms word_keeps
-#print axioms joined_keeps
 end L4.BStarStageCandidateRetention

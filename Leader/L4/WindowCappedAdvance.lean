@@ -169,8 +169,4 @@ theorem drained_mean {z : Config p c n} (S : WindowA0Ledger.Scope n)
     rw [Nat.add_comm,←Nat.succ_mul,show (g-1).succ=g by omega]
     exact Nat.le_refl _
 
-#print axioms leg
-#print axioms drained_mean
-#print axioms fixed_at
-#print axioms slot_word
 end L4.WindowCappedAdvance

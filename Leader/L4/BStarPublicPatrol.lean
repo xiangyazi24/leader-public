@@ -192,7 +192,6 @@ private theorem snd_ite {A B : Type} (P : Prop) [Decidable P] (x y : A × B) :
     (if P then x else y).2=(if P then x.2 else y.2) := by
   by_cases h : P <;> simp [h]
 
-
 set_option linter.unusedSimpArgs false in
 theorem left_rail_mask {p c : Nat} (u v : Site p c) :
     full (railF p c) (pubMask (u,v)).1 (issue u v).1 := by
@@ -467,8 +466,6 @@ theorem public_transfer {p c : Nat} (hp : 0<p)
     Pair.map (readPub hp) (patchPair (publicWork hp x) x) =
       pairStep (readPub hp x.1) (readPub hp x.2) :=
   pair_transfer_of_frame hp x (actual_frames (readPub hp x.1) (readPub hp x.2))
-
-#print axioms public_transfer
 
 end L4.BStarPublicPatrol
 

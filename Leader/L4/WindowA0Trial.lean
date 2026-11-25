@@ -162,10 +162,4 @@ theorem attempt_clock_of_timed_layers {c n H : Nat} {ready entry : Word n → Pr
   exact timed_compose clean (fun y hy =>
     by simpa only [Nat.sub_zero] using timed_legs legs last 0 (Nat.zero_le _) y hy) [] he
 
-#print axioms timed_compose
-#print axioms timed_legs
-#print axioms attempt_clock_of_timed_layers
-#print axioms trial_restart
-#print axioms attempt_of_layers
-#print axioms clock_budget
 end L4.WindowA0Trial

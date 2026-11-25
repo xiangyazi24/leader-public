@@ -116,7 +116,4 @@ theorem touching_advance_clears_least
       cases s <;> exact F
     exact (least _ cs (by omega) ring).elim
 
-#print axioms advance_removes_forward
-#print axioms ring_advance_removes_forward
-#print axioms touching_advance_clears_least
 end L4.DirtyForwardAdvance

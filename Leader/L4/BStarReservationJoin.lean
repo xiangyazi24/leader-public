@@ -56,6 +56,4 @@ theorem reserved_of_admitted_old_receipt {base initial : X} {hh : ∃ i,oldH6 B 
     (separates_stopped_tape hp Q I fiber closed sep offset coherent heads cont start history i)
     atRead b earlier readOk before
 
-#print axioms first_after_common
-#print axioms reserved_of_admitted_old_receipt
 end L4.BStarReservationJoin

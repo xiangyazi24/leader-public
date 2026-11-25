@@ -24,5 +24,4 @@ theorem selector_at_stage (x : X) (i : Fin n) (d : Descriptor) (pay : Payload)
   rw [h]
   exact L4.Height.StageSelectorWrite.joined_stage_selector _ _ _ pay d head rfl offered healthy op decoded auth
 
-#print axioms selector_at_stage
 end L4.Height.StageSelectorRing

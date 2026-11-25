@@ -104,5 +104,4 @@ theorem finish_left {Tag : Type} (digits : Tag→BitVec 36)
   rw [endpoint,ending,←at11]
   exact ⟨drain,read⟩
 
-#print axioms finish_left
 end L4.BStarCopyLeftRecoveryFinish

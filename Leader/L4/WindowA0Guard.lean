@@ -160,15 +160,4 @@ theorem pair_no_x_retained {p c : Nat} (u v : Site p c)
     simp only [hl,hm',hs,pinned,Bool.false_or,Bool.not_false,Bool.true_and]
     exact ordinary_off_no_x _ _ ha hb
 
-#print axioms pair_rail_projection
-#print axioms pair_no_x_retained
-#print axioms pinned_no_x
-#print axioms pinned_right_no_x
-#print axioms clean_ordinary_worker_left
-
-#print axioms launch_already_at_top
-#print axioms first_adjacent_not_top
-#print axioms separated_incoming
-#print axioms first_adjacent_raw
-#print axioms ordinary_off_no_x
 end L4.WindowA0Guard

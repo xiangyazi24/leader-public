@@ -566,11 +566,4 @@ theorem concreteFixedResidualClock : ConcreteFixedResidualClock := by
   exact ⟨clock,Nat.le_trans hClock
     (Nat.mul_le_mul_right (d+2) (Nat.mul_le_mul_right (2*c+1) (by decide)))⟩
 
-#print axioms body_pair_on_live
-#print axioms door_pair_on_live
-#print axioms top_pair_on_live
-#print axioms continuing_projection
-#print axioms concreteFixedResidualClockEight
-#print axioms concreteFixedResidualClock
-
 end L4.DistinctLiteralClock

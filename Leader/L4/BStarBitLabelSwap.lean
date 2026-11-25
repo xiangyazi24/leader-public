@@ -76,7 +76,4 @@ theorem swap_nonfixed_iff (e : Fin n) :
       (other s) s E).2
     exact other_ne s S
 
-#print axioms swap_incident
-#print axioms swap_twice
-#print axioms swap_nonfixed_iff
 end L4.BStarBitLabelSwap

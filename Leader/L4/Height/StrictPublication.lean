@@ -69,9 +69,4 @@ theorem strict_publication_moment {s n : Nat} (_hn : 4 ≤ n)
       (2^(5*longBudget+34)*n*radWidth s))) t ≤ 2*n^t :=
   moment_of_production_block production_block g (production_of_space g hs hadvice hspace) i t
 
-#print axioms L4.Height.ProductionCycles.stage_completion
-#print axioms L4.Height.ProductionCycles.fresh_cycle_publishes
-#print axioms production_block
-#print axioms strict_publication_block
-#print axioms strict_publication_moment
 end L4.Height.ProductionCustody

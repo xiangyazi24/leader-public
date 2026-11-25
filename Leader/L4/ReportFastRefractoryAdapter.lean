@@ -184,7 +184,5 @@ theorem service_program_refractory_raw
     next Q project closed bank raw_step ban active desired spec Armed y H
     (mapWord next (fun z=>mergeSide (ban z)) y v)
 
-#print axioms refractory_all_observer_words
-#print axioms service_program_refractory_raw
 end L4.ReportFastItem10Assembly
 

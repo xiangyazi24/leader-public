@@ -61,6 +61,4 @@ theorem reverse_keeps_xfree {p c n : Nat} {initial : Config p c n}
         exact h
       · exact h
 
-#print axioms xfree_next
-#print axioms reverse_keeps_xfree
 end L4.WindowA0CleanupChain

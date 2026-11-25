@@ -94,29 +94,20 @@ theorem pureAliasClock_of_hitCap (h : ConcreteAliasHitCap) : PureAliasClock := b
   refine ⟨clock, Nat.le_trans (initial_budget_ofHitCap _ _ _ _ _ bound) ?_⟩
   exact Nat.mul_le_mul_right (n+1) (Nat.mul_le_mul_right (2*c+1) (by decide))
 
-
 /-- Paper downstream at the narrow physical endpoints. The two
 new premises are not erased by the certificate assembly. -/
 theorem main_of_last_two (restart : RankPhysical.ConcreteRestartTrial)
     (windows : ConcreteWindowMarginals) (alias : ConcreteAliasHitCap) :
-    row175Statement :=
+    uniformEdgeStatement :=
   mainTheorem restart (concreteSevenGroups_of_marginals windows)
     (pureAliasClock_of_hitCap alias)
-
 
 /-- The alias premise is now a literal theorem. Only the two remaining
 restart and window-local physical inputs appear in the result. -/
 theorem main_after_window_marginals (restart : RankPhysical.ConcreteRestartTrial)
-    (windows : ConcreteWindowMarginals) : row175Statement :=
+    (windows : ConcreteWindowMarginals) : uniformEdgeStatement :=
   mainTheorem restart (concreteSevenGroups_of_marginals windows)
     AliasLiteralClock.pureAliasClock
 
 end L4.LastTwoAssembly
 
-#print axioms L4.LastTwoAssembly.of_marginals
-#print axioms L4.LastTwoAssembly.concreteSevenGroups_of_marginals
-#print axioms L4.LastTwoAssembly.pureAliasClock_of_hitCap
-
-#print axioms L4.LastTwoAssembly.main_of_last_two
-
-#print axioms L4.LastTwoAssembly.main_after_window_marginals

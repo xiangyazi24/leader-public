@@ -270,8 +270,6 @@ theorem fromGG_entry {p c n : Nat} (base : Fin n) (s : GGStage.Obs p c n)
     rw [RestartGeometry.lift_add]
     exact (hDrain.resolve_left hStop) _ (by omega) (by omega)
 
-#print axioms fromGG_entry
-
 theorem fromGG_close {p c n : Nat} (hn : 4≤n)
     (base J e : Fin n) (H : Nat) (s : GGStage.Obs p c n)
     (h : I_H J H (fromGG base s)) :
@@ -361,8 +359,6 @@ theorem cut_word {p c n : Nat} (hn : 4≤n) (early : Cut p c n → Fin n → Boo
   | nil => exact h
   | cons e w ih => exact ih _ (close hn early J H s e h)
 
-#print axioms fromGG_word
-#print axioms cut_word
 /-- Adjoin the exact original seven-tag ledger without perturbing
 any physical marks. A route decision is read on the old ledger, but
 its next config and the geometric cut use the same completed row. -/
@@ -401,10 +397,4 @@ theorem routed_projects {p c n : Nat}
   | nil => rfl
   | cons e w ih => exact ih (routedNext group a b s e)
 
-#print axioms routed_close
-#print axioms routed_word
-#print axioms routed_projects
-#print axioms fromGG_close
-#print axioms close
-#print axioms config_projection
 end L4.WindowA0IH

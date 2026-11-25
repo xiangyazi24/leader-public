@@ -147,6 +147,3 @@ end Native
 end Compiler
 end L4
 
-#print axioms L4.Compiler.Native.stagePhase_spec
-#print axioms L4.Compiler.Native.stageView_spec
-#print axioms L4.Compiler.Native.stageNeed_spec

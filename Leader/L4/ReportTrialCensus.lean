@@ -155,11 +155,4 @@ theorem no_miss_late (d : Sheet) (N : 0<n) (A : GapBounds h L U)
   have H := no_miss d N _ _ x w T OK i
   rwa [I,E] at H
 
-#print axioms no_warm_in_cone
-#print axioms no_miss_early
-#print axioms no_miss_late
-#print axioms loss_counts
-#print axioms bank_fibre
-#print axioms no_warm
-#print axioms no_miss
 end L4.ReportTrialCensus

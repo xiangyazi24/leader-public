@@ -157,8 +157,5 @@ theorem post_custody_chain
     hL hmr hR hLeg hCust hLegCust hRepair
     hLogical hOverrun hCover x hxCust
 
-#print axioms L4.Height.post_custody_quadratic_rep
-#print axioms L4.Height.post_custody_chain
-
 end L4.Height
 

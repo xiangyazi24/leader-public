@@ -76,8 +76,4 @@ theorem counted_observation (d : Sheet) (N : 1<n) (x : Raw s n) (e : Fin n) (i :
     rw [A] at E
     exact E
 
-#print axioms rawPaint_eq_countedPaint
-#print axioms countedPaint_incoming
-#print axioms distinct_gates_cannot_paint
-#print axioms counted_observation
 end L4.ReportLiteralPulse

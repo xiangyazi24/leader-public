@@ -1121,12 +1121,6 @@ theorem path_family_bound (N m h : Nat)
   rw [rooted_path_count] at hBound
   exact hBound
 
-#print axioms moment_seq
-#print axioms moment_queries
-#print axioms mean_max
-#print axioms step_path_count
-#print axioms rooted_path_count
-
 end
 
 end Thru

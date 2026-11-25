@@ -211,12 +211,4 @@ theorem clear_issue_file_nondoors {s n : Nat} {h : Fin n→Bool}
     obtain ⟨P,Q⟩ := IH y (h2_ready_closed N x e X) heads' B (fun j J=>nodoor j (by simp [J]))
     exact ⟨P,Q.trans F⟩
 
-#print axioms clear_issue_file_nondoors
-#print axioms stage_ack_clears_same_seal
-#print axioms seal_ack_launches_same_commit
-#print axioms descriptor_of_same_file
-#print axioms seal_to_commit_same_file
-#print axioms healthy_before
-#print axioms safe_wait_door
-#print axioms generated_retains_actual_file
 end L4.ShortWriteFileSplice

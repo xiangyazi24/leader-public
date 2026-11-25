@@ -131,5 +131,4 @@ theorem race_pays_or_touching_advance
     exact .inl (BStarClearanceObserveJoined.observed_joined _ _ _ _ _ _ _ _ _ hp z a
         (fun E=>by rw [E] at J; contradiction) pay q 0 no F O).2
 
-#print axioms race_pays_or_touching_advance
 end L4.DirtyPrepRacePay

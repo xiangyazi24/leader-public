@@ -224,7 +224,6 @@ theorem execute_frame (g : LongGeometry) (j : Fin 11) (x : BitVec LW) (p : Paylo
       · exact zero
   · exact zero
 
-
 theorem route_frame (w : KWrite) : Frame (lowerOne w).2 := by
   rcases w with ⟨⟨s,j⟩,t⟩
   change Frame (setToken j t)
@@ -391,9 +390,4 @@ theorem long_work_preserves (g : Pair LongGeometry) (x : Pair (BitVec LW)) (s : 
   have H := captures_hold (lane s (longWork g x)) (lane s x) F
   cases s <;> exact H
 
-#print axioms long_work_preserves
-#print axioms captures_hold
-#print axioms issue_frame
-#print axioms reply_frame
-#print axioms accept_frame
 end L4.BStarAcquireFrame

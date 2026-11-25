@@ -19,5 +19,4 @@ theorem actual_owner_clean_mean {s n : Nat} (x : Raw s n) (A : H2Ready x)
     fun y Y H nonzero=>nominate_forward C (by omega) y Y H g Gp Gl G nonzero
   exact ⟨C,Cr,Cs,fun y Y H=>from_inherited_expected C Cs (by omega) Nom y Y H⟩
 
-#print axioms actual_owner_clean_mean
 end L4.ShortArbitraryClean

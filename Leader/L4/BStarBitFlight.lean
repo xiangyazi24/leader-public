@@ -91,7 +91,6 @@ theorem busy_gate_landing {base x : X} {hh : ∃ i,oldH6 B base i=true}
         (x e,x (rightNeighbor e)) D a offer q K1 dst sel post qh
       exact ⟨[],e,w,q,D,a,offer,rfl,sel,dst,ad.symm,eq ▸ Q,eq ▸ current,qh,race.1,race.2,outcome,by simpa only [BStarResetSchedule.run,eq,L] using tail⟩
 
-
 open BStarStageProvenance BStarNativeActualLoadAccepted BStarCommitReceiptAuth
 open BStarFenceReceiverChart BStarH6Ordinal
 
@@ -291,6 +290,4 @@ theorem need_commit_first_side {base old x : X} {hh : ∃ i,oldH6 B base i=true}
   · rw [←parity]
     cases s <;> rfl
 
-#print axioms need_commit_landing
-#print axioms need_commit_first_side
 end L4.BStarBitFlight

@@ -232,8 +232,6 @@ theorem idle {s n a b L k : Nat} {x : Raw s n} {r e : Fin n}
       simpa [E] using A.2
   rw [reset_remote_frame_raw _ _ _ U V,H i I]
 
-
-
 theorem wait2_root_trail_holds {s n : Nat} (x : Raw s n) (e : Fin n)
     (sep : e≠rightNeighbor e) (head : header x (rightNeighbor e)=true)
     (W : Wait2 x (rightNeighbor e))
@@ -329,7 +327,4 @@ theorem returning_step {s n : Nat} {h : Fin n → Bool} (C : Chart h) (x : Raw s
       simpa [nextStage,J] using
         (show Returning C (rawNext s x e) (k+1) won from ⟨H.1,W,X⟩)
 
-#print axioms advance
-#print axioms idle
-#print axioms returning_step
 end L4.ShortAdmitReverse

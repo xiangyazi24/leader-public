@@ -166,7 +166,6 @@ theorem zero_incoming_stable {p c : Nat} (u v : Site p c)
     simpa [fireResponder,hv,h0] using hs
   simpa [fireResponder,hv,h0] using (surviving_terminal u v hv hs').2.2.2
 
-
 open TripleResidual
 
 /-- A launched clearing front and the swept zero/empty prefix. No
@@ -267,7 +266,6 @@ theorem zeroFront_wait {p c n d q : Nat} (_hn : 4 ≤ n) (x : Config p c n)
     ((prop q (Nat.le_refl _)).2.symm.trans hb), fun j hj =>
     ⟨(prop j (by omega)).1,(prop j (by omega)).2.trans (h.swept j hj).2⟩⟩
 
-
 /-- The nominated interior mark extends the protected prefix by one, with
 collisions transferring the witness to the old resident at the new site. -/
 theorem zeroFront_progress {p c n d q : Nat} (hn : 4 ≤ n) (x : Config p c n)
@@ -333,13 +331,6 @@ theorem zeroFront_terminal {p c n d : Nat} (x : Config p c n)
       omega
     change (step x e (liftedSite s j)).signal = _ ∧ (step x e (liftedSite s j)).bullet = _
     simpa only [step,if_neg hE,if_neg hN] using h.swept j hj
-
-#print axioms ordinary_native_payload
-#print axioms surviving_terminal
-#print axioms zeroFront_wait
-#print axioms zeroFront_progress
-#print axioms zeroFront_terminal
-
 
 /-- The nearest one is tracked while the suffix is only required to be binary. -/
 structure ReturnFront {p c n : Nat} (x : Config p c n) (s : Fin n) (d q : Nat) : Prop where
@@ -489,9 +480,6 @@ theorem returnFront_step {p c n d q : Nat} (x : Config p c n)
       simp [hjd,h.before (j+1) (by omega),Signal.max]
     · rfl
 
-#print axioms returnFront_step
-
-
 /-- A ready source met on its incoming mark starts a zero-signal clearing
 front immediately, or there is an actual global event on this mark. -/
 theorem sourceIncoming_starts_front {p c n : Nat} (hn : 4 ≤ n) (x : Config p c n)
@@ -573,10 +561,6 @@ theorem sourceOutgoing_adjacent_ready {p c n : Nat} (x : Config p c n)
   · intro j hj
     omega
   · simpa [step] using hp.2.2.1
-
-#print axioms sourceIncoming_starts_front
-#print axioms sourceOutgoing_starts_front
-#print axioms sourceOutgoing_adjacent_ready
 
 inductive PrepPhase where
   | forward (q : Nat)
@@ -795,9 +779,6 @@ theorem expected_ready_after_front {p c n d q : Nat}
   exact Nat.le_trans hp (Nat.le_trans (hbound t start hgood)
     (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left _ hb)))
 
-#print axioms expected_ready_after_front
-
-
 /-- In dirty preparation, follow the *first nonzero* source signal
 back to zero, not necessarily a one. Offset d+1 is a virtual one supplied
 by the actual living terminal; it requires no field assumption at the target. -/
@@ -881,6 +862,4 @@ theorem dirtyReturn_exists {p c n d : Nat} (x : Config p c n) (s : Fin n)
       · exact ⟨k,by omega,h,fun _ => hp,hb⟩
   exact H (d+1) 0 (by omega) (by intro j hj; omega)
 
-#print axioms dirtyReturn_step
-#print axioms dirtyReturn_exists
 end L4.TriplePrep

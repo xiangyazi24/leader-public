@@ -113,13 +113,4 @@ theorem examples :
     widthAt scalarWidths 29=0 ∧ widthAt scalarWidths 195=1 ∧
     widthAt scalarWidths 263=1 := by decide
 
-#print axioms manifest_registers
-#print axioms range_bound
-#print axioms slots_order
-#print axioms numeric_distinct
-#print axioms scalar_distinct
-#print axioms numeric_scalar
-#print axioms scalar_before_choice
-#print axioms spare
-#print axioms examples
 end L4.BStarLongRegisters

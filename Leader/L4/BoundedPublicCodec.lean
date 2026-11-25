@@ -68,7 +68,6 @@ theorem bounded_projects {n : Nat} (x : BoundedRaw n) (e : Fin n) :
         if_neg hne, if_true, boundedDecode_encode]
     · simp [boundedProject, boundedNext, step, he, hj]
 
-
 theorem bounded_rank_size : stateCount boundedP 12 = 51408 * (2^32 + 1) := by decide
 
 /-- Literal regression: the highest raw code is spare and decodes to rank zero. -/
@@ -89,13 +88,5 @@ theorem top_code_off_edge :
     let top : BoundedCode := ⟨2^48-1, by decide⟩
     boundedNext (n := 4) (fun _ => top) 0 2 = top :=
   boundedNext_off_edge _ _ _ (by decide) (by decide)
-
-#print axioms top_code_off_edge
-#print axioms boundedDecode_encode
-#print axioms boundedDecode_spare
-#print axioms bounded_projects
-#print axioms bounded_rank_size
-#print axioms top_code_spare
-#print axioms boundedNext_off_edge
 
 end L4.BoundedPublicCodec

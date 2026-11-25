@@ -325,13 +325,4 @@ theorem physical_entry_exit_mean {p c n : Nat} (hn : 5≤n) (hc : 12≤c)
   entry_exit_mean (by omega) x i hm hv short h1 h2 (fun J H h  z hz hl =>
     physical_attempt hn hc x (entryScope x i) J H (by omega) z hz hl)
 
-#print axioms physical_block_mean
-#print axioms physical_entry_exit_mean
-#print axioms wordCert
-#print axioms wordCert_proper
-#print axioms physicalAttempt
-#print axioms physical_attempt
-#print axioms literalLeg
-#print axioms family
-
 end L4.WindowA0Uniform

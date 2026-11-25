@@ -148,10 +148,6 @@ theorem terminal_empty {Label : Type} {plan : List Label} {s : Ledger Label}
   exact terminal_mobile_empty _ _ h (first_arrival_cap _ _ _ V.follows V.first)
     (fun i _ => V.clean i) (fun i _ => V.handoff i)
 
-#print axioms valid_step
-#print axioms prefix_cap
-#print axioms terminal_empty
-
 open AllSizeProtocol BStarTrace BStarLongClaims BStarLongPackets
 open BStarLongPrep BStarLongCommandData BStarLongToken BStarLongCommand
 
@@ -227,7 +223,4 @@ theorem physical_release {Label : Type} (digits : Label → BitVec 36) (plan : L
   · rw [H.2]; rfl
   · rw [H.2]
 
-#print axioms physical_transfer
-#print axioms physical_first
-#print axioms physical_release
 end L4.BStarCopyMarkedLedger

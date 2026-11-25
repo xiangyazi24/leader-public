@@ -120,7 +120,4 @@ theorem raw_seal_selected (g : Pair LongGeometry) (x : Pair (BitVec LW))
   rw [H]
   exact bind_seal _ _ p F O R T W
 
-#print axioms bound_seal_selected
-#print axioms raw_seal_selected
-
 end L4.BStarSealHealthyOffer

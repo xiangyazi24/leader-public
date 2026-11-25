@@ -52,10 +52,4 @@ theorem packed_from_certified_h6 (P : WidthLower s n) (hs : 6≤s)
   width_packed_of_predecessors P (fun _ S=>actual_predecessor P S)
     hs advice N x X
 
-#print axioms beginReceipt_iff
-#print axioms actual_predecessor
-#print axioms owner_cycle_mean
-#print axioms paid_max_mean
-#print axioms packed_from_certified_h6
-
 end L4.WidthProductionEntrance

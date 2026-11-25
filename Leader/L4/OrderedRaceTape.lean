@@ -255,7 +255,6 @@ theorem reserve_localLaw {n : Nat} (hn : 4≤n) (A : List (Fin n)→Prop)
       obtain ⟨pos, J⟩ := V _ _ _ rfl
       exact active_race_credit hn d later j pos (by omega)
 
-
 theorem remaining_bounded {n : Nat} (d : Fin n) (k : Nat) (K : 0<k)
     (v : List (Fin n)) (j : Nat)
     (R : BStarResetSchedule.run (next d) (.live k) v=.live j) : 0<j ∧ j≤k := by
@@ -332,10 +331,4 @@ theorem failed_mass_bound {n : Nat} (hn : 4≤n) (A : List (Fin n)→Prop)
     · exact AdaptiveDoorCredit.triple_drift _ _ win l₁ l₂ D₁ D₂ D₃ paid rest
   · exact valid_start A d k
 
-#print axioms word_tick
-#print axioms combined_expected
-#print axioms valid_step
-#print axioms accepted_split
-#print axioms reserve_localLaw
-#print axioms failed_mass_bound
 end L4.OrderedRaceTape

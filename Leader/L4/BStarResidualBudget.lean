@@ -52,6 +52,4 @@ theorem time_fraction {n W L H : Nat} (hn : 0<n) (hw : 0<W)
     _ ≤ (3*D)*n^(2*D) := Nat.mul_le_mul_right _ O
     _ = D*(3*n^(2*D)) := by ac_rfl
 
-#print axioms residual_le
-#print axioms time_fraction
 end L4.BStarResidualBudget

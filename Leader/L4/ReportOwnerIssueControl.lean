@@ -108,6 +108,4 @@ theorem nondoor_preserves (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
         (raw_off_frame d C x e D0 (fun j J U=>A ⟨j,J,U⟩) i I)]
       exact R.2.2 i I
 
-#print axioms door_step
-#print axioms nondoor_preserves
 end L4.ReportOwnerIssueControl

@@ -661,17 +661,4 @@ theorem owned_good_step {Q d : Nat} (hQ : 0<Q) (s : Line Q d)
         have hE : ¬ i.val=k.val := fun he => hk (Fin.ext he.symm)
         rwa [if_neg hE] at H'
 
-#print axioms owned_ui_launch
-#print axioms owned_ui_progress
-#print axioms owned_ui_body_hold
-#print axioms owned_ui_door_hold
-#print axioms owned_ui_turn
-#print axioms return_body_exact
-#print axioms outward_body_exact
-#print axioms init_return_accept
-#print axioms count_return_accept
-#print axioms count_return_fire
-#print axioms owned_advance_budget
-#print axioms owned_good_step
-
 end L4.ResidualSweep

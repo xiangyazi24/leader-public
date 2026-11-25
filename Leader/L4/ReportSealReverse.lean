@@ -422,7 +422,6 @@ theorem seal_reverse_step (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     · exact (M ⟨j,J,E⟩).elim
     · exact (NC.elim (fun B=>B E) (fun B=>B (rootD Z))).elim
 
-
 /-- Each actual pre-consume mark preserves the exact old healthy reply at
 its current reverse cursor or transfers it to its predecessor. -/
 theorem seal_reverse_run (d : Sheet) (C : Chart h)
@@ -495,11 +494,4 @@ theorem healthy_seal_turn_to_consume (d : Sheet) (C : Chart h)
   subst j
   exact ⟨S.packet,(seal_root_consume d C hh G F N _ Z S digit).2.2⟩
 
-#print axioms seal_ack_decode
-#print axioms healthy_seal_terminal
-#print axioms raw_seal_reverse_hop
-#print axioms seal_reverse_step
-#print axioms seal_reverse_run
-#print axioms seal_root_consume
-#print axioms healthy_seal_turn_to_consume
 end L4.ReportSealReverse

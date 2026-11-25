@@ -122,6 +122,4 @@ theorem emits_by_second_hit {base : X} {hh : ∃ i,oldH6 B base i=true}
     rw [emit,show choose (b++emit choose b (e::skipped)) e=e from h,emit]
     exact List.mem_cons_self
 
-#print axioms emits_in_two
-#print axioms emits_by_second_hit
 end L4.BStarFenceTwoCandidates

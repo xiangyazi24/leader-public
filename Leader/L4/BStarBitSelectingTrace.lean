@@ -96,7 +96,6 @@ theorem selecting_with_route {base old x : X} {addr : Nat→Pos n} {len : Nat}
   · exact .inl ⟨o,n,k,choiceEq _ L⟩
   · exact .inr ⟨o,n,choiceEq _ L⟩
 
-
 /-- Literal launch does not start the race. The source begins with
 race zero; the first race state is installed by gate arrival. -/
 theorem bit_launch_race_zero {x y : X} {addr : Nat→Pos n}
@@ -160,5 +159,4 @@ theorem needed_bit_route {base old x : X} {addr : Nat→Pos n} {len : Nat}
   rw [W,V,W0]
   simp only [List.append_assoc,List.cons_append]
 
-#print axioms needed_bit_route
 end L4.BStarBitSelectingTrace

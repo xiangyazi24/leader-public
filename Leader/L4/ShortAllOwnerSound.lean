@@ -49,7 +49,6 @@ theorem word_sound_raw_of_receipts {s n : Nat} (x : Raw s n) (good : Raw s n→P
   have H := history_on_actual_tape x cs w E D
   exact H.1 ▸ S w _ H
 
-
 /-- Concrete consumer for all selected H1 owners. It does not
 assert that historical receipts imply a currently valid epoch; that
 substantive protocol lemma is the explicit ReceiptSound input. -/
@@ -103,10 +102,4 @@ theorem anchored_finished_can_hold_before_receipt :
     simp [toyNext,toyStart,start,SequentialMarkClock.step,SequentialMarkClock.run,toyPhase,toyGoal,finished]
   · simp [toyStart,start,SequentialMarkClock.run,finished]
 
-#print axioms history_on_actual_tape
-#print axioms word_sound_raw_of_receipts
-#print axioms raw_expected_of_receipts
-#print axioms historical_endpoint_expected
-#print axioms bare_finished_projection
-#print axioms anchored_finished_can_hold_before_receipt
 end L4.ShortAllOwnerSound

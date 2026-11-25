@@ -164,12 +164,5 @@ theorem itinerary_of_unpublished_prefix (P : Production g) (target : Owners h)
   rw [state] at once rivals pending ended ⊢
   exact ⟨S,L,fall,C,I w ack once rivals incoming pending ended⟩
 
-#print axioms release_cut
-#print axioms target_release
-#print axioms sampled_rivals
-#print axioms common_prefix_rivals
-#print axioms common_prefix_rivals_of_history
-#print axioms itinerary_of_unpublished_prefix
-
 end L4.Height.FreshConflicts
 

@@ -24,7 +24,6 @@ local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r
 local notation "step" => AllSizeS1Geometry.step (n:=n) B
 local notation "run" => BStarResetSchedule.run step
 
-
 /-- STOP, CLEAR and ENABLE carry a unit through all old physical lane states. -/
 def Setup (op : Nat) : Prop := op=6 ∨ op=7 ∨ op=9
 
@@ -168,7 +167,6 @@ theorem setup_outward (op : Nat) (legal : Setup op) {base x : X} {hh : ∃ i,old
       have eq := (unique k I.2.1.1).mp ⟨_,frame⟩
       exact ih k l (congrArg Cursor.out eq.symm) L frame
 
-
 open BStarLiteralPC BStarResetControllerProgress
 
 /-- On the first completed STOP, CLEAR or ENABLE, the generated receipt
@@ -299,7 +297,4 @@ theorem load_receipt {base origin : X} {hh : ∃ i,oldH6 B base i=true}
   rw [replay] at E ⊢
   exact FreshCopyReceipt.ordinary hp C sep 8 (by decide) (by decide) back turned ack E
 
-#print axioms load_receipt
-#print axioms setup_receipt
-#print axioms setup_outward
 end L4.Height.FreshSetupTours

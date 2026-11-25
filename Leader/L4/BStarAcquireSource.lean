@@ -94,13 +94,4 @@ theorem final_center_of_retained_capture (x y : BitVec LW) (p : Payload)
   refine ⟨BStarFinalCandidate.finalDesc y h,?_,Fin.ext c'⟩
   rw [(BStarFinalCandidate.final_fields y p h).1,BStarFinalCandidate.decode_final]
 
-#print axioms center_read
-#print axioms receipt_center
-#print axioms final_center_of_retained_capture
-
-#print axioms acquire_issue
-#print axioms acquire_issued_token
-#print axioms acquire_receipt
-#print axioms selected_acquire_receipt
-#print axioms capture_file
 end L4.BStarAcquireSource

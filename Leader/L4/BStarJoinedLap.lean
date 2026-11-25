@@ -82,6 +82,5 @@ theorem bStar_joined_lap_public (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp 
       ({ord.1 with mark:=ord.1.mark || plan.2},ord.2) :=
   joined_lap_public _ hp rfl x
 
-#print axioms bStar_joined_lap_public
 end L4.BStarJoinedLap
 

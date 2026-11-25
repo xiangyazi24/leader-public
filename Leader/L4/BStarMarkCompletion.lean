@@ -65,6 +65,4 @@ theorem replace_mark_bit {base initial : X} (u v tail : List (Fin n))
     rw [trueNeed,Bool.true_and]
     exact matchReceipt o receipt pub trueNeed source
 
-#print axioms consults_eq_nativeNeed
-#print axioms replace_mark_bit
 end L4.BStarMarkCompletion

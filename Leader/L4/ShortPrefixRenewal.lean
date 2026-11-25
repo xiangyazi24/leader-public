@@ -273,9 +273,6 @@ theorem renewal_expected (base : X→Fin n→X)
         · exact cutFail y Y P (u+1)
     exact F t (init z) (startOk z Z) (initial_boundary S z)
 
-#print axioms step_project
-#print axioms valid_next
-#print axioms renewal_expected
 -- CHECK: ShortPrefixFailure.lean:101-133;
 -- ShortFiveFailurePotential.lean:12-15,41-46.
 theorem parked_failure_param {step : (X×Bool)→Fin n→(X×Bool)}
@@ -402,7 +399,4 @@ theorem renewal_expected_param (base : X→Fin n→X)
         · exact cutFail y Y P (u+1)
     exact F t (init z) (startOk z Z) (initial_boundary S z)
 
-
-#print axioms parked_failure_param
-#print axioms renewal_expected_param
 end L4.ShortPrefixTrial

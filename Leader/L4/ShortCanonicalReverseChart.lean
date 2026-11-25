@@ -247,7 +247,6 @@ theorem idle {s n a b L k : Nat} {x : Raw s n} {r e : Fin n}
       simpa [E] using A.2
   rw [reset_remote_frame_raw _ _ _ U V,H i I]
 
-
 def Wait {s n : Nat} (x : Raw s n) (r : Fin n) (op : Nat) : Prop :=
   get (x r).mis1 81 2 (by decide)=2 ∧ get (x r).mis1 78 3 (by decide)=op
 
@@ -472,17 +471,4 @@ theorem returning_step {s n : Nat} {h : Fin n → Bool} (C : Chart h) (x : Raw s
       simpa [nextStage,J] using
         (show Returning C (rawNext s x e) op p (k+1) from ⟨H.1,W,X⟩)
 
-#print axioms reverse_outbound_raw
-#print axioms reverse_inbound_raw
-#print axioms internal_edge
-#print axioms terminal_edge
-#print axioms wait_held_step
-#print axioms wait_root_trail_holds
-#print axioms advance
-#print axioms idle
-#print axioms Reply.fault
-#print axioms consumed_controller
-#print axioms consume_old
-#print axioms consume
-#print axioms returning_step
 end L4.ShortCanonicalReverseChart

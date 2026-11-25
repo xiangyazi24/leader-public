@@ -42,5 +42,4 @@ theorem actual_offset_covers {s n : Nat} (h : Fin n→Bool) (hh : ∃ i,h i=true
       exact J
   simpa using aux 0 x blocks (by simpa using H) full qx (zero_correct h hh x)
 
-#print axioms actual_offset_covers
 end L4.PhysicalCustody

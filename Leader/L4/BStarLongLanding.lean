@@ -130,7 +130,4 @@ theorem bStar_literal_lands (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<
   rw [Patch.compose_apply,scratch_preserves_landing]
   exact literal_lands g raw e he
 
-#print axioms bStar_literal_lands
-#print axioms selected_fold_lands
-#print axioms literal_lands
 end L4.BStarLongLanding

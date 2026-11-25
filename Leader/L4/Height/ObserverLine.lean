@@ -208,15 +208,5 @@ theorem update (hn : 4≤n) (b : LargeRows a) (hp : 0<a.p)
     · rw [if_neg f]
       exact congrArg (fun z : BStarLapTransfer.Site => control z.pc) (idle_root_frame b r k x f last)
 
-#print axioms old_source
-#print axioms old_dest
-#print axioms ref_value
-#print axioms pair_at
-#print axioms frame
-#print axioms effects
-#print axioms position_frame
-#print axioms idle_root_frame
-#print axioms launch_iff
-#print axioms update
 end
 end L4.Height.ObserverLine

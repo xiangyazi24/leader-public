@@ -690,19 +690,4 @@ theorem current_owners_expected (x : Raw s n) (X : H2Ready x)
   ShortAllOwnerSound.raw_expected_of_receipts N x X (CurrentOwners x)
     (current_owners_receipt_sound x X N)
 
-#print axioms genuine_snoc_iff
-#print axioms first_goal_genuine
-#print axioms genuine_parked
-#print axioms genuine_consume_wire
-#print axioms latest_step
-#print axioms correct_run
-#print axioms physical_run
-#print axioms fixed_gate_for_chart
-#print axioms latest_from_first_hits
-#print axioms latest_from_history
-#print axioms latest_at_finished
-#print axioms current_owners_closed
-#print axioms current_owners_receipt_sound
-#print axioms current_owners_expected
-
 end L4.ShortLatestResetMonitor

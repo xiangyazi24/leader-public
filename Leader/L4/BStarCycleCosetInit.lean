@@ -120,5 +120,4 @@ theorem exists_coherent (m P : Nat) (hm : 0<m) (small : m<P)
     have du : d i.val≤1 := S
     omega
 
-#print axioms exists_coherent
 end L4.BStarCycleCosetInit

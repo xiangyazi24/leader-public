@@ -85,6 +85,4 @@ theorem forward_all_mark {s n : Nat} {h : Fin n → Bool} (C : Chart h) (x : Raw
     simp only [if_neg M] at B
     exact ⟨I,W',B.1,B.2⟩
 
-#print axioms forward_all_mark
-#print axioms from_terminal
 end L4.ShortHelloReverseSplice

@@ -66,6 +66,4 @@ theorem coherent_succ (old rel ask : Ports) : conflict (result old rel ask)=fals
             simp only [result,win,he,if_false,h,aw,Bool.not_true,Bool.false_and,Bool.false_or]
           simp [conflict,eq,A,Z 0 z0 (by decide),Z 2 z2 (by decide)]
 
-#print axioms keep_canonical
-#print axioms coherent_succ
 end L4.BStarGrantRetention

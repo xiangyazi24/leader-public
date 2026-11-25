@@ -249,12 +249,4 @@ theorem actual_read_sites {s n : Nat} {x : Raw s n} {h : Fin n → Bool}
     omega
   exact ⟨a,b,Ga,Gb,⟨nextAt i.val a,A'⟩,rfl,read_sites A N heads i Ga Gb A' B' CA CB⟩
 
-#print axioms actual_read_sites
-#print axioms fixedRing_right
-#print axioms fixedRing_left
-#print axioms read_sites
-#print axioms rightDist_eq_gap
-#print axioms right_injective
-#print axioms right_surjective
-#print axioms ring
 end L4.PhysicalH1Neighbors

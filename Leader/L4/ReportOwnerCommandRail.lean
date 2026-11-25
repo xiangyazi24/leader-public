@@ -296,13 +296,6 @@ theorem strong_run (d : Sheet) (C : Chart h) (N : 1<n)
     obtain ⟨g,R0,_⟩ := rail_of_strong d C x A
     exact ⟨Y',B',⟨⟨g,R0⟩,R⟩⟩
 
-#print axioms strong_step
-#print axioms seed_receipt
-#print axioms seed_after_acq
-#print axioms rail_of_strong
-#print axioms strong_run
-
-
 theorem held_incidence_step (d : Sheet) (C : Chart h) (N : 1<n)
     (x : Raw s n) (e : Fin n)
     (mask : ∀ i,lower d (oldHeaders (rows s) (x i))=h i)
@@ -593,18 +586,6 @@ theorem postacq_suffix_from_consume (d : Sheet) (C : Chart h) (N : 1<n)
     raw_acq_consume d C hh G F N x X R O K Live ND b B digit
   exact postacq_suffix d C N hh G F digit _ Y E PC w H End
 
-#print axioms held_incidence_step
-#print axioms switch_implies_commit
-#print axioms preview_logical
-#print axioms positive_pc_step
-#print axioms zero_is_retry
-#print axioms abort_root_departure
-#print axioms pending_step_while_held
-#print axioms pending_run_while_held
-#print axioms no_restart_of_held_endpoint
-#print axioms postacq_suffix
-#print axioms postacq_suffix_from_consume
-
 /-- Authenticate the actual captured bit at the current pre-SEAL
 endpoint without assuming either NoRestartTape or OwnerRailTape.
 The root grant must have been continuously held on this one suffix;
@@ -648,7 +629,6 @@ theorem authentic_capture_current_while_held (d : Sheet) (G : GapInput h) (r : O
   exact ReportACQSelectedCapture.authentic_capture_is_current d G r hh F N x X I P
     digit w T Tag ND v NR Rail Hi
 
-#print axioms authentic_capture_current_while_held
 end L4.ReportOwnerCommandRail
 namespace L4.ReportOwnerCommandRail
 open AllSizeProtocol PhysicalCustody ShortResetCycle ReportResetBarrier
@@ -716,5 +696,4 @@ theorem pc_step_with_phase (d : Sheet) (C : Chart h) (N : 1<n)
         exact .inl (by simp [backTag,show 0<k by omega])
   · exact .inr (.inl (congrArg Prod.snd (raw_nondoor_control d C x e N M D)))
 
-#print axioms pc_step_with_phase
 end L4.ReportOwnerCommandRail

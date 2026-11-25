@@ -90,7 +90,4 @@ theorem centred_five_expected {s n : Nat} (N : 21<n) (x : Raw s n) (A : H2Ready 
     exact ShortLeastForward.nominate_forward (cs i) n5 y Y Heads g P L G none
   exact ⟨cs,mid,distinct,fixed_five_expected n5 cs small nom order x ⟨A,fun _=>rfl⟩⟩
 
-#print axioms not_forward_closed
-#print axioms fixed_five_expected
-#print axioms centred_five_expected
 end L4.ShortFiveSimultaneous

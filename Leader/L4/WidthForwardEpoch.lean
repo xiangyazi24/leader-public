@@ -347,7 +347,6 @@ private theorem issue_source (u : BStarWidthTransfer.Source) (op : Nat)
   rw [←O]
   rfl
 
-
 def Controller (S : Sector h d) (x : Raw s n) (p op : Nat) : Prop :=
   (src x S.root).phase.toNat=p ∧ (src x S.root).op.toNat=op
 
@@ -1016,19 +1015,6 @@ theorem original_first_turn_receipt (P : WidthLower s n) (S : Sector P.h d)
         | turned a => exact ⟨u,e::v,a,rfl,G⟩
   obtain ⟨u,v,a,E,G⟩ := aux [] w .issue (.start X I) D
   exact ⟨u,v,a,E,G,generated_turn P S x op O u a G⟩
-
-#print axioms sourceStep_eq
-#print axioms raw_sources
-#print axioms execute_good
-#print axioms source_issue_fresh
-#print axioms front_inside_hold
-#print axioms front_inside_advance
-#print axioms front_turn
-#print axioms generated_forward_one_mark
-#print axioms generated_active
-#print axioms generated_turn
-#print axioms first_turn_expected
-#print axioms original_first_turn_receipt
 
 end L4.WidthFreshForward
 

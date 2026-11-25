@@ -283,8 +283,3 @@ theorem phase_account_fold {p c n d0 X : Nat} (hn : 4 ≤ n) (i : Fin n)
 
 end L4.RearTrace
 
-#print axioms L4.RearTrace.budget_step
-#print axioms L4.RearTrace.phaseBudget_tag_unpinned
-
-#print axioms L4.RearTrace.phase_account_step
-#print axioms L4.RearTrace.phase_account_fold

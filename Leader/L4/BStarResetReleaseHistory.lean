@@ -64,9 +64,6 @@ theorem rrel_forward_service {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have shape := BStarAcquireReturn.link_shape _ c d hc hd
   exact ⟨c,hc,by rw [shape.2.1]; decide,src,old.2.1⟩
 
-#print axioms forward_literal
-#print axioms rrel_forward_service
-
 /-- Any completed outward/back trace must cross every forward index
 below the terminal. Old/post states are from the same physical prefix. -/
 theorem crossing {Y : Type} {m : Nat} (nextMark : Y → Fin m → Y)
@@ -123,8 +120,6 @@ theorem completed_services {base x : X} {hh : ∃ i,oldH6 B base i=true}
   obtain ⟨layout,v,p⟩ := facts _ I
   exact ⟨pre,e,tail,W,rrel_forward_service hp C layout e (sep e) j G' Y v p⟩
 
-#print axioms completed_services
-
 /-- Every hardwired reader/writer incidence of the chart owner is
 physically cleared at a mark in this very healthy RREL history. -/
 theorem incidence_release {base x : X} {hh : ∃ i,oldH6 B base i=true}
@@ -167,8 +162,6 @@ theorem incidence_release {base x : X} {hh : ∃ i,oldH6 B base i=true}
   obtain ⟨pre,e,tail,W,H⟩ := completed_services hp C sep Inv closed facts init G w T t small
   rw [eq] at H
   exact ⟨pre,e,tail,W,service_zero hp _ e (sep e) (i,k) j rfl H⟩
-
-#print axioms incidence_release
 
 open BStarResetChartService BStarResetCycle
 
@@ -221,8 +214,6 @@ theorem stage_release {base x y : X} {hh : ∃ i,oldH6 B base i=true}
   rw [W,T]
   simp only [List.cons_append,List.append_assoc,door,root]
 
-#print axioms stage_release
-
 /-- Under actual service a clean outward suffix remains clean. For
 a parked front the current link cannot have serviced that front;
 for a moving front the newly occupied destination is excluded
@@ -263,5 +254,4 @@ theorem healthy_forward_ne_trail (op : Nat) (v : BStarSeparatingRail.Rail) :
   rw [T] at A
   contradiction
 
-#print axioms clean_outward_step
 end L4.BStarResetReleaseHistory

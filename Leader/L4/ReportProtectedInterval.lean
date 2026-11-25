@@ -184,11 +184,6 @@ theorem literal_right_sticky_commit (p : Params) (hu : Bool) (u v : BitVec p.w)
   dsimp only at C ⊢
   exact ⟨S,congrArg (publicationA p _) C.1 |>.trans (C.2.1.trans S.symm)⟩
 
-#print axioms threshold_step
-#print axioms old_paint_identity
-#print axioms one_mark
-#print axioms literal_right_sticky_commit
-
 /-- A site is sticky when a single actually protected center covers it.
 The all-owner two-cut epoch is carried separately, not existentially
 recreated from the selected byte snapshot. -/
@@ -231,6 +226,4 @@ theorem covering_run (R : Readout X I) (radius : Nat) (neighbor : Bool→I→I)
     obtain ⟨Y,V,Z⟩ := ih (step x e) (epoch_step x e epoch) (fun i=>(S i).2.1)
     exact ⟨Y,V,fun i=>(Z i).trans (S i).2.2⟩
 
-#print axioms sticky_step
-#print axioms covering_run
 end L4.ReportProtectedInterval

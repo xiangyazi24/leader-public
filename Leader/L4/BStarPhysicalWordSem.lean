@@ -111,8 +111,4 @@ theorem physical_shift_word {r : Nat} {geom : Fin r → LongGeometry} {old updat
       (fun q c hc => shift_row (geom q) (old q) i a (tokens q.val) ha c hc)).2 ⟨j,hj⟩
     exact ⟨c,hc,hy,hh⟩
 
-#print axioms follows
-#print axioms physical_add_word
-#print axioms physical_sub_word
-#print axioms physical_shift_word
 end L4.BStarPhysicalWordSem

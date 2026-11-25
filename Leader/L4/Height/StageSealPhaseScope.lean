@@ -82,6 +82,4 @@ theorem before_seal_scope {base x : X} {addr : Nat→Pos n} {len k l : Nat}
   · intro _ E
     cases E
 
-#print axioms post_stage_scope
-#print axioms before_seal_scope
 end L4.Height.StageSealPhaseScope

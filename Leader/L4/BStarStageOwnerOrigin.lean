@@ -110,7 +110,6 @@ theorem joined_slot_origin (k₁ k₂ t₂ J₁ J₂ r tune p c₁ : Nat) (hp : 
           obtain ⟨v,H⟩ := joined_hop k₁ k₂ t₂ J₁ J₂ r tune p c₁ hp x C d q f E act F hf
           exact .inr ⟨C,v,hc,E,H⟩
 
-
 open BStarSeparatorQuiet BStarResetChartService
 
 /-- In a live WAIT on the settled chart, every healthy new STAGE at an
@@ -168,7 +167,6 @@ theorem ring_origin {base x : X} {hh : ∃ i,oldH6 B base i=true}
     · exact active (R (addr i).2) (Prod.ext rr rfl)
     · exact ⟨i,hi,pay,(idle_off_pair hp x e (addr i) l rr).symm.trans F,H,rfl⟩
 
-
 theorem busy_origin {base x : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
     (C : Chart hp base hh o S len fall) (sep : ∀ e : Fin n,e≠rightNeighbor e)
@@ -190,7 +188,6 @@ theorem busy_origin {base x : X} {hh : ∃ i,oldH6 B base i=true}
     | arrived_hold _ =>
       exact (BStarOwnerControlHistory.pointed_backward_no_forward _ len 0
         (busy_start hp tail).2.1 j hj ⟨q,Q⟩).elim
-
 
 /-- A healthy actual STAGE on the generated owner rail traces to its
 genuine own ISSUE408, with equality of the full effective payload and
@@ -260,9 +257,6 @@ theorem from_generated {base x : X} {hh : ∃ i,oldH6 B base i=true}
       exact ⟨congrArg (fun op => Mode.busy op (.out i)) P',pre,post,e,a,split,atDoor,
         ⟨valid,a,init,snap⟩,pc.trans P',by rwa [pc,P'] at init,A0.trans argEq,P' ▸ busy⟩
 
-#print axioms busy_origin
-#print axioms from_generated
-
 /-- Actual healthy STAGE offered by the selected body row of the
 same owner. Starting from idle, its full effective payload has
 an authenticated physical ISSUE408 ancestor on the given tape. -/
@@ -299,7 +293,4 @@ theorem offered_from_generated {base x : X} {hh : ∃ i,oldH6 B base i=true}
     from_generated hp C sep P now i hi q F H
   exact ⟨mode,pre,post,door,a,split,nom,launched,op,init,val.trans E,busy⟩
 
-#print axioms joined_slot_origin
-#print axioms ring_origin
-#print axioms offered_from_generated
 end L4.BStarStageOwnerOrigin

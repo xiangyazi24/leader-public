@@ -73,8 +73,4 @@ theorem ready_descent {s n : Nat} {h : Fin n → Bool} (C : Chart h)
     exact turn_lt i F (by change (slot C.route y i.val).tag≠2; omega) (fun j A => other j (fun Q=>A (Fin.ext Q))
       (by have := j.isLt; omega))
 
-#print axioms remote_slot
-#print axioms chart_except
-#print axioms ready_descent
-
 end L4.ShortForwardReadyRank

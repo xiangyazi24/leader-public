@@ -147,7 +147,4 @@ theorem idle {s n : Nat} {h : Fin n → Bool} (C : Chart h) (limit : Nat)
     simp only [modeNext,L,score]
     exact ⟨fun d=>V.1 (Option.some.inj d.1),trivial⟩
 
-#print axioms score_bounds
-#print axioms nominate
-#print axioms idle
 end L4.ShortSimulLocalParam

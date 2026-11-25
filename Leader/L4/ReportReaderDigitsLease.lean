@@ -56,6 +56,4 @@ theorem reader_grant_protects_digit_pair (sheet : Sheet) (x : Raw s n)
   exact Bool.noConfusion (Held.symm.trans
     (Side.elim (fun J=>J ▸ (C W).1) (fun J=>J ▸ (C W).2)))
 
-#print axioms no_writer_protects_digit_pair
-#print axioms reader_grant_protects_digit_pair
 end L4.ReportReaderDigitsLease

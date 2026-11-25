@@ -152,8 +152,4 @@ theorem first_consume_is_clear (Frames : WireFrames s n) (C : Chart h) (x : Raw 
   rw [done] at F
   exact F
 
-#print axioms launch
-#print axioms active_step
-#print axioms active_run
-#print axioms first_consume_is_clear
 end L4.ShortAdmitFlight

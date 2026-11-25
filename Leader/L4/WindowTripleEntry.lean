@@ -106,6 +106,4 @@ theorem original_window_triple {p c n : Nat} (x : Config p c n) (hn : 4≤n)
   have F := expected_scoped_deletion C base (z,false) H
   simpa only [Nat.sub_add_cancel A,Nat.sub_add_cancel B] using F
 
-#print axioms context_of_roster
-#print axioms original_window_triple
 end L4.WindowTripleEntry

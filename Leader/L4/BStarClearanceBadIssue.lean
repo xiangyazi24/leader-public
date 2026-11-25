@@ -118,7 +118,6 @@ theorem empty_suffix {base x : XX} {hh : ∃ i, oldH6 B base i=true}
     · exact selected (R (addr j).2) (Prod.ext hr rfl)
     · exact (idle_off_pair hp x e (addr j) hl hr).trans (clean j hlen)
 
-
 open BStarClearanceSource BStarResetControllerEntry BStarAcquireWaitControl
 
 /-- A valid old ISSUE on an empty rail with no legal operand does not
@@ -172,6 +171,4 @@ theorem restart {base x : XX} {hh : ∃ i, oldH6 B base i=true}
     rwa [K]
   · exact empty_suffix hp (x := x) C same clean door (distinct door) j (by omega) hj
 
-#print axioms empty_suffix
-#print axioms restart
 end L4.BStarClearanceBadIssue

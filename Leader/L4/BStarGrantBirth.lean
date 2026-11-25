@@ -62,8 +62,6 @@ theorem joined_birth (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   obtain ⟨header,G⟩ := Bool.and_eq_true_iff.mp R
   exact ⟨header,result_birth _ _ _ j Orig G⟩
 
-#print axioms joined_birth
-
 open BStarH6WordChart
 
 variable {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
@@ -127,8 +125,6 @@ theorem mark_birth (x : X) (e i : Fin n) (j : Fin 3)
         simp only [AllSizeS1Geometry.step,if_neg E,if_neg R]
       exact (N (by unfold bit; rw [H]; exact Z)).elim
 
-#print axioms mark_birth
-
 local notation "run" => BStarResetSchedule.run step
 
 def Continuous (x : X) (i : Fin n) (j : Fin 3) (w : List (Fin n)) : Prop :=
@@ -172,8 +168,6 @@ theorem born_after_zero (sep : ∀ e : Fin n,e≠rightNeighbor e)
       WonAt hp (run x pre) e i j ∧ Continuous hp (step (run x pre) e) i j suf :=
   (continuous_or_birth hp sep x i j w H).resolve_left (fun A => A [] w rfl Z)
 
-#print axioms born_after_zero
-
 /-- After a reset service, no marked old win at that same physical
 incidence suffices to keep its cleared bit zero through the tape. -/
 theorem zero_along (sep : ∀ e : Fin n,e≠rightNeighbor e)
@@ -186,5 +180,4 @@ theorem zero_along (sep : ∀ e : Fin n,e≠rightNeighbor e)
   obtain ⟨u,e,v,E,_,W,_⟩ := born_after_zero hp sep x i j w Z N
   exact none u e v E W
 
-#print axioms zero_along
 end L4.BStarGrantBirth

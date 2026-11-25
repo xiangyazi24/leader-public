@@ -255,10 +255,6 @@ theorem rooted_after_cover_observer_bound {β : Type} {p c1 n : Nat} (hn : 4 ≤
   rw [hstart] at hc
   simpa [visit] using hc
 
-#print axioms root_nonempty_step
-#print axioms rooted_of_not_dvd
-#print axioms rooted_cover_expected
-
 /-- The complementary decoded-rootless set stays rootless on *every*
 mark even with arbitrary stock, noncanonical rails, signals, and bullets.
 This is why an arbitrary-start extension across divisible rings is
@@ -320,6 +316,4 @@ theorem flatUnrooted4_never_safe (w : List (Fin 4)) : ¬ SafeOneLeader (run flat
       exact (liftedSite_succ i 3).symm, liftedSite_full]
   exact root_empty_run (by decide) flatUnrooted4 w h ⟨e,.inl (he.symm ▸ hL)⟩
 
-#print axioms root_empty_step
-#print axioms flatUnrooted4_never_safe
 end L4.RootedEntrance

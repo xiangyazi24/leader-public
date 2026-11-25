@@ -96,7 +96,4 @@ theorem later_digit_at {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact BStarNativeEndCache.later_digit_at hp chart sep F H between later A same d M now radix hr
     inPrefix (by rwa [ordEq]) flags notShort
 
-#print axioms later_digit_at
-
-#print axioms later_offset
 end L4.BStarNativeOffsetDigitAt

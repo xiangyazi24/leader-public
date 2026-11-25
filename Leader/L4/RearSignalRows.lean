@@ -210,12 +210,4 @@ theorem rear_transfer_no_one {p c1 : Nat} (u v : Site p c1)
     simp [fireResponder,hl,impact,hm,pinned,followerBullet,hb,he,hU,Signal.max,pay_fields,
       show (Bullet.live == Bullet.none) = false from rfl]
 
-#print axioms rear_swept_step
-#print axioms rear_fixed_step
-#print axioms rear_transfer_no_one
-#print axioms rear_responder_no_one
-#print axioms rear_corridor_no_one
-#print axioms rear_incoming_shield
-#print axioms rear_outgoing_shield
-
 end L4

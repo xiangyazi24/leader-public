@@ -107,11 +107,6 @@ theorem envelope_service_cells (rho n t : Nat) (N : 0<n)
   obtain ⟨j,J⟩ := L
   exact ⟨⟨j,fun i I=>⟨Nat.le_trans Warm (J i I).1,J i I⟩⟩,R⟩
 
-#print axioms production_half_count
-#print axioms aligned_cells
-#print axioms envelope_margins
-#print axioms envelope_service_cells
-
 open ReportByteRows ReportPulseRaw ReportPulseWarmup
 
 variable {X G : Type} {n m : Nat}
@@ -204,7 +199,4 @@ theorem envelope_quiet (rho : Nat) (gate : Fin m→G) (N : 0<n)
     exact NoClose ⟨a,b,t,i,TT,M,D,paintPair_close raw put p bytes x _ _ _ t i w
       (by omega) At (Warm a) (Warm b) Hit P⟩
 
-#print axioms warm_prefix_of_hit
-#print axioms paintPair_close
-#print axioms envelope_quiet
 end L4.ReportPulseQuietCells

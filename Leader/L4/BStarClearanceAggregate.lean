@@ -77,7 +77,6 @@ theorem aggregate_lt {A : Type} (before after : A → Nat)
     outside_total _ _ _ frame]
   exact Nat.add_lt_add_right (block_total_lt _ _ _ local_le pays) _
 
-
 /-- Explicit complement of selected chart occurrences. The only chart
 hypotheses are no duplicated occurrence and containment in the owner. -/
 def remainder {A : Type} [DecidableEq A] (slots : List A) (blocks : List (List A)) :
@@ -126,7 +125,4 @@ theorem chart_pays {A : Type} [DecidableEq A] (before after : A → Nat)
   exact Nat.add_lt_add_of_lt_of_le (block_total_lt _ _ _ local_le pays)
     (sum_mono _ _ _ outside)
 
-#print axioms aggregate_le
-#print axioms aggregate_lt
-#print axioms chart_pays
 end L4.BStarClearanceAggregate

@@ -86,5 +86,4 @@ theorem miss_bound {n : Nat} (D : List (Fin n) → Nat) (S : List (Fin n) → Li
     _ ≤ n^extra*(q*D []*n^(j*B)) := Nat.mul_le_mul_left _ drop
     _ = q*D []*n^(j*B+extra) := by rw [Nat.pow_add]; ac_rfl
 
-#print axioms miss_bound
 end L4.BStarRawBlockDrift

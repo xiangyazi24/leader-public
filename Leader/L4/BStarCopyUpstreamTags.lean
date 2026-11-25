@@ -109,10 +109,6 @@ theorem nonretaining_tag_joined {L : Type} (digits : L→BitVec 36) (tag : L)
   rw [BStarClearanceMobileJoined.joined_view k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x]
   exact nonretaining_tag_pair digits tag _ _ cl u v source dst kind sel ne ret gates input vacancy
 
-#print axioms tags_move
-#print axioms right_rd_geometry
-#print axioms nonretaining_tag_joined
-
 /-- Pure old-head credit. It comes from the existing exact ordered
 ledger even when a release on this same mark is excluded. -/
 theorem old_head_credit {L : Type} {plan : List L} {s : Ledger L} (tag : L) (u : List L)
@@ -169,9 +165,6 @@ theorem physical_inner_keeps_order {L : Type} (digits : L→BitVec 36)
   rw [tags_move]
   exact P
 
-#print axioms physical_cross_head
-#print axioms physical_inner_keeps_order
-
 /-- Actual old-right to old-left hop into right center OUT padding.
 Outside RD never retains; it moves precisely the tagged old mobile,
 whether the sender is old-right RS at the seam or old-right RD. -/
@@ -205,8 +198,6 @@ theorem right_padding_hop {L : Type} (digits : L→BitVec 36) (tag : L)
   exact nonretaining_tag_joined hp digits tag x cl _ dst rfl D shape.1 sel shape.2
     notRet gate sender target
 
-#print axioms right_padding_hop
-
 /-- The selected old upstream source position receives the exact frozen
 packet, whose label is the next issued occurrence. Its insertion is at
 the tail of the word if all physically behind positions are vacant. -/
@@ -231,8 +222,6 @@ theorem physical_inject_tail {L : Type} (digits : L→BitVec 36)
   have H := BStarCopyOperand.ring_inject hp x e sep sd rev (digits tag) chosen gate frozen empty
   rw [tags_new_tail _ _ _ behindEmpty]
   exact ⟨.mark P (.issue s _ tag todo next),congrArg Lane.mobile H,congrArg Lane.frozen H⟩
-
-#print axioms physical_inject_tail
 
 private theorem old_site_view (x : X) (e : Fin n) (a : At Sheet) :
     view ((x e).long,(x (rightNeighbor e)).long) a=
@@ -284,8 +273,6 @@ theorem ring_cross_head {L : Type} (digits : L→BitVec 36)
   rw [uEq,vEq]
   exact ⟨advance,src,dst⟩
 
-#print axioms ring_cross_head
-
 open BStarH6Ordinal
 
 /-- A non-seam selected RD-to-RD move across the right center padding
@@ -313,5 +300,4 @@ theorem rd_padding_ordinal (x : X) (hh : ∃ i,oldH6 B x i=true) (e : Fin n)
   rw [source]
   exact ordinal_body _ hh e body
 
-#print axioms rd_padding_ordinal
 end L4.BStarCopyUpstreamTags

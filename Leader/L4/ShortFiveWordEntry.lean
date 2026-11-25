@@ -134,7 +134,6 @@ theorem hello_body_scans (C : Chart h) : HScan C (helloBody C) (.fwd 0)=.rev 0 :
     simp [ShortHelloFlight.scan,nextStage,show ¬ C.L-1+1<C.L by omega]
   rw [helloBody,h_app,H,h_rev]
 
-
 def admitBody (C : Chart h) (g : Nat) : List (Fin n) :=
   (List.range g).map (nextAt C.root) ++
   [nextAt C.root g,nextAt C.root (g-1),nextAt C.root g] ++
@@ -204,7 +203,4 @@ theorem winning_entry {s : Nat} (C : Chart h) (x : Raw s n)
     (by simp) (a_live_before_last C g _ _ A d) (admit_end C g gp gL)
   simpa [tour,admit,helloBody,admitBody,d,List.append_assoc] using P
 
-#print axioms hello_body_scans
-#print axioms admit_body_scans
-#print axioms winning_entry
 end L4.ShortFiveWordEntry

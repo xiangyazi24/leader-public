@@ -231,5 +231,4 @@ theorem physical_need_read {base initial : X} (u v tail : List (Fin n))
       rw [activate,if_neg E]
       exact F
 
-#print axioms physical_need_read
 end L4.BStarReceiptRecoveredRead

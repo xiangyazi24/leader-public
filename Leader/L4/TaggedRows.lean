@@ -206,13 +206,3 @@ theorem tagStep_responder_live {p c1 : Nat} (u v : Site p c1) (a b : Bool)
 
 end L4
 
-#print axioms L4.tagTransfer_iff
-#print axioms L4.tagTransfer_live
-#print axioms L4.tagResident_iff
-#print axioms L4.tagTransfer_excludes_resident
-#print axioms L4.tagStep_outgoing
-#print axioms L4.tagStep_incoming
-#print axioms L4.tagStep_no_new
-#print axioms L4.tagStep_responder_live
-
-#print axioms L4.tagResident_no_birth_iff

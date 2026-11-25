@@ -50,7 +50,4 @@ theorem report2_commit_keeps_digits {s n : Nat} (x : Raw s n) (e : Fin n)
   exact (congrArg (fun r => reportDigitPair (secondParams s) r ix) P).trans
     (join_commit_keeps_digits (secondParams s) _ (x e).report2 (x (rightNeighbor e)).report2 dsc ix G)
 
-#print axioms join_commit_keeps_digits
-#print axioms report1_commit_keeps_digits
-#print axioms report2_commit_keeps_digits
 end L4.ReportRawCommitDigits

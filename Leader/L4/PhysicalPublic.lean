@@ -22,7 +22,4 @@ theorem public_suffixes :
         Height.IIDExpectedHittingTimeAtMost boundedNext BoundedElected x (cpub*n^2)) :=
   ⟨cpub, packed_suffix_at_cpub, bounded_suffix_at_cpub⟩
 
-#print axioms packed_suffix_at_cpub
-#print axioms bounded_suffix_at_cpub
-#print axioms public_suffixes
 end L4.PhysicalPublic

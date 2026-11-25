@@ -123,6 +123,4 @@ theorem native_record_bounds (r : Nat) (bank : Bank) (side : Fin 3) :
     · exact Nat.mod_lt _ hp
   all_goals repeat first | apply And.intro | exact Nat.mod_lt _ hp | exact Nat.mod_lt _ (edit_positive r)
 
-#print axioms stagedEdit_native
-#print axioms native_record_bounds
 end L4.Compiler.Native

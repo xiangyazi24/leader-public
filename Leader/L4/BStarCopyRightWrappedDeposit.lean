@@ -61,5 +61,4 @@ theorem ingress_release_and_cross {Tag : Type} (digits : Tag→BitVec 36) (x : X
   exact ⟨.mark advance (.issue _ up newTag todo pending),source,recv,
     congrArg Lane.mobile dep,congrArg Lane.frozen dep⟩
 
-#print axioms ingress_release_and_cross
 end L4.BStarCopyRightWrappedDeposit

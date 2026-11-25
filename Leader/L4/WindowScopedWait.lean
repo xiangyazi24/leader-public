@@ -108,9 +108,6 @@ theorem ready_nomination_follow {p c n : Nat} (hn : 4≤n) (v : Fin n)
             (hProjection.crossing (Nat.pos_of_ne_zero hk0) hklt hs' hz)
     exact Or.inr (Or.inr ⟨hk1,Or.inr H⟩)
 
-
-
-
 /-- Any retained mark preserves the current short-watch certificate,
 including an exterior retirement. -/
 theorem ready_wait_follow {p c n : Nat} (hn : 4≤n) (v : Fin n)
@@ -142,9 +139,6 @@ theorem ready_complete_follow {p c n : Nat} (v : Fin n) (s : Obs p c n)
   · exact False.elim (Bool.noConfusion (hs.symm.trans h.1))
   · exact hs
   · omega
-
-#print axioms ready_wait_follow
-#print axioms ready_nomination_follow
 
 /-- While monitoring the original distance d, foreign marks remain actual
 marks but leave the nominated-prefix count unchanged. At completion the
@@ -210,5 +204,4 @@ theorem rawWatch_complete {p c n : Nat} (hn : 4≤n) (v : Fin n) (d : Nat)
     (Or.inr (Or.inr ⟨Nat.zero_le _, Or.inl rfl⟩))
   exact ready_complete_follow v _ d H.1 (by simpa [proj,hDone] using H.2)
 
-#print axioms rawWatch_complete
 end L4.WindowScopedWait

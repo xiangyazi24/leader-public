@@ -53,8 +53,6 @@ theorem nominated_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
       | forward => exact ⟨.transit _ _ _ live (.cons M go (.forward j) gd (.nil _ _)),nxt,post⟩
       | turn => exact (Nat.lt_irrefl _ J).elim
 
-#print axioms nominated_step
-
 open BStarResetChartNomination BStarAcquireRailCoverage BStarSeparatingProgress
 
 /-- Ordered service certificate. The word uses one structurally
@@ -118,5 +116,4 @@ theorem ordered_to_center {base : X} {hh : ∃ i,oldH6 B base i=true}
       have E : j+k.succ=(j+1)+k := by omega
       simpa only [List.getElem_cons_succ,E] using M
 
-#print axioms ordered_to_center
 end L4.BStarCommitService

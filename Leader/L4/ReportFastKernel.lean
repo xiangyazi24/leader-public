@@ -173,9 +173,4 @@ theorem coefficient_le_of_exp (t W S : Nat) (Esize : cap+14≤S) :
 
 theorem exponent_le_deployed : cap+14≤2^22+14 := Nat.le_refl _
 
-#print axioms paper_block_success
-#print axioms block_project
-#print axioms paper_uniform_publication
-#print axioms coefficient_le_of_exp
-#print axioms exponent_le_deployed
 end L4.ReportFastKernel

@@ -119,7 +119,6 @@ theorem eligible_done {x : S} (pc : S→Nat) (ended : S→Bool)
   unfold Done eligible
   cases ended x <;> by_cases P : pc x=11 <;> simp [P]
 
-
 theorem reserve_arms (active entry ended : S→Bool) (phys : S→Two (l:=l) (r:=r))
     (s : S) :
     phaseUpdate active entry ended phys .reserve s=.active ↔
@@ -182,7 +181,6 @@ theorem armed_wordSum (next : S→Fin n→S) (pc : S→Nat) (entry ended : S→B
   unfold actual
   rw [Nat.min_eq_right (by rw [←len]; exact Thru.wait_le_length next _ _ _)]
 
-
 /-- Instantiate the residual escrow from the physical censored mean.
 The history component is initialized at the start of the tracked
 attempt; this proof does not identify the concrete entry predicate. -/
@@ -219,9 +217,4 @@ theorem exists_actual_escrow (hn : 0<n)
     · rw [Height.iidHitCost_of_target _ (Hit ended) y (Or.inl A)]
       exact Nat.zero_le _
 
-#print axioms lift_well
-#print axioms armed_wait
-#print axioms lift_emitted
-#print axioms armed_wordSum
-#print axioms exists_actual_escrow
 end L4.BStarFenceEscrowMonitor

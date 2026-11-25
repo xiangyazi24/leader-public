@@ -4,7 +4,6 @@ import Leader.L4.Compiler.NativeSpec
 namespace L4.Compiler.Native
 open Interp
 
-
 def outputBase (delta : Bool) : Nat := if delta then 410 else 305
 
 def wordSources (delta : Bool) (i : Fin 8) : Nat × Nat :=
@@ -143,7 +142,6 @@ private theorem outBaseBounds (delta : Bool) :
       (outIx delta).1 0=225 ∧ (outIx delta).2 0=221 := by
   cases delta <;> decide +kernel
 
-
 theorem generated_word_field {r : Nat} (T : PrimTable r) (bank : Bank)
     (hT : PrimSem T bank) (delta : Bool) (g : OutputFlags)
     (ew ow : Fin 8 → Nat) (eb ob : Fin 8 → Bool) (tick : Nat) (err : Bool)
@@ -229,5 +227,4 @@ theorem generated_readOut {r : Nat} (T : PrimTable r) (bank : Bank)
   · exact generated_word_field T bank hT delta g ew ow eb ob tick err H
   · exact generated_bit_field T bank delta g ew ow eb ob tick err H
 
-#print axioms generated_readOut
 end L4.Compiler.Native

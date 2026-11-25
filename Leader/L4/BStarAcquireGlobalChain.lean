@@ -132,5 +132,4 @@ theorem owner_chain (G : Rail V O) (o : O) :
   rw [←eq]
   exact F.contains_at_join R
 
-#print axioms owner_chain
 end L4.BStarAcquireGlobalChain

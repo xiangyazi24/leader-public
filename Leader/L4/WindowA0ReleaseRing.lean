@@ -77,5 +77,3 @@ theorem unpaid_ring_release {p c n : Nat} (hn : 5≤n) (x : Config p c n) (base 
     hres hoff hwq (by cases q <;> exact clean)
 
 end L4.WindowA0Release
-#print axioms L4.WindowA0Release.paid_ring_release
-#print axioms L4.WindowA0Release.unpaid_ring_release

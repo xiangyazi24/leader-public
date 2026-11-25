@@ -111,6 +111,4 @@ theorem first_departure (w : List (Fin n)) (p : Phase)
       obtain ⟨pre,post,s,E,read⟩ := ih q exit'
       exact ⟨e::pre,post,s,congrArg (List.cons e) E,by simp [readSegment,h,read]⟩
 
-#print axioms left_right_left
-#print axioms first_departure
 end L4.BStarBitGateCover

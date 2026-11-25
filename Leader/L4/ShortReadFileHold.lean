@@ -69,9 +69,6 @@ theorem safe_door_retains_file {s n : Nat} (x : Raw s n) (e : Fin n)
       Field.read_other_assign fileField (kField 0) _ _ (.inr (by decide))]
     exact (safe_source_patch _ _ b H).trans (B fileField (by decide) (by decide))
 
-#print axioms safe_source_patch
-#print axioms safe_door_retains_file
-
 theorem outgoing_retains_file {s n : Nat} (x : Raw s n) (e : Fin n)
     (head : header x e=true) :
     fileField.read (rawNext s x e e).mis1 = fileField.read (x e).mis1 := by
@@ -126,6 +123,4 @@ theorem safe_fileTrace {s n : Nat} (N : 5≤n) (x : Raw s n) (i : Fin n)
       (PhysicalCustody.H1.raw_h1_selected_frozen N x e i Q.1).trans H
     exact (ih (rawNext s x e) (h2_ready_closed N x e Q) H' S.2).trans keep
 
-#print axioms outgoing_retains_file
-#print axioms safe_fileTrace
 end L4.ShortReadFileHold

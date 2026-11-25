@@ -124,11 +124,6 @@ theorem distance_pays (u v : LongGeometry) (i j : Fin 11) (d : Nat) (p q : Paylo
   simp only [forwardRank]
   omega
 
-#print axioms bind_rank
-#print axioms observe_unit
-#print axioms observe_rank
-#print axioms distance_pays
-
 /-- Every literal normalized K assignment weakly lowers the local
 first coordinate compared with the raw old token. This includes
 off-IN discard, which writes empty rather than a fault front. -/
@@ -176,6 +171,4 @@ theorem observed_assignment_rank (g : Pair LongGeometry) (old : ReadK)
         exact Nat.lt_of_le_of_lt (bind_rank _ _ _ _) (by omega)
     · contradiction
 
-#print axioms normalization_rank
-#print axioms observed_assignment_rank
 end L4.BStarClearanceGate

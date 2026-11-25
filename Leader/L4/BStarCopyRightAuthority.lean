@@ -41,8 +41,6 @@ theorem strip_same_owner {a : LargeParams} {n : Nat} {b : LargeRows a}
     rw [←addr_next] at H
     exact H.trans (IH (by omega))
 
-#print axioms strip_same_owner
-
 variable {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
 local notation "B" => bStar k₁ k₂ t₂ J₁ J₂ r c p c₁ hp
 local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r c p c₁)
@@ -89,5 +87,4 @@ theorem no_competing_from_pointed {base x : X}
   exact ne ((addr_inj a (Nat.lt_of_le_of_lt it C.tail_lt)
     (Nat.lt_of_le_of_lt jt C.tail_lt) first).symm)
 
-#print axioms no_competing_from_pointed
 end L4.BStarCopyRightAuthority

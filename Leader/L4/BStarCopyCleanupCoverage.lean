@@ -269,7 +269,6 @@ theorem outward_cleanup {base y : X} {hh : ∃ i,oldH6 B base i=true}
   exact record_cleanup hp chart (T.to_tape hp) opcode prep code P ne5 (aligned_cleanup_health hp chart sep T (Nat.le_refl _) pay F good op)
     i sh active own
 
-
 open BStarReplyBack BStarAcquireAckAncestry BStarAcquireHistoryReturn BStarLongDoor BStarBankTrace BStarResetChartService
 open BStarSeparatorControl BStarResetControllerEntry BStarSeparatingRail
 local notation "ring" => AllSizeS1Geometry.step (n:=n) B
@@ -312,7 +311,4 @@ theorem accepted_cleanup_terminal {base x : X} {hh : ∃ i,oldH6 B base i=true}
     (by rw [op9]; simp [acquire]; omega) returned'
   exact ⟨lead,back,turn,f,spl,rebuilt,FF,cl,(congrArg BitVec.toNat op).trans op9⟩
 
-
-#print axioms accepted_cleanup_terminal
-#print axioms outward_cleanup
 end L4.BStarCopyCleanupCoverage

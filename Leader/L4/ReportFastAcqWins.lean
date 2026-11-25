@@ -599,21 +599,5 @@ theorem incumbent_own_grant_counterexample :
       (grantAddr p 1)=true := by
   decide
 
-#print axioms own_clear_from_receipt
-#print axioms issue_clear
-#print axioms actual_header_win
-#print axioms actual_header_capture
-#print axioms phase_step
-#print axioms fenced_run
-#print axioms root_success
-#print axioms earlier_capture_frames
-#print axioms held_from_actual_win
-#print axioms fenced_acq_consume
-#print axioms ordered_acq_headers
-#print axioms forward_pays
-#print axioms reverse_pays
-#print axioms incumbent_own_grant_counterexample
-
 end L4.ReportFastAcqWins
-
 

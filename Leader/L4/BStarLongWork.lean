@@ -7,7 +7,7 @@ import Leader.L4.BStarIntegration
 /-! The concrete long producer and the concrete bundle. Every
 physical operation is wired to an executable handler, and all old
 reads are captured before lowering a single patch. This definition
-does not itself prove the independent whole-row refinement or G9. -/
+does not itself prove the independent whole-row refinement or the all-size composition. -/
 namespace L4.BStarLongWork
 open AllSizeProtocol BStarTrace BStarLongClaims BStarLongToken
 open BStarLongTransport
@@ -110,8 +110,4 @@ theorem nonadvancing_no_publication (g : Pair LongGeometry) (x : Pair (BitVec LW
     split <;> rfl
   | _ => rfl
 
-#print axioms long_exec
-#print axioms exact_assignment_mask
-#print axioms bStar_long
-#print axioms nonadvancing_no_publication
 end L4.BStarLongWork

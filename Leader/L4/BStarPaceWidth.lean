@@ -71,5 +71,4 @@ theorem receiver_width_le_len {base : X} {hh : ∃ i,oldH6 B base i=true}
   rw [Lsize,C.length] at K
   omega
 
-#print axioms receiver_width_le_len
 end L4.BStarPaceWidth

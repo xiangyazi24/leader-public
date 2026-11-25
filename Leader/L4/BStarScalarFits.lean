@@ -136,7 +136,4 @@ theorem receipt_fit {r : Nat} (T : PrimTable r) (bank : Bank) (old : BitVec LW)
   · exact G'
   · contradiction
 
-#print axioms receipt_fit
-#print axioms literal_width
-#print axioms result_fit
 end L4.BStarScalarFits

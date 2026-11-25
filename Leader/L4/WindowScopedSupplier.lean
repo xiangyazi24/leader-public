@@ -101,7 +101,6 @@ theorem firstMark_after_local_step {p c n d : Nat} (hn : 4 ≤ n)
     · intro k hk
       simpa [covered_step_mark hn x hm,hg] using hd.before k hk
 
-
 /-- This update records all actual pair effects. Only the calling
 window router decides whether the current stage is still live. -/
 def follow {p c n : Nat} (v : Fin n) (d : Nat) (x : Config p c n) (e : Fin n) :
@@ -261,5 +260,3 @@ theorem real_cut_after_local_step {p c n d d0 : Nat} (hn : 4≤n) (v : Fin n)
 
 end L4.WindowScopedSupplier
 
-#print axioms L4.WindowScopedSupplier.firstMark_after_local_step
-#print axioms L4.WindowScopedSupplier.exterior_continues_protection

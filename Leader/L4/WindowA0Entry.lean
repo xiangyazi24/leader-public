@@ -99,10 +99,6 @@ theorem good_of_cut {p c n : Nat} {x : Config p c n}
     rw [show (coordinates z extra spent).J-1=j by simp [coordinates,j],←incoming_origin]
     exact hExtra hx
 
-#print axioms no_direct_realStep
-#print axioms coordinates_keep
-#print axioms good_of_cut
-
 open SevenTagCharge
 
 structure Framed {p c n : Nat} (initial : Config p c n)
@@ -159,9 +155,6 @@ theorem actual_order {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
   rw [coordinates_keep g a b base e z extra spent hz he]
   change (next g a b base z e).heads.i+1<(next g a b base z e).heads.j+1
   exact Nat.succ_lt_succ (framed_keep hn g a b k base z e ha hb hk hz he old).ij
-
-#print axioms framed_keep
-#print axioms actual_order
 
 theorem paid_le_of_noexit {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
     (g : List (Fin n)) (a b k base : Fin n) (z : Cursor p c n)
@@ -258,7 +251,6 @@ private theorem cut_bound (z : Observer p c n)
       z.spent (i+1)
     change cutsAt base m z i = _+cutsAt base m z (i+1) at H
     omega
-
 
 theorem mask_next (z : Observer p c n) (e : Fin n)
     (h : (clockNext g a b base z e).real.exit=none) :
@@ -373,10 +365,6 @@ theorem gatedRules (S : Setup initial g a b k base m z₀) :
       rw [←mask_config (g:=g) (a:=a) (b:=b) (base:=base) z e,←E] at F
       exact F
 
-#print axioms cut_step_literal
-#print axioms traceGood_keep
-#print axioms gatedRules
-
 open WindowA0PausedDAG WindowA0MaskedTrace FIFOCompare in
 theorem discharge (S : Setup initial g a b k base m z₀) (z : Observer p c n)
     (h : TraceGood initial g a b k base m P z₀ z)
@@ -477,6 +465,4 @@ theorem entry_drain (hn : 4≤n) (x : Config p c n)
     (TraceGood x g (tag 1) (tag 2) (tag 3) base m P z) (height base m P) HP (Nat.le_refl _)
     rfl (fun _ _ => rfl) (gatedRules S) (traceGood_keep S) hg (discharge S)
 
-#print axioms discharge
-#print axioms entry_drain
 end L4.WindowA0Entry

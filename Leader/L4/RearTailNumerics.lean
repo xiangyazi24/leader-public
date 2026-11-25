@@ -268,11 +268,3 @@ theorem allTags_expected_of_weighted_tail {α : Type} {n m : Nat}
 
 end L4.RearTailNumerics
 
-#print axioms L4.RearTailNumerics.local_kernel_constants
-#print axioms L4.RearTailNumerics.half_block
-#print axioms L4.RearTailNumerics.cutoff_of_horizon_weight
-#print axioms L4.RearTailNumerics.allTags_expected_of_tail
-#print axioms L4.RearTailNumerics.allTags_expected_of_weighted_tail
-#print axioms L4.RearTailNumerics.rearRatio_sum_bound
-#print axioms L4.RearTailNumerics.rear_kernel
-#print axioms L4.RearTailNumerics.cancel_extra_shift

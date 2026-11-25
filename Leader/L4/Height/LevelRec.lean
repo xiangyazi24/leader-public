@@ -589,12 +589,4 @@ theorem clock_rec_form {m B M : Nat}
   exact level_rec (B := B) (M := M)
     hM hm szero hleg w hinf i ell
 
-#print axioms lift_mono
-#print axioms S_after
-#print axioms S_mono
-#print axioms level_reached
-#print axioms levelTime_spec
-#print axioms level_rec
-#print axioms clock_rec_form
-
 end L4.Height

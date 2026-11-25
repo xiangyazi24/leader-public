@@ -110,11 +110,7 @@ theorem joined_slot_cases (k₁ k₂ t₂ J₁ J₂ r tune p c₁ : Nat) (hp : 0
           obtain ⟨v,H⟩ := BStarForwardProvenance.joined_hop k₁ k₂ t₂ J₁ J₂ r tune p c₁ hp x C d q f E act F hf
           exact .inr ⟨C,v,q,act,hc,E,H⟩
 
-
 open BStarSeparatorQuiet BStarResetChartService
-
-
-
 
 private theorem canonical_quiet (g : Pair LongGeometry) (raw : Pair (BitVec LW))
     (a : AtK) (p : Payload) (E : bound g (readK raw) a=.forward p)
@@ -157,9 +153,6 @@ private theorem canonical_quiet (g : Pair LongGeometry) (raw : Pair (BitVec LW))
           have G := numeric_gate (geometry g a.side) a.occurrence p H
           simp [observe,G] at A
       · contradiction
-
-#print axioms joined_slot_cases
-#print axioms canonical_quiet
 
 /-- A healthy outward cursor that stays on its index preserves the
 whole old canonical numeric payload. Selection of a structural link
@@ -225,8 +218,6 @@ theorem ring_stay {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · by_cases rr : (addr k).1=rightNeighbor e
     · exact active (R (addr k).2) (Prod.ext rr rfl)
     · exact Token.forward.inj (F.symm.trans ((idle_off_pair hp x e (addr k) l rr).symm.trans V))
-
-#print axioms ring_stay
 
 private theorem outgoing_back (g : LongGeometry) (j : Fin 11) (x : BitVec LW) (p q : Payload)
     (F : (BStarLongOutgoing.execute g j x p).carried=.forward q) (H : Numeric q) :
@@ -315,8 +306,6 @@ theorem ring_padding {base x : X} {hh : ∃ i,oldH6 B base i=true}
   simp [arrive,off] at DL
   exact DL
 
-#print axioms ring_padding
-
 /-- Carry continuity over an exact busy segment with no significant
 departures: arbitrary stay/exterior marks and actual padding hops
 retain the entire canonical numeric packet. A healthy numeric end
@@ -371,5 +360,4 @@ theorem busy_padding {base x : X} {hh : ∃ i,oldH6 B base i=true}
         exact ring_padding hp chart e (sep e) op k (by omega) I.1 I.2.1 I.2.2 p u F canon U Nu pp
     exact EE.symm ▸ U
 
-#print axioms busy_padding
 end L4.BStarNumericContinuity

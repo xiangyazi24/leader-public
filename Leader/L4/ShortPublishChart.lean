@@ -116,7 +116,4 @@ theorem commit_centre_pair {s n : Nat} (x y : Raw s n) (X : H2Ready x)
   rw [E] at K1
   exact ⟨E,by omega,K0,K1,F,H⟩
 
-#print axioms stage_seal_centre
-#print axioms commit_centre
-#print axioms commit_centre_pair
 end L4.ShortPublishChart

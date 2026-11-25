@@ -127,10 +127,6 @@ theorem raw_bit_selected (g : Pair LongGeometry) (x : Pair (BitVec LW))
   rw [H]
   exact bind_bit _ _ p F O R T W off
 
-#print axioms bound_bit_selected
-#print axioms raw_bit_selected
-
-
 open BStarResetQuiet BStarClearanceForward
 
 /-- Well-formed canonical BIT on an ordinary (non-race) address. -/
@@ -206,9 +202,6 @@ theorem launched_wire (old new : BitVec LW) (op : (ctrlOp.read old).toNat=bitOp)
   rw [op] at R
   exact ⟨_,R,⟨rfl,rfl,rfl,rfl,by decide⟩,rfl⟩
 
-#print axioms joined_bit_link
-#print axioms launched_wire
-
 open BStarH6WordChart BStarAcquireVisitOrder BStarAcquireForwardTrace BStarAcquireLiteralChain
 open BStarLongFixedRouting BStarResetChartTouch BStarResetMarkAdapter BStarResetRailRing
 open BStarSeparatingRail BStarGeneratedOwner BStarOwnerLaunchOrigin
@@ -265,8 +258,6 @@ theorem nominated_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
         exact Token.noConfusion (empty.symm.trans post)
       | forward => exact ⟨.transit _ _ _ live (.cons M go (.forward j) gd (.nil _ _)),nxt,post⟩
       | turn => exact (Nat.lt_irrefl _ J).elim
-
-#print axioms nominated_step
 
 open BStarH6Ordinal
 
@@ -352,8 +343,6 @@ theorem ordered_to_gate {base : X} {hh : ∃ i,oldH6 B base i=true}
       have E : j+k.succ=(j+1)+k := by omega
       simpa only [List.getElem_cons_succ,E] using M
 
-#print axioms ordered_to_gate
-
 open BStarFenceReceiverChart
 
 /-- From a literal valid ISSUE410 (already paired with its generated
@@ -408,5 +397,4 @@ theorem launch_reaches_gate {base old : X} {hh : ∃ i,oldH6 B base i=true}
   exact ⟨l,w,_,Nat.pos_of_ne_zero pos,L,by omega,loc,ordinal,T,Cur,exactOld,
     H.fault,H.op,H.outcome,rfl,rfl,fun k hk y E => by simpa only [Nat.zero_add] using N k hk y E⟩
 
-#print axioms launch_reaches_gate
 end L4.BStarBitHealthyService

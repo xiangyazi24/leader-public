@@ -740,17 +740,5 @@ theorem width_cycle_cut_uniform_mean (P : WidthLower s n) (S : Sector P.h d)
   rw [MonitorRawBridge.run_project (rawNext s) tapeStep (fun z=>z.raw)
     tape_project (tapeStart x) w] at R
   exact R
-#print axioms canonical_receipt
-#print axioms next_ready
-#print axioms plan_display
-#print axioms safe_step
-#print axioms width_good_flags
-#print axioms width_good_step
-#print axioms command_expected
-#print axioms begin_ready
-#print axioms finish_cut
-#print axioms finish_expected
-#print axioms owner_cycle_mean
-#print axioms width_cycle_cut_uniform_mean
 
 end L4.WidthCycleEpoch

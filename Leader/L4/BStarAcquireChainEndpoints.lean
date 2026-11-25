@@ -62,6 +62,4 @@ theorem terminal (g : Pair LongGeometry) (C : CommandClaim)
   simp [checks,hD,hn] at H
   exact ⟨H.2.1,H.1.1,H.1.2,H.2.2⟩
 
-#print axioms link_endpoints
-#print axioms terminal
 end L4.BStarAcquireChainEndpoints

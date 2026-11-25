@@ -124,13 +124,4 @@ theorem report1_cache_from_h4 (N : 189<n) (x : Raw s n)
     (h4_fibre_closed N x) (fun _ H i=>congrFun H.2 i) x ⟨Y,rfl⟩
   exact ⟨V.1,(MonitorRawBridge.height_iff_row _ _ _ _).mp V.2⟩
 
-#print axioms h3_fibre_closed
-#print axioms mis3_actual_cache
-#print axioms upper_mis3
-#print axioms permanent_h4_mask_step
-#print axioms permanent_h4_gaps
-#print axioms permanent_h4_nonempty
-#print axioms permanent_h4_from_h2
-#print axioms report1_cache_from_h4
-
 end L4.ShortMIS3Entrance

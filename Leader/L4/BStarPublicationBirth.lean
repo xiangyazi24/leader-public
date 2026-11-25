@@ -37,9 +37,6 @@ theorem committed_writer_after {x : X} {u v : List (Fin n)}
     BirthAfter hp x ((u++v)++tail) i 1 (u.length+1) :=
   H tail i 1 (publication_ne_zero hp _ mark i pub)
 
-#print axioms publication_ne_zero
-#print axioms committed_writer_after
-
 open BStarAcquireVisitOrder BStarAcquireAnchors BStarAcquireRailCoverage
 open BStarAcquireLiteralChain BStarLongFiberOwner BStarResetChartTouch
 open BStarResetMarkAdapter BStarGeneratedOwner BStarLongCommand
@@ -83,8 +80,6 @@ theorem commit_from_owner {base x : X} {hh : ∃ i,oldH6 B base i=true}
     (congrArg (atCursor y) idx).trans (raw.symm.trans Q)
   exact ⟨j,le,idx,BStarOwnerLaunchOrigin.healthy_forward_origin hp chart sep P now j le q read
     commitOp V ((congrArg BitVec.toNat O).trans literal.2.2.2.1)⟩
-
-#print axioms commit_from_owner
 
 open BStarOwnerRecoveryPass BStarLongFixedRouting BStarLongDoor BStarClearanceSource
 
@@ -130,8 +125,6 @@ theorem commit_after_credit {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · simp only [BStarResetSchedule.run_append]
     exact ⟨hdr,L,PC⟩
 
-#print axioms commit_after_credit
-
 open BStarResetNoAcquire BStarClearanceOffset
 
 /-- On two real recovery passes, every post-second-cut publication has
@@ -167,5 +160,4 @@ theorem two_pass_publication_origin {base x : X} (hh : ∃ i,oldH6 B base i=true
       e i own pub
   exact ⟨p,door,q,root,W,by omega,L⟩
 
-#print axioms two_pass_publication_origin
 end L4.BStarPublicationBirth

@@ -108,7 +108,6 @@ theorem actual_relift (d : Sheet) (C : Fin 6→Chart h) (N : 1<n)
     rw [H.1, List.append_assoc]
     exact RF
 
-
 /-- Seed at the real F(64) launch of the mapped preparation/prelude
 tape, and run the fixed late profile. Each witness extension uses a
 physical image label as its own legal driver preimage. The witness is
@@ -153,7 +152,6 @@ theorem actual_launch_mean (d : Sheet) (C : Fin 6→Chart h) (N : 1<n)
   have Rows := allowed_rows d (B 2) N hh G F digit B D Inj _ _ _ _ I
   exact launch_mean (B 2) (step (B 2)) _ Trace.raw Trace.cur d B D Rows z q E rfl A O
 
-
 theorem actual_driver_finish (d : Sheet) (B : Fin 5→Chart h) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
     (digit : 0<(params d s).digits) (D : Fin 5→Bool)
@@ -174,7 +172,4 @@ theorem actual_driver_finish (d : Sheet) (B : Fin 5→Chart h) (N : 1<n)
   exact finish_is_successful_consume d (B 2) N hh G F digit z.base.raw X
     z.base.cur A _ L H
 
-#print axioms actual_relift
-#print axioms actual_launch_mean
-#print axioms actual_driver_finish
 end L4.ReportFastAcqDriver

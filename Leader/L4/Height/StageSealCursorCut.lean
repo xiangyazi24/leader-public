@@ -43,7 +43,6 @@ theorem first_consume {base x : X} {addr : Nat→Pos n} {len : Nat}
       obtain ⟨pre,f,tail,W,L,F⟩ := ih (j:=.back 0) later rfl
       exact ⟨e::pre,f,tail,congrArg (List.cons e) W,.cons I (.arrived_hold op ne) L,F⟩
 
-
 private theorem advance {addr : Nat→Pos n} {len op : Nat} {x : X} {e : Fin n}
     {z d : Cursor} (E : Event hp addr len x e (.busy op z) (.busy op d)) : Advance len z d := by
   cases E with
@@ -84,6 +83,4 @@ theorem split_outward {base x : X} {addr : Nat→Pos n} {len op a b : Nat}
       obtain ⟨l,h⟩ := busy_no_back_to_out hp tail ⟨b,B'.symm⟩
       cases h
 
-#print axioms first_consume
-#print axioms split_outward
 end L4.Height.StageSealCursorCut

@@ -340,11 +340,3 @@ theorem allTags_expected_of_tail {α : Type} {n m : Nat}
 
 end L4.TaggedTail
 
-#print axioms L4.TaggedTail.weightedSurvival_le
-#print axioms L4.TaggedTail.threshold_mul_survival_le
-#print axioms L4.TaggedTail.survival_contraction
-#print axioms L4.TaggedTail.survival_union
-#print axioms L4.TaggedTail.iidHitCost_succ_eq
-#print axioms L4.TaggedTail.iidHitCost_le_horizon
-#print axioms L4.TaggedTail.expected_of_cutoff_tail
-#print axioms L4.TaggedTail.allTags_expected_of_tail

@@ -128,7 +128,6 @@ theorem right_bullet_hold {p c} (u v : Site p c) (h : rightIssue u v=false) :
   cases hL : v.leader <;> cases hS : v.signal <;>
     simp only [fireResponder,fires,hL,hS] at hF ⊢ <;> first | rfl | cases hF
 
-
 set_option linter.unusedSimpArgs false in
 theorem left_bullet_mask {p c : Nat} (u v : Site p c) :
     full (bulletF p c) (pubMask (u,v)).1 (leftIssue u v) := by
@@ -303,8 +302,6 @@ theorem raw_bullets {p c : Nat} (hp : 0<p) (x : Pair (BitVec (publicWidth p c)))
       (congrArg Site.bullet (read_pack hp t.1)) h.1,
     decoded_field bulletDecode (bulletF p c) (publicWork hp x).2 x.2 t.2.bullet
       (congrArg Site.bullet (read_pack hp t.2)) h.2⟩
-
-#print axioms raw_bullets
 
 end L4.BStarPublicBullet
 

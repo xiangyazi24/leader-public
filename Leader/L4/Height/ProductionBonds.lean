@@ -79,6 +79,5 @@ theorem candidates_supply_bonds (phase : Fin 5 → Word n → Prop) :
     (fun _ q e => ready_next P q e) (fun _ q => q.2) (separation P) a skipped e f
     (ready_run P a) firstMark avoid
 
-#print axioms candidates_supply_bonds
 end
 end L4.Height.CandidateResidence

@@ -31,5 +31,4 @@ theorem raw_endpoint_expected {X : Type} {n : Nat} (step : X→Fin n→X)
   intro t
   exact Nat.le_trans (compare t []) (H t)
 
-#print axioms raw_endpoint_expected
 end L4.PhysicalRawClockTape

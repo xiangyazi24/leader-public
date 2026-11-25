@@ -800,20 +800,4 @@ theorem count_launch_exact {Q : Nat} (s : Source Q) (r : Rail) (k : Fin Q)
   refine ⟨?_,door_left s r ▸ hl.2⟩
   exact (door_source s r).trans hl.1
 
-#print axioms break_prefix_hold
-#print axioms break_prefix_extend
-#print axioms up_suffix_hold
-#print axioms up_suffix_extend
-#print axioms return_front_hold
-#print axioms return_front_extend
-#print axioms Pass.step_budget
-#print axioms Pass.step_wellFormed
-#print axioms Pass.done_has_exit
-#print axioms passCountdown
-#print axioms pass_expected
-#print axioms pass_reachable
-#print axioms await_door_cases
-#print axioms init_launch_exact
-#print axioms count_launch_exact
-
 end L4.ResidualSweep

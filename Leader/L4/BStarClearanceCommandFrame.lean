@@ -138,7 +138,6 @@ theorem blocked_fence (g : Pair LongGeometry) (x : Pair (BitVec LW))
   dsimp only
   split <;> rfl
 
-
 private theorem live_arrive (g : LongGeometry) (j : Fin 11) (p : Payload) :
     live (arrive g j p)=1 := by unfold arrive; split <;> rfl
 
@@ -206,7 +205,6 @@ theorem link_trail (g : Pair LongGeometry) (x : Pair (BitVec LW))
   rw [u,v,decode_encode,decode_encode]
   unfold arrive
   split <;> rfl
-
 
 private theorem live_le_one (t : Token) : live t≤1 := by cases t <;> simp [live]
 
@@ -288,7 +286,6 @@ theorem joined_idle_live (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   · rw [raw_transit _ _ _ H]
     exact route_no_live_increase _ _ _ h
 
-
 /-- Transfer exact two-address live accounting to the full joined row
 (including the outer guard) at both chart addresses. -/
 theorem joined_link_live (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
@@ -314,13 +311,4 @@ theorem joined_link_live (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   · exact link_live _ _ C p a hd ne h
   · exact reverse_live _ _ C a t hd ne h
 
-#print axioms advance_origin
-#print axioms reverse_origin
-#print axioms blocked_fence
-#print axioms link_live
-#print axioms terminal_live
-#print axioms reverse_live
-#print axioms link_trail
-#print axioms joined_idle_live
-#print axioms joined_link_live
 end L4.BStarClearanceCommandFrame

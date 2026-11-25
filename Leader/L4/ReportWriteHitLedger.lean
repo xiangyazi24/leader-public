@@ -287,7 +287,4 @@ theorem write_flight_result (d : Sheet) (N : 1<n)
   rw [Target] at New AtAck
   refine ⟨pre,post,k,W,K,Site,Lane,T,R,Off,Permit,OldBank,Target,Send,New,AtAck,Credit⟩
 
-#print axioms hit_now
-#print axioms write_hit_progress
-#print axioms write_flight_result
 end L4.ReportWriteHitLedger

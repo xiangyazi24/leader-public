@@ -131,7 +131,6 @@ def DirtyPhase.nominate {n : Nat} (s : Fin n) : DirtyPhase → Fin n
   | .bullet q => liftedSite s q
   | .returning q => liftedSite s (q-1)
 
-
 def Positive (s : Fin n) (z : Cursor p c n) : Prop :=
   Cursor.exit z ∨ (z.1.config s).signal≠.zero
 
@@ -271,7 +270,6 @@ theorem expected_positive (S : Sector initial group cert d)
   exact Nat.le_trans (expected_of_countdown _ _ _ clock t)
     (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left _ (reserve_bound s d y)))
 
-
 def Launched (s : Fin n) (d : Nat) (z : Cursor p c n) : Prop :=
   Cursor.exit z ∨ ReturnFront z.1.config s d 0 ∨ ∃ q, q≤d ∧ ZeroFront z.1.config s q
 
@@ -358,7 +356,6 @@ private theorem mean_compose {α : Type} {n : Nat} (next : α → Fin n → α)
   rw [Nat.add_mul]
   exact Nat.le_trans H (Nat.add_le_add (first t)
     (Nat.mul_le_mul_left _ (terminalMass_le_total next cut (fun z => ¬goal z) t y)))
-
 
 inductive Sweep where
   | front (q : Nat)
@@ -560,13 +557,6 @@ theorem expected_seal (S : Sector initial group cert d) (z : Cursor p c n)
       _ = _ := by ac_rfl
   simpa only [he] using H
 
-#print axioms reserve_step
-#print axioms expected_positive
-#print axioms incident_or_hold
-#print axioms expected_launch
-#print axioms sweep_next
-#print axioms expected_seal
-
 open TriplePhase
 
 def Context.leftSector {v : Fin n} {a b : Nat} (C : Context initial group cert v a b) :
@@ -668,6 +658,4 @@ theorem expected_scoped_deletion {v : Fin n} {a b : Nat} (C : Context initial gr
       · exact WindowScopedSealedMean.mean C w hP)
   simpa only [show 2564=4+2560 by decide,Nat.add_mul] using H
 
-#print axioms expected_pair
-#print axioms expected_scoped_deletion
 end L4.WindowScopedSealPrep

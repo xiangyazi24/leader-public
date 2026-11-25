@@ -304,5 +304,4 @@ theorem dormant_hold_fixture :
     let p := row (c:=5) 3 (true,true) (a,b)
     p.1.mask.toNat=0 ∧ p.2.mask.toNat=0 ∧ p.1.apply a=a := by decide
 
-#print axioms row_work_only
 end L4.WidthByteRows

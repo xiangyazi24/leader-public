@@ -64,5 +64,4 @@ theorem nominate {base x : X} {hh : ∃ i,oldH6 B base i=true}
       exact h
     exact ⟨C,q,A,(by rw [hs] at E; exact E.trans Own)⟩
 
-#print axioms nominate
 end L4.BStarClearanceIndexedRace

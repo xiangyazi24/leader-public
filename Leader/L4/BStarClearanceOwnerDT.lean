@@ -65,5 +65,4 @@ theorem owner_DT {A I : Type} [DecidableEq A]
   obtain ⟨i,hi,rfl⟩ := List.mem_map.mp h
   exact tWeak i hi (noF i hi) (noD i hi)
 
-#print axioms owner_DT
 end L4.BStarClearanceOwnerDT

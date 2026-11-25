@@ -23,7 +23,6 @@ theorem acquire_successor (old : BitVec LW) (f : Payload)
     pcNext old f=(if f.outcome=1 then 412 else 6) := by
   simp [pcNext,op,good,same,show (arithKind 5).isSome=false by decide,nextOrdinary,acquire]
 
-
 variable {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
 local notation "B" => bStar k₁ k₂ t₂ J₁ J₂ r c p c₁ hp
 local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r c p c₁)
@@ -48,7 +47,6 @@ theorem actual_admit_consumes {base x : X} {addr : Nat → Pos n} {len : Nat} {e
   rw [admit_successor _ _ cur.1.2.2.2 F O] at E
   exact E
 
-
 theorem actual_acquire_consumes {base x : X} {addr : Nat → Pos n} {len : Nat} {e : Fin n}
     (H : (addr 0).2=0) (hh : oldH6 B x (addr 0).1=true)
     (sep : e≠rightNeighbor e)
@@ -63,7 +61,6 @@ theorem actual_acquire_consumes {base x : X} {addr : Nat → Pos n} {len : Nat} 
   subst g
   rw [acquire_successor _ _ cur.1.2.2.2 F O] at E
   exact E
-
 
 theorem pace_unit_packet (g : LongGeometry) (j : Fin 11) :
     let f : Payload := ⟨0,3,0,0,0⟩

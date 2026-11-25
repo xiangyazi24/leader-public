@@ -150,6 +150,4 @@ theorem window_need_reads_fresh {base initial : X} {hh : ∃ i,oldH6 B base i=tr
   · exact (frontier_excludes_reserved hp base initial hh start hist i tick G bit upper window old).elim
   · exact fresh
 
-#print axioms window_need_reads_fresh
-#print axioms key_unique_post_custody
 end L4.BStarOwnerKeyInjective

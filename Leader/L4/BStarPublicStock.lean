@@ -258,7 +258,5 @@ theorem raw_stocks {p c : Nat} (hp : 0<p) (x : Pair (BitVec (publicWidth p c))) 
     decoded_field (fun s => s.getLsbD 0) (stockF p c) (publicWork hp x).2 x.2 t.2.stock
       (congrArg Site.stock (read_pack hp t.2)) h.2⟩
 
-#print axioms raw_stocks
-
 end L4.BStarPublicStock
 

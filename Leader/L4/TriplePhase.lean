@@ -551,14 +551,4 @@ theorem paired_tick_literal {p c n a b : Nat} (hn : 4≤n) (x : Config p c n)
     phase_tick_literal hn x _ e hb hm hc h.geom.second_gap h.geom.second_leader
       h.geom.third_leader right h.target he⟩
 
-#print axioms ready_incoming
-#print axioms sealed_front_wait
-#print axioms sealed_front_progress
-#print axioms sealed_front_finish
-#print axioms ready_outgoing
-#print axioms ready_wait
-#print axioms sealed_return_progress
-#print axioms phase_tick_literal
-#print axioms paired_tick_literal
-
 end L4.TriplePhase

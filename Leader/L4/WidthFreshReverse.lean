@@ -820,22 +820,5 @@ theorem original_generated_first_consume (P : Lower s n) (S : Sector P.h d)
   · rw [raw_append,raw_snoc]
     exact R.post
 
-#print axioms slot_codec
-#print axioms turn_back
-#print axioms source_nonF
-#print axioms back_inside
-#print axioms back_terminal
-#print axioms back_inlet_hold
-#print axioms back_root_consume
-#print axioms generated_reverse_one_mark
-#print axioms seen_active
-#print axioms seen_last_consume
-#print axioms generated_consume_clears_word
-#print axioms rank_mark
-#print axioms reverse_expected
-#print axioms turn_to_consume_mean
-#print axioms original_first_consume_receipt
-#print axioms original_generated_first_consume
-
 end L4.WidthFreshReverse
 

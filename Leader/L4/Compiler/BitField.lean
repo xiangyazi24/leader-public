@@ -123,12 +123,3 @@ end BitField
 end Compiler
 end L4
 
-#print axioms L4.Compiler.BitField.testBit_extract
-#print axioms L4.Compiler.BitField.testBit_patch
-#print axioms L4.Compiler.BitField.extract_patch_same
-#print axioms L4.Compiler.BitField.extract_patch_disjoint
-#print axioms L4.Compiler.BitField.testBit_patch_outside
-#print axioms L4.Compiler.BitField.patch_extract_self
-#print axioms L4.Compiler.BitField.patch_patch_disjoint
-#print axioms L4.Compiler.BitField.patch_patch_same
-#print axioms L4.Compiler.BitField.patch_lt

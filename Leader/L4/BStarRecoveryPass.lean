@@ -70,8 +70,6 @@ theorem two_pass {Inv : X → Prop} {E F : Owner → X → List (Fin n) → Prop
     obtain ⟨a,b,L,Q⟩ := K o M
     exact ⟨u.length+a,u.length+b,by omega,by omega,credit_shift step u Q⟩
 
-#print axioms two_pass
-
 /-- A historical credit finishing no later than the cut can be
 interpreted directly on that prefix, not merely on the longer word. -/
 theorem credit_prefix {E : Owner → X → List (Fin n) → Prop}
@@ -87,5 +85,4 @@ theorem credit_prefix {E : Owner → X → List (Fin n) → Prop}
     exact ⟨pre,mid,[],by simpa only [List.append_nil] using Q.symm,A,by simpa using B,W⟩
   · exact ⟨pre,mid,q,Q,A,B,W⟩
 
-#print axioms credit_prefix
 end L4.BStarRecoveryPass

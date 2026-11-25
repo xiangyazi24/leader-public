@@ -72,9 +72,5 @@ theorem custody_reached_of_quadratic_reports (advice : s=ell (ell n)) (S : 6≤s
   custody_reached_of_geometry (by omega : 2≤s) (ProductionH6Count.room_of_advice S advice)
     (fun z=>Nonempty (PackedFiber z)) (K_packed Kreport) (packed_from_raw advice S Kreport report) (fun _ H=>H) x
 
-#print axioms K_custody
-#print axioms packed_from_both_reports
-#print axioms packed_from_raw
-#print axioms custody_reached_of_quadratic_reports
 end
 end L4.PhysicalCustodyAssembly

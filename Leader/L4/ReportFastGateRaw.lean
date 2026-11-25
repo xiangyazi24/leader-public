@@ -228,10 +228,5 @@ theorem raw_admit_consume (d : Sheet) (C : Chart h) (N : 1<n)
       | some u => resetTokenWire p u)=_
     rw [R.2]
 
-#print axioms raw_incoming_decisions
-#print axioms raw_outgoing_decisions
-#print axioms raw_ready_depart
-#print axioms raw_gate_arrival
-#print axioms raw_admit_consume
 end L4.ReportFastGateRaw
 

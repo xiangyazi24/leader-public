@@ -535,15 +535,6 @@ theorem at_last_credit (A : Context d hh Q G r) (x : Raw s n) (e : Fin n)
       (J.trans (logical_seal A.p).symm)
   exact Prod.ext K.2.2.2.2.2.2.1 Op
 
-#print axioms seed_info
-#print axioms staged_prefix
-#print axioms live_pose
-#print axioms nonrestart
-#print axioms real_root_ack
-#print axioms step
-#print axioms until_invariant
-#print axioms at_last_credit
-
 def floor (A : Context d hh Q G r) : Nat :=
   2*ReportFastFreshReset.commandCap A.chart.L+
     ReportFastFreshReset.resetCost A.chart.L
@@ -742,12 +733,6 @@ theorem arithmetic_mean_width (A : Context d hh Q G r)
   rw [Nat.mul_comm n (21*A.p.digits*W)] at B
   exact Nat.le_trans M (Nat.mul_le_mul_right _ B)
 
-#print axioms rank_initial
-#print axioms rank_stop
-#print axioms clock_step
-#print axioms arithmetic_mean
-#print axioms arithmetic_mean_width
-
 theorem literal_tape (A : Context d hh Q G r) (w : List (Fin n))
     (T : UntilSeal A w) :
     NoRestartTape d A.chart A.base w ∧ ∃ l,AckTape d A.chart A.base w l := by
@@ -817,8 +802,6 @@ theorem seal_handoff (A : Context d hh Q G r) (w : List (Fin n))
       item_nine_write_credits d A.N hh G A.fibre A.digit r A.mid A.base
         B.first.1.1.1 B.legal B.post w NR l L⟩
 
-#print axioms literal_tape
-#print axioms seal_handoff
 end
 end L4.ReportFastPostACQ
 

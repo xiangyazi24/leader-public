@@ -176,7 +176,4 @@ theorem projects {p c n : Nat} (S : WindowA0Ledger.Scope n) (x : State p c n)
     change observe (WindowA0Ledger.next S x.tag e).ledger w=observe (advance x.tag.ledger e) w
     rw [WindowA0Ledger.physical_step]
 
-#print axioms projects
-#print axioms close_word
-#print axioms close
 end L4.WindowA0ClosedEntry

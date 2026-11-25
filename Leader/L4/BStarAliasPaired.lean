@@ -130,7 +130,6 @@ theorem execute_frame (g : LongGeometry) (j : Fin 11) (x : BitVec LW) (p : Paylo
       · exact zero
   · exact zero
 
-
 theorem route_frame (w : KWrite) : Frame (lowerOne w).2 := by
   rcases w with ⟨⟨s,j⟩,t⟩
   change Frame (setToken j t)
@@ -188,7 +187,6 @@ theorem field_hold {n : Nat} (f : Field LW n) (q : Patch LW) (x : BitVec LW)
   intro i hi'
   have hold := q.hold x (f.offset+i) (h _ (by omega) (by omega))
   simpa only [Field.read,BitVec.getLsbD_extractLsb',hi',decide_true,Bool.true_and] using hold
-
 
 open BStarLongCommand BStarLongEvents BStarCommitIssue BStarH6WordChart
 
@@ -279,9 +277,6 @@ theorem door_field {n : Nat} (f : Field LW n) (lo : 1764≤f.offset)
   change f.read (q.apply (before.foldl runWrite x).2)=_
   rw [H,fold_field f lo hi _ _ B]
 
-
-
-
 open BStarLongArithmetic BStarLongRegisters BStarAliasReadback
 
 theorem joined_accept_read (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
@@ -343,5 +338,4 @@ theorem joined_accept_read (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p
   rw [Field.read_other_assign (scalar i) offField _ _ (.inl (Nat.le_trans hi (by decide)))]
   exact Q
 
-#print axioms joined_accept_read
 end L4.BStarAliasPaired

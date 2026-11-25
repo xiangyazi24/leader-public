@@ -39,6 +39,4 @@ theorem inherited_ready_turn_raw {s n : Nat} (x : Raw s n) (e : Fin n)
   rw [R]
   exact turnPacket_tag _ _ _ _ _ fr _
 
-#print axioms inherited_ready_out_raw
-#print axioms inherited_ready_turn_raw
 end L4.ShortForwardMIS1Ring

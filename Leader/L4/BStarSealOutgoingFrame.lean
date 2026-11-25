@@ -65,6 +65,4 @@ theorem sealed_until_outgoing {base origin x : X} {hh : ∃ i,oldH6 B base i=tru
   exact ⟨held,(by unfold readSel; rw [s0]; exact seed.2.1),
     (congrArg readOptional st).trans seed.2.2.1,(congrArg readOptional se).trans seed.2.2.2⟩
 
-#print axioms off_outgoing
-#print axioms sealed_until_outgoing
 end L4.BStarSealOutgoingFrame

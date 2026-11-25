@@ -64,8 +64,4 @@ theorem protected_bits_of_actual_saved {s n : Nat} {h : Fin n→Bool}
       (oldK (header x e) (x e).mis1 0).payload := by
   exact ⟨saved,L,P,D.trans (congrArg Token.payload (old_commit_token x e d V false W)).symm⟩
 
-#print axioms old_commit_token
-#print axioms classify_center
-#print axioms applied_center_not_counted
-#print axioms protected_bits_of_actual_saved
 end L4.ShortCommitGenerationEvent

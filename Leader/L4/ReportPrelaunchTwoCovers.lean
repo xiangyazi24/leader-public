@@ -62,6 +62,4 @@ theorem exact_cuts (d : Sheet) (N : 1<n)
   · intro _ y
     exact ReportOwnerReceiptClock.initial_not_done y
 
-#print axioms monitor_expected
-#print axioms exact_cuts
 end L4.ReportPrelaunchTwoCovers

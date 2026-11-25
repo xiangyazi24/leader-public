@@ -58,6 +58,4 @@ theorem clean_launch {s n : Nat} {h : Fin n → Bool} (C : Chart h)
   rw [C.rootPort]
   exact F.2.2
 
-#print axioms clear_issue_nondoor
-#print axioms clean_launch
 end L4.ShortClearLaunch

@@ -41,6 +41,4 @@ theorem reset_clear_seal_raw {s n : Nat} (x : Raw s n) (e : Fin n)
     exact work_bit x e (83+i) (by omega)
   exact F.trans (by simpa only [pairHeader,pairIn,eligible] using P)
 
-#print axioms reset_release_grant_raw
-#print axioms reset_clear_seal_raw
 end L4.ShortResetAuthority

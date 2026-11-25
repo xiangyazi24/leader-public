@@ -80,8 +80,4 @@ theorem custody_of_two_credited_passes {s n : Nat} {z : Raw s n}
       exact ⟨a,b,lower,lt,credit⟩)
   exact common_replay_implies_custody g ⟨u,v,u',v',rfl,cu,cv,cuts⟩
 
-#print axioms flatten_pass_credits
-#print axioms custody_of_two_credited_passes
-#print axioms ownerOrder_ports
-#print axioms custody_of_two_sampled_passes
 end L4.PhysicalCustody

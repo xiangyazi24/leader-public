@@ -46,7 +46,4 @@ theorem outgoing_coherent_grant_hold {s n : Nat} (x : Raw s n) (e : Fin n)
   rw [outgoing_grant_at x e eligible j]
   simp only [BStarShort.GrantView.nextValue,H,if_true,D,R,Bool.not_false,Bool.and_true,Bool.true_or]
 
-#print axioms canonical_eq_old
-#print axioms incoming_coherent_grant_frame
-#print axioms outgoing_coherent_grant_hold
 end L4.ShortGrantFrames

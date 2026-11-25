@@ -48,11 +48,9 @@ local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r
 local notation "step" => AllSizeS1Geometry.step B
 local notation "run" => BStarResetSchedule.run step
 
-
 private theorem pair_site (x : X) (e : Fin n) (sep : e≠rightNeighbor e) (s : Side) :
     step x e (site e s)=lane (sideFlag s) (largePair B (x e,x (rightNeighbor e))) := by
   cases s <;> simp [AllSizeS1Geometry.step,site,sideFlag,lane,Ne.symm sep]
-
 
 def NoPublication (x : X) (e i : Fin n) : Prop :=
   ∀ s : Side, i=site e s →
@@ -72,7 +70,6 @@ theorem birth_step (x : X) (e i : Fin n) (sep : e≠rightNeighbor e)
   have H := bStar_held_step k₁ k₂ t₂ J₁ J₂ r c p c₁ hp (x e,x (rightNeighbor e)) s bank
     (writer_free_safe _ _ s bank head ((win_no_grants _ _ _ win) 1))
   cases s <;> exact H
-
 
 /-- A touched old nonheader writes zero grants, so continuity across
 the current mark alone forces the old touched node to be a header. -/
@@ -114,8 +111,6 @@ theorem live_step (x : X) (e i : Fin n) (sep : e≠rightNeighbor e)
     · have E : step x e i=x i := by simp [AllSizeS1Geometry.step,hl,hr]
       rw [show (step x e i).long=(x i).long from congrArg LargeSite.long E]
       exact ⟨.noTouch _,by unfold ports; rw [E]; exact coh⟩
-
-
 
 theorem live_trace (sep : ∀ e : Fin n,e≠rightNeighbor e)
     (x : X) (i : Fin n) (bank : Fin 3) (w : List (Fin n))
@@ -200,8 +195,4 @@ theorem stopping_commit (x : X) (e i : Fin n) (stop : ¬ NoPublication hp x e i)
   rwa [S,show BStarLongWork.atOld ((x e).long,(x (rightNeighbor e)).long) c.source =
     (x i).long from by rw [hi]; change lane (c.source.side==.right) _ = _; rw [S]; cases s <;> rfl] at L
 
-#print axioms win_no_grants
-#print axioms header_safe
-#print axioms header_interval
-#print axioms stopping_commit
 end L4.BStarGrantWriterHistory

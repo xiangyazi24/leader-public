@@ -45,8 +45,4 @@ theorem concrete_start {q m : Nat} (Q : 0<q) (W : q≤50) (M : m≤116) :
     q^m ≤ 50^m := Nat.pow_le_pow_left W m
     _ ≤ 50^116 := Nat.pow_le_pow_right (by decide) M
 
-#print axioms at_zero
-#print axioms concrete_start
-#print axioms watched_drift
-#print axioms physical_drift
 end L4.ShortFiveFailurePotential

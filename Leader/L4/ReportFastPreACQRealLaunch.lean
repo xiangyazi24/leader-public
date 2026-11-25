@@ -173,9 +173,4 @@ theorem sixth_reset_launch_seed
   rw [New] at Fr
   exact ⟨⟨64,Front,by decide,Clear⟩,Fr⟩
 
-#print axioms sixth_reset_launch_seed
-#print axioms driver_launch_boundary
-#print axioms live_clear_phys
-#print axioms first_launch_phys
-#print axioms live_endpoint_clear
 end L4.ReportFastPreACQRealLaunch

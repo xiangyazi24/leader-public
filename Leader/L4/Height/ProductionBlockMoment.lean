@@ -1,5 +1,5 @@
 import Leader.L4.Height.ProductionWidths
-import Leader.L4.Height.G9Core
+import Leader.L4.Height.RawPublicationService
 import Leader.L4.Height.RepairTime
 
 namespace L4.Height.ProductionCustody
@@ -67,7 +67,5 @@ theorem g9_moment_of_production_block (blocks : ProductionBlock) {s n : Nat} {Z 
     (Nat.two_pow_pos _) (block_moment_scale longBudget n W (radWidth s) hw.2) _ z
   exact g9_service_of_block blocks step raw served i rawStep lastMark g prod header W fixed
 
-#print axioms g9_moment_of_production_block
-#print axioms g9_service_of_block
 end
 end L4.Height.ProductionCustody

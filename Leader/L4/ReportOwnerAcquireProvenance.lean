@@ -622,12 +622,6 @@ theorem from_genuine_issue (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
   obtain ⟨Y,A⟩ := launch d C hh G F N x X I P
   exact successful_root d C hh G F N _ Y A digit w T Tag ND
 
-#print axioms centre_grant
-#print axioms flight_step
-#print axioms flight_run
-#print axioms successful_root
-#print axioms from_genuine_issue
-
 /-- Compose the authentic centre sample with the literal source consume
 and file transport on the original suffix. The result refers to the
 actual winning old state, not the current selector at the consumer. -/
@@ -662,8 +656,6 @@ theorem genuine_issue_installs_centre_sample (d : Sheet) (C : Chart h)
   have A := ReportOwnerAcquireReturn.acq_consume_then_run
     d C hh G F N old Y R O K Live ND (CentreSample d C (rawRun launched pre)) S digit v NR
   exact ⟨A.1,A.2.1,pre,post,q,W,Old,Win,Grant,A.2.2.2⟩
-
-#print axioms genuine_issue_installs_centre_sample
 
 /-- A real RESET receipt followed by an actual prefix to ISSUE(ACQ)
 supplies the legal empty rail required by the flight theorem. The
@@ -701,13 +693,4 @@ theorem legal_acq_issue_after_receipt (d : Sheet) (C : Chart h)
     change (1:Nat)=2 at E
     omega
 
-#print axioms legal_acq_issue_after_receipt
-
-#print axioms centre_geometry
-#print axioms launch
-#print axioms raw_hop
-#print axioms raw_turn
-#print axioms raw_reverse_hop
-#print axioms F_step
-#print axioms D_step
 end L4.ReportOwnerAcquireProvenance

@@ -74,6 +74,4 @@ theorem fresh_stage_two_cut {base x : X} {hh : ∃ i,oldH6 B base i=true}
   obtain ⟨hit,cur,bits⟩ := stage_two_of_pc hp chart sep Q I layout closed idle a e P N
   exact ⟨K,hit,cur,N,bits⟩
 
-#print axioms stage_two_of_pc
-#print axioms fresh_stage_two_cut
 end L4.BStarFreshReleaseCut

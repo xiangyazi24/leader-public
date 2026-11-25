@@ -120,7 +120,6 @@ theorem globalFilled_split {p c n : Nat} (i : Fin n) (s : Observer p c n)
       rw [globalFilled,filled_before_or_after i e s hp, Nat.zero_add,he]
       rfl
 
-
 /-- Global filled count from the exact section-2 clock. The local phase
 facts are the only remaining account premise, not a stock premise. -/
 theorem globalFilled_bound_of_facts {p c n : Nat} (hn : 4 ≤ n)
@@ -160,10 +159,6 @@ theorem globalFilled_bound_of_facts {p c n : Nat} (hn : 4 ≤ n)
       omega
 
 end L4.RearTrace
-
-#print axioms L4.RearTrace.globalFilled_split
-#print axioms L4.RearTrace.globalFilled_eq_departures
-#print axioms L4.RearTrace.globalFilled_bound_of_facts
 
 namespace L4.RearTrace
 open TaggedTrace
@@ -212,9 +207,6 @@ theorem globalFilled_bound_of_live {p c n : Nat} {x : Config p c n} {i : Fin n}
 
 end L4.RearTrace
 
-#print axioms L4.RearTrace.ghostSplitFacts_of_live
-#print axioms L4.RearTrace.globalFilled_bound_of_live
-
 namespace L4.RearTrace
 
 /-- The chronological clock-event list and the streaming global count
@@ -235,4 +227,3 @@ theorem eventFilled_sum_le_twice_size_add_one {p c n : Nat}
 
 end L4.RearTrace
 
-#print axioms L4.RearTrace.eventFilled_sum_le_twice_size_add_one

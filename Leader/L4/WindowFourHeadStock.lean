@@ -49,7 +49,6 @@ private theorem rear_mask_frame {p c n : Nat} (x y : Config p c n)
     · exact sb_nonneg _
     · omega
 
-
 theorem grow_paid_no_increase {p c n : Nat} (hn : 4 ≤ n)
     (x : Config p c n) (r : Fin n) (d : Nat) (hD : d+1 < n)
     (hDonor : (x (liftedSite r d)).leader = false)
@@ -86,7 +85,6 @@ theorem grow_paid_no_increase {p c n : Nat} (hn : 4 ≤ n)
       simpa [at_left,at_right hn] using hh
     have hBit : stockBit (x v) ≤ 1 := by cases h : (x v).stock <;> simp [stockBit,h]
     omega
-
 
 /-- A counted W payment reaches two strictly retained sockets. The full
 interval inventory spends exactly (at least) one byte on this physical mark. -/
@@ -160,9 +158,6 @@ theorem LedgerWord.bound {p c n : Nat} (hn : 4≤n)
     have hstep := hrow.charge hn
     omega
 
-#print axioms Row.charge
-#print axioms LedgerWord.bound
-
 private theorem oneSite_sum {n : Nat} (r : Fin n) :
     BarrierIID.edgeSum (fun i => if i=r then 1 else 0) = 1 := by
   induction n with
@@ -235,5 +230,4 @@ theorem LedgerWord.count_le_size {p c n : Nat} (hn : 4≤n)
   have h2 := interval_size_cap x r d
   omega
 
-#print axioms LedgerWord.count_le_size
 end L4.WindowFourHeadStock

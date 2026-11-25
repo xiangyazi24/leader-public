@@ -83,9 +83,6 @@ theorem arbitrary_stage_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
           omega
         | turn => omega
 
-#print axioms arbitrary_stage_step
-
-
 /-- Authorization is required only on the reached same-word busy prefix,
 and only for the actual selected canonical offer at its current slot. -/
 def PrefixAuth (base x : X) (addr : Nat→Pos n) (len j : Nat)
@@ -175,5 +172,4 @@ theorem reaches_terminal_of_sublist {base : X} {hh : ∃ i,oldH6 B base i=true}
       (closed _ q e) (auth.tail hp I E) now new nom'
     exact ⟨e::pre,post,congrArg (List.cons e) W,.cons I E T,P⟩
 
-#print axioms reaches_terminal_of_sublist
 end L4.Height.StageScopedReplay

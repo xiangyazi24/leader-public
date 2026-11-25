@@ -72,8 +72,6 @@ theorem words (xL xC xR : X) (header : Fin 3→Fin n) (a : Fin n) (seam : Nat)
     rw [BStarCopyRightReleaseCapture.digitTable,addr_advance,R]
     exact packed_nibble _ _ _
 
-#print axioms words
-
 theorem replay_of_same_birth {x : X} (hp : 0<p)
     {cut w more : List (Fin n)} {i : Fin n} {j : Fin 3}
     (A : Acquisition hp
@@ -115,6 +113,4 @@ theorem value_bound {i : Nat} (w : Word i) : val w<16^i := by
       omega
   exact B i (Nat.le_refl i)
 
-#print axioms replay_of_same_birth
-#print axioms value_bound
 end L4.BStarNativeLoadBankWords

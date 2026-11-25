@@ -250,9 +250,4 @@ theorem authenticated_entry_bounds {p c n d : Nat} {z0 : Config p c n}
       (score_freezes v d group cert a D z o) hfixed u
   exact ⟨extend .early (by decide) first,extend .late (by decide) last⟩
 
-#print axioms authenticated_entry_bounds
-#print axioms scan_sticky
-#print axioms scan_decided_at_depth
-#print axioms early_prefix
-#print axioms late_prefix
 end L4.WindowScopedLatch

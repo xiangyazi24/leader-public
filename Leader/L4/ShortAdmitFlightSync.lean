@@ -114,7 +114,4 @@ theorem consume_all_slots (C : Chart h) (x : Raw s n)
     rw [reset_remote_frame_raw _ _ _ F G]
     exact (A.2.2 i I).trans (by simp [Z])
 
-#print axioms wait2_holds
-#print axioms actual_launch
-#print axioms consume_all_slots
 end L4.ShortAdmitFlightSync

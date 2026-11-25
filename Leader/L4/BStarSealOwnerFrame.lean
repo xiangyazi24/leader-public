@@ -109,6 +109,4 @@ theorem sealed_word {base origin x : X} {hh : ∃ i,oldH6 B base i=true}
   · rw [sEq]
     exact seed.2.2.2
 
-#print axioms no_latch
-#print axioms sealed_word
 end L4.BStarSealOwnerFrame

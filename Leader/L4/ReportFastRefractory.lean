@@ -262,8 +262,6 @@ theorem consume_opcode (d : Sheet) (C : Chart h) (N : 1<n)
     rw [E]
     exact B
 
-#print axioms consume_opcode
-
 -- Raw incoming normalization on an already occupied F slot.
 -- No healthy-token assumption: the old predecessor is T, the old
 -- destination is F, so neither direction of routing overwrites it.
@@ -462,11 +460,6 @@ theorem decision_spends (d : Sheet) (C : Chart h) (N : 1<n)
   · exact (wait_opcode d C N hh G F digit x X S e V.1).trans
       (armed_opcode d C x S I B)
 
-#print axioms incoming_front_norm
-#print axioms gate_hold_no_new_arm
-#print axioms settled_side_stays_spent
-#print axioms decision_spends
-
 theorem raw_credit_step (d : Sheet) (C : Chart h) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
     (digit : 0<(params d s).digits) (x : Raw s n)
@@ -590,8 +583,6 @@ theorem raw_credit_step (d : Sheet) (C : Chart h) (N : 1<n)
         simp only [credit,travel,before,D0,Bool.toNat_false,Nat.mul_zero,Nat.zero_add]
         exact Nat.le_trans H (Nat.le_add_right _ _)
 
-#print axioms raw_credit_step
-
 theorem raw_credit_word (d : Sheet) (C : Chart h) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
     (digit : 0<(params d s).digits) (x : Raw s n)
@@ -689,8 +680,6 @@ theorem between_decisions (d : Sheet) (C : Chart h) (N : 1<n)
   change t*C.L≤rawCount (ownerMark d C) y v
   omega
 
-#print axioms raw_credit_word
-#print axioms between_decisions
 end L4.ReportFastRefractory
 
 namespace L4.ReportFastRefractory
@@ -713,7 +702,6 @@ theorem chart_lower_width (C : Chart h) (G : GapInput h) (w : Nat)
   have LC := lowerGap (nextAt (nextAt C.root a) b) H.atEnd c I
   omega
 
-#print axioms chart_lower_width
 end L4.ReportFastRefractory
 
 namespace L4.ReportFastRefractory
@@ -753,6 +741,5 @@ theorem preacq_grant_frame (d : Sheet) (N : 1<n)
     have E := S.2 k K (.inl T) F0
     omega
 
-#print axioms preacq_grant_frame
 end L4.ReportFastRefractory
 

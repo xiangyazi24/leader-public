@@ -135,10 +135,4 @@ theorem canonical_terminal_raw {s n : Nat} (x : Raw s n) (e : Fin n)
   rw [O] at L
   cases A <;> exact L
 
-#print axioms fault_relay_raw
-#print axioms fault_turn_raw
-#print axioms canonical_relay_raw
-#print axioms canonical_centre_publication_raw
-#print axioms canonical_terminal_raw
-#print axioms canonical_centre_rejected_raw
 end L4.ShortCommitFlightRaw

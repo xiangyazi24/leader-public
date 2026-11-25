@@ -63,5 +63,4 @@ theorem first_stage_launch {base x : X} {hh : ∃ i,oldH6 B base i=true}
     | launch door L =>
       exact ⟨[],e,w,rfl,fun _ h => (List.not_mem_nil h).elim,pc,dd,door,L,pc ▸ T⟩
 
-#print axioms first_stage_launch
 end L4.Height.StageFirstIssue

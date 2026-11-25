@@ -75,6 +75,4 @@ theorem depart_mark {base x : X} (hh : ∃ i,oldH6 B base i=true)
   rw [readL,readR,decode_encode,decode_encode]
   exact ⟨rfl,rfl⟩
 
-#print axioms receiver_is_not_gate
-#print axioms depart_mark
 end L4.BStarBitDepartRing

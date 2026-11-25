@@ -146,7 +146,4 @@ theorem final_need_native {r : Nat} (T : PrimTable r) (bank : Bank)
   rw [show source x BStarLongSignatures.needIx=(readReg regs BStarLongSignatures.needIx).asBool.toNat from Old]
   cases (readReg regs BStarLongSignatures.needIx).asBool <;> rfl
 
-#print axioms final_need_native
-#print axioms final_headers_native
-#print axioms joined_final_readout
 end L4.BStarFinalReadout

@@ -96,7 +96,6 @@ theorem raw_h2_ready_expected {s n : Nat} (N : 5≤n) (x : Raw s n) :
     (full u (by simp)) (full v (by simp)) (full w (by simp))
   cases t <;> simp [L4.iidHitCost,ready]
 
-
 theorem h2_ready_closed {s n : Nat} (N : 5≤n) (x : Raw s n) (e : Fin n)
     (P : H2Ready x) : H2Ready (rawNext s x e) := by
   obtain ⟨M,hh,offEq⟩ := P
@@ -125,8 +124,4 @@ theorem h2_ready_gate {s n : Nat} {x : Raw s n} (H : H2Ready x) (i : Fin n) (j :
   obtain ⟨_,hh,A⟩ := H
   exact short_mis_gate_exact (fun k=>header (x k)) hh x (fun _=>rfl) (fun k=>(A k).1) i j
 
-#print axioms h2_ready_closed
-#print axioms h2_ready_gate
-#print axioms ready_from_h1_covers
-#print axioms raw_h2_ready_expected
 end L4.PhysicalCustody

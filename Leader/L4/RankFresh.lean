@@ -457,19 +457,4 @@ theorem corridor_separator_step {p c n d : Nat} (hn : 4 ≤ n)
         rw [if_neg (Ne.symm ho),if_neg (Ne.symm hr)]]
       exact hf
 
-#print axioms corridor_separator_step
-
-#print axioms corridor_supplier_step
-
-#print axioms outgoing_leader_shield
-#print axioms supplier_step
-
-#print axioms covered_kill_feedback
-
-#print axioms ordinary_protection
-
-#print axioms supplier_incoming
-#print axioms ghost_feedback
-#print axioms ready_live_impact
-
 end L4.RankFresh

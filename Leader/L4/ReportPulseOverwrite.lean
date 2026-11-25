@@ -92,11 +92,6 @@ theorem extract_schedule (put : G × Bool → Fin n) (inj : Function.Injective p
       schedule (skeleton s (w.map (readLabel put))) :=
   congrArg schedule (overwrite_skeleton put inj key s i w H).1
 
-#print axioms overwrite_skeleton
-#print axioms overwrite_length
-#print axioms overwrite_extract
-#print axioms extract_schedule
-
 theorem start_iff (put : G × Bool → Fin n) (inj : Function.Injective put)
     (s : Armed G) (e : Fin n) (g : G) :
     (skeletonStep s (readLabel put e)).2=some (.start g) ↔
@@ -175,8 +170,4 @@ theorem overwrite_skeleton_of_starts (put : G × Bool → Fin n) (inj : Function
       skeleton s (w.map (readLabel put)) :=
   (overwrite_skeleton put inj key s i w (legal_of_starts put inj key s i w H)).1
 
-#print axioms start_iff
-#print axioms split_skeleton_at
-#print axioms legal_of_starts
-#print axioms overwrite_skeleton_of_starts
 end L4.ReportPulseOverwrite

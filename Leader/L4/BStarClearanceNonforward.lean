@@ -115,7 +115,4 @@ theorem joined_reverse_rank (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<
     joined_work_raw k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x a (V _ (.inr rfl)),S,D]
   exact ⟨reply_zero _ _ _ _,rfl⟩
 
-#print axioms joined_idle_rank
-#print axioms joined_clear_rank
-#print axioms joined_reverse_rank
 end L4.BStarClearanceNonforward

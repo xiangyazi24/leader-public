@@ -86,6 +86,4 @@ theorem held_writer_word (sep : ∀ e : Fin n,e≠rightNeighbor e)
     have K := BStarGrantWriterHistory.header_interval hp sep x e i won w life pre u (mark::v) T
     exact writer_body hp (run (step x e) u) mark (sites d) i _ K.1 body same auth
 
-#print axioms held_reader_word
-#print axioms held_writer_word
 end L4.BStarBodyGrantReadout

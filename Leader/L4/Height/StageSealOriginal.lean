@@ -146,5 +146,4 @@ theorem stage_to_seal {base origin x : X} {hh : ∃ j,oldH6 B base j=true}
       P L F d D' (qrun _ b (closed _ (qrun _ idle yq) door)) authSeal latchSeal
   exact ⟨pre,mid,tail,MW,stageEvent,frame.1,frame.2.1,v,replayMid.symm ▸ S,replayMid.symm ▸ SI,replayMid.symm ▸ out,V,bit⟩
 
-#print axioms stage_to_seal
 end L4.Height.StageSealOriginal

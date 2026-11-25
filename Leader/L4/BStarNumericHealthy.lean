@@ -231,8 +231,4 @@ theorem successful_sweep {base x : X} {hh : ∃ z,oldH6 B base z=true}
   exact ⟨ds,A,BStarNumericWordFrame.live_sweep hp chart A sep i code K
     (fun d M => (W d M).1) (fun d M => (W d M).2)⟩
 
-#print axioms selected_health
-#print axioms bound_width
-#print axioms records_ready
-#print axioms successful_sweep
 end L4.BStarNumericHealthy

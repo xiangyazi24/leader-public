@@ -139,5 +139,4 @@ theorem handshake {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have W : Wire (cleanBit v s) := ⟨F,op,rfl,outcome,by change ((BitVec.ofBool (firstBit s)).zeroExtend 34).toNat<2; cases s <;> decide⟩
   exact ⟨.cons I E₁ (.cons I₁ E₂ (.cons I₂ E₃ (.nil I₃))),I₃,destWire,W⟩
 
-#print axioms handshake
 end L4.BStarBitGateService

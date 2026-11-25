@@ -171,8 +171,4 @@ theorem every_sealed_prefix {base origin x : X} {hh : ∃ i,oldH6 B base i=true}
     obtain ⟨m,P,I,_,_,off⟩ := scope a i (f++v) all
     exact ⟨m,P,I,off rfl⟩
 
-#print axioms live_writer_word
-#print axioms live_at_end_bit
-#print axioms after_selected_seal
-#print axioms every_sealed_prefix
 end L4.BStarSealWriterInterval

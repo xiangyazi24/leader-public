@@ -113,8 +113,4 @@ theorem crossing_by_two_queries {n k : Nat} (port : Fin k→Fin n)
   rw [E]
   exact crossing_by_mem_after_cut port injective j m pos a _ inReady outReady (deliver u v A)
 
-#print axioms crossing_by_two_queries
-#print axioms strictSeq_two_prefix
-#print axioms strictDelay_hit
-#print axioms strictDelay_prefix
 end L4.BStarFenceCandidateCuts

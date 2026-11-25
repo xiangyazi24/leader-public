@@ -116,9 +116,5 @@ theorem intervals_candidate_charge {base initial : X} {hh : ∃ i,oldH6 B base i
   rw [charges_candidate_eq hp base initial _ _ played redirect compat]
   exact intervals_charge hp C sep layout intervals
 
-#print axioms intervals_charge
-#print axioms charges_candidate_eq
-#print axioms intervals_candidate_charge
-#print axioms actual_between_charge
 end L4.BStarPaceBetweenCharge
 

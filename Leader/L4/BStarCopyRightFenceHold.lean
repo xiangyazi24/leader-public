@@ -186,7 +186,4 @@ theorem hold_through_ack {Tag : Type} (digits : Tag→BitVec 36)
       exact F
     exact (laneRead_congr _ _ 0 width (fun j _ J => Hread j (by omega))).trans read
 
-#print axioms hold_through_ack
-#print axioms ready_frozen
-#print axioms drained_old
 end L4.BStarCopyRightFenceHold

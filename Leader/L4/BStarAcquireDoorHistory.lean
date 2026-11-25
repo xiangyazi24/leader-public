@@ -109,9 +109,6 @@ theorem ring_untouched {n : Nat} {a : LargeParams} (b : LargeRows a) (x : Fin n�
     (e i : Fin n) (h1 : i≠e) (h2 : i≠rightNeighbor e) :
     AllSizeS1Geometry.step b x e i=x i := by simp [AllSizeS1Geometry.step,h1,h2]
 
-#print axioms joined_reverse_consumes
-#print axioms ring_reverse
-
 /-- A marked source incoming edge reads exactly its original right K0.
 No reply from any other action in this pair can enter the source door
 on this mark. The caller separately authenticates the old carrier. -/
@@ -183,6 +180,4 @@ theorem trace_hop_bStar (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   have E := ring_reverse k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x e H.1 C d pay H.2.1 H.2.2 S D hv
   exact .hop _ _ _ _ _ C d H S E.2 E.1 (.nil _ _)
 
-#print axioms source_reply_decision
-#print axioms Trace.reply
 end L4.BStarAcquireDoorHistory

@@ -53,7 +53,6 @@ private theorem reader_work_left {s n : Nat} (x : Raw s n) (e : Fin n)
     simp [rawNext,AllSizeS1Geometry.step]]
   exact G.trans E
 
-
 /-- Every physical mark retains a no-writer H1 header's bank and selector
 fields, including when the protected header is the old responder.
 No hypotheses are made about any other header or either adjacent token. -/
@@ -88,9 +87,6 @@ theorem held_reader_frame_raw {s n : Nat} (x : Raw s n) (e i : Fin n)
   · exact .inr ⟨by decide,by decide⟩
   · exact .inl ⟨by decide,by decide⟩
 
-#print axioms no_writer_frame_raw
-#print axioms held_reader_frame_raw
-
 /-- The bank endpoint chosen by this row's single selector bit. -/
 def selectedValue (w : BitVec 96) : Bool :=
   ((lane 87 2 (by decide)).read w).getLsbD
@@ -104,7 +100,6 @@ theorem held_reader_value_raw {s n : Nat} (x : Raw s n) (e i : Fin n)
   unfold selectedValue
   rw [H.1,H.2]
 
-#print axioms held_reader_value_raw
 /-- Exact compatibility with the row's native selector/bank readout. -/
 theorem selectedValue_eq (w : BitVec 96) :
     selectedValue w=w.getLsbD (88-get w 92 1 (by decide)) := by
@@ -115,5 +110,4 @@ theorem selectedValue_eq (w : BitVec 96) :
   congr 1
   omega
 
-#print axioms selectedValue_eq
 end L4.ShortReaderMIS1

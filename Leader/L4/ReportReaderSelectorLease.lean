@@ -90,7 +90,4 @@ theorem reader_grant_run (sheet : Sheet) (x : Raw s n) (i : Fin n)
     obtain ⟨C'',H'',S'⟩ := IH _ C' H' R.2.2
     exact ⟨C'',H'',S'.trans S⟩
 
-#print axioms reader_grant_protects_selector
-#print axioms reader_grant_step
-#print axioms reader_grant_run
 end L4.ReportReaderSelectorLease

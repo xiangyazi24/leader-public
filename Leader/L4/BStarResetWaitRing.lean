@@ -115,7 +115,6 @@ private theorem fold_work (g : Pair LongGeometry) (x : Pair (BitVec LW))
   | cons h t ih =>
     simpa [Selected.append,List.append_assoc] using ih (a.append (selected g x h))
 
-
 theorem work_left (g : Pair LongGeometry) (x : Pair (BitVec LW)) (hh : g.1.axes.h6=true) :
     control (patchPair (longWork g x) x).1=control x.1 := by
   let d := BStarLongCommandData.round g x
@@ -229,5 +228,4 @@ theorem valid_of_control_eq (x y : BitVec LW) (h : control x=control y) :
     decide ((ctrlOp.read y).toNat<manifest.opcodes))
   rw [p,o]
 
-#print axioms step_control
 end L4.BStarResetWaitRing

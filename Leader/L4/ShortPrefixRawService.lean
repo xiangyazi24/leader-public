@@ -120,8 +120,4 @@ theorem uniform_of_families {s n : Nat} {h : Fin n→Bool}
   rw [←ShortPrefixTrial.trans_mean]
   exact V
 
-#print axioms cardinal_le_list
-#print axioms replay_from_short_word
-#print axioms centre_publication_mean
-#print axioms uniform_of_families
 end L4.ShortPrefixRawService

@@ -108,9 +108,4 @@ theorem mis1_frozen_layer {s n : Nat} {z : Raw s n} (A : H1.rawMaximal z) (N : 3
     (mask y H).symm ▸ layer_of_observe (h1_gaps A) (h1_nonempty A (by omega)) N
       (observe y) Y.2.1 Y.2.2⟩
 
-#print axioms mis1_h1_rings_identical
-#print axioms embed_eq_mask
-#print axioms layer_of_observe
-#print axioms mis1_frozen_layer
-
 end L4.ShortNORPhysicalAdapter

@@ -119,9 +119,6 @@ theorem returning_ready {base origin x : X} {hh : ∃ i,oldH6 B base i=true}
       exact ih (lead++[e]) Y H (stays_back hp E)
         (fun a f b eq => scope (e::a) f b (congrArg (List.cons e) eq)) pre mark post split
 
-#print axioms ready_release_past
-#print axioms returning_ready
-
 private theorem busy_as_generated {base x : X} {addr : Nat → Pos n} {len op : Nat}
     {a b : Cursor} {w : List (Fin n)}
     (P : BusyOnly hp base addr len op x a w b) :
@@ -213,5 +210,4 @@ theorem through_turn_return_ack {Tag : Type} (digits : Tag→BitVec 36)
   refine ⟨start3,origin3 ▸ accepted11,last,lastLab,?_,K,replay.symm ▸ D,replay.symm ▸ L⟩
   exact (congrArg BStarCopyInjection.ReleaseHistory.pending (E.trans (J.trans (R.trans Q)))).trans finished
 
-#print axioms through_turn_return_ack
 end L4.BStarCopyRightReturn

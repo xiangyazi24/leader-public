@@ -251,11 +251,3 @@ theorem pinned_moveCount {p c n d0 : Nat} (i e b j : Fin n) (s : Observer p c n)
 
 end L4.RearTrace
 
-#print axioms L4.RearTrace.phaseAfter_pinned
-#print axioms L4.RearTrace.liveGeometry_step
-
-#print axioms L4.RearTrace.geometry_run
-#print axioms L4.RearTrace.concrete_geometry
-
-#print axioms L4.RearTrace.rearMoves_change
-#print axioms L4.RearTrace.pinned_moveCount

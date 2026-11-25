@@ -89,8 +89,6 @@ theorem key_count (F : List (Fin n)→Prop)
       rw [ofFn_recodeWord]]
     exact (Cert w W).2.2
 
-#print axioms key_count
-
 open AllSizeProtocol ReportByteRows ReportPulseRaw ReportPulseWarmup
 
 omit [DecidableEq G] in
@@ -146,8 +144,6 @@ theorem certify_prefix {X : Type}
     rw [List.getElem?_append_right (by simp only [List.length_append,U]; omega)]
     rw [show (u++v).length-1-es.length=fs.length-1 by simp only [List.length_append,L,U]; omega]
     exact Pin
-
-#print axioms certify_prefix
 
 theorem tag_lift (put : G × Bool → Fin n) (inj : Function.Injective put)
     (s : Phase G) (u v : List (Fin n)) (j : Nat) (J : j<u.length) (e : Event G)
@@ -232,8 +228,6 @@ theorem certify_keys (put : G×Bool→Fin n) (inj : Function.Injective put)
   · have Pin := C₁.pin
     rw [Lq,show q.val+1-1=q.val by omega] at Pin
     exact tag_lift put inj s (a++b) tail _ (by omega) _ Pin
-
-#print axioms certify_keys
 
 /-- A real clean prefix may precede the WARMUP1 clock's counted suffix. -/
 theorem credit_after_warm {X : Type} {raw : X→Fin n→X} {b a : Fin n}
@@ -352,5 +346,4 @@ theorem fixed_pair_actual {X : Type} (F : List (Fin n)→Prop)
   exact certify_keys put inj s g h i j first second tail (by simp [first,L₁])
     (by simp only [first,second,List.length_append,List.length_singleton];omega) C₀ C₁ Separate
 
-#print axioms fixed_pair_actual
 end L4.ReportPulseFixedPair

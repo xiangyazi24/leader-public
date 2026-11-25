@@ -71,6 +71,4 @@ theorem prep_before_fence {base : X} {hh : ∃ i, oldH6 B base i=true}
   rw [←List.getElem_eq_getD (h:=jl) fall,←E,distance_idx C.nodup jl,distance_idx C.nodup hi]
   omega
 
-#print axioms chart_occurrence_mono
-#print axioms prep_before_fence
 end L4.DirtyFenceOccurrence

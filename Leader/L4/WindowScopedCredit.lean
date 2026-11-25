@@ -313,7 +313,6 @@ theorem score_drift {p c n : Nat} (hn : 4≤n) (v : Fin n) (a b : Nat)
   · simp [hm,Mode.done] at h
   · simp [hm,Mode.done] at h
 
-
 /-- First-terminal failure on the caller's actual raw labels, not on
 erased or conditioned words. The projection carries only phase/mode
 coordinates; the caller's state may contain the complete tag ledger. -/
@@ -342,6 +341,3 @@ theorem failure_bound {α : Type} {p c n : Nat} (hn : 4≤n)
 
 end L4.WindowScopedCredit
 
-#print axioms L4.WindowScopedCredit.score_drift
-
-#print axioms L4.WindowScopedCredit.failure_bound

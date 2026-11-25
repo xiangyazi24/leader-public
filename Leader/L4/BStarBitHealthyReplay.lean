@@ -60,8 +60,6 @@ theorem arbitrary_pregate_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
           omega
         | turn => omega
 
-#print axioms arbitrary_pregate_step
-
 /-- A replay with the nominated ordered subsequence reaches the gate
 on some prefix. Intervening marks may help but cannot undo progress or
 change the well-formed BIT before that first gate cut. -/
@@ -131,8 +129,6 @@ theorem reaches_gate_of_sublist {base : X} {hh : ∃ i,oldH6 B base i=true}
       (closed _ q e) offset now new nom'
     exact ⟨e::pre,post,congrArg (List.cons e) W,.cons I E T,P⟩
 
-#print axioms reaches_gate_of_sublist
-
 open BStarClearanceSource BStarLongDoor
 
 /-- Start the arbitrary replay theorem at a genuine canonical
@@ -170,5 +166,4 @@ theorem launch_replay_to_gate {base old : X} {hh : ∃ i,oldH6 B base i=true}
   rw [loc] at F
   exact ⟨pre,post,_,E,T,F,H.fault,H.op,H.outcome,rfl,rfl⟩
 
-#print axioms launch_replay_to_gate
 end L4.BStarBitHealthyReplay

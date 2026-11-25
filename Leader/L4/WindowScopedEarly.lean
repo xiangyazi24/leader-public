@@ -81,8 +81,6 @@ theorem valid_birth_prefix {p c n d : Nat} {z0 : Config p c n} (hn : 4≤n)
       omega
     exact ⟨⟨hz.markCover,hz.sourceCover,h.2,hUnpaid,hvalid⟩,hborn⟩
 
-#print axioms valid_birth_prefix
-
 private theorem born_sticky {p c n : Nat} (v : Fin n) (d : Nat) (w : List (Fin n)) :
     GGTiming.runMarks (FreshFailure.earlyNext (p:=p) (c:=c) v d) .born w = .born := by
   induction w with
@@ -196,7 +194,4 @@ theorem no_reentry_of_strict_exit {p c n : Nat} (v : Fin n) (group cert : List (
   rw [List.foldl_append]
   exact Nat.lt_of_lt_of_le h (gap_nondecreasing v group cert a _ w')
 
-#print axioms no_reentry_of_strict_exit
-#print axioms paid_fresh_of_keep
-#print axioms early_deadline_of_birthPrefix
 end L4.WindowScopedEarly

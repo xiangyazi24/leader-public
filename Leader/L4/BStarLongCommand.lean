@@ -194,9 +194,4 @@ theorem terminal_fixture :
     finish (p acquire 0 0 (2^33))=.reply (p acquire 0 0 0) ∧
     finish (p sealOp 0 0 (2*(8+4)+1))=.reply (p sealOp 0 0 1) := by decide
 
-#print axioms classified_claims
-#print axioms classified_disjoint
-#print axioms signature_pins
-#print axioms moving_gate_fixture
-#print axioms terminal_fixture
 end L4.BStarLongCommand

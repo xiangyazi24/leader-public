@@ -194,7 +194,6 @@ theorem copy_prefix {r : Nat} (a y : Word r)
     intro hk
     rw [val_succ, val_succ, ih (Nat.le_of_succ_le hk), hdigit j hj]
 
-
 theorem copy_word {r : Nat} (a y : Word r)
     (hzero : CopyLaw a y 0)
     (hdigit : ∀ j (hj : j < r),
@@ -230,7 +229,6 @@ theorem add_prefix {r : Nat} (a b y : Word r) (carry : Nat → Nat)
     rw [Nat.mul_add, Nat.mul_add] at key
     rw [val_succ, val_succ, val_succ, Nat.pow_succ, hcarry, hy]
     omega
-
 
 theorem add_word {r : Nat} (a b y : Word r) (carry : Nat → Nat)
     (hzero : AddLaw a b y carry 0)
@@ -272,7 +270,6 @@ theorem sub_prefix {r : Nat} (a b y : Word r) (borrow : Nat → Nat)
     rw [val_succ, val_succ, val_succ, Nat.pow_succ]
     omega
 
-
 theorem sub_word {r : Nat} (a b y : Word r) (borrow : Nat → Nat)
     (hzero : SubLaw a b y borrow 0)
     (hdigit : ∀ j (hj : j < r),
@@ -311,7 +308,6 @@ theorem shl3_prefix {r : Nat} (a y : Word r) (carry : Nat → Nat)
     rw [val_succ, val_succ, Nat.pow_succ, hcarry, hy]
     omega
 
-
 theorem shl3_word {r : Nat} (a y : Word r) (carry : Nat → Nat)
     (hzero : Shl3Law a y carry 0)
     (hdigit : ∀ j (hj : j < r),
@@ -329,17 +325,3 @@ end Digits
 end Compiler
 end L4
 
-#print axioms L4.Compiler.Digits.val_succ
-#print axioms L4.Compiler.Digits.copy_digit_fact
-#print axioms L4.Compiler.Digits.add_digit_fact
-#print axioms L4.Compiler.Digits.sub_digit_fact
-#print axioms L4.Compiler.Digits.shl3_digit_fact
-#print axioms L4.Compiler.Digits.prefix_induction
-#print axioms L4.Compiler.Digits.copy_prefix
-#print axioms L4.Compiler.Digits.copy_word
-#print axioms L4.Compiler.Digits.add_prefix
-#print axioms L4.Compiler.Digits.add_word
-#print axioms L4.Compiler.Digits.sub_prefix
-#print axioms L4.Compiler.Digits.sub_word
-#print axioms L4.Compiler.Digits.shl3_prefix
-#print axioms L4.Compiler.Digits.shl3_word

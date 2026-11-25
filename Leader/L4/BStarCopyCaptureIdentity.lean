@@ -138,6 +138,4 @@ theorem right_ack_matches_acquisition {base x : X} {hh : ∃ i,oldH6 B base i=tr
   · rwa [←exactly.1,←exactly.2]
   · rw [readout,sel,atI,exactly.1]
 
-#print axioms right_ack_matches_acquisition
-#print axioms continuous_reader_birth_unique
 end L4.BStarCopyCaptureIdentity

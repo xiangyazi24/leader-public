@@ -153,6 +153,4 @@ theorem stage_on_stopped_history (P : Production g) (i : Header h) (base w : Wor
     exact BStarNeedPrefix.generated_append hp tour T
   · rw [run_join x base,init,run_join]; exact stage
 
-#print axioms stage_on_stopped_history
-#print axioms after_inject
 end L4.Height.FreshDrainedAttempt

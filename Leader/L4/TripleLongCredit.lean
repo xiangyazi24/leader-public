@@ -244,8 +244,3 @@ theorem failure_248 {α : Type} {n : Nat} (next : α → Fin n → α)
 
 end L4.TripleLongCredit
 
-#print axioms L4.TripleLongCredit.credit_average
-#print axioms L4.TripleLongCredit.credit_half
-#print axioms L4.TripleLongCredit.credit_quarter
-#print axioms L4.TripleLongCredit.raw_quota_children
-#print axioms L4.TripleLongCredit.failure_248

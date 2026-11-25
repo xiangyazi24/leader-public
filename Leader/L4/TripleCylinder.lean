@@ -368,9 +368,3 @@ theorem moderate_charge_budget (a b n : Nat) (hb : 2≤b) (ha : a≤2*b) :
 
 end L4.TripleCylinder
 
-#print axioms L4.TripleCylinder.terminalCharges_mass
-#print axioms L4.TripleCylinder.terminalCharges_firstMoment
-#print axioms L4.TripleCylinder.terminalCharges_injection
-#print axioms L4.TripleCylinder.failure_bound
-
-#print axioms L4.TripleCylinder.moment_of_zero_credit

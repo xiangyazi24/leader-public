@@ -80,7 +80,6 @@ theorem allowed_rows (d : Sheet) (C : Chart h) (N : 1<n)
     exact spent_unblocked d hh G B inj (raw z) q (activeRaw d B (raw z)) desired
       (bans d B desired raw z) (makeBan_spec hh G B inj _ _) (activeRaw_sound d B _) P
 
-
 noncomputable def driver (C : Chart h) (step : Z→Fin n→Z)
     (bar : Z→Fin n→Option (Fin n)) (cur : Z→Cursor)
     (z : Track Z n) (e : Fin n) : Track Z n :=
@@ -137,7 +136,4 @@ theorem launch_mean (C : Chart h) (step : Z→Fin n→Z)
   simpa only [start,K,eventRank,ReportFastAcqTrack.debt,ReportFastAcqWins.fDebt,
     Nat.sub_zero,Bool.toNat_true,←Nat.mul_assoc] using M
 
-#print axioms allowed_rows
-#print axioms driver_mean
-#print axioms launch_mean
 end L4.ReportFastAcqAllowed

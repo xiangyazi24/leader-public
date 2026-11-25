@@ -191,11 +191,3 @@ theorem freshPeaceAfterExtinction_of_maskStep (hstep : FreshMaskStep) :
 
 end L4
 
-#print axioms L4.originalTagAt_step_iff
-#print axioms L4.originalTagAt_init_iff
-#print axioms L4.nextTagMask_live
-#print axioms L4.fresh_trace_of_maskStep
-#print axioms L4.freshPeaceAfterExtinction_of_maskStep
-#print axioms L4.nextTagMask_initiator_false
-#print axioms L4.nextTagMask_responder_iff
-#print axioms L4.nextTagMask_offPair_iff

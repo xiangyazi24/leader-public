@@ -94,5 +94,4 @@ theorem success_handoff {p c n : Nat} {initial : Config p c n} (hn : 5≤n)
   rw [←hJ] at hY ⊢
   exact relaunch_exact (by omega) S e H y q hc hY hey result
 
-#print axioms success_handoff
 end L4.WindowA0AdjacentDoor

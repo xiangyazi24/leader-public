@@ -61,7 +61,6 @@ private theorem found_out_busy {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [endEq]
   exact T
 
-
 set_option maxHeartbeats 300000 in
 private theorem consume_six_samples_busy {base x : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
@@ -170,8 +169,6 @@ private theorem consume_six_samples_busy {base x : X} {hh : ∃ i,oldH6 B base i
   rw [←Y] at readout
   exact readout
 
-
-
 open BStarAcquireLatch BStarAcquireMarkedPath
 
 private theorem trace_incidence_pos {base x y : X} {u z : Pos n}
@@ -214,7 +211,6 @@ private theorem trace_incidence_pos {base x y : X} {u z : Pos n}
       exact ⟨[],e,w,C,D,ps,vs,rfl,List.mem_cons_self,E.symm.trans H,hc,hd,HV,won,index,sel,headers,tail⟩
     · obtain ⟨pre,a,post,C',D',remaining,later,Q,here,R⟩ := ih rest
       exact ⟨e::pre,a,post,C',D',remaining,later,congrArg (List.cons e) Q,List.mem_cons_of_mem _ here,R⟩
-
 
 private theorem path_mem {base : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
@@ -265,7 +261,6 @@ private theorem busy_pc_door {base x : X} {addr : Nat → Pos n} {len op : Nat}
     simp only [List.append_nil] at a
     exact busy_prefix_pc hp P pre [] (by simpa using a.symm)
   · exact busy_prefix_pc hp P pre q a
-
 
 /-- On the original tape, the capture is on this owner's physical chart,
 and every old source state from that capture through ACK consumption
@@ -332,5 +327,4 @@ theorem consume_six_owned_window {base x : X} {hh : ∃ i,oldH6 B base i=true}
     change pc (play (step (play (step (play x u) launch) pre) e) a) (S.getD 0 fall).1=5 at oldPC
     exact ⟨by rw [oldPC]; decide,by rw [oldPC]; decide⟩
 
-#print axioms consume_six_owned_window
 end L4.BStarAcquireAckWindow

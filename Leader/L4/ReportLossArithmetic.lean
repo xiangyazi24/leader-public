@@ -99,11 +99,6 @@ theorem complete_cell_union {H U h cells : Nat} (I : 0<h)
         _ = 320*(H*H*(U/h+1)) := by rfl
         _ = _ := by ac_rfl
 
-#print axioms complete_cells
-#print axioms halfcell_attempts
-#print axioms warm_blocks
-#print axioms middle_windows
-#print axioms complete_cell_union
 end L4.ReportLossArithmetic
 
 namespace L4.ReportLossArithmetic
@@ -221,9 +216,6 @@ theorem service_exponent {rho g : Nat} (G : 0<g) (A : g≤243*(trialH rho)^2) :
         _ = 19440*(c*trialH rho*(trialH rho)^2*E rho) := by rfl
         _ = _ := by ac_rfl
 
-#print axioms close_power
-#print axioms mesh_power
-#print axioms service_exponent
 end L4.ReportLossArithmetic
 
 namespace L4.ReportLossArithmetic
@@ -320,10 +312,6 @@ theorem mesh_loss_lt (rho : Nat) :
       _ = _ := by ac_rfl
     _ < _ := A
 
-#print axioms close_loss_lt
-#print axioms miss_loss_lt
-#print axioms mesh_loss_lt
-#print axioms warm_gap_large
 end L4.ReportLossArithmetic
 
 namespace L4.ReportLossArithmetic
@@ -371,7 +359,4 @@ theorem mesh_integer_loss_lt {rho g : Nat} (G : 0<g) (A : g≤243*(trialH rho)^2
   Nat.lt_of_lt_of_le (mesh_loss_lt rho)
     (Nat.pow_le_pow_right (by decide) (service_exponent G A))
 
-#print axioms warm_exponent
-#print axioms warm_loss_lt
-#print axioms mesh_integer_loss_lt
 end L4.ReportLossArithmetic

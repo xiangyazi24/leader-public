@@ -64,7 +64,3 @@ theorem rear_entrance_printed {p c n : Nat} (x : Config p c n)
 
 end L4
 
-#print axioms L4.RearTrace.concreteRearDebt_literal
-#print axioms L4.rear_allTags_mean_literal
-#print axioms L4.rear_entrance_literal
-#print axioms L4.rear_entrance_printed

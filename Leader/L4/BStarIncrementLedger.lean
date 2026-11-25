@@ -66,7 +66,4 @@ theorem count_of_prefix {Owner : Type} [DecidableEq Owner] (initial : Owner→Na
   | succ t ih =>
     rw [count,count,ih (fun j J=>equal j (Nat.lt_succ_of_lt J)),equal t (Nat.lt_succ_self t)]
 
-#print axioms count_of_prefix
-#print axioms keys_of_inc_marks
-#print axioms avoids_reserved
 end L4.BStarIncrementLedger

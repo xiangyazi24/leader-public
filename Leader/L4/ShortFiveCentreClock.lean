@@ -71,6 +71,4 @@ theorem fixed_five_for_centre {s n : Nat} (N : 21<n) (x : Raw s n) (A : H2Ready 
   exact ⟨cs,coords,mid,center,next,small,gates,distinct,
     fun y Y => fixed_five_parked_expected n5 cs small nom order y Y⟩
 
-#print axioms chart_center_is_right
-#print axioms fixed_five_for_centre
 end L4.ShortFiveCentreClock

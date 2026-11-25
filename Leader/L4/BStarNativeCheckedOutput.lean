@@ -69,5 +69,4 @@ theorem actual_output {base initial : X} {hh : ∃ i,oldH6 PROTO base i=true}
     (digit_on_chart hp base (fun j => S.getD j fall) len width L) table bank packed h
   exact ⟨pre,e,tail,W,hit,P,issue,needEq,headers,h,desc,descNeed⟩
 
-#print axioms actual_output
 end L4.BStarNativeCheckedOutput

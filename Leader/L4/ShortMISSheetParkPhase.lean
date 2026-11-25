@@ -186,8 +186,4 @@ theorem parkGoal (G : Geometry s n) (C : Chart G.P.h) :
 theorem parkWatch (G : Geometry s n) (C : Chart G.P.h) :
     (parkPhase G C).watch=watch C := rfl
 
-#print axioms parkPhase
-#print axioms parkGoal
-#print axioms parkWatch
-
 end L4.ShortMISSheetParkPhase

@@ -151,5 +151,4 @@ theorem p_receipt {base x : X} {hh : ∃ i,oldH6 B base i=true}
   change val _<16^width at Bnd
   rwa [p_word hr] at Bnd
 
-#print axioms p_receipt
 end L4.BStarNativePReceipt

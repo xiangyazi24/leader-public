@@ -344,14 +344,3 @@ theorem window7_init_tag {p c n : Nat} (x : Config p c n) (i : Fin (rank x))
 
 end L4.WindowSpan
 
-#print axioms L4.WindowSpan.gap_sum
-#print axioms L4.WindowSpan.span_sum
-#print axioms L4.WindowSpan.firstMark_after_roster
-#print axioms L4.WindowSpan.at_spanK
-#print axioms L4.WindowSpan.shortStarts_many
-
-#print axioms L4.WindowSpan.two_entry_gaps_le
-#print axioms L4.WindowSpan.at_rootSpanK
-
-#print axioms L4.WindowSpan.window7_distinct
-#print axioms L4.WindowSpan.window7_init_tag

@@ -89,8 +89,6 @@ theorem separator_return_of_release {base x : X} {hh : ∃ i,oldH6 B base i=true
   intro t
   exact Nat.le_trans (compare t []) (release t)
 
-#print axioms separator_return_of_release
-
 open BStarLongCommand BStarAcquireWaitControl BStarResetControllerEntry
 
 /-- Production cutoff immediately after the exact independent issue
@@ -143,8 +141,6 @@ theorem separator_after_launch_of_release {base x : X} {hh : ∃ i,oldH6 B base 
     op (.out 0) ⟨same _ qy,legal,phase,pc⟩
     ⟨Nat.zero_le _,⟨_,front⟩,fun _ J=>(Nat.not_lt_zero _ J).elim⟩ cost release
 
-#print axioms separator_after_launch_of_release
-
 open BStarFenceLineGeometry BStarH6Ordinal
 
 /-- Uniform linear-width first authenticated receipt after a genuine launch.
@@ -186,5 +182,4 @@ theorem separator_after_launch_expected_linear
   exact separator_after_launch_of_release hp chart sep Q (fun z e Z=>closed z Z e)
     layout I (cx x I) (252*n*W) release
 
-#print axioms separator_after_launch_expected_linear
 end L4.SeparatorReturnLinear

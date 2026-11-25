@@ -220,10 +220,4 @@ theorem first_boundary_is_only_gate {s n : Nat} {x : Raw s n} (P : H2Ready x)
     have p : a<a+b := by omega
     exact ⟨by simp [lane,p],(C a (by omega) (by omega)).mpr (Or.inl rfl)⟩
 
-#print axioms gap
-#print axioms three_gaps
-#print axioms destination_chart
-#print axioms header_run
-#print axioms ready_run
-#print axioms first_boundary_is_only_gate
 end L4.ShortResetChart

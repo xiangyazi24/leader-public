@@ -115,7 +115,4 @@ theorem outgoing_modes_before_center {base start : X} {hh : ∃ i,oldH6 B base i
     idx head pc launch U
   exact no_selected_mark_before_end hp (sep i) idx p selected V
 
-#print axioms selected_center_leaves
-#print axioms no_selected_mark_before_end
-#print axioms outgoing_modes_before_center
 end L4.BStarCommitCenterExit

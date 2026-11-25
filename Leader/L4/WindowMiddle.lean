@@ -203,10 +203,4 @@ theorem physicalPlan : WindowFiveStages.PhysicalPlan :=
 theorem rooted_short_window : RootedWindows.RootedShortWindowReward :=
   WindowFiveStages.rooted_short_window_of_plan physicalPlan
 
-#print axioms triple_slot
-#print axioms physicalPlan
-#print axioms rooted_short_window
-#print axioms singleton_slot
-#print axioms pair_slot
-
 end L4.WindowMiddle

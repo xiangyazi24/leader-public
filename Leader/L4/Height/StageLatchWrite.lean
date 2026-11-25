@@ -136,7 +136,6 @@ theorem accept_frame (x : BitVec LW) (op : Nat) (p : Payload) :
       (assign _ _ (by decide))) (assign _ _ (by decide)))) (schedule_frame _)
   · exact repair_frame
 
-
 open BStarLongDoor in
 theorem door_frame (x : BitVec LW) (t : Token) (q : Patch LW)
     (h : oldDoor x t=.write q) : Frame q := by
@@ -230,7 +229,6 @@ private theorem grant_all (g : Pair LongGeometry) (x : Pair (BitVec LW))
     · contradiction
   exact ht.elim (T .left) (T .right)
 
-
 open BStarLongOutgoing BStarStageCandidateWrite BStarStageCandidateJoined BStarCaptureInterval BStarBankTrace BStarLongPublication
 private theorem selected_work_flat (g : Pair LongGeometry) (raw : Pair (BitVec LW))
     (os : List CmdOffer) (start : Selected) :
@@ -310,7 +308,6 @@ private theorem center_left (g : Pair LongGeometry) (C : CommandClaim)
     List.mem_filter.mpr ⟨M,by simp [centerClaim,H]⟩
   rw [one_center_claim] at HF
   exact List.mem_singleton.mp HF
-
 
 private theorem latch_patch (head : Bool) (inside : Bool) (old : BitVec LW) (d : Descriptor)
     (arg : Nat) (raw : BitVec LW) (H : head=true) :
@@ -415,5 +412,4 @@ theorem joined_stage_latch (g : Pair LongGeometry) (raw : Pair (BitVec LW))
   rw [Patch.compose_apply,readApply _ _ S]
   exact (congrArg stage.read eq).trans W
 
-#print axioms joined_stage_latch
 end L4.Height.StageLatchWrite

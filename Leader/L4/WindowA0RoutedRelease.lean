@@ -201,6 +201,4 @@ theorem credited_release_of_reference {p c n : Nat} (g : List (Fin n)) (a b base
     cases C
   · exact LL
 
-#print axioms failure_mass
-#print axioms success_on_keep
 end L4.WindowA0RoutedRelease

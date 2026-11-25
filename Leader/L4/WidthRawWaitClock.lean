@@ -247,7 +247,4 @@ theorem expected_exit_closed {s n d : Nat} {h : Fin n→Bool} (S : Sector h d)
   rw [←eq x X t]
   exact expected_exit (s:=s) S Q frozen x t
 
-#print axioms raw_projection
-#print axioms expected_exit
-#print axioms expected_exit_closed
 end L4.WidthRawWaitClock

@@ -298,12 +298,4 @@ theorem expected {Raw : Type} {n d : Nat}
     _ ≤ n*(4*(d+1)^2)*n^t := Nat.mul_le_mul_right _ (Nat.mul_le_mul_left _ (rank_le _))
     _ = 4*n*(d+1)^2*n^t := by ac_rfl
 
-#print axioms inside_decrease
-#print axioms outgoing_decrease
-#print axioms patch_inside_decrease
-#print axioms patch_outgoing_decrease
-#print axioms transition_mono
-#print axioms some_mark_pays
-#print axioms rank_le
-#print axioms expected
 end L4.WidthWaitDrain

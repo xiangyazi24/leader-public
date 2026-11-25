@@ -91,7 +91,6 @@ noncomputable def owner_attempt {s n : Nat} {base x : Raw s n}
   simp only [List.length_append] at L ⊢
   omega
 
-#print axioms owner_attempt
 theorem first_credit_shift_pad {s n : Nat} {X : Type}
     {E : X→Raw s n→Word n→Prop} {o : X} {x : Raw s n} {u v p : Word n}
     (H : firstCredit (HoldsCredit E) o (rawRun x u) v) :
@@ -158,6 +157,4 @@ theorem owner_credit_expected {s n : Nat} {base x : Raw s n}
     (fun w=>by change Q (rawRun x (pre++w)); rw [app]; exact preserve _ _ P)
     complete⟩
 
-#print axioms owner_credit_expected
-#print axioms first_credit_shift_pad
 end L4.PhysicalOwnerAttempt

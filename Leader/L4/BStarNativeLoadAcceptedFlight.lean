@@ -72,5 +72,4 @@ theorem all_load_accepted_flights {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · rw [BStarResetSchedule.run_append]
     exact ⟨oldOp,L,preEq ▸ A,N,value,SW,preEq ▸ Bk,preEq ▸ (retEq ▸ H)⟩
 
-#print axioms all_load_accepted_flights
 end L4.BStarNativeLoadAcceptedFlight

@@ -97,7 +97,4 @@ theorem expected_through_first_high_and_stable_drain
   have JW : j≤W := Nat.le_trans J Wchart
   exact Nat.add_le_add (Nat.mul_le_mul_left _ (by omega)) (Nat.mul_le_mul_left _ Wlines)
 
-#print axioms expected_through_first_high_and_stable_drain
-
-#print axioms expected_through_prep_and_stable_drain
 end L4.DirtyPrepPaidMean

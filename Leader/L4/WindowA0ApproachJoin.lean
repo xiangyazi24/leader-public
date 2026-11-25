@@ -415,12 +415,4 @@ theorem release_to_return {p c n : Nat} {initial : Config p c n}
     rw [GGTiming.runMarks_append,←E]
     exact T
 
-#print axioms release_to_return
-#print axioms adjacent_release_handoff
-#print axioms splice_first
-#print axioms literal_release_handoff
-#print axioms splice_at
-#print axioms literal_approach_release
-#print axioms approach_release_bound
-
 end L4.WindowA0ApproachJoin

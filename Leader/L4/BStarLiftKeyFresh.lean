@@ -53,5 +53,4 @@ theorem unique_read_keys {Owner : Type} {T : Nat}
       omega
     · omega
 
-#print axioms unique_read_keys
 end L4.BStarLiftKeyFresh

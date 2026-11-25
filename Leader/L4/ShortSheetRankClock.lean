@@ -75,8 +75,4 @@ theorem charts_watch_bound {n D : Nat} {h : Fin n → Bool}
     rw [Nat.mul_succ]
     omega
 
-#print axioms outside_project
-#print axioms watch_bound
-#print axioms chart_expected
-#print axioms charts_watch_bound
 end L4.ShortSheetRankClock

@@ -208,9 +208,4 @@ theorem crossing_le_ready_add_publicationWait {base initial : X}
   · have eq : a=w.length := Nat.le_antisymm bounded (Nat.le_of_not_gt early)
     exact Nat.le_trans (Tbound i _) (by omega)
 
-#print axioms firstCrossing_reached
-#print axioms firstCrossing_initial
-#print axioms tapeCrossing_truncate
-#print axioms crossing_le_ready_add_publicationWait
-
 end L4.BStarRawCausalCrossing

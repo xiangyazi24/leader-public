@@ -96,10 +96,4 @@ theorem packed_fiber_from_closed_width {s n : Nat} (S : 6≤s) (z : Raw s n)
   exact geometry_of_certified_width S y hy (spacing_of_same_layout L gaps)
     (flags_of_same_layout L hh hy flags)
 
-#print axioms spacing_end_width
-#print axioms spacing_ratio
-#print axioms spacing_of_same_layout
-#print axioms flags_of_same_layout
-#print axioms geometry_of_certified_width
-#print axioms packed_fiber_from_closed_width
 end L4.WidthPackedBridge

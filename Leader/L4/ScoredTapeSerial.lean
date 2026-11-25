@@ -214,6 +214,4 @@ theorem accepted_bind (hn : 0<n) (y : (bind L R hn).State)
 
 end Reader
 
-#print axioms Reader.bind
-#print axioms Reader.accepted_bind
 end L4.ScoredTapeSerial

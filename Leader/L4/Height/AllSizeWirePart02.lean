@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart01
+import Leader.L4.Height.AllSizeWirePart01
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section Admission
 open PhysicalCustody ClockServiceSpec BStarAcquireAnchors BStarH6WordChart
@@ -43,4 +43,4 @@ theorem publication_block_of_steering {s n : Nat} {x : Raw s n} (g : CustodyWitn
     _ = _ := double_power_mass (5*longBudget) (failureCount (ClockServiceSpec.publishes x i.val) t)
 end Admission
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

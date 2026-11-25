@@ -309,8 +309,4 @@ theorem wrapped_tail_untouched_ingress (x : X) (a : Fin n) (seam : Nat)
     | some e => simp only [H,Option.toList_some,List.mem_singleton] at dest
                 exact noDest (H.trans (congrArg some dest.symm))
 
-#print axioms typed_inj
-#print axioms sole_header_tail
-#print axioms wrapped_tail_untouched_ingress
-#print axioms wrapped_of_chart
 end L4.BStarCopyRightWrappedGeometry

@@ -116,5 +116,4 @@ theorem event_debt {base x : X} {addr : Nat → Pos n} {len : Nat}
     · exact .inl ⟨O,N,by rw [←O,old],rfl⟩
     · exact .inr (.inl S)
 
-#print axioms event_debt
 end L4.BStarSerialGeneratedEvent

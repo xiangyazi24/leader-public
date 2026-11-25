@@ -159,7 +159,6 @@ theorem biased_signed_commutes (P : Int) (l x r : Clock) :
   split <;> (try split) <;> (try split) <;> (try split)
   all_goals simp [bias] <;> omega
 
-
 def decodeBiased (P : Int) (x : Clock) : Clock :=
   ⟨x.err,(normalizeBiased P x).value-P⟩
 
@@ -320,11 +319,6 @@ theorem reset_creates_error_root_at_old_root :
     (poll 4 L X R).err=true ∧ base 4 (poll 4 L X R)=true ∧
     root 4 L (poll 4 L X R) R=true := by decide
 
-#print axioms biased_signed_commutes
-#print axioms poll_valid
-#print axioms LEG_poll
-#print axioms reset_creates_error_root_at_old_root
-
 private theorem suggestion_lt {x y : Clock} (h : suggestion x y < x.value) :
     y.err=true ∧ suggestion x y=y.value+1 ∧ suggestion x y<0 := by
   unfold suggestion at h ⊢
@@ -421,9 +415,6 @@ theorem centre_no_new_nonbase_root (P : Int) (l x r : Clock) (hP : 0<P)
     simp [root,h1,h2] at hNew
   | hold => exact hQ hNew
 
-#print axioms poll_facts
-#print axioms centre_no_new_nonbase_root
-
 private theorem no_new_correct_lower_gap (P : Int) (x l y r : Clock) (hP : 0<P)
     (hx : Valid P x) (hn : x=l ∨ x=r) (hG : lowerGap P x.value y.value=false) :
     lowerGap P x.value (poll P l y r).value=false := by
@@ -512,9 +503,6 @@ theorem right_poll_preserves_nonroot (P : Int) (l x r rr : Clock)
   rw [root_symm,poll_symm P x r rr]
   exact left_poll_preserves_nonroot P rr r x l hP hr hx ((root_symm P l x r).symm.trans h)
 
-#print axioms left_poll_preserves_nonroot
-#print axioms right_poll_preserves_nonroot
-
 /-- Touching a centre suffices to establish its Q predicate. The
 nonbase-root case is an actual priority RESET, not a possible HOLD. -/
 theorem centre_poll_establishes_Q (P : Int) (l x r : Clock) (hP : 0<P) :
@@ -581,10 +569,6 @@ theorem no_new_low_error (P ceiling : Int) (l x r : Clock)
   | clear _ _ _ => cases he
   | inc _ _ _ => cases he
   | hold => rfl
-
-#print axioms centre_poll_establishes_Q
-#print axioms poll_keeps_error_ceiling
-#print axioms no_new_low_error
 
 private theorem Q_reset_disabled (P : Int) (l x r : Clock)
     (hQ : root P l x r=true → base P x=true) :
@@ -662,7 +646,4 @@ theorem smaller_error_of_Q_nonbase (P : Int) (l x r : Clock)
   · have h := Bool.and_eq_true_iff.mp (show (r.err && decide (r.value<x.value))=true from hf)
     exact ⟨r,.inr rfl,h.1,of_decide_eq_true h.2⟩
 
-#print axioms poll_fills_error_ceiling
-#print axioms poll_clears_top_error
-#print axioms smaller_error_of_Q_nonbase
 end L4.UnisonRows

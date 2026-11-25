@@ -94,7 +94,7 @@ def StateCount (p c1 : Nat) : Prop :=
 /-- The headline proposition. The patrol constant is chosen once per calibration,
 independently of p, n and the initial configuration. The safety target is
 all-word permanence, not merely seeing one leader at some instant. -/
-def row175Statement : Prop :=
+def uniformEdgeStatement : Prop :=
   ∀ c1 : Nat, 12 ≤ c1 →
     ∃ Cpat : Nat, ∀ p : Nat, 2 ≤ p →
       StateCount p c1 ∧
@@ -104,7 +104,3 @@ def row175Statement : Prop :=
 
 end L4
 
-#print axioms L4.run_append
-#print axioms L4.safeOneLeader_after_run
-#print axioms L4.iidHitCost_of_target
-#print axioms L4.row175Statement

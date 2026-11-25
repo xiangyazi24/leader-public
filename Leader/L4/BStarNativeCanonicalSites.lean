@@ -89,5 +89,4 @@ theorem canonical_sites {base x : X} {hh : ∃ i,oldH6 B base i=true}
   change i=addr root j.val
   rw [←near,addr_back]
 
-#print axioms canonical_sites
 end L4.BStarNativeCanonicalSites

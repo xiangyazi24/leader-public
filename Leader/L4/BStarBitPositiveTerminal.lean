@@ -175,8 +175,4 @@ theorem turns_in_word {base x : X} {hh : ∃ i,oldH6 B base i=true}
       obtain ⟨u,a,v,split,R,reply⟩ := ih W (closed _ qx e) I P
       exact ⟨e::u,a,v,congrArg (List.cons e) split,.cons cur E R,reply⟩
 
-#print axioms bit_normal
-#print axioms nominated_turn
-#print axioms terminal_hold
-#print axioms turns_in_word
 end L4.BStarBitPositiveTerminal

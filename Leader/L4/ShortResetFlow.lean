@@ -53,8 +53,4 @@ theorem reset_consume_source (x : BitVec 96)
     source x resetReply=(phaseOp 1 1,some E) := by
   simp [source,phase,op,resetReply]
 
-#print axioms read_putK_other
-#print axioms read_put_high
-#print axioms reset_issue_source
-#print axioms reset_consume_source
 end L4.ShortResetFlow

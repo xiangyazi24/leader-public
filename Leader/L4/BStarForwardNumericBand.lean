@@ -170,6 +170,4 @@ theorem stopped_word {base x : X} {hh : ∃ b,oldH6 B base b=true}
         have W := (List.cons.inj H).2
         cases u <;> cases W
 
-#print axioms one_mark
-#print axioms stopped_word
 end L4.BStarForwardNumericBand

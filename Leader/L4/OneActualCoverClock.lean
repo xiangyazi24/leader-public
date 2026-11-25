@@ -86,5 +86,4 @@ theorem one_cover_expected {S : Type} {n : Nat} (next : S→Fin n→S)
     (drop positive) nonincrease (start n) t
   simpa only [rem,start,Nat.sub_zero,Nat.pow_two] using A
 
-#print axioms one_cover_expected
 end L4.Height.OneActualCoverClock

@@ -177,7 +177,4 @@ theorem find_stage_departure {base x : X} {hh : ∃ i,oldH6 B base i=true}
       · obtain ⟨pre,m,post,R,lead,ev,after,sel⟩ := ih (f+1) l rfl L (by omega) kl le ok
         exact ⟨e::pre,m,post,congrArg (List.cons e) R,.cons I E lead,ev,after,sel⟩
 
-#print axioms chart_hop
-#print axioms find_stage_departure
-#print axioms joined_hop_offer
 end L4.BStarStageHopExtract

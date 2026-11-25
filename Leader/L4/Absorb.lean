@@ -140,13 +140,6 @@ theorem singleton_live_safe {p c n : Nat} (hn : 4 ≤ n) {x : Config p c n}
     (hx : SingletonLive x) : SafeOneLeader x :=
   absorbing_safe hn (absorbing_of_singleton_live hx)
 
-#print axioms rank_one_unique_mark
-#print axioms singleton_live_terminal
-#print axioms rootless_quiet_no_live
-#print axioms absorbing_run
-#print axioms singleton_live_safe
-
-
 private theorem distinct {n : Nat} (hn : 4 ≤ n) (e : Fin n) : rightNeighbor e ≠ e := by
   intro he
   have hh : liftedSite e 1 = liftedSite e 0 := by simpa [liftedSite_succ,liftedSite_zero] using he
@@ -293,10 +286,5 @@ theorem unprotected4_replay :
     RankPhysical.rank unprotected4 = 1 ∧
     (unprotected4 0).leader = true ∧
     (∀ i : Fin 4, (step unprotected4 3 i).leader = false) := by decide
-
-#print axioms singleton_live_of_absorbing
-#print axioms terminal_no_payment
-#print axioms terminal_geometry_run
-#print axioms unprotected4_replay
 
 end L4.Absorb

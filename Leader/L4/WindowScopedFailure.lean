@@ -67,7 +67,6 @@ theorem drift {p c n a b : Nat} (hn : 4≤n) (initial : Config p c n)
   WindowScopedCredit.score_drift hn v a b (view x)
     (children hn initial group cert hsize valid hs hl hm hr hSeal hD) hShape hD
 
-
 theorem success_exited_step {p c n : Nat} (group cert : List (Fin n))
     (v : Fin n) (a b : Nat) (x : WindowScopedRace.State p c n) (e : Fin n)
     (h : x.mode=.success → x.exited=true) :
@@ -140,7 +139,3 @@ theorem scoped_long_mean {p c n : Nat} {initial : Config p c n} {group cert : Li
 
 end L4.WindowScopedFailure
 
-#print axioms L4.WindowScopedFailure.drift
-#print axioms L4.WindowScopedFailure.scoped_failure_mass
-
-#print axioms L4.WindowScopedFailure.scoped_long_mean

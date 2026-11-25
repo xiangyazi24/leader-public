@@ -69,5 +69,4 @@ theorem first_fence_return (P : Production g) {o : Owners h} {S : List (Pos n)} 
   rw [show PC (rawRun y a) root=11 from previous a f b A]
   decide
 
-#print axioms first_fence_return
 end L4.Height.FreshStoppedFence

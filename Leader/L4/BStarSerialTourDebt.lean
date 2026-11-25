@@ -105,6 +105,4 @@ theorem consume_pays_or_release {base x : X} {addr : Nat→Pos n} {len op : Nat}
   rw [E]
   exact H
 
-#print axioms consume_pays_or_release
-#print axioms pcNext_pays_or_release
 end L4.BStarSerialTourDebt

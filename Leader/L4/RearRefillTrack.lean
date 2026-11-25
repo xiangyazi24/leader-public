@@ -373,13 +373,3 @@ theorem concrete_refill_bound {p c n : Nat} (hn : 4 ≤ n)
 
 end L4.RearTrace
 
-#print axioms L4.RearTrace.geometricPay_ready
-#print axioms L4.RearTrace.rearShift_ready_nomination
-#print axioms L4.RearTrace.empty_shift_leaves_unready
-#print axioms L4.RearTrace.ghost_step_rear
-#print axioms L4.RearTrace.clockEvent_valid_step
-#print axioms L4.RearTrace.clockEvent_advances_eq
-#print axioms L4.RearTrace.clockEvent_hits_le
-#print axioms L4.RearTrace.clockTrace_of_marks
-#print axioms L4.RearTrace.clockFold_metrics
-#print axioms L4.RearTrace.concrete_refill_bound

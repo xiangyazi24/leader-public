@@ -116,7 +116,6 @@ theorem middle_loss_count (raw : X→Fin n→X) (Q : X→Prop)
     _ ≤ 8*(m*(A*n^B)) := Nat.mul_le_mul_left _ U
     _ ≤ B*n^B := by rw [show 8*(m*(A*n^B))=(8*(m*A))*n^B by ac_rfl]; exact Nat.mul_le_mul_right _ K
 
-
 open ReportServiceMesh ReportResetRawHooks
 
 def sheetParams (d : Sheet) (s : Nat) : Params :=
@@ -195,8 +194,4 @@ theorem sheet_middle_loss_count {s n m : Nat} (d : Sheet) (N : 0<n)
   · exact report1_mean (a i) (b i) (A i) (D i) Q stay (freeze i) y Y
   · exact report2_mean (a i) (b i) (A i) (D i) Q stay (freeze i) y Y
 
-#print axioms sheet_warm_loss_count
-#print axioms sheet_middle_loss_count
-#print axioms warm_loss_count
-#print axioms middle_loss_count
 end L4.ReportPulseLossCounts

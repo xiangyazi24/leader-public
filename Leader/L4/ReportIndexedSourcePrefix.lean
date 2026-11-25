@@ -368,10 +368,4 @@ theorem at_seal_descriptor (d : Sheet) (C : Chart h)
   exact ⟨at_seal_count d C after w l A B T,I,
     ReportSealDescriptor.descriptor_of_file_eq p _ _ (Eq.trans M.1.symm)⟩
 
-#print axioms mark_credit_or_hold
-#print axioms ack_tape_run
-#print axioms tape_count
-#print axioms tape_replay
-#print axioms tape_receipt_origin
-#print axioms at_seal_descriptor
 end L4.ReportIndexedSourcePrefix

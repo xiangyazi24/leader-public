@@ -220,14 +220,4 @@ theorem freshResponder_disjoint {p c1 : Nat} (u v : Site p c1)
         simp [tagOverwrite,hL,hS,hneq] at ho
       · simp [hb] at hB
 
-#print axioms freshResponder_disjoint
-#print axioms freshResident_zero
-#print axioms freshN0_signals
-#print axioms freshN1_physical
-#print axioms freshTransfer_signals
-#print axioms freshResponder_iff
-#print axioms freshN1_prefix
-#print axioms freshResponder_live
-#print axioms freshStep_responder_live
-#print axioms freshStep_resident
 end L4

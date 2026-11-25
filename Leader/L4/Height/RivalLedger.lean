@@ -563,15 +563,6 @@ theorem conflicting_clients (P : Production g) (target : Owners h) :
     · rw [show target.val+1=m by omega,Int.emod_self]
       omega
 
-#print axioms paid_rival_first
-#print axioms funded_at_arrival
-#print axioms positive_at_entry
-#print axioms post_release_return_of_nonzero
-#print axioms charged_of_post_release_nonzero
-#print axioms funded_return_of_miss
-#print axioms rival_clear_on_miss
-#print axioms conflicting_clients
-
 end
 end L4.Height.RivalLedger
 

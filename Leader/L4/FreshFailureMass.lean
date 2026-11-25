@@ -285,8 +285,3 @@ theorem quarter_of_elevenPerThousand (mass total : Nat) (hh : 1000*mass≤11*tot
 
 end L4.FreshFailureMass
 
-#print axioms L4.FreshFailureMass.scaled_bound_of_first_entry
-#print axioms L4.FreshFailureMass.all_horizons_of_fixed_cutoff
-#print axioms L4.FreshFailureMass.failure_mass_of_gap_partition
-
-#print axioms L4.FreshFailureMass.failure_mass_by_first_entries

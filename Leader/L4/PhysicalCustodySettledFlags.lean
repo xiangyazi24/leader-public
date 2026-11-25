@@ -172,8 +172,4 @@ theorem settled_cover_access {s n : Nat} (x : Raw s n)
   rw [BStarResetSchedule.run_append]
   exact hit
 
-#print axioms settled_flags_guards
-#print axioms settled_flags_charts
-#print axioms settled_flags_access
-#print axioms settled_cover_access
 end L4.PhysicalCustody

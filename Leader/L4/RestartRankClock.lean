@@ -264,9 +264,4 @@ theorem simultaneous_expected (closed : ∀ x e, domain x → domain (step x e))
   intro t
   simpa only [cost_projection, start] using U t
 
-#print axioms runNext_raw
-#print axioms region_step
-#print axioms spec
-#print axioms simultaneous_expected
-
 end L4.RestartRankClock

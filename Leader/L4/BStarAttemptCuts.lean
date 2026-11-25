@@ -106,5 +106,4 @@ theorem attempt_cuts {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · exact H.symm ▸ done
   · exact H.symm ▸ sub
 
-#print axioms attempt_cuts
 end L4.BStarAttemptCuts

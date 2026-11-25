@@ -44,7 +44,4 @@ theorem write_ack_back_raw {s n : Nat} (x : Raw s n) (e : Fin n)
   rw [old] at H
   exact ⟨(work_to_raw x e sep j).1.trans H.1, (work_to_raw x e sep k).2.trans H.2⟩
 
-#print axioms write_ack_back_raw
-#print axioms write_ack_forward_raw
-#print axioms write_ack_turn_raw
 end L4.ShortWriteAckTransport

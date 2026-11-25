@@ -81,11 +81,6 @@ theorem forward_low_bound (t : Token) (op : t.opcode<8) (race : t.race<8)
   unfold lowCode
   omega
 
-#print axioms inherited_decode_tag
-#print axioms inherited_encode_tag
-#print axioms decoded_forward_bounds
-#print axioms forward_low_bound
-
 private theorem modulus_reply_payload (op p : Nat) : p % 2^dPayloadSize op<64 := by
   have B : dPayloadSize op≤6 := by
     unfold dPayloadSize
@@ -153,8 +148,6 @@ theorem encode_decoded_tag (g h : Bool) (x : BitVec 19) :
     unfold lowCode
     omega
 
-#print axioms encode_decoded_tag
-
 /-- The live ADMIT branch of the wire decoder at an actual gate allows
 only the five real races. Invalid race bytes decode as faults. -/
 theorem gate_admit_shape (x : BitVec 19) (tag : (decode true x).tag=2)
@@ -213,9 +206,6 @@ theorem admit_race_roundtrip (t : Token) (r : Nat)
   rcases p with E|E <;> subst pp <;>
     rcases q with E|E|E|E|E <;> subst r <;> decide
 
-#print axioms gate_admit_shape
-#print axioms admit_race_roundtrip
-
 /-- Outside an actual gate, any nonzero stored race is rejected rather
 than becoming live countdown debt. -/
 theorem ungated_race_zero (x : BitVec 19) : (decode false x).race=0 := by
@@ -242,5 +232,4 @@ theorem ungated_race_zero (x : BitVec 19) : (decode false x).race=0 := by
       rfl
   · apply pred_ite (fun t : Token=>t.race=0) <;> rfl
 
-#print axioms ungated_race_zero
 end L4.ShortPacketTag

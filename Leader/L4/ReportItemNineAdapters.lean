@@ -31,8 +31,6 @@ theorem item_nine_write_credits (d : Sheet) (N : 1<n)
     WriteCredits d (charter G r) b w l (snapshotInputs d (charter G r) b).prior :=
   write_credits_from_tape d N hh G F digit r Room b X I PC w NR l T
 
-#print axioms item_nine_staged_frame
-#print axioms item_nine_write_credits
 end L4.ReportItemNineAdapters
 
 namespace L4.ReportItemNineAdapters
@@ -87,5 +85,4 @@ theorem snapshots_for_charter (d : Sheet) (N : 1<n)
   exact snapshot_receipts_of_acq d N hh G F digit Rail r.property A.2.2
     B.2.2 C.2.2 Room HA H issue X w v l
 
-#print axioms snapshots_for_charter
 end L4.ReportItemNineAdapters

@@ -118,7 +118,4 @@ theorem choices_from_main (hh : ∃ i,h i=true)
   rw [roundIndex_key hh opening] at E
   exact choice_at_index reserve lo opening cap a _ _ E
 
-#print axioms aligned_rounds
-#print axioms choice_at_index
-#print axioms choices_from_main
 end L4.BStarAlignedLogicalRounds

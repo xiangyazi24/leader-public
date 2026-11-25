@@ -106,8 +106,4 @@ theorem decode_final (old : BitVec LW) (h : ((capturedSelector 1).read old).toNa
     BStarLongPublication.decode (BStarLongPublication.encode (finalDesc old h))=some (finalDesc old h) := by
   exact decode_make ⟨((capturedSelector 1).read old).toNat,h⟩ (finalChoice old)
 
-#print axioms final_fields
-#print axioms decode_final
-#print axioms final_receipt_exact
-#print axioms final_receipt_refuses_spare
 end L4.BStarFinalCandidate

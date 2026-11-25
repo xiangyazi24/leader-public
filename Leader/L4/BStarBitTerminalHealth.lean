@@ -83,7 +83,6 @@ theorem selected_terminal_health {base x : X} {hh : ∃ i,oldH6 B base i=true}
     ⟨Q,(congrArg BitVec.toNat op).trans Hv.2⟩,sel,tag,Hv,?_⟩
   exact (BStarBitParity.finish_parity v q Hv.1 Hv.2 D).symm
 
-
 theorem normal_parity {p q : Payload} (R : BStarReplyBack.normal p=.reply q)
     (H : HealthyBit q) : p.argument.toNat%2=q.argument.toNat%2 := by
   have P : p.opcode.toNat=bitOp :=
@@ -164,6 +163,4 @@ theorem needed_commit_terminal {base old x : X} {hh : ∃ i,oldH6 B base i=true}
   exact ⟨start,out,back,after,issue,turn,ack,f,q,p,W,F,⟨hq,opq⟩,race,Out,P,hp0,bound,A,claim,offer,
     selected,tag,hO,par⟩
 
-#print axioms needed_commit_terminal
-#print axioms terminal_of_ack
 end L4.BStarBitTerminalHealth

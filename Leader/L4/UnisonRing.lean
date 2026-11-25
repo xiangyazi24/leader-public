@@ -158,10 +158,6 @@ theorem leg_step {m : Nat} (R : Ring m) (P : Int) (hP : 0<P)
       · rw [step_other R P x i j hJ,step_other R P x i _ hR]
         exact h.2 j
 
-#print axioms quiet_step
-#print axioms quiet_cover
-#print axioms leg_step
-
 /-- Actual modular predecessor. -/
 def leftSite {m : Nat} (i : Fin m) : Fin m :=
   ⟨if i.val=0 then m-1 else i.val-1, by
@@ -221,8 +217,6 @@ def cycle (m : Nat) (hm : 3≤m) : Ring m where
     · rw [show i.val+1=m by omega,Nat.mod_self] at h
       split at h <;> omega
 
-#print axioms cycle
-
 private theorem adjacent_of_no_gaps {P a b : Int}
     (ha : a<P) (hb : b<P)
     (hab : lowerGap P a b=false) (hba : lowerGap P b a=false) :
@@ -268,8 +262,6 @@ theorem leg_of_quiet_correct {m : Nat} (R : Ring m) (P : Int)
   have h2 := (no_gap (R.right i)).1
   rw [R.left_right] at h2
   exact adjacent_of_no_gaps (hV i).2.1 (hV (R.right i)).2.1 h1 h2
-
-#print axioms leg_of_quiet_correct
 
 theorem valid_run {m : Nat} (R : Ring m) (P : Int) (hP : 0<P)
     (x : State m) (w : List (Fin m)) (h : CfgValid P x) :

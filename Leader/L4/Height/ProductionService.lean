@@ -39,6 +39,5 @@ theorem moment_of_production_block (blocks : ProductionBlock) {s n : Nat} {x : R
   · simp [pub,suffix_publication x i.val a w pub]
   · simp [pub]
 
-#print axioms moment_of_production_block
 end
 end L4.Height.ProductionCustody

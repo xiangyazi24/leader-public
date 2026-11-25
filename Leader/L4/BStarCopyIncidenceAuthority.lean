@@ -44,5 +44,4 @@ theorem all_three {base x : X} {u v : List (Fin n)}
   rw [S]
   exact F.body (suf++w) e i H hdr
 
-#print axioms all_three
 end L4.BStarCopyIncidenceAuthority

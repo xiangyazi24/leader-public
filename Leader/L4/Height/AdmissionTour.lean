@@ -1093,17 +1093,4 @@ theorem gate_observations_for_return {base x : X} {hh : ∃ i,oldH6 B base i=tru
       subst next
       exact ⟨pre,middle,after,e,f,s,t,by rw [W,V],noHit,atS,opp,atT,avoid,afterBusy,accepted.2⟩
 
-
-#print axioms joined_link
-#print axioms joined_terminal
-#print axioms silent
-#print axioms resolved_outward
-#print axioms resolved_consumes
-#print axioms pace_from_clean_issue
-#print axioms admit_gate_scope
-#print axioms admission_from_ready_issue_to_gate
-#print axioms two_race_marks
-#print axioms admission_from_ready_issue
-#print axioms denied_rival_word
-#print axioms gate_observations_for_return
 end L4.Height.AdmissionTour

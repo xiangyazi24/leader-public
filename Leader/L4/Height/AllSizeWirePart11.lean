@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart10
+import Leader.L4.Height.AllSizeWirePart10
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section Display
 
@@ -12,12 +12,12 @@ open L4.Compiler.Native
 variable {S : Type} {n : Nat}
 
 /-- Identifies the physical original-epoch ledger underlying one trial. -/
-abbrev DisplayOrigin (D : G9Data S n) :=
+abbrev DisplayOrigin (D : AllSizeData S n) :=
   ∀ j : D.Chart, D.State j → Nat → Nat → (List (Fin n) → Fin (D.m j) → Nat) → Prop
 
 /-- One stopped raw display trial. Its floor, opening and lifted counts all
 come from the same original-epoch witness. -/
-structure RawDisplayTrial (D : G9Data S n) (hn : 0 < n) (bL : Nat)
+structure RawDisplayTrial (D : AllSizeData S n) (hn : 0 < n) (bL : Nat)
     (origin : DisplayOrigin D) (j : D.Chart) (z : D.State j) where
   lo : Nat
   opening : Nat
@@ -35,13 +35,13 @@ structure RawDisplayTrial (D : G9Data S n) (hn : 0 < n) (bL : Nat)
           (D.deadline bL j)
 
 /-- Every legitimate stop has a raw trial on its actual historical tape. -/
-def DotRawDisplay (D : G9Data S n) (hn : 0 < n) (bL : Nat)
+def RawDisplay (D : AllSizeData S n) (hn : 0 < n) (bL : Nat)
     (origin : DisplayOrigin D) : Prop :=
   ∀ j z, Recover.Chain.LgSet (D.clock j) z → Nonempty (RawDisplayTrial D hn bL origin j z)
 
 /-- The physical ledger uses the same enumeration, residues and genuine
 increment action as the clock chart. -/
-def DisplayTraceCompatibility (D : G9Data S n) (origin : DisplayOrigin D) : Prop :=
+def DisplayTraceCompatibility (D : AllSizeData S n) (origin : DisplayOrigin D) : Prop :=
   ∀ j z lo opening level, Recover.Chain.LgSet (D.clock j) z → origin j z lo opening level →
     LegitCoset (modulus D.r) (D.hm j) ⟨(D.clock j).cfg z, level []⟩ ∧
     ∀ w e,
@@ -54,16 +54,16 @@ def DisplayTraceCompatibility (D : G9Data S n) (origin : DisplayOrigin D) : Prop
             (activate (heightMod D.r) (modulus D.r) (D.hm j)
               ⟨C.cfg y, level w⟩ i b).lift
 
-noncomputable def selectedDisplayTrial (D : G9Data S n) (hn : 0 < n)
-    (bL : Nat) (origin : DisplayOrigin D) (hDisplay : DotRawDisplay D hn bL origin)
+noncomputable def selectedDisplayTrial (D : AllSizeData S n) (hn : 0 < n)
+    (bL : Nat) (origin : DisplayOrigin D) (hDisplay : RawDisplay D hn bL origin)
     (j : D.Chart) (z : D.State j) (hz : Recover.Chain.LgSet (D.clock j) z) :
     RawDisplayTrial D hn bL origin j z :=
   Classical.choice (hDisplay j z hz)
 
 /-- Install the opening and levels from a single trial chosen at each
 legitimate start. At each failed restart the new state has its own trial. -/
-noncomputable def withDisplayTrials (D : G9Data S n) (hn : 0 < n) (bL : Nat)
-    (origin : DisplayOrigin D) (hDisplay : DotRawDisplay D hn bL origin) : G9Data S n :=
+noncomputable def withDisplayTrials (D : AllSizeData S n) (hn : 0 < n) (bL : Nat)
+    (origin : DisplayOrigin D) (hDisplay : RawDisplay D hn bL origin) : AllSizeData S n :=
   { D with
     opening := fun j z =>
       if hz : Recover.Chain.LgSet (D.clock j) z then
@@ -74,8 +74,8 @@ noncomputable def withDisplayTrials (D : G9Data S n) (hn : 0 < n) (bL : Nat)
         (selectedDisplayTrial D hn bL origin hDisplay j z hz).level
       else fun _ _ => 0 }
 
-theorem selected_display_values (D : G9Data S n) (hn : 0 < n) (bL : Nat)
-    (origin : DisplayOrigin D) (hDisplay : DotRawDisplay D hn bL origin)
+theorem selected_display_values (D : AllSizeData S n) (hn : 0 < n) (bL : Nat)
+    (origin : DisplayOrigin D) (hDisplay : RawDisplay D hn bL origin)
     (j : D.Chart) (z : D.State j) (hz : Recover.Chain.LgSet (D.clock j) z) :
     (withDisplayTrials D hn bL origin hDisplay).opening j z =
       (selectedDisplayTrial D hn bL origin hDisplay j z hz).opening ∧
@@ -83,15 +83,15 @@ theorem selected_display_values (D : G9Data S n) (hn : 0 < n) (bL : Nat)
       (selectedDisplayTrial D hn bL origin hDisplay j z hz).level := by
   exact ⟨dif_pos hz, dif_pos hz⟩
 
-theorem selected_display_miss (D : G9Data S n) (hn : 0 < n) (bL : Nat)
-    (origin : DisplayOrigin D) (hDisplay : DotRawDisplay D hn bL origin)
+theorem selected_display_miss (D : AllSizeData S n) (hn : 0 < n) (bL : Nat)
+    (origin : DisplayOrigin D) (hDisplay : RawDisplay D hn bL origin)
     (j : D.Chart) (z : D.State j) (hz : Recover.Chain.LgSet (D.clock j) z) :
     (withDisplayTrials D hn bL origin hDisplay).miss j z =
       fun w => ∃ i, (selectedDisplayTrial D hn bL origin hDisplay j z hz).level w i ≤
         (selectedDisplayTrial D hn bL origin hDisplay j z hz).opening +
           32 * (2 ^ 19 * D.m j) := by
   funext w
-  simp [G9Data.miss, withDisplayTrials, hz]
+  simp [AllSizeData.miss, withDisplayTrials, hz]
 
 /-- A unique true readout on all raw suffixes is the spine's fixed-winner
 predicate, including the empty suffix. -/
@@ -123,9 +123,9 @@ theorem display_project_run {α β : Type}
       exact (ih (a x e)).trans (congrArg (fun y => runWord b y w) (hf x e))
 
 /-- Transport the raw display count across the same-letter chart projection. -/
-theorem displaySplit_of_dot (D : G9Data S n) (hn : 0 < n) {bL : Nat}
+theorem displaySplit_of_rawDisplay (D : AllSizeData S n) (hn : 0 < n) {bL : Nat}
     (hRaw : ∀ j z e, D.raw j ((D.clock j).next z e) = D.next hn (D.raw j z) e)
-    (origin : DisplayOrigin D) (hDisplay : DotRawDisplay D hn bL origin) :
+    (origin : DisplayOrigin D) (hDisplay : RawDisplay D hn bL origin) :
     let E := withDisplayTrials D hn bL origin hDisplay
     ∀ j z, Recover.Chain.LgSet (E.clock j) z → ¬ E.display hn (E.raw j z) →
       4 * failureCount
@@ -258,13 +258,13 @@ theorem display_activate_progress {m B M : Nat} (hm : 0 < m)
 
 /-- The stopped trace and strict publication service bound the missed-cap
 mass at the same deadline used in the physical display split. -/
-theorem missQuarter_of_dot (D : G9Data S n) (hn : 0 < n) {bL : Nat}
+theorem missQuarter_of_rawDisplay (D : AllSizeData S n) (hn : 0 < n) {bL : Nat}
     (hParameters : ∀ j : D.Chart, Recover.StageTwo.ClockParams (modulus D.r) ∧
       D.m j / 2 < modulus D.r / 2 ∧ 0 < D.block j ∧
       4 * (2 ^ (5 * bL + 1) * D.block j) ≤ D.scale bL ∧ D.m j * D.r ≤ n)
     (hService : ∀ j i z, n ^ (D.block j) ≤ 2 ^ (5 * bL + 1) *
       RawService.publicationMass (D.clock j).next ((D.clock j).served i) z (D.block j))
-    (origin : DisplayOrigin D) (hDisplay : DotRawDisplay D hn bL origin)
+    (origin : DisplayOrigin D) (hDisplay : RawDisplay D hn bL origin)
     (hCompat : DisplayTraceCompatibility D origin) :
     let E := withDisplayTrials D hn bL origin hDisplay
     ∀ j z, Recover.Chain.LgSet (E.clock j) z → ¬ E.display hn (E.raw j z) →
@@ -392,4 +392,4 @@ theorem missQuarter_of_dot (D : G9Data S n) (hn : 0 < n) {bL : Nat}
 
 end Display
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

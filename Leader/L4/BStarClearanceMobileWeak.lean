@@ -93,7 +93,6 @@ theorem joined_hop_weak (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   rw [J]
   exact hop_weak g raw u v C hs hd hh H ne d
 
-
 open BStarLongFiberOwner BStarH6WordChart BStarLongEvents in
 /-- Every real reservation is caused by an actual forward departure of
 the lane's owner, even when arbitration or prep emits a fault. This
@@ -128,10 +127,4 @@ theorem joined_quiet_lane (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
     BStarClearanceMobileJoined.joined_view k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x
   exact (congrFun J a).trans (quiet_lane g raw a H T)
 
-#print axioms hop_weak
-#print axioms terminal_weak
-#print axioms quiet_lane
-#print axioms joined_hop_weak
-#print axioms reserved_owner_departure
-#print axioms joined_quiet_lane
 end L4.BStarClearanceMobileWeak

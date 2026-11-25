@@ -63,6 +63,4 @@ theorem single_prefix_operands {base origin : X} {hh : ∃ i,oldH6 B base i=true
   exact ⟨⟨l,(congrArg Lane.retained (frame _ _ L)).trans El⟩,
       r,(congrArg Lane.retained (frame _ _ R)).trans Er⟩
 
-#print axioms prefix_frame
-#print axioms single_prefix_operands
 end L4.BStarFreshNumericOperandPrefix

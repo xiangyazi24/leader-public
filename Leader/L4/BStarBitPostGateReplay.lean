@@ -62,8 +62,6 @@ theorem arbitrary_postgate_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
           omega
         | turn => omega
 
-#print axioms arbitrary_postgate_step
-
 /-- A replay with the nominated ordered subsequence reaches the terminal
 on some prefix. Intervening marks may help but cannot undo progress or
 change the well-formed BIT before that first terminal cut. -/
@@ -131,5 +129,4 @@ theorem reaches_terminal_of_sublist {base : X} {hh : ∃ i,oldH6 B base i=true}
       (closed _ q e) offset now new nom'
     exact ⟨e::pre,post,congrArg (List.cons e) W,.cons I E T,P⟩
 
-#print axioms reaches_terminal_of_sublist
 end L4.BStarBitPostGateReplay

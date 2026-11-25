@@ -121,7 +121,6 @@ theorem silent_at {base x : X} {hh : ∃ i,oldH6 B base i=true}
       · exact frame (R (addr k).2) (Prod.ext r rfl)
       · exact BStarResetIdleRing.idle_off_pair hp x e (addr k) l r
 
-
 open BStarOwnerLaunchOrigin BStarGeneratedOwner BStarAcquireMarkedPath BStarResetSchedule
 
 private theorem seen_single {len : Nat} {x : X} {e : Fin n} {addr : Nat → Pos n}
@@ -229,7 +228,6 @@ theorem busy_out_trace {base x : X} {hh : ∃ i,oldH6 B base i=true}
       obtain ⟨ps,vs,ht⟩ := ih k l f (congrArg Cursor.out eq.symm) finalEq F' healthy
       exact ⟨ps,vs,.idle N S' ht⟩
 
-
 open BStarClearanceSource BStarResetControllerEntry BStarAcquireSource BStarLongLayout BStarLongDoor
 
 /-- A recovered exact ISSUE5 witness supplies the initial payload of
@@ -274,7 +272,6 @@ theorem found_out_trace {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [endEq]
   exact T
 
-
 /-- The terminal of the actual begun itinerary samples every port once.
 The resulting reply is the exact fold; success requires every visit's
 old-pair arbitration win. -/
@@ -301,7 +298,4 @@ theorem found_terminal {base x : X} {hh : ∃ i,oldH6 B base i=true}
   obtain ⟨q,A,bp,C',D⟩ := completes_at hp trace init e (sep e) cl mem kind hd occ EQ
   exact ⟨vs,q,fun j => capture_once hp trace pos0 hbase z10 j,A,bp,C',D⟩
 
-#print axioms busy_out_trace
-#print axioms found_out_trace
-#print axioms found_terminal
 end L4.BStarAcquireHistorySample

@@ -97,6 +97,4 @@ theorem predecessor_unique {a : LargeParams} {n : Nat} (b : LargeRows a)
       (hT.trans (congrArg some Q2))).elim
   · exact same (FreshSeparation.succ_inj (by simpa [site,U,V] using H)) (U.trans V.symm)
 
-#print axioms predecessor_unique
-#print axioms successor_unique
 end L4.BStarAcquireIncidence

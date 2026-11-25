@@ -29,6 +29,4 @@ theorem radixDigit_reportValue {n : Nat} (p : ReportByteRows.Params)
   word_digit p.beta (selectedFile p a i minus) p.digits j J B
     (fun k _ => selectedFile_lt p a i minus k B)
 
-#print axioms reportValue_lt
-#print axioms radixDigit_reportValue
 end L4.ReportDigitWord

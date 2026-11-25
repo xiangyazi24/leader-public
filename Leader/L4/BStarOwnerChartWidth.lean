@@ -112,9 +112,4 @@ theorem chart_length_le_width_mul {base : X} {hh : ∃ i, oldH6 B base i=true}
   have subset : S.map code ⊆ List.finRange (11 * W) := fun {u} _ => List.mem_finRange u
   simpa using nodup.length_le_of_subset subset
 
-#print axioms ordinal_lt_of_width_bound
-#print axioms site_eq_of_word_eq_of_ordinal_eq
-#print axioms word_eq_of_commandOwner_eq
-#print axioms chart_length_le_width_mul
-
 end L4.BStarOwnerChartWidth

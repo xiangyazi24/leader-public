@@ -36,4 +36,3 @@ theorem certifiedLong {p c1 n : Nat} {x : Config p c1 n} {z : Fin n}
 
 end L4.TaggedFront
 
-#print axioms L4.TaggedFront.certifiedLong

@@ -64,7 +64,6 @@ def ResetHealthy (addr : Nat→Pos n) (len : Nat) (x : X) : Mode→Prop
   | .idle => True
   | .busy op z => op<3 → Good (healthyTag op) len (project addr x) z
 
-
 private theorem arrived_healthy_eq {base x : X} {hh : ∃ i, oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
     (C : Chart hp base hh o S len fall) (same : ∀ i, Layout B base i=Layout B x i)
@@ -167,7 +166,6 @@ theorem reset_healthy_step {base x : X} {hh : ∃ i, oldH6 B base i=true}
         · exact .inr (.inl rfl)
         · exact .inr (.inr (.inl rfl))))).trans G.2.1,fun j hj => (Nat.not_lt_zero j hj).elim,D.2⟩
 
-
 /-- The next real consume of a generated reset has the canonical bound
 reply, even after arbitrarily many non-owner marks at back-zero. -/
 theorem bound_reset_reply {addr : Nat→Pos n} {len op : Nat} {x : X}
@@ -229,7 +227,4 @@ theorem reset_healthy_word {base x : X} {hh : ∃ i, oldH6 B base i=true}
       | next h _ _ => exact h)
     exact ih (closed _ qx _) (reset_healthy_step hp C (sep _) (fiber _ qx) I J E H)
 
-#print axioms reset_healthy_step
-#print axioms event_debt_of_health
-#print axioms reset_healthy_word
 end L4.BStarSerialResetHealth

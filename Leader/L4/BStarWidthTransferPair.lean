@@ -226,6 +226,5 @@ theorem dirty_wait_seam_fixture :
     (q.1.apply u).toNat=49152 ∧ (q.2.apply v).toNat=2^22+40960 ∧
       q.2.mask.toNat=65535 := by decide
 
-#print axioms header_source_transfer
 end L4.BStarWidthTransferPair
 

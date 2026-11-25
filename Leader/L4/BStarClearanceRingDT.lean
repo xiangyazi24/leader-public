@@ -154,7 +154,6 @@ theorem owner_DT_sum_paying {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 
   exact chart_pays pre post slots blocks ns nb sub out all
     ⟨footprint e C,memBlock C hc ho,(one C (.reverse t) H ho).2 t rfl⟩
 
-
 theorem owner_DT_sum {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
     (x : Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r c p c₁))
     (e : Fin n) (he : e≠rightNeighbor e) (o : Int) (slots : List (Pos n))
@@ -277,7 +276,6 @@ private theorem door_safe_off_header (g : Pair LongGeometry) (raw : Pair (BitVec
   rw [H] at Q
   contradiction
 
-
 variable {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
 local notation "B" => bStar k₁ k₂ t₂ J₁ J₂ r c p c₁ hp
 local notation "X" => BStarClearanceOffset.X k₁ k₂ t₂ J₁ J₂ r c p c₁ n
@@ -373,7 +371,6 @@ theorem indexed_DT_paying {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact T.2.2 ⟨footprint e C,
     List.mem_map.mpr ⟨C,List.mem_filter.mpr ⟨hc,beq_iff_eq.mpr (owns _ U)⟩,rfl⟩,K⟩
 
-
 set_option maxRecDepth 4096 in
 theorem indexed_DT {base x : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fallback : Pos n}
@@ -446,7 +443,4 @@ theorem trail_footprint_payment (x : X) (e : Fin n) (he : e≠rightNeighbor e)
   · simp [Claim.slots,E]
     exact Nat.lt_of_succ_le (Nat.le_of_eq T)
 
-#print axioms indexed_DT_paying
-#print axioms indexed_DT
-#print axioms owner_DT_sum
 end L4.BStarClearanceRingDT

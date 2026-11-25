@@ -80,5 +80,4 @@ theorem accepted_cut {base x : X} {hh : ∃ i,oldH6 B base i=true}
     cases N
     exact ⟨pre,ack,tail,W,lead,ev,new⟩
 
-#print axioms accepted_cut
 end L4.BStarCopyCleanupCuts

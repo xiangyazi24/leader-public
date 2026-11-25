@@ -55,7 +55,6 @@ private theorem reject_pc {x : X} {addr : Nat → Pos n} {e : Fin n}
     rw [←R]; simp only [AllSizeS1Geometry.step,if_neg (Ne.symm sep),if_true,pair]
   exact congrArg (fun t : _ × BitVec 9 => t.2.toNat) (eq ▸ A)
 
-
 /-- An actual generated mark either holds the old PC, restarts at zero,
 or strictly raises the PC through the exact incoming consume. -/
 theorem generated_pc_step {base x : X} {addr : Nat → Pos n} {len : Nat}
@@ -139,9 +138,6 @@ theorem rrel_stop {base x : X} {addr : Nat → Pos n} {len : Nat}
     obtain ⟨F,O⟩ := literal_rrel_next _ f P (M'.symm.trans N)
     exact ⟨rfl,rfl,I,evt,P,N,own,f,R,F,O⟩
 
-#print axioms generated_pc_step
-#print axioms rrel_stop
-
 /-- A generated interval is within one attempt if no actual post-mark
 cut has reset PC zero. A later attempt must be analyzed after RESET,
 not included in the same monotone interval. -/
@@ -207,7 +203,4 @@ theorem dummy_consume_not_release {base x : X} {addr : Nat → Pos n} {len : Nat
   have P : pc x (addr 0).1=412 := I.1.2.2.2
   exact ⟨N.trans (literal_dummy_to_reset _ f P),fun H => by have F := H.2.2.1; omega⟩
 
-#print axioms attempt_pc_mono
-#print axioms no_second_fence_entry
-#print axioms dummy_consume_not_release
 end L4.BStarPhysicalPhase

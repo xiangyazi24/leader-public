@@ -69,5 +69,4 @@ theorem both_follow_on_tape {base x : X} {hh : ∃ i,oldH6 B base i=true}
       readLane (Sheet.index .rd) (entry (addr root j.val)).long
   exact ⟨hL (addr root j.val) .ld leftHere,hR (addr root j.val) .rd rightHere⟩
 
-#print axioms both_follow_on_tape
 end L4.BStarNativeCopyTransport

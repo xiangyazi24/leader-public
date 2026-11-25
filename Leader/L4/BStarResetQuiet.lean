@@ -168,7 +168,6 @@ theorem joined_quiet (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
       exact ih (fun t ht => H t (List.mem_cons_of_mem _ ht)) _
   · exact untouched_raw _ _ _ h0 H
 
-
 private theorem fold_away (l : List KWrite) (a : AtK) (k : BitVec 52)
     (h : avoids a l) : l.foldl (fun k t => putRaw k a t) k=k := by
   induction l generalizing k with
@@ -277,7 +276,6 @@ theorem reverse_endpoints (g : Pair LongGeometry) (x : Pair (BitVec LW))
     · intro k
       simp [selected,direct,hd,putRaw]
 
-
 theorem joined_actual_write (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
     (x : Pair (BStarAcquireRingFrame.W k₁ k₂ t₂ J₁ J₂ r c p c₁))
     (o : CmdOffer) (a : AtK) (v : Token) :
@@ -366,10 +364,4 @@ theorem joined_reverse_trail (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0
     joined_work_raw k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x d (hv _ (.inr rfl))]
   exact reverse_endpoints _ _ _ _ _ hd hne (actual_reverse_trail _ _ _ _ _ hC hk hd ht hR)
 
-#print axioms joined_quiet
-#print axioms actual_write
-#print axioms joined_actual_write
-#print axioms terminal_finish
-#print axioms joined_terminal_clear
-#print axioms joined_reverse_trail
 end L4.BStarResetQuiet

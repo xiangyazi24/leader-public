@@ -130,8 +130,4 @@ theorem first_consume_is_clean_admit {s n : Nat} {h : Fin n → Bool} (C : Chart
   rw [done] at F
   exact F
 
-#print axioms actual_launch
-#print axioms active_step
-#print axioms active_run
-#print axioms first_consume_is_clean_admit
 end L4.ShortHelloFlight

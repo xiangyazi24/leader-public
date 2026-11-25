@@ -152,7 +152,4 @@ theorem operand_words_injective {h : Fin n → Bool} (hh : ∃ i,h i=true)
   · exact cancel j k J K L EQ
   · exact (cancel k j K J (by omega) EQ.symm).symm
 
-#print axioms operand_words_injective
-#print axioms operand_word_address
-#print axioms actual_operands
 end L4.BStarPostCutOperands

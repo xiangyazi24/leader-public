@@ -96,7 +96,6 @@ theorem production_radius_room (d : Sheet) (advice : s=ell (ell n)) (S : 6≤s) 
     _ ≤ 2^(2^(s-1)) := Nat.pow_le_pow_right (by decide) e
     _ < n := ProductionH6Count.advice_lower (by omega) advice
 
-
 open ShortResetChart
 variable {h : Fin n→Bool} {Q : Raw s n→Prop}
 
@@ -133,11 +132,4 @@ theorem second_cache_from_first_cover (I : Inputs .first h Q)
       ((max 3 (params .second s).digits+1)*n^2) :=
   (cache_entrance .second (secondOfFirstCover I advice S x A) x ⟨A,rfl⟩).2
 
-#print axioms first_cover_step
-#print axioms secondOfFirstCover
-#print axioms second_cache_from_first_cover
-#print axioms firstInputs
-#print axioms secondInputs
-#print axioms cache_entrance
-#print axioms production_radius_room
 end L4.ReportStageInputs

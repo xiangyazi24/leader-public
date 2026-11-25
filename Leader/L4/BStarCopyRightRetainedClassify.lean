@@ -159,8 +159,6 @@ theorem noningress_classify {Tag : Type} (digits : Tag→BitVec 36)
     · rw [show ring x e (addr root j)=x (addr root j) from by simp [AllSizeS1Geometry.step,noL,noR]]
       exact old j jw
 
-#print axioms noningress_classify
-
 def clearHead {T : Type} (lab : Nat→Option T) (i : Nat) : Option T :=
   if i=1 then none else lab i
 
@@ -290,6 +288,4 @@ theorem ingress_cross {Tag : Type} (digits : Tag→BitVec 36)
       simp only [clearHead,if_neg H]
       exact matched j JP JT
 
-#print axioms stripWord_clear
-#print axioms ingress_cross
 end L4.BStarCopyRightRetainedClassify

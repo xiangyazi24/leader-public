@@ -15,7 +15,6 @@ set_option linter.unusedSimpArgs false
 
 variable {s n : Nat} {h : Fin n→Bool}
 
-
 /-- Explicit old decoder gate; tok_wire below checks this against
     the exact published token readout, including its cache field. -/
 def rawGate (p : Params) (h : Bool) (x : BitVec p.w) (j : Fin 3) : Bool :=
@@ -216,9 +215,4 @@ theorem debt_frame (sheet : Sheet) (C : Chart h) (x : Raw s n)
   unfold debtOf
   rw [raw_nondoor_control sheet C x e N mask D]
 
-
-#print axioms gate_geometry
-#print axioms gate_frame
-#print axioms raw_pair_wire
-#print axioms debt_frame
 end L4.ReportPrelaunchK1Geometry

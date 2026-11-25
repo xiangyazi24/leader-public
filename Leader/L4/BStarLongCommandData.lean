@@ -137,8 +137,6 @@ theorem cancel_hit (F : List (At (Fin 11))) (c : CommandClaim) (p : Payload)
     (h : c.source∈F) : cancel F (c,.advance p)=(c,.advance failedPayload) := by
   simp [cancel,h]
 
-#print axioms round_transfer
-
 private def inBody : LongGeometry :=
   ⟨⟨false,false,false,false,false,false⟩,true,false,2,false⟩
 
@@ -174,9 +172,6 @@ theorem fence_held_fixture :
     (round g (opened,0)).prep=[] := by
   decide +kernel
 
-#print axioms copy_capture_fixture
-#print axioms fence_held_fixture
-
 theorem claims_unchanged (g : Pair LongGeometry) (x : Pair (BitVec LW)) :
     (round g x).offered.map Prod.fst=orderedCommands g := by
   have fst_cancel (f : List (At (Fin 11))) (m : CommandClaim × BStarLongCommand.Offer) :
@@ -192,5 +187,4 @@ theorem held_on_fence (g : Pair LongGeometry) (old : At Sheet → Lane)
     checkOffer g old (c,.advance p)=.hold := by
   simp [checkOffer,h]
 
-#print axioms claims_unchanged
 end L4.BStarLongCommandData

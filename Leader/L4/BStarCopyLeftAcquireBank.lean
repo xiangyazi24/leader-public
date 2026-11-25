@@ -56,10 +56,6 @@ theorem ls_word_sites {base : X} (hh : ∃ v,oldH6 B base v=true)
   have K : d.val<seam := Nat.lt_of_lt_of_le d.isLt bound
   exact ⟨strip.ls_body _ pos K,root ▸ (ls_same_word hp strip hh _ K).symm⟩
 
-#print axioms left_capture_val
-#print axioms left_bank_from_ack
-#print axioms ls_word_sites
-
 /-- The full left packed-bank operand is invariant at every earlier
 LOAD cut under the original unbroken left ACQUIRE reader lifetime.
 The bank used by LOAD is matched to ACK's high/left captured selector
@@ -115,5 +111,4 @@ theorem packed_before_load {base x : X} {cut whole : List (Fin n)}
   rw [equalSel] at F
   exact congrFun F j
 
-#print axioms packed_before_load
 end L4.BStarCopyLeftAcquireBank

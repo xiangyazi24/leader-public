@@ -93,9 +93,4 @@ theorem capture_overwrites (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p
   intro eq
   exact different (Token.forward.inj (upd.symm.trans (eq.trans old)))
 
-#print axioms capture_overwrites
-#print axioms event_apply
-#print axioms event_incidence
-#print axioms event_count
-#print axioms capture_link
 end L4.BStarAcquireMarkedSample

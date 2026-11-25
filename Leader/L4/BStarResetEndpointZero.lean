@@ -127,5 +127,4 @@ theorem stage_grant_zero {base x y : X} {hh : ∃ i,oldH6 B base i=true}
   have N := stage_no_win hp C sep Q good fiber closed clean w st i j own _ _ _ W'
   rwa [BStarResetSchedule.run_append] at N
 
-#print axioms stage_grant_zero
 end L4.BStarResetEndpointZero

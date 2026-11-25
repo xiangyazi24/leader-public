@@ -144,6 +144,4 @@ theorem terminal_health {base : X} {hh : ∃ i,oldH6 B base i=true}
   exact selected_terminal_health hp chart turn (sep turn) old (busy_start hp ret) p P
     ⟨F,(congrArg BitVec.toNat E).trans H.2⟩
 
-#print axioms selected_turn
-#print axioms terminal_health
 end L4.BStarStageTerminalHealth

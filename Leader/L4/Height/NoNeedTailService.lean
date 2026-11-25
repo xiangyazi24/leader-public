@@ -215,6 +215,4 @@ theorem accepted_no_need_seal_on_miss {base origin : X} {hh : ∃ i,oldH6 B base
           (prefix_cons hp (X₂ wait ⟨[],List.append_nil wait⟩) X₃)))
   exact fun u H => all u (H.trans W)
 
-#print axioms no_need_tail_trace
-#print axioms accepted_no_need_seal_on_miss
 end L4.Height.NoNeedTailService

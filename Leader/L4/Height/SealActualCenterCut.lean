@@ -47,8 +47,6 @@ theorem departure_label {base x : X} {hh : ∃ i, oldH6 B base i=true}
   have eq := (BStarOwnerControlHistory.pointed_unique_forward _ len (k+1) J.2.1 J.2.2 k (by omega)).mp ⟨pay,F⟩
   omega
 
-#print axioms departure_label
-
 open BStarSealHealthyHop BStarLongTransport BStarLongEvents BStarSeparatorControl BStarLongRouting BStarSeparatorQuiet BStarSealHealthyOffer BStarResetQuiet BStarClearanceSource
 
 private theorem busy_prefix_seal_layout {base x : X} {addr : Nat→Pos n} {len op : Nat}
@@ -69,7 +67,6 @@ private theorem busy_prefix_seal_layout {base x : X} {addr : Nat→Pos n} {len o
       have H := (List.cons.inj (show e::w=f::(u++v) from E)).1
       subst f
       exact ih u v E' i
-
 
 theorem forward_at_center {base start : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
@@ -116,8 +113,6 @@ theorem forward_at_center {base start : X} {hh : ∃ i,oldH6 B base i=true}
     rwa [loc] at R
   exact ⟨p,H,R,selected_well g raw (centerLink g) p (center_mem g) (show Cmd.link≠Cmd.door by decide) H wire,DD⟩
 
-#print axioms forward_at_center
-
 /-- The actual prefix reaching later PC2 necessarily contains the independently
 identified first SEAL launch and selected center departure, even if its eventual
 reply is unhealthy. The exact precenter BusyOnly tape is preserved. -/
@@ -160,5 +155,4 @@ theorem first_center_from409 {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact ⟨idle,door,pre,post++t::(back++ack::rest),by rw [W,A,V,J,List.append_assoc,List.cons_append,List.append_assoc,List.cons_append],
     foreign,P,D,O,L,F,E⟩
 
-#print axioms first_center_from409
 end L4.Height.SealActualCenterCut

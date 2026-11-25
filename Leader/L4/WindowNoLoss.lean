@@ -109,5 +109,4 @@ theorem not_done_no_loss {p c n} (hp : 2≤p) (hc : 12≤c) (hn : 4≤n)
     hit (observe (initial x) w).losses g=false :=
   Bool.eq_false_iff.mpr (fun hr => h (physical_loss_done hp hc hn hx A w hr))
 
-#print axioms not_done_no_loss
 end L4.WindowNoLoss

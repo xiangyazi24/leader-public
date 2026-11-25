@@ -313,10 +313,4 @@ theorem gates_of_outward {base y : X} {hh : ∃ i,oldH6 B base i=true}
   have V : tour++tail=(pre++u)++v := by rw [W]; simp only [List.cons_append, List.append_assoc]; rw [←E]
   simpa only [BStarResetSchedule.run_append] using valid (pre++u) v V
 
-#print axioms gates_of_outward
-#print axioms outward_enable
-#print axioms aligned_health
-#print axioms record_enable
-#print axioms selected_enable
-#print axioms record_split
 end L4.BStarCopyEnableCoverage

@@ -143,5 +143,4 @@ theorem stage_writer {base x : X} {hh : ∃ i,oldH6 B base i=true}
       congrArg (fun q : Fin 3 => q.val) (Hold.2.2.symm.trans (congrArg (fun y : X =>
         BStarLongPublication.readSel (y center).long) realY.symm))
 
-#print axioms stage_writer
 end L4.BStarStageWriterAuth

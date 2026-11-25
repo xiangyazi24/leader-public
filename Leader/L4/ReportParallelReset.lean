@@ -196,8 +196,4 @@ theorem parallel_bank (d : Sheet) (N : 1<n) (S : 0<s)
     (history_to_bank d N hh G F Digit (ReportWriteRailSupplier.rail_supplier d N hh G F Digit)) t x.val)
     (parallel_second d N S hh G F x t)
 
-#print axioms tape_cover_mean
-#print axioms first_of_tape
-#print axioms parallel_second
-#print axioms parallel_bank
 end L4.ReportParallelReset

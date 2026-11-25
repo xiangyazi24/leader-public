@@ -164,8 +164,4 @@ theorem digitSite_of_visit {base x : X} {addr : Nat → Pos n} {len op : Nat}
   rw [List.getElem?_map,List.getElem?_eq_getElem H,List.getElem?_eq_getElem hr] at eq
   exact (Option.some.inj eq).symm
 
-#print axioms digitSite_of_visit
-#print axioms aligned_ordinals
-#print axioms aligned_sites
-#print axioms significant_site_coverage
 end L4.BStarNumericChartCoverage

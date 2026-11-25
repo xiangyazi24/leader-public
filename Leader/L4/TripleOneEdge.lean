@@ -152,4 +152,3 @@ theorem oneEdge {p c n a : Nat} (hn : 4≤n) (s : Fin n) (z : Obs p c n)
 
 end L4.TripleOneEdge
 
-#print axioms L4.TripleOneEdge.oneEdge

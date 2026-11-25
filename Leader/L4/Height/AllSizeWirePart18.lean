@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart17
+import Leader.L4.Height.AllSizeWirePart17
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section Family
 
@@ -43,7 +43,7 @@ theorem packed_publicSuffix (hn : 4 ≤ n) (hs : 6 ≤ s) (C : Nat)
   exact expected_bound_mono _ _ _ h (public_budget C n)
 
 noncomputable def boundedData (encode : L4.Site boundedP 12 → BoundedCode)
-    (decode : BoundedCode → L4.Site boundedP 12) (n : Nat) : G9Data BoundedCode n where
+    (decode : BoundedCode → L4.Site boundedP 12) (n : Nat) : AllSizeData BoundedCode n where
   row := fun ab => boundedPairWith encode decode ab.1 ab.2
   leader := fun a => (decode a).leader
   reference := fun _ => false
@@ -64,7 +64,7 @@ theorem bounded_interfaces (encode : L4.Site boundedP 12 → BoundedCode)
     (decode : BoundedCode → L4.Site boundedP 12) (hn : 4 ≤ n) (hb : n ≤ boundedN) (g C : Nat)
     (hC : ∀ x : BoundedRaw n, IIDExpectedHittingTimeAtMost (boundedNextWith encode decode)
       (BoundedElectedWith encode decode) x (C*n^2)) :
-    G9Interfaces (boundedData encode decode n) (by omega) g (2^32) (patrolAllowance C) := by
+    AllSizeInterfaces (boundedData encode decode n) (by omega) g (2^32) (patrolAllowance C) := by
   let D := boundedData encode decode n
   have hnp : ¬ 2^32 < n := Nat.not_lt.mpr hb
   refine {
@@ -100,7 +100,7 @@ theorem packed_interfaces (hn : 4 ≤ n) (hs : 6 ≤ s) (ha : s = ell (ell n)) (
     let D := packedData s n hn hs
     let origin := packedOrigin (s := s) (n := n) hn hs
     let trials := packed_trial hn hs ha hQuiet hTrial
-    G9Interfaces (withDisplayTrials D (by omega) (2^32) origin trials)
+    AllSizeInterfaces (withDisplayTrials D (by omega) (2^32) origin trials)
       (by omega) g (2^32) (patrolAllowance C) := by
   let D := packedData s n hn hs
   let trials := packed_trial hn hs ha hQuiet hTrial
@@ -110,8 +110,8 @@ theorem packed_interfaces (hn : 4 ≤ n) (hs : 6 ≤ s) (ha : s = ell (ell n)) (
   have serv := packed_service hn hs ha hBlock
   refine ⟨fun hb => (Nat.not_le_of_gt hp hb).elim, ?_, packed_liftCustody hn hs,
     packed_rawStep hn hs, par, serv,
-    displaySplit_of_dot D (by omega) (packed_rawStep hn hs) origin trials,
-    missQuarter_of_dot D (by omega) par serv origin trials (packed_trace_compatibility hn hs),
+    displaySplit_of_rawDisplay D (by omega) (packed_rawStep hn hs) origin trials,
+    missQuarter_of_rawDisplay D (by omega) par serv origin trials (packed_trace_compatibility hn hs),
     fun _ => packed_observer hn hs hObs, fun _ => packed_publicSuffix hn hs C hC⟩
   intro _ x
   change IIDExpectedHittingTimeAtMost ((packedData s n hn hs).next (by omega)) Custody x
@@ -133,8 +133,8 @@ theorem packed_display_inputs (hn : 4 ≤ n) (hs : 6 ≤ s) (ha : s = ell (ell n
   have par := packed_parameters hn hs ha
   have serv := packed_service hn hs ha hBlock
   exact ⟨packed_liftCustody hn hs,packed_rawStep hn hs,par,serv,
-    displaySplit_of_dot D (by omega) (packed_rawStep hn hs) origin trials,
-    missQuarter_of_dot D (by omega) par serv origin trials (packed_trace_compatibility hn hs)⟩
+    displaySplit_of_rawDisplay D (by omega) (packed_rawStep hn hs) origin trials,
+    missQuarter_of_rawDisplay D (by omega) par serv origin trials (packed_trace_compatibility hn hs)⟩
 
 /-- An advice value selects exactly one of the two padded alphabets and rows. -/
 inductive Deployment where
@@ -187,7 +187,7 @@ def Deployment.Expected (d : Deployment) (encode : L4.Site boundedP 12 → Bound
 
 /-- The custody interface supplies a uniform custody coefficient. The verified rooted public
 row supplies its own uniform coefficient from each completed handoff. -/
-theorem all_sizes_expected_of_dot (custody : CustodyReached)
+theorem all_sizes_expected_of_parts (custody : CustodyReached)
     (service : ClockServiceSpec.ProductionStrictBlock)
     (display : ClockDisplaySpec.RawDisplayTrial) (observerMean : PackedObserverMean) :
     ∃ g patrol : Nat, ∀ n (hn : 4 ≤ n),
@@ -213,4 +213,4 @@ theorem all_sizes_expected_of_dot (custody : CustodyReached)
 
 end Family
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

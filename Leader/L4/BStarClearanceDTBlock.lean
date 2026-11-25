@@ -217,8 +217,4 @@ theorem joined_door_block_DT (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0
     simp only [selected] at hw
     split at hw <;> cases hw)
 
-#print axioms joined_idle_DT
-#print axioms joined_hold_block_DT
-#print axioms joined_clear_block_DT
-#print axioms joined_door_block_DT
 end L4.BStarClearanceDTBlock

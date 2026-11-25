@@ -95,11 +95,4 @@ theorem spacing_transfer_chosen {n L U a b : Nat} {h sel : Fin n → Bool}
     GapBounds sel (L*a) (U*b) :=
   spacing_transfer (successorWidth_spec base) sub H
 
-#print axioms hop_eq_nextAt_span
-#print axioms hop_add
-#print axioms physical_gap_of_hop_gap
-#print axioms spacing_transfer
-#print axioms successorWidth_spec
-#print axioms spacing_transfer_chosen
-
 end L4.ShortHopSpacing

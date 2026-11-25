@@ -201,13 +201,4 @@ theorem observe_lt {L : Nat} {ts us : Fin L → Token} (a b : Fin L) (AB : a≠b
   simp only [localScore,newF,oldF,if_true]
   omega
 
-#print axioms raceDebt_obs
-#print axioms sum_split_one
-#print axioms sum_split_two
-#print axioms byteScore_bound
-#print axioms physicalScore_zero_iff
-#print axioms transport_lt
-#print axioms turn_lt
-#print axioms observe_lt
-
 end L4.ShortForwardRank

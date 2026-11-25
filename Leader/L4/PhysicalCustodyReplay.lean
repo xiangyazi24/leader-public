@@ -25,6 +25,4 @@ theorem custody_of_commuted_replay {s n : Nat} {x : Raw s n}
   rw [(replay_same_cuts g.initial hu hv).2 g.past, g.here]
   exact ⟨g⟩
 
-#print axioms replay_same_cuts
-#print axioms custody_of_commuted_replay
 end L4.PhysicalCustody

@@ -56,6 +56,4 @@ theorem joined_retains (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
     rw [LongDoorGuard.valid_no_override _ _ _ (valid rfl)]
     exact Patch.compose_apply _ _ _
 
-#print axioms scratch_frame
-#print axioms joined_retains
 end L4.BStarAcquireJoined

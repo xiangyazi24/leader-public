@@ -87,8 +87,6 @@ theorem chart_sizes {s n : Nat} {x : Raw s n} (g : CustodyWitness x)
   dsimp [d] at L
   omega
 
-#print axioms width_bounds
-#print axioms chart_sizes
 end
 end L4.Height.ProductionCustody
 

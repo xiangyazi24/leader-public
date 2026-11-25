@@ -134,10 +134,4 @@ theorem publication_on_original_word {s n : Nat} {J : Type} {h : Fin n → Bool}
       · exact T
       · exact List.mem_cons_of_mem _ T
 
-#print axioms watch_card
-#print axioms included
-#print axioms outside_agree
-#print axioms internal_step_agrees
-#print axioms same_filtered_replay
-#print axioms publication_on_original_word
 end L4.ShortFiveWatchReplay

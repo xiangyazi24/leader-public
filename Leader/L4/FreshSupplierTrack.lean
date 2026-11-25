@@ -281,9 +281,3 @@ theorem peaceful_kill_starts_protected {p c n : Nat} (hn : 4 ≤ n)
 
 end L4.RankSupplier
 
-#print axioms L4.RankSupplier.protected_supplier_on_mark
-#print axioms L4.RankSupplier.protected_track
-
-#print axioms L4.RankSupplier.protected_after_kill_prefix
-
-#print axioms L4.RankSupplier.peaceful_kill_starts_protected

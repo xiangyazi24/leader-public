@@ -124,8 +124,6 @@ theorem empty_away_from_door {base x : XX} {hh : ∃ i, oldH6 B base i=true}
     · exact selected (R (addr j).2) (Prod.ext hr rfl)
     · exact (idle_off_pair hp x e (addr j) hl hr).trans (clean j hlen)
 
-
-
 open BStarClearanceSource BStarClearanceResidual BStarResetControllerEntry
 open BStarSeparatorControl BStarAcquireWaitControl
 
@@ -198,7 +196,6 @@ theorem idle_launch_or_hold {base x : XX} {hh : ∃ i, oldH6 B base i=true}
     exact .inl ⟨E,⟨(BStarResetWaitRing.valid_of_control_eq _ _ F).trans issue.1,
       (congrArg (fun q : BitVec 2 × BitVec 9 => q.1.toNat) F).trans issue.2⟩,F,K⟩
 
-
 open BStarSeparatorRing BStarSeparatorTags BStarSeparatorJoinedTags BStarLongRouting
 
 /-- If an old forward token is parked by a selected link, that link
@@ -253,7 +250,6 @@ theorem link_forward_survivor_empty (k₁ k₂ t₂ J₁ J₂ r tune p c₁ : Na
       rw [A,decode_encode]
     exact Token.noConfusion ((Eq.trans Eq').symm.trans B')
 
-
 theorem outward_suffix {base x : XX} {hh : ∃ i, oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
     (C : Chart hp base hh o S len fall)
@@ -306,7 +302,6 @@ theorem outward_suffix {base x : XX} {hh : ∃ i, oldH6 B base i=true}
       · exact (M.idle j jl O (fun i X L => I ⟨i,X,L⟩)
           (fun eq P => T ⟨eq,P⟩)).2.1 (E _ (by omega) jl)
 
-
 /-- In the clean outward state established by issue and preserved
 by every literal outward step, the unique F is the pointed slot. -/
 theorem pointed_unique_forward (u : BStarSeparatingRail.Rail) (len k : Nat)
@@ -342,7 +337,4 @@ theorem pointed_backward_no_forward (u : BStarSeparatingRail.Rail) (len k : Nat)
       subst j
       exact BStarSeparatorParked.disjoint_class _ G.2.1 F
 
-#print axioms idle_launch_or_hold
-#print axioms outward_suffix
-#print axioms pointed_unique_forward
 end L4.BStarOwnerControlHistory

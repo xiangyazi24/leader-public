@@ -135,18 +135,4 @@ theorem h4_report_seed {s n : Nat} {z : Raw s n} (N : 0<n)
     GapBounds (h4 z) 16 81 ∧ (∃ i,h4 z i=true) :=
   ⟨h4_gaps C3,layer_nonempty C3 (layer_nonempty C2 (layer_nonempty C1 (h1_nonempty A N)))⟩
 
-#print axioms layer_gaps
-#print axioms layer_nonempty
-#print axioms layer_of_nor
-#print axioms ring_no_short_period
-#print axioms h2_mask
-#print axioms h3_mask
-#print axioms h4_mask
-#print axioms h1_gaps
-#print axioms h1_nonempty
-#print axioms h2_gaps
-#print axioms h3_gaps
-#print axioms h4_gaps
-#print axioms charts_of_layers
-#print axioms h4_report_seed
 end L4.SelectedMISLayers

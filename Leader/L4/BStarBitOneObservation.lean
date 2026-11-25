@@ -61,7 +61,6 @@ private theorem no_fresh_next {i : Fin n} {e : Fin n} {a b : Phase}
       rename_i L R
       exact A.elim (fun h => h rfl) (fun h => h.elim L R)
 
-
 private theorem track_step {base : X} {hh : ∃ i,@oldH6 _ n B base i=true}
 
     {o : BStarAcquireLiteralChain.Owners (@oldH6 _ n B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
@@ -175,5 +174,4 @@ theorem no_second_observation {base : X} {hh : ∃ i,@oldH6 _ n B base i=true}
       have qr : cycleCode q=1 := (congrArg Payload.race eq).trans R'
       exact nonfresh_code q Q qr
 
-#print axioms no_second_observation
 end L4.BStarBitOneObservation

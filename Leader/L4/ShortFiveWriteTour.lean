@@ -68,5 +68,4 @@ theorem generated_success_on_tour (x : Raw s n) (C : Chart (header x))
   have F := Generated.snoc door Q (by trivial)
   simpa [next, nextStage, door, RearTrace.right_predecessor, pfx, tour, k,List.append_assoc] using F
 
-#print axioms generated_success_on_tour
 end L4.ShortFiveWriteTour

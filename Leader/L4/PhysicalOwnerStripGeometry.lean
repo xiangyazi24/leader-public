@@ -108,7 +108,4 @@ theorem strips_of_production {s n : Nat} {base : Raw s n} (g : ReadyAfterCovers 
   obtain ⟨l,d,H⟩ := strips_of_chart g C width (by omega)
   exact ⟨S,len,fall,l,d,C,H⟩
 
-#print axioms other_header_of_width
-#print axioms strips_of_chart
-#print axioms strips_of_production
 end L4.PhysicalOwnerStripGeometry

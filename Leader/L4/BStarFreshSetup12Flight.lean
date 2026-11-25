@@ -286,7 +286,6 @@ theorem ring_turn {x : X} {addr : Nat → Pos n} {len : Nat}
   rw [finish12] at E
   exact E.symm
 
-
 open BStarOwnerLaunchOrigin BStarResetSchedule BStarGeneratedOwner BStarGeneratedBandScan
 open BStarAcquireHistoryReturn BStarNumericReturn
 local notation "play" => BStarResetSchedule.run step
@@ -371,7 +370,6 @@ theorem mark_health {base x : X} {hh : ∃ z,oldH6 B base z=true}
       have Hout := J.2.2.2 (k+1) (by omega) high
       exact Token.noConfusion (R.symm.trans Hout)
 
-
 theorem busy_health {base x : X} {hh : ∃ b,oldH6 B base b=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
     (chart : Chart hp base hh o S len fall) (sep : ∀ e : Fin n,e≠rightNeighbor e)
@@ -420,5 +418,4 @@ theorem actual_to_13 {base x : X} {hh : ∃ b,oldH6 B base b=true}
   exact congrArg (fun z : BitVec 2 × BitVec 9 => z.2.toNat)
     (source_consume hp chart sep W replyPacket result stable12 opcode12)
 
-#print axioms actual_to_13
 end L4.BStarFreshSetup12Flight

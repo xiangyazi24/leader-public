@@ -159,8 +159,4 @@ theorem production_cover_handoff (d : Sheet) {s n : Nat} {h : Fin n→Bool}
   have N := production_room S advice d
   exact permanent_spacing_at_cover d G hh L N.1 E closed mask N.2 bank x C
 
-#print axioms production_cover_handoff
-#print axioms sep_dom_of_cover
-#print axioms cover_original_marks
-#print axioms permanent_spacing_at_cover
 end L4.ReportCoverHandoff

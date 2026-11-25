@@ -64,5 +64,4 @@ theorem from_drained_seed {base origin : X} {hh : ∃ i,oldH6 B base i=true}
   refine ⟨layout a (f::t++e::v) ?_,old a f t A⟩
   rw [U,A,List.append_assoc]
 
-#print axioms from_drained_seed
 end L4.BStarNumericDrainedBand

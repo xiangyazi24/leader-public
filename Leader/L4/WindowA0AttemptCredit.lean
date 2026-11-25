@@ -219,8 +219,3 @@ def assemble_attempt {α : Type} {n : Nat} {step : α → Fin n → α} {x : α}
 
 end L4.WindowA0AttemptCredit
 
-#print axioms L4.WindowA0AttemptCredit.glue_failure
-#print axioms L4.WindowA0AttemptCredit.chain_failure
-#print axioms L4.WindowA0AttemptCredit.a0_guarded_failure
-
-#print axioms L4.WindowA0AttemptCredit.assemble_attempt

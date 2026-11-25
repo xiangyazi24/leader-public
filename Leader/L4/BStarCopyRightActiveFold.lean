@@ -154,5 +154,4 @@ theorem inject_active_outward_fold {Tag : Type} (digits : Tag→BitVec 36) (atSo
     exact ih F endEq j (lead++[e]) t labels rfl after progress ltag held' mobile' V pend
       (fun pre mark post Eq => ready (e::pre) mark post (congrArg (List.cons e) Eq))
 
-#print axioms inject_active_outward_fold
 end L4.BStarCopyRightActiveFold

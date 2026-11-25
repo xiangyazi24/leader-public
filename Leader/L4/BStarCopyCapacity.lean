@@ -162,10 +162,4 @@ theorem terminal_selected_holds {Label : Type} (digits : Label → BitVec 36)
   have e := terminal_mobile_empty cells r hr first clean handoff
   exact selected_end_holds g x t hc (by simpa [encode,e] using matched.1)
 
-#print axioms clean_send_cap
-#print axioms arrival_cap
-#print axioms terminal_mobile_empty
-#print axioms end_no_disposal
-#print axioms selected_end_holds
-#print axioms terminal_selected_holds
 end L4.BStarCopyCapacity

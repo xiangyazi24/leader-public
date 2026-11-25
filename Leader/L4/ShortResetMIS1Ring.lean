@@ -101,10 +101,6 @@ theorem reset_back_raw {s n : Nat} (x : Raw s n) (e : Fin n) (sep : e≠rightNei
     (x e).mis1 (x (rightNeighbor e)).mis1 j k dst trail back
   exact ⟨(work_to_raw x e sep j).1.trans H.1,(work_to_raw x e sep k).2.trans H.2⟩
 
-#print axioms work_to_raw
-#print axioms reset_out_raw
-#print axioms reset_turn_raw
-#print axioms reset_back_raw
 /-- Actual inbound mark creates RESET0 from a header in ISSUE0. -/
 theorem reset_issue_raw {s n : Nat} (x : Raw s n) (e : Fin n) (sep : e≠rightNeighbor e)
     (head : header x (rightNeighbor e)=true)
@@ -126,8 +122,6 @@ theorem reset_consume_raw {s n : Nat} (x : Raw s n) (e : Fin n) (sep : e≠right
   simp only [pairHeader,head] at H
   exact H.trans (reset_consume_pair _ _ _ phase op reply)
 
-#print axioms reset_issue_raw
-#print axioms reset_consume_raw
 /-- Any inbound mark with the old predecessor trail leaves the
 tracked forward or trail lane unchanged in the full raw ring. -/
 theorem reset_inbound_frame_raw {s n : Nat} (x : Raw s n) (e : Fin n)
@@ -140,7 +134,6 @@ theorem reset_inbound_frame_raw {s n : Nat} (x : Raw s n) (e : Fin n)
       (kField k).read (x (rightNeighbor e)).mis1 := by
   exact (work_to_raw x e sep k).2.trans (reset_inbound_frame_pair _ _ _ _ _ _ dst trail safe)
 
-#print axioms reset_inbound_frame_raw
 private theorem work_to_raw_right_controller {s n : Nat} (x : Raw s n) (e : Fin n)
     (sep : e≠rightNeighbor e) {k : Nat} (f : Field 96 k) (bound : f.offset+k≤93) :
     let z := ((MISByteRows.row (pairHeader x e) (pairIn x e)).2).apply (pairIn x e).2
@@ -194,8 +187,6 @@ theorem reset_consume_controller_raw {s n : Nat} (x : Raw s n) (e : Fin n)
     (x (rightNeighbor e)).mis1 phase op reply
   exact ⟨(congrArg BitVec.toNat A).trans H.1,(congrArg BitVec.toNat B).trans H.2⟩
 
-#print axioms reset_issue_controller_raw
-#print axioms reset_consume_controller_raw
 /-- On an actual inbound edge the live root WAIT0/forward-or-trail
 lane is stable, including the independent responder-door phase. -/
 theorem reset_root_inbound_frame_raw {s n : Nat} (x : Raw s n) (e : Fin n)
@@ -227,10 +218,6 @@ theorem reset_remote_frame_raw {s n : Nat} (x : Raw s n) (e i : Fin n)
     (rawNext s x e i).mis1=(x i).mis1 := by
   simp [rawNext,AllSizeS1Geometry.step,left,right]
 
-#print axioms reset_root_inbound_frame_raw
-#print axioms reset_prefix_trail_frame_raw
-#print axioms reset_remote_frame_raw
-
 /-- Actual MIS1 outgoing edge cannot change a returning RESET0 reply or
 a clear suffix lane facing a clear successor (or the terminal turn). -/
 theorem reset_reverse_outbound_frame_raw {s n : Nat} (x : Raw s n) (e : Fin n)
@@ -261,9 +248,6 @@ theorem reset_reverse_inbound_frame_raw {s n : Nat} (x : Raw s n) (e : Fin n)
       (kField k).read (x (rightNeighbor e)).mis1 := by
   exact (work_to_raw x e sep k).2.trans (reset_reverse_inbound_frame_pair
     _ _ _ _ _ _ dst safe.symm clear)
-
-#print axioms reset_reverse_outbound_frame_raw
-#print axioms reset_reverse_inbound_frame_raw
 
 private theorem work_to_raw_left_controller {s n : Nat} (x : Raw s n) (e : Fin n)
     {k : Nat} (f : Field 96 k) (bound : f.offset+k≤83) :
@@ -336,10 +320,6 @@ theorem reset_controller_inbound_hold_raw {s n : Nat} (x : Raw s n) (e : Fin n)
     (congrArg BitVec.toNat (B.trans (source_field_held_inbound_pair pc
     (by decide) (by decide) _ _ _ H))).trans op⟩
 
-#print axioms reset_controller_outgoing_raw
-#print axioms reset_controller_inbound_hold_raw
-
-
 end L4.ShortResetMIS1Ring
 
 namespace L4.ShortResetMIS1Ring
@@ -353,5 +333,4 @@ theorem selector_right_projection_raw {s n : Nat} (x : Raw s n) (e : Fin n)
   have E := congrArg (fun z : BitVec 1=>z.getLsbD 0) A
   simpa [Field.read, BitVec.getLsbD_extractLsb', lane] using E
 
-#print axioms selector_right_projection_raw
 end L4.ShortResetMIS1Ring

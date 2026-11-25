@@ -126,5 +126,4 @@ theorem literal_anchor_quarter {base initial : X} (u v past : List (Fin n))
       apply ((Classical.choose_spec (info (slice (warm a)))).2.2 a).mpr
       simpa only [←eq] using badView)
 
-#print axioms literal_anchor_quarter
 end L4.BStarLiteralAlignedQuarter

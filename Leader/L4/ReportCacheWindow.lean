@@ -328,14 +328,6 @@ theorem report2_frame (b : LargeRows a) (h : Fin n → Bool)
     LargeSite.report2 Headers.h5 h (max 3 a.t2) Q sep (ShortGeo.ell_cap _) closed mask
     (fun x=>(largePair_short_geometry b x).2.2.2.2.1)
 
-#print axioms report1_frame
-#print axioms report2_frame
 end Literal
 
-#print axioms site_correct_closed
-#print axioms site_correct_expected
-#print axioms precision_expected
-#print axioms precision_closed
-#print axioms predecessor_earns
-#print axioms precision_raw_offset
 end L4.ReportCacheWindow

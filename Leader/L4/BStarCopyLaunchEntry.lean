@@ -100,7 +100,4 @@ theorem left_of_drained {Tag : Type} (digits : Tag→BitVec 36) (plan : List Tag
     rw [show BStarCopyLeftStrip.rail seam j=.ls from if_pos hj]
     exact (clean _ .ls rfl (upOwner j hj)).1
 
-#print axioms launch_drained
-#print axioms right_of_drained
-#print axioms left_of_drained
 end L4.BStarCopyLaunchEntry

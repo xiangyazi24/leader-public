@@ -198,9 +198,4 @@ theorem nominated_ready_word {X : Type} {n : Nat} {step : X → Fin n → X}
       subst b
       exact W u a v j
 
-#print axioms nominated_ready_word
-#print axioms ready_word_of_lex_service
-#print axioms scalar_lt
-#print axioms scalar_le
-#print axioms certificate
 end L4.BStarClearanceLex

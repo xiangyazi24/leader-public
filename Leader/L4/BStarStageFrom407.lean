@@ -105,7 +105,6 @@ theorem skeleton_from408 {base x : X} {addr : Nat → Pos n} {len : Nat}
       exact B0
     exact ready_411_foreign hp K0 sep Hr H rfl rfl ready411
 
-
 /-- The successful selected STAGE at any actual forward K1 occurs
 strictly in the literal tail after the chosen final native receipt.
 Each premark before it still sees root PC at least 408. -/
@@ -154,5 +153,4 @@ theorem selected_from408 {base x : X} {hh : ∃ i,oldH6 B base i=true}
     exact (band a (e::(b++i::after)) (by rw [splitMain,E]; simp only [List.append_assoc,List.cons_append])).2.1
   · exact replay.symm ▸ selected
 
-#print axioms selected_from408
 end L4.BStarStageFrom407

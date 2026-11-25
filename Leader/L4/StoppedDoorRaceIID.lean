@@ -118,8 +118,4 @@ theorem active_race_credit {n : Nat} (hn : 4≤n) (d : Fin n) (later k : Nat)
       have D := disjoint_symm E
       simp only [next,if_pos D,Nat.le_refl]
 
-#print axioms active_race_credit
-
-#print axioms race_expected
-#print axioms reaches_accept_iff
 end L4.StoppedDoorRaceIID

@@ -148,5 +148,3 @@ theorem hittingTime_with_pauses {α : Type} {n : Nat}
 
 end L4.GGPause
 
-#print axioms L4.GGPause.pause_credit_oneStep
-#print axioms L4.GGPause.hittingTime_with_pauses

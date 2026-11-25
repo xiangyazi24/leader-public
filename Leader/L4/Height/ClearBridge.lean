@@ -611,11 +611,4 @@ theorem all_clear_time {m B M D : Nat}
     (fun v t => (streamState B M hm s w t v).err = false)
     hproc u herr
 
-#print axioms activate_eq
-#print axioms quiet_iff
-#print axioms frozen_iff
-#print axioms stable_trace_of
-#print axioms clear_process_stream
-#print axioms all_clear_time
-
 end L4.Height.Recover

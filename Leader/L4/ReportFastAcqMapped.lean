@@ -76,7 +76,4 @@ theorem mapped_acq_fenced_before
     rw [S,ShortOwnerEpochJS.raw_append]]
   exact RC
 
-#print axioms fenced_of_prefixes
-#print axioms mapped_acq_fenced_before
-
 end L4.ReportFastAcqMapped

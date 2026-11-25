@@ -35,5 +35,4 @@ theorem stage_ack_seal_issue {base x : X} {addr : Nat→Pos n} {len : Nat} {e : 
   obtain ⟨A,_⟩ := selected_tail_result hp slot head sep I E d D (.inl PC)
   exact ⟨PC,A,(congrArg BStarLongPublication.decode A).trans D⟩
 
-#print axioms stage_ack_seal_issue
 end L4.Height.StageAckToSeal

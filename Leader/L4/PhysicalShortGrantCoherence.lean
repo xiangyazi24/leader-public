@@ -138,11 +138,4 @@ theorem raw_h2grant_expected {s n : Nat} (N : 5≤n) (x : Raw s n) :
     (full u (by simp)) (full v (by simp)) (full w (by simp))
   cases t <;> simp [L4.iidHitCost,ready]
 
-
-#print axioms raw_h2grant_expected
-#print axioms coherent_closed
-#print axioms h2grant_closed
-#print axioms coherent_after_cover
-#print axioms coherent_expected
-#print axioms h2grant_from_three_covers
 end L4.PhysicalShortGrantCoherence

@@ -32,6 +32,4 @@ theorem bank_expected_from_cached (d : Sheet) (N : 1<n) (S : 0<s)
   bank_expected d N S hh G F
     (rail_supplier d N hh G F (ReportPrelaunchDoorProducer.digits_positive d S)) x
 
-#print axioms rail_supplier
-#print axioms bank_expected_from_cached
 end L4.ReportWriteRailSupplier

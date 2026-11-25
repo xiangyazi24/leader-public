@@ -299,10 +299,5 @@ theorem residual_unweighted_counterexample :
         2 * residualTwoStateRank false) := by
   decide
 
-#print axioms residual_potential_step
-#print axioms residual_expected
-#print axioms residual_expected_le
-#print axioms residual_unweighted_counterexample
-
 end L4.Height
 

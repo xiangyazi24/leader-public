@@ -423,7 +423,6 @@ theorem admit_reverse_step (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     · exact (M ⟨j,J,E⟩).elim
     · exact (NC.elim (fun B=>B E) (fun B=>B (rootD Z))).elim
 
-
 /-- Each actual pre-consume mark preserves the exact old healthy reply at
 its current reverse cursor or transfers it to its predecessor. -/
 theorem admit_reverse_run (d : Sheet) (C : Chart h)
@@ -442,7 +441,6 @@ theorem admit_reverse_run (d : Sheet) (C : Chart h)
     rcases admit_reverse_step d C hh G F N _ Y j A digit e nc with B|⟨i,I,_,B⟩
     · exact ⟨j,J,B⟩
     · exact ⟨i,by omega,B⟩
-
 
 structure TailF (d : Sheet) (C : Chart h) (x : Raw s n) (k : Nat) : Prop where
   pastGate : C.a+2<k
@@ -849,16 +847,4 @@ theorem deny_after_receipt (d : Sheet) (C : Chart h) (N : 1<n)
   obtain ⟨R,A⟩ := deny_inv_run d C N hh G F a Y S digit w D Map Clear
   exact ⟨deny_nonacq d C _ R,A⟩
 
-#print axioms deny_inv_run
-#print axioms deny_after_receipt
-#print axioms deny_inv_step
-#print axioms deny_gate_step
-#print axioms deny_before_consume
-#print axioms deny_tail_run
-#print axioms denied_departure_to_consume
-#print axioms gate_depart_seeds
-#print axioms tail_step
-#print axioms denied_terminal
-#print axioms admit_ack_decode
-#print axioms admit_reverse_run
 end L4.ReportDenyAncestry

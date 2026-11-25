@@ -136,7 +136,6 @@ theorem FivePlan.assemble {n C : Nat} {done : Word n → Prop}
       · exact skip edge (ih (by omega) w h hs)
       · exact K.phase (fun u hu hn => ih (by omega) _ _ (hK u hu hn))
 
-
 /-- To supply the full local span field it suffices to prove its
 geometric bound on prefixes strictly before exit; past-exit sources
 only need a frozen stamp. -/
@@ -222,9 +221,4 @@ theorem rooted_short_window_of_plan (h : PhysicalPlan) : RootedWindows.RootedSho
     obtain ⟨done,freshBad,P,hw,closed,cover,fresh⟩ := plan x hp hn hq hk i hshort
     exact reward_of_plan x _ done freshBad closed cover P (by omega) hC hw fresh
 
-#print axioms cost_firstExit
-#print axioms Transaction.phase
-#print axioms FivePlan.assemble
-#print axioms reward_of_plan
-#print axioms rooted_short_window_of_plan
 end L4.WindowFiveStages

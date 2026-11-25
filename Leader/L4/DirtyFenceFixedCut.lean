@@ -118,7 +118,4 @@ theorem expected_from_high_cut
   exact DirtyFenceHeldMean.expected_until_nonheld_or_empty hp chart sep Q I layout closed LF RF dp
     flags notShort hn hl lc rc cutoff onPrep clear
 
-#print axioms prep_before_high
-#print axioms exists_first_high
-#print axioms expected_from_high_cut
 end L4.DirtyFenceFixedCut

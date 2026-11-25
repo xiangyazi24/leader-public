@@ -30,6 +30,4 @@ theorem g9_of_fresh_cycles (safe : FreshCyclePublishes) {s n : Nat} {Z : Type}
   g9_moment_of_production_block (strict_block_of_fresh_cycles safe)
     step raw served i rawStep lastMark g prod header W fixed z
 
-#print axioms strict_block_of_fresh_cycles
-#print axioms g9_of_fresh_cycles
 end L4.Height.ProductionCycles

@@ -144,8 +144,6 @@ theorem forward_step {s n : Nat} (x0 x : Raw s n) (X0 : H2Ready x0) (X : H2Ready
       · have F := reset_remote_frame_raw x e (nextAt R.root i) (Ne.symm E) K
         exact congrArg ((kField (R.port i)).read) F
 
-
-#print axioms forward_step
 -- CHECK: ShortWriteChartForward.lean:21; original opens and options unchanged.
 theorem forward_step_fixed {s n : Nat} {h : Fin n → Bool} (x : Raw s n)
     (C : Chart h) (N : 9<n) (e : Fin n)
@@ -276,5 +274,4 @@ theorem forward_step_fixed {s n : Nat} {h : Fin n → Bool} (x : Raw s n)
       · have F := reset_remote_frame_raw x e (nextAt R.root i) (Ne.symm E) K
         exact congrArg ((kField (R.port i)).read) F
 
-#print axioms forward_step_fixed
 end L4.ShortWriteChartForward

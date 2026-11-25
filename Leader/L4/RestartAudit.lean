@@ -62,5 +62,3 @@ theorem second_birth_joins_first_sector {p c n a : Nat}
   exact ⟨hFirst,hSecond.1,hSecond.2.1,hKeepU,hKeepV,hSecond.2.2⟩
 
 end L4.RestartAudit
-#print axioms L4.RestartAudit.supplier_birth_exit
-#print axioms L4.RestartAudit.second_birth_joins_first_sector

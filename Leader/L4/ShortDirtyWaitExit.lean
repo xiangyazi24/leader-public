@@ -77,6 +77,4 @@ theorem no_forward_wait_exit {s n : Nat} {h : Fin n → Bool} (C : Chart h)
   rw [R] at exit
   exact ⟨congrArg (fun j=>j+1) L,h2_ready_closed N z d Z,exit⟩
 
-#print axioms held_source_word
-#print axioms no_forward_wait_exit
 end L4.ShortDirtyWaitExit

@@ -91,6 +91,4 @@ theorem source_consume {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact joined_setup_control k₁ k₂ t₂ J₁ J₂ r c p c₁ hp (x e,x root) f
     head W.2.1 W.2.2.1 R V.1 O W.2.2.2
 
-#print axioms source_launch
-#print axioms source_consume
 end L4.BStarFreshSetup12

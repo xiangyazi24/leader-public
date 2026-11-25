@@ -153,8 +153,6 @@ private theorem moderate_failure (C : Context initial group cert s a b)
       rw [sum_const,Nat.mul_comm n,Nat.mul_assoc,←Nat.pow_succ] at H
       exact H
 
-
-
 /-- Scope-preserving moderate trial. A redirected comparison word
 only provides the bound; the executable trial always applies the
 actual next pair, including the failed mark and its successors. -/
@@ -222,4 +220,3 @@ theorem mean (C : Context initial group cert s a b)
 
 end L4.WindowScopedModerateRestart
 
-#print axioms L4.WindowScopedModerateRestart.mean

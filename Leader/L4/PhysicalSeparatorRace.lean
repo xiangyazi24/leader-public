@@ -78,8 +78,6 @@ noncomputable def separator_reader {s n : Nat} {base x : Raw s n}
   simpa only [Nat.mul_one, StoppedDoorRaceIID.score, AdaptiveDoorCredit.score, Nat.reduceAdd, Nat.reduceSub, Nat.reducePow] using (race hn _ (RearTrace.predecessor (S.getD 0 fall).1) 5 1 (by decide) (by decide) K H).map
     (separator_paid_of_race C Q layout closed sep cx)
 
-#print axioms separator_paid_of_race
-#print axioms separator_reader
 /-- From arbitrary old upper bytes on the settled chart, use the genuine
 launch from the released controller. Its legal opcode need not be zero;
 the separator only needs an authenticated outward and return traversal. -/
@@ -140,6 +138,4 @@ def residual_to_zero_reader {s n : Nat} {base x : Raw s n}
   exact Certificate.idle _ 3 _ (by decide)
     (PhysicalRawClockTape.raw_endpoint_expected (rawNext s) x _ _ R)
 
-#print axioms separator_from_arbitrary_reader
-#print axioms residual_to_zero_reader
 end L4.PhysicalSeparatorRace

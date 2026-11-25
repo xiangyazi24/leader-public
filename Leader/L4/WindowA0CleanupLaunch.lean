@@ -165,10 +165,4 @@ def cleanupTiming {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
     · exact .inr (first_launch hn S J H x hx hl w ⟨h,h'⟩ hd)
   mean _ h := h.symm ▸ word_mean hn S J H x hx
 
-#print axioms cleanupLayer
-#print axioms cleanupTiming
-#print axioms done_of_good_exit
-#print axioms observe_good
-#print axioms first_launch
-#print axioms word_mean
 end L4.WindowA0CleanupLaunch

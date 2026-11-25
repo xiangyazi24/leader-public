@@ -154,7 +154,4 @@ theorem gate_exits_of_sublist {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact exits_when_scanner_exits hp C Q fiber closed sep i k K idx O v F Op out arg w
     .fresh x qx ready I old (left_right_left i diff .fresh w cover)
 
-#print axioms next_actual_mark
-#print axioms exits_when_scanner_exits
-#print axioms gate_exits_of_sublist
 end L4.BStarBitGatePositive

@@ -119,7 +119,6 @@ theorem drained_old {Tag : Type} (digits : Tag → BitVec 36) (x : X) (a : Fin n
     rw [ldRead,address_add,show seam+(j-seam)=j by omega] at H
     simpa only [rail,if_neg k] using H
 
-
 theorem drained_after {Tag : Type} (digits : Tag → BitVec 36)
     (x : X) (a : Fin n) (seam width : Nat) (label : Nat → Option Tag)
     (ld : ∀ j<width,(ldRead x (addr a seam) j).mobile=.empty)
@@ -267,8 +266,4 @@ theorem original_through_ack {Tag : Type} (digits : Tag→BitVec 36)
     endMode G9 event9 accepted9 history valid late a seam width strip root
   exact through_ack hp digits chart hw flags notShort strip root sep w ext ack T H plan size s label P old mobile ready
 
-#print axioms original_through_ack
-#print axioms ready_frozen
-#print axioms drained_old
-#print axioms through_ack
 end L4.BStarCopyLeftFenceHold

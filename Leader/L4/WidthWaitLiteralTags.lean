@@ -294,11 +294,4 @@ theorem incoming_wait_tag {c : Nat} (r : Nat) (h : Bool) (u v : BitVec (W c))
   · exact (observe_write (wire_patch _ _)).trans (congrArg tagOf (packet_transport v))
   · rfl
 
-#print axioms encode_tag
-#print axioms inside_default
-#print axioms inside_row
-#print axioms outgoing_row
-#print axioms incoming_wait_tag
-#print axioms observe_eq_of_wire
-#print axioms packet_class
 end L4.WidthWaitLiteralTags

@@ -76,5 +76,4 @@ theorem chart_exists_gate {s n : Nat} (x : Raw s n) (M : rawMaximal x)
       have p : a<a+b := by omega
       exact ⟨by simp [ShortResetChart.lane,p],(H a (by omega) (by omega)).mpr (Or.inl rfl)⟩
 
-#print axioms chart_exists_gate
 end L4.ShortGateChart

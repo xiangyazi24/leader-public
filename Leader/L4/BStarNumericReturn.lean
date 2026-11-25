@@ -119,7 +119,6 @@ theorem ring_reverse (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   rw [atPair C.source,atPair d]
   exact H
 
-
 theorem reply_routing (g : Pair LongGeometry) (raw : Pair (BitVec LW))
     (a : AtK) (pay : Payload) (D : readK raw a=.reply pay)
     (V : Stable pay) (keep : a∉discarded g) (mid : avoids a (middle g raw)) :
@@ -227,7 +226,6 @@ theorem arrived_payload {base x : XX} {hh : ∃ i, oldH6 B base i=true}
       (x e,x (rightNeighbor e)) (L 0) (safe_nonright _ _ _ (by decide)) route).trans (old.trans D0))
   · exact (BStarResetIdleRing.idle_off_pair hp x e (addr 0) E R).trans D0
 
-
 open scoped Classical
 
 theorem reverse_or_hold {base x : XX} {hh : ∃ i,oldH6 B base i=true}
@@ -314,7 +312,6 @@ theorem reverse_or_hold {base x : XX} {hh : ∃ i,oldH6 B base i=true}
       · exact inside (R (addr (k+1)).2) (Prod.ext rr rfl)
       · exact (BStarResetIdleRing.idle_off_pair hp x e (addr (k+1)) l rr).trans D
 
-
 open BStarOwnerLaunchOrigin BStarGeneratedOwner BStarResetSchedule
 
 private theorem seen_advance {len : Nat} {x : XX} {e : Fin n} {addr : Nat → Pos n}
@@ -380,7 +377,4 @@ theorem busy_return_payload {base x : XX} {hh : ∃ i,oldH6 B base i=true}
             omega
         exact ih (k+1) idx rr
 
-#print axioms arrived_payload
-#print axioms reverse_or_hold
-#print axioms busy_return_payload
 end L4.BStarNumericReturn

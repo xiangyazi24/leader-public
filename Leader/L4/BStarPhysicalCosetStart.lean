@@ -80,6 +80,4 @@ theorem physical_coset_start {base old : X} (hh : ∃ i,oldH6 B base i=true)
       rw [index_right]
       exact Cu (index hh i)
 
-#print axioms signed_edge
-#print axioms physical_coset_start
 end L4.BStarPhysicalCosetStart

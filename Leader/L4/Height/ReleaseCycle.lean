@@ -802,13 +802,6 @@ theorem released_owner_data {base origin query : X} {hh : ∃ i,oldH6 B base i=t
 
 end ReleasedData
 
-#print axioms physical_clear_of_exit
-#print axioms withComparisonMode
-#print axioms tracked_next
-#print axioms fence_barrier_step
-#print axioms drained_on_tracked_tape
-#print axioms released_owner_data
-
 end
 end L4.Height.ReleaseCycle
 

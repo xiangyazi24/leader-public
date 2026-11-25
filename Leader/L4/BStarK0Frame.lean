@@ -392,7 +392,4 @@ theorem right_wait_k0 (g : Pair LongGeometry) (x : Pair (BitVec LW))
     obtain ⟨rfl,rfl⟩ := door_eq g x c k hmem
     exact waitHold x.2 _ valid wait bound
 
-#print axioms left_k0
-#print axioms right_wait_k0
-
 end L4.BStarK0Frame

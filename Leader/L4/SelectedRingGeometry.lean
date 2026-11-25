@@ -148,12 +148,4 @@ theorem singleton_wrap {n L U : Nat} {h : Fin n→Bool}
     have Z := nextAt_injective_under i.val k 0 N (Nat.zero_lt_of_lt N) J
     omega
 
-#print axioms successor_predecessor
-#print axioms gap_source_unique
-#print axioms successor_injective
-#print axioms predecessor_successor
-#print axioms successor_noLoop
-#print axioms successor_noLoop_of_upper
-#print axioms ring
-#print axioms singleton_wrap
 end L4.SelectedRingGeometry

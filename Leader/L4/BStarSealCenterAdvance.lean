@@ -73,5 +73,4 @@ theorem accepted_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
         exact ⟨v,.transit _ _ _ live (.cons M go (.forward j) gd (.nil _ _)),cur',post,vW,vpar⟩
       | turn => omega
 
-#print axioms accepted_step
 end L4.BStarSealCenterAdvance

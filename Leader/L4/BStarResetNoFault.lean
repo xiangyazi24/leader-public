@@ -104,7 +104,6 @@ theorem prep_lanes_nodup (g : Pair LongGeometry) (x : Pair (BitVec LW)) :
       exact (contribution_subset g x c).append ih
   exact (potential_nodup g).sublist (H _)
 
-
 private theorem insert_perm {α : Type} (key : α → Nat) (a : α) (xs : List α) :
     (BStarLongClaims.insert key a xs).Perm (a::xs) := by
   induction xs with
@@ -155,7 +154,6 @@ theorem arb_no_losers (g : Pair LongGeometry) (x : Pair (BitVec LW)) :
   simpa only [List.append_nil] using ((offers_perm offerPriority
     (round g x).prep).map (fun (a : BStarLongPrep.Offer) => a.claim.lane)).nodup_iff.mpr
       (prep_lanes_nodup g x)
-
 
 theorem origin_unique (g : Pair LongGeometry) (C D : CommandClaim)
     (hc : C∈orderedCommands g) (hd : D∈orderedCommands g)
@@ -231,7 +229,6 @@ theorem reset_no_prep_fault (g : Pair LongGeometry) (x : Pair (BitVec LW))
       simp [hshape,selectedEffects,effects] at ofault
     · contradiction
 
-
 theorem healthy (op : Nat) (h : op=0 ∨ op=1 ∨ op=2) : ResetF (resetPayload op) := by
   rcases h with rfl|rfl|rfl
   · exact .inl rfl
@@ -276,9 +273,4 @@ theorem joined_terminal_no_fault (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp
   refine (E.trans (congrArg finish (if_neg nf))).trans ?_
   rcases hop with rfl|rfl|rfl <;> rfl
 
-#print axioms prep_lanes_nodup
-#print axioms arb_no_losers
-#print axioms reset_no_prep_fault
-#print axioms joined_link_no_fault
-#print axioms joined_terminal_no_fault
 end L4.BStarResetNoFault

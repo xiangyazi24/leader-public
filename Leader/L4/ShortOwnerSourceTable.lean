@@ -157,12 +157,6 @@ theorem raw_wait_exit_table {s n : Nat} (x : Raw s n) (e : Fin n)
   · rw [if_neg F,if_neg F]
     exact reset_pc b
 
-#print axioms raw_wait_exit_table
-#print axioms wait_table
-#print axioms issue_table
-#print axioms good_admit_reply
-#print axioms good_commit_reply_resets
-
 theorem advances_iff (op : Nat) (t : Token) :
     advances op t=true ↔ op<6 ∧ t.tag=3 ∧ t.opcode=op ∧ t.fault=false ∧
       t.outcome≠1 ∧ (op=2 → t.payload=1) := by
@@ -199,6 +193,4 @@ theorem raw_wait_held_table {s n : Nat} (x : Raw s n) (e : Fin n)
   rw [Id] at T
   exact T.trans (B f a z)
 
-#print axioms advances_iff
-#print axioms raw_wait_held_table
 end L4.ShortOwnerSourceTable

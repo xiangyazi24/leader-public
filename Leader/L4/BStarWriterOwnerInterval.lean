@@ -107,7 +107,6 @@ theorem keeps_writer (x : X) (e i : Fin n) (sep : e≠rightNeighbor e)
         simp [canonical,W] at live
       · unfold BStarGrantReaderHistory.ports; rwa [E]
 
-
 theorem canonical_one_live (y : X) (i : Fin n)
     (H : canonical (BStarGrantReaderHistory.ports y i) 1=true) : bit y i 1≠0 := by
   intro z
@@ -203,8 +202,4 @@ theorem owned_interval {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have C : Continuous hp y i 1 w := fun u v E => (L u v E).1
   exact ⟨P,C,header_interval hp sep z birth i won w C P⟩
 
-#print axioms no_publication
-#print axioms no_release_request
-#print axioms keeps_writer
-#print axioms owned_interval
 end L4.BStarWriterOwnerInterval

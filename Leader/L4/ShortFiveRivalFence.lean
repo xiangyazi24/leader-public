@@ -107,7 +107,4 @@ theorem all_rivals_fenced (x : Raw s n) (X : H2Ready x) (N : 21<n) (r : Fin n)
       (fun E => R i (by omega) (watchOnly _ E))
     exact ⟨no_terminal_no_ask (cs i) _ hold H, by rcases H with H|⟨_,_,_,H⟩; exact H.2; exact H⟩
 
-#print axioms left_stays_parked
-#print axioms right_no_terminal
-#print axioms all_rivals_fenced
 end L4.ShortFiveRivalFence

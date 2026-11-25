@@ -86,9 +86,4 @@ theorem work_to_raw {s n : Nat} (j : Sheet) (x : Raw s n) (e : Fin n)
     (by change 19*(2-k.val)+19 ≤ 93; omega)
     (.inl (by change 19*(2-k.val)+19 ≤ 89; omega))
 
-#print axioms exact_fields
-#print axioms work_fields
-#print axioms work_to_raw_field
-#print axioms byte_work_to_raw_field
-#print axioms work_to_raw
 end L4.ShortSheetProjection

@@ -81,11 +81,5 @@ theorem debt5_lt_of_trace_interfaces {n : Nat} {t : Totals}
   debt5_lt_of_raw_ledger hn (exposed_then_paid hgeometry)
     (payment_sum hprovenance) htenure hqueue
 
-#print axioms exposed_then_paid
-#print axioms payment_sum
-#print axioms debt5_of_raw_ledger
-#print axioms debt5_lt_of_raw_ledger
-#print axioms debt5_lt_of_trace_interfaces
-
 end BarrierLedger
 end L4

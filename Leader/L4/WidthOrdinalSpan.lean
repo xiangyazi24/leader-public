@@ -58,9 +58,4 @@ theorem end_width_bounds {n A B : Nat} (h : Fin n → Bool) (hh : ∃ i,h i=true
   have E := gap_unique F G
   exact ⟨E ▸ L,E ▸ U⟩
 
-#print axioms back_nextAt_add
-#print axioms nextAt_back
-#print axioms gap_unique
-#print axioms last_gap
-#print axioms end_width_bounds
 end L4.WidthOrdinalSpan

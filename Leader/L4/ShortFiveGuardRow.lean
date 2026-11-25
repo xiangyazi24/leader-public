@@ -87,7 +87,6 @@ private def effect (u v : BitVec 96) (hu hv : Bool)
     else (putSeal (some t.payload),none,t)
   else (none,none,t)
 
-
 private def linkStep (hu hv : Bool) (u v : BitVec 96) (win : Fin 3 → Bool)
     (ab : Pair (Patch 96)) (l : Link) : Pair (Patch 96) :=
   let (a,b) := ab
@@ -154,7 +153,6 @@ private def rowPost (hv : Bool) (v : BitVec 96) (routed : Pair (Patch 96)) : Pai
     (routed.1,(routed.2.compose p).compose (match t with | none=>.empty _ | some t=>putK 0 t))
   else routed
 
-
 def localRow (headers : Pair Bool) (old : Pair (BitVec 96)) : Pair (Patch 96) :=
   let (win,p) := rowPrefix headers old
   rowPost headers.2 old.2 ((links headers.2).foldl (linkStep headers.1 headers.2 old.1 old.2 win) p)
@@ -165,7 +163,6 @@ theorem localRow_eq (h : Pair Bool) (x : Pair (BitVec 96)) :
 private theorem rowPost_left (hv : Bool) (v : BitVec 96) (q : Pair (Patch 96)) :
     (rowPost hv v q).1=q.1 := by
   cases hv <;> rfl
-
 
 private def ControllerFrame {w : Nat} (f : Field 96 w) (p : Patch 96) : Prop :=
   ∀ x, f.read (p.apply x) = f.read x
@@ -194,7 +191,6 @@ private theorem ctl_k {w : Nat} {f : Field 96 w} (low : 57≤f.offset) (j : Fin 
   change 19*(2-j.val)+19≤f.offset
   omega
 
-
 private theorem ctl_norm {w : Nat} (f : Field 96 w) (low : 57≤f.offset)
     (j : Fin 3) (t q : Token) (b : Bool) :
     ControllerFrame f (if t.fault then putK j t else if b then putK j q else Patch.empty 96) := by
@@ -203,7 +199,6 @@ private theorem ctl_norm {w : Nat} (f : Field 96 w) (low : 57≤f.offset)
   · cases b
     · exact ctl_empty f
     · exact ctl_k low j q
-
 
 private theorem effect_left_noncenter {n : Nat} (f : Field 96 n)
     (u v : BitVec 96) (hv : Bool) (l : Link) (w : Bool) (t : Token) (hn : l.src ≠ 1) :
@@ -263,7 +258,6 @@ private theorem link_left_read_of_effect {n : Nat} (f : Field 96 n) (low : 57≤
         · simp only [Patch.compose_apply,K]
         · split <;> first | rfl | simp only [Patch.compose_apply,K]
 
-
 private def msf : Field 96 4 := lane 83 4 (by decide)
 
 private theorem msf_reset : ControllerFrame msf resetSource :=
@@ -305,7 +299,6 @@ private theorem msf_source (v : BitVec 96) (t : Token) :
   · exact msf_phase _
   · exact msf_phase _
   · exact msf_reset
-
 
 private theorem msf_effect_right (u v : BitVec 96) (hu hv : Bool)
     (j : Fin 3) (k : Option (Fin 3)) (w : Bool) (t : Token)
@@ -350,7 +343,6 @@ private theorem msf_ready_tag (u : BitVec 96) (hu : Bool) (j : Fin 3) (t : Token
     (E : ready hu u j t=true) : t.tag=2 := by
   have Q := (Bool.and_eq_true_iff.mp E).1
   exact beq_iff_eq.mp Q
-
 
 private theorem msf_link_right (hu hv : Bool) (u v : BitVec 96)
     (w : Fin 3→Bool) (p : Pair (Patch 96)) (l : Link) (G : ¬selectorGuard hu u v) :
@@ -544,10 +536,5 @@ theorem seal_right_frame (hu : Bool) (u v : BitVec 96)
     (linkStep hu true u v pre.1) pre.2)).2.apply v)=msf.read v
   rw [msf_post_right]
   exact (H _ _ _).trans (pref v)
-
-#print axioms localRow_eq
-#print axioms banks_left_frame
-#print axioms seal_left_frame
-#print axioms seal_right_frame
 
 end L4.ShortFiveGuardRow

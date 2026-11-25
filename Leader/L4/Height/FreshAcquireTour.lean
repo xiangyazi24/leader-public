@@ -425,11 +425,5 @@ theorem completed_fresh_tour {base released : X} {hh : ∃ i,oldH6 B base i=true
   · rw [W,BStarResetSchedule.run_append]
     exact final
 
-#print axioms selected_sample_wins
-#print axioms pending_zero_step
-#print axioms busy_out_all_wins
-#print axioms launch_pending_zero
-#print axioms completed_fresh_tour
-
 end L4.Height.FreshAcquireTour
 

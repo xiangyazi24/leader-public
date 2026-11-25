@@ -273,9 +273,4 @@ theorem staged_prefix_run (d : Sheet) (N : 1<n)
     exact (IH (rawNext s x e) Y A' PC' Past' NR.2).trans
       (staged_prefix_step d N hh G F r x e j sel X A Past J)
 
-#print axioms raw_write_hit
-#print axioms middle_offset
-#print axioms middle_hit_unique
-#print axioms staged_prefix_step
-#print axioms staged_prefix_run
 end L4.ReportJoinedWriteValue

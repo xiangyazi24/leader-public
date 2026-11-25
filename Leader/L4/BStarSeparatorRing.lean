@@ -118,6 +118,4 @@ theorem lift_word {base x : XX} {hh : ∃ i, oldH6 B base i=true}
       obtain ⟨pre,post,z',E,T,U,V,H,A,B'⟩ := ih (x:=y) d q' W' G'
       exact ⟨e::pre,post,z',congrArg (List.cons e) E,.cons Z M D G' T,U,V,H,A,B'⟩
 
-#print axioms mark_at
-#print axioms lift_word
 end L4.BStarSeparatorRing

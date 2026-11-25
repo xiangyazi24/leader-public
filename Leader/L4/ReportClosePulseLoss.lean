@@ -47,6 +47,4 @@ theorem close_from_two_pin_counts
   rw [Nat.mul_comm 2,Nat.pow_mul]
   exact Nat.le_of_lt (close_loss_lt rho)
 
-#print axioms loss_of_pinned_family
-#print axioms close_from_two_pin_counts
 end L4.ReportClosePulseLoss

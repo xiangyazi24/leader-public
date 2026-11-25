@@ -165,9 +165,6 @@ theorem finite_keys_after_custody {base initial recovered x : X} {hh : ∃ j,old
   · simp only [read,if_pos first]
   · simp only [read,if_pos second]
 
-#print axioms separated_physical_inc
-#print axioms finite_keys_after_custody
-
 open BStarRecoveredHistory BStarBitGateGeometry BStarFenceReceiverChart BStarAcquireRailCoverage
 
 private theorem run_closed (Q : X→Prop) (closed : ∀ y,Q y→∀ e,Q (step y e))
@@ -290,6 +287,4 @@ theorem from_common_recovery_credit {base initial : X} {hh : ∃ j,oldH6 B base 
       hw flags notShort heads cont i head w
   exact ⟨o,S,len,fall,g,C,pos,G,idx,E⟩
 
-#print axioms from_common_recovery_credit_owned
-#print axioms from_common_recovery_credit
 end L4.BStarRecoveredReadKeys

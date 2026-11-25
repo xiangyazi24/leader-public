@@ -144,6 +144,4 @@ theorem issue_chart {base x : XX} {hh : ∃ i, oldH6 B base i=true}
       have Pₒ : ctrlOp.read (y root).long=ctrlOp.read w := congrArg (fun s => s.2) E
       exact Prod.ext P₂ Pₒ
 
-#print axioms step_wait
-#print axioms issue_chart
 end L4.BStarSeparatorControl

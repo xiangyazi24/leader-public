@@ -242,12 +242,6 @@ theorem chain_repair_two_covers
     hM hL hmOne hhalf
     (quiet_stage_cover C L hM hL hMom) hF hC
 
-#print axioms L4.Height.Recover.Chain.toCoverOne_served
-#print axioms L4.Height.Recover.Chain.wellFormed_activate
-#print axioms L4.Height.Recover.Chain.wellFormed_run
-#print axioms L4.Height.Recover.Chain.quiet_stage_cover
-#print axioms L4.Height.Recover.Chain.chain_repair_two_covers
-
 end
 
 end L4.Height.Recover.Chain

@@ -31,6 +31,5 @@ theorem to_issue_six {s n : Nat} {x : Raw s n} (g : CustodyWitness x) (P : Produ
   rw [runEq,←root]
   exact receipt
 
-#print axioms to_issue_six
 end L4.Height.FreshWonAttempt
 

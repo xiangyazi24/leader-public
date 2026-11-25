@@ -95,5 +95,4 @@ theorem first_issue_mark_expected {base x : X} {hh : ∃ i,oldH6 B base i=true}
     ResetReturnIID.iid_of_relational_rank ResetReturnIID.appendTape Stop Live
       (fun _ _ q=>q.1.symm ▸ Nat.one_pos) advance [] 1 (.inr ⟨rfl,by simp,init,rfl⟩)
 
-#print axioms first_issue_mark_expected
 end L4.ResidualIssueIID

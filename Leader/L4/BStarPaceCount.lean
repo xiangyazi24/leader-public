@@ -166,8 +166,4 @@ theorem five_overflow {n : Nat} (t : Nat) (total : List (Fin n) → Nat)
     _ = (8*(5*81*2^20))*n^t := by ac_rfl
     _ ≤ _ := Nat.mul_le_mul_right _ (by decide)
 
-#print axioms adaptive_charge_mass
-#print axioms departure_mass
-#print axioms excess_mass_of_charge_mass
-#print axioms five_overflow
 end L4.BStarPaceCount

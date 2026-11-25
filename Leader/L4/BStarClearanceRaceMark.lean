@@ -210,5 +210,4 @@ theorem physical_race
       (BStarClearanceObserveJoined.observed_joined _ _ _ _ _ _ _ _ _ hp z a
         (fun H => by change j.val=0 at H; omega) u v (dist (i,j)) no B V).2)
 
-#print axioms physical_race
 end L4.BStarClearanceRaceMark

@@ -173,8 +173,6 @@ private theorem carried_back (g : Pair LongGeometry) (x : Pair (BitVec LW))
     exact (visit_back _ _ _ _).trans (outgoing_back _ _ _ _ q E)
   all_goals exact failed _
 
-#print axioms carried_back
-
 private theorem grant_back (g : Pair LongGeometry) (x : Pair (BitVec LW))
     (L : List CmdOffer) (o : CmdOffer) (C : CommandClaim) (p : Payload)
     (E : BStarLongGrant.update g x L o=(C,.advance p)) :
@@ -263,8 +261,6 @@ theorem offer_origin (g : Pair LongGeometry) (x : Pair (BitVec LW))
   have K := L.trans (T.trans (X.trans V)) F
   obtain ⟨s,S,B,Y⟩ := bind_back _ _ _ _ Q K.1
   exact ⟨s,S,B,Y.trans K.2⟩
-
-#print axioms offer_origin
 
 open BStarLongRouting
 
@@ -423,10 +419,6 @@ theorem raw_arg_of_canonical {p q : Payload}
   change p.argument.toNat % 2^9=q.argument.toNat % 2^9 at h
   rwa [Nat.mod_eq_of_lt p9,Nat.mod_eq_of_lt q9] at h
 
-#print axioms joined_hop
-#print axioms joined_idle
-#print axioms descriptor_of_arg
-
 /-- A selected hop of an old healthy COMMIT may fault, but if it
 lands healthy then it is still COMMIT with exactly the old effective
 argument. This forward form pairs with the backward origin theorem. -/
@@ -450,7 +442,6 @@ theorem joined_hop_preserves (k₁ k₂ t₂ J₁ J₂ r n p c₁ : Nat) (hp : 0
   obtain ⟨v,V,_,A⟩ := joined_hop _ _ _ _ _ _ _ _ _ hp x c a offer after dst sel landed T
   exact ⟨T, (congrArg arg (Token.forward.inj (front.symm.trans V))).trans A⟩
 
-#print axioms joined_hop_preserves
 /-- The arithmetic side of the composed departure cannot manufacture
 a healthy COMMIT or change its descriptor. -/
 theorem before_outgoing_back (g : Pair LongGeometry) (raw : Pair (BitVec LW))
@@ -458,5 +449,4 @@ theorem before_outgoing_back (g : Pair LongGeometry) (raw : Pair (BitVec LW))
     Back p (BStarLongArithmetic.visit (geometry g C.source.side) C.source.occurrence (atOld raw C.source) p).2 :=
   visit_back (geometry g C.source.side) C.source.occurrence (atOld raw C.source) p
 
-#print axioms before_outgoing_back
 end L4.BStarCommitPayload

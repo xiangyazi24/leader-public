@@ -277,5 +277,4 @@ theorem packed_right_of_attempt_authenticated {base global origin : X} {hh : ∃
   · rw [wire,wholeBody]
     exact fin
 
-#print axioms packed_right_of_attempt_authenticated
 end L4.BStarCopyRightWrappedAttempt

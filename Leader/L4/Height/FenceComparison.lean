@@ -151,6 +151,4 @@ theorem candidate_clearance_cost {n H : Nat} (hh : 0<H)
     _ = (16*8)*n*H := by ac_rfl
     _ = _ := rfl
 
-#print axioms comparisonResidual
-#print axioms candidate_clearance_cost
 end L4.Height.FenceComparison

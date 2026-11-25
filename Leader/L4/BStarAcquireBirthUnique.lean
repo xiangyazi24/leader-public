@@ -109,9 +109,4 @@ theorem same_birth_extended {x : X} {cut w more r rs : List (Fin n)}
   obtain ⟨W,M,V⟩ := same_birth hp A.exactTape R A.won H A.live CC
   exact ⟨W,M,F.trans (congrArg (·++more) V.symm)⟩
 
-#print axioms win_old_clear
-#print axioms won_old_clear
-#print axioms same_birth
-#print axioms same_acquisition
-#print axioms same_birth_extended
 end L4.BStarAcquireBirthUnique

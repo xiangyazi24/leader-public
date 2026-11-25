@@ -84,5 +84,4 @@ theorem gate_window_acks {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [pick_first d v s] at U
   exact U
 
-#print axioms gate_window_acks
 end L4.BStarBitGateAck

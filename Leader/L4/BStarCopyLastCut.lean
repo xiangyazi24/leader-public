@@ -51,5 +51,4 @@ theorem unique {x : X} (root : Fin n) (w l r ls rs : List (Fin n)) (e f : Fin n)
   have tails : e::ls=f::rs := by simpa only [List.append_right_inj] using consL.symm.trans consR
   exact ⟨rfl,List.cons.inj tails⟩
 
-#print axioms unique
 end L4.BStarCopyLastCut

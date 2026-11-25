@@ -61,5 +61,4 @@ theorem both_at_digit (x : X) (root : Fin n) (seam last : Nat)
   · simpa only [ldRead,Nat.zero_add,Sheet.index] using LL
   · simpa only [rdRead,rdIndex,Sheet.index] using RR
 
-#print axioms both_at_digit
 end L4.BStarNativeCopyReadback

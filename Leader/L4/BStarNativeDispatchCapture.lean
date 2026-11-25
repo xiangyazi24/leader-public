@@ -89,9 +89,4 @@ theorem retained_legal (x : X) (root : Fin n) (w : List (Fin n))
     exact live a e (b++v) D
   exact (congrArg BitVec.toNat (retain_blocks hp x root u sep L 1).1).symm ▸ pin
 
-#print axioms retained_legal
-
-#print axioms live_of_band
-
-#print axioms retained
 end L4.BStarNativeDispatchCapture

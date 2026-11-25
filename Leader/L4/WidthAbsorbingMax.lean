@@ -279,7 +279,4 @@ theorem expected (step : X→Fin n→X) (D : X→Prop)
 
 end AbsorbingMax
 
-#print axioms AbsorbingMax.markov_cost
-#print axioms AbsorbingMax.cutoff_count
-#print axioms AbsorbingMax.expected
 end L4.WidthCycleEpoch

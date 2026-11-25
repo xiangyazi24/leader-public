@@ -126,5 +126,4 @@ theorem candidates_at_commit {base x : X} {hh : ∃ i,oldH6 B base i=true}
       (by rw [source]; rfl) selected healthy.1 healthy.2 decode auth (retained _).2).2 isH f).trans
       (decode_issued ys _ p headers A which f)
 
-#print axioms candidates_at_commit
 end L4.BStarNativePublishedImage

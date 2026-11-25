@@ -6,7 +6,6 @@ namespace L4.Height
 open Classical
 open L4.Compiler.Native
 
-
 /-! ## Choice-free warm starts -/
 
 /-- A fixed total choice table used only to state the initial condition. -/
@@ -835,11 +834,6 @@ theorem physical_event_zero_counterexample :
     apply h.2
     change anchorCount zeroRound_siteCount_pos zeroRound_start = 1
     rfl
-
-#print axioms L4.Height.startConsistent_choice_free
-#print axioms L4.Height.levelCurr_stable
-#print axioms L4.Height.physical_snapshot_reach
-#print axioms L4.Height.physical_event
 
 end L4.Height
 

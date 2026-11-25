@@ -298,18 +298,4 @@ theorem of_chart {base : X} {hh : ∃ i,oldH6 B base i=true}
   exact ⟨l,r'-1+seam,L,joinL,RF,left_width L hh hW cap,
     right_width RF hh (by have := F.seam_pos; omega) hW cap⟩
 
-#print axioms glue
-#print axioms right_injective
-#print axioms nominal_iff_raw
-#print axioms data_eq
-#print axioms right_extend
-#print axioms right_terminal
-#print axioms right_width
-#print axioms left_adjacent
-#print axioms left_terminal
-#print axioms left_width
-#print axioms lines_disjoint
-#print axioms left_owner
-#print axioms right_owner
-#print axioms of_chart
 end L4.BStarFenceLineGeometry

@@ -87,9 +87,6 @@ theorem incoming_later {base x : X} {hh : ∃ i,oldH6 B base i=true}
   subst q
   exact ⟨sameSheet,j+1,by omega,by omega,(List.getElem_eq_getD _).symm.trans V⟩
 
-#print axioms opposite_selected
-#print axioms incoming_later
-
 open BStarCopyOwnedFrozen BStarLongEvents BStarLongTransport BStarAcquireForwardTrace
 open BStarSeparatorControl BStarResetQuiet BStarOwnerLaunchOrigin BStarResetSchedule
 
@@ -160,8 +157,6 @@ private theorem inject_at_pending {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [←afterJ,atC,atT] at F
   cases F
 
-#print axioms inject_at_pending
-
 def CutVacant (x : X) (S : List (Pos n)) (fall : Pos n) (len cut : Nat) (rev : Bool) : Prop :=
   ∀ i, Unvisited S fall len cut rev i →
     (readLane (Sheet.index (sourceLane rev)) (x i).long).mobile=.empty
@@ -205,8 +200,6 @@ theorem cut_vacant_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · by_cases r : i=rightNeighbor e
     · exact touched .right r.symm
     · rwa [show step x e i=x i from by simp [AllSizeS1Geometry.step,l,r]]
-
-#print axioms cut_vacant_step
 
 theorem cut_from_owner_empty {base x : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
@@ -286,9 +279,6 @@ theorem busy_cut_inject {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have H := ring_inject hp (play x w) e (sep e) s rev value win gate frozen vacant
   exact ⟨congrArg Lane.mobile H,congrArg Lane.frozen H⟩
 
-#print axioms busy_cut_vacant
-#print axioms busy_cut_inject
-
 open BStarLongDoor BStarClearanceSource
 
 /-- Actual clean launch mark cannot introduce a mobile into the own
@@ -356,6 +346,4 @@ theorem generated_cut_vacant {base x : X} {hh : ∃ i,oldH6 B base i=true}
     exact V
   · cases bad
 
-#print axioms issue_keeps_empty
-#print axioms generated_cut_vacant
 end L4.BStarCopyDownstream

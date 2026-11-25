@@ -113,7 +113,4 @@ theorem owner_lift_frame {n r : Nat} {h : Fin n→Bool} (hh : ∃ i,h i=true)
     change Represents P (if owner=center then _ else before owner) count
     rwa [if_neg N]
 
-#print axioms self_port
-#print axioms tagged_native_increment
-#print axioms owner_lift_frame
 end L4.BStarNativeNeedLift

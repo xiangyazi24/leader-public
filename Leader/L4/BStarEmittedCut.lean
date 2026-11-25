@@ -50,6 +50,4 @@ theorem first_side {n : Nat} (h : Fin n→Bool) (hh : ∃ i,h i=true)
   rw [T,redirectTo_fresh_hit h hh fresh pick (a++pre) i ord F t] at C
   exact (incident_gate_injective h hh i i false false ord ord _ _ C).2.2.symm
 
-#print axioms marked_cut
-#print axioms first_side
 end L4.BStarEmittedCut

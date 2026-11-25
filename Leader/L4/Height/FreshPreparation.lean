@@ -411,11 +411,4 @@ theorem prepared_from_load {base x : X} {hh : ∃ i,oldH6 B base i=true}
         win inside own before loadEvent restLoad M bInject fiber
       exact ⟨pre,post,launch,bank,E,L,by simpa using Q,F⟩⟩
 
-#print axioms setup_no_cancel
-#print axioms selected_source_active
-#print axioms active_vacancy_step
-#print axioms busy_active_vacancy
-#print axioms drained_and_open_at_issue
-#print axioms active_sources_on_inject
-#print axioms prepared_from_load
 end L4.Height.FreshPreparation

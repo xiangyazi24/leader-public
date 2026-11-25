@@ -278,7 +278,4 @@ theorem pureAliasClock : PureAliasClock := by
     · change (timerInit (2*c) d).budget ≤ 32 * (2*c+1) * (d+1+1)
       exact timer_initial_budget (2*c) d
 
-#print axioms project_next
-#print axioms pureAliasClock
-
 end L4.AliasLiteralClock

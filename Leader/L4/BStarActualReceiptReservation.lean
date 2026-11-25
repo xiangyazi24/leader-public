@@ -25,7 +25,6 @@ local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r
 local notation "step" => AllSizeS1Geometry.step B
 local notation "run" => BStarResetSchedule.run step
 
-
 /-- A publication-free witness on a literal trailing word excludes exactly
 the indexed old-state publications on that part of the full tape. -/
 theorem no_publish_index {initial : X} (lead gap : List (Fin n)) (i : Fin n)
@@ -132,5 +131,4 @@ theorem actual_receipt_at_stop {base initial : X} (u v tail : List (Fin n))
     exact suffix_uses_first _ _ history future lead suffix (incident gate side) (firstBit side)
       E bound raw uniqueSuffix
 
-#print axioms actual_receipt_at_stop
 end L4.BStarActualReceiptReservation

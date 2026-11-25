@@ -183,7 +183,6 @@ theorem finish_is_successful_consume (d : Sheet) (C : Chart h) (N : 1<n)
   have U := raw_acq_consume_six d C hh G F N x X R.shape Op K F0 ND digit
   exact ⟨rfl,Tag,ND,U.2.1,U.2.2.1,U.2.2.2⟩
 
-
 -- The fixed policy applies to the rival ADMIT gates while the target
 -- cursor is in ACQ. Env is the caller's chronology/fence re-lift;
 -- this module does not infer it from local PhaseOK.
@@ -253,8 +252,4 @@ theorem observed_rows (d : Sheet) (C : Chart h) (N : 1<n)
       (observerBan d B desired z) (makeBan_spec hh G B inj _ _)
       (activeRaw_sound d B z.1) A
 
-#print axioms raw_on_step
-#print axioms plateau_label
-#print axioms finish_is_successful_consume
-#print axioms observed_rows
 end L4.ReportFastAcqTrack

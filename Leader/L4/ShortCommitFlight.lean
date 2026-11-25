@@ -49,8 +49,6 @@ theorem launch {s n : Nat} {h : Fin n → Bool} (C : Chart h)
   refine ⟨d,D,rfl,C.positive,⟨F.1,F.2.1⟩,fun j J=>False.elim (by omega),?_,F.2.2.2⟩
   exact F.2.2.1.trans rfl
 
-
-
 /-- On one actual mark, the front/back invariant advances together with
 a receipt if a live centre departure was taken on that mark. -/
 theorem step {s n : Nat} (x0 x : Raw s n) (X0 : H2Ready x0)
@@ -148,7 +146,6 @@ theorem step {s n : Nat} (x0 x : Raw s n) (X0 : H2Ready x0)
       refine ⟨U.1,?_⟩
       rw [PC,old]
       cases p <;> decide
-
 
 def SampledPublication {s n : Nat} (d : Fin 8) (x : Raw s n) (e : Fin n)
     (tape : List (Fin n)) : Prop :=
@@ -304,13 +301,6 @@ theorem no_orphan_of_clear {s n : Nat} {h : Fin n→Bool} (C : Chart h) (x : Raw
     cases g <;> decide
   · exact A i H
 
-#print axioms oneCentre_step
-#print axioms generated_oneCentre
-#print axioms no_orphan_of_clear
-#print axioms launch
-#print axioms step
-#print axioms generated_receipt
-#print axioms consume_clears
 -- CHECK: ShortCommitFlight.lean:56; original opens and options unchanged.
 theorem step_fixed {s n : Nat} {h : Fin n → Bool} (x : Raw s n)
     (C : Chart h) (N : 9<n) (heads : ∀ q, header x q=h q)
@@ -411,5 +401,4 @@ theorem step_fixed {s n : Nat} {h : Fin n → Bool} (x : Raw s n)
       rw [PC,old]
       cases p <;> decide
 
-#print axioms step_fixed
 end L4.ShortCommitFlight

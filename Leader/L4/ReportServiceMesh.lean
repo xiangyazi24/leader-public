@@ -505,18 +505,6 @@ theorem relevant_two_cell_covers (d : Sheet)
 
 end Deployed
 
-#print axioms scaled_union
-#print axioms full_tape_half_count
-#print axioms rounded_mesh_count
-#print axioms covers_of_no_mesh_loss
-#print axioms cell_split
-#print axioms chronological_receipts
-#print axioms deployed_exponent
-#print axioms deployed_mesh_integer_budget
-#print axioms deployed_mesh_count
-#print axioms deployed_mesh_cap
-#print axioms relevant_two_cell_covers
-
 end
 end L4.ReportServiceMesh
 

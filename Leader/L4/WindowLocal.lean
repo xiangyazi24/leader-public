@@ -140,7 +140,6 @@ theorem routeKnown_keep {p c n : Nat} (certified : List (Fin n)) (target : Optio
     routeKnown certified target z e a = Event.keep := by
   simp only [routeKnown,hD,hB,Bool.false_eq_true,if_false]
 
-
 private theorem notLoop {n : Nat} (hn : 4 ≤ n) (e : Fin n) : rightNeighbor e ≠ e := by
   intro h
   have he : liftedSite e 1 = liftedSite e 0 := by simpa [liftedSite_succ,liftedSite_zero] using h
@@ -228,10 +227,6 @@ theorem target_birth_at_same_slot {p c n : Nat} (hn : 4 ≤ n)
     simp [hC] at hMark
   exact ⟨by simp [SevenTagCharge.advance, slotsStep,hF,ha],hPair.2,
     by simp [lostStep,RankPhysical.retirement,hF]⟩
-
-#print axioms prefix_death_result
-#print axioms target_birth_at_same_slot
-#print axioms rewarded_step_iff
 
 private theorem pay_cannot_land_from_living_responder {p c n : Nat} (hn : 4 ≤ n)
     (x : Config p c n) (e : Fin n) (hL : (step x e (rightNeighbor e)).leader = true) :
@@ -328,9 +323,6 @@ theorem living_tag_stays {p c n : Nat} (hn : 4 ≤ n)
       · exact ha
     · exact ha
 
-#print axioms sector_persists_of_endpoints
-#print axioms living_tag_stays
-
 def TaggedLeader {p c n : Nat} (z : Ledger p c n) (s a : Fin n) : Prop :=
   z.slots s = some a ∧ (z.config (rightNeighbor s)).leader = true
 
@@ -385,8 +377,6 @@ theorem certifiedSector_keep {p c n : Nat}
   exact ⟨hL,hR,hSector.terminal_site,
     sector_persists_of_endpoints hn z.config (rightNeighbor s) e hValid.markCover hSector.gap hL.2 hT⟩
 
-#print axioms certifiedSector_keep
-
 /-- Only the named actual leader is used to rule out native death. No
 conclusion about exterior kills is needed to run the native sector rows. -/
 theorem certified_no_death_on_keep {p c n : Nat}
@@ -408,8 +398,6 @@ theorem certified_no_death_on_keep {p c n : Nat}
   have hh : (step z.config e (rightNeighbor e)).leader = true := h.2
   rw [hh] at hf
   cases hf
-
-#print axioms certified_no_death_on_keep
 
 /-- Reconstruct the shooting root on the old tape: either this mark's
 new N0 launch at its own distinct old incoming bond, or the quiet
@@ -449,8 +437,6 @@ theorem killing_shooter_pre_mark {p c n : Nat} (hn : 4 ≤ n)
     refine ⟨i,a,d,ha,hL,hd,he,?_,.inr ⟨hS,hzero⟩⟩
     intro j hj
     exact hbefore j hj
-
-#print axioms killing_shooter_pre_mark
 
 private theorem lift_add {n : Nat} (b : Fin n) (i j : Nat) :
     liftedSite (liftedSite b i) j = liftedSite b (i+j) := by
@@ -520,9 +506,6 @@ theorem terminal_kill_named_shooter {p c n : Nat} (hn : 4 ≤ n)
   rw [← hh.1,← hh.2] at hKind
   exact hKind
 
-#print axioms nearest_shooting_root_unique
-#print axioms terminal_kill_named_shooter
-
 /-- Affirms the target-birth report, not just a raw leader bit change.
 The same selected mark cannot instead route a certified native death:
 there is one responding site and its old leader bit was false. -/
@@ -554,5 +537,4 @@ theorem target_birth_result {p c n : Nat} (hn : 4 ≤ n)
     simp only [beq_self_eq_true,Bool.true_and,hB]
   simp only [routeKnown,hD,hB',Bool.false_eq_true,if_false,if_true]
 
-#print axioms target_birth_result
 end L4.WindowLocal

@@ -72,8 +72,6 @@ theorem healthy_first_return {base x : X} {hh : ∃ i,oldH6 B base i=true}
       obtain ⟨pre,hold,W,F,H,A⟩ := ih (closed _ _ init) next D
       exact ⟨e::pre,hold,congrArg (List.cons e) W,.cons live m adv next F,H,A⟩
 
-#print axioms healthy_first_return
-
 open BStarRRELHold BStarResetNoAcquire BStarGrantBirth
 
 private theorem keep_word (Q : X → Prop)
@@ -132,5 +130,4 @@ theorem generated_rrel_grant_zero {base x : X} {hh : ∃ withH,oldH6 B base with
   rw [exp,eDoor]
   exact bars
 
-#print axioms generated_rrel_grant_zero
 end L4.BStarRRELExtract

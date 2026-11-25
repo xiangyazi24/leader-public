@@ -102,5 +102,4 @@ theorem front_before_reset (P : Production g) (o : Owners h) (a : Word n) (rrel 
     (BStarCopyFenceCuts.split_live hp C full).1,ret,e,v,rfl,back,beforeAck ▸ consume,
     beforeAck ▸ after,full⟩
 
-#print axioms front_before_reset
 end L4.Height.FreshInjectEntry

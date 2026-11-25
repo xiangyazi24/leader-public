@@ -117,6 +117,4 @@ theorem trace_display_after_cap {T : Nat}
   unfold k
   omega
 
-#print axioms logical_display
-#print axioms trace_display_after_cap
 end L4.BStarDisplayPermanence

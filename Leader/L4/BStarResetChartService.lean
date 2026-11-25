@@ -251,8 +251,4 @@ theorem adapter_on {base : XX} {hh : ∃ i, oldH6 B base i=true}
       have J' : j<len := by omega
       exact (mem_link hp x (edgeOf (.link j)) _ len j).mpr ⟨J',linkN x W.1 j J'⟩
 
-#print axioms adapter_on
-#print axioms waiting_closed
-#print axioms adapter
-#print axioms service
 end L4.BStarResetChartService

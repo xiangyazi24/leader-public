@@ -1019,16 +1019,5 @@ theorem finish_cycle (P : WidthLower s n) (S : Sector P.h d)
   have K := choose_receipt P S C x u (d+1) H N
   exact width_receipt P S C u y K.1 W
 
-#print axioms raw_data_pair
-#print axioms eff_site
-#print axioms sweep_step
-#print axioms walk_invariant
-#print axioms consume_compare_saved
-#print axioms receipt_word
-#print axioms compare_complete
-#print axioms ripple_digit
-#print axioms iteration_outer
-#print axioms finish_cycle
-
 end L4.WidthChooseEpoch
 

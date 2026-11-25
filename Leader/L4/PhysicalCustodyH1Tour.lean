@@ -75,5 +75,4 @@ theorem independence_tour_expected {n : Nat} (N : 5≤n) (x : State n)
     rw [iid_cost_invariant _ _ _ (fun z e hz => independentRank_closed j z e sep sepTwo hz) y hy]
     exact ring_bad_bond_expected N ⟨j,hj⟩ y hy.1 t
 
-#print axioms independence_tour_expected
 end L4.PhysicalCustody.H1

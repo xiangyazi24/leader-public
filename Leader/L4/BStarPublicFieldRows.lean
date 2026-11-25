@@ -226,8 +226,5 @@ theorem raw_right_residue {p c : Nat} (hp : 0<p)
   exact decoded_field (residueDecode hp) (residueF p c) patch x.2 y.residue
     (congrArg Site.residue (read_pack hp y)) (right_residue_frame u v)
 
-#print axioms left_static_raw
-#print axioms raw_right_residue
-
 end L4.BStarPublicFieldRows
 

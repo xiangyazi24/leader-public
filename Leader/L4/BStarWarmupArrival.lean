@@ -159,6 +159,4 @@ theorem first_opening_from_warmup {h : Fin n→Bool} {T : Nat}
     i opening before cap finish
   exact ⟨t,H,E.trans (congrFun (opening_oracle_eq R r reserve lo opening hi a b warm) i)⟩
 
-#print axioms cube_follows
-#print axioms first_opening_from_warmup
 end L4.BStarWarmupArrival

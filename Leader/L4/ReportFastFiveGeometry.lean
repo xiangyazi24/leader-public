@@ -251,8 +251,4 @@ theorem exists_consecutive_center (G : GapInput h) (target : Owner h)
     dsimp only [first]
     rw [succ_pred G hh, succ_pred G hh]
 
-#print axioms charter_header_cell
-#print axioms target_lane_owner
-#print axioms target_five_incidence
-#print axioms exists_consecutive_center
 end L4.ReportFastFiveGeometry

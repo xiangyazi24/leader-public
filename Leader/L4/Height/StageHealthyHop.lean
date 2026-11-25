@@ -163,5 +163,4 @@ theorem joined_stage (k₁ k₂ t₂ J₁ J₂ r n p c₁ : Nat) (hp : 0<p)
     carried_stage g raw C source d D auth]
   simp [arrive,BStarStageIssue.payload,gate,stageOp,bitOp,admit]
 
-#print axioms joined_stage
 end L4.Height.StageHealthyHop

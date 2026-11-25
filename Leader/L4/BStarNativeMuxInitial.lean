@@ -12,7 +12,6 @@ open BStarGeneratedOwner BStarOwnerLaunchOrigin BStarResetSchedule
 open BStarNumericChronology BStarNumericCarry BStarNumericContinuity BStarNumericConsecutive
 open BStarLongDoor BStarClearanceSource BStarResetControllerEntry
 
-
 open BStarLongSignatures BStarLongRegisters
 open L4.Compiler.Native
 
@@ -124,7 +123,6 @@ theorem first_mux_value {base x : X} {hh : ∃ i,oldH6 B base i=true}
   change (d.offer.argument).toNat=qv%2^34 at V
   rwa [Nat.mod_eq_of_lt (by omega)] at V
 
-
 theorem mux_first_from_launch {base before x : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
     (chart : Chart hp base hh o S len fall) (sep : ∀ e : Fin n,e≠rightNeighbor e)
@@ -154,6 +152,4 @@ theorem mux_first_from_launch {base before x : X} {hh : ∃ i,oldH6 B base i=tru
     rwa [oldPC] at E
   exact first_mux_value hp chart sep A kind v init.2 start d tail first healthy
 
-#print axioms initial_mux
-#print axioms mux_first_from_launch
 end L4.BStarNativeMuxInitial

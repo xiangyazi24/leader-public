@@ -148,7 +148,4 @@ theorem root_of_sublist {base : X} {hh : ∃ i,oldH6 B base i=true}
       obtain ⟨pre,post,W,T,P⟩ := ih (step x e) k lower (closed _ q e) cur data tailN
       exact ⟨e::pre,post,congrArg (List.cons e) W,.cons I E T,P⟩
 
-#print axioms reverse_step
-#print axioms at_root_step
-#print axioms root_of_sublist
 end L4.BStarPositiveReply

@@ -321,9 +321,4 @@ theorem chain_repair (C : ClockChain α n m B M hm)
     (next := C.next) (target := LgSet C) (x := x)
     hmean (repair_budget_seventeen L m D hmOne hhalf)
 
-#print axioms qu_closed
-#print axioms fr_closed
-#print axioms lg_closed
-#print axioms chain_repair
-
 end L4.Height.Recover.Chain

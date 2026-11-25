@@ -64,7 +64,4 @@ theorem pass_of_segments {s n : Nat} {Owner : Type} (E : Owner→Raw s n→W n�
     obtain ⟨C,L,evt,T⟩ := H
     exact .cons C L evt (ih _ T)
 
-#print axioms pass_of_segments
-#print axioms one_pass
-#print axioms two_sampled_passes
 end L4.PhysicalCustodySampledPass

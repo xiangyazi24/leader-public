@@ -127,8 +127,4 @@ theorem raw_quarter_of_compatible {K : Nat}
   rw [doubled_wordSum,←Nat.two_mul,Nat.mul_pow,Nat.mul_left_comm 4 (2^t)] at out
   exact Nat.le_of_mul_le_mul_left out (Nat.pow_pos (by decide))
 
-#print axioms copy_swap_raw
-#print axioms project
-#print axioms first_project
-#print axioms raw_quarter_of_compatible
 end L4.BStarPhysicalCompletion

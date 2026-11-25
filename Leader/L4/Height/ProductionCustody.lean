@@ -214,10 +214,6 @@ theorem generated_at_every_history {s n : Nat} {x : Raw s n} {g : CustodyWitness
         (congrArg (fun a => rawRun a emitted) g.here)
   exact here ▸ cur
 
-#print axioms ready_run
-#print axioms consistent_next
-#print axioms generated_at_every_history
-
 end
 end L4.Height.ProductionCustody
 

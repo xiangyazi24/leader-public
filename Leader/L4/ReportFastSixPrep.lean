@@ -191,9 +191,4 @@ theorem debt_step (d : Sheet) (C : Fin 6→Chart h) (N : 1<n)
       simp only [debt,H,V,Option.map_some,ne_eq,not_true_eq_false]
       exact ⟨ReportFastFreshReset.prep_idle R,False.elim⟩
 
-#print axioms step_closed
-#print axioms debt_bound
-#print axioms debt_step
-#print axioms tracked_consume
-#print axioms target_finish
 end L4.ReportFastSixPrep

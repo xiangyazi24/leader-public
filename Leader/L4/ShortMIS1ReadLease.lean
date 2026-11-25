@@ -515,18 +515,4 @@ theorem actual_commit_guard_file {s n : Nat} (x : Raw s n)
   rw [H.2.2.1] at Wire
   exact Wire
 
-#print axioms actual_commit_guard_file
-#print axioms serial_continuation_fenced
-#print axioms local_reader_run
-#print axioms local_winner_current
-#print axioms fence_cast
-#print axioms clear_issue_prefix_fenced
-#print axioms read_file_matches_outer_pair
-#print axioms read_file_matches_current_endpoints
-#print axioms no_release_of_fenced
-#print axioms read_prefix_fenced
-#print axioms write_prefix_fenced
-#print axioms commit_prefix_fenced
-#print axioms commit_fenced
-#print axioms write_fenced
 end L4.ShortMIS1ReadLease

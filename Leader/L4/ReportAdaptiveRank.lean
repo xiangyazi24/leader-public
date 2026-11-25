@@ -68,7 +68,4 @@ theorem two_stage_wait (step : X→Fin n→X) (Q hit : X→Prop) (rank : X→Nat
   have F := nominated_mean step Q hit rank F x G t
   exact Nat.le_trans F (Nat.mul_le_mul_right _ (by rw [Nat.mul_comm 2 n]; exact Nat.mul_le_mul_left n R))
 
-#print axioms nominated_mean
-#print axioms driver_nominated_mean
-#print axioms two_stage_wait
 end L4.ReportAdaptiveFibre

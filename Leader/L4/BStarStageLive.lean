@@ -75,5 +75,4 @@ theorem outgoing_live_protects (g : LongGeometry) (j : Fin 11) (x : BitVec LW)
       · exact frame_empty _
   · exact frame_empty _
 
-#print axioms outgoing_live_protects
 end L4.BStarStageLive

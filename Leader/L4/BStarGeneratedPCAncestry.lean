@@ -152,8 +152,4 @@ theorem consume_to_band {base x : X} {addr : Nat → Pos n} {len op : Nat} {e : 
   rw [cur.1.2.2.2] at E D
   exact ⟨E,f,F,A,D⟩
 
-#print axioms consume_exact
-#print axioms consume_to_stage
-#print axioms consume_to_six
-#print axioms consume_to_band
 end L4.BStarGeneratedPCAncestry

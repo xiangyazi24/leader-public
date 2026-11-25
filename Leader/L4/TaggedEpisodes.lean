@@ -2,7 +2,6 @@ import Leader.L4.TaggedGeometry
 
 namespace L4.TaggedTrace
 
-
 /-- P3 makes its responder a nonleader and clears this incoming marker
 before the birth guard. In particular no birth can undo the loss of that
 responder's old leadership on the same mark. -/
@@ -245,12 +244,5 @@ theorem trace_episodes_le_tenures {p c1 n : Nat} (hn : 4 ≤ n)
   have hacc := (episodeBoth_track hn (init x i) w h hm hc).1
   unfold EpisodeAccount at hacc
   omega
-
-#print axioms trace_episodes_le_tenures
-
-#print axioms episodeAccount_step
-
-#print axioms geometricPay_responder_nonleader
-#print axioms isLong_step_of_surviving_leader
 
 end L4.TaggedTrace

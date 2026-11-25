@@ -330,6 +330,4 @@ theorem final_hit {base x : X} {hh : ∃ i,oldH6 B base i=true}
     exact readout.2.trans (congrArg (fun z => finalHeaders (x z).long) right)
   exact ⟨Q,snap,readNeed.trans (congrArg BitVec.ofBool needEq),readHeaders.trans headers,desc,needEq⟩
 
-#print axioms digit_on_chart
-#print axioms final_hit
 end L4.BStarNativeFinalImage

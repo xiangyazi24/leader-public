@@ -95,6 +95,4 @@ theorem expected_through_prep_and_stable_drain_of_local
   exact Nat.le_trans (mean_mono_before_hit stepU
     (fun y H E=>E.elim Or.inl (fun f=>.inr ⟨H.2,f⟩)) t q C) (next t)
 
-#print axioms mean_mono_before_hit
-#print axioms expected_through_prep_and_stable_drain_of_local
 end L4.DirtyPrepDrainStable

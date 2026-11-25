@@ -155,10 +155,4 @@ theorem opening_equal {U : Nat}
   exact congrFun (oracle_agree_below R.neighbor left right (R.level 0) (R.curr 0) (R.prior 0)
     opening agree opening (Nat.le_refl _)) i
 
-#print axioms oracle_init
-#print axioms oracle_init_prior
-#print axioms represents
-#print axioms snapshot_of_finish_ge
-#print axioms oracle_agree_below
-#print axioms opening_equal
 end L4.BStarStaggeredArrival

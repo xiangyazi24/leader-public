@@ -49,8 +49,6 @@ theorem literal_blockade (g : Pair LongGeometry) (old : At Sheet → Lane)
       obtain ⟨A,D⟩ := mapped_owner _ _ _ hs
       exact ⟨s,F.1,F.2,hs,A,fun m w => congrArg (owner m w) D,(fence_hold_iff _ _).mp h⟩
 
-#print axioms literal_blockade
-
 /-- A bound healthy forward stopped by the race has a legal FIRST or
 OTHER counter; malformed counters never remain as gate holds. -/
 theorem race_wait (g : Pair LongGeometry) (x : Pair (BitVec LW))
@@ -122,9 +120,6 @@ theorem race_observation (g : LongGeometry) (j : Fin 11) (p : Payload)
       ⟨.right,j⟩ g p gateOpen (.inr (.inr ⟨rfl,right⟩))
     exact ⟨.right,v,by omega,fun _ => rfl,H⟩
 
-#print axioms race_wait
-#print axioms race_observation
-
 open BStarLongLiteral BStarLongWork BStarLongEvents
 
 /-- The actual selected command either advances, waits for a race
@@ -189,5 +184,4 @@ theorem nominated_forward (g : Pair LongGeometry) (x : Pair (BitVec LW))
     obtain ⟨w,W⟩ := P u
     exact .inl ⟨w,(show z=(c,.advance w) by unfold z; rw [U,W]) ▸ Z⟩
 
-#print axioms nominated_forward
 end L4.BStarClearanceBlockade

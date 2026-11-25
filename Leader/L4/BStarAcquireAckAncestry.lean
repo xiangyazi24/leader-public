@@ -62,7 +62,6 @@ theorem found_split_turn {base x : X} {addr : Nat → Pos n} {len op : Nat}
   · rwa [replay]
   · rwa [replay]
 
-
 open BStarAcquireForwardTrace BStarAcquireSource
 
 /-- Audit the unique outward-to-return transition against the selected
@@ -88,7 +87,6 @@ theorem actual_turn {base x : X} {hh : ∃ i,oldH6 B base i=true}
     I'.1 _ I'.2.1 F' healthy (fun K => Nat.lt_irrefl _ K.1) (fun _ => H)).2
   obtain ⟨q,D⟩ := post.2.1
   exact Token.noConfusion (D.symm.trans (H'.trans F'))
-
 
 set_option maxHeartbeats 300000 in
 /-- A real clean-origin own consume into PC6 determines one real
@@ -198,7 +196,4 @@ theorem consume_six_samples {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [←Y] at readout
   exact readout
 
-#print axioms split_turn
-#print axioms actual_turn
-#print axioms consume_six_samples
 end L4.BStarAcquireAckAncestry

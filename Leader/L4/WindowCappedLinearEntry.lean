@@ -78,7 +78,6 @@ theorem stock_exit_mean {p c n s : Nat} (hn : 4≤n) (hc0 : 0<c) (N : Nat) (hN :
     rw [GGTiming.runMarks_append]
     exact hd
 
-
 theorem entry_exit_mean {p c n : Nat} (hn : 4≤n) (hc0 : 0<c) (N : Nat) (hN : n≤N) (x : Config p c n)
     (i : Fin (RankPhysical.rank x)) (hm : MCOV x) (hc : COV x) (short : 2*span x i+2<n)
     (h1 : (x (rootSite x (liftedSite i 1))).leader=false)
@@ -120,7 +119,6 @@ theorem entry_exit_mean {p c n : Nat} (hn : 4≤n) (hc0 : 0<c) (N : Nat) (hN : n
     y.heads.j-y.heads.i<n ∧ MCOV y.ledger.config ∧ COV y.ledger.config ∧ _
   exact ⟨G.cont,ji,by omega,by omega,G.cont.1.markCover,Q,noOther_left _ _ _ _ _ G⟩
 
-
 theorem physical_entry_exit_mean {p c n : Nat} (hn : 5≤n) (hc : 12≤c) (N : Nat) (hN : n≤N)
     (x : Config p c n) (i : Fin (RankPhysical.rank x)) (hm : MCOV x) (hv : COV x)
     (short : 2*WindowSpan.span x i+2<n)
@@ -141,7 +139,6 @@ theorem entry_clock {p c n : Nat} (hn : 5≤n) (hc : 12≤c) (N : Nat) (hN : n�
       (entryK c N*n*(WindowSpan.span x i+1)) :=
   physical_entry_exit_mean hn hc N hN x i hm hv short h1 h2
 
-
 open WindowTransactions WindowOwnership WindowA0Join
 noncomputable def entry {p c n : Nat} (hn : 5≤n) (hc : 12≤c) (N : Nat) (hN : n≤N)
     (x : Config p c n) (i : Fin (RankPhysical.rank x)) (hq : QuietEntrance x)
@@ -153,7 +150,6 @@ noncomputable def entry {p c n : Nat} (hn : 5≤n) (hc : 12≤c) (N : Nat) (hN :
     (WindowA0FirstExit.done x i)
   have G := WindowA0Join.initial_ghosts x i hq he
   exact entry_clock hn hc N hN x i hq.1 hq.2.1 short G.1 G.2
-
 
 open WindowPlan WindowLatch
 variable {p c n : Nat}
@@ -190,8 +186,4 @@ theorem entry_slot (N : Nat) (hN : n≤N) (h5 : 5≤n) (h7 : 7≤RankPhysical.ra
     rw [geometric_stamp _ _ _ _ _ _ _ _ _ _ HU]
     exact Nat.le_refl _
 
-
-#print axioms entry_mean_of_cut
-#print axioms entry_clock
-#print axioms entry_slot
 end L4.WindowCappedLinearEntry

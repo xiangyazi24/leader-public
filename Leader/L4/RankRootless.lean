@@ -125,11 +125,6 @@ theorem zero_stock_preserved {p c n : Nat} (hn : 4 ≤ n)
 
 end L4.RankRootless
 
-#print axioms L4.RankRootless.no_mint
-#print axioms L4.RankRootless.stockCount_paid_le
-#print axioms L4.RankRootless.zero_stock_static
-#print axioms L4.RankRootless.zero_stock_preserved
-
 namespace L4.RankRootless
 open RearFrontStock
 
@@ -221,6 +216,3 @@ theorem zero_stock_rootless_run {p c n : Nat} (hn : 4 ≤ n)
 
 end L4.RankRootless
 
-#print axioms L4.RankRootless.stockCount_paid_eq_of_pay
-#print axioms L4.RankRootless.rootless_paymentCount_le_size
-#print axioms L4.RankRootless.zero_stock_rootless_run

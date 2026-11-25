@@ -228,11 +228,4 @@ theorem row_silent (g : Pair LongGeometry) (x : Pair (BitVec LW)) (a : AtK)
     subst t
     cases hw
 
-#print axioms row_silent
-#print axioms actual_hold
-#print axioms routing_away
-#print axioms joined_untouched_other
-#print axioms incoming_trail_holds
-#print axioms normalization_away
-#print axioms observations_away
 end L4.BStarAcquireNonRouting

@@ -109,11 +109,6 @@ theorem victim_pays_iff_ready {p c n : Nat} (v : Fin n) (s : RankSupplier.Obs p 
   rw [← liftedSite_succ]
   exact ghost_pays_iff_ready _ _ h.2.2.2.2.1.marked h.2.2.2.1
 
-#print axioms inner_exclusion_rule
-#print axioms source_stock_rule
-#print axioms victim_pays_iff_ready
-
-
 /-- Every physically occupied positive slot up to the old victim payer
 counts, including an exposed resident; no lineage or pause flag is added. -/
 def realStock {p c n : Nat} (v : Fin n) (s : RankSupplier.Obs p c n) (k : Nat) : Bool :=
@@ -324,7 +319,6 @@ theorem exterior_observer {p c n : Nat} (v : Fin n) (s : RankSupplier.Obs p c n)
   · show realStock v t k = realStock v s k
     simp [realStock,hSame,hk]
 
-
 theorem inner_realStock_update {p c n : Nat} (hn : 4 ≤ n) (v : Fin n)
     (s : RankSupplier.Obs p c n) (h : Live v s) (r : Nat) (hr : r < s.donor)
     (ht : (advance v s (liftedSite v r)).stopped = false) :
@@ -421,7 +415,6 @@ theorem victim_realStock_update {p c n : Nat} (hn : 4 ≤ n) (v : Fin n)
         have ht' : t.donor < k ∨ k = 0 := by omega
         rw [realStock_cutoff v t k ht',realStock_cutoff v s k hs]
 
-
 open FIFOCompare
 
 /-- Exact paid-head increment: an advance pays at every cut,
@@ -473,7 +466,6 @@ theorem paid_head_cut_increment {p c n d0 : Nat} (hn : 4 ≤ n) (v : Fin n)
       exact cuts_absorb _ _ _ _ ((realStock_of_slot v s _ hj (Nat.le_refl _)).trans hs) (by omega) _
   change cuts (n-1) (realStock v t) (t.donor-d0) k = _
   rw [hd', hU, hb, hPay]
-
 
 theorem literal_real_step {p c n d0 : Nat} (hn : 4 ≤ n) (v : Fin n)
     (s : RankSupplier.Obs p c n) (h : Live v s) (hd0 : d0 ≤ s.donor) (i : Fin n)
@@ -636,7 +628,6 @@ theorem literal_real_step {p c n d0 : Nat} (hn : 4 ≤ n) (v : Fin n)
         rw [hf] at hocc
         contradiction
 
-
 theorem virtualInit_stock_eq {p c n : Nat} (v : Fin n)
     (s : RankSupplier.Obs p c n) (h : Live v s) :
     asNatStock (virtualInit v s).stock = realStock v s := by
@@ -648,16 +639,5 @@ theorem virtualInit_stock_eq {p c n : Nat} (v : Fin n)
   · rename_i hk
     have hd := h.2.2.2.2.2
     exact (realStock_cutoff v s k (Or.inl (by omega))).symm
-
-
-#print axioms virtualInit_stock_eq
-#print axioms paid_head_cut_increment
-#print axioms literal_real_step
-#print axioms inner_realStock_update
-#print axioms victim_realStock_update
-#print axioms inner_observer
-#print axioms victim_observer
-#print axioms victim_donor_empty
-#print axioms exterior_observer
 
 end L4.RankSupplierPhysical

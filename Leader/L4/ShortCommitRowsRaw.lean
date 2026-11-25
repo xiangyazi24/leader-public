@@ -47,7 +47,4 @@ theorem terminal {s n : Nat} (x : Raw s n) (e : Fin n)
     (commit_terminal_pair (header x e) (header x (rightNeighbor e))
       (x e).mis1 (x (rightNeighbor e)).mis1 j dst front op)
 
-#print axioms centre_out
-#print axioms relay_out
-#print axioms terminal
 end L4.ShortCommitRowsRaw

@@ -98,7 +98,3 @@ theorem union_mean {α : Type} {n K : Nat} {next : α → Fin n → α}
 
 end L4.FastExpMean
 
-#print axioms L4.FastExpMean.cutoff_factor
-#print axioms L4.FastExpMean.mean_of_tail
-#print axioms L4.FastExpMean.mean
-#print axioms L4.FastExpMean.union_mean

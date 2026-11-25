@@ -127,5 +127,4 @@ theorem zero_receipt {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have snd := typed_first T bank sem (step (run x w) door) site (run x w (addr 0).1).long actual (fun j => (full j).2)
   exact ⟨fst.1,snd.1,actual,bound,fst.2⟩
 
-#print axioms zero_receipt
 end L4.BStarNativeZeroReceipt

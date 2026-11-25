@@ -54,8 +54,4 @@ noncomputable def entry {p c n : Nat} (hn : 5≤n) (hc : 12≤c)
   apply expected_mono (WindowA0FirstExit.entry_clock hn hc x i hq.1 hq.2.1 short G.1 G.2)
   exact Nat.mul_le_mul_right _ (Nat.mul_le_mul_right _ (Nat.le_max_left _ _))
 
-#print axioms geometric
-#print axioms geometric_stamp
-#print axioms entry
-
 end L4.WindowTransactions

@@ -119,10 +119,6 @@ theorem cached_digit_exact {n : Nat} {h : Fin n → Bool} (hh : ∃ q,h q=true)
   rw [ordinal_at_offset hh R G k K]
   omega
 
-#print axioms ordinal_at_offset
-#print axioms chart_cell_cover
-#print axioms chart_cell_partition
-#print axioms cached_digit_exact
 end L4.ReportChartPartition
 
 namespace L4.ReportChartPartition
@@ -228,10 +224,6 @@ theorem door_not_outgoing {n : Nat} {h : Fin n → Bool} (C : Chart h)
     (by have := C.length_lt; omega) (by have := C.length_lt; omega) R
   omega
 
-#print axioms chart_word_geometry
-#print axioms chart_unique_digit
-#print axioms report_gate_at_middle_plus_two
-#print axioms door_not_outgoing
 end L4.ReportChartPartition
 
 namespace L4.ReportChartPartition
@@ -261,5 +253,4 @@ theorem fixed_charts_partition {n B : Nat} {h : Fin n → Bool}
   obtain ⟨A,D⟩ := same_cell_owner (pick u) (pick r) j k J V (T.trans Ck'.symm)
   exact ⟨Subtype.ext ((root u).symm.trans (A.trans (root r))),D⟩
 
-#print axioms fixed_charts_partition
 end L4.ReportChartPartition

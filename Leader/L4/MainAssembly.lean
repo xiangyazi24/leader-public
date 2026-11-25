@@ -53,7 +53,7 @@ theorem quiet_rankOne_closed {p c n : Nat} (hp : 2≤p) (hc : 12≤c)
 stated rank and singleton clock endpoints. The entrance cost charges
 the cover and initial bullets once, not on every renewal. -/
 theorem main_of_rankOne_and_singleton (hRank : ConcreteRankOneMean)
-    (hSingle : ConcreteSingletonSafeMean) : row175Statement := by
+    (hSingle : ConcreteSingletonSafeMean) : uniformEdgeStatement := by
   intro c hc
   obtain ⟨A,hA⟩ := hRank c hc
   obtain ⟨B,hB⟩ := hSingle c hc
@@ -72,7 +72,6 @@ theorem main_of_rankOne_and_singleton (hRank : ConcreteRankOneMean)
     (A*n^2+B*n^2) (rear_entrance_printed x hp hc hn hpnd)
     (fun z _ hz _ => quietToSafe z hz)
   simpa only [Nat.add_mul,Nat.add_assoc] using htotal
-
 
 theorem quietRankOne_of_local_blocks (retire : RankPhysical.ConcreteBoundedRank)
     (blocks : RankBlockContraction.ConcreteRankBlock) : ConcreteRankOneMean := by
@@ -120,11 +119,10 @@ interfaces. The block-local and full-circuit timer inputs are separate
 from the global bounded-rank restart theorem. -/
 theorem mainTheorem_of_block (restart : RankPhysical.ConcreteRestartTrial)
     (blocks : RankBlockContraction.ConcreteRankBlock)
-    (singletonTimer : SingletonFinish.PureAliasClock) : row175Statement :=
+    (singletonTimer : SingletonFinish.PureAliasClock) : uniformEdgeStatement :=
   main_of_rankOne_and_singleton
     (quietRankOne_of_local_blocks (boundedRank_of_restartTrial restart) blocks)
     (singletonSafeMean_of_alias singletonTimer)
-
 
 /-- Refined headline: instead of assuming the whole affine block law,
 take only the physical seven-group simultaneous-progress certificate.
@@ -132,16 +130,9 @@ All subsequent averaging, iterations, rank halving, absorption and
 calibration of the headline constant are derived. -/
 theorem mainTheorem (restart : RankPhysical.ConcreteRestartTrial)
     (groups : RankBlockContraction.ConcreteSevenGroups)
-    (singletonTimer : SingletonFinish.PureAliasClock) : row175Statement :=
+    (singletonTimer : SingletonFinish.PureAliasClock) : uniformEdgeStatement :=
   mainTheorem_of_block restart
     (RankBlockContraction.rank_block_of_seven_data groups) singletonTimer
 
 end L4
 
-#print axioms L4.main_of_rankOne_and_singleton
-#print axioms L4.safeOneLeader_exactlyOne
-
-#print axioms L4.quietRankOne_of_local_blocks
-#print axioms L4.singletonSafeMean_of_alias
-#print axioms L4.mainTheorem_of_block
-#print axioms L4.mainTheorem

@@ -72,11 +72,4 @@ theorem consume_admit {s n : Nat} (x : Raw s n) (e : Fin n)
   have X : advances 2 (admitReply won)=won := by cases won <;> decide
   simpa only [K,X] using H
 
-#print axioms decode_hello
-#print axioms decode_admit_reply
-#print axioms decode_admit_forward
-#print axioms admit_gate_header
-#print axioms admit_gate_k0
-#print axioms consume_hello
-#print axioms consume_admit
 end L4.ShortHelloAdmitCodec

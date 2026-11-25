@@ -113,9 +113,4 @@ theorem production_of_spacing {s n : Nat} {x : Raw s n} (g : CustodyWitness x)
     Height.ProductionCustody.Production g :=
   ⟨advice,S,room_of_advice S advice,four_h6_of_advice S advice g.base g.hh C⟩
 
-#print axioms advice_lower
-#print axioms room_of_advice
-#print axioms four_of_gap_law
-#print axioms four_h6_of_advice
-#print axioms production_of_spacing
 end L4.ProductionH6Count

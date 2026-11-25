@@ -55,6 +55,4 @@ theorem all_ingress_same_owner (hh : ∃ i,h i=true) (G : GapInput h)
   obtain ⟨rr,ra⟩ := U r ((charter G r).a-1) K H
   exact ⟨rq.trans rr.symm,rl.trans ra.symm⟩
 
-#print axioms canonical_centre
-#print axioms all_ingress_same_owner
 end L4.ReportIngressOwnership

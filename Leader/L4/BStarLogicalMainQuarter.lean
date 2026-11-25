@@ -60,5 +60,4 @@ theorem main_bad_list (hh : ∃ i,h i=true)
   simp [shortBad,mem_allVectors]
   rfl
 
-#print axioms main_bad_list
 end L4.BStarLogicalMainQuarter

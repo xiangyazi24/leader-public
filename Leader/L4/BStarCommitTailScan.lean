@@ -409,9 +409,4 @@ theorem ready_411_foreign {base x : X} {addr : Nat → Pos n} {len : Nat}
       exact (busy_411_cannot_idle hp K sep T sub
         ⟨.out 0,congrArg (fun o => Mode.busy o (.out 0)) P⟩ last).elim
 
-#print axioms ready_411_foreign
-#print axioms last_stage_entry
-#print axioms reflect_tail
-#print axioms first_411
-#print axioms scan_before_choice
 end L4.BStarCommitTailScan

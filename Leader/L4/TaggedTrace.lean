@@ -215,11 +215,3 @@ theorem concreteSingleTag_mean (hdebt : ConcreteBarrierDebt)
 
 end L4.TaggedTrace
 
-#print axioms L4.TaggedTrace.carrierStep_selected_survives
-#print axioms L4.TaggedTrace.carrierStep_not_selected_stays
-#print axioms L4.TaggedTrace.projection_run
-#print axioms L4.TaggedTrace.ended_step
-#print axioms L4.TaggedTrace.hits_eq_moves_on_survival
-
-#print axioms L4.TaggedTrace.scaledDebt_step
-#print axioms L4.TaggedTrace.concreteSingleTag_mean

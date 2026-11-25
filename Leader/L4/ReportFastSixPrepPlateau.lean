@@ -52,6 +52,4 @@ theorem same_phase_debt_iff (d : Sheet) (C : Fin 6→Chart h) (N : 1<n)
   simp only [Nat.add_right_cancel_iff]
   rfl
 
-#print axioms retained_stage_of_same_index
-#print axioms same_phase_debt_iff
 end L4.ReportFastSixPrepPlateau

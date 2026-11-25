@@ -87,7 +87,4 @@ theorem staged_credit_to_prefix (d : Sheet) (N : 1<n)
   exact (staged_prefix_run d N hh G F digit r after post j (1-prior)
     X A NextPC Past J NR).trans AtAck
 
-#print axioms staged_write_install
-#print axioms staged_prefix_frame
-#print axioms staged_credit_to_prefix
 end L4.ReportIndexedFlightContract

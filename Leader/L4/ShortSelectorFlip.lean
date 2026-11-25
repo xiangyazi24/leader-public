@@ -35,6 +35,4 @@ theorem guarded_commit_flips {s n : Nat} (x : Raw s n) (e : Fin n)
   rcases G with ⟨_,_,_,_,_,sel,hs,_⟩
   exact ShortSelectorParity.seal_selector_complement _ _ hs sel
 
-#print axioms selector_responder_raw_publish
-#print axioms guarded_commit_flips
 end L4.ShortSelectorFlip

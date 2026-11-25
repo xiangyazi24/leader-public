@@ -134,7 +134,4 @@ theorem packed_right_from_actual_chart {base global : X} {hh : ∃ i,oldH6 B bas
   exact packed_right_from_actual_witness hp C sep Q I fiber closed facts door center k K loc ownCenter
     ancestry below _ a seam last D U join own width rfl (fun i => (flags i).1) notShort G A launch op Busy
 
-#print axioms packed_right_from_actual_chart
-
-#print axioms packed_right_from_actual_witness
 end L4.BStarCopyRightWrappedWitness

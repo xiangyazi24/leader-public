@@ -95,10 +95,4 @@ theorem setToken_support (j : Fin 11) (t : Token) (i : Nat) :
     (setToken j t).mask.getLsbD i=true ↔ kBase j≤i ∧ i<kBase j+52 :=
   Field.inMask _ _ _
 
-#print axioms readPayload_encode
-#print axioms encode_applied_zero
-#print axioms decode_encode
-#print axioms atSite_after
-#print axioms other_token_raw_holds
-#print axioms setToken_support
 end L4.BStarLongToken

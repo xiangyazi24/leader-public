@@ -126,7 +126,4 @@ theorem raw_no_rearm_word (d : Sheet) (C : Chart h) (N : 1<n)
     have R' : (tok d C y (i+1)).race=(if side then 3 else 2) := by rw [W]; exact R
     exact (IH y Y S' A' H' R' (fun a M=>E a (by simp [M]))).trans W
 
-#print axioms raw_gate_spectator
-#print axioms raw_no_rearm_step
-#print axioms raw_no_rearm_word
 end L4.ReportFastNoRearm

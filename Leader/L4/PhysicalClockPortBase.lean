@@ -22,7 +22,6 @@ theorem neighborHeader_word {h : Fin n→Bool} (hh : ∃ i,h i=true)
   exact Classical.choose_spec (header_word_exists h hh a
     (Int.emod_nonneg _ (Int.ne_of_gt M)) (Int.emod_lt_of_pos _ M))
 
-
 theorem self_port {h : Fin n→Bool} (hh : ∃ i,h i=true) (i : Header h) :
     neighborHeader hh i 1=i := by
   apply header_word_injective h

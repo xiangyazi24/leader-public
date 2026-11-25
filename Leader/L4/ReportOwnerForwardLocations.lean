@@ -22,7 +22,6 @@ theorem ready_locations (d : Sheet) (C : Chart h) (x : Raw s n)
     exact rank_hop_tag (params d s) (h (out C i)) (h (rightNeighbor (out C i)))
       (bytesL d x (out C i)) (bytesR d x (out C i)) _ _ (internal_dest C i I) R _
 
-#print axioms ready_locations
 end L4.ReportOwnerForwardLocations
 
 namespace L4.ReportOwnerForwardLocations
@@ -90,9 +89,6 @@ theorem ready_turn_tag (d : Sheet) (C : Chart h) (x : Raw s n)
   exact rank_turn_tag (params d s) (h (out C i)) (h (rightNeighbor (out C i)))
     (bytesL d x (out C i)) (bytesR d x (out C i)) _ (end_dest C i I) R _
 
-#print axioms parked_internal_tags
-#print axioms parked_end_tag
-#print axioms ready_turn_tag
 end L4.ReportOwnerForwardLocations
 
 namespace L4.ReportOwnerForwardLocations
@@ -235,5 +231,4 @@ theorem non_door_step (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     have W := raw_off_frame d C x e D0 (fun j J H=>A ⟨j,J,H⟩) i I
     rw [decoded_frame d C hh G x y X Y i I W,R.2 i I]
 
-#print axioms non_door_step
 end L4.ReportOwnerForwardLocations

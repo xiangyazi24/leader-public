@@ -115,5 +115,4 @@ theorem digit_width (g : LongGeometry) (x : BitVec LW) (i : Nat) (c : Code)
       · omega
       · omega
 
-#print axioms digit_width
 end L4.BStarNumericWidth

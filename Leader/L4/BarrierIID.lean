@@ -322,10 +322,3 @@ theorem singleTag_expected_of_live_debt {α : Type} {n : Nat} (_hn : 0 < n)
 
 end L4.BarrierIID
 
-#print axioms L4.BarrierIID.queueMark_sum_active
-#print axioms L4.BarrierIID.driftMark_sum
-#print axioms L4.BarrierIID.stoppedDrift_lower
-#print axioms L4.BarrierIID.stopped_tagged_drift_lower
-#print axioms L4.BarrierIID.stoppedDrift_upper_of_reserve
-#print axioms L4.BarrierIID.driftMark_le_five
-#print axioms L4.BarrierIID.singleTag_expected_of_live_debt

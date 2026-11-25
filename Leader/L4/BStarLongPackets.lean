@@ -184,11 +184,6 @@ theorem raw_mobile_held (s : Fin 4) (a : Leaf) (x : BitVec LW)
   apply read_other
   cases a <;> simp_all [Leaf.offset,Leaf.width]
 
-#print axioms Digit9.read_pack
-#print axioms readLane_assign
-#print axioms readLane_other
-#print axioms raw_mobile_held
-
 theorem raw_frozen_held (s : Fin 4) (a : Leaf) (x : BitVec LW)
     (ne : a.offset≠38) :
     (laneFrozen s).read ((a.assign s).apply x)=(laneFrozen s).read x := by
@@ -256,10 +251,6 @@ theorem hop_open_blocked (x y : Lane) (b : Bool) (h : (x.gate && y.gate)=true)
   · obtain ⟨h₁,h₂⟩ := Bool.and_eq_true_iff.mp h
     simp [hopEffects,H,h₁,h₂,hy]
 
-#print axioms leaf_fold
-#print axioms raw_frozen_held
-#print axioms raw_retained_held
-
 open BStarLongClaims
 
 def Sheet.index : BStarLongClaims.Sheet → Fin 4
@@ -303,6 +294,4 @@ theorem hop_disabled (x y : Lane) (b : Bool) (hm : x.mobile≠.empty)
     hopEffects x y b=([.mobile .empty,.error true],[]) := by
   simp [hopEffects,hm,hg]
 
-#print axioms writeAt_patch
-#print axioms hop_disabled
 end L4.BStarLongPackets

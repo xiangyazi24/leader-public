@@ -135,7 +135,6 @@ theorem accept_frame (x : BitVec LW) (op : Nat) (p : Payload) :
       (assign _ _ (by decide))) (assign _ _ (by decide)))) (schedule_frame _)
   · exact repair_frame
 
-
 open BStarLongDoor in
 theorem door_frame (x : BitVec LW) (t : Token) (q : Patch LW)
     (h : oldDoor x t=.write q) : Frame q := by
@@ -273,7 +272,6 @@ theorem work_frame (g : Pair LongGeometry) (x : Pair (BitVec LW)) (s : Side)
   have F := atSide w hw (beq_iff_eq.mp hs) i hi
   simp [F] at hm
 
-
 open BStarCaptureInterval (joinedPatch joinedRead joined_read)
 
 private theorem frame_pair (g : Pair LongGeometry) (x : Pair (BitVec LW)) (s : Side)
@@ -348,6 +346,4 @@ theorem word_frame (x : X) (w : List (Fin n)) (i : Fin n)
     exact (ih (step x e) (fun u a v E => safe (e::u) a v (congrArg (List.cons e) E))).trans
       (ring_frame hp x e i (sep e) head H)
 
-#print axioms work_frame
-#print axioms word_frame
 end L4.BStarSealPackedFrame

@@ -139,7 +139,4 @@ theorem isolate_bit {base x : X} {addr : Nat→Pos n} {len k g : Nat}
       (by intro H; cases (Mode.busy.inj H).2)
       (quiet_append hp q₃ (.cons qc T.commitIssue (by intro H; cases H) com))
 
-#print axioms first_read_mode
-#print axioms silent_span
-#print axioms isolate_bit
 end L4.BStarNeedQuietRead

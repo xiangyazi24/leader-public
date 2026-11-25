@@ -158,8 +158,6 @@ theorem row_silent (g : Pair LongGeometry) (x : Pair (BitVec LW)) (a : AtK)
     subst t
     cases hw
 
-
-
 open BStarH6WordChart BStarAcquireVisitOrder BStarAcquireForwardTrace BStarAcquireLiteralChain
 open BStarLongFixedRouting BStarResetChartTouch BStarResetMarkAdapter BStarResetRailRing
 open BStarSeparatingRail BStarSeparatorControl BStarSeparatorQuiet BStarResetQuiet
@@ -249,7 +247,5 @@ theorem silent_at_bit {base x : X} {hh : ∃ i,oldH6 B base i=true}
     · by_cases r : (addr k).1=rightNeighbor e
       · exact frame (R (addr k).2) (Prod.ext r rfl)
       · exact BStarResetIdleRing.idle_off_pair hp x e (addr k) l r
-
-
 
 end L4.BStarBitHealthyIdle

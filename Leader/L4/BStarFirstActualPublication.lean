@@ -146,7 +146,4 @@ theorem two_reads_separated_by_same_need {base x : X} {hh : ∃ j,oldH6 B base j
     exact before (remain++t) e v (by rw [←U,E,List.append_assoc])
   · exact ⟨same.symm ▸ sealed,same.symm ▸ published⟩
 
-#print axioms two_reads_separated_by_same_need
-#print axioms first_need_publication_on_original
-#print axioms first_publication_on_original
 end L4.BStarFirstActualPublication

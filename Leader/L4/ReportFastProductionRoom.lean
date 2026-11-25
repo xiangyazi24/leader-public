@@ -31,5 +31,4 @@ theorem production_five_room (d : Sheet) {n s B : Nat}
     _ ≤ 2^(2^(s-1)) := Nat.pow_le_pow_right (by decide) E
     _ < n := N
 
-#print axioms production_five_room
 end L4.ReportFastProductionRoom

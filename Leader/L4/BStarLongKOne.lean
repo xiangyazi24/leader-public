@@ -81,10 +81,6 @@ theorem no_same_mark_one_departure (g : Pair LongGeometry) (c : CommandClaim)
   · subst c; contradiction
   · rcases H with rfl|rfl <;> contradiction
 
-#print axioms one_incidences
-#print axioms forward_slots
-#print axioms no_same_mark_one_departure
-
 /-- An actual K1-forward offer is either the interior advance or the
 seam exit. Its assigned destination cannot be another old K1 source
 on the same mark. -/
@@ -215,9 +211,4 @@ theorem completed_trace_digits {G : Type} (g : G → Pair LongGeometry)
     _ = digitsThrough r xs.length := by unfold digitsThrough; rw [←range,List.flatMap_map]
     _ = List.range r := digits_complete r xs.length (by omega)
 
-#print axioms departure_geometry
-#print axioms departure_trail
-#print axioms digits_complete
-#print axioms ordinal_departure
-#print axioms completed_trace_digits
 end L4.BStarLongKOne

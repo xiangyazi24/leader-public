@@ -78,9 +78,6 @@ theorem pinned_row {p c : Nat} (u v : Site p c)
   · intro hU hn
     exact (pair_up u v hR ho (fun _ => hn)).2 hU (fun h => by rw [hM] at h; contradiction)
 
-#print axioms ordinary_row
-#print axioms pinned_row
-
 /-- Actual ordinary bond, between two retained sites. The incoming
 responder becomes U-free and a U-free donor stays so if both old sites
 were U-free. -/
@@ -183,10 +180,6 @@ theorem fixed_door_site {p c n : Nat} (hn : 4≤n) {J : Fin n} {H : Nat} {x : Cu
   have hLaunch' : ¬launches v.source u.rail := by simpa [u,v,hJ] using hLaunch
   have H := (pinned_row u v hR' hpM).2 hU hLaunch'
   simpa [step,u,v] using H
-
-#print axioms ordinary_site
-#print axioms incoming_top_site
-#print axioms fixed_door_site
 
 def UFreeSuffix {p c n : Nat} (x : Cut p c n) (k : Nat) : Prop :=
   k≤x.gap ∧ ∀ j, k≤j → j<x.gap → ¬Up (x.config (liftedSite x.top j)).rail
@@ -293,8 +286,6 @@ theorem suffix_keep {p c n : Nat} (hn : 4≤n) {J : Fin n} {H : Nat}
         exact fun hh => hR (cleared hh)
       simpa [step,Ne.symm he,Ne.symm hR] using hc.2 j hjk hjg
 
-#print axioms suffix_keep
-
 structure RevState (p c n : Nat) where
   physical : WindowA0ClosedEntry.State p c n
   left : Nat
@@ -394,7 +385,4 @@ theorem reverse_sound {p c n : Nat} {z₀ : Config p c n} {S : WindowA0Ledger.Sc
     · exact .inr (.inl ht)
     · exact .inr (.inr (h ▸ hf))
 
-#print axioms rev_keep
-#print axioms expected_reverse
-#print axioms reverse_sound
 end L4.WindowA0ReverseSweep

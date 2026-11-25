@@ -138,5 +138,4 @@ theorem simultaneous_alias_mark {Tag : Type} (digits : Tag→BitVec 36)
         exact headLoc.symm ▸ newTail
       · simpa only [deposit,clearHead,if_neg first,if_neg last] using alias_other_mobile hp digits x a seam label mob j J R first last
 
-#print axioms simultaneous_alias_mark
 end L4.BStarCopyRightWrappedAliasMark

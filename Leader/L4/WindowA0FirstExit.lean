@@ -144,9 +144,6 @@ theorem first_exit_classified {p c n : Nat} {initial : Config p c n}
     rw [after,projection]
     exact classify_route hn g a b x.ledger e G.1.markCover G.1.sourceCover nonkeep
 
-#print axioms classify_route
-#print axioms first_exit_classified
-
 /-- Canonical entry trace of the selected seven-window. -/
 def observed {p c n : Nat} (x : Config p c n) (i : Fin (RankPhysical.rank x))
     (w : Word n) : Cursor p c n :=
@@ -185,6 +182,4 @@ theorem entry_clock {p c n : Nat} (hn : 5≤n) (hc : 12≤c) (x : Config p c n)
       (WindowA0Restart.entryK c*n*(WindowSpan.span x i+1)) :=
   WindowA0Uniform.physical_entry_exit_mean hn hc x i hm hv short h1 h2
 
-#print axioms entry_classified
-#print axioms entry_clock
 end L4.WindowA0FirstExit

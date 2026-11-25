@@ -119,7 +119,6 @@ theorem busy_gate_arrival {base x : X} {hh : ∃ i,oldH6 B base i=true}
         dst sel post qh
       exact ⟨[],e,w,q,D,a,offer,rfl,sel,dst,ad.symm,eq ▸ Q,eq ▸ current,qh,race⟩
 
-
 open BStarStageProvenance BStarNativeActualLoadAccepted BStarCommitReceiptAuth
 open BStarFenceReceiverChart BStarH6Ordinal
 
@@ -184,5 +183,4 @@ theorem need_commit_gate {base old x : X} {hh : ∃ i,oldH6 B base i=true}
   exact ⟨start,pre,post,back,after,issue,e,turn,ack,j,q,p,f,passed,K,a,offer,
     by simp [W,E,List.append_assoc],positive,J,addr,F,hq,zero,sel,dst,idx,L,current,hL,race,zeroL,P,hp0,reply,bank⟩
 
-#print axioms need_commit_gate
 end L4.BStarBitGateArrival

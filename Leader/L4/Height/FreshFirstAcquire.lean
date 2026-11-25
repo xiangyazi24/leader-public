@@ -310,11 +310,5 @@ theorem itinerary_of_visited_acquire (P : Production g) (target : Owners h)
     candidates cuts (tape.trans full) (full ▸ miss) e earliest pending left
   exact ⟨u,e,v,S,L,fall,W,earliest,C,I⟩
 
-#print axioms at_most_one_before_return
-#print axioms first_exit_of_visited
-#print axioms first_return_incoming
-#print axioms itinerary_of_first_return
-#print axioms itinerary_of_visited_acquire
-
 end L4.Height.FreshFirstAcquire
 

@@ -158,7 +158,4 @@ theorem marked_hop (hp : 0<p)
   rw [ring_read b x e he D LargeSite.long] at d
   exact ⟨a,d⟩
 
-#print axioms marked_hop
-#print axioms observed_path
-#print axioms observed_departures_once
 end L4.BStarAcquireMarkedPath

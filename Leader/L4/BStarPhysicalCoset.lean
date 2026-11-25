@@ -101,7 +101,6 @@ theorem step_coset {base initial : X} (u v tail : List (Fin n))
       rw [frame,if_neg silent,Nat.add_zero]
       exact H j
 
-
 theorem replay_coset {base initial : X} (u v : List (Fin n))
     (cuts : CutFacts hp base initial u v) (hh : ∃ i,oldH6 B base i=true)
     (sep : ∀ e : Fin n,e≠rightNeighbor e)
@@ -352,10 +351,4 @@ theorem coset_views_at_inc (base : X) (hh : ∃ i,oldH6 B base i=true)
   obtain ⟨center,loc,ports⟩ := coset_old_ports hp base hh old e P M pos phase time H L near inc
   exact ⟨center,loc,fun q=>(ports q).2⟩
 
-#print axioms coset_views_at_inc
-#print axioms physical_coherent_coset
-#print axioms coset_skew_step
-#print axioms coset_old_ports
-#print axioms physical_coset_lift
-#print axioms step_coset
 end L4.BStarPhysicalCoset

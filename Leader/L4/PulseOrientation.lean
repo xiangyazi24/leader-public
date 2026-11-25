@@ -90,6 +90,4 @@ theorem into_pinned (M : Model n B k S) (A : Word n B→Prop)
   · intro a b H
     exact inject_overwrite M A orig stable (congrArg Subtype.val H)
 
-#print axioms inject_overwrite
-#print axioms into_pinned
 end L4.PulseOrientation

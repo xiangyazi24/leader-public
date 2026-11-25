@@ -55,5 +55,4 @@ theorem write_credits_from_tape (d : Sheet) (N : 1<n)
   rw [Site] at AtAck
   exact ⟨pre,fly,post,f,Split,Seg.2.1,Seg.2.2.2.2.2.2.2.2.1,Q,Cred,Target,Send,AtAck⟩
 
-#print axioms write_credits_from_tape
 end L4.ReportItemNineWriteCredits

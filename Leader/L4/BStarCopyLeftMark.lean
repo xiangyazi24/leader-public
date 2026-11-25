@@ -308,10 +308,4 @@ theorem upstreamWord_move {Label : Type} (seam i : Nat) (hi : i+1<seam)
   rw [A,D]
   rfl
 
-#print axioms parallel_body_fixture
-#print axioms upstreamWord_move
-#print axioms ring_upstream
-#print axioms joined_simultaneous
-#print axioms pair_claim
-#print axioms spectator
 end L4.BStarCopyLeftMark

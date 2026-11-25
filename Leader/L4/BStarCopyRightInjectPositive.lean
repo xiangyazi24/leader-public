@@ -149,8 +149,6 @@ theorem healthy_k2_crossing {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [L2] at M
   exact ⟨loc,M⟩
 
-#print axioms healthy_k2_crossing
-
 /-- Find the genuine ISSUE10/terminal outward word, with healthy old
 F10, from the actual accepted own consume to PC11. -/
 theorem accepted10_terminal {base x : X} {hh : ∃ i,oldH6 B base i=true}
@@ -189,6 +187,4 @@ theorem accepted10_terminal {base x : X} {hh : ∃ i,oldH6 B base i=true}
     (by rw [op10]; decide) returned'
   exact ⟨lead,back,turn,f,D,rebuilt,FF,cl,(congrArg BitVec.toNat op).trans op10⟩
 
-
-#print axioms accepted10_terminal
 end L4.BStarCopyRightInjectPositive

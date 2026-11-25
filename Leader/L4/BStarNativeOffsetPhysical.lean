@@ -202,8 +202,4 @@ theorem later_offset {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [axis]
   exact (BStarNativeOffsetTrace.eff_eq hp d.old fixed d.mark).trans ready
 
-#print axioms after_sweep
-#print axioms later_offset
-#print axioms actual_sweep_sublist
-#print axioms same_ordinal_same_word
 end L4.BStarNativeOffsetPhysical

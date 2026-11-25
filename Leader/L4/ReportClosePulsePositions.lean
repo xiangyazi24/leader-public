@@ -96,6 +96,4 @@ theorem deployed_close_count (rho g : Nat) (N : 0<n) (G : g≤9*trialH rho)
     exact ⟨⟨k,K⟩,Eq.symm ▸ E⟩
   · intro _; exact per _
 
-#print axioms close_key_census
-#print axioms deployed_close_count
 end L4.ReportClosePulsePositions

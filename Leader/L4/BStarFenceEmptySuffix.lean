@@ -90,6 +90,4 @@ theorem empty_until_exit {base x : X} {hh : ∃ i,oldH6 B base i=true}
       simpa only [List.append_assoc,List.singleton_append] using D) E'
     simpa only [List.append_assoc,List.singleton_append] using K
 
-#print axioms empty_until_exit
-#print axioms empty_mark
 end L4.BStarFenceEmptySuffix

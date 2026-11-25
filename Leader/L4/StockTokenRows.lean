@@ -121,7 +121,4 @@ theorem row_mint_input {p c : Nat} (u v : Site p c) (h : row u v = .mint) :
   exact ⟨left.symm.trans hg.2.2.2.1, lead.symm.trans hg.2.2.2.2,
     right.symm.trans hg.2.2.1⟩
 
-#print axioms pair_labels
-#print axioms mint_guard
-#print axioms row_mint_input
 end L4.StockTokenRows

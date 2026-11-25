@@ -160,5 +160,4 @@ theorem inject_wrapped_outward {Tag : Type} (digits : Tag→BitVec 36) (atSource
     exact ih F endEq j (lead++[e]) t labels rfl after progress ltag held' mobile' V pend
       (fun pre mark post Eq => ready (e::pre) mark post (congrArg (List.cons e) Eq))
 
-#print axioms inject_wrapped_outward
 end L4.BStarCopyRightWrappedOutward

@@ -263,19 +263,5 @@ theorem marked_closed (hn : 4≤n) (b : LargeRows a) (hp : 0<a.p)
   exact ⟨RootedEntrance.mark_nonempty_step hn _ _ h.2.2.1,
     EntranceCover.cover_closed hn _ _ h.2.2.2⟩
 
-#print axioms marked_projects
-#print axioms marked_closed
-#print axioms fixed_step
-#print axioms fixed_run
-#print axioms incoming_pulse
-#print axioms no_seed_iff_no_pending
-#print axioms endpoints_ne
-#print axioms joined_step
-#print axioms extra_cover
-#print axioms cover_step
-#print axioms cover_monitor_step
-#print axioms cover_cost
-#print axioms carrier_step
-
 end
 end L4.Height.ObserverPhysical

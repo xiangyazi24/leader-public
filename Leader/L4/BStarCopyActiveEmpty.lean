@@ -42,7 +42,6 @@ private theorem prep_no_mobile (old : At Sheet → Lane) (a : BStarLongPrep.Offe
   unfold selectedEffects
   cases t : a.claim.op <;> simp [t,effects,noMobile] at h ⊢
 
-
 private theorem data_empty_no_effect (g : Pair LongGeometry) (old : At Sheet → Lane)
     (c : DataClaim) (E : (old c.source).mobile=.empty) :
     dataEffects g old c=[] := by
@@ -148,7 +147,6 @@ theorem active_empty_word (base x : X) (w : List (Fin n)) (o : Int)
       (fun a b E => same (e::a) b (congrArg (List.cons e) E))
       (fun a b c E => no (e::a) b c (congrArg (List.cons e) E))
 
-
 open BStarResetChartTouch BStarAcquireLiteralChain BStarAcquireVisitOrder
 open BStarResetMarkAdapter BStarGeneratedOwner BStarSeparatingRail
 
@@ -170,7 +168,4 @@ theorem issue_keeps_active_empty {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have Eq : a.claim.lane=⟨a.claim.lane.side,a.claim.lane.occurrence⟩ := by cases a.claim.lane; rfl
   rcases A a.claim.lane.side rfl a win Eq with S|S|S <;> rw [S] <;> decide
 
-
-#print axioms issue_keeps_active_empty
-#print axioms active_empty_word
 end L4.BStarCopyActiveEmpty

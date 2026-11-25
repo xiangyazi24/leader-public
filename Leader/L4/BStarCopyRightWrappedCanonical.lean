@@ -131,5 +131,4 @@ theorem recovered_right_outward_canonical {base origin preOrigin : X} {hh : ∃ 
   rw [BStarResetSchedule.run_append]
   exact ⟨t,lab,pend,ordered,old,mobile⟩
 
-#print axioms recovered_right_outward_canonical
 end L4.BStarCopyRightWrappedCanonical

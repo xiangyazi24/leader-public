@@ -102,5 +102,4 @@ theorem cmp_ready {base initial : X} {hh : ∃ i,oldH6 PROTO base i=true}
   obtain rfl := Token.reply.inj (E.symm.trans bound)
   exact .inr (.cmp rfl sem exactArg)
 
-#print axioms cmp_ready
 end L4.BStarNativeConcreteCmp

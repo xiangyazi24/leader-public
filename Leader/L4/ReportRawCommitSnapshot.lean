@@ -107,12 +107,4 @@ theorem report2_side2_Z {s n : Nat} (x : Raw s n) (e : Fin n)
     (join_left_Z (secondParams s) (oldHeaders (rows s) (x e)).h5
        (oldHeaders (rows s) (x (rightNeighbor e))).h5 (x e).report2 (x (rightNeighbor e)).report2)
 
-#print axioms join_right_work
-#print axioms join_left_Z
-#print axioms join_right_Z
-#print axioms join_commit_same_mark
-#print axioms report1_commit_same_mark
-#print axioms report2_commit_same_mark
-#print axioms report1_side2_Z
-#print axioms report2_side2_Z
 end L4.ReportRawCommitSnapshot

@@ -39,7 +39,4 @@ theorem source_bank_cut_expected (d : Sheet) (N : 1<n) (S : 0<s)
     (FreshIndexedSourceEpoch d hh Q G)
     (fresh_indexed_source_rows d N hh G F (ReportPrelaunchDoorProducer.digits_positive d S)) x
 
-#print axioms source_bank_cut_of_second
-#print axioms source_bank_cut_closed
-#print axioms source_bank_cut_expected
 end L4.ReportSourceBankCut

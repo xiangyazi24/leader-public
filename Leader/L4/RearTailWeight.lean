@@ -140,5 +140,3 @@ theorem rear_horizon_weight_of_kernel
 
 end L4.RearTrace
 
-#print axioms L4.RearTrace.rearDebt_lower_on_live_word
-#print axioms L4.RearTrace.rear_horizon_weight_of_kernel

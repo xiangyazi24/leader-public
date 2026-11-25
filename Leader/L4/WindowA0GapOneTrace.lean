@@ -172,10 +172,6 @@ theorem firstStop_authenticates {p c n : Nat} {z0 : Config p c n} (hn : 4≤n)
       rw [hy'] at hs ⊢
       exact ih y.1 k' hk' H' hs
 
-#print axioms one_mark
-#print axioms firstStop_authenticates
-
-
 open WindowFiveStages RootedAssembly
 
 theorem approached_frame {p c n : Nat} {z0 : Config p c n}
@@ -234,9 +230,6 @@ theorem clean_word {p c n : Nat} {z0 : Config p c n} (hn : 4≤n)
       rw [E]
       exact one_mark hn S i q y.1 k e hk F
 
-#print axioms approached_frame
-#print axioms clean_word
-
 theorem success_word {p c n : Nat} {z0 : Config p c n} (hn : 4≤n)
     (S : WindowA0Ledger.Scope n) (i : Fin n) (q : Trip (2*c))
     (x : WindowA0Ledger.State p c n) (H : FrameAt z0 S i q 0 x)
@@ -279,9 +272,6 @@ def authenticatedTimingLayer {p c n : Nat} {z0 : Config p c n} (hn : 4≤n)
         DoorResult i q (WindowA0GapOneWord.observe S i x w).1) (n*2) :=
   WindowA0GapOneWord.timingLayer S i x ready _ fail_ready (success_word hn S i q x H)
 
-#print axioms authenticatedCreditLayer
-#print axioms authenticatedTimingLayer
-
 /-- Nonterminal acceptance is already the next outward COUNT worker,
 at the very same top. No additional launch mark or grace term. -/
 theorem relaunch_physical {p c n : Nat} {z0 : Config p c n} (hn : 4≤n)
@@ -322,5 +312,4 @@ theorem relaunch_physical {p c n : Nat} {z0 : Config p c n} (hn : 4≤n)
       rw [hL] at ho
       cases ho
 
-#print axioms relaunch_physical
 end L4.WindowA0GapOneTrace

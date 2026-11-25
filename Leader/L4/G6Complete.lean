@@ -12,16 +12,12 @@ theorem boundary : TripleBoundary.MissingBoundary where
 theorem restartTrial : RestartSerial.RootIndependentRestartTrial :=
   TripleBoundary.restartTrial_of_boundary boundary
 
-theorem row175_rooted_of_short_window (h : RootedWindows.RootedShortWindowReward) :
+theorem uniformEdge_rooted_of_short_window (h : RootedWindows.RootedShortWindowReward) :
     RootedAssembly.RootedStatement :=
-  RootedWindows.row175_rooted_of_minimal_inputs boundary h
+  RootedWindows.uniformEdge_rooted_of_minimal_inputs boundary h
 
-theorem row175_of_short_window (h : RootedWindows.RootedShortWindowReward) :
-    row175Statement :=
-  RootedWindows.row175Statement_of_minimal_rooted_inputs boundary h
+theorem uniformEdge_of_short_window (h : RootedWindows.RootedShortWindowReward) :
+    uniformEdgeStatement :=
+  RootedWindows.uniformEdgeStatement_of_minimal_rooted_inputs boundary h
 
-#print axioms boundary
-#print axioms restartTrial
-#print axioms row175_rooted_of_short_window
-#print axioms row175_of_short_window
 end L4.G6Complete

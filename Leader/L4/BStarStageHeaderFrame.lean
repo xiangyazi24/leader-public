@@ -138,7 +138,6 @@ theorem execute_frame (g : LongGeometry) (j : Fin 11) (x : BitVec LW) (p : Paylo
       · exact zero
   · exact zero
 
-
 theorem route_frame (w : KWrite) : Frame (lowerOne w).2 := by
   rcases w with ⟨⟨s,j⟩,t⟩
   change Frame (setToken j t)
@@ -245,7 +244,6 @@ theorem field_hold {n : Nat} (f : Field LW n) (q : Patch LW) (x : BitVec LW)
   have hold := q.hold x (f.offset+i) (h _ (by omega) (by omega))
   simpa only [Field.read,BitVec.getLsbD_extractLsb',hi',decide_true,Bool.true_and] using hold
 
-
 variable {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
 local notation "B" => bStar k₁ k₂ t₂ J₁ J₂ r c p c₁ hp
 local notation "A" => production k₁ k₂ t₂ J₁ J₂ r c p c₁
@@ -271,7 +269,6 @@ theorem left_foreign_field (x : Pair (LargeSite A))
     Field.read_other_assign field shField _ _ (.inl (Nat.le_trans hi (by decide)))]
   exact field_hold _ _ _ H lo hi
 
-
 /-- A mark not entering a live source H6 preserves all 25 argument bits. -/
 theorem foreign_headers (x : Fin n → LargeSite A) (i e : Fin n)
     (ex : rightNeighbor e≠i) (hdr : oldH6 B x i=true) :
@@ -282,5 +279,4 @@ theorem foreign_headers (x : Fin n → LargeSite A) (i e : Fin n)
     exact left_foreign_field hp (x e,x (rightNeighbor e)) hdr candidateHeaders (by decide) (by decide)
   · simp only [AllSizeS1Geometry.step,if_neg E,if_neg (Ne.symm ex)]
 
-#print axioms foreign_headers
 end L4.BStarStageHeaderFrame

@@ -107,5 +107,4 @@ theorem nominatedFenceClear (x : X) (L R : Fin n) (l d w : Nat)
   · exact False.elim (N Z)
   · exact .inr rfl
 
-#print axioms nominatedFenceClear
 end L4.BStarFenceNominatedClear

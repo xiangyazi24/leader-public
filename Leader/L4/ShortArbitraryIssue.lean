@@ -21,5 +21,4 @@ theorem actual_chart_issue0_mean {s n : Nat} (x : Raw s n) (A : H2Ready x)
   have D := issue0_expected C Cs (by omega) Nom y Y H
   simpa only [Cr] using D
 
-#print axioms actual_chart_issue0_mean
 end L4.ShortArbitraryIssue

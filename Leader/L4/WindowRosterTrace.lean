@@ -91,9 +91,6 @@ theorem roster_of_geometry {p c n : Nat} {z : Ledger p c n} (hcov : Covers z.con
       exact G.kLift
   exact ⟨i,hi,wloc,kloc⟩
 
-#print axioms geometry_word
-#print axioms roster_of_geometry
-
 /-- Tag addresses at an index of the original clockwise roster. -/
 def labels {p c n : Nat} (x : Config p c n) (i : Fin (RankPhysical.rank x))
     (d : Nat) : Fin n := roster x (liftedSite i d)
@@ -182,9 +179,6 @@ theorem original_four {p c n : Nat} (x : Config p c n) (hn : 4≤n)
     rw [he,labels_add,labels_add] at C
     simpa only [h3] using C
 
-#print axioms original_three
-#print axioms original_four
-
 /-- The exact roster of the seven original designated tags at every
 no-selected-loss endpoint. All six ordinary neighbor pairs remain
 adjacent in the canonical roster of the actual physical configuration. -/
@@ -238,8 +232,6 @@ theorem original_window {p c n : Nat} (x : Config p c n) (hn : 4≤n)
 theorem index_mem {p c n : Nat} (x : Config p c n) (i : Fin (RankPhysical.rank x))
     (d : Fin 7) : labels x i d.val ∈ window7 (roster x) i :=
   List.mem_map.mpr ⟨d,List.mem_finRange _,rfl⟩
-
-#print axioms original_window
 
 /-- Literal ordinary extension start from an original window offset
 with three remaining successors. The supplier and the ghost target
@@ -305,5 +297,4 @@ theorem ordinary_push_window {p c n : Nat} (x : Config p c n) (hn : 4≤n)
   rw [←E]
   exact Q
 
-#print axioms ordinary_push_window
 end L4.WindowRosterTrace

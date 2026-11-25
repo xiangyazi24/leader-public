@@ -93,8 +93,6 @@ theorem invariant_closed {s n : Nat} {x : Raw s n} {g : CustodyWitness x}
     (hy : PhysicalInvariant g c i y) (e : Fin n) : PhysicalInvariant g c i (next c i y e) :=
   invariant_of_consistent P c i _ (consistent_next x c i y hy.trace e)
 
-#print axioms production_inv
-#print axioms invariant_closed
 end L4.Height.ProductionCustody
 
 namespace L4.Height.ProductionCycles

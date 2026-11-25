@@ -42,6 +42,4 @@ theorem put_injective (G : GapInput h) : Function.Injective (put (h:=h)) := by
     contradiction
   · exact Prod.ext (Subtype.ext E) rfl
 
-#print axioms predecessor_not_selected
-#print axioms put_injective
 end L4.ReportPulseGateGeometry

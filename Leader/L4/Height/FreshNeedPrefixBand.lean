@@ -65,7 +65,6 @@ theorem launch_pc {x : X} {addr : Nat→Pos n} {len op : Nat} {e : Fin n}
   | launch _ _ =>
     rfl
 
-
 theorem prefix_append {x : X} {u v : List (Fin n)} {P : X → Prop}
     (U : ∀ a, a<+:u → P (play x a))
     (V : ∀ a, a<+:v → P (play (play x u) a)) :
@@ -149,7 +148,6 @@ theorem no_pc_two {base x : X} {addr : Nat→Pos n} {len k : Nat}
         (prefix_append hp D (prefix_cons hp (D bf ⟨[],List.append_nil bf⟩)
           (prefix_append hp C₂ (prefix_cons hp (C₂ w2 ⟨[],List.append_nil w2⟩) F)))))))
 
-
 /-- Truncate a certified continuation at the original publication-free tape.
 The appended marks serve only to complete the deterministic witness; no
 assumption is made that the original tape contains the service word. -/
@@ -221,7 +219,4 @@ theorem accepted_need_seal_on_miss {base origin : X} {hh : ∃ i,oldH6 B base i=
   exact no_pc_two_on_miss hp (base:=base) (addr:=fun j=>S.getD j fall) (len:=len) (k:=k)
     (x:=x) i w labels miss ⟨pre,tail,E,M,pub⟩ heads
 
-#print axioms accepted_need_seal_on_miss
-#print axioms no_pc_two
-#print axioms no_pc_two_on_miss
 end L4.Height.FreshNeedPrefixBand

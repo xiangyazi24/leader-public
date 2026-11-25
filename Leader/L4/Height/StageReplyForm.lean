@@ -17,6 +17,4 @@ theorem bind_exact (g : AllSizeProtocol.LongGeometry) (j : Fin 11) :
     bind g j (.reply reply)=.reply reply := by
   rfl
 
-#print axioms finish_exact
-#print axioms bind_exact
 end L4.Height.StageReplyForm

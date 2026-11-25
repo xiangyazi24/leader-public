@@ -107,10 +107,4 @@ theorem from_reset_then_without_terminal {s n : Nat} {h : Fin n → Bool} (C : C
   exact parked_or_flying_without_terminal C N _ Y.1 Y.2
     (parked_after_consume C _ K G) tail noTerminal
 
-#print axioms parked_after_consume
-#print axioms parked_nondoor
-#print axioms launch_grant_free
-#print axioms parked_without_door
-#print axioms parked_or_flying_without_terminal
-#print axioms from_reset_then_without_terminal
 end L4.ShortResetHelloSplice

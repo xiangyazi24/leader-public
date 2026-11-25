@@ -875,16 +875,4 @@ theorem pending_commit_auth (C : Chart h) (saved x a4 a5 : Raw s n)
   rw [O]
   rfl
 
-#print axioms owner_unmatched_raw_frame
-#print axioms reset_step
-#print axioms read_consume_issue
-#print axioms writeRun_active
-#print axioms writeAt_effect
-#print axioms commitAt_done
-#print axioms post_fenced
-#print axioms post_step
-#print axioms mis1_epoch_owner_raw_step
-#print axioms epoch_from_parked
-#print axioms pending_commit_auth
-
 end L4.ShortOwnerEpochJS

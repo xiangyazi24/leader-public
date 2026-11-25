@@ -47,9 +47,4 @@ theorem packed_observer_mean {s n : Nat} (hn : 4 ≤ n) (x : Raw s n) :
       Height.IIDExpectedHittingTimeAtMost (rawNext s) Marked x (5*n^2+7*n) :=
   Height.ObserverEntrance.physical_mean hn (rows s) hp rfl x
 
-#print axioms marked_agrees
-#print axioms marked_closed
-#print axioms marked_projects
-#print axioms packed_observer_mean
-
 end L4.PhysicalPublic

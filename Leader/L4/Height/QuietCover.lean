@@ -434,7 +434,6 @@ theorem quiet_cover
   intro x hx
   exact quiet_cover_data C L hM hL hMom x hx
 
-
 end
 
 end L4.Height.Recover.CoverOne

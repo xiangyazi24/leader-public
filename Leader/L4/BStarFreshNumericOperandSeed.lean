@@ -54,6 +54,4 @@ theorem numeric_seed {base y : X} {hh : ∃ i,oldH6 B base i=true}
   ⟨fun i sh own => mobile i sh (active_on_lines hp C dp LF RF seam flags i sh own),
     fun i sh own => retained i sh (active_on_lines hp C dp LF RF seam flags i sh own) own⟩
 
-#print axioms active_on_lines
-#print axioms numeric_seed
 end L4.BStarFreshNumericOperandSeed

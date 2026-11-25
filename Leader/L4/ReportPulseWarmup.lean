@@ -727,13 +727,5 @@ theorem report2_cut_adapter {s n : Nat} (a b : Fin n)
   wire_cut_adapter (wire2 b Q stay frozen) a A D
     (streak_pos (radiusTwo s)) x G u v e cut
 
-#print axioms wire_clock_eq
-#print axioms wire_warm_mean
-#print axioms wire_warm_tail
-#print axioms fresh_step
-#print axioms wire_fresh_mark
-#print axioms credit_raw_run
-#print axioms report1_cut_adapter
-#print axioms report2_cut_adapter
 end L4.ReportPulseWarmup
 

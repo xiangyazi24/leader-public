@@ -93,5 +93,4 @@ theorem parked_after_skipped {base : X} {hh : ∃ i,oldH6 B base i=true}
       (fun b M => avoid b (List.mem_cons_of_mem _ M))
     simpa only [emit,List.append_assoc,List.singleton_append] using tail
 
-#print axioms parked_after_skipped
 end L4.BStarParkedPhysical

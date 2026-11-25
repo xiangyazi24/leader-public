@@ -137,9 +137,4 @@ theorem separator_receipt_after_observer {s n : Nat} {base x : Raw s n}
     rfl
   exact ⟨pre,tour,split,launched,S0,by rwa [playback],by rwa [playback],by rwa [playback]⟩
 
-#print axioms eligible_of_waiting_clean
-#print axioms separator_receipt_after_observer
-#print axioms exact_prefix_expected
-#print axioms stopped_exact_receipt
-#print axioms exact_launch_of_observer
 end L4.PhysicalReceiptCut

@@ -66,8 +66,4 @@ theorem selected_right : ∀ (x y : Byte),
       if role y=2 then !(y.getLsbD 1 || y.getLsbD 0) else selected y := by
   decide +kernel
 
-#print axioms prospective_right
-#print axioms armed_left
-#print axioms selected_left
-#print axioms selected_right
 end L4.PhysicalCustody.H1

@@ -139,10 +139,4 @@ theorem firstRaw_of_unique_position
   simp only [List.length_append,List.length_cons] at len
   omega
 
-#print axioms incAt_publication
-#print axioms count_before_publication
-#print axioms receipt_count
-#print axioms firstRaw_witness
-#print axioms firstRaw_of_no_earlier
-#print axioms firstRaw_of_unique_position
 end L4.BStarReceiptKey

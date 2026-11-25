@@ -378,13 +378,4 @@ theorem fold_fresh_mass {p c n} (hp : 2≤p) (hc : 12≤c) (hn : 4≤n)
       (fun w => if WindowProtectedOuter.bad (fold hp hc hn h A w) then 1 else 0) t []≤11*n^t :=
   WindowLatch.fresh_mass hn hc (decide hp hc hn) (Front.initial x h A) t
 
-#print axioms fold_fresh_mass
-
-#print axioms decide
-
-#print axioms Owners.onBirth
-#print axioms Owners.afterDeath
-#print axioms Progress.extend
-#print axioms two_birth_inv
-
 end L4.WindowOwnership

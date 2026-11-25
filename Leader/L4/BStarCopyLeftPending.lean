@@ -77,7 +77,4 @@ theorem release_pending {Tag : Type} (atDigit : Nat→Tag) (end5 width i : Nat)
   obtain ⟨A,B0⟩ := remaining_at_actual_k5 end5 width i H K
   rw [A,B0,pending_succ]
 
-#print axioms affine_chart
-#print axioms remaining_forward
-#print axioms release_pending
 end L4.BStarCopyLeftPending

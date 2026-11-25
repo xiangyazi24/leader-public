@@ -168,8 +168,4 @@ theorem reserved_overlap_owner (g : Pair LongGeometry) (m word : Int)
     simp_all
   exact ⟨c,p,op,hc,hf,ho,overlap_owner g m word c.source op s.occurrence hsite D hd (E ▸ hit)⟩
 
-#print axioms command_owner
-#print axioms data_owner
-#print axioms overlap_owner
-#print axioms reserved_overlap_owner
 end L4.BStarLongFiberOwner

@@ -89,6 +89,4 @@ theorem right_of_drained {Tag : Type} (digits : Tag→BitVec 36) (atSource : Nat
     rw [←join,←same,←baseRD] at owner
     exact (clean _ .rd rfl (baseRD ▸ owner.trans own)).2
 
-#print axioms initial_right
-#print axioms right_of_drained
 end L4.BStarCopyRightWrappedEntry

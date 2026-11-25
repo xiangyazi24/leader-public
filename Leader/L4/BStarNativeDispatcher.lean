@@ -35,7 +35,6 @@ open BStarNativePriorInputs
 open BStarNativeAtLaunch BStarNativeCmpHit BStarH6Ordinal BStarOwnerLaunchOrigin
 open BStarNativeScalarRecurrence BStarScalarFits
 
-
 open BStarNativePrefixInduction BStarNativeHeadRoster
 open BStarNativeLoadReady BStarNativeLoadTours
 
@@ -78,5 +77,4 @@ theorem from_native_word {base initial : X} {hh : ∃ i,oldH6 PROTO base i=true}
       notShort stable table bank sem capture _ _ _ rfl found flat hit
       (BStarNativeLoadReady.callback hp _ rootK sep whole band table bank sem capture data)
 
-#print axioms from_native_word
 end L4.BStarNativeDispatcher

@@ -57,5 +57,3 @@ theorem concreteAllTags_mean_of_tail (htail : ConcreteTagTail)
 
 end L4.TaggedTrace
 
-#print axioms L4.TaggedTrace.allSurvival_proj
-#print axioms L4.TaggedTrace.concreteAllTags_mean_of_tail

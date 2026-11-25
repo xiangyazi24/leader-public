@@ -133,12 +133,4 @@ theorem front_coset_view (P t u : Nat) (pos : 0<P) (phase : 32∣P)
       omega
     exact ⟨.inr U,by rw [neighborView,if_neg notSame,if_neg (by omega : u≠t)]⟩
 
-#print axioms successor_mod
-#print axioms front_coset_view
-#print axioms neighborView_lift
-#print axioms front_unwrapped
-#print axioms concrete_half
-#print axioms encode_phase
-#print axioms encode_initial
-#print axioms encode_succ
 end L4.BStarBiasedLift

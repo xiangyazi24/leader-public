@@ -100,7 +100,6 @@ theorem clear_nondoor {s n : Nat} {h : Fin n → Bool} (C : Chart h) (x : Raw s 
     rw [reset_remote_frame_raw _ _ _ (Ne.symm S) (Ne.symm B)]
     exact A i I
 
-
 /-- The owner door is not incident to any nonroot slot. Thus it can
 launch one owner packet at K0 but cannot write another slot on this chart. -/
 theorem clear_door_except_root {s n : Nat} {h : Fin n → Bool} (C : Chart h)
@@ -151,7 +150,6 @@ theorem clear_door_without_launch {s n : Nat} {h : Fin n → Bool} (C : Chart h)
     · rw [O]
   · exact clear_door_except_root C x A i I Z
 
-
 /-- The first loss of an initially canonical-clear chart has a genuine
 local source birth in its tape prefix. This theorem traces the first
 birth only; it does not classify later in-flight payloads. -/
@@ -186,11 +184,4 @@ theorem first_birth_exists {s n : Nat} {h : Fin n → Bool} (C : Chart h)
         · exact ⟨[],_,v,t,rfl,rfl,A,E',X⟩
     · exact recover (clear_nondoor C x heads e D A)
 
-#print axioms source_door_k0_raw
-#print axioms empty_link_raw
-#print axioms empty_terminal_raw
-#print axioms clear_nondoor
-#print axioms clear_door_except_root
-#print axioms clear_door_without_launch
-#print axioms first_birth_exists
 end L4.ShortEmptyOwnership

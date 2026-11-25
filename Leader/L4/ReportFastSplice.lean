@@ -849,16 +849,3 @@ theorem splice_mean
 end Glue
 end L4.ReportFastSplice
 
-
-#print axioms L4.ReportFastSplice.reset_pre_entry
-#print axioms L4.ReportFastSplice.pre_own_clear_step
-#print axioms L4.ReportFastSplice.pre_acq_entry
-#print axioms L4.ReportFastSplice.acq_before_mark
-#print axioms L4.ReportFastSplice.acq_fenced_snoc
-#print axioms L4.ReportFastSplice.post_context_of_consume
-#print axioms L4.ReportFastSplice.acq_local_closed
-#print axioms L4.ReportFastSplice.acq_nominate
-#print axioms L4.ReportFastSplice.acq_budget
-#print axioms L4.ReportFastSplice.cap_total
-#print axioms L4.ReportFastSplice.phaseRows_of_local
-#print axioms L4.ReportFastSplice.splice_mean

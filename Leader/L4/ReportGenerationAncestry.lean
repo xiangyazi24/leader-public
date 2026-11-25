@@ -328,12 +328,4 @@ theorem selector_prefix (sheet : Sheet) (N : 1<n) (x : Raw s n)
     have E0 : e::w=(e::pre)++f::suf := by simp [E]
     exact NoCommit (e::pre) f suf E0
 
-#print axioms changed_centre_owns_ingress
-#print axioms raw_selector_frame
-#print axioms raw_selector_commit
-#print axioms raw_selector_commit_ne
-#print axioms held_grant_survives_iff
-#print axioms generated_write_inactive
-#print axioms generation_grant_keep
-#print axioms selector_prefix
 end L4.ReportGenerationAncestry

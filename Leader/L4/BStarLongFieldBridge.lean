@@ -37,7 +37,4 @@ theorem disjoint_read {W w z : Nat} (f : Field W w) (g : Field W z)
     extract (((f.assign v).apply x).toNat) g.offset z=(g.read x).toNat := by
   rw [patch_same,extract_same,extract_patch_disjoint _ _ _ _ _ _ h]
 
-#print axioms extract_same
-#print axioms patch_same
-#print axioms disjoint_read
 end L4.BStarLongFieldBridge

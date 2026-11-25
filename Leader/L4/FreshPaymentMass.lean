@@ -105,5 +105,3 @@ theorem unpaid_gap_tail {p c n : Nat} (hn : 4≤n) (hc : 12≤c)
 
 end L4.FreshPaymentMass
 
-#print axioms L4.FreshPaymentMass.unpaid_le_abstract
-#print axioms L4.FreshPaymentMass.unpaid_gap_tail

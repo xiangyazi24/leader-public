@@ -123,6 +123,4 @@ theorem all_release_bytes {base origin : X} {hh : ∃ i,oldH6 B base i=true}
         (List.append_assoc _ _ _)
   exact fun m R => exactAt _ (BStarResetSchedule.run_append _ _ _ _).symm m R (busy_end hp P)
 
-#print axioms all_release_bytes
-#print axioms release_cursor
 end L4.BStarCopyLeftReleaseCursor

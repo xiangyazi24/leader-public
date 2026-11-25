@@ -148,9 +148,6 @@ theorem write_forward_hop (d : Sheet) (C : Chart h)
     exact rank_fault2_hop (params d s) (h (out C k)) (h (rightNeighbor (out C k)))
       (bytesL d x (out C k)) (bytesR d x (out C k)) _ _ (internal_dest C k J) E _
 
-#print axioms write_forward_hold
-#print axioms write_forward_hop
-
 theorem write_launch (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     (G : GapInput h) (F : Fibre (h:=h) d Q) (N : 1<n)
     (x : Raw s n) (X : Cached d hh Q x) (I : LegalIssue d C x)
@@ -277,11 +274,6 @@ theorem healthy_write_origin_of_run (d : Sheet) (C : Chart h) (hh : ∃ i,h i=tr
   · rw [P] at Live
     contradiction
 
-#print axioms write_launch
-#print axioms write_follows_forward
-#print axioms write_origin_run
-#print axioms healthy_write_origin_of_run
-
 theorem forward_pc_held (d : Sheet) (C : Chart h)
     (x : Raw s n) (e : Fin n) (N : 1<n)
     (mask : ∀ i,lower d (oldHeaders (rows s) (x i))=h i)
@@ -317,9 +309,6 @@ theorem write_origin_pc (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     have A := write_origin_run d C hh G F N x X t R u j H
     rw [ShortOwnerEpochJS.raw_snoc]
     exact (forward_pc_held d C _ (out C j) N (CF.mask _ A.1) j A.2.shape).trans IH
-
-#print axioms forward_pc_held
-#print axioms write_origin_pc
 
 theorem fault_cannot_revive_on_hop (d : Sheet) (C : Chart h)
     (N : 1<n) (x : Raw s n)
@@ -362,6 +351,4 @@ theorem healthy_origin_from_issue (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true
   exact ⟨healthy_write_origin_of_run d C hh G F N x' X' t A w k H Live,
     (congrArg Prod.snd (write_origin_pc d C hh G F N x' X' t A w k H)).trans PC⟩
 
-#print axioms fault_cannot_revive_on_hop
-#print axioms healthy_origin_from_issue
 end L4.ReportWriteOrigin

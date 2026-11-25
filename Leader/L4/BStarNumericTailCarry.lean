@@ -193,8 +193,4 @@ theorem receipt_of_sweep {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have E := tail.trans out
   exact ⟨E,E.symm ▸ R⟩
 
-#print axioms receipt_of_sweep
-#print axioms sweep_last
-#print axioms last_to_offer
-#print axioms last_to_terminal
 end L4.BStarNumericTailCarry

@@ -131,6 +131,4 @@ theorem operand_tape {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [loc,←BStarResetSchedule.run_append step entry pre u]
   exact ⟨⟨_,(congrArg Lane.retained A).trans Xl⟩,_,(congrArg Lane.retained Bx).trans Xr⟩
 
-#print axioms digit_at
-#print axioms operand_tape
 end L4.Height.FreshNumericInputs

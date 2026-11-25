@@ -43,7 +43,4 @@ theorem chart_gate_incidence {n : Nat} {h : Fin n → Bool} {r : Fin n}
   rw [nextAt_add]
   rfl
 
-#print axioms chart_gate_incidence
-#print axioms label_incoming
-#print axioms disjoint_center_incidence
 end L4.ReportGateGeometry

@@ -131,9 +131,6 @@ theorem incoming_break_hold {p c n : Nat} (hn : 4≤n) {J : Fin n} {H : Nat}
         (by cases hR : (stepPrefix u v).2.rail <;> simp_all [FixedResidual.topRail])))
   simpa [←he,step,u,v,hn',R] using H
 
-#print axioms outgoing_break
-#print axioms incoming_break_hold
-
 open WindowFourHeadTrace
 
 def Clean {p c n : Nat} (x : Cut p c n) (k : Nat) : Prop :=
@@ -164,7 +161,6 @@ private theorem lift_add {n : Nat} (base : Fin n) (i j : Nat) :
   apply Fin.ext
   change ((base.val+i)%n+j)%n=(base.val+(i+j))%n
   simp [Nat.add_assoc]
-
 
 theorem clean_keep {p c n : Nat} (hn : 4≤n) {J : Fin n} {H : Nat}
     (x y : Cut p c n) (e : Fin n) (k δ : Nat)
@@ -241,7 +237,6 @@ theorem clean_keep {p c n : Nat} (hn : 4≤n) {J : Fin n} {H : Nat}
           have hb' : b=0 := by simp [b,←eq,he]
           omega
       simpa [step,Ne.symm he,Ne.symm hR] using h.2 j hj'
-
 
 theorem clean_keep_capped {p c n : Nat} (hn : 4≤n) {J : Fin n} {H : Nat}
     (x y : Cut p c n) (e : Fin n) (k δ : Nat)
@@ -323,7 +318,6 @@ theorem clean_keep_capped {p c n : Nat} (hn : 4≤n) {J : Fin n} {H : Nat}
           have hb' : b=0 := by simp [b,←eq,he]
           omega
       simpa [step,Ne.symm he,Ne.symm hR] using h.2 j hj'
-
 
 structure SweepState (p c n : Nat) where
   physical : WindowA0ClosedEntry.State p c n
@@ -438,10 +432,6 @@ theorem sweep_sound {p c n : Nat} {z₀ : Config p c n} {S : WindowA0Ledger.Scop
     have hc := h.2.resolve_left hd
     exact .inr (fun j hj => hc.2 j (Nat.lt_of_lt_of_le hj hp))
 
-#print axioms clean_keep
-#print axioms expected_x_sweep
-#print axioms sweep_sound
-
 open RootedAssembly WindowFiveStages
 
 theorem sweep_run_of_clean {p c n : Nat} {z₀ : Config p c n} (hn : 4≤n)
@@ -485,8 +475,6 @@ theorem exact_sweep_handoff {p c n : Nat} {z₀ : Config p c n} (hn : 4≤n)
     | cons e u ih => exact ih (sweepNext S init e)
   rw [proj] at hh
   exact hh
-
-#print axioms exact_sweep_handoff
 
 def xStage {p c n : Nat} (S : WindowA0Ledger.Scope n)
     (z : WindowA0ClosedEntry.State p c n) : TripleRenewal.Stage (WindowA0ClosedEntry.next S) z where
@@ -554,6 +542,4 @@ theorem mean_after_sweep {p c n : Nat} {z₀ : Config p c n} (hn : 4≤n)
   exact Nat.le_trans E (Nat.add_le_add (xStage_mean hn S J H z hz t)
     (Nat.mul_le_mul_left _ (TripleRenewal.terminalMass_le_total _ _ _ _ _)))
 
-#print axioms xStage_mean
-#print axioms mean_after_sweep
 end L4.WindowA0XSweep

@@ -81,8 +81,4 @@ theorem of_custody_headers {s n : Nat} {x : Raw s n} (g : CustodyWitness x)
     rw [same w] at D
     exact D
 
-#print axioms of_custody_headers
-#print axioms of_frozen_headers
-#print axioms reference_mask
-#print axioms permanent_reference_closed
 end L4.PhysicalClockDisplay

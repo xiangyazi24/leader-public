@@ -126,5 +126,4 @@ theorem actual_attempt {base x : X} (u v tail : List (Fin n))
     · exact stateEq ▸ S0
     · exact stateEq ▸ L0
     · exact D0
-#print axioms actual_attempt
 end L4.BStarPostCutAttempt

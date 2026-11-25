@@ -121,8 +121,4 @@ theorem geometry_ports {a : LargeParams} {n r : Nat} (b : LargeRows a)
         simp [V,W]
       · simp [V]
 
-#print axioms geometry_ports
-#print axioms ports
-#print axioms predecessor
-#print axioms departure
 end L4.BStarAcquireRailCoverage

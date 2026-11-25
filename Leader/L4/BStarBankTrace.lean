@@ -181,6 +181,4 @@ theorem longWork_operand (g : Pair LongGeometry) (x : Pair (BitVec LW)) (s : Sid
   rw [eq]
   exact ⟨selector_read F _,digit_read F _,header_read F _⟩
 
-#print axioms longWork_protects
-#print axioms longWork_operand
 end L4.BStarBankTrace

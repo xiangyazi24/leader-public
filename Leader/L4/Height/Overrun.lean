@@ -219,9 +219,4 @@ theorem overrun_quarter {N : Nat} (L m h : Nat)
   have hfinal := Nat.le_of_mul_le_mul_left hcancel hC
   simpa [d] using hfinal
 
-#print axioms level_budget
-#print axioms log_mean_budget
-#print axioms markov_deadline
-#print axioms overrun_quarter
-
 end L4.Height

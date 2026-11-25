@@ -239,9 +239,4 @@ theorem post_custody_quadratic {α : Type} {N : Nat}
   exact expected_bound_mono
     (next := next) (target := R) (x := x) htime hbound
 
-#print axioms L4.Height.iidHitCost_then_le
-#print axioms L4.Height.expected_then_closed
-#print axioms L4.Height.post_custody_time
-#print axioms L4.Height.post_custody_quadratic
-
 end L4.Height

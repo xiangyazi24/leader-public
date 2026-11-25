@@ -100,9 +100,6 @@ theorem all_wins_step (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     · right
       exact ⟨j,q,E ▸ A,fun S i I Hd=>won_snoc d C x0 w e i (H S i I Hd)⟩
 
-#print axioms header_success_implies_win
-#print axioms all_wins_step
-
 theorem all_wins_run (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     (G : GapInput h) (F : Fibre (h:=h) d Q) (N : 1<n)
     (x0 : Raw s n) (X : Cached d hh Q x0) (A : FState d C x0 0 64)
@@ -165,7 +162,4 @@ theorem successful_root_lane0 (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
   exact ⟨u,v,q,by simpa only [R] using E,J,by simpa only [R,Rp] using Win,
     by simpa only [R,Rp] using Held⟩
 
-#print axioms all_wins_run
-#print axioms successful_root_all_wins
-#print axioms successful_root_lane0
 end L4.ReportAcquireAllWins

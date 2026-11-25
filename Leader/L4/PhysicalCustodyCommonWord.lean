@@ -47,6 +47,4 @@ theorem replay_two_passes {s n : Nat} {Owner : Type}
     exact ⟨u'.length+a,u'.length+b,by omega,by omega,le,
       BStarRecoveryPass.credit_append _ shifted tail⟩
 
-#print axioms commute_append
-#print axioms replay_two_passes
 end L4.PhysicalCustodyCommonWord

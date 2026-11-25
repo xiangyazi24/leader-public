@@ -64,7 +64,4 @@ theorem sheet_close_loss_count (d : Sheet) (N : 0<n)
     (fun b => RearTrace.right_predecessor b.val)
     x Good (initialPhase d x) (fun _=>rfl) S J N Many W.1 K
 
-#print axioms trial_budget
-#print axioms literal_sheet_wire
-#print axioms sheet_close_loss_count
 end L4.ReportPulseProductionClose

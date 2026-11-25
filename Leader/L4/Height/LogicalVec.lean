@@ -679,15 +679,6 @@ theorem logical_quarter_vectors {m B : Nat}
       simpa only [Q] using hquarter
     _ = 2 ^ (Q * m) := hpow
 
-#print axioms L4.Height.allVectors_nodup
-#print axioms L4.Height.mem_allVectors
-#print axioms L4.Height.allVectors_length
-#print axioms L4.Height.bitsOf_encodeBits
-#print axioms L4.Height.vecRounds_length
-#print axioms L4.Height.vecWord_length
-#print axioms L4.Height.vec_word_bij
-#print axioms L4.Height.logical_quarter_vectors
-
 end
 
 end L4.Height

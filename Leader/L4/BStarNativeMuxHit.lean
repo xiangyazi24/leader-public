@@ -215,5 +215,4 @@ theorem actual_hit_mux {base x : X} {hh : ∃ i,oldH6 B base i=true}
   apply congrArg Value.word
   rw [math,←outputWord,word,relate a ha,relate b hb,wa,wb]
 
-#print axioms actual_hit_mux
 end L4.BStarNativeMuxHit

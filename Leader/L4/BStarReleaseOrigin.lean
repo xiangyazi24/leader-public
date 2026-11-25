@@ -152,8 +152,6 @@ theorem pre_grant_acquire_origin (g : Pair LongGeometry) (x : Pair (BitVec LW))
   pre_grant_ungated_origin g x s j acquire
     (fun g i => by simp [gate,acquire,admit,bitOp]) H
 
-#print axioms pre_grant_acquire_origin
-
 /-- If the old physical incidence does not contain a nonfaulting RREL
 front, the actual joined mark cannot clear its canonical header grant.
 A history theorem must still show which process placed such a front. -/
@@ -181,6 +179,4 @@ theorem joined_keep_without_old_release (k₁ k₂ t₂ J₁ J₂ r c p c₁ : N
     simp [hs,H']
   exact hn q (H ▸ hq) he
 
-#print axioms pre_grant_release_origin
-#print axioms joined_keep_without_old_release
 end L4.BStarReleaseOrigin

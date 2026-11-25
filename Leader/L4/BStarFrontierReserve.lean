@@ -81,8 +81,4 @@ theorem window_read_after_cut (base x : X) (hh : ∃ i,oldH6 B base i=true)
     omega
   · omega
 
-#print axioms window_read_after_cut
-#print axioms revealed_at_count
-#print axioms reserved_below_cut
-#print axioms frontier_excludes_reserved
 end L4.BStarFrontierReserve

@@ -276,10 +276,6 @@ theorem publish_of_staged_computation (d : Sheet) (N : 1<n)
   · rw [Sel,←D.2.1]
     exact Meta.2.1
 
-#print axioms actual_params_fit
-#print axioms selected_digit_of_pack
-#print axioms commit_keeps_whole_word
-#print axioms publish_of_staged_computation
 end L4.ReportItemNinePublication
 
 namespace L4.ReportItemNinePublication
@@ -374,5 +370,4 @@ theorem item9_handoff (d : Sheet) (N : 1<n) (Spos : 0<s)
   rw [←Desc] at D
   exact ⟨Desc,D.1,D.2.1,Result⟩
 
-#print axioms item9_handoff
 end L4.ReportItemNinePublication

@@ -95,7 +95,4 @@ theorem issue0_expected {s n : Nat} {h : Fin n → Bool} (C : Chart h)
     exact chart_nominate C N y HR off 505 (rail C)
       (fun _ => rail_cap C S _) (fun _ _ _ Held => rail_nominate_held C S N Nom y Y H' Held)
 
-#print axioms rail_cap
-#print axioms rail_nominate_held
-#print axioms issue0_expected
 end L4.ShortInheritedRank

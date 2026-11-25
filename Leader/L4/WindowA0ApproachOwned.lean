@@ -101,7 +101,6 @@ theorem paid_rebase {Q : Nat} (q : Trip Q) (g k : Nat) (r s : Nat → Rail)
     rw [heq _ hg]
     exact h.ahead _ (by omega)
 
-
 /-- Exact rail transport under stationary geometry. The incoming worker
 mark advances its authentic occurrence; every other mark retains its
 position, including arbitrary legal changes in the dirty INIT prefix. -/
@@ -197,7 +196,6 @@ theorem stationary_owned {n Q : Nat} (base e : Fin n) (q : Trip Q)
           exact (writable_body q _ _ (h.ahead j (by omega)) (h.ahead _ (by omega))).2
       · rw [rows.off i hig he hR]; exact h.ahead i (by omega)
 
-
 private theorem waiting_no_launch {Q : Nat} (q : Trip Q) (r : Rail)
     (h : r=outward q ∨ r=.t) : ¬ResidualSweep.launches (waitingFor q) r := by
   rcases h with h|h <;> subst r <;> cases q with
@@ -289,7 +287,6 @@ theorem stationary_physical_rails {p c n : Nat} {initial : Config p c n} (hn : 4
   rw [g]
   exact stationary_owned (cut z).top e q z.gap k hLive.noWrap K _ _ h.2 rb
 
-
 private theorem lift_add {n : Nat} (s : Fin n) (a b : Nat) :
     liftedSite (liftedSite s a) b=liftedSite s (a+b) := by
   apply Fin.ext
@@ -368,10 +365,6 @@ theorem paid_physical_rails {p c n : Nat} {initial : Config p c n}
   refine ⟨hI,g,ht,hsrc,?_⟩
   rw [g]
   exact paid_rebase q z.gap k _ _ (by omega) h.2 hre
-
-#print axioms init_after_first_terminal
-#print axioms stationary_physical_rails
-#print axioms paid_physical_rails
 
 private theorem retained_old_ghost {p c n : Nat} {J : Fin n} {H : Nat}
     {x : WindowA0IH.Cut p c n} (h : WindowA0IH.Live J H x) (i : Nat)
@@ -464,8 +457,6 @@ theorem waiting_source_step {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
       exact he ▸ hS
     · simpa [step,he,Ne.symm hr] using hS
 
-#print axioms waiting_source_step
-
 /-- An approach hit is exactly the raw mark entering the currently
 owned worker. This relative coordinate never goes below one on the
 first admission mark. Neither physical exit nor padding is filtered. -/
@@ -512,8 +503,6 @@ theorem physical_step {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
     have hj : j=0 := by simp [j,workerHit,hn']
     rw [h1,hj]
     exact ⟨by omega,by omega,hg,ht,hp⟩
-
-#print axioms physical_step
 
 /-- The owned approach observer carries a relative coordinate. Even
 after its local admission or global terminal decision every raw
@@ -622,6 +611,4 @@ theorem expected_approach {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
   intro t
   exact Nat.le_trans (H' t) (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left _ Hb))
 
-#print axioms first_adjacency
-#print axioms expected_approach
 end L4.WindowA0ApproachOwned

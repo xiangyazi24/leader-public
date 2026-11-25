@@ -89,7 +89,4 @@ theorem both_from_h4_given (advice : s=ell (ell n)) (S : 6≤s) (N : 189<n)
   intro t
   exact Nat.le_trans (H t) (Nat.mul_le_mul_right (n^t) B)
 
-#print axioms cache_quadratic
-#print axioms fibre_to_endpoint_flat
-#print axioms both_from_h4_given
 end L4.ReportStageQuadratic

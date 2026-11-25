@@ -123,6 +123,4 @@ theorem joined_acquire_lands (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0
         exact F.trans Q
       · rw [LongDoorGuard.valid_no_override _ _ _ V]; exact Q
 
-#print axioms k0_dest
-#print axioms joined_acquire_lands
 end L4.BStarAcquireJoinedHop

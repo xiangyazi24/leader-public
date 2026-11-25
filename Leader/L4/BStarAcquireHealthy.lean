@@ -71,7 +71,4 @@ theorem initialized_healthy : Healthy BStarAcquireSource.initPayload := by
   unfold Healthy
   decide +kernel
 
-#print axioms selector_valid
-#print axioms actual_hop_healthy
-#print axioms initialized_healthy
 end L4.BStarAcquireHealthy

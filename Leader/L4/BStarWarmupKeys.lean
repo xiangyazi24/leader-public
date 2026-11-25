@@ -110,9 +110,6 @@ theorem complete_index {n : Nat} (r : Key n → Option Bool) (lo cut hi : Nat)
     complete r lo cut hi a (indexKey r lo cut hi j)=some (a j) := by
   simp only [complete,indexed_unreserved, (coordinate_iff r lo cut hi j _).mpr rfl,Option.map_some]
 
-#print axioms coordinate_iff
-#print axioms complete_index
-
 theorem complete_in_window {n : Nat} (r : Key n → Option Bool)
     (lo cut hi : Nat)
     (a : Fin (joint r lo cut hi).length → Bool) (k : Key n)
@@ -181,10 +178,6 @@ theorem actual_main_unreserved (base x : X) (hh : ∃ i,oldH6 B base i=true)
     exact (frontier_excludes_reserved hp base x hh start history i t G b upper
       (Nat.le_trans front main) R).elim
 
-#print axioms warmup_ext
-#print axioms complete_in_window
-#print axioms actual_main_unreserved
-
 /-- Exact sum-sized coordinates for the warm-up/main Boolean cube. -/
 def jointSize {n : Nat} (r : Key n → Option Bool) (lo cut hi : Nat) : Nat :=
   (keys r lo cut).length+(keys r cut hi).length
@@ -215,5 +208,4 @@ theorem sum_fiber {n : Nat} (r : Key n → Option Bool) (lo cut hi : Nat)
     · intro E; have h : a.val=j.val := congrArg Fin.val E; exact Fin.ext h
     · intro E; have h : a.val=j.val := congrArg Fin.val E; exact Fin.ext h
 
-#print axioms sum_fiber
 end L4.BStarWarmupKeys

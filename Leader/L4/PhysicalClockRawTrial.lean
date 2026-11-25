@@ -110,5 +110,4 @@ theorem trial_of_epoch_bounds {s n : Nat} {x : Raw s n} (g : CustodyWitness x)
   exact ⟨start,lo,G,opening,cap,rfl,rfl,depth,repr,lower,upper,
     Nat.le_trans (Nat.mul_le_mul_left _ loss) bound⟩
 
-#print axioms trial_of_epoch_bounds
 end L4.PhysicalClockDisplay

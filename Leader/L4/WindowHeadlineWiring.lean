@@ -18,17 +18,17 @@ theorem ordinary_short_window_of_rooted (h : RootedWindows.RootedShortWindowRewa
 the G7-produced marginals. Remove this one remaining input only once
 the concrete five-stage observer has been proved. -/
 theorem main_instantiated_except_g7 (g7 : RootedWindows.RootedShortWindowReward) :
-    row175Statement :=
+    uniformEdgeStatement :=
   L4.mainTheorem restartTrial_nondivisible
     (LastTwoAssembly.concreteSevenGroups_of_marginals
       (WindowLocalAssembly.marginals_of_short_window (ordinary_short_window_of_rooted g7)))
     AliasLiteralClock.pureAliasClock
 
-/-- Invoke the original L4.row175_rooted; its two premise
+/-- Invoke the original L4.uniformEdge_rooted; its two premise
 positions are explicit here, and only the latter uses G7. -/
 theorem rooted_instantiated_except_g7 (g7 : RootedWindows.RootedShortWindowReward) :
     RootedAssembly.RootedStatement :=
-  L4.row175_rooted (RootedRetirement.boundedRank_of_restartTrial G6Complete.restartTrial)
+  L4.uniformEdge_rooted (RootedRetirement.boundedRank_of_restartTrial G6Complete.restartTrial)
     (RootedWindows.marginals_of_short_window g7)
 
 end L4.WindowHeadlineWiring

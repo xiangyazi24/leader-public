@@ -130,7 +130,4 @@ theorem operand_tape {base origin : X} {hh : ∃ i,oldH6 B base i=true}
   · exact (congrArg Lane.retained (frame u (e::v) eq _ .ld left)).trans L
   · exact (congrArg Lane.retained (frame u (e::v) eq _ .rd right)).trans R
 
-#print axioms operand_tape
-#print axioms late_region
-#print axioms operand_owner
 end L4.BStarFreshNumericOperands

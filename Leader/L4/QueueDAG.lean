@@ -172,7 +172,6 @@ theorem Sound.of_paths {α : Type} {n : Nat} {next : α → Fin n → α}
         obtain ⟨r,hr,rfl⟩ := List.mem_map.mp hq
         exact (strip_last (hh _ hq)).2.resolve_left hfe
 
-
 /-- Virtual service marks selected by the old physical state. A skipped mark
 still advances that state; it is absent only from the virtual path trace. -/
 def servedMarks {α : Type} {n : Nat}
@@ -260,8 +259,6 @@ theorem GatedSound.of_paths {α : Type} {n : Nat} {next : α → Fin n → α}
           intro q hq
           obtain ⟨r,hr,rfl⟩ := List.mem_map.mp hq
           exact (strip_last (hh _ hq)).2.resolve_left hfe
-
-#print axioms GatedSound.of_paths
 
 /-- Height-threshold grid of an open FIFO line with sites 1 through m
 and edges 0 through m. For edge i to reach level k, predecessor edge
@@ -595,7 +592,6 @@ theorem current_virtualStep {n : Nat} (hn : 4 ≤ n) (v : Fin n)
             · simp [hjl,show ¬ j<i+1 by omega] at hd; omega
         · simp [hnew,ht,hout]
 
-
 private theorem current_mono {n : Nat} (hn : 4 ≤ n) (v e : Fin n) (z : Virtual n)
     (j : Nat) (hj : j≤n-2) : current z j ≤ current (virtualStep v z e) j := by
   cases h : (List.finRange n).find? (fun j => liftedSite v j.val == e) with
@@ -667,6 +663,3 @@ theorem virtual_outlet_paths {n : Nat} (hn : 4 ≤ n) (v : Fin n) (z : Virtual n
 
 end L4.QueueDAG
 
-#print axioms L4.QueueDAG.outletPaths_complete
-#print axioms L4.QueueDAG.current_virtualStep
-#print axioms L4.QueueDAG.virtual_outlet_paths

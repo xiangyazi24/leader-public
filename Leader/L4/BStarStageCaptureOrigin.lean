@@ -91,8 +91,6 @@ theorem idle_desc_from_capture {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · change ((capturedSelector 1).read (y i).long).toNat=_
     rw [Xeq,Hold.2,Arr.2]
 
-#print axioms idle_desc_from_capture
-
 open BStarLongEvents BStarBankTrace
 
 /-- The real body STAGE (after arithmetic) carries the center
@@ -141,5 +139,4 @@ theorem selected_desc_from_capture {base x : X} {hh : ∃ i,oldH6 B base i=true}
   refine ⟨pre,mid,post,dA,dS,a,d,?_,r0,door,R,D.trans K',V⟩
   rw [W,E]
 
-#print axioms selected_desc_from_capture
 end L4.BStarStageCaptureOrigin

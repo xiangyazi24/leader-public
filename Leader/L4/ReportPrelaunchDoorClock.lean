@@ -49,7 +49,4 @@ theorem receipt_mean_with_gap_cap
       (n*ReportResetEventClock.resetCoefficient (3*G.B) (params d s).digits) :=
   receipt_mean_of_root_rows d C N hh G Q F R _ (chart_cap_of_gaps C G) x
 
-#print axioms chart_cap_of_gaps
-#print axioms receipt_mean_of_root_rows
-#print axioms receipt_mean_with_gap_cap
 end L4.ReportPrelaunchDoorClock

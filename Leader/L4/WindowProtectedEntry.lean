@@ -123,5 +123,4 @@ theorem named_kill_entry {p c n d : Nat} {z0 : Config p c n} (hn : 4≤n)
       exact hGood.2.1
     · rw [hPost,hLand,liftedSite_succ]
 
-#print axioms named_kill_entry
 end L4.WindowProtectedEntry

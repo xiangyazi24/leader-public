@@ -111,8 +111,6 @@ theorem script_labels_mem {n : Nat} (hn : 4≤n) (i : Fin n) :
     change liftedSite i (n-2+3)=rightNeighbor i
     rw [show n-2+3=n+1 by omega,liftedSite_succ,liftedSite_full]
 
-#print axioms script_labels_mem
-
 /-- Local submartingale arithmetic. Unspecified competitors may have
 zero credit. Outside the fixed list a step stutters in stage or makes
 an earlier favorable exit; we only use that credit does not decrease. -/
@@ -211,8 +209,4 @@ theorem release_failure_bound {α : Type} {n : Nat} (next : α → Fin n → α)
     rw [show (216:Nat)=215+1 by decide,Nat.add_mul,Nat.one_mul]
   omega
 
-#print axioms mask_sum
-#print axioms drift
-#print axioms finite_credit
-#print axioms release_failure_bound
 end L4.WindowA0ReleaseCredit

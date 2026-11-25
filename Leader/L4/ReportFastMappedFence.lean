@@ -113,8 +113,4 @@ theorem target_rival_fence_of_receipts (d : Sheet) (N : 1<n)
   rw [E,Lane] at L
   exact L
 
-#print axioms charter_header_index
-#print axioms denied_lane_at_endpoint
-#print axioms target_rival_fence_of_receipts
-
 end L4.ReportFastMappedFence

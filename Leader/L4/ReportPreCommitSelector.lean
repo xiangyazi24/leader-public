@@ -78,7 +78,4 @@ theorem selector_frame_during_write
   unfold sealOp commitOp at *
   omega
 
-#print axioms healthy_positive_opcode
-#print axioms selector_frame_noncommit
-#print axioms selector_frame_during_write
 end L4.ReportPreCommitSelector

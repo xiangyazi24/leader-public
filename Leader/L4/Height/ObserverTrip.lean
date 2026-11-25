@@ -744,13 +744,4 @@ theorem completed_handoff (m : Machine X root) (hn : 1<n) {x : X}
 
 end Guard
 
-#print axioms separation_step
-#print axioms terminal_observed
-#print axioms rank_step
-#print axioms nominated_step
-#print axioms no_seed_on_continuation
-#print axioms no_pending_on_continuation
-#print axioms sound_after_launch
-#print axioms sound_step
-#print axioms completed_handoff
 end L4.Height.ObserverTrip

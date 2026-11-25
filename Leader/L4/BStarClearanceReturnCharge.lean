@@ -97,7 +97,6 @@ theorem joined_trail_pays (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   rw [ht] at I
   exact I
 
-
 private theorem owned_avoids (g : Pair LongGeometry) (x : Pair (BitVec LW))
     (chosen : CmdOffer) (hc : chosen∈actualOffers g x)
     (a : AtK) (hm : a∈chosen.1.slots) (h : avoids a (selected g x chosen).k) :
@@ -164,8 +163,4 @@ theorem joined_unsupported_pair_pays (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat)
   change _+0+1=trail (readK raw C.source)+0
   simpa only [show trail .empty=0 from rfl,Nat.add_zero] using P
 
-#print axioms joined_reverse_pays
-#print axioms actual_unsupported_trail
-#print axioms joined_trail_pays
-#print axioms joined_unsupported_pair_pays
 end L4.BStarClearanceReturnCharge

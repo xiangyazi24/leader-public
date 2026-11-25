@@ -77,5 +77,4 @@ theorem source_successor {base x : X} {hh : ∃ b,oldH6 B base b=true}
   rw [oldOp,successor_exact _ op lo hi center] at J
   exact J
 
-#print axioms source_successor
 end L4.BStarFreshNumericConsume

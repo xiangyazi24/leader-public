@@ -103,6 +103,4 @@ theorem actual_close_loss {m : Nat} (rho : Nat) (gate : Fin m→G)
       rw [Nat.eq_zero_of_le_zero Z,Nat.mul_zero]
       exact Nat.zero_le _
 
-#print axioms closeAt_lt
-#print axioms actual_close_loss
 end L4.ReportPulseJointLoss

@@ -227,8 +227,4 @@ theorem commit_flight_keeps {base origin x : X} {hh : ∃ i,oldH6 B base i=true}
       contradiction)
   exact (ring_keeps hp (run x w) mark i (sep mark) b (tape ▸ noStage)).trans K
 
-#print axioms holds_with_pc
-#print axioms commit_flight_keeps
-#print axioms before_choice_ge409
-#print axioms holds_after_ack_band
 end L4.BStarStageTailHold

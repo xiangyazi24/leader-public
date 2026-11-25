@@ -56,8 +56,4 @@ theorem choice_index {op : Nat} {f : Payload} {d : Descriptor} {b}
   | sealCase _ N _ => simp [candidate,N]
   | bit _ N => by_cases P : f.argument.toNat%2=1 <;> simp [candidate,pick,N,P]
 
-#print axioms observe_follow
-#print axioms depart_final
-#print axioms choice_index
-#print axioms finish_parity
 end L4.BStarBitParity

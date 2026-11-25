@@ -10,7 +10,7 @@ def blockLength (n W : Nat) : Nat := 2^21*n*W
 def blockReciprocal : Nat := 2^(5*budget+1)
 def longScale (n r : Nat) : Nat := 2^(5*budget+34)*n*r
 
-/-- No slack beyond the stated width envelope is needed to use G9Core
+/-- No slack beyond the stated width envelope is needed to use RawPublicationService
 at the physical long scale. The enormous power is kept symbolic. -/
 theorem block_fits (b n W r : Nat) (width : W≤1024*r) :
     4*(2^(5*b+1)*blockLength n W) ≤ 2^(5*b+34)*n*r := by
@@ -45,6 +45,4 @@ theorem publication_moment_at_longScale (initial : X) (a : List (Fin n)) (i : Fi
   · exact block_fits budget n W r width
   · exact success
 
-#print axioms block_fits
-#print axioms publication_moment_at_longScale
 end L4.BStarLongServiceBudget

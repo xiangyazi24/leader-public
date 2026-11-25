@@ -135,7 +135,6 @@ theorem execute_frame (g : LongGeometry) (j : Fin 11) (x : BitVec LW) (p : Paylo
       · exact zero
   · exact zero
 
-
 theorem route_frame (w : KWrite) : Frame (lowerOne w).2 := by
   rcases w with ⟨⟨s,j⟩,t⟩
   change Frame (setToken j t)
@@ -242,7 +241,6 @@ theorem field_hold {n : Nat} (f : Field LW n) (q : Patch LW) (x : BitVec LW)
   have hold := q.hold x (f.offset+i) (h _ (by omega) (by omega))
   simpa only [Field.read,BitVec.getLsbD_extractLsb',hi',decide_true,Bool.true_and] using hold
 
-
 open BStarLongCommand BStarLongEvents BStarCommitIssue BStarH6WordChart
 
 private def Keeps (t : Bool × Patch LW) : Prop := t.1=false ∨ Frame t.2
@@ -331,7 +329,5 @@ theorem door_field {n : Nat} (f : Field LW n) (lo : 2133≤f.offset)
   rw [long_exec,X,List.foldl_append,fold_field f lo hi _ _ A,List.foldl_append]
   change f.read (q.apply (before.foldl runWrite x).2)=_
   rw [H,fold_field f lo hi _ _ B]
-
-
 
 end L4.BStarCommitChoiceFrame

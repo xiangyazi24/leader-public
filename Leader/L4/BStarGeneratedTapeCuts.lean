@@ -86,7 +86,4 @@ theorem idle_foreign_prefix {base x : X} {addr : Nat → Pos n} {len : Nat}
       | launch own L =>
         exact (F (own ▸ RearTrace.right_predecessor (addr 0).1)).elim
 
-#print axioms split
-#print axioms root_cuts
-#print axioms idle_foreign_prefix
 end L4.BStarGeneratedTapeCuts

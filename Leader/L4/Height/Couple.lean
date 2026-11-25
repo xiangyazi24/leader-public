@@ -988,12 +988,4 @@ theorem adaptive_quarter_transfer
   have hfinal := Nat.le_of_mul_le_mul_right hproduct hpow
   simpa [eventMass] using hfinal
 
-#print axioms sum_ofFn_relabel
-#print axioms wordSum_relabel
-#print axioms iidHitCost_relabel
-#print axioms adaptiveAccept_iff_firstPrescribed
-#print axioms adaptive_prescribed
-#print axioms adaptive_prescribed_eq
-#print axioms adaptive_quarter_transfer
-
 end L4.Height.Couple

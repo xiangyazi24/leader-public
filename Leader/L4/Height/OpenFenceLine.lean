@@ -106,6 +106,5 @@ def fullLine {n : Nat} (h : Nat) (b : Nat → Fin n) (play : List (Fin n) → Fi
     apply Nat.lt_of_le_of_lt (count_weak b play (pre++[f]) (v++tail) k)
     simpa only [count,run_append,List.nil_append,run,old] using moved
 
-#print axioms fullLine
 end
 end L4.Height.OpenFenceLine

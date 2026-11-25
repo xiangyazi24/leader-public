@@ -63,5 +63,4 @@ theorem authorized (k₁ k₂ t₂ J₁ J₂ r n p c₁ : Nat) (hp : 0<p)
       exact False.elim ((by decide : (1 : BitVec 1)≠0) (E.trans healthy.1))
   · rfl
 
-#print axioms authorized
 end L4.BStarStageGuardFromHop

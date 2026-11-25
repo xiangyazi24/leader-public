@@ -181,6 +181,4 @@ theorem retained_values (old : X) (e : Fin n) (C : CommandClaim) (pay : Payload)
   · have R := congrArg (fun a : (Fin 9 → BitVec 4) × (Fin 9 → BitVec 1) => a.2 i) retained
     exact R.trans (K.2 H which i)
 
-#print axioms retained_values
-#print axioms bank_survives
 end L4.BStarStageThroughCommit

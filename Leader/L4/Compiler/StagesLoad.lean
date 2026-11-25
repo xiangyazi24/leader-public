@@ -168,6 +168,3 @@ end Native
 end Compiler
 end L4
 
-#print axioms L4.Compiler.Native.stageConst_spec
-#print axioms L4.Compiler.Native.stageSide_spec
-#print axioms L4.Compiler.Native.stageSucc_spec

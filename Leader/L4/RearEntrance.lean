@@ -66,5 +66,3 @@ theorem entrance_mean_of_rearDebt
 
 end L4
 
-#print axioms L4.concreteAllTags_mean_of_rearDebt
-#print axioms L4.entrance_mean_of_rearDebt

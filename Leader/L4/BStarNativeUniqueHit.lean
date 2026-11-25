@@ -66,5 +66,4 @@ theorem unique {base x : X} {addr : Nat → Pos n} {len : Nat}
   have S := List.cons.inj (List.append_cancel_left (W.symm.trans E))
   exact ⟨rfl,S.1,S.2⟩
 
-#print axioms unique
 end L4.BStarNativeUniqueHit

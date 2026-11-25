@@ -97,7 +97,5 @@ theorem link_label_unique {x y : X} (layout : ∀ i,Layout B x i=Layout B y i)
       D C _ hD' hC (slot_left _ sideD) ((slot_right _ sideC).trans (congrArg R occurrence)) kD kC)
   · exact FreshSeparation.succ_inj (by simpa [address,site,sideC,sideD] using edge)
 
-#print axioms advance_on_link
-#print axioms link_label_unique
 end L4.BStarPacePhysicalCharge
 

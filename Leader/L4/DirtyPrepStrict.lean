@@ -137,5 +137,4 @@ theorem prep_least_pays
     · exact (touching_advance_clears_least hp chart layout k (sep k) a (addr.symm ▸ mem)
         (addr.symm ▸ noEarlier) C' pay offer touch (addr.symm ▸ still)).elim
 
-#print axioms prep_least_pays
 end L4.DirtyPrepStrict

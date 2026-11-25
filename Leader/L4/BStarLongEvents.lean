@@ -227,11 +227,4 @@ theorem literal_endpoint_left (g : Pair LongGeometry) (x : Pair (BitVec LW)) (e 
   simp only [List.mem_singleton] at E
   simpa [E,link,L] using side
 
-#print axioms one_center_claim
-#print axioms actualOffers_claims
-#print axioms at_most_one_literal_publication
-#print axioms literal_endpoint_left
-
-#print axioms selected_pub_iff
-#print axioms literal_event_iff
 end L4.BStarLongEvents

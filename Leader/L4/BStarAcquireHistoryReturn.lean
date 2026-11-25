@@ -125,7 +125,6 @@ theorem arrived_payload {base x : XX} {hh : ∃ i, oldH6 B base i=true}
       (x e,x (rightNeighbor e)) (L 0) (safe_nonright _ _ _ (by decide)) route).trans (old.trans D0))
   · exact (BStarResetIdleRing.idle_off_pair hp x e (addr 0) E R).trans D0
 
-
 open scoped Classical
 
 theorem reverse_or_hold {base x : XX} {hh : ∃ i,oldH6 B base i=true}
@@ -212,7 +211,6 @@ theorem reverse_or_hold {base x : XX} {hh : ∃ i,oldH6 B base i=true}
       · exact inside (R (addr (k+1)).2) (Prod.ext rr rfl)
       · exact (BStarResetIdleRing.idle_off_pair hp x e (addr (k+1)) l rr).trans D
 
-
 open BStarOwnerLaunchOrigin BStarGeneratedOwner BStarResetSchedule
 
 private theorem seen_advance {len : Nat} {x : XX} {e : Fin n} {addr : Nat → Pos n}
@@ -277,10 +275,6 @@ theorem busy_return_payload {base x : XX} {hh : ∃ i,oldH6 B base i=true}
           · have h := uniq k (k+1) post good.1 rr
             omega
         exact ih (k+1) idx rr
-
-#print axioms arrived_payload
-#print axioms reverse_or_hold
-#print axioms busy_return_payload
 
 theorem busy_end {base x : XX} {addr : Nat → Pos n} {len op : Nat}
     {w : List (Fin n)} {z d : Cursor}
@@ -375,5 +369,4 @@ theorem found_install {base x : XX} {hh : ∃ i,oldH6 B base i=true}
   rw [BStarResetSchedule.run_append, BStarResetSchedule.run_append next x (w++[e]) ret]
   exact readout
 
-#print axioms found_install
 end L4.BStarAcquireHistoryReturn

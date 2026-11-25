@@ -417,6 +417,3 @@ theorem concrete_attempt {p c n : Nat} (hn : 4≤n) (v : Fin n) (a b : Nat)
 
 end L4.TripleLongRestart
 
-#print axioms L4.TripleLongRestart.score_drift
-#print axioms L4.TripleLongRestart.physical_failure_bound
-#print axioms L4.TripleLongRestart.concrete_attempt

@@ -50,7 +50,6 @@ theorem upper_spacing_after_cover (d : Sheet) (N : 1<n) (Spos : 0<s)
   have ⟨R,E⟩ := protected_cover_run d N Spos hh C F Width bounds Lo Room x w A
   exact ⟨R,E,upper_at_cover d N hh C F bounds Lo Room _ R⟩
 
-
 theorem h5_at_report1_cover (N : 1<n) (hh : ∃ i,h i=true)
     (C : GapInput h) (F : Fibre (h:=h) .first Q)
     (bounds : GapBounds h L U) (Lo : 1≤L) (Room : s*U<n)
@@ -69,8 +68,4 @@ theorem h6_at_report2_cover (N : 1<n) (hh : ∃ i,h i=true)
       GapBounds (oldH6 (rows s) x) (L*(rho+1)) (U*(2*rho+1)) :=
   upper_at_cover .second N hh C F bounds Lo Room x A
 
-#print axioms h5_at_report1_cover
-#print axioms h6_at_report2_cover
-#print axioms upper_at_cover
-#print axioms upper_spacing_after_cover
 end L4.ReportUpperFromCover

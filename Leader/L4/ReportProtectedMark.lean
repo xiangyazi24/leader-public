@@ -86,7 +86,6 @@ theorem flags_now (d : Sheet) (N : 1<n)
     rw [HR]
     cases selectedA d (rawRun b v) (nextAt C.root (C.a+C.b)) <;> rfl
 
-
 theorem held_sides_now (d : Sheet) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
     (Dgt : 0<(params d s).digits) (r : Owner h)
@@ -169,7 +168,6 @@ theorem publication_now (d : Sheet) (N : 1<n) (Spos : 0<s)
     rw [NR',←FR]
     exact VR
 
-
 private theorem update_clip (r v : Nat) (a : Bool) :
     ReportDigitArithmetic.updateDist r a v=updateDistance r a (min r v) := by
   cases a with
@@ -246,7 +244,6 @@ theorem raw_mark_semantics_of_geometry (d : Sheet) (N : 1<n) (Spos : 0<s)
     exact ⟨AB.1,AB.2,fun dir=>congrArg (min p.radius)
       (value_frame_without_ingress d N hh G x e i.val Mask i.property Gap Fits' Safe K dir)⟩
 
-
 open ShortHopSpacing ReportRootBall SelectedRingGeometry BStarH6Ordinal WidthOrdinalSpan
 
 theorem concrete_neighbors {L U : Nat} (Bounds : GapBounds h L U)
@@ -297,7 +294,6 @@ theorem raw_mark_semantics (d : Sheet) (N : 1<n) (Spos : 0<s)
   raw_mark_semantics_of_geometry d N Spos hh G F Width (width_supplies_gap d G Width)
     _ (concrete_neighbors Bounds hh G) x A e ball
 
-
 /-- After protection is reached, it is closed on the original raw
 schedule and the upper-header mask is permanently unchanged. -/
 theorem protected_cover_run (d : Sheet) (N : 1<n) (Spos : 0<s)
@@ -325,12 +321,4 @@ theorem protected_cover_run (d : Sheet) (N : 1<n) (Spos : 0<s)
     (fun y e i H=>raw_mark_semantics d N Spos hh G F Width Bounds y H e
       (ball Bounds hh (params d s).radius i)) x w A
 
-#print axioms protected_cover_run
-#print axioms concrete_neighbors
-#print axioms width_supplies_gap
-#print axioms raw_mark_semantics
-#print axioms raw_mark_semantics_of_geometry
-#print axioms publication_now
-#print axioms held_sides_now
-#print axioms flags_now
 end L4.ReportProtectedMark

@@ -160,10 +160,4 @@ theorem returned {base x y out : X} {u z dest : Pos n} {w ps vs rev}
   subst pay
   exact ⟨back.reply old,valid⟩
 
-#print axioms returned
-#print axioms completes_at
-#print axioms sound
-#print axioms route
-#print axioms sample_count
-#print axioms capture_once
 end L4.BStarAcquireForwardTrace

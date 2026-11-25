@@ -95,6 +95,3 @@ theorem public_mean_to_product {α : Type} {p c n : Nat} (next : α → Fin n �
 
 end L4.RootedProduct
 
-#print axioms L4.RootedProduct.safe_of_proj
-#print axioms L4.RootedProduct.iidHitCost_eq_of_proj
-#print axioms L4.RootedProduct.public_mean_to_product

@@ -1084,16 +1084,4 @@ theorem win_driver_launch_mean (d : Sheet) (C : Fin 5→Chart h) (target : Fin 5
 -- The result is the exact repository's IIDExpectedHittingTimeAtMost,
 -- not a new probabilistic axiom.
 
-#print axioms early_step
-#print axioms winning_admit_consume
-#print axioms base_packet_step
-#print axioms base_packet_word
-#print axioms win_driver_word
-#print axioms win_mapped_projection
-#print axioms win_mapped_physical_prefix
-#print axioms mapped_no_retry
-#print axioms pre_issue_rise
-#print axioms win_driver_issue_mean
-#print axioms win_driver_launch_mean
-
 end L4.ReportFastEarlyPacket

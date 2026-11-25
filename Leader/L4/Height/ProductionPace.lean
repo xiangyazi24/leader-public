@@ -81,8 +81,6 @@ theorem five_client_overflow {base ini : X} {hh : ∃ i,oldH6 B base i=true}
   · intro w
     exact AdmissionMask.decisions_le_issues _ hh gate issue live pick (out w)
 
-#print axioms owner_excess_mass
-#print axioms five_client_overflow
 end
 end L4.Height.ProductionPace
 

@@ -67,9 +67,4 @@ theorem mapWord_agrees
     exact congrArg (List.cons (mergeSide (ban y) e))
       (IH _ (localQ y _ I (allowed_after_merge (ban y) (pair y I) e)))
 
-#print axioms allowed_after_merge
-#print axioms agree_on_driver
-#print axioms raw_all_mark
-#print axioms mapWord_agrees
-
 end L4.ReportFastRawRelift

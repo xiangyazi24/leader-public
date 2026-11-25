@@ -267,9 +267,4 @@ theorem current_at_both_cut_endpoints (d : Sheet) (N : 1<n) (hh : ∃ i,h i=true
   rw [ShortOwnerEpochJS.raw_append,←raw]
   exact current_of_exact_cover d N hh F Epoch law sites _ v V C M
 
-#print axioms current_at_both_cut_endpoints
-#print axioms locate_after_first_cover
-#print axioms locate_owner
-#print axioms current_of_exact_cover
-#print axioms first_hit_genuine
 end L4.ReportReceiptProvenance

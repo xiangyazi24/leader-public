@@ -96,8 +96,4 @@ theorem child_moment {n : Nat}
   rw [E]
   exact Nat.le_refl _
 
-#print axioms child_moment
-
-#print axioms firstTime_threeReady
-#print axioms atStop_threeReady
 end L4.BStarRawStopMax

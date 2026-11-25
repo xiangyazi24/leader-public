@@ -84,9 +84,4 @@ theorem dispatch {op : Nat} (lo : 13≤op) (hi : op<408) :
     | none => simp [D] at K
     | some f => exact ⟨i,c,f,N,C,D⟩
 
-#print axioms counts
-#print axioms loads
-#print axioms constants
-#print axioms bool_heads
-#print axioms dispatch
 end L4.BStarNativeHeadRoster

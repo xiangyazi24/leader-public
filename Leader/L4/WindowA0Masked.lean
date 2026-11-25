@@ -79,9 +79,6 @@ theorem paid_i_mask {p c n : Nat} (x : Config p c n) (base : Fin n)
     simp only [setStock,if_neg hl,stock]
     rw [if_neg (fun h => H ⟨h.1,h.2.1⟩),if_neg (fun h => H' ⟨h.1,h.2.1⟩)]
 
-#print axioms paid_j_mask
-#print axioms paid_i_mask
-
 /-- An actual internal selected edge has the full masked exclusion
 effect. An existing extra is at the door: if the selected responder
 is that socket, its premark occupancy blocks the literal move. -/
@@ -159,8 +156,6 @@ theorem interior_mask {p c n : Nat} (hn : 4≤n) (x : Config p c n) (base : Fin 
           simp [step,eN,er,rN]
     · rfl
 
-#print axioms interior_mask
-
 /-- Full mask frame for nonmoving boundary and exterior services. The
 touch tests can be discharged by comparing lifted coordinates with
 the observed physical edge. -/
@@ -196,5 +191,4 @@ theorem boundary_or_exterior_mask {p c n : Nat} (hn : 4≤n)
       · simp [step,hL,hR]
   · rfl
 
-#print axioms boundary_or_exterior_mask
 end L4.WindowA0Masked

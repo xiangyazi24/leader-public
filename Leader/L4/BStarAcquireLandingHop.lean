@@ -72,7 +72,6 @@ private theorem no_observation (g : Pair LongGeometry) (old : ReadK) (l : List K
   obtain ⟨q,hq⟩ := h
   exact no_observe_written g old l a t ⟨(a,q),hq,rfl⟩ hw
 
-
 /-- Both endpoints of an arbiter-selected forward hop are installed
 after normalization; neither can be overwritten by the old observer. -/
 theorem full_hop {p : Payload} (g : Pair LongGeometry) (x : Pair (BitVec LW))
@@ -135,8 +134,6 @@ theorem full_hop {p : Payload} (g : Pair LongGeometry) (x : Pair (BitVec LW))
     · simp [putRaw]
   rw [K,decode_encode]
 
-#print axioms full_hop
-
 /-- Exact full literal landing at any selected destination.
 Normalization precedes the selected write; another command cannot
 write this occurrence, and the old-token observer is suppressed. -/
@@ -147,8 +144,6 @@ theorem full_landing {p : Payload} (g : Pair LongGeometry) (x : Pair (BitVec LW)
     (hd : c.destination=some a) :
     readK (patchPair (longWork g x) x) a=.forward p :=
   full_hop g x c a hp hact hd a (.forward p) (.inr ⟨rfl,rfl⟩)
-
-#print axioms full_landing
 
 open BStarLongCommandData BStarLongLiteral
 
@@ -260,8 +255,6 @@ theorem checked_acquire_lands (g : Pair LongGeometry) (x : Pair (BitVec LW))
     ((congrArg BitVec.toNat (BStarAcquireHop.argUpdate_fields g x _ c p).2.1).trans hp.2.1)
     H hd
 
-#print axioms checked_acquire_lands
-
 /-- The actual old token is classified as an ACQUIRE advance before grant arbitration. -/
 theorem gated_acquire_advance (g : Pair LongGeometry) (x : Pair (BitVec LW))
     (c : CommandClaim) (p : Payload) (hc : c∈orderedCommands g) (hnd : c.kind≠.door)
@@ -304,7 +297,4 @@ theorem raw_acquire_departs (g : Pair LongGeometry) (x : Pair (BitVec LW))
     ((congrArg BitVec.toNat (BStarAcquireHop.argUpdate_fields g x _ c p).2.1).trans hp.2.1)
     H hd c.source .trail (.inl ⟨rfl,rfl,hne⟩)
 
-#print axioms gated_acquire_advance
-#print axioms raw_acquire_departs
-#print axioms raw_acquire_lands
 end L4.BStarAcquireLandingHop

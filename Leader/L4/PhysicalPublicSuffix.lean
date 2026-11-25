@@ -53,7 +53,6 @@ theorem projected_mean {coefficient : Nat} (rooted : RootedPublicMean coefficien
   rw [← same_numerator]
   exact h t
 
-
 theorem packed_suffix {coefficient : Nat} (rooted : RootedPublicMean coefficient) {s n : Nat} (hn : 4 ≤ n) (x : Raw s n) (hx : Marked x) :
     Height.IIDExpectedHittingTimeAtMost (rawNext s) PackedElected x (coefficient * n^2) :=
   projected_mean rooted (rawNext s) pubConfig packedLeader Marked
@@ -76,7 +75,6 @@ theorem bounded_suffix {coefficient : Nat} (rooted : RootedPublicMean coefficien
     (fun _ _ _ => trivial) (fun y e _ => BoundedPublicCodec.bounded_projects y e) (fun _ _ _ => rfl)
     hp hn x trivial (RootedAssembly.rootNonempty_of_not_dvd (boundedProject x) hn hnd)
 
-
 theorem public_suffixes_of_mean {coefficient : Nat} (rooted : RootedPublicMean coefficient) :
     ∃ cpub : Nat,
       (∀ {s n : Nat}, 4 ≤ n → ∀ x : Raw s n, Marked x →
@@ -84,11 +82,5 @@ theorem public_suffixes_of_mean {coefficient : Nat} (rooted : RootedPublicMean c
       (∀ {n : Nat}, 4 ≤ n → n ≤ boundedN → ∀ x : BoundedRaw n,
         Height.IIDExpectedHittingTimeAtMost boundedNext BoundedElected x (cpub*n^2)) :=
   ⟨coefficient, packed_suffix rooted, bounded_suffix rooted⟩
-
-#print axioms bounded_projects
-#print axioms projected_mean
-#print axioms packed_suffix
-#print axioms bounded_suffix
-#print axioms public_suffixes_of_mean
 
 end L4.PhysicalPublic

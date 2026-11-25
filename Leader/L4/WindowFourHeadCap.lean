@@ -74,7 +74,4 @@ theorem four_head_payments {p c n : Nat} {x : Config p c n} (hp : 2≤p) (hc : 1
   have R := retained_progress_cap hp hc hn g a b k ha hb hk q w hw hv hq hg hJ
   omega
 
-#print axioms one_step
-#print axioms payments
-#print axioms four_head_payments
 end L4.WindowFourHeadCap

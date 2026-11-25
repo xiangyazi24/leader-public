@@ -133,7 +133,4 @@ theorem top_door_commute {Q d : Nat} (hd : 0<d) (s : Line Q d) :
     simp [hne]
   · by_cases hb : j=doorSlot d <;> simp [ht,hb,hne']
 
-#print axioms multiplePassCountdown
-#print axioms top_door_commute
-
 end L4.ResidualSweep

@@ -30,6 +30,4 @@ theorem digit_readback (g : LongGeometry) (x : BitVec LW) (q : Fin 3) (f : Fin 9
   simp only [physicalDigit,read]
   exact num_write_of_lt (load_word_slots q f) v.isLt _
 
-#print axioms digit_step
-#print axioms digit_readback
 end L4.BStarNativeLoadWord

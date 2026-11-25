@@ -259,9 +259,4 @@ theorem joined_ack12 (x : Pair (LargeSite (production k₁ k₂ t₂ J₁ J₂ r
   refine ⟨E,joined_ack12_scalar hp x f hdr valid phase pc R F O,?_⟩
   exact joined_normal hp x hdr valid N
 
-#print axioms joined_ack12
-#print axioms roster_from_receipt
-#print axioms retain_blocks
-#print axioms joined_center_load
-#print axioms roster_at_cut
 end L4.BStarCapturedCompilerInputs

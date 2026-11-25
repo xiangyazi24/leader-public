@@ -177,6 +177,4 @@ theorem arbitrary_clock_mean {n J : Nat} (P : 0<J) (a b : Fin n) (D : a≠b) (x 
   cases h <;> cases ph <;> simp [potential] <;> have := F 0 <;> have := F (effective J k) <;>
     have := F (effective J k+1) <;> omega
 
-#print axioms drift_two
-#print axioms arbitrary_clock_mean
 end L4.ReportPulseWait

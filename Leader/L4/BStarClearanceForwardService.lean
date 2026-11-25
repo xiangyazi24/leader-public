@@ -142,8 +142,6 @@ theorem classify_at {base x : X} {hh : ∃ i,oldH6 B base i=true}
       exact occ
     exact .inr (.inr ⟨i,s,active₀,dOwn,packet⟩)
 
-#print axioms classify_at
-
 open BStarClearanceIndexedWait BStarAcquireLiteralChain
 open BStarClearanceAggregate
 
@@ -204,8 +202,6 @@ theorem nominate {base x : X} {hh : ∃ i,oldH6 B base i=true}
       · exact ⟨e,.inl W⟩
       · exact ⟨e,.inr (.inl P)⟩
 
-#print axioms nominate
-
 /-- In the exact held-source domain, the source-boundary alternative
 cannot occur, so an old forward always gets a strict service mark. -/
 theorem nominate_held {base x : X} {hh : ∃ i,oldH6 B base i=true}
@@ -229,5 +225,4 @@ theorem nominate_held {base x : X} {hh : ∃ i,oldH6 B base i=true}
   refine ⟨e,?_⟩
   exact W.resolve_left (fun N => N (BStarClearanceSource.held_before hp x _ e held))
 
-#print axioms nominate_held
 end L4.BStarClearanceForwardService

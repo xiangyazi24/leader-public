@@ -80,8 +80,4 @@ theorem seal_value {s n : Nat} (x : Raw s n) (e : Fin n) (head : header x e=true
   exact A.trans (seal_value_pair (header x (rightNeighbor e)) (x e).mis1
     (x (rightNeighbor e)).mis1 t Tg tag live op)
 
-#print axioms stage_out
-#print axioms seal_out
-#print axioms stage_bank
-#print axioms seal_value
 end L4.ShortStageSealRowsRaw

@@ -80,6 +80,4 @@ theorem stopped_service_moment {n : Nat} (stop : List (Fin n)→Bool)
     simp only [wordSum,empty,Nat.add_zero,Nat.pow_zero,Nat.mul_one]
     exact Nat.le_mul_of_pos_left _ (by decide)
 
-#print axioms compare_at_stop
-#print axioms stopped_service_moment
 end L4.BStarRawStopMoment

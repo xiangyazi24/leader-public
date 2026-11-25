@@ -210,5 +210,4 @@ theorem actual_initialized_hit_add_consume_word {base x : X} {hh : ∃ i,oldH6 B
   rw [←replay2,←replay] at out
   exact ⟨val (readWord fresh i hiSlot),out.2.choose,out.1,outputWord,out.2.choose_spec⟩
 
-#print axioms actual_initialized_hit_add_consume_word
 end L4.BStarNativeAddConsumeWord

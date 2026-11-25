@@ -223,7 +223,4 @@ theorem chart_no_hold {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · change (readLane (Sheet.index sh) (x (rightNeighbor e)).long).mobile=.empty
     simpa only [Z,site] using M
 
-#print axioms chart_nominated
-#print axioms chart_no_hold
-#print axioms all_sheets
 end L4.BStarFenceCoverage

@@ -229,12 +229,6 @@ theorem receipt_history (d : Sheet) (C : Chart h) (N : 1<n)
       FullParked d C (rawRun x.val (pre++u)) :=
   ReportOwnerReceiptClock.done_has_genuine_cut d C (cached_fibre d N hh Q F) N x w H
 
-#print axioms inv_closed
-#print axioms consume_crossing
-#print axioms consume_at_old_reply
-#print axioms crossing_parked
-#print axioms receipt_history
-
 theorem fresh_reset_mean_general (d : Sheet) (C : Chart h) (N : 1<n)
     (S : 0<s) (hh : ∃ i,h i=true) (G : GapInput h)
     (F : Fibre (h:=h) d Q) (x : {x : Raw s n // Cached d hh Q x}) :
@@ -242,8 +236,6 @@ theorem fresh_reset_mean_general (d : Sheet) (C : Chart h) (N : 1<n)
       ReportOwnerReceiptClock.done (x,none)
       (n*ReportResetEventClock.resetCoefficient (3*G.B) (params d s).digits) :=
   ReportPrelaunchDoorReady.receipt_mean d C N S hh G Q F x
-
-#print axioms fresh_reset_mean_general
 
 inductive Cursor where
   | issue
@@ -470,9 +462,6 @@ private theorem wait_pc (d : Sheet) (C : Chart h) (N : 1<n)
   · have W := B.1
     omega
 
-#print axioms serialDebt_on
-#print axioms consume_opcode
-
 private theorem nonfront_weight (d : Sheet) (C : Chart h)
     (x y : Raw s n) (i : Fin C.L)
     (T : (tok d C y i.val).tag=(tok d C x i.val).tag)
@@ -618,9 +607,6 @@ private theorem next_consume_debt (d : Sheet) (C : Chart h) (x y : Raw s n)
   rw [E,Nat.add_mul,Nat.one_mul]
   omega
 
-#print axioms same_cursor_remain
-#print axioms next_consume_debt
-
 theorem pre_step (d : Sheet) (C : Chart h) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
     (digit : 0<(params d s).digits) (x : Raw s n)
@@ -719,9 +705,6 @@ theorem serial_step_nonlaunch (d : Sheet) (C : Chart h) (N : 1<n)
   obtain ⟨m',B,L,R⟩ := pre_step d C N hh G F digit x X S m A e NL
   rw [serialDebt_on d C x m A,serialDebt_on d C (rawNext s x e) m' B]
   exact ⟨L,R⟩
-
-#print axioms pre_step
-#print axioms serial_step_nonlaunch
 
 noncomputable def freshDebt (d : Sheet) (C : Chart h)
     (hh : ∃ i,h i=true) (z : State d hh Q) : Nat :=
@@ -896,12 +879,6 @@ theorem strong_from_bank (d : Sheet) (C : Chart h) (N : 1<n)
   rw [E]
   exact (strong_run d C N hh G F digit _ Y S v).2.1
 
-#print axioms freshDebt_idle
-#print axioms freshDebt_nominate
-#print axioms fresh_reset_mean_serial
-#print axioms fresh_reset_mean_fast
-#print axioms strong_from_bank
-
 theorem crossing_debt (d : Sheet) (C : Chart h) (N : 1<n)
     (hh : ∃ i,h i=true) (F : Fibre (h:=h) d Q)
     (z : State d hh Q) (e : Fin n)
@@ -1021,9 +998,6 @@ theorem target_cut_handoff (d : Sheet) (C : Chart h) (N : 1<n)
   rw [A]
   exact final_handoff_rank R
 
-#print axioms crossing_debt
-#print axioms service_fresh_reset_bound
-#print axioms target_cut_handoff
 end L4.ReportFastFreshReset
 
 namespace L4.ReportFastFreshReset
@@ -1128,9 +1102,6 @@ private theorem plateau_extra (d : Sheet) (C : Chart h) (x y : Raw s n)
   rw [PC] at E
   simp only [remain] at E
   omega
-
-#print axioms pre_plateau_cursor
-#print axioms plateau_extra
 
 private theorem incoming_front_norm_all (d : Sheet) (C : Chart h) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
@@ -1249,9 +1220,6 @@ theorem frontLabel_plateau (d : Sheet) (C : Chart h) (N : 1<n)
     have H' := GF.trans H
     change ReportPrelaunchK1.frontLabel d C y k=ReportPrelaunchK1.frontLabel d C x k
     simp [ReportPrelaunchK1.frontLabel,H,H']
-
-#print axioms gate_plateau_token
-#print axioms frontLabel_plateau
 
 noncomputable def cursorLabel (d : Sheet) (C : Chart h) (x : Raw s n) : Cursor→Fin n
   | .issue => door C
@@ -1408,10 +1376,6 @@ theorem done_sticky (d : Sheet) (C : Chart h) (N : 1<n)
   change z.2=some .done at H
   exact active_stage d C N hh F z e .done H
 
-#print axioms nom_exists
-#print axioms nom_pays
-#print axioms nom_plateau
-#print axioms done_sticky
 end L4.ReportFastFreshReset
 
 namespace L4.ReportFastFreshReset
@@ -1764,8 +1728,4 @@ theorem preACQ_pose_at_receipt (d : Sheet) (C : Chart h) (N : 1<n)
   rw [PC]
   exact ⟨by decide,.inl (by unfold acqOp; omega)⟩
 
-#print axioms preACQ_crossing
-#print axioms preACQ_nom_pays
-#print axioms preACQ_nom_plateau
-#print axioms preACQ_pose_at_receipt
 end L4.ReportFastFreshReset

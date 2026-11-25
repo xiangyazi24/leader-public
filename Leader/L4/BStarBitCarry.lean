@@ -59,7 +59,6 @@ theorem arrive_parity (g : LongGeometry) (j : Fin 11) (p q : Payload)
     simp [Q,G] at A
   · exact Token.forward.inj E
 
-
 private theorem grant_back (g : Pair LongGeometry) (x : Pair (BitVec LW))
     (L : List CmdOffer) (o : CmdOffer) (C : CommandClaim) (p : Payload)
     (E : BStarLongGrant.update g x L o=(C,.advance p)) :
@@ -107,7 +106,6 @@ private theorem checked_back (g : Pair LongGeometry) (x : Pair (BitVec LW))
   · cases E; exact ⟨_,rfl,fun F => ⟨F,rfl⟩⟩
   · contradiction
   · cases E; exact ⟨_,rfl,fun F => False.elim (by cases F.1)⟩
-
 
 private theorem classify_back (g : Pair LongGeometry) (x : Pair (BitVec LW))
     (c : CommandClaim) (p : Payload) (G : gate bitOp c.source.occurrence (geometry g c.source.side)=false) (E : classifyOld g x c=.advance p) :
@@ -165,7 +163,6 @@ theorem offer_parity (g : Pair LongGeometry) (x : Pair (BitVec LW))
   subst q
   exact bound_parity _ _ _ _ Q F
 
-#print axioms offer_parity
 open BStarLongRouting
 
 open BStarForwardProvenance (Back)
@@ -252,7 +249,6 @@ theorem joined_hop_parity (k₁ k₂ t₂ J₁ J₂ r n p c₁ : Nat) (hp : 0<p)
   rw [heq] at hi
   subst offer
   exact offer_parity g raw C after sel healthy srcGate
-
 
 open BStarResetIdleRing
 
@@ -368,10 +364,6 @@ theorem joined_idle_parity (k₁ k₂ t₂ J₁ J₂ r n p c₁ : Nat) (hp : 0<p
   · rw [raw_transit _ _ _ Z] at F
     exact T F H
 
-
-
-
-
 theorem joined_slot_parity (k₁ k₂ t₂ J₁ J₂ r tune p c₁ : Nat) (hp : 0<p)
     (x : Pair (LargeSite (production k₁ k₂ t₂ J₁ J₂ r tune p c₁)))
     (a : AtK) (f : Payload) :
@@ -470,9 +462,6 @@ theorem joined_slot_parity (k₁ k₂ t₂ J₁ J₂ r tune p c₁ : Nat) (hp : 
           obtain ⟨t,T,_,P⟩ := joined_hop_parity k₁ k₂ t₂ J₁ J₂ r tune p c₁ hp x C d q f E act sg dg F hf
           exact (Token.forward.inj (H.1.symm.trans T)) ▸ P
 
-
-
-
 open BStarH6WordChart BStarAcquireVisitOrder BStarAcquireForwardTrace BStarAcquireLiteralChain
 open BStarLongFixedRouting BStarResetChartTouch BStarResetMarkAdapter BStarResetRailRing
 open BStarSeparatingRail BStarSeparatorControl BStarResetSchedule BStarGeneratedOwner
@@ -550,8 +539,6 @@ theorem ring_parity {base x : X} {hh : ∃ i,oldH6 B base i=true}
     · have M := (idle_off_pair hp x e (addr i) l rr).symm.trans F
       exact ⟨pay,unique i hi pay M ▸ M,H,rfl⟩
 
-
-
 /-- The healthy BIT payload carries its low bit backwards through every
 mark of the exact same outward interval. Both genuine hops and stutters
 are covered. Indices at or before the possibly mutating gate are excluded. -/
@@ -591,5 +578,4 @@ theorem busy_parity {base x : X} {hh : ∃ i,oldH6 B base i=true}
       (Gate [] (e::w) rfl k' K' K'b)
     exact ⟨p,R,hp',L'.trans O⟩
 
-#print axioms busy_parity
 end L4.BStarBitCarry

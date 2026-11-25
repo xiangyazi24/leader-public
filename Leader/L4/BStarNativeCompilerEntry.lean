@@ -81,7 +81,6 @@ theorem literal_input (x : BitVec LW) (b : Fin 3) (f : Fin 9)
   · change ((readLane 3 x).retained.nibble f).map BitVec.toNat=_
     rw [R]
 
-
 /-- The start of the actual 395-receipt compiler on the successful
 original attempt, including its empty scalar representation. The
 first real numeric sweep is opcode 13, not opcode 12. -/
@@ -118,8 +117,4 @@ theorem original_entry {base x : X} {hh : ∃ i,oldH6 B base i=true}
   refine ⟨pre,compiler,tail,ack,W,?_⟩
   exact ⟨H,snap,zero,Hd,Bk,Rep,G,P,N⟩
 
-#print axioms physical_ack12
-#print axioms packed_nibble
-#print axioms literal_input
-#print axioms original_entry
 end L4.BStarNativeCompilerEntry

@@ -137,7 +137,4 @@ theorem active_from_clean_issue3 {s n : Nat} {h : Fin n → Bool} (C : Chart h)
     (fun j=>(H1.raw_h1_selected_frozen N x d j H.1).trans (heads j))
     (forward_from_actual_issue3 C x heads I) B
 
-#print axioms read_flight_active_step
-#print axioms active_through_run
-#print axioms active_from_clean_issue3
 end L4.ShortReadFlight

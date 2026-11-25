@@ -201,6 +201,4 @@ theorem all_expected_quadratic (hh : ∃ i,h i=true) (F : Frame step Q h cap off
     exact Nat.mul_le_mul_right _ (by omega)
   exact fun t=>Nat.le_trans (all_expected_sweep hh F x A t) (Nat.mul_le_mul_right _ E)
 
-#print axioms all_expected_sweep
-#print axioms all_expected_quadratic
 end L4.ReportCacheSweep

@@ -146,7 +146,4 @@ theorem ordinary_mean {p c n : Nat} {x : Config p c n} {g : List (Fin n)}
   rw [cost_eq hp hc hn _ _ M]
   exact B t
 
-#print axioms next_physical
-#print axioms ordinary_mean
-
 end L4.WindowOrdinarySlot

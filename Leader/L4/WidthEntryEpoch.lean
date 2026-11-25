@@ -1350,20 +1350,5 @@ theorem clean_receipt_word (P : WidthLower s n) (S : Sector P.h d)
   funext i
   simpa [spent,i.isLt] using H.data i
 
-#print axioms arbitrary_issue_mean
-#print axioms dirty_step
-#print axioms clean_step
-#print axioms begin_prefix_step
-#print axioms choose_step
-#print axioms trace_facts
-#print axioms trace_last_consume
-#print axioms command_mean
-#print axioms clean_consume_descent
-#print axioms first_begin_from_issue
-#print axioms first_begin_facts
-#print axioms age_all_marks
-#print axioms clean_receipt_word
-
 end L4.WidthEpochEntry
-
 

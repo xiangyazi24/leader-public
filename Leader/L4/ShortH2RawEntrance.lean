@@ -25,6 +25,4 @@ theorem permanent_h2_closed {s n : Nat} (N : 21<n) (x : Raw s n)
   obtain ⟨z,Z,H⟩ := P
   exact ⟨z,Z,(permanent_frozen N z Z x H w).1⟩
 
-#print axioms permanent_h2_from_raw
-#print axioms permanent_h2_closed
 end L4.ShortH2RawEntrance

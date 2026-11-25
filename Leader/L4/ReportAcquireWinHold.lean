@@ -102,8 +102,4 @@ theorem successful_acq_grants_through_consume (d : Sheet) (C : Chart h)
     ((cached_fibre d N hh Q F).mask _ Y) i I H
     (compatible_run d N x0 a Compat w) B⟩
 
-#print axioms acq_mark_holds_grant
-#print axioms compatible_run
-#print axioms acq_grant_from_prefix
-#print axioms successful_acq_grants_through_consume
 end L4.ReportAcquireWinHold

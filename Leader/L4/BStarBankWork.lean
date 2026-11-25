@@ -138,7 +138,6 @@ theorem accept_frame (x : BitVec LW) (op : Nat) (p : Payload) :
       (assign _ _ (by decide))) (assign _ _ (by decide)))) (schedule_frame _)
   · exact repair_frame
 
-
 open BStarLongDoor in
 theorem door_frame (x : BitVec LW) (t : Token) (q : Patch LW)
     (h : oldDoor x t=.write q) : Frame q := by
@@ -151,7 +150,4 @@ theorem door_frame (x : BitVec LW) (t : Token) (q : Patch LW)
     | (injection h with e; rw [←e]; exact reply_frame _ _ _)
     | split at h
 
-#print axioms door_frame
-#print axioms accept_frame
-#print axioms numeric_visit
 end L4.BStarBankWork

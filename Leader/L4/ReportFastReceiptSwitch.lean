@@ -133,7 +133,4 @@ theorem word_switch
   rw [mappedWord_policy_prefix d B _ (fun _ _ j=>decide (j=2))
     (t+u.length) _ w (fun a y E _=>winAfter_after _ a y E)]
 
-#print axioms word_switch
-#print axioms winAfter_rival
-#print axioms exit_switch
 end L4.ReportFastReceiptSwitch

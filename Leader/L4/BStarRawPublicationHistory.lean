@@ -149,10 +149,4 @@ theorem publishes_first_split (x : X) (i : Fin n) (w : List (Fin n))
         simp only [List.length_cons]
         omega
 
-#print axioms publishes_first_split
-
-#print axioms mem_publicationSites_iff
-#print axioms publishes_append
-#print axioms take_publishes_iff_wait_le
-
 end L4.BStarRawPublicationHistory

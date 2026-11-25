@@ -95,9 +95,4 @@ theorem admit_exit_clear_issue {s n : Nat} {h : Fin n → Bool} (C : Chart h)
   apply clear_issue_of_pc C y _ (by cases won <;> decide) Clear
   cases won <;> exact PC
 
-#print axioms pre_read_no_ask
-#print axioms no_ask_keeps_grants_absent
-#print axioms no_ask_tape_keeps_grants_absent
-#print axioms clear_issue_of_pc
-#print axioms admit_exit_clear_issue
 end L4.ShortPreReadGrants

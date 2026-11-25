@@ -69,5 +69,4 @@ theorem all_behind_unvisited {base : X} {hh : ∃ i,oldH6 B base i=true}
       subst k
       exact ⟨q+1,by omega,by omega,(List.getElem_eq_getD _).symm.trans G⟩
 
-#print axioms all_behind_unvisited
 end L4.BStarCopyRightK2

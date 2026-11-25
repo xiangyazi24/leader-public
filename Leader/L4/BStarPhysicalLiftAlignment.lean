@@ -258,9 +258,4 @@ theorem frontier_spec (G : Nat) :
   have div := Nat.mod_add_div f 32
   omega
 
-#print axioms count_append_mark
-#print axioms replay_alignment
-#print axioms frontier_spec
-#print axioms good_of_adjacent
-#print axioms step_alignment
 end L4.BStarPhysicalLiftAlignment

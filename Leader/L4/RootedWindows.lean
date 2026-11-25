@@ -60,13 +60,13 @@ theorem marginals_of_short_window (h : RootedShortWindowReward) : RootedWindowMa
     intro i hi
     cases hi
 
-theorem row175_rooted_of_minimal_inputs (boundary : TripleBoundary.MissingBoundary)
+theorem uniformEdge_rooted_of_minimal_inputs (boundary : TripleBoundary.MissingBoundary)
     (window : RootedShortWindowReward) : RootedStatement :=
-  RootedRetirement.row175_rooted_of_boundary boundary (marginals_of_short_window window)
+  RootedRetirement.uniformEdge_rooted_of_boundary boundary (marginals_of_short_window window)
 
-theorem row175Statement_of_minimal_rooted_inputs (boundary : TripleBoundary.MissingBoundary)
-    (window : RootedShortWindowReward) : row175Statement :=
-  headline_of_rooted (row175_rooted_of_minimal_inputs boundary window)
+theorem uniformEdgeStatement_of_minimal_rooted_inputs (boundary : TripleBoundary.MissingBoundary)
+    (window : RootedShortWindowReward) : uniformEdgeStatement :=
+  headline_of_rooted (uniformEdge_rooted_of_minimal_inputs boundary window)
 
 /-- M3: after the closed H5 cut, the public bound transfers at
 the same constant and on the same word, with no extra scheduler layer. -/
@@ -81,7 +81,7 @@ theorem rooted_public_product (boundary : TripleBoundary.MissingBoundary)
       (∀ x j, D x → display x j=(proj x j).leader) →
       ∀ x, D x → RootedEntrance.RootNonempty (proj x) →
       IIDExpectedHittingTimeAtMost next (RootedProduct.ProductSafe next display) x (C*n^2) := by
-  obtain ⟨C,hpublic⟩ := row175_rooted_of_minimal_inputs boundary window c hc
+  obtain ⟨C,hpublic⟩ := uniformEdge_rooted_of_minimal_inputs boundary window c hc
   refine ⟨C,?_⟩
   intro α p n next proj display D hp hn hD hComm hBits x hx hR
   exact RootedProduct.public_mean_to_product next proj display D hD hComm hBits x hx _
@@ -89,8 +89,3 @@ theorem rooted_public_product (boundary : TripleBoundary.MissingBoundary)
 
 end L4.RootedWindows
 
-#print axioms L4.RootedWindows.marginals_of_short_window
-#print axioms L4.RootedWindows.row175_rooted_of_minimal_inputs
-#print axioms L4.RootedWindows.row175Statement_of_minimal_rooted_inputs
-
-#print axioms L4.RootedWindows.rooted_public_product

@@ -188,6 +188,4 @@ theorem bit_service_word {base old : X} {hh : ∃ i,oldH6 B base i=true}
       term (fun y H=>T y (fiber y H)) d need desc sub M (by omega) (by omega)
       (fun k h y H=>by simpa only [Nat.zero_add] using N₀ k h y H) N₁ N₂
 
-#print axioms launched_bit_acks_of_sublist
-#print axioms bit_service_word
 end L4.BStarBitFullService

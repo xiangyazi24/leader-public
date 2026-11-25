@@ -173,8 +173,5 @@ theorem observer_ghost {S : Type} (hn : 4≤n) (m : Machine X r)
   · intro z miss
     exact (comparison (by omega) m G _ _ z.property (live z miss)).2
 
-#print axioms certified_step
-#print axioms comparison
-#print axioms observer_ghost
 end
 end L4.Height.ObserverRank

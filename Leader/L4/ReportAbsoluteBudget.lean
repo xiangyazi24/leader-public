@@ -84,7 +84,4 @@ theorem flat_report_service (S : 6≤s) (advice : s=ell (ell n)) :
       Nat.mul_le_mul_right a (Nat.mul_le_mul_right (u+v) (Nat.mul_le_mul_right n (by decide)))
     _ ≤ _ := H
 
-#print axioms local_reset_budget
-#print axioms flat_two_report_reset
-#print axioms flat_report_service
 end L4.ReportAbsoluteBudget

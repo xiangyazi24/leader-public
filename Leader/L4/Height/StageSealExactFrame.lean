@@ -13,7 +13,6 @@ local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r
 local notation "step" => AllSizeS1Geometry.step (n:=n) B
 local notation "play" => BStarResetSchedule.run step
 
-
 open StageSealFrameActual BStarGeneratedTapeCuts BStarLongFixedRouting BStarLongGrant BStarOwnerLaunchOrigin
 open BStarSeparatingRail
 
@@ -44,8 +43,6 @@ theorem center_from_scope {base origin x : X} {hh : ∃ j,oldH6 B base j=true}
   have same := L4.Height.current_mode_unique hp _ _ (eq ▸ at_end hp T) I
   subst j
   exact ⟨l,T,I,H u (e::v) W,N,R⟩
-
-#print axioms center_from_scope
 
 open BStarAcquireHistoryReturn
 
@@ -90,10 +87,6 @@ theorem exact_generated_prefix {base x : X} {addr : Nat → Pos n} {len : Nat}
   have eq := L4.Height.current_mode_unique hp _ _ (at_end hp A) I
   exact eq ▸ ⟨A,R⟩
 
-#print axioms busy_split
-#print axioms generated_append
-#print axioms busy_generated
-#print axioms exact_generated_prefix
 open AllSizeProtocol BStarTrace BStarLongWork BStarLongClaims BStarLongToken
 open BStarLongCommand BStarLongDoor BStarLongLayout BStarLongPublication BStarLongLiteral BStarLongEvents
 open BStarH6WordChart BStarAcquireVisitOrder BStarAcquireLiteralChain BStarResetChartTouch BStarResetMarkAdapter
@@ -162,6 +155,4 @@ theorem stage_center_split {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have E := descriptor_of_arg argEq
   exact E.trans ((BStarStageIssue.issued_descriptor source).trans D)
 
-
-#print axioms stage_center_split
 end L4.Height.StageSealExactFrame

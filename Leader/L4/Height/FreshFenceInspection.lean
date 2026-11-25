@@ -80,5 +80,4 @@ theorem guard_of_operands {base x : X} {hh : ∃ i,oldH6 B base i=true} {o : Own
       rw [show (view raw v).retained=.data tag from (congrArg Lane.retained old).trans tagAt]
       rfl
 
-#print axioms guard_of_operands
 end L4.Height.FreshFenceInspection

@@ -63,7 +63,6 @@ theorem dirty_reverse_joined (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0
     .inl (BStarAcquireJoinedHop.k0_dest _ C d hc hd hz).2)).trans
       (reverse_consumes _ _ C d _ hd G)
 
-
 theorem bind_forward_class (g : LongGeometry) (j : Fin 11) (q : Payload) :
     ∃ f, bind g j (.forward q)=.forward f := by
   simp only [BStarLongCommand.bind]
@@ -124,7 +123,4 @@ theorem wait_raw_reply (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
     exact B
   exact BStarJoinedControllerReturn.joined_reply k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x f' hh V P H
 
-#print axioms dirty_reverse_joined
-#print axioms arbitrary_wait_hold_control
-#print axioms wait_raw_reply
 end L4.BStarDirtyReplySweep

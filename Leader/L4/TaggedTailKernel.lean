@@ -37,5 +37,3 @@ theorem inactive_local_kernel : 6 * ratioNumerator 5 ≤ 5 * scale := by decide
 
 end L4.TaggedTailKernel
 
-#print axioms L4.TaggedTailKernel.active_local_kernel
-#print axioms L4.TaggedTailKernel.inactive_local_kernel

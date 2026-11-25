@@ -41,5 +41,4 @@ theorem fixed_paths_mean {n : Nat} (H horizon : Nat) (hn : 0<n) (hH : 0<H)
   rw [same]
   exact dominated w
 
-#print axioms fixed_paths_mean
 end L4.Height.FenceFixedPathEnvelope

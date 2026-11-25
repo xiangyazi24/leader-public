@@ -179,7 +179,5 @@ theorem combined_cap {n H W L rank : Nat} (hw : 0<W) (hL : L≤11*W)
     _ ≤ n*(2^15*W) := Nat.mul_le_mul_left n hl
     _ = _ := by ac_rfl
 
-#print axioms cycleData
-#print axioms combined_cap
 end
 end L4.Height.FenceEscrow

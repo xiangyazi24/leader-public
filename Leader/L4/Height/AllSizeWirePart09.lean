@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart08
+import Leader.L4.Height.AllSizeWirePart08
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section ProductionSize
 
@@ -134,4 +134,4 @@ theorem packed_service_production {s n : Nat} (_hn : 4 ≤ n) (hs : 6 ≤ s)
 
 end ProductionSize
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

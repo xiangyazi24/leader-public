@@ -91,6 +91,4 @@ theorem legal_issue_at_door {base x : X} {hh : ∃ i,oldH6 B base i=true}
   | launch eq L =>
     exact ⟨pc ▸ Event.launch eq L,pc ▸ next,L⟩
 
-#print axioms first_door_cut
-#print axioms legal_issue_at_door
 end L4.BStarFirstDoorService

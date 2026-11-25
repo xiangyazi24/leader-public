@@ -694,34 +694,4 @@ theorem iidHitCost_le_of_budget {α : Type} {n : Nat}
   rw [sum_ofFn_const n 1]
   simpa [Nat.pow_succ, Nat.mul_comm] using hb
 
-#print axioms list_sum_mono
-#print axioms list_sum_add
-#print axioms list_sum_mul_left
-#print axioms list_sum_congr
-#print axioms sum_ofFn_eq
-#print axioms sum_ofFn_le
-#print axioms sum_ofFn_add
-#print axioms sum_ofFn_mul_left
-#print axioms sum_ofFn_const
-#print axioms wordSum_mono
-#print axioms wordSum_congr
-#print axioms wordSum_add_fun
-#print axioms wordSum_mul_left
-#print axioms wordSum_mul_right
-#print axioms wordSum_const
-#print axioms wordSum_const_one
-#print axioms wordSum_zero
-#print axioms wordSum_add
-#print axioms stoppedTime_le_length
-#print axioms stoppedRun_of_stop
-#print axioms stoppedTime_of_stop
-#print axioms stoppedTime_append
-#print axioms iidHitCost_of_target
-#print axioms iidHitCost_eq_wordSum
-#print axioms iidHitCost_split
-#print axioms expected_of_window
-#print axioms expectedHittingTimeAtMost_of_window
-#print axioms expected_of_window_one
-#print axioms iidHitCost_le_of_budget
-
 end L4.Height

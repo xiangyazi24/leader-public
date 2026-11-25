@@ -39,8 +39,6 @@ theorem reader_same_tape (sep : ∀ e : Fin n,e≠rightNeighbor e)
   simp only [BStarResetSchedule.run_append]
   exact BStarGrantReaderHistory.header_readout_interval hp sep (run x lead) e i j ne won tail life u v E
 
-#print axioms reader_same_tape
-
 /-- Once body custody is supplied on the same interval, the full
 reader operand, not only its packed header, has a common physical
 readout. The body witness includes the acquisition mark itself. -/
@@ -70,8 +68,6 @@ theorem reader_operand (sep : ∀ e : Fin n,e≠rightNeighbor e)
   · have h := BStarBodyBankHistory.body_interval hp sep x (sites d)
       (BStarLongPublication.readSel (x i).long) (e::w) (custody d head)
     exact congrArg Prod.fst (held_trace_reads h).2
-
-#print axioms reader_operand
 
 /-- The center writer keeps the same selected operand until its
 first authorized publication. Own STAGE/SEAL at the header need no
@@ -106,5 +102,4 @@ theorem writer_operand (sep : ∀ e : Fin n,e≠rightNeighbor e)
         (BStarLongPublication.readSel (x i).long) (e::w) (custody d head)
       exact congrArg Prod.fst (held_trace_reads h).2
 
-#print axioms writer_operand
 end L4.BStarCapturedHeader

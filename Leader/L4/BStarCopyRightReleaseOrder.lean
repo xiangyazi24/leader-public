@@ -144,7 +144,4 @@ theorem pending_after_block {Tag : Type} (atSource : Nat→Tag)
   rw [Nat.min_eq_left (by omega : tail+1-seam≤k-first)]
   simp [show seam+(tail+1-seam)=tail+1 by omega]
 
-#print axioms k2_block
-#print axioms release_position
-#print axioms pending_release
 end L4.BStarCopyRightReleaseOrder

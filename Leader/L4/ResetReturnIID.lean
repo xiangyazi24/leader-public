@@ -146,6 +146,4 @@ theorem clean_return_expected {X : Type} {n : Nat} {step : X → Fin n → X}
     exact .inl ⟨[],[],rfl,.nil _ _,hx,⟨gc.2.1,gc.2.2.2⟩⟩
   · exact .inr ⟨c,.nil _ _,hx,gc,terminal,rfl⟩
 
-#print axioms iid_of_relational_rank
-#print axioms clean_return_expected
 end L4.ResetReturnIID

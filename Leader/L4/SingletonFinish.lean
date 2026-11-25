@@ -432,15 +432,4 @@ theorem zero_mean_of_alias (timer : PureAliasClock) : ZeroStockMean := by
   exact Nat.le_trans (expected_of_countdown _ _ _ clock t)
     (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left _ hB))
 
-#print axioms singleton_step
-#print axioms expected_then
-#print axioms singleton_expected_of_timer
-#print axioms singleton_zero_stock_static
-#print axioms alias_patrol_exact
-#print axioms alias_pair_exact
-#print axioms alias_body_exact
-#print axioms alias_commutes
-#print axioms alias_cost_eq
-#print axioms zero_mean_of_alias
-
 end L4.SingletonFinish

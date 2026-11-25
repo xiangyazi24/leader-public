@@ -32,7 +32,6 @@ def ActiveCutVacant (x : X) (S : List (Pos n)) (fall : Pos n) (len cut : Nat) (r
 private def geo (h i l : Bool) : LongGeometry :=
   ⟨⟨false,false,false,false,false,h⟩,i,l,0,false⟩
 
-
 open BStarCopyOwnedFrozen BStarLongEvents BStarLongTransport BStarAcquireForwardTrace
 open BStarSeparatorControl BStarResetQuiet BStarOwnerLaunchOrigin BStarResetSchedule
 
@@ -103,7 +102,6 @@ private theorem active_inject_at_pending {base x : X} {hh : ∃ i,oldH6 B base i
   rw [←afterJ,atC,atT] at F
   cases F
 
-
 theorem active_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
     (chart : Chart hp base hh o S len fall) (e : Fin n) (sep : e≠rightNeighbor e)
@@ -152,8 +150,6 @@ theorem active_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · by_cases r : i=rightNeighbor e
     · exact touched .right r.symm
     · rwa [show step x e i=x i from by simp [AllSizeS1Geometry.step,l,r]]
-
-#print axioms active_step
 
 theorem active_from_owner_empty {base x : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
@@ -204,6 +200,4 @@ theorem busy_active_vacant {base x : X} {hh : ∃ i,oldH6 B base i=true}
     have V' := active_step hp chart e (sep e) 10 j j' rev I (busy_start hp rest) monotone V
     exact ih j' k rfl K V'
 
-
-#print axioms busy_active_vacant
 end L4.BStarCopyActiveVacancy

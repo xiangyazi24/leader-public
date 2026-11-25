@@ -149,6 +149,4 @@ theorem endpoint_from_warm_no_close_and_continued_mesh
     simp [states,prefixStates,Height.runWord]
   exact Last ▸ R
 
-#print axioms physical_paintAt
-#print axioms endpoint_from_warm_no_close_and_continued_mesh
 end L4.ReportDeployedTrialSound

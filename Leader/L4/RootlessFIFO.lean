@@ -224,11 +224,6 @@ theorem duplicated_compare (n j : Nat) (hn : 2≤n) (v r : Line) (next : Nat →
 
 end L4.RootlessFIFO
 
-#print axioms L4.RootlessFIFO.duplicated_cross
-#print axioms L4.RootlessFIFO.duplicated_compare
-#print axioms L4.RootlessFIFO.simultaneous_copies_not_both_tight
-#print axioms L4.RootlessFIFO.simultaneous_second_has_slack
-
 namespace L4.RootlessFIFO
 open FIFOCompare
 
@@ -297,9 +292,6 @@ theorem drain_from_outlet (width initial : Nat) (r v : Line)
     omega
 
 end L4.RootlessFIFO
-
-#print axioms L4.RootlessFIFO.seam_relocate_ge
-#print axioms L4.RootlessFIFO.drain_from_outlet
 
 namespace L4.RootlessFIFO
 open FIFOCompare RankRootless
@@ -393,9 +385,6 @@ def ConcreteLiftResponses : Prop :=
 
 end L4.RootlessFIFO
 
-#print axioms L4.RootlessFIFO.window_advance_stock
-#print axioms L4.RootlessFIFO.window_advance_cross_ge
-
 namespace L4.RootlessFIFO
 open FIFOCompare RankRootless StockTokenRows
 
@@ -476,8 +465,6 @@ private theorem window_inj {n : Nat} (g : Fin n) {d a b : Nat}
   omega
 
 end L4.RootlessFIFO
-
-#print axioms L4.RootlessFIFO.rootless_pair_exact
 
 namespace L4.RootlessFIFO
 open FIFOCompare RankRootless
@@ -728,8 +715,6 @@ theorem concreteLiftResponses : ConcreteLiftResponses := by
 
 end L4.RootlessFIFO
 
-#print axioms L4.RootlessFIFO.concreteLiftResponses
-
 namespace L4.RootlessFIFO
 open QueueDAG FIFOCompare RankRootless
 
@@ -911,8 +896,6 @@ theorem drain_paths {n : Nat} (hn : 4≤n) (g : Fin n) (q : Line)
 
 end L4.RootlessFIFO
 
-#print axioms L4.RootlessFIFO.drain_paths
-
 namespace L4.RootlessFIFO
 open FIFOCompare RankRootless RearTrace
 
@@ -1036,8 +1019,6 @@ theorem actual_coupling {p c n : Nat} (hn : 4≤n)
 
 end L4.RootlessFIFO
 
-#print axioms L4.RootlessFIFO.actual_coupling
-
 namespace L4.RootlessFIFO
 open FIFOCompare RankRootless RearTrace
 
@@ -1110,8 +1091,6 @@ theorem actual_drain_paths {p c n : Nat} (hn : 4≤n)
 
 end L4.RootlessFIFO
 
-#print axioms L4.RootlessFIFO.actual_drain_paths
-
 namespace L4.RootlessFIFO
 open RankRootless
 
@@ -1182,8 +1161,6 @@ theorem rootless_drain_mean {p c n : Nat} (hn : 4≤n)
 
 end L4.RootlessFIFO
 
-#print axioms L4.RootlessFIFO.rootless_drain_mean
-
 namespace L4.RootlessFIFO
 
 /-- No designated head needs to be supplied on the admitted
@@ -1197,4 +1174,3 @@ theorem rootless_drain_mean_of_mcov {p c n : Nat} (hn : 4≤n)
 
 end L4.RootlessFIFO
 
-#print axioms L4.RootlessFIFO.rootless_drain_mean_of_mcov

@@ -320,6 +320,4 @@ theorem contact_of_events {α : Type} {n H : Nat} (step : α → Fin n → α)
   · intro e hr ha
     rcases L.other e hr ha with h|h <;> simp [h,credit]
 
-#print axioms contact_two_thirds
-
 end L4.WindowA0Return

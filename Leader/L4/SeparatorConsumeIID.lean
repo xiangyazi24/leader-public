@@ -98,6 +98,4 @@ theorem consume_expected {base x : X} {hh : ∃ i,oldH6 B base i=true}
     ResetReturnIID.iid_of_relational_rank ResetReturnIID.appendTape Stop Live
       (fun _ _ q=>q.1.symm ▸ Nat.one_pos) advance [] 1 (.inr ⟨rfl,by simp,qx,wait,clean⟩)
 
-#print axioms hold_before_door
-#print axioms consume_expected
 end L4.SeparatorConsumeIID

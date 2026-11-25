@@ -77,8 +77,6 @@ private theorem split_sublist_end {α : Type} {u w : List α} {e : α}
         obtain ⟨p,q,E,before⟩ := ih T
         exact ⟨a::p,q,congrArg (List.cons a) E,before.cons_cons a⟩
 
-#print axioms center_hold
-
 private theorem first_occurrence {α : Type} {w : List α} {e : α} (h : e∈w) :
     ∃ a b,w=a++e::b ∧ e∉a := by
   classical
@@ -188,5 +186,4 @@ theorem center_mark_of_sublist {base x : X} {hh : ∃ i,oldH6 B base i=true}
       decoded bank legal writer selector staged sealed
     exact ⟨result.1,result.2.2⟩
 
-#print axioms center_mark_of_sublist
 end L4.BStarCommitServiceCenter

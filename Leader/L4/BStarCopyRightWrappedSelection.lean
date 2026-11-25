@@ -104,5 +104,4 @@ theorem ingress_both_selected (x : X) (a : Fin n) (seam : Nat)
   rw [source] at plus
   exact plus
 
-#print axioms ingress_both_selected
 end L4.BStarCopyRightWrappedSelection

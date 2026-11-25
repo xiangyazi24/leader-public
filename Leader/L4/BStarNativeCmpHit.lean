@@ -186,5 +186,4 @@ theorem actual_initialized_hit_cmp {base x : X} {hh : ∃ i,oldH6 B base i=true}
     simpa only [headPending,nodeResult,pval,Option.toList_some,List.map_cons,List.map_nil,rs]
       using Rcmp
 
-#print axioms actual_initialized_hit_cmp
 end L4.BStarNativeCmpHit

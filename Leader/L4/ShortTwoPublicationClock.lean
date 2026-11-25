@@ -201,14 +201,4 @@ theorem maximal_at_finished [DecidableEq J] (advance : X → Fin n → X)
     (ShortNORCover.maximal_after_two_raw_segments r advance classify observe
       Good closed auth x u v gx (goodFold u x gx) U V)
 
-#print axioms maximal_at_finished
-#print axioms flag_eq
-#print axioms physical_phase_foldl
-#print axioms publications_append
-#print axioms split_receipts
-#print axioms two_covers_expected
-#print axioms two_covers_quadratic
-#print axioms two_actual_covers
-#print axioms monitored_foldl
-
 end L4.ShortTwoPublicationClock

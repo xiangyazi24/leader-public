@@ -79,6 +79,4 @@ theorem reader_word_run (sheet : Sheet) (x : Raw s n)
     obtain ⟨C'',H'',S'',D''⟩ := ih _ C' H' OK.2.2.2.2
     exact ⟨C'',H'',S''.trans S',D''.trans D'⟩
 
-#print axioms reader_word_step
-#print axioms reader_word_run
 end L4.ReportReaderWordLease

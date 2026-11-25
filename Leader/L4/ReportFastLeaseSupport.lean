@@ -82,7 +82,6 @@ theorem free_win_raw (d : Sheet) (x : Raw s n) (e : Fin n) (N : 1<n)
   exact A.trans (fast_free_grant_next (params d s) (selectBytes d (x e)) j
     Free Ask NoRel Rival)
 
-
 -- Every already-held incidence on a positive serial rail survives
 -- even an abort initiation at the owner door. RESET departure is
 -- the later release event, not the door's change to ISSUE0.
@@ -119,12 +118,5 @@ theorem ordered_acks_from_held_root (d : Sheet) (C : Chart h) (N : 1<n)
   obtain ⟨l,T⟩ := ack_tape_run d C N hh G F digit x X A PC w NR
   exact ⟨l,T,tape_count d C x w l T,tape_order d C x w l T⟩
 
-#print axioms service_joined_grants
-#print axioms no_ask_raw
-#print axioms release_raw
-#print axioms incoming_no_create_raw
-#print axioms free_win_raw
-#print axioms held_from_bank
-#print axioms ordered_acks_from_held_root
 end L4.ReportFastLeaseSupport
 

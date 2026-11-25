@@ -69,8 +69,4 @@ theorem next_index_left (hh : ∃ i, h i = true) (i : Header h) :
 theorem index_self (hh : ∃ i, h i = true) (i : Header h) :
     index hh (neighborHeader hh i 1) = index hh i := by rw [self_port]
 
-#print axioms index_right
-#print axioms atIndex_next
-#print axioms next_index_left
-#print axioms index_self
 end L4.BStarCycleGeometry

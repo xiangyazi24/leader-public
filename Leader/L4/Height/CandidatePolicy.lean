@@ -39,7 +39,6 @@ theorem identity_after_service (i : BStarAcquireAnchors.Header (oldH6 (rows s) g
     obtain ⟨_,_,_,⟨j,_,ready,_⟩,_,_⟩ := mask a e f E
     exact False.elim (ready.1.2 (by simpa only [target,ProductionClients.service_header] using pub))
 
-#print axioms identity_after_service
 end
 end L4.Height.CandidateResidence
 

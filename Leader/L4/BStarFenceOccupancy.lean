@@ -252,16 +252,4 @@ theorem ring_owner_quiet {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rw [BStarClearancePrepOwner.orderedData_filter] at h
     exact quiet D (List.mem_filter.mp h).1
 
-#print axioms no_reservation
-#print axioms select_unreserved
-#print axioms owner_nomination_selected
-#print axioms local_hop
-#print axioms compare_hop
-#print axioms compare_end
-#print axioms joined_compare_hop
-#print axioms joined_compare_end
-#print axioms ring_view
-#print axioms ring_owner_hop
-#print axioms ring_owner_end
-#print axioms ring_owner_quiet
 end L4.BStarFenceOccupancy

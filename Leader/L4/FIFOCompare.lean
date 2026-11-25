@@ -227,9 +227,6 @@ theorem departures_le (width : Nat) (hW : 0<width)
 
 end L4.FIFOCompare
 
-#print axioms L4.FIFOCompare.compare_single_step
-#print axioms L4.FIFOCompare.departures_le
-
 namespace L4.FIFOCompare
 open RankSupplier
 
@@ -336,8 +333,6 @@ theorem literal_virtual_delta {n : Nat} (hn : 4 ≤ n) (v i : Fin n) (q : Virtua
 
 end L4.FIFOCompare
 
-#print axioms L4.FIFOCompare.literal_virtual_delta
-
 namespace L4.FIFOCompare
 open RankSupplier
 
@@ -410,9 +405,6 @@ theorem projection_of_realStep {p c n : Nat} (hn : 4 ≤ n)
 
 end L4.FIFOCompare
 
-#print axioms L4.FIFOCompare.pointwise_cuts_of_realStep
-#print axioms L4.FIFOCompare.projection_of_realStep
-
 namespace L4.FIFOCompare
 open RankSupplier
 
@@ -442,5 +434,3 @@ theorem matched_departure_ordinal {p c n : Nat}
 
 end L4.FIFOCompare
 
-#print axioms L4.FIFOCompare.asNatStock_virtualInit
-#print axioms L4.FIFOCompare.matched_departure_ordinal

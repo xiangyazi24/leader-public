@@ -158,7 +158,6 @@ theorem joined_noncenter_hop_offer (k₁ k₂ t₂ J₁ J₂ r n p c₁ : Nat) (
   unfold arrive at Arr
   split at Arr <;> cases Arr <;> exact healthy
 
-
 open BStarAcquireHistorySample
 
 private theorem single_advance {x : X} {addr : Nat → Pos n} {len : Nat} {e : Fin n}
@@ -363,8 +362,4 @@ theorem fence_ack_of_attempt {base x : X} {addr : Nat → Pos n} {len : Nat}
           exact Token.noConfusion (st.symm.trans F)
   exact ⟨pre,ack,remaining++rest,split,eq ▸ P,H⟩
 
-#print axioms fence_ack_of_attempt
-#print axioms data_of_accepted_fence
-#print axioms find_fence_departure
-#print axioms terminal_fence
 end L4.BStarFenceChartData

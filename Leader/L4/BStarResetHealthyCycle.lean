@@ -143,6 +143,4 @@ theorem three_resets {base x : XX} {hh : ∃ i, oldH6 B base i=true}
   simp only [List.length_append]
   omega
 
-#print axioms three_resets
-#print axioms healthy_return_on
 end L4.BStarResetHealthyCycle

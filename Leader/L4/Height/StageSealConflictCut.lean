@@ -69,5 +69,4 @@ theorem conflict_at_center {base origin x : X} {hh : ∃ j,oldH6 B base j=true}
   rw [O] at live
   exact live selected (pass.symm ▸ canonical) (pass.symm ▸ desc)
 
-#print axioms conflict_at_center
 end L4.Height.StageSealConflictCut

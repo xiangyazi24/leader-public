@@ -25,5 +25,4 @@ theorem of_edges {n : Nat} {h : Fin n→Bool} (hh : ∃ i,h i=true)
     exact self _
   · simpa only [←index_right,atIndex_index] using edge (index hh i)
 
-#print axioms of_edges
 end L4.PhysicalClockPortTransfer

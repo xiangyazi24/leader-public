@@ -112,8 +112,4 @@ theorem finish_itinerary (vs : List Visit) (p : Payload) (hf : p.fault=0)
   · exact finish_failure q F O L
   · exact finish_success q F O L
 
-#print axioms finish_itinerary
-#print axioms capture_latch
-#print axioms finish_success
-#print axioms finish_failure
 end L4.BStarAcquireLatch

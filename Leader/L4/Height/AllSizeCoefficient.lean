@@ -1,10 +1,10 @@
-import Leader.L4.Height.G9DotProduction
+import Leader.L4.Height.AllSizeProduction
 import Leader.L4.WindowCappedPublic
 
-namespace L4.Height.G9Dot
+namespace L4.Height.AllSizeAssembly
 open L4.AllSizeProtocol L4.PhysicalCustody L4.Compiler.Native
-open L4.Height.G9Wire L4.Height.G9Wire.CustodySpec L4.Height.G9Wire.PublicSpec
-open L4.Height.G9Spine
+open L4.Height.AllSizeWire L4.Height.AllSizeWire.CustodySpec L4.Height.AllSizeWire.PublicSpec
+open L4.Height.AllSizeSpine
 
 /-- The named uniform production coefficient, with no existential size
 dependence. Keep the constants symbolic while checking composition. -/
@@ -54,7 +54,6 @@ theorem allSize_fast :
         boundedEncode boundedDecode n hn L4.PhysicalCustodyProduction.K_custody
           (patrolAllowance L4.PhysicalPublic.cpub) :=
   all_sizes_expected_at_production_coefficient
-
 
 private abbrev compactD (s : Nat) : Deployment := .compactPacked s
 private abbrev CompactRaw (s n : Nat) := Fin n → (compactD s).Site
@@ -171,12 +170,4 @@ theorem compact_allSize_fast :
       (Nat.le_trans (public_budget L4.WindowCappedPublic.coefficient n)
         (Nat.mul_le_mul_right _ (Nat.le_max_right _ _)))
 
-#print axioms compact_step_projects
-#print axioms compact_run_projects
-#print axioms packed_reference_at_production_coefficients
-#print axioms compact_allSize_fast
-
-#print axioms allSize_fast
-#print axioms production_coefficient
-#print axioms all_sizes_expected_at_production_coefficient
-end L4.Height.G9Dot
+end L4.Height.AllSizeAssembly

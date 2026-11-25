@@ -280,7 +280,3 @@ theorem intersection_mean {α : Type} {n K : Nat} (next : α → Fin n → α)
 
 end L4.FastRestart
 
-#print axioms L4.FastRestart.restart_tail
-#print axioms L4.FastRestart.mean_of_half_block
-#print axioms L4.FastRestart.intersection_half_block
-#print axioms L4.FastRestart.intersection_mean

@@ -132,7 +132,4 @@ theorem parked_failure {step : (X×Bool)→Fin n→(X×Bool)} {Good : X→Prop} 
   exact Nat.le_trans (failure_mass closed sticky H S (50^116) (start x word)
     (reach_start step Good watch x word G) t) (Nat.mul_le_mul_right _ B)
 
-#print axioms drift
-#print axioms failure_mass
-#print axioms parked_failure
 end L4.ShortPrefixTrial

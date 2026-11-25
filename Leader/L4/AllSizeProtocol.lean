@@ -339,7 +339,6 @@ abbrev Pair (α : Type) := α × α
 def patchPair {w : Nat} (p : Pair (Patch w)) (x : Pair (BitVec w)) : Pair (BitVec w) :=
   (p.1.apply x.1,p.2.apply x.2)
 
-
 /-- The only join-owned bits in a short-sheet slice. For the
 high-first numeric layout the saturated offset is the leading field,
 with successor-header immediately below it. -/
@@ -933,7 +932,6 @@ def largePair {a : LargeParams} (b : LargeRows a) (x : Pair (LargeSite a)) :
     (Pair.map (reference b) x) (Pair.map (reference b) y) (Pair.map LargeSite.publicRow x)
   ({y.1 with guard:=g.1,publicRow:=p.1},{y.2 with guard:=g.2,publicRow:=p.2})
 
-
 /-- The deployed packed alphabet has no observer or public modular row. -/
 structure PackedCore (a : LargeParams) where
   physical : BitVec 6
@@ -998,9 +996,6 @@ theorem production_width (a : LargeParams) (s A : Nat)
 
 end PackedCore
 
-#print axioms PackedCore.pair_projects
-#print axioms PackedCore.reference_projects
-#print axioms PackedCore.production_width
 def ShortGeo.Refresh {w k : Nat} (G : ShortGeo w k) (cap : Nat)
     (h : Pair Bool) (old y : Pair (BitVec w)) : Prop :=
   G.successor.read y.1=ShortGeo.nextSuccessor h ∧
@@ -1058,13 +1053,6 @@ theorem geometry_mask_regression :
     p.2.mask.getLsbD 93=false ∧ p.2.mask.getLsbD 94=true ∧
     ShortGeo.mis.successor.read y.2=1 ∧ ShortGeo.mis.off.read y.1=0 := by decide
 
-#print axioms geometry_mask_regression
-#print axioms ShortGeo.refresh
-#print axioms ShortGeo.work_agrees_outside
-#print axioms largePair_short_geometry
-#print axioms largePair_projects_physical
-#print axioms geometry_old_snapshot_regression
-
 /-- Projection of the actual joined long bytes. The invalid decision
 reads only the old right endpoint, so a valid WAIT or a nonheader does
 not acquire the repair's masks. Other source/lanes remain backend work. -/
@@ -1083,10 +1071,6 @@ theorem largePair_long_invalid_door {a : LargeParams} (b : LargeRows a)
   dsimp only
   rw [hY]
   exact LongDoorGuard.repair_values a.alu (p.apply x.2.long)
-
-#print axioms LongDoorGuard.repair_values
-#print axioms LongDoorGuard.repair_holds_outside
-#print axioms largePair_long_invalid_door
 
 def boundedReference {N : Nat} (b : BitVec (boundedProviderWidth N)) : RefView :=
   ⟨true,b.getLsbD (4+ell (N+1))⟩
@@ -1118,23 +1102,3 @@ theorem packedPair_project (a : Layout) (b : a.Rows) (x : Pair (Fin (2^a.width))
 
 end L4.AllSizeProtocol
 
-#print axioms L4.AllSizeProtocol.ell_le_iff
-#print axioms L4.AllSizeProtocol.stateCoding
-#print axioms L4.AllSizeProtocol.alphabet_bound
-#print axioms L4.AllSizeProtocol.Patch.hold
-#print axioms L4.AllSizeProtocol.setPublicMark_only_mark
-#print axioms L4.AllSizeProtocol.joinedPair
-
-#print axioms L4.AllSizeProtocol.production_large_polynomial
-
-#print axioms L4.AllSizeProtocol.Patch.commute
-
-#print axioms L4.AllSizeProtocol.Field.read_assign
-
-#print axioms L4.AllSizeProtocol.PhysicalMIS.row
-
-#print axioms L4.AllSizeProtocol.packedPair_project
-
-#print axioms L4.AllSizeProtocol.H5.row
-
-#print axioms L4.AllSizeProtocol.H5.withdrawal_no_seed

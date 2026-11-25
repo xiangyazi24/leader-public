@@ -124,5 +124,4 @@ theorem actual_tour_bound {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · rw [rt]
     exact out
 
-#print axioms actual_tour_bound
 end L4.BStarAdmissionTraceBound

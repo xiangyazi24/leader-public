@@ -145,6 +145,4 @@ theorem expected_to_high_cut_of_local
     intro t
     exact Nat.le_trans (E t) (Nat.mul_le_mul_right (n^t) (Nat.mul_le_mul_left n (by omega)))
 
-#print axioms no_prefix_refill
-#print axioms expected_to_high_cut_of_local
 end L4.DirtyPrepRank

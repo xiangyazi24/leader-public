@@ -204,7 +204,6 @@ theorem fresh_acq_epoch_step (d : Sheet) (N : 1<n)
   refine ⟨a,reset,w++[e],B,R,?_,phase_step d C hh G F N digit b Y w U.2.1 P e⟩
   rw [ShortOwnerEpochJS.raw_snoc,E]
 
-
 theorem fresh_acq_rows (d : Sheet) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
     (digit : 0<(params d s).digits) :
@@ -304,9 +303,4 @@ theorem fresh_acq_at_second (d : Sheet) (N : 1<n)
   rw [E]
   exact go _ init post
 
-#print axioms phase_step
-#print axioms fresh_acq_epoch_step
-#print axioms fresh_acq_rows
-#print axioms fresh_current_captures
-#print axioms fresh_acq_at_second
 end L4.ReportFreshAcqFile

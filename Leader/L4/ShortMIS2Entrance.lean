@@ -37,6 +37,4 @@ theorem cache_from_cut (N : 27<n) (x0 : Raw s n) (A : H2Ready x0)
   ⟨(params N x0 A y Y).cacheFacts,
     (params N x0 A y Y).cached_expected y ⟨Y,rfl⟩⟩
 
-#print axioms lower_closed
-#print axioms cache_from_cut
 end L4.ShortMIS2Entrance

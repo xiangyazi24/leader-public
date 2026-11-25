@@ -72,6 +72,4 @@ theorem mean_widen {Y : Type} {m l r W : Nat} {next : Y→Fin m→Y}
   exact Nat.le_trans (clock t)
     (Nat.mul_le_mul_right (m^t) (Nat.mul_le_mul_left (92*m) width))
 
-#print axioms empty_until_own_service
-#print axioms mean_widen
 end L4.DirtyFencePersistence

@@ -112,6 +112,4 @@ theorem publication_on_service_cut {base s : X} {hh : ∃ i,oldH6 B base i=true}
     selected W.fault W.opcode goodD bank legal sealed.1 sealed.2.1 sealed.2.2.1 sealed.2.2.2
   exact ⟨result.1,result.2.2⟩
 
-#print axioms ready_commit_service
-#print axioms publication_on_service_cut
 end L4.BStarIssueToCenter

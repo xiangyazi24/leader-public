@@ -99,8 +99,6 @@ theorem off_hold (d : Sheet) (C : Chart h)
     unfold wire
     rw [raw_spectator x e _ (Ne.symm A) (Ne.symm H)]
 
-
-
 theorem off_hop (d : Sheet) (C : Chart h) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
     (x : Raw s n) (X : Cached d hh Q x) (k : Nat) (J : k+1<C.L)
@@ -157,7 +155,6 @@ theorem origin_launch (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     rw [P] at H
     contradiction
   · exact ⟨A,P⟩
-
 
 /-- Genuine pre-gate ADMIT from the owner launch: zero is not an assumed
     canonical payload at a later arrival. -/
@@ -247,7 +244,6 @@ theorem raw_gate_arrival (d : Sheet) (C : Chart h) (N : 1<n)
   refine ⟨(ready_locations d C x N (CF.mask x X) i I RD).1,?_⟩
   rw [tok_wire,gate_frame d C hh G x y X Y (i+1) I,B,W,tE]
   exact fast_admit_on_roundtrip p q 1 Q0 (by decide) (by decide)
-
 
 theorem origin_arrive (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     (G : GapInput h) (F : Fibre (h:=h) d Q) (N : 1<n)
@@ -392,15 +388,4 @@ theorem arrival_of_receipt (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     exact cached_run _ Z w
   exact origin_arrive d C hh G F N _ Y' (C.a+1) I (by omega)
 
-#print axioms off_hold
-#print axioms off_hop
-#print axioms origin_launch
-#print axioms origin_seed
-#print axioms before_gate_mark
-#print axioms origin_arrive
-#print axioms before_gate_tape
-#print axioms before_turn_off
-#print axioms off_front_of_issue_history
-#print axioms off_front_of_receipt
-#print axioms arrival_of_receipt
 end L4.ReportAdmitAncestry

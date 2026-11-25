@@ -89,8 +89,4 @@ theorem receipt_sound_of_true_goals {s n : Nat}
   subst y
   exact assemble _ cs C (current_epochs_of_first_hits Epoch seed step cs x w H)
 
-#print axioms first_goal_prefix
-#print axioms nondoor_parked_not_first_hit
-#print axioms current_epochs_of_first_hits
-#print axioms receipt_sound_of_true_goals
 end L4.ShortEpochFirstHit

@@ -47,6 +47,3 @@ theorem concreteRestartTrial_of_physical_stageB (h : TripleAssembly.ConcretePhys
 
 end L4.RestartClosure
 
-#print axioms L4.RestartClosure.observerOfTripleClock
-#print axioms L4.RestartClosure.concreteRestartTrial_of_triple_clock
-#print axioms L4.RestartClosure.concreteRestartTrial_of_physical_stageB

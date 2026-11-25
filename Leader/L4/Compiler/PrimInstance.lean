@@ -135,9 +135,6 @@ theorem scan5_tour (r : Nat) (hr : 3≤r) (x : List Value) :
       argW r x 0 % 32 :=
   primitive_tour_correct (scanFive r hr) ((scanFive r hr).inputOf x)
 
-#print axioms cmp_tour
-#print axioms scan5_tour
-
 def constNib (r : Nat) (c : ConstId) (i : Fin r) : Nib :=
   let p := positionAt r i.val
   match c with
@@ -173,8 +170,6 @@ theorem applicable_subset (r : Nat) (hr : 3≤r) (bank : Bank) :
     (∀ xs, den (cmp r) xs=cmpCode (argW r xs 0) (argW r xs 1)) ∧
     (∀ xs, den (scanFive r hr) xs=argW r xs 0%32) :=
   ⟨fun _ _ _ => rfl,fun _ _ => rfl,fun _ => rfl,fun _ => rfl,fun _ => rfl,fun _ => rfl⟩
-
-#print axioms applicable_subset
 
 def accPrefix {r : Nat} {X C : Type} (step : X → Fin r → C → Nib × C)
     (zero : C) (x : X) (j : Nat) : C :=
@@ -316,12 +311,6 @@ theorem concrete_tour {r : Nat} (p : Primitive r) (x : List Value) :
     p.finish (runPrefix p (p.inputOf x) r (Nat.le_refl r))=den p x :=
   primitive_tour_correct p (p.inputOf x)
 
-#print axioms add_sound
-#print axioms sub_sound
-#print axioms shift_sound
-#print axioms semantics
-#print axioms concrete_tour
-
 def runOne {r : Nat} (p : Primitive r) (vs : List Value) : Nat :=
   p.finish (runPrefix p (p.inputOf vs) r (Nat.le_refl r))
 
@@ -339,5 +328,4 @@ theorem serial_fixtures :
     runOne (scanFive 3 (by decide)) [.word 63]=31 := by
   decide +kernel
 
-#print axioms serial_fixtures
 end L4.Compiler.PrimInstance

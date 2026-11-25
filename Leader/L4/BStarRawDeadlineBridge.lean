@@ -129,7 +129,6 @@ theorem block_lifts {base initial : X} (hh : ∃ i,oldH6 B base i=true)
   change C (history++a) i.val+1 ≤ C (history++(a++(l++i.val::f))) i.val
   omega
 
-
 private theorem spike_sum {m : Nat} (k : Fin m) :
     (List.ofFn (fun j : Fin m=>if j=k then (1:Nat) else 0)).sum=1 := by
   induction m with
@@ -261,6 +260,4 @@ theorem raw_missed_mass {base initial : X} (hh : ∃ i,oldH6 B base i=true)
   rw [eq]
   exact Nat.le_trans result (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left q initBound))
 
-#print axioms block_lifts
-#print axioms raw_missed_mass
 end L4.BStarRawDeadlineBridge

@@ -169,13 +169,6 @@ theorem width_stage_budget {n s : Nat} (S : s=ell (ell n)) (H : 6≤s) :
       _ = (40*4*32)*(n*n) := by ac_rfl
       _ = _ := rfl
 
-#print axioms advice_interval
-#print axioms t2_le
-#print axioms radius_square_log_absorb
-#print axioms radWidth_square_log_absorb
-#print axioms cover_log_absorb
-#print axioms width_below_486
-#print axioms width_stage_budget
 end L4.AdviceBandRadiusBudget
 
 namespace L4.AdviceBandRadiusBudget
@@ -359,13 +352,4 @@ theorem advice_band_radius_budget {n s : Nat} (S : 6≤s) (advice : s=ell (ell n
   obtain ⟨_,Q,_,_,M,_,_,_⟩ := advice_interval advice S
   exact final_core (by decide : 0<n0) Q M ceiling_rad_budget (normalized_trial_band S)
 
-#print axioms radiusTwo_next_le_double
-#print axioms trialU_doubling
-#print axioms U1_growth
-#print axioms U2_growth
-#print axioms nMin_growth
-#print axioms U6_order
-#print axioms normalized_trial_band
-#print axioms ceiling_rad_budget
-#print axioms advice_band_radius_budget
 end L4.AdviceBandRadiusBudget

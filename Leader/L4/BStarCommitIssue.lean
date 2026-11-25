@@ -169,10 +169,4 @@ theorem release_result (old rel ask : BStarLongGrant.Ports) (j : Fin 3)
     simp [BStarLongGrant.result,BStarLongGrant.win,h]
   · simp [BStarLongGrant.result,BStarLongGrant.win,h,e]
 
-#print axioms commit_door
-#print axioms commit_written
-#print axioms reset_receipt
-#print axioms actual_door
-#print axioms selected_commit_issue
-#print axioms rclear_outgoing
 end L4.BStarCommitIssue

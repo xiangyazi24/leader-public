@@ -203,8 +203,4 @@ theorem trial_mean {step : (X×Bool)→Fin n→(X×Bool)} {Good : X→Prop} {wat
   rw [trans_mean]
   exact ReportAdaptiveFibre.nominated_mean (next step watch) Q ready rank F y Y t
 
-#print axioms stage
-#print axioms wrong_mark_stops
-#print axioms exhausted_true
-#print axioms trial_mean
 end L4.ShortPrefixTrial

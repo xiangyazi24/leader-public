@@ -54,5 +54,4 @@ theorem cuts_of_credits {base x : X} (hh : ∃ i,oldH6 B base i=true)
     obtain ⟨a,b,N,L,C⟩ := second o M
     exact ⟨o,a,b,own,N,L,C⟩
 
-#print axioms cuts_of_credits
 end L4.PhysicalCustodyCreditCuts

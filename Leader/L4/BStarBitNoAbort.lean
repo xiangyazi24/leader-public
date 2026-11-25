@@ -77,7 +77,4 @@ theorem missing_seal_fixture :
     (commit true 1 missingSeal d0 d0.b0).2=none ∧
     (commit true 1 missingSeal d0 d0.b1).2=none := by decide
 
-#print axioms guard_iff
-#print axioms seal_seed
-#print axioms missing_seal_fixture
 end L4.BStarBitNoAbort

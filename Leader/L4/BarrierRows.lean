@@ -153,10 +153,3 @@ theorem ordinary_pair_geometry {p c1 : Nat} (u v : Site p c1)
 
 end L4
 
-#print axioms L4.finishBirth_stocks
-#print axioms L4.pairStep_stocks_eq_prefix
-#print axioms L4.ordinary_pair_stock
-#print axioms L4.leader_inject_stock
-
-#print axioms L4.patrol_unpinned_source_fire
-#print axioms L4.ordinary_pair_geometry

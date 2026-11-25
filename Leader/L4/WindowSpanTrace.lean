@@ -199,9 +199,4 @@ theorem selected_current {p c n : Nat} (x : Config p c n) (hn : 4≤n)
   change width (labels z.ledger.config j 0) (labels z.ledger.config j 6)=WindowSpan.span z.ledger.config j
   simpa only [labels,liftedSite_zero] using width_roster z.ledger.config j r7
 
-#print axioms selected_current
-#print axioms next_good_span
-#print axioms run_project
-#print axioms suffix_localStep
-
 end L4.WindowSpanTrace

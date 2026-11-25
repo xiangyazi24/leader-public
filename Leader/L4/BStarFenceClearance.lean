@@ -73,6 +73,4 @@ theorem stopped_mean {n l r : Nat} (hn : 0<n) (L : Fin l→Fin n) (R : Fin r→F
       (line_cleared R hr rinj choose a w deliver t (Nat.le_max_right ..) early)
   · exact Nat.le_trans (censor w).2 (Nat.le_of_not_gt early)
 
-#print axioms line_cleared
-#print axioms stopped_mean
 end L4.BStarFenceClearance

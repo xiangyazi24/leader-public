@@ -169,7 +169,6 @@ theorem owner_weak (g : Pair LongGeometry) (raw : Pair (BitVec LW)) (m w owner :
     · simpa [total,Claim.slots,E] using
         hop_gap g raw C.source a C rfl E K M ne (d C.source) (d a) (gap C hC a E)
 
-
 /-- Wire the witnessed local mobile comparison to the complete physical
 join. A separate verified command-rank aggregation may supply the
 strict payment premise, in which case the surviving equal-forward
@@ -200,7 +199,4 @@ theorem joined_owner_weak (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   rw [J]
   exact owner_weak g raw m w owner d (fun C p h own => (Nat.not_lt_of_ge stable) (pays C p h own)) gap
 
-#print axioms hop_gap
-#print axioms owner_weak
-#print axioms joined_owner_weak
 end L4.BStarClearanceMobileOwner

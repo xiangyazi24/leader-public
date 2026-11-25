@@ -28,7 +28,5 @@ theorem line_time_at_entry (phase : Fin 5 → Word n → Prop) (pre : Word n)
   obtain ⟨u,f,v,eq,out⟩ := candidates_supply_bonds P o phase (pre++a) e mid
   exact ⟨u,f,v,eq,by simpa only [List.append_assoc] using out⟩
 
-#print axioms line_time_at_entry
-#print axioms candidates_supply_bonds
 end
 end L4.Height.CandidateResidence

@@ -65,5 +65,4 @@ theorem legal_on_band {s n : Nat} {x : Raw s n} {g : CustodyWitness x} (P : Prod
   change (if selTriple (captures.read (rawRun z w root).long).toNat then _ else none)=_
   rw [if_pos good]
 
-#print axioms legal_on_band
 end L4.Height.FreshCaptureSelectors

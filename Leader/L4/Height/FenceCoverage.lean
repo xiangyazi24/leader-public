@@ -43,5 +43,4 @@ theorem cover {base : X} {hh : ∃ i,oldH6 B base i=true} {o : Owners (oldH6 B b
     rw [coord]
     exact Prod.ext loc.symm sheet.symm
 
-#print axioms cover
 end L4.Height.FenceCoverage

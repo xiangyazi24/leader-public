@@ -86,7 +86,6 @@ theorem load_plan : ∀ k : Fin 395, ∀ q : Fin 3, ∀ f : Fin 9,
     get (start k.val)=some (.load q f) → 13+k.val=loadOp q f ∧ start k.val=loadNode q f := by
   decide +kernel
 
-
 /-- The callback consumes the exact supplied compiler word and bank;
 same-PC candidates cannot move the LOAD receipt to another cut. -/
 theorem callback {base x : X} {addr : Nat→Pos n} {len : Nat} {mode : Mode}
@@ -133,9 +132,6 @@ theorem callback {base x : X} {addr : Nat→Pos n} {len : Nat} {mode : Mode}
       have word' : ∀ a : WordSlot (start k), wordAt (step (run (run x prior) pre) e) site (start k) a = bank.digits q d % 16^width := node.symm ▸ word
       exact congrArg Value.word (word' s).symm
 
-#print axioms same_hit
-#print axioms callback
-
 /-- Join the physical pointwise nibble statement to the packed-register
 callback, without requiring a choice of WordSlot proof. -/
 theorem word_from_nibbles {width : Nat} (y : X) (site : Fin width→Fin n)
@@ -150,5 +146,4 @@ theorem word_from_nibbles {width : Nat} (y : X) (site : Fin width→Fin n)
   unfold wordAt
   rw [E,V]
 
-#print axioms word_from_nibbles
 end L4.BStarNativeLoadReady

@@ -220,10 +220,4 @@ theorem entry_drain_of_gated_rows {α : Type} {p c n : Nat} (hn : 4≤n)
   exact actual_completion_with_observer g (tag 1) (tag 2) b z m P edge
     observer project seed hseed commute good height rule keep hz H
 
-#print axioms drained_of_outlet
-#print axioms entry_drain_of_gated_rows
-#print axioms gated_outlet
-#print axioms actual_completion_of_gated
-#print axioms actual_completion_with_observer
-
 end L4.WindowA0PausedDAG

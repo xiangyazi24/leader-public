@@ -43,6 +43,5 @@ theorem candidate_mass (base initial : X) (addr : Nat→Pos n) (len : Nat)
       z (Classical.choose H) positive (Classical.choose_spec H)).trans
         (by unfold nom; rw [dif_pos H])
 
-#print axioms candidate_mass
 end L4.BStarPaceSteeredCharge
 

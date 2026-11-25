@@ -24,7 +24,6 @@ local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r
 local notation "step" => AllSizeS1Geometry.step B
 local notation "run" => BStarResetSchedule.run step
 
-
 /-- A literal NEED publication after a stop at or beyond common
 recovery uses the cut's still-pending bit or the first actual suffix
 reveal. In the suffix case the reservation is provably absent at this
@@ -90,5 +89,4 @@ theorem resolved_receipt {base initial : X} (u v tail : List (Fin n))
       lead.length (firstBit side) late L A
     exact BStarIncrementLedger.count_monotone _ _ _ (Nat.le_of_lt L)
 
-#print axioms resolved_receipt
 end L4.BStarResolvedReceipt

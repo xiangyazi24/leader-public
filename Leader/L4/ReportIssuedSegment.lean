@@ -135,6 +135,4 @@ theorem waiting_issued_segment (d : Sheet) (C : Chart h) (N : 1<n)
     · have No := reverse_still_waiting_no_consume d C N hh G F digit z Z k J e Wait
       exact keep J.1.1 (reverse_step_held d C N hh F z Z k J e No) No
 
-#print axioms reverse_still_waiting_no_consume
-#print axioms waiting_issued_segment
 end L4.ReportIssuedSegment

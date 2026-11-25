@@ -64,9 +64,7 @@ private theorem bad_issue_pc {x : X} {addr : Nat → Pos n} {e : Fin n}
     rw [←R]; simp only [AllSizeS1Geometry.step,if_neg (Ne.symm sep),if_true,pair]
   exact congrArg (fun t : _ × BitVec 9 => t.2.toNat) (eq ▸ A)
 
-
 open BStarLongToken BStarStageProvenance
-
 
 /-- Read the exact idle/foreign prefix backwards from a physical
 ISSUE408 cut. Any earlier launch/reply would have risen out of this band. -/
@@ -241,6 +239,4 @@ theorem selected_argument {base x : X} {hh : ∃ i,oldH6 B base i=true}
     exact (band a (e::(b++i::after)) (by rw [splitMain,E]; simp only [List.append_assoc,List.cons_append])).2.1
   · exact replay.symm ▸ selected
 
-
-#print axioms selected_argument
 end L4.BStarStageArgFrom407

@@ -108,8 +108,6 @@ theorem separator_return_expected {base x : X} {hh : ∃ i,oldH6 B base i=true}
     exact .inl ⟨[],[],rfl,.nil _ _,⟨⟨qx,cx⟩,wait⟩,⟨G.2.1,G.2.2.2⟩⟩
   · exact .inr ⟨z,.nil _ _,⟨⟨qx,cx⟩,wait⟩,G,terminal,rfl⟩
 
-#print axioms separator_return_expected
-
 open BStarLongCommand BStarAcquireWaitControl BStarResetControllerEntry
 
 /-- Production cutoff immediately after the exact independent issue
@@ -167,5 +165,4 @@ theorem separator_after_launch_expected {base x : X} {hh : ∃ i,oldH6 B base i=
     op (.out 0) ⟨same _ qy,legal,phase,pc⟩
     ⟨Nat.zero_le _,⟨_,front⟩,fun _ J=>(Nat.not_lt_zero _ J).elim⟩
 
-#print axioms separator_after_launch_expected
 end L4.SeparatorReturnIID

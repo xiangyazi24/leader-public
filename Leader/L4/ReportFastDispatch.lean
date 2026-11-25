@@ -27,7 +27,6 @@ local instance (p : Prop) : Decidable p := Classical.propDecidable p
 
 variable {s n : Nat} {h : Fin n→Bool}
 
-
 /-- The ordinary ambient geometry, not an extra service supplier.
     K may be as large as the exact residual cap permits. -/
 structure Setup (d : Sheet) (hh : ∃ i,h i=true) (P : Raw s n→Prop)
@@ -907,15 +906,6 @@ theorem Setup.finishSound (y : Obs E.State) (H : ReportFastSplice.finish y=true)
 -- CHECK: ReportFastItem10Assembly.lean:13–50, PhaseRows field order;
 -- ReportFastRefractoryAdapter.lean: the final theorem is in namespace
 -- ReportFastItem10Assembly, not namespace ReportFastRefractoryAdapter.
-
-#print axioms Setup.dispatchExists
-#print axioms Setup.advanceSpec
-#print axioms Setup.cut_unique
-#print axioms Setup.driver_cut
-#print axioms Setup.allMark
-#print axioms Setup.excluded
-#print axioms Setup.pace
-#print axioms Setup.phaseRows
 
 end
 end L4.ReportFastDispatch

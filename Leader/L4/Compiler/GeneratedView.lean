@@ -248,7 +248,4 @@ theorem view_spec {r : Nat} (T : PrimTable r) (bank : Bank) (hT : PrimSem T bank
       (by rw [dLen]; decide) (by rw [dLen]; decide) (by rw [dLen]; decide) (by rw [dLen]; decide)
       (by rw [dLen]; decide) (by rw [dLen]; decide) (by rw [dLen]; decide) (by rw [dLen]; decide) dR
 
-#print axioms view_spec
-#print axioms stageView_snapshot
-#print axioms phase_read
 end L4.Compiler.Native

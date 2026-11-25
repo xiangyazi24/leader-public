@@ -139,7 +139,6 @@ theorem accepted_left {Tag : Type} (digits : Tag→BitVec 36)
   obtain ⟨F,read,V,W⟩ := saturate_left digits (play x pre) (addr a seam) width plan size hw Q R accept
   exact ⟨pre,gap,back,mark,turn,t,post,E,F,read,R,M,V,W⟩
 
-
 /-- Original same-tape form, with all late scoped readiness hypotheses
 discharged by the genuine accepted PC9 tour and generated band. Here
 `bridge` may be exactly the PC10 through-ACK11 prefix of LeftReturn. -/
@@ -182,8 +181,4 @@ theorem accepted_left_original {Tag : Type} (digits : Tag→BitVec 36)
   simpa only [BStarResetSchedule.run_append] using accepted_left hp digits chart hw flags
     notShort strip root sep w ack T H plan size s label P old mobile ready
 
-#print axioms cutVacant_of_active
-#print axioms saturate_left
-#print axioms accepted_left
-#print axioms accepted_left_original
 end L4.BStarCopyLeftFence

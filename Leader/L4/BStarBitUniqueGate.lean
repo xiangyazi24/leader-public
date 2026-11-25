@@ -51,5 +51,4 @@ theorem chart_no_second_gate {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have eq := BStarNativeOffsetPhysical.same_ordinal_same_word hs hh a.1 b.1 (oa.trans ob.symm) W
   exact (List.getD_inj (by omega) (by omega) C.nodup).mp (Prod.ext eq (qa.trans qb.symm))
 
-#print axioms chart_no_second_gate
 end L4.BStarBitUniqueGate

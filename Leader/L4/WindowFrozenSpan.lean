@@ -93,7 +93,4 @@ theorem transaction_localStep {n : Nat} (hit : Word n → Prop)
     exact active u e hc hn
   · exact stamp_frozen hit physical
 
-#print axioms stamp_of_cut
-#print axioms transaction_localStep
-
 end L4.WindowFrozenSpan

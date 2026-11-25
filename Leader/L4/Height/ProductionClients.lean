@@ -48,7 +48,6 @@ theorem production_overflow (P : Production g) (o : Owners h) (live : Fin 5 → 
   rw [chartIssue] at bound
   exact bound
 
-#print axioms production_overflow
 end
 end L4.Height.ProductionClients
 

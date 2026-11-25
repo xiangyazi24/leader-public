@@ -276,7 +276,5 @@ theorem execute_support {c : Nat} (r i : Nat) (x : BitVec (WidthByteRows.W c))
       simp [empty_support]
   · simp [WidthByteRows.departing,assigns,empty_support]
 
-#print axioms execute_transfer
-#print axioms execute_support
 end L4.BStarWidthTransferDepart
 

@@ -123,10 +123,7 @@ theorem consumed_round_prefix {base x : X} {addr : Nat → Pos n} {len op : Nat}
         | arrived_hold _ _ => exact (here rfl).elim
         | consume _ _ _ => exact (here rfl).elim
 
-#print axioms consumed_round_prefix
 end Physical
 
-#print axioms complete_pace_charge
-#print axioms total_completed
 end L4.BStarPaceLedger
 

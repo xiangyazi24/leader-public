@@ -67,5 +67,4 @@ theorem prefixAuth_of_release (P : Production g) (o : Owners h) (a : Word n) (rr
   rw [Y] at A
   exact A.1
 
-#print axioms prefixAuth_of_release
 end L4.Height.StageAuthorityScoped

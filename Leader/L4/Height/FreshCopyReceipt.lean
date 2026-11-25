@@ -16,7 +16,6 @@ local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r
 local notation "step" => AllSizeS1Geometry.step (n:=n) B
 local notation "run" => BStarResetSchedule.run step
 
-
 def unit (op : Nat) : Payload := ⟨0,BitVec.ofNat 9 op,0,0,0⟩
 
 /-- The physical incoming door accepts a canonical unit ACK on every
@@ -70,5 +69,4 @@ theorem ordinary {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have tag : (unit op).opcode.toNat=op := by rcases copyOp with rfl|rfl|rfl|rfl|rfl|rfl <;> decide
   exact ⟨old,event,oldPc,newPc,door,unit op,bound,rfl,tag⟩
 
-#print axioms ordinary
 end L4.Height.FreshCopyReceipt

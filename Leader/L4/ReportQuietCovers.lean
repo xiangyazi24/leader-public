@@ -224,9 +224,4 @@ theorem visible_of_passes (R : Readout X I) (rho : Nat) (near : Bool→I→I) (b
   rw [target_congr near ball _ _ Z dir i k PathK]
   exact (P i (path_here PathK)).2.2 dir k K PathK
 
-#print axioms pass
-#print axioms quiet_preserves_correct
-#print axioms correct_rebase
-#print axioms passes
-#print axioms visible_of_passes
 end L4.ReportQuietCovers

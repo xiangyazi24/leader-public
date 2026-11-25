@@ -149,9 +149,4 @@ theorem first_reset0_doublet_accept {s n : Nat} {base x : Raw s n}
   rw [BStarResetSchedule.run_append]
   exact Y
 
-#print axioms first_reset0_doublet_expected
-#print axioms first_reset0_doublet_accept
-#print axioms healthy_race_expected
-#print axioms healthy_middle_accept
-#print axioms healthy_final_accept
 end L4.PhysicalHealthyRaces

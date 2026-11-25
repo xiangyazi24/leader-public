@@ -86,7 +86,6 @@ theorem selected_terminal_parity {base x : X} {hh : ∃ i,oldH6 B base i=true}
     Q,sel,tag,Hv,?_⟩
   exact par.trans (BStarBitParity.finish_parity v q Hv.1 Hv.2 D).symm
 
-
 theorem terminal_raw_of_ack {base y : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
     (C : Chart hp base hh o S len fall) (sep : ∀ e : Fin n,e≠rightNeighbor e)
@@ -107,9 +106,6 @@ theorem terminal_raw_of_ack {base y : X} {hh : ∃ i,oldH6 B base i=true}
   obtain ⟨p,K,offer,P,hP,sel,at10,hO,par⟩ := selected_terminal_parity hp C turn (sep turn) old
     (busy_start hp ret) q Q ⟨F,(congrArg BitVec.toNat E).trans H.2⟩
   exact ⟨p,K,offer,P,hP,sel,at10,hO,par.trans (normal_parity normal H)⟩
-
-
-#print axioms terminal_raw_of_ack
 
 open BStarBitUniqueGate BStarClearanceOffset BStarBitGateGeometry
 
@@ -151,5 +147,4 @@ theorem exit_to_ack {base x : X} {hh : ∃ i,oldH6 B base i=true}
       (Nat.lt_succ_self j) (Nat.le_refl len) T hT NG
   exact (congrArg parity (Token.forward.inj (start.symm.trans Q))).trans (E.trans PT)
 
-#print axioms exit_to_ack
 end L4.BStarBitAckParity

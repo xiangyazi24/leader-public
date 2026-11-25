@@ -74,5 +74,4 @@ theorem two_line_mean {S : Type} {n : Nat}
   exact Nat.le_trans (Nat.le_of_eq (by dsimp [L]; ac_rfl))
     (Nat.le_trans (Nat.mul_le_mul_left n h) (Nat.le_of_eq (by ac_rfl)))
 
-#print axioms two_line_mean
 end L4.Height.FencePathEnvelope

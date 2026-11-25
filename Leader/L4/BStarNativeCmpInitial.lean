@@ -106,6 +106,4 @@ theorem cmp_first_from_launch {base before x : X} {hh : ∃ i,oldH6 B base i=tru
     exact launch_seed _ _ oldPC hi kind L
   exact first_significant_seed hp chart sep A kind start d tail first healthy
 
-
-#print axioms cmp_first_from_launch
 end L4.BStarNativeCmpInitial

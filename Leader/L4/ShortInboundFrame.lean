@@ -37,7 +37,4 @@ theorem root_frame_raw {s n : Nat} (x : Raw s n) (e : Fin n)
   simp only [pairHeader,head] at H
   exact H.trans (nonparked_root_inbound_frame_pair _ _ _ wait op safe wire)
 
-#print axioms inbound_frame_raw
-#print axioms prefix_frame_raw
-#print axioms root_frame_raw
 end L4.ShortInboundFrame

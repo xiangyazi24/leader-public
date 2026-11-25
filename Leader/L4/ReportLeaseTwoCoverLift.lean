@@ -177,9 +177,6 @@ theorem two_covers_supply (d : Sheet) (N : 1<n)
   rw [ShortOwnerEpochJS.raw_append,←Z]
   exact ⟨A1 C M,A2 C M⟩
 
-#print axioms receipt_supplies
-#print axioms exact_cover_supplies
-#print axioms two_covers_supply
 end L4.ReportLeaseTwoCoverLift
 
 namespace L4.ReportLeaseTwoCoverLift
@@ -232,5 +229,4 @@ theorem expected_of_two_cover_epochs (d : Sheet) (N : 1<n) (S : 0<s)
   exact ⟨preserve_word d N hh F (I1 C) (closed1 C) _ Y tail (A C M).1,
     preserve_word d N hh F (I2 C) (closed2 C) _ Y tail (A C M).2⟩
 
-#print axioms expected_of_two_cover_epochs
 end L4.ReportLeaseTwoCoverLift

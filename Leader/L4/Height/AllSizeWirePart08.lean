@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart07
+import Leader.L4.Height.AllSizeWirePart07
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section PackedGeometry
 open PhysicalCustody CustodySpec ClockServiceSpec AllSizeProtocol BStarH6WordChart
@@ -102,4 +102,4 @@ theorem reservation_frontiers_differ :
     30 + 2 < publicationFrontier 29 1 ∧
     30 + 2 = BStarPhysicalLiftAlignment.frontier 29 := by decide
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

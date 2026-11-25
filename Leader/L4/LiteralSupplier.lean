@@ -30,7 +30,6 @@ theorem literal_fifo_projection {p c n : Nat} (hn : 4 ≤ n)
   exact FIFOCompare.departures_le (n-1) (by omega) _ _ _ _
     (fun k hk hk' => literal_cut_heights hn v s h w hw k hk hk')
 
-
 theorem literal_fixedSupplierCertificate : ConcreteFixedSupplierCertificate := by
   intro p c n x v d _ _ hn _ _ h
   obtain ⟨L,paths,hL,hp,hcount,hfinish⟩ :=
@@ -43,7 +42,3 @@ theorem literal_fixedSupplierMean : ConcreteFixedSupplierMean :=
 
 end L4.RankSupplier
 
-#print axioms L4.RankSupplier.literal_cut_heights
-#print axioms L4.RankSupplier.literal_fifo_projection
-#print axioms L4.RankSupplier.literal_fixedSupplierCertificate
-#print axioms L4.RankSupplier.literal_fixedSupplierMean

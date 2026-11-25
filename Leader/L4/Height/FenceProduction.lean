@@ -135,8 +135,6 @@ theorem integer_potential_of_truncated_bound
     change n + A ≤ n * E x
     omega
 
-#print axioms integer_potential_of_truncated_bound
-
 end L4.Height.FenceProduction
 
 namespace L4.Height.FenceProduction
@@ -666,15 +664,5 @@ theorem busy_fence_comparison_word {base initial : X}
     simpa only [pastNext,List.append_assoc,List.singleton_append,comparisonRun,trace] using I
 
 end PhysicalTransfer
-
-#print axioms busy_fence_no_own_reservation
-#print axioms busy_fence_own_claim_selected
-#print axioms joined_hop_below
-#print axioms joined_ending_empty
-#print axioms busy_fence_hop_below
-#print axioms comparisonAt_on_claim
-#print axioms comparison_fiber
-#print axioms busy_fence_comparison_step
-#print axioms busy_fence_comparison_word
 
 end L4.Height.FenceProduction

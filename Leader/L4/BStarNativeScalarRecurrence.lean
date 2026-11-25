@@ -64,5 +64,4 @@ theorem head_ready {width : Nat} (table : PrimTable width) (bank : Bank)
     simp only [headPending,E,Option.toList_some,List.map_cons,List.map_nil]
     exact L ▸ extend_rep old [] regs literalCmp b R (L.symm ▸ C)
 
-#print axioms head_ready
 end L4.BStarNativeScalarRecurrence

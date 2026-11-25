@@ -170,5 +170,4 @@ theorem accepted_seal_facts {base origin x : X} {hh : ∃ j,oldH6 B base j=true}
     rw [replayMid] at frame
     exact ⟨Wp,qrun _ b (closed _ (qrun _ idle yq) door),frame.2.2,liveDesc,desc,frame.1,frame.2.1,selected⟩
 
-#print axioms accepted_seal_facts
 end L4.Height.StageSealOldFacts

@@ -217,5 +217,4 @@ theorem classify_release {base origin : X} {hh : ∃ i,oldH6 B base i=true}
         exact ⟨⟨i,k,markEq,it,lt,loc,rfl,winner,C,pay,right,active⟩⟩
   · exact .inl (fun i it s E H => existsRelease ⟨i,it,s,E,H⟩)
 
-#print axioms classify_release
 end L4.BStarCopyLeftReleaseClass

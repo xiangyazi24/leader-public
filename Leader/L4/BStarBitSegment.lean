@@ -257,8 +257,6 @@ private theorem phase_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
       | complete s => exact (complete_incoming hp C fixed ready sep i k idx O now s f bd F op rfl).trans old
     · simpa only [nextPhase,if_neg L,if_neg R] using outside L R
 
-#print axioms phase_step
-
 /-- Every actual first departure from this outward cursor follows the
 finite handshake scanner, allowing arbitrary intervening spectators and
 any repetitions of the first side. The suffix is not replayed or edited.
@@ -434,9 +432,6 @@ theorem labels_bit {n : Nat} {i : Fin n} {w : List (Fin n)} {s : Side}
     exact ⟨[],_,rfl,by simp⟩
   | repeatFirst _ _ | oppositeHit _ _ _ | repeatIncoming _ _ | departure _ => cases E
 
-#print axioms scanner_labels
-#print axioms labels_bit
-#print axioms busy_segment
 /-- Public positive interface to the same literal one-mark scanner. -/
 theorem literal_phase_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
@@ -456,5 +451,4 @@ theorem literal_phase_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
         atSite (step x e (rightNeighbor i)).long (slot hp x i)=.forward (cleanBit v s) :=
   phase_step hp C fixed ready sep i k idx O now v F op zero arg phase old off e
 
-#print axioms literal_phase_step
 end L4.BStarBitSegment

@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart00
+import Leader.L4.Height.AllSizeWirePart00
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section PublicationService
 
@@ -18,7 +18,7 @@ def publishes (next : (Fin n → S) → Fin n → (Fin n → S))
 
 /-- The two steering intervals have total length `2 * (2^20 * n * W)`.
 The count is over the original raw-edge alphabet from each custody cut. -/
-noncomputable def StrictPublicationBlock (D : G9Data S n) (hn : 0 < n)
+noncomputable def StrictPublicationBlock (D : AllSizeData S n) (hn : 0 < n)
     (publication : (Fin n → S) → Fin n → Fin n → Prop)
     (header : ∀ j, Fin (D.m j) → Fin n) : Prop :=
   ∀ j i z,
@@ -29,7 +29,7 @@ noncomputable def StrictPublicationBlock (D : G9Data S n) (hn : 0 < n)
           (D.raw j z) (header j i) w then 1 else 0) (2*T) ≥ n^(2*T)
 
 /-- Executing the same raw letters on a chart projects to the pair rule. -/
-theorem publication_run_projects (D : G9Data S n) (hn : 0 < n)
+theorem publication_run_projects (D : AllSizeData S n) (hn : 0 < n)
     (rawStep : ∀ j z e, D.raw j ((D.clock j).next z e) = D.next hn (D.raw j z) e)
     (j : D.Chart) (z : D.State j) (w : List (Fin n)) :
     D.raw j (Thru.runWord (D.clock j).next z w) =
@@ -69,7 +69,7 @@ theorem served_next_iff_publication {X : Type} {m B M : Nat} {hm : 0 < m}
 
 /-- Split a positive publication prefix at the exact letter ending it.
 An event registered before the cut is excluded by the positive prefix. -/
-theorem publication_prefix_iff (D : G9Data S n) (hn : 0 < n)
+theorem publication_prefix_iff (D : AllSizeData S n) (hn : 0 < n)
     (publication : (Fin n → S) → Fin n → Fin n → Prop)
     (header : ∀ j, Fin (D.m j) → Fin n)
     (rawStep : ∀ j z e, D.raw j ((D.clock j).next z e) = D.next hn (D.raw j z) e)
@@ -109,7 +109,7 @@ theorem publication_prefix_iff (D : G9Data S n) (hn : 0 < n)
 
 /-- Transport the strict physical block count to the chart without changing
 the scheduler alphabet or treating its publication list as an IID word. -/
-theorem service_of_strict_publication_block (D : G9Data S n) (hn : 0 < n)
+theorem service_of_strict_publication_block (D : AllSizeData S n) (hn : 0 < n)
     (publication : (Fin n → S) → Fin n → Fin n → Prop)
     (header : ∀ j, Fin (D.m j) → Fin n)
     (rawStep : ∀ j z e, D.raw j ((D.clock j).next z e) = D.next hn (D.raw j z) e)
@@ -141,7 +141,7 @@ theorem service_of_strict_publication_block (D : G9Data S n) (hn : 0 < n)
   exact hStrict j i z
 
 /-- The maximum actual owner width fits the service scale. -/
-theorem parameters_of_packing (D : G9Data S n) (hn : 0 < n) (bL : Nat)
+theorem parameters_of_packing (D : AllSizeData S n) (hn : 0 < n) (bL : Nat)
     (hClock : Recover.StageTwo.ClockParams (modulus D.r))
     (hDiameter : ∀ j, D.m j / 2 < modulus D.r / 2)
     (hWidthPos : ∀ j, 0 < D.width j) (hWidthBound : ∀ j, D.width j ≤ 1024 * D.r)
@@ -155,12 +155,12 @@ theorem parameters_of_packing (D : G9Data S n) (hn : 0 < n) (bL : Nat)
   calc
     4 * (2^(5*bL+1) * D.block j) =
         (4 * 2^(5*bL+1) * 2^21) * n * D.width j := by
-      unfold G9Data.block
+      unfold AllSizeData.block
       ac_rfl
     _ ≤ (4 * 2^(5*bL+1) * 2^21) * n * (1024 * D.r) :=
       Nat.mul_le_mul_left _ (hWidthBound j)
     _ = D.scale bL := by
-      unfold G9Data.scale
+      unfold AllSizeData.scale
       change (2^2 * 2^(5*bL+1) * 2^21) * n * (2^10 * D.r) =
         2^(5*bL+34) * n * D.r
       have hpow : 2^2 * 2^(5*bL+1) * 2^21 * 2^10 = 2^(5*bL+34) := by
@@ -172,7 +172,7 @@ theorem parameters_of_packing (D : G9Data S n) (hn : 0 < n) (bL : Nat)
 
 /-- The double-ceiling-log advice provides enough modulus for every
 chart packed at the deployed radius. -/
-theorem packed_modulus_parameters (D : G9Data S n) (hfour : 4 ≤ n)
+theorem packed_modulus_parameters (D : AllSizeData S n) (hfour : 4 ≤ n)
     (hRadius : D.r = 2 ^ ceilingLogTwo (ceilingLogTwo n) - 1)
     (hPacked : ∀ j, D.m j * D.r ≤ n) :
     Recover.StageTwo.ClockParams (modulus D.r) ∧
@@ -223,4 +223,4 @@ theorem half_diameter_counterexample :
 
 end PublicationService
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

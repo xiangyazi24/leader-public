@@ -108,6 +108,4 @@ theorem joined_recovers_sample (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp :
   have lands := joined_acquire_lands k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x out hh phase op B fault opcode ok
   exact (source_fields_payload _ out lands v.incidence).trans h.2
 
-#print axioms joined_recovers_sample
-#print axioms source_fields_payload
 end L4.BStarAcquireReadout

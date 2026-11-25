@@ -168,5 +168,4 @@ theorem pre_service_sum {base x : X} {hh : ∃ i,oldH6 B base i=true}
       rank_fixed hp _ hh base x x (fun _ => rfl) (congrFun eq) cb cx]
   exact door C hc (by rwa [eq]) hd
 
-#print axioms pre_service_sum
 end L4.BStarClearanceIndexedWait

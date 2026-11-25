@@ -86,11 +86,6 @@ theorem accept_final {p c : Nat} (u v : Site p c) (k : Fin (2*c))
   have H := WindowA0Release.release_door_row u v (.count k) hm hL hR hs hr hq
   simpa [waitingFor,inward,door_terminal_accept k hk] using H
 
-#print axioms short_release_mass
-#print axioms accept_init
-#print axioms accept_count
-#print axioms accept_final
-
 /-- Unpaid first request turns the authentic gap-one worker. It may
 already give a tracked birth; otherwise the same physical socket
 still has its mark and its empty donor byte for the second request. -/
@@ -133,9 +128,6 @@ theorem paid_or_turn {p c : Nat} (a b : Site p c) (q : Trip (2*c))
       exact hp (WindowA0StockDrain.marked_ghost_stock_pays a b ha hLb h)
     exact .inr (turn_unpaid a b q ha hLa hs hb hLb hSb hr)
 
-#print axioms turn_unpaid
-#print axioms paid_or_turn
-
 def farLeft {n : Nat} (i : Fin n) : Fin n := liftedSite i (n-2)
 
 theorem guards_eq {n : Nat} (i : Fin n) :
@@ -160,8 +152,6 @@ theorem off_guard_frame {p c n : Nat} (S : WindowA0Ledger.Scope n) (i : Fin n)
   rw [WindowA0Ledger.physical_step]
   rw [guards_eq] at h
   exact WindowA0Release.outside_agrees z.1.ledger.config _ e h
-
-#print axioms off_guard_frame
 
 private theorem ring_distinct {n : Nat} (hn : 4≤n) (e : Fin n) : rightNeighbor e≠e := by
   intro h
@@ -203,8 +193,6 @@ theorem marked_leader_pays {p c : Nat} (a b : Site p c)
   generalize fireInitiator a = q at ha ⊢
   simp only [pinned,ha.1,hg,Bool.not_false,Bool.and_true]
   cases hb : !(q.bullet == .none) <;> simp [followerBullet,hb,ha.1,hg,payer,ha.2]
-
-#print axioms marked_leader_pays
 
 /-- A genuine gap-one entry has a marked predecessor and an
 empty marked worker, with the selected original tags at the two doors.
@@ -300,8 +288,6 @@ theorem first_request_authenticates {p c n : Nat} (hn : 4≤n) (S : WindowA0Ledg
   · rw [hy,heq]; exact hrow.2.2.2
   · rw [hy]; simp [step,he,fresh,ring_distinct hn i,X]
 
-#print axioms first_request_authenticates
-
 /-- The second guard request is literally the door pair. Its FIRE bit
 implies the scoped J-birth exit, while a continuing request retains the
 new same-mark outward launch given by the serviceDoor table. -/
@@ -341,5 +327,4 @@ theorem second_request_authenticates {p c n : Nat} (hn : 4≤n)
       simp [WindowLocal.birthAt,hJ,H']
     exact selected_birth_exits hn S x i S.jTag hr hm hc hj hb (.inr rfl)
 
-#print axioms second_request_authenticates
 end L4.WindowA0GapOne

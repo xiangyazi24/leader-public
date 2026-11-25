@@ -222,16 +222,4 @@ theorem literal_typed (i : Nat) (c : L4.Compiler.Native.Code)
   have E := List.all_eq_true.mp literal_typing_certificate i hi
   simpa [checkedSlotAt,h] using E
 
-#print axioms const_row
-#print axioms mask_row
-#print axioms mux_row
-#print axioms load_center_row
-#print axioms literal_typed
-#print axioms num_write_of_lt
-#print axioms add_row
-#print axioms sub_row
-#print axioms shift_row
-#print axioms compare_row
-#print axioms scan_row
-#print axioms visit_row
 end L4.BStarPhysicalDigitSem

@@ -37,7 +37,6 @@ theorem stock_exit_mean {p c n s : Nat} (hn : 4≤n) (initial : Config p c n)
     rw [GGTiming.runMarks_append]
     exact hd
 
-
 theorem entry_exit_mean {p c n : Nat} (hn : 4≤n) (x : Config p c n)
     (i : Fin (RankPhysical.rank x)) (hm : MCOV x) (hc : COV x) (short : 2*span x i+2<n)
     (h1 : (x (rootSite x (liftedSite i 1))).leader=false)
@@ -85,7 +84,6 @@ theorem entry_exit_mean {p c n : Nat} (hn : 4≤n) (x : Config p c n)
     y.heads.j-y.heads.i<n ∧ MCOV y.ledger.config ∧ COV y.ledger.config ∧ _
   exact ⟨G.cont,ji,by omega,by omega,G.cont.1.markCover,Q,noOther_left _ _ _ _ _ G⟩
 
-
 theorem physical_entry_exit_mean {p c n : Nat} (hn : 5≤n) (hc : 12≤c)
     (x : Config p c n) (i : Fin (RankPhysical.rank x)) (hm : MCOV x) (hv : COV x)
     (short : 2*WindowSpan.span x i+2<n)
@@ -98,7 +96,6 @@ theorem physical_entry_exit_mean {p c n : Nat} (hn : 5≤n) (hc : 12≤c)
   entry_exit_mean (by omega) x i hm hv short h1 h2 (fun J H h  z hz hl =>
     WindowA0Uniform.physical_attempt hn hc x (entryScope x i) J H (by omega) z hz hl)
 
-
 theorem entry_clock {p c n : Nat} (hn : 5≤n) (hc : 12≤c) (x : Config p c n)
     (i : Fin (RankPhysical.rank x)) (hm : MCOV x) (hv : COV x)
     (short : 2*WindowSpan.span x i+2<n)
@@ -107,7 +104,6 @@ theorem entry_clock {p c n : Nat} (hn : 5≤n) (hc : 12≤c) (x : Config p c n)
     IIDExpectedHittingTimeAtMost wordNext (WindowA0FirstExit.done x i) []
       (WindowA0Restart.entryKSharp c*n*(WindowSpan.span x i+1)) :=
   physical_entry_exit_mean hn hc x i hm hv short h1 h2
-
 
 open WindowTransactions WindowOwnership WindowA0Join
 noncomputable def entry {p c n : Nat} (hn : 5≤n) (hc : 12≤c)
@@ -120,7 +116,6 @@ noncomputable def entry {p c n : Nat} (hn : 5≤n) (hc : 12≤c)
     (WindowA0FirstExit.done x i)
   have G := WindowA0Join.initial_ghosts x i hq he
   exact entry_clock hn hc x i hq.1 hq.2.1 short G.1 G.2
-
 
 open WindowPlan WindowLatch
 variable {p c n : Nat}
@@ -157,7 +152,4 @@ theorem entry_slot (h5 : 5≤n) (h7 : 7≤RankPhysical.rank x)
     rw [geometric_stamp _ _ _ _ _ _ _ _ _ _ HU]
     exact Nat.le_refl _
 
-
-#print axioms entry_clock
-#print axioms entry_slot
 end L4.WindowCappedEntry

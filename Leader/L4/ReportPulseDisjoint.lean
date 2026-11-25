@@ -68,8 +68,6 @@ theorem extract_nodup_starts (g : G) (J : Nat) (w : List (Option (Event G))) :
   rw [List.map_drop]
   exact List.Nodup.sublist (List.drop_sublist _ _) H
 
-#print axioms extract_nodup_starts
-
 variable {n : Nat}
 
 noncomputable def recoded (put : G × Bool → Fin n) (s : Phase G) (w : List (Fin n)) :
@@ -136,9 +134,6 @@ theorem ordered_starts (q : Nat) (L R : List Nat)
   intro j A B
   exact (Nat.not_lt_of_ge (right j B)) (left j A)
 
-#print axioms pair_start_global
-#print axioms distinct_gate_starts
-
 open AllSizeProtocol ReportByteRows ReportPulseRaw ReportPulseWarmup
 
 theorem raw_credit_start_tags {X : Type}
@@ -197,6 +192,4 @@ theorem same_gate_disjoint_actual {X : Type}
     omega
   exact ordered_starts (u++[e]).length _ _ (fun j M => (FirstBound j M).1) Right
 
-#print axioms raw_credit_start_tags
-#print axioms same_gate_disjoint_actual
 end L4.ReportPulseDisjoint

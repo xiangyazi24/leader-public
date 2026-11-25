@@ -175,6 +175,4 @@ theorem matched_at_most_one {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have H : a.length<a'.length := by rw [L,L'] at order; omega
   exact middle a e b a' e' b' Z Z' H read read'
 
-#print axioms flight_at_most_one
-#print axioms matched_at_most_one
 end L4.BStarNeedOneRead

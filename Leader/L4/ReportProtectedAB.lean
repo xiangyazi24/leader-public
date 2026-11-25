@@ -68,7 +68,6 @@ theorem ab_reader_held_run (d : Sheet) (N : 1<n) (i : Fin n) (j : Fin 3)
     obtain ⟨X,Y⟩ := IH _ G Held.2
     exact ⟨X.trans F.1,Y.trans F.2⟩
 
-
 open ReportOwnerIssueControl ReportOwnerAcquireReturn ReportAcquireAllCaptures
 open ReportOwnerAcquireProvenance (BeforeConsume NoConsume)
 open ReportPrelaunchClock ReportOwnerSerial ReportIndexedSideLease ReportGoodEightCut ReportLeaseOwner
@@ -144,7 +143,4 @@ theorem captured_A_now (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
   have Same := Frame.trans (Step.trans (Eq.trans WinStep))
   exact Val.trans (congrArg Bool.toNat Same).symm
 
-#print axioms captured_A_now
-#print axioms raw_ab_without_ingress
-#print axioms ab_reader_held_run
 end L4.ReportProtectedAB

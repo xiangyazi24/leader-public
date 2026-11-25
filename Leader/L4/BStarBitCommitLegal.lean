@@ -75,6 +75,4 @@ theorem commit_guard_parity_independent (x : BitVec LW) (d : Desc) (need : d.nee
     guard true 1 x d d.b0=guard true 1 x d d.b1 := by
   simp [BStarLongPublication.guard,typedGuard,need]
 
-#print axioms actual_bit_ack_allows
-#print axioms commit_guard_parity_independent
 end L4.BStarBitCommitLegal

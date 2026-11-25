@@ -61,8 +61,6 @@ theorem arbitrary_precenter_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
           omega
         | turn => omega
 
-#print axioms arbitrary_precenter_step
-
 /-- A replay with the nominated ordered subsequence reaches the center
 on some prefix. Intervening marks may help but cannot undo progress or
 change the well-formed COMMIT before that first center cut. -/
@@ -124,5 +122,4 @@ theorem reaches_center_of_sublist {base : X} {hh : ∃ i,oldH6 B base i=true}
       (closed _ q e) now new nom'
     exact ⟨e::pre,post,congrArg (List.cons e) W,.cons I E T,P⟩
 
-#print axioms reaches_center_of_sublist
 end L4.BStarCommitServiceReplay

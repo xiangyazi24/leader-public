@@ -202,9 +202,4 @@ theorem receipts_of_finished (advance : X → Fin n → X)
           obtain ⟨u,v,E,_,U,V⟩ := ih _ D
           exact ⟨e::u,v,congrArg (List.cons e) E,by simp,U,V⟩
 
-#print axioms phase_run_raw
-#print axioms run_raw
-#print axioms receipts_of_finished
-#print axioms step_raw
-#print axioms expected
 end L4.SequentialMarkClock

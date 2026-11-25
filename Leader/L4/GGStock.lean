@@ -91,10 +91,4 @@ theorem displacement_envelope {a b c i j : Nat}
   have hlen := paid_j_le_initial_span h
   omega
 
-#print axioms PaidJ.not_exterior
-#print axioms PaidJ.origin_eq_initial
-#print axioms credit_count
-#print axioms paid_j_le_initial_span
-#print axioms displacement_envelope
-
 end L4.GGStock

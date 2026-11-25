@@ -33,7 +33,6 @@ private theorem no_observation (g : Pair LongGeometry) (old : ReadK) (l : List K
   obtain ⟨q,hq⟩ := h
   exact no_observe_written g old l a t ⟨(a,q),hq,rfl⟩ hw
 
-
 /-- A last write in one selected command lands in the whole work row;
 normalization, work, other claims, and observers cannot override it. -/
 theorem last_selected_lands (g : Pair LongGeometry) (x : Pair (BitVec LW))
@@ -133,9 +132,6 @@ theorem reverse_work (g : Pair LongGeometry) (x : Pair (BitVec LW))
     have E := List.mem_singleton.mp hw
     exact E.symm ▸ hne
 
-#print axioms terminal_work
-#print axioms reverse_work
-
 private theorem scratch_holds (g : Pair LongGeometry) (raw : Pair (BitVec LW))
     (s : Bool) (y : BitVec LW) (j : Fin 11) :
     (kField j).read ((lane s (longScratch g raw)).apply y)=(kField j).read y := by
@@ -227,9 +223,6 @@ theorem reverse_joined (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   rw [joined_reads k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x C.source hs]
   exact reverse_work _ _ C dst t hd hne he
 
-#print axioms terminal_joined
-#print axioms reverse_joined
-
 /-- A literal nonterminal departing link has distinct addresses, and
 if its old source is K0 it is the left endpoint. -/
 theorem link_shape (g : Pair LongGeometry) (C : CommandClaim) (d : AtK)
@@ -315,8 +308,6 @@ theorem raw_reverse_joined (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p
     exact (S.2.2 h0 h1).elim
   · exact reverse_checked _ _ C d pay hC hd hs ht hv
 
-#print axioms raw_reverse_joined
-
 private theorem selectors_mod64 (n : Nat) : selTriple (n%64)=selTriple n := by
   have H1 : n%64%4=n%4 := by omega
   have H2 : n%64/4%4=n/4%4 := by omega
@@ -373,6 +364,4 @@ theorem raw_terminal_joined (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<
   obtain ⟨q,Eq,V⟩ := terminal_valid_reply pay H
   exact ⟨q,(terminal_joined k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x C pay h10 hd H he).trans Eq,Eq,V⟩
 
-#print axioms raw_terminal_joined
-#print axioms terminal_valid_reply
 end L4.BStarAcquireReturn

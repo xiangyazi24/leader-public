@@ -246,7 +246,4 @@ theorem actual_door {p c n H} (hn : 4≤n) {J : Fin n} {z0 : Config p c n}
       simp [railShape,show ¬a.gap-1<d by omega,show a.gap-1≠d by omega]
     simpa only [hcfg,step,eN,right,if_true,if_false] using R.1 T
 
-#print axioms routed_ordinary
-#print axioms actual_door
-
 end L4.WindowA0ReturnStationary

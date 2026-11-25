@@ -93,5 +93,4 @@ theorem to_issue_zero {base x : X} {hh : ∃ i,oldH6 B base i=true}
       (fun _ h => issue_range h.issue) attempt x init
   exact ⟨k,w,K,T,I,Z⟩
 
-#print axioms to_issue_zero
 end L4.BStarClearanceResidual

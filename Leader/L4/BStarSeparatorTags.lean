@@ -188,11 +188,4 @@ theorem hold_raw_partition (g : Pair LongGeometry) (x : Pair (BitVec LW))
   · exact (List.mem_append.mp H).elim (norm w) (M w)
   · exact obs w H
 
-#print axioms forward_mark
-#print axioms forward_gated_hold_iff
-#print axioms forward_hold_selected
-#print axioms canonical_fault_selected
-#print axioms reply_selected
-#print axioms reply_lands
-#print axioms hold_raw_partition
 end L4.BStarSeparatorTags

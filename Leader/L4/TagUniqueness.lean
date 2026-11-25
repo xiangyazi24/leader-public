@@ -84,5 +84,3 @@ theorem original_carriers_injective {p c1 n : Nat} (x : Config p c1 n)
 
 end L4.TaggedTrace
 
-#print axioms L4.TaggedTrace.carrierStep_inj_survives
-#print axioms L4.TaggedTrace.original_carriers_injective

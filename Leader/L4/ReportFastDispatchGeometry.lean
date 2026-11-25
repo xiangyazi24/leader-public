@@ -42,7 +42,4 @@ theorem late_dispatch_cap (t L a W : Nat) (T : 0<t) (W3 : 3≤W)
   rw [E,F,G]
   omega
 
-#print axioms charter_dimensions
-#print axioms charter_width_rooms
-#print axioms late_dispatch_cap
 end L4.ReportFastSplice

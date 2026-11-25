@@ -223,11 +223,6 @@ theorem clear_stage_cover
   unfold Chain.LgSet
   exact ⟨htgt.1, htgt.2, hwellRun⟩
 
-#print axioms L4.Height.Recover.ChainThree.toCoverThree_served
-#print axioms L4.Height.Recover.ChainThree.wellFormed_activate
-#print axioms L4.Height.Recover.ChainThree.wellFormed_run
-#print axioms L4.Height.Recover.ChainThree.clear_stage_cover
-
 end
 
 end L4.Height.Recover.ChainThree

@@ -143,5 +143,4 @@ noncomputable def literal (b : LargeRows a) (x : Fin n → LargeSite a)
     change h (site e C.source.side)=true
     exact (congrArg h H).trans ep
 
-#print axioms literal
 end L4.BStarAcquireLiteralChain

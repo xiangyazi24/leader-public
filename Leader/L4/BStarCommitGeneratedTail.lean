@@ -71,7 +71,6 @@ theorem bit_pc (x : BitVec LW) (f : Payload) (d : Desc)
   change nextOrdinary x 410 f=_
   simp [nextOrdinary,D]
 
-
 private theorem stageSchedule (op : Nat) : Frame (schedule op) := by
   unfold schedule setToken
   exact compose (compose (assign _ _ (Or.inr (by decide))) (assign _ _ (Or.inr (by decide))))
@@ -235,7 +234,6 @@ theorem source_flight (x : Pair (LargeSite (production k₁ k₂ t₂ J₁ J₂ 
     local_right_field hp x V sourceDescriptor (by decide)]
   exact ⟨field_hold _ _ _ H (by decide) (by decide),
     field_hold _ _ _ H (by decide) (by decide)⟩
-
 
 /-- The literal old source is bound F/T throughout a generated transit
 before its back-zero receipt. -/
@@ -426,10 +424,4 @@ theorem receipt_to_commit {base x : X} {addr : Nat → Pos n} {len op : Nat}
     obtain ⟨p,T,S,Q⟩ := issue (pick d f) Bank perm
     exact ⟨f,p,pick d f,R,.inr ⟨C,N,rfl⟩,T,S,Q⟩
 
-#print axioms receipt_to_commit
-#print axioms before_choice_descriptor
-#print axioms generated_flight
-#print axioms source_flight
-#print axioms consume_tail
-#print axioms selected_tail_result
 end L4.BStarCommitGeneratedTail

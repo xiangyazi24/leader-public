@@ -450,16 +450,4 @@ theorem concreteFixedSupplierMean_of_certificates
   obtain ⟨C⟩ := h x v d hp hc hn hnd hquiet hLive
   exact fixedSupplier_mean_of_certificate hn v (init x d) C
 
-#print axioms concreteFixedSupplierMean_of_certificates
-#print axioms fixedSupplier_mean_of_certificate
-#print axioms firstMark_after_supplier_step
-#print axioms live_track
-#print axioms stop_characterization
-#print axioms interior_no_mint
-#print axioms service_resident_pause
-#print axioms supplier_incoming_fence
-#print axioms victim_incoming_fence
-#print axioms paid_displacement_cap
-#print axioms departures_force_stop
-
 end L4.RankSupplier

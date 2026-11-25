@@ -77,7 +77,4 @@ theorem geo_closed_at_fixed_headers {a : LargeParams} {n : Nat} (b : LargeRows a
       rw [eq]
     · simpa only [step,hi,hI,if_false] using old i
 
-#print axioms exact_physical_projection
-#print axioms refresh
-#print axioms geo_closed_at_fixed_headers
 end L4.AllSizeS1Geometry

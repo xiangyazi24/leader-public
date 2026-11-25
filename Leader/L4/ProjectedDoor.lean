@@ -26,7 +26,6 @@ private theorem disjoint_iff (d e : Fin n) :
       apply a
       simpa only [predecessor_right] using (congrArg predecessor H).symm
 
-
 private theorem triple_ne (hn : 4≤n) (d : Fin n) :
     predecessor d≠d ∧ predecessor d≠rightNeighbor d ∧ d≠rightNeighbor d := by
   simpa only [right_predecessor] using barrierBondsDistinct hn (predecessor d)
@@ -139,7 +138,6 @@ theorem projected_doublet_expected (hn : 4≤n) (d : Fin n) :
   iid_potential_le (next d) _ (potential n)
     (fun q active => Nat.le_of_eq (door_pair_drift hn d q active)) .idle
 
-
 /-- The witness carries the exact intervening raw marks, not a bound
 on raw adjacency or a claim of controller eligibility. -/
 def Doublet (d : Fin n) (w : List (Fin n)) : Prop :=
@@ -209,8 +207,4 @@ theorem observed_doublet_commuted (d : Fin n) (w : List (Fin n))
   simpa only [List.append_assoc,List.singleton_append] using
     commute_prefix (pre++[d]) (bubble_door gap tail d (fun e M=>flip_disjoint (D e M)))
 
-#print axioms door_incident_labels_three
-#print axioms door_pair_drift
-#print axioms projected_doublet_expected
-#print axioms observed_doublet_commuted
 end L4.ProjectedDoor

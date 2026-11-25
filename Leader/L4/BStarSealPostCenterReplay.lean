@@ -83,8 +83,6 @@ theorem arbitrary_postcenter_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
           omega
         | turn => omega
 
-#print axioms arbitrary_postcenter_step
-
 /-- A replay with the nominated ordered subsequence reaches the terminal
 on some prefix. Intervening marks may help but cannot undo progress or
 change the well-formed SEAL before that first terminal cut. -/
@@ -146,5 +144,4 @@ theorem reaches_terminal_of_sublist {base : X} {hh : ∃ i,oldH6 B base i=true}
       (closed _ q e) now new nom'
     exact ⟨e::pre,post,congrArg (List.cons e) W,.cons I E T,P⟩
 
-#print axioms reaches_terminal_of_sublist
 end L4.BStarSealPostCenterReplay

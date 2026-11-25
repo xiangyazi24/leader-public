@@ -145,7 +145,4 @@ theorem accepted_receivers {base x : X} {hh : ∃ i,oldH6 B base i=true}
     change LaneReady _ at rd ⊢
     exact V ▸ rd
 
-#print axioms accepted_receivers
-#print axioms digit_from
-#print axioms endpoints
 end L4.BStarFenceReceiverChart

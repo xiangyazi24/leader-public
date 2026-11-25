@@ -73,7 +73,4 @@ theorem rank_bound (ops : List Nat) (j : Nat) (hj : j<413)
     simp only [List.length_cons]
     omega
 
-#print axioms joined_unexpected_reply
-#print axioms ordinary_progress
-#print axioms rank_bound
 end L4.BStarResetControllerProgress

@@ -126,6 +126,4 @@ theorem seeded_tail_custody {base origin : X} {hh : ∃ j,oldH6 B base j=true}
   exact (keeps_sealed hp C sep i own k K idx (lead++[i]) w landing _ _ past R d seed fairGrant
     head w [] (List.append_nil _).symm).1
 
-#print axioms tail_replay
-#print axioms seeded_tail_custody
 end L4.BStarSealTailReplay

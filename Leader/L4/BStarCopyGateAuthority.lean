@@ -160,9 +160,6 @@ theorem winning_prep_pc {base x : X} {hh : ∃ i,oldH6 B base i=true}
     change pc y (S.getD 0 fall).1=f.opcode.toNat at PC
     rw [PC]; exact O
 
-#print axioms checked_opcode_origin
-#print axioms winning_prep_pc
-
 private theorem no_stop_code (k : Nat) (a : Prep) (H : prepOf k=some a)
     (h0 : k≠0) (h6 : k≠6) : a≠.stop ∧ a≠.rstop := by
   unfold prepOf at H
@@ -225,9 +222,6 @@ theorem gate_from_selected_enable {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [replay] at N
   exact N I (layout u e v eq) e i sh own no0 no6
 
-#print axioms generated_no_stop
-#print axioms gate_from_selected_enable
-
 theorem history_prefix {base x : X} {addr : Nat → Pos n} {len : Nat}
     {m fin : Mode} (pre post : List (Fin n))
     (G : GeneratedOwner hp base addr len x m (pre++post) fin) :
@@ -278,5 +272,4 @@ theorem gate_actual_word {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [BStarResetSchedule.run_append] at I
   exact I
 
-#print axioms gate_actual_word
 end L4.BStarCopyGateAuthority

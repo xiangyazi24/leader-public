@@ -165,8 +165,4 @@ theorem source_service (x : X) (e : Fin n) (he : e≠rightNeighbor e)
         change (1 : BitVec 1)=0 at P
         contradiction⟩
 
-#print axioms source_service
-#print axioms forward_service
-#print axioms terminal_service
-#print axioms backward_service
 end L4.BStarResetRailRing

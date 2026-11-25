@@ -217,13 +217,4 @@ theorem word_of_digits (beta x t : Nat) :
   | zero => simp [word,Nat.mod_one]
   | succ t IH => rw [word_succ,IH,split_prefix]
 
-#print axioms word_lt
-#print axioms word_digit
-#print axioms word_of_digits
-#print axioms full_cmp
-#print axioms emitted_complete
-#print axioms carry_bit
-#print axioms cmp_prefix
-#print axioms emitted_prefix
-#print axioms threshold_step
 end L4.ReportDigitArithmetic

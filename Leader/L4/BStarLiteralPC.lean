@@ -96,9 +96,6 @@ theorem next_to_stage (x : BitVec LW) (f : Payload) (E : pcNext x f=408) :
     rw [K] at ar
     exact (ar (by decide)).elim
 
-#print axioms joined_reply_PC
-#print axioms next_to_stage
-
 /-- The portion after successful acquisition and before STAGE cannot
 jump over arithmetic tours. It either aborts at zero or advances
 through the next literal scheduled opcode. -/
@@ -158,9 +155,6 @@ theorem next_to_six (x : BitVec LW) (f : Payload) (E : pcNext x f=6) :
     obtain ⟨h,q⟩ := to_six_ordinary x op f E
     exact ⟨h,fh,opH.trans h,q⟩
 
-#print axioms next_midband
-#print axioms next_to_six
-
 /-- The publication tail only follows the selected STAGE/SEAL/BIT
 successors. In particular a fault cannot schedule SEAL or COMMIT. -/
 theorem ordinary_publication_tail (x : BitVec LW) (op : Nat) (f : Payload) :
@@ -208,5 +202,4 @@ theorem next_publication_tail (x : BitVec LW) (f : Payload)
     rw [E]
     exact ⟨fh,opFull,ordinary_publication_tail x op f⟩
 
-#print axioms next_publication_tail
 end L4.BStarLiteralPC

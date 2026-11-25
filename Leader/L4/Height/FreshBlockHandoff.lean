@@ -21,5 +21,4 @@ theorem strict_publication_block_of_fresh_cycles
   strict_publication_block_of_production_block
     (ProductionCycles.strict_block_of_fresh_cycles fresh) hn hs hadvice hspace g i
 
-#print axioms strict_publication_block_of_fresh_cycles
 end L4.Height.ProductionCustody

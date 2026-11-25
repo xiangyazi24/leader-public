@@ -77,9 +77,4 @@ theorem actual_receipts {s n : Nat} {h : Fin n → Bool} (x : Raw s n)
     SequentialMarkClock.Receipts phase goal false cs (x,false) w :=
   SequentialMarkClock.receipts_of_finished (rawNext s) phase goal false _ w D
 
-#print axioms actual_receipts
-#print axioms actual_raw_step
-#print axioms expected
-#print axioms chart_list
-#print axioms five_expected
 end L4.ShortSequentialClean

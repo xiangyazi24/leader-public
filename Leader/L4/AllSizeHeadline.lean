@@ -1,5 +1,5 @@
 import Leader.L4.AdviceBandRadiusBudget
-import Leader.L4.Height.G9DotCoefficient
+import Leader.L4.Height.AllSizeCoefficient
 
 namespace L4.AllSizeHeadline
 set_option exponentiation.threshold 2976
@@ -69,20 +69,20 @@ theorem state_count (s : Nat) : 2^width s ≤ 2^2976*(s+2)^20 := by
 /-- Exact padded alphabet, including every spare code. No Mathlib
 cardinality interface is needed: both coding inverses are part of this type. -/
 def deployedStateCoding (s : Nat) :
-    L4.ExactCoding (L4.Height.G9Wire.compactDeployment s).Site (State s) := by
+    L4.ExactCoding (L4.Height.AllSizeWire.compactDeployment s).Site (State s) := by
   by_cases h : 6 ≤ s
   · have h' : ¬ s ≤ 5 := by omega
-    rw [L4.Height.G9Wire.compactDeployment, if_pos h]
+    rw [L4.Height.AllSizeWire.compactDeployment, if_pos h]
     change L4.ExactCoding (PackedCore (prodParams s)) (Fin (2^width s))
     rw [width, if_neg h']
     exact PackedCore.coding (prodParams s)
   · have h' : s ≤ 5 := by omega
-    rw [L4.Height.G9Wire.compactDeployment, if_neg h]
+    rw [L4.Height.AllSizeWire.compactDeployment, if_neg h]
     change L4.ExactCoding (Fin (2^48)) (Fin (2^width s))
     rw [width, if_pos h']
     exact L4.ExactCoding.id _
 
-open L4.Height L4.Height.G9Wire L4.Height.G9Wire.PublicSpec
+open L4.Height L4.Height.AllSizeWire L4.Height.AllSizeWire.PublicSpec
 
 /-- The same advice-only deployed family has at most
 `2^2976 * (s+2)^20` states and reaches a permanent physical winner
@@ -95,13 +95,10 @@ theorem allSize_fast :
       (compactDeployment (ceilingLogTwo (ceilingLogTwo n))).Expected boundedEncode boundedDecode n hn
         L4.PhysicalCustodyProduction.K_custody
         (patrolAllowance L4.WindowCappedPublic.coefficient)) := by
-  refine ⟨?_, G9Dot.compact_allSize_fast⟩
+  refine ⟨?_, AllSizeAssembly.compact_allSize_fast⟩
   intro s
   exact ⟨2^width s, ⟨deployedStateCoding s⟩, state_count s⟩
 
 end L4.AllSizeHeadline
 
-#print axioms L4.AllSizeHeadline.state_count
-#print axioms L4.AllSizeHeadline.deployedStateCoding
-#print axioms L4.AllSizeHeadline.allSize_fast
 #check L4.AllSizeHeadline.allSize_fast

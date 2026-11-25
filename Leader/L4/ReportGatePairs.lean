@@ -126,9 +126,6 @@ theorem five_two_label_support (mark : Fin 5→Fin n→Bool)
   have T := sum_ofFn_le _ (fun _=>2) R
   rwa [sum_ofFn_const] at T
 
-#print axioms gate_fibre
-#print axioms gate_fibre_two
-#print axioms five_two_label_support
 end L4.ReportAdaptiveFibre
 
 namespace L4.ReportFastKernel
@@ -164,7 +161,4 @@ theorem eventRank_paper_bound {m t W : Nat} {a : Bool}
   unfold eventRank
   cases a <;> simp <;> omega
 
-#print axioms eventRank_idle
-#print axioms eventRank_progress
-#print axioms eventRank_paper_bound
 end L4.ReportFastKernel

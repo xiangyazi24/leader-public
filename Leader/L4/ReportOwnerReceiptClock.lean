@@ -125,7 +125,6 @@ theorem owner_receipt_mean_of_polynomial (sheet : Sheet) (C : Chart h)
   intro t
   exact Nat.le_trans (V t) (Nat.mul_le_mul_right _ W)
 
-#print axioms owner_receipt_mean_of_polynomial
 /-- Separate before-launch clock freezes its latch, never the physical bytes. -/
 def preNext (sheet : Sheet) (C : Chart h) (F : Fibre (h:=h) sheet Q)
     (z : {x : Raw s n // Q x} × Bool) (e : Fin n) :
@@ -256,10 +255,4 @@ theorem done_has_genuine_cut (sheet : Sheet) (C : Chart h) (F : Fibre (h:=h) she
   rw [ShortOwnerEpochJS.raw_append]
   exact genuine_full_parked sheet C F _ Qpre N u G
 
-#print axioms done_has_genuine_cut
-#print axioms owner_receipt_mean_of_events
-#print axioms raw_project
-#print axioms fresh_launch_iff
-#print axioms after_hit
-#print axioms owner_receipt_mean_of_prelaunch
 end L4.ReportOwnerReceiptClock

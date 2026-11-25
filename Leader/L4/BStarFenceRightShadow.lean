@@ -243,8 +243,4 @@ theorem actual_sweep {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact (sweep_below (leftPort Lroot) (rightPort Rroot) next emit phase
     (fun _=>True) phys (fun _ _ _ _=>True.intro) (fun a e _ h =>one a e h) w p z True.intro dom).2
 
-#print axioms right_mark
-#print axioms right_tail_from_flags
-#print axioms both_mark
-#print axioms actual_sweep
 end L4.BStarFenceRightShadow

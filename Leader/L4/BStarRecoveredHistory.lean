@@ -83,7 +83,6 @@ theorem stage_endpoint_exact {base x y : XX} {hh : ∃ i,oldH6 B base i=true}
   rw [E]
   exact ⟨⟨A.2.1,A.2.2 Fd⟩,A.1⟩
 
-
 private theorem run_keeps {z : XX} (Q : XX → Prop)
     (closure : ∀ x e, Q x → Q (AllSizeS1Geometry.step B x e))
     (w : List (Fin n)) (I : Q z) : Q (BStarResetSchedule.run (AllSizeS1Geometry.step B) z w) := by
@@ -143,6 +142,4 @@ theorem recovered_suffix {base x : XX} {hh : ∃ i,oldH6 B base i=true}
   rw [BStarResetSchedule.run_append]
   exact ⟨q,K⟩
 
-#print axioms stage_endpoint_exact
-#print axioms recovered_suffix
 end L4.BStarRecoveredHistory

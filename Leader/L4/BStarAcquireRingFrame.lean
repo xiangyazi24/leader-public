@@ -107,8 +107,4 @@ theorem unselected {a : LargeParams} {n : Nat} (b : LargeRows a)
     AllSizeS1Geometry.step b x e i=x i := by
   simp only [AllSizeS1Geometry.step,if_neg hl,if_neg hr]
 
-#print axioms joined_left
-#print axioms joined_right
-#print axioms step_idle_k0
-#print axioms unselected
 end L4.BStarAcquireRingFrame

@@ -101,7 +101,3 @@ theorem singletonSafeMean {p c n : Nat} (x : Config p c n)
 
 end L4.RootedSingleton
 
-#print axioms L4.RootedSingleton.zero_stock_mean
-#print axioms L4.RootedSingleton.living_mean_of_quiet_closed
-#print axioms L4.RootedSingleton.safe_mean_of_quiet_closed
-#print axioms L4.RootedSingleton.singletonSafeMean

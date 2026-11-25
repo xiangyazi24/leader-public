@@ -203,5 +203,4 @@ theorem mask_receipt {base initial late : X} {hh : ∃ i,oldH6 B base i=true}
   have inputValue : val input = argW width (readArgs regs [a]) 0 := inputAgree
   rw [inputValue]
 
-#print axioms mask_receipt
 end L4.BStarNativeMaskActual

@@ -25,5 +25,3 @@ theorem allTags_mean_of_barrierBudgets
 
 end L4.TaggedTrace
 
-#print axioms L4.TaggedTrace.concreteTagTail_of_debt
-#print axioms L4.TaggedTrace.allTags_mean_of_barrierBudgets

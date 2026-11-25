@@ -85,9 +85,6 @@ theorem k5_no_depart_before_cut {base x : X} {addr : Nat→Pos n} {len op k : Na
     rw [←atK,T] at next
     exact (BStarSeparatorParked.forward_not_trail next).elim
 
-#print axioms k5_departure_trail
-#print axioms k5_no_depart_before_cut
-
 open BStarResetChartTouch BStarResetChartIndex BStarCopyGateAuthority
 open BStarGeneratedBandScan BStarLongCommand
 
@@ -156,5 +153,4 @@ theorem no_ls_prep_until_inject {base origin : X} {hh : ∃ i,oldH6 B base i=tru
   have cross := k5_no_depart_before_cut hp e (sep e) C q K atL.symm act E rest
   omega
 
-#print axioms no_ls_prep_until_inject
 end L4.BStarCopyLeftK5Past

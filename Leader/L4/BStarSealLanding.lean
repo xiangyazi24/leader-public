@@ -42,7 +42,6 @@ private theorem empty_filtered_offcenter (ls : List CmdOffer)
   have pos := List.length_pos_of_mem m'
   omega
 
-
 open BStarLongLayout BStarLongPublication BStarLongCommand BStarLongOutgoing
 set_option maxRecDepth 4096
 
@@ -178,5 +177,4 @@ theorem joined_selected_seal (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0
     · exact data_left_frames _ _ _ _ L
   exact congrArg (fun z : BitVec 2 × BitVec 8 × BitVec 8 => (z.1,z.2.1,packOptional (some d))) preEq
 
-#print axioms joined_selected_seal
 end L4.BStarSealLanding

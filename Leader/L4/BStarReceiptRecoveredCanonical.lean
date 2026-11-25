@@ -147,5 +147,4 @@ theorem canonical_from_original_tape_need {base initial : X} (u v tail : List (F
   exact ⟨o,S,len,fall,pre,reset,w,entryWord,compiler,remainder,rest,A,W,Rcredit,C,
     L,pf,ef,cf,Hf,readyNeed,hand,b,e,after,op,f,split,reply,auth,needDesc,output⟩
 
-#print axioms canonical_from_original_tape_need
 end L4.BStarReceiptRecoveredCanonical

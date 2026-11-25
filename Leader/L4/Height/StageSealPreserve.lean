@@ -52,6 +52,4 @@ theorem staged_until_seal (x : X) (i : Fin n) (d : Descriptor) (pay : Payload)
   exact (congrArg (fun z : BitVec 2 × BitVec 8 × BitVec 8=>z.2.1) frame).trans
     (StageLatchRing.stage_at_mark hp x i d pay head offered healthy op decoded auth)
 
-#print axioms actual_stage_launch
-#print axioms staged_until_seal
 end L4.Height.StageSealPreserve

@@ -1267,16 +1267,6 @@ theorem mis23_from_h2_only_protected (N : 189<n) (x : Raw s n)
   ShortMISPublicationSuppliers.mis23_from_h2 N x H A2
     (mis2_fenced_word_rows (by omega) x H) A3 (mis3_fenced_word_rows N)
 
-#print axioms winning_entry_actual
-#print axioms rival_header_actual
-#print axioms read_mark_wins_actual
-#print axioms successful_read_actual
-#print axioms read_writer_actual
-#print axioms fenced_word_rows
-#print axioms mis2_fenced_word_rows
-#print axioms mis3_fenced_word_rows
-#print axioms mis23_from_h2_only_protected
-
 end
 end L4.ShortMISFencedWord
 

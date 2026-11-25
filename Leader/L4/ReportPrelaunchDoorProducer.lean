@@ -168,8 +168,4 @@ theorem rowCases_cached (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     RowCases d C (ReportOwnerResetDrain.Cached d hh Q) :=
   ReportPrelaunchK1.rowCases d C hh B Q F N (doorCases_cached d C hh B Q F N S)
 
-#print axioms doorCases_cached
-#print axioms rowCases_cached
-#print axioms local_cases
-#print axioms rootRows
 end L4.ReportPrelaunchDoorProducer

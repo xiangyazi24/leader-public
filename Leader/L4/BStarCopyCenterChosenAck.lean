@@ -70,5 +70,4 @@ theorem selected_center_from_ack {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have cap := (congrArg Prod.fst fields).trans (congrArg Fin.val sel)
   exact ⟨A,⟨post,Ack⟩,cap⟩
 
-#print axioms selected_center_from_ack
 end L4.BStarCopyCenterChosenAck

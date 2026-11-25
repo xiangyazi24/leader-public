@@ -140,7 +140,6 @@ theorem trail_suffix_expected {base x : X} {hh : ∃ i,oldH6 B base i=true}
     cases atSite (x u.1).long u.2 <;> simp [trail]
   rwa [total_one] at H
 
-#print axioms trail_suffix_expected
 end L4.DirtyTrailSuffix
 
 namespace L4.DirtyTrailSuffix
@@ -203,5 +202,4 @@ theorem forward_free_exit_expected {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · intro y hy
     exact trail_suffix_expected hp chart head cont sep Q hy.1 layout closed cb cy hy.2.1 hy.2.2
 
-#print axioms forward_free_exit_expected
 end L4.DirtyTrailSuffix

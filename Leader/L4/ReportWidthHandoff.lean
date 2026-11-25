@@ -76,7 +76,6 @@ theorem report2_bounds_after_report1_cover (N : 1<n) (Spos : 0<s)
   have H : GapBounds (h5 y) (16*(s+1)) (81*(2*s+1)) := B.2.2.2.2
   rwa [Id] at H
 
-
 /-- Both observed report covers lie on one raw continuation. The two
 radii and the immutable H5-to-H6 mask chain supply the exact certified
 spacing consumed by the unmodified WIDTH entrance. -/
@@ -108,9 +107,4 @@ theorem packed_after_both_report_covers (N : 1<n) (hs : 6≤s) (advice : s=ell (
   rw [Eq] at C0
   exact packed_after_report2_cover N hs advice hh G F Width B1 y C0
 
-#print axioms packed_after_both_report_covers
-#print axioms certified_spacing_of_report2_cover
-#print axioms widthLower_at_report2_cover
-#print axioms packed_after_report2_cover
-#print axioms report2_bounds_after_report1_cover
 end L4.ReportWidthHandoff

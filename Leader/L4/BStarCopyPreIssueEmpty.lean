@@ -55,6 +55,4 @@ theorem empty_through_prep {base x : X} {hh : ∃ i,oldH6 B base i=true}
     obtain ⟨mode,H,C⟩ := history_prefix hp (lead++a) (e::b) (W ▸ history)
     exact no_inject_before_10 hp chart sep H C (layout a (e::b) eq) (small a e b eq) e
 
-#print axioms no_inject_before_10
-#print axioms empty_through_prep
 end L4.BStarCopyPreIssueEmpty

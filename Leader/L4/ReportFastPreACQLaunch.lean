@@ -118,8 +118,4 @@ theorem preacq_launch_from_split (d : Sheet) (C : Chart h) (N : 1<n)
   have L := (ReportOwnerAcquireProvenance.launch d C hh G F N y Y J PCY).2
   exact ⟨U,OY,PCY,L,issue_clear d C N hh F y Y J OY⟩
 
-#print axioms preacq_first_issue_prefix
-#print axioms preacq_prefix_counterexample
-#print axioms preacq_empty_wait_run
-#print axioms preacq_launch_from_split
 end L4.ReportFastAcqWins

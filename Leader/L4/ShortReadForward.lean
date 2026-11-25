@@ -320,10 +320,4 @@ theorem forward_all_mark {s n : Nat} {h : Fin n → Bool} (R : Route h)
     simp only [if_neg E] at B
     exact ⟨I,D,W',B.1,B.2,by simpa [ShortHelloForward.ahead,E] using C'⟩
 
-#print axioms decode_front
-#print axioms hop_packet_canonical
-#print axioms forward_step
-#print axioms reply_canonical
-#print axioms forward_from_actual_issue3
-#print axioms forward_all_mark
 end L4.ShortReadForward

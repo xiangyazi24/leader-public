@@ -81,7 +81,6 @@ theorem lift_clean_word {base x : XX} {hh : ∃ i, oldH6 B base i=true}
       obtain ⟨pre,post,z',E,T,U,V,H,oc'',A,B'⟩ := ih (x:=y) d q' W' G' oc'
       exact ⟨e::pre,post,z',congrArg (List.cons e) E,.cons Z M D G' T,U,V,H,oc'',A,B'⟩
 
-
 open BStarClearanceSource BStarClearanceResidual BStarResetControllerEntry BStarLongCommand
 
 /-- A fixed physical prefix after a genuine clean launch has one
@@ -140,7 +139,6 @@ theorem from_clean_launch {base x : XX} {hh : ∃ i, oldH6 B base i=true}
   have out : OutClean len (track start) (.out 0) := fun j h hj =>
     empty_away_from_door hp C (fiber _ q) clean door (distinct door) j (.inl h) hj
   exact lift_clean_word hp C Q fiber closed distinct op w (.out 0) qq W G out
-
 
 open BStarLongRouting BStarLongTransport BStarLongEvents BStarResetQuiet BStarResetQuietTable BStarResetIdleRing
 open BStarSeparatorIdleClass BStarAcquireAnchors
@@ -220,7 +218,6 @@ theorem arrived_nonown {base x : XX} {hh : ∃ i, oldH6 B base i=true}
       change atSite (y root).long (addr 0).2=atSite (x root).long (addr 0).2
       exact congrArg (fun q : LargeSite (production k₁ k₂ t₂ J₁ J₂ r c p c₁) => atSite q.long (addr 0).2) paid
     exact ⟨⟨pp.symm ▸ J.1,suffix⟩,congrArg (fun q : LargeSite (production k₁ k₂ t₂ J₁ J₂ r c p c₁) => control q.long) paid⟩
-
 
 inductive Mode where
   | idle
@@ -358,8 +355,4 @@ theorem generated_word {base x : XX} {hh : ∃ i, oldH6 B base i=true}
     obtain ⟨d,F,K,Z⟩ := ih j (closed _ q e) H
     exact ⟨d,.next a E F,K,Z⟩
 
-#print axioms from_clean_launch
-#print axioms arrived_nonown
-#print axioms current_step
-#print axioms generated_word
 end L4.BStarGeneratedOwner

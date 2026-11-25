@@ -199,9 +199,4 @@ theorem mux_ready_accepted {base initial : X} {hh : ∃ i,oldH6 PROTO base i=tru
   exact mux_ready hp chart sep rootK whole band prior flight tail door W K width_pos G L
     flags notShort stable table bank sem _ F flat H R fits typed capture
 
-#print axioms mux_ready_accepted
-
-#print axioms mux_selector_typed
-
-#print axioms mux_ready
 end L4.BStarNativeConcreteMux

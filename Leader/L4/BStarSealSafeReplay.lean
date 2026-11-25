@@ -201,9 +201,4 @@ theorem keeps_sealed {base origin x : X} {hh : ∃ j,oldH6 B base j=true}
   obtain ⟨m,P,I,F⟩ := before_mark hp R u e v W
   exact ⟨m,generated_append hp Lead (landed.symm ▸ P),I,head u e v W,F.1,F.2⟩
 
-#print axioms before_mark
-#print axioms bit_replay
-#print axioms seal_replay
-#print axioms precenter_commit_replay
-#print axioms keeps_sealed
 end L4.BStarSealSafeReplay

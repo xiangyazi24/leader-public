@@ -1,7 +1,7 @@
 import Leader.L4.Height.RawServiceCore
 import Leader.L4.Height.ProductionCustody
 import Leader.L4.Height.AdmissionSteering
-import Leader.L4.Height.G9Spine
+import Leader.L4.Height.AllSizeSpine
 import Leader.L4.Height.ClockSlice
 import Leader.L4.WindowG7Complete
 import Leader.L4.Height.ReservedFrontier
@@ -21,7 +21,7 @@ set_option Elab.async false
 
 /-! Raw-edge wiring for the two production branches. The physical definitions below
 are the shared signatures of the four production components. All time bounds count raw marks. -/
-namespace L4.Height.G9Wire.CustodySpec
+namespace L4.Height.AllSizeWire.CustodySpec
 open L4.PhysicalCustody
 open AllSizeProtocol BStarTrace BStarLongWork BStarH6WordChart
 open BStarLongFixedRouting BStarH6Ordinal BStarCustodyCuts
@@ -30,16 +30,16 @@ def radiusHorizon (k : Nat) : Nat := 4096 * (k+2) * streak k * 2^(streak k)
 /-- Use literally the same closed numerical expression as the
 spine. This avoids forcing gigantic closed powers during elaboration. -/
 abbrev packingCoefficient (cgeom : Nat) : Nat :=
-  L4.Height.G9Spine.custodyCoeff cgeom
+  L4.Height.AllSizeSpine.custodyCoeff cgeom
 
 def CustodyReached : Prop :=
   ∃ cgeom : Nat, ∀ {s n : Nat}, 4 ≤ n → 6 ≤ s → s = ell (ell n) →
     ∀ x : Raw s n, Height.IIDExpectedHittingTimeAtMost (rawNext s) Custody x
       (packingCoefficient cgeom * n^2)
 
-end L4.Height.G9Wire.CustodySpec
+end L4.Height.AllSizeWire.CustodySpec
 
-namespace L4.Height.G9Wire.ClockServiceSpec
+namespace L4.Height.AllSizeWire.ClockServiceSpec
 open L4.Height L4.PhysicalCustody
 open AllSizeProtocol BStarH6WordChart BStarAcquireAnchors BStarGrantWriterHistory
 open Classical
@@ -67,7 +67,6 @@ def StrictBlock : Prop :=
     2^(5*longBudget+1) * wordSum (fun w => if publishes x i.val w then 1 else 0) (2*T)
       ≥ n^(2*T)
 
-
 /-- The singleton obstruction contradicts the original unrestricted count for
 any custody witness whose physical headers all name one site. -/
 theorem singleton_excludes_original {s n : Nat} (hn : 4 ≤ n) {x : Raw s n}
@@ -83,10 +82,10 @@ theorem singleton_excludes_original {s n : Nat} (hn : 4 ≤ n) {x : Raw s n}
 theorem singleton_fixture_advice : ell (ell 81) = 3 ∧ 81 ≤ 3*1024*radWidth 6 := by decide
 
 end
-end L4.Height.G9Wire.ClockServiceSpec
+end L4.Height.AllSizeWire.ClockServiceSpec
 
-namespace L4.Height.G9Wire.ClockDisplaySpec
-open L4.Height L4.PhysicalCustody L4.Height.G9Wire.ClockServiceSpec
+namespace L4.Height.AllSizeWire.ClockDisplaySpec
+open L4.Height L4.PhysicalCustody L4.Height.AllSizeWire.ClockServiceSpec
 open AllSizeProtocol BStarH6WordChart BStarCycleGeometry BStarAcquireAnchors BStarLongFixedRouting
 open BStarPhysicalLegitimate BStarPhysicalCoset BStarEpochLift BStarPhysicalLiftAlignment
 open Classical
@@ -140,9 +139,9 @@ noncomputable def RawDisplayTrial : Prop :=
        4*wordSum (fun w => if bad w then 1 else 0) D ≤
          n^D + 4*wordSum (fun w => if miss w then 1 else 0) D)
 
-end L4.Height.G9Wire.ClockDisplaySpec
+end L4.Height.AllSizeWire.ClockDisplaySpec
 
-namespace L4.Height.G9Wire.PublicSpec
+namespace L4.Height.AllSizeWire.PublicSpec
 open AllSizeProtocol PhysicalCustody ClockDisplaySpec
 open BStarPublicCodec
 
@@ -202,5 +201,5 @@ def BoundedElectedWith (encode : Site boundedP 12 → BoundedCode)
     (decode : BoundedCode → Site boundedP 12) {n} (x : BoundedRaw n) :=
   RootedProduct.ProductSafe (boundedNextWith encode decode) (boundedLeaderWith decode) x
 
-end L4.Height.G9Wire.PublicSpec
+end L4.Height.AllSizeWire.PublicSpec
 

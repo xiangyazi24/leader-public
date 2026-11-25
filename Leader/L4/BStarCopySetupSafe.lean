@@ -159,6 +159,4 @@ theorem original_setup_safe {base origin : X} {hh : ∃ i,oldH6 B base i=true}
   rw [W,M,W8,E]
   simp only [List.append_assoc,List.cons_append]
 
-
-#print axioms original_setup_safe
 end L4.BStarCopySetupSafe

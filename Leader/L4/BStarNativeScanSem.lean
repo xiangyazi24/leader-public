@@ -77,5 +77,4 @@ theorem scan_value {r : Nat} {geom : Fin r → LongGeometry}
   have f := (w first).isLt
   omega
 
-#print axioms scan_value
 end L4.BStarNativeScanSem

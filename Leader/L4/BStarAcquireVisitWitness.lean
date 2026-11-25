@@ -172,9 +172,6 @@ theorem trace_visit {base x y : X} {u z : Pos n}
       obtain ⟨pre,a,post,C',D',p,remaining,later,Q,R⟩ := ih _ after healthy' rest
       exact ⟨e::pre,a,post,C',D',p,remaining,later,congrArg (List.cons e) Q,R⟩
 
-#print axioms event_won
-#print axioms trace_visit
-
 /-- An observed win entails a literal healthy request on precisely the
 sampled occurrence, even before supplying any global payload invariant. -/
 theorem sample_won (x : X) (e : Fin n) (C : CommandClaim) (v : Visit)
@@ -270,10 +267,6 @@ theorem incidence_exists (vs : List Visit) (j : Fin 3)
     rw [empty] at once
     contradiction
 
-#print axioms sample_won
-#print axioms trace_incidence
-#print axioms incidence_exists
-
 open BStarLongFixedRouting BStarResetChartTouch BStarAcquireLiteralChain
 open BStarGeneratedOwner BStarSeparatingRail BStarLongDoor BStarLongLayout BStarAcquireReadout
 
@@ -316,5 +309,4 @@ theorem consume_six_incidence {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rw [replay]
     exact ⟨mem,ix,EV,inc,won,sel,hdr,fields⟩
 
-#print axioms consume_six_incidence
 end L4.BStarAcquireVisitWitness

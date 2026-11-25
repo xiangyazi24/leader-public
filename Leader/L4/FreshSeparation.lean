@@ -113,6 +113,3 @@ theorem firstMark_donor_forces_anchor_overlap
 
 end L4.FreshSeparation
 
-#print axioms L4.FreshSeparation.avoid_fixed_prefix
-#print axioms L4.FreshSeparation.avoid_extended_prefix
-#print axioms L4.FreshSeparation.firstMark_donor_forces_anchor_overlap

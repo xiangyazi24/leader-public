@@ -879,15 +879,4 @@ theorem mis1_fenced_word_actual_publication (x : Raw s n) (X : H2Ready x)
     rw [ReadWord] at E
     simpa only [lead,u,z,raw_append,List.append_assoc] using E
 
-#print axioms read_writer
-#print axioms bank_step
-#print axioms seal_step
-#print axioms generated_current_effect
-#print axioms seal_keeps_bank
-#print axioms stage_accepts
-#print axioms seal_accepts
-#print axioms commit_accepts
-#print axioms guarded_last_three
-#print axioms mis1_fenced_word_actual_publication
-
 end L4.ShortFiveGuardTour

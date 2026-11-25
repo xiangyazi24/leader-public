@@ -118,9 +118,6 @@ theorem wins_events (put : G × Bool → Fin n) (inj : Function.Injective put)
     · simp [physicalEvents,physicalEvent,Eq]
       simpa only [List.append_assoc] using (ClosedRounds.snoc IH.2 P.2)
 
-#print axioms pending_events
-#print axioms wins_events
-
 theorem encode_append {Z : Type v} (s : Phase G) (u v : List (Label G Z)) :
     encode s (u++v)=encode s u++encode (physicalRun s u) v := by
   induction u generalizing s with
@@ -172,9 +169,6 @@ theorem skeleton_prefixFin (put : G × Bool → Fin n) (inj : Function.Injective
   rw [←L]
   simp
 
-#print axioms wins_extract
-#print axioms skeleton_prefixFin
-
 /-- The one-gate projection agrees with WARMUP1's normalized clock
 on every mark and does not depend on its streak or paint latch. -/
 theorem gate_step_agrees (put : G × Bool → Fin n) (inj : Function.Injective put)
@@ -212,8 +206,6 @@ theorem gate_run_agrees (put : G × Bool → Fin n) (inj : Function.Injective pu
   induction w generalizing s c with
   | nil => exact H
   | cons e w IH => exact IH _ _ (gate_step_agrees put inj g s J c e H)
-
-#print axioms gate_run_agrees
 
 open AllSizeProtocol ReportByteRows ReportPulseRaw
 
@@ -267,9 +259,6 @@ theorem raw_credit_extract {X : Type}
   have H := raw_clean_empty put inj g Wire Adj J base Good s Initial u C
   have P := wins_extract put inj g s u v p.streak H W
   exact ⟨u,v,rfl,P.1,P.2⟩
-
-#print axioms raw_clean_empty
-#print axioms raw_credit_extract
 
 def StartsOutgoing (put : G × Bool → Fin n) (g : G) (s : Phase G) (w : List (Fin n)) : Prop :=
   ∀ i : Nat, (physicalEvents s (w.map (readLabel put)))[i]?=some (some (.start g)) →
@@ -362,9 +351,6 @@ theorem credit_origin_outgoing (put : G × Bool → Fin n) (inj : Function.Injec
   rw [List.getElem?_append_right (by omega),show u.length+j-u.length=j by omega]
   exact wins_outgoing put inj g _ Clean Win j Start
 
-#print axioms wins_outgoing
-#print axioms credit_origin_outgoing
-
 theorem encode_keeps_starts {Z : Type v} (g : G) (s : Phase G)
     (w : List (Label G Z)) (i : Nat)
     (H : (physicalEvents s w)[i]?=some (some (.start g))) :
@@ -397,5 +383,4 @@ theorem encodeFin_keeps_starts (put : G × Bool → Fin n) (inj : Function.Injec
   rw [List.getElem?_map,encode_keeps_starts g s _ i H,←List.getElem?_map,
     write_read_word]
 
-#print axioms encodeFin_keeps_starts
 end L4.ReportPulseWinsSkeleton

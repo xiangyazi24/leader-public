@@ -49,5 +49,4 @@ theorem of_found {base x : X} {hh : ∃ i,oldH6 B base i=true}
   obtain ⟨R,Q⟩ := of_selected hp chart sep P T (replay ▸ H) lo hi C v K dst idx sel
   exact ⟨pre,turn,ret,C,v,dec,sel,kind,dst,K,idx,replay.symm ▸ R,Q⟩
 
-#print axioms of_found
 end L4.BStarNumericCompleteSweep

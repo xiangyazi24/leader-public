@@ -131,7 +131,6 @@ theorem six_race_failure {α : Type} {n : Nat} (next : α → Fin n → α)
   rw [exactD] at E
   omega
 
-
 /-- A live stage records how many accepted races it still owes. -/
 inductive Progress where
   | live (remaining : Nat)
@@ -161,8 +160,4 @@ theorem physical_progress {i j : Nat} (keep : j≤i) :
     score (.live i)≤score (.live j) :=
   Nat.pow_le_pow_right (by decide : 0<3) (by omega)
 
-#print axioms triple_drift
-#print axioms terminal_credit
-#print axioms six_race_failure
-#print axioms pay_one
 end L4.AdaptiveDoorCredit

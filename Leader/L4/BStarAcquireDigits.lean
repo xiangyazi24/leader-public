@@ -183,10 +183,4 @@ theorem finish_last_visit (before after : List Visit) (p : Payload) (v : Visit)
         v.incidence := rfl
     exact E.trans ((fields_strip_latch q _).trans (fold_last_visit before after p v win winsAfter last))
 
-#print axioms fold_last_visit
-#print axioms finish_last_visit
-#print axioms winning_patch
-#print axioms winning_reads
-#print axioms winning_frames
-#print axioms replace_patch
 end L4.BStarAcquireDigits

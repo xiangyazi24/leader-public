@@ -23,7 +23,6 @@ private theorem snd_ite {A B : Type} (P : Prop) [Decidable P] (x y : A × B) :
     (if P then x else y).2=(if P then x.2 else y.2) := by
   by_cases h : P <;> simp [h]
 
-
 def shouldMark {p c : Nat} (u v : Site p c) := v.leader || u.mark || defect u v
 
 private theorem native_marks {p c : Nat} (u v : Site p c) :
@@ -266,8 +265,6 @@ theorem raw_marks {p c : Nat} (hp : 0<p) (x : Pair (BitVec (publicWidth p c))) :
       (congrArg Site.mark (read_pack hp t.1)) h.1,
     decoded_field (fun s => s.getLsbD 0) (markF p c) (publicWork hp x).2 x.2 t.2.mark
       (congrArg Site.mark (read_pack hp t.2)) h.2⟩
-
-#print axioms raw_marks
 
 end L4.BStarPublicMark
 

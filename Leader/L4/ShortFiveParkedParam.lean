@@ -103,10 +103,4 @@ theorem constants9 : watchCap 9=50 ∧ exponent 9=40575 := by decide
 theorem constants27 : watchCap 27=140 ∧ exponent 27=354675 := by decide
 theorem constants81 : watchCap 81=410 ∧ exponent 81=3163215 := by decide
 
-#print axioms fixed_five_parked_expected
-#print axioms fixed_five_parked_expected_of_gates
-#print axioms constants9
-#print axioms constants27
-#print axioms constants81
-
 end L4.ShortFiveParkedParam

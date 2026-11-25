@@ -107,7 +107,4 @@ theorem hit_outward {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rfl
   exact ⟨u,e,w,q,split,P,Y ▸ Q,N,E⟩
 
-#print axioms joined_terminal
-#print axioms selected_return
-#print axioms hit_outward
 end L4.BStarNumericTerminal

@@ -374,15 +374,4 @@ theorem full_reset_budget (d : Sheet) (C : Chart h) (B : Nat)
       ac_rfl
     _ ≤ _ := P
 
-#print axioms raw_nondoor_control
-#print axioms nextOp_pays
-#print axioms pot_cap
-#print axioms paid_lt
-#print axioms nominate
-#print axioms preStep_raw
-#print axioms preStep_first_flag
-#print axioms launch_real
-#print axioms prelaunch_mean
-#print axioms full_reset_budget
-
 end L4.ReportPrelaunchClock

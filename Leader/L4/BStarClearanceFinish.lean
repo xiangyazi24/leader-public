@@ -62,5 +62,4 @@ theorem finish_pointed {base x : X} {hh : ∃ i,oldH6 B base i=true}
   change track y 0=.trail ∨ (∃ q,track y 0=.forward q) at V
   rwa [rootToken] at V
 
-#print axioms finish_pointed
 end L4.BStarClearanceFinish

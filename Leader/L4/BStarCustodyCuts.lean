@@ -77,5 +77,4 @@ theorem compatible_cuts {base x : X} (hh : ∃ i,oldH6 B base i=true)
     obtain ⟨a,b,N,L,C⟩ := F o M
     exact ⟨o,a,b,own,N,L,C⟩
 
-#print axioms compatible_cuts
 end L4.BStarCustodyCuts

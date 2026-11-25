@@ -44,7 +44,6 @@ private theorem extends_enabled (x : X) (w ext : List (Fin n)) (i : Fin n) (sh :
   obtain ⟨pre,e,post,a,W,A,I,S,M⟩ := E
   exact ⟨pre,e,post++ext,a,by rw [W,List.append_assoc,List.cons_append],A,I,S,M⟩
 
-
 /-- All retained RD and upstream RD/RS gates in the right COPY
 projection stay open at every original post-ACK9 cut of the same
 compiler attempt, including PC10 release/turn/return and PC11.
@@ -95,5 +94,4 @@ theorem right_gates_word {base x : X} {hh : ∃ i,oldH6 B base i=true}
     · simp [rail,h,activeSheet,strip.rs_in j (by omega) jt]
   · exact (strip_same_owner strip j jt).trans ownHead
 
-#print axioms right_gates_word
 end L4.BStarCopyRightGeometryWord

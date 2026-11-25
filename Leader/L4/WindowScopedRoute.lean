@@ -154,7 +154,4 @@ theorem unpaid_deadline_of_allKeep {α : Type} {p c n d : Nat} {z0 : Config p c 
   exact ⟨retained_of_allKeep hn v group cert a ha z w hz h hs (hrefine w hw).1,
     (hrefine w hw).2⟩
 
-#print axioms follow_of_keep
-#print axioms retained_of_allKeep
-#print axioms unpaid_deadline_of_allKeep
 end L4.WindowScopedRoute

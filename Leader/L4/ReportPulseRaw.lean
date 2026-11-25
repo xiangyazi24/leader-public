@@ -209,8 +209,4 @@ theorem report2_mean {s n : Nat} (a b : Fin n) (A : rightNeighbor a=b) (D : a≠
     exact Nat.lt_of_lt_of_le (show 0 < 45 from by decide)
       (Nat.le_trans (Nat.le_add_left 45 _) (Nat.le_add_right _ _))
 
-#print axioms report1_pulse_raw
-#print axioms report2_pulse_raw
-#print axioms report1_mean
-#print axioms report2_mean
 end L4.ReportPulseRaw

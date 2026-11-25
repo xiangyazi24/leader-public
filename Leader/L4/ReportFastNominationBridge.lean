@@ -160,11 +160,6 @@ theorem spent_word (d : Sheet) (N : 1<n)
     exact IH y Y V (spent_step d N hh G F C x X S q e (E e (by simp)) A)
       (fun b B=>E b (by simp [B]))
 
-#print axioms spent_unblocked
-#print axioms ban_mate_spends
-#print axioms spent_step
-#print axioms spent_word
-
 section Bridge
 variable {X : Type}
 
@@ -435,12 +430,6 @@ theorem paying_driver_mass (step0 : X→Fin n→X) (Good hit : X→Prop)
   rw [sum_delta q (fun _=>1)] at V
   exact V
 
-#print axioms track_closed
-#print axioms retain_pending
-#print axioms service_no_rearm_credit
-#print axioms service_phase_nominate
-#print axioms predictable_paying_mark
-#print axioms paying_driver_mass
 end Bridge
 
 open ReportFastFreshReset
@@ -636,13 +625,6 @@ theorem reset_driver_mean (d : Sheet) (N : 1<n)
     exact ⟨a,e,E,eventRank_progress P⟩
   · exact H
 
-#print axioms makeBan_spec
-#print axioms reset_rows
-#print axioms resetNext_raw
-#print axioms resetInv_closed
-#print axioms reset_service_no_rearm_credit
-#print axioms reset_service_phase_nominate
-#print axioms reset_driver_mean
 end L4.ReportFastNominationBridge
 
 namespace L4.ReportFastNominationBridge
@@ -670,9 +652,5 @@ theorem final_phase_strict {t W r : Nat} (R : r≤pubReserve t W) :
   simp only [Nat.zero_mul,Nat.add_zero]
   omega
 
-#print axioms prep_plateau_iff
-#print axioms prep_strict_iff
-#print axioms next_phase_strict
-#print axioms final_phase_strict
 end L4.ReportFastNominationBridge
 

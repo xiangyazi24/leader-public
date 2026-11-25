@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart16
+import Leader.L4.Height.AllSizeWirePart16
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section PublicProjection
 
@@ -75,7 +75,7 @@ theorem packed_suffix_of_stopped_seeds :
     ∃ C : Nat, ∀ {s n : Nat}, 4 ≤ n → ∀ x : Raw s n,
       RootedEntrance.MarkNonempty (pubConfig x) → PublicSeedsStopped x →
       IIDExpectedHittingTimeAtMost (rawNext s) PackedElected x (C * n^2) := by
-  obtain ⟨C, hC⟩ := L4.row175_rooted_complete 12 (by decide)
+  obtain ⟨C, hC⟩ := L4.uniformEdge_rooted_complete 12 (by decide)
   refine ⟨C, ?_⟩
   intro s n hn x hMark hStop
   have hRoot := RootedEntrance.rootNonempty_of_mark hMark
@@ -99,4 +99,4 @@ theorem production_public_suffixes : PublicSpec.PublicSuffixes := by
 
 end PublicProjection
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

@@ -172,8 +172,4 @@ theorem actual_sub_refines {base x : X} {hh : ∃ i,oldH6 B base i=true}
   refine ⟨E.1,_,returned,sub_reply_fit sweep hiSlot ha hb initial _ rfl,?_⟩
   exact sub_pending_rep _ _ _ a b _ regs rs good oldScalar
 
-#print axioms actual_sub_refines
-#print axioms sub_refines
-#print axioms sub_reply_fit
-#print axioms sub_pending_rep
 end L4.BStarNativeSubHead

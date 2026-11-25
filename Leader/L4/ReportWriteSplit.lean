@@ -93,7 +93,6 @@ theorem before_turn_pc (d : Sheet) (C : Chart h) (N : 1<n)
       exact ⟨CF.closed _ _ IH.1,A,
         (forward_step_control d C N hh F _ IH.1 _ IH.2.1 _).trans IH.2.2⟩
 
-
 /-- The backward cursor split is purely structural. No byte or WRITE
 assumption is needed until the issue and original flight have been found. -/
 theorem forward_issue_split (d : Sheet) (C : Chart h) (N : 1<n)
@@ -161,7 +160,6 @@ theorem forward_issue_split (d : Sheet) (C : Chart h) (N : 1<n)
         change (tok d C (rawNext s z (door C)) k).tag=0 at E
         change (tok d C (rawNext s z (door C)) k).tag=2 at Tg
         omega
-
 
 theorem before_turn_as_write (d : Sheet) (C : Chart h) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
@@ -303,9 +301,4 @@ theorem healthy_write_split_from_receipt (d : Sheet) (C : Chart h) (N : 1<n)
     (Runs ▸ Health.2.1)
   exact ⟨pre,fly,t,W,Y,I,PC,Lo,Hi,Emit,Tag,((congrArg (fun y => tok d C y k) Runs).trans EQ),Actual⟩
 
-#print axioms healthy_write_split_from_receipt
-#print axioms before_turn_as_write
-#print axioms structural_issue_emits_F
-#print axioms forward_issue_split
-#print axioms before_turn_pc
 end L4.ReportWriteSplit

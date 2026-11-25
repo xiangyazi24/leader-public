@@ -112,7 +112,6 @@ private theorem next_seen_lt {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
     obtain ⟨_,k,hk,hS⟩ := h.resolve_left (fun hh => h1 hh.1)
     exact ⟨k,Nat.succ_lt_succ hk,by simpa only [WindowA0CleanupPass.projects] using hS⟩
 
-
 private theorem enabled_keep {p c n : Nat} (S : WindowA0Ledger.Scope n)
     (z : Pass p c n) (e : Fin n) (h : WindowA0CleanupPass.launchEnabled z)
     (hn : ¬WindowA0CleanupPass.ready (WindowA0CleanupPass.next S z e)) :
@@ -242,7 +241,6 @@ theorem run_step {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
             enabled_keep S z.pass e hE hy⟩
       · simp only [reserve,if_neg ha,if_neg hd']
         simpa only [Nat.add_assoc] using Nat.add_le_add_left hPay ((3*H+2)*(2*c-idx z.seen))
-
 
 noncomputable def init {p c n : Nat} (z : WindowA0ClosedEntry.State p c n) : State p c n :=
   ⟨WindowA0CleanupPass.init z,none⟩
@@ -391,13 +389,6 @@ theorem first_terminal_worker {p c n : Nat} {initial : Config p c n} (hn : 4≤n
     rw [E]
     exact hX
 
-#print axioms first_terminal_worker
-
-#print axioms project
-#print axioms run_step
-#print axioms mean
-#print axioms first_terminal
-
 theorem terminal_closed {p c n : Nat} (S : WindowA0Ledger.Scope n)
     (z : State p c n) (e : Fin n) (h : done z) : done (next S z e) := by
   unfold next
@@ -431,5 +422,4 @@ noncomputable def stage {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
   reachStart := ⟨WindowA0CleanupPass.good_init z hz,trivial⟩
   reachStep := fun z e h => good_next hn S J H z e h
 
-#print axioms stage
 end L4.WindowA0DirtyRepeat

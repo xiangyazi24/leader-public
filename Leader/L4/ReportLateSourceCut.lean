@@ -56,6 +56,4 @@ theorem late_issue_split (d : Sheet) (C : Chart h) (N : 1<n)
     (before_turn_start d C _ fly k B)
   exact ⟨pre,fly,W,J,Prod.ext J.2.1 (E.trans P),R.1,R.2.2.2.1,R.2.2.2.2,B⟩
 
-#print axioms actual_late_launch
-#print axioms late_issue_split
 end L4.ReportLateSourceCut

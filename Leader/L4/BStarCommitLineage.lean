@@ -107,8 +107,4 @@ theorem raw_hop_custody (g : Pair LongGeometry) (c : CommandClaim) (dest : AtK)
   · intro a h1 h2
     simp [h1,h2]
 
-#print axioms raw_hop_custody
-
-#print axioms commit_hop_intent
-#print axioms reverse_origin
 end L4.BStarCommitLineage

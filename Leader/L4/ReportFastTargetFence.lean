@@ -171,11 +171,4 @@ theorem fresh_acq_requires_admit_door (d : Sheet) (C : Chart h) (N : 1<n)
       cases P <;> omega
     exact hnext digit R E
 
-#print axioms fresh_acq_requires_admit_door
-#print axioms absent_step
-#print axioms actual_free_win
-#print axioms actual_visit_win
-#print axioms no_ask_of_non_acq_pc
-#print axioms deny_departure_payload
-#print axioms deny_consume_issue0
 end L4.ReportFastTargetFence

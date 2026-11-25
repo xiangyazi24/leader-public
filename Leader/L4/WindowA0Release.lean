@@ -390,12 +390,4 @@ theorem script_failure_mass {p c n : Nat} (farLeft : Fin n) (s : Kind)
   rw [Nat.one_mul] at H
   omega
 
-#print axioms release_frame
-
-#print axioms paid_adjacent_turn
-#print axioms unpaid_adjacent_turn
-#print axioms paid_adjacent_release
-#print axioms unpaid_adjacent_body_release
-#print axioms top_launch_unpaid_release
-#print axioms padded_release_agrees
 end L4.WindowA0Release

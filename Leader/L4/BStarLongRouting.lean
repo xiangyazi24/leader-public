@@ -202,6 +202,4 @@ theorem untouched_raw (g : Pair LongGeometry) (x : Pair (BitVec LW))
     simp only [List.foldl_cons,putRaw,Ne.symm (H t List.mem_cons_self),if_false]
     exact ih (fun w hw => H w (List.mem_cons_of_mem _ hw)) k
 
-#print axioms raw_transit
-#print axioms untouched_raw
 end L4.BStarLongRouting

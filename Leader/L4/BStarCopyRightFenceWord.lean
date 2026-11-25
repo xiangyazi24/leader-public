@@ -66,5 +66,4 @@ theorem accepted_right_word {Tag : Type} (digits : Tag→BitVec 36)
   exact accepted_right hp digits chart hw inside notShort root a seam tail rootAt join sep w ack
     T H plan size s label P old mobile ready
 
-#print axioms accepted_right_word
 end L4.BStarCopyRightFenceWord

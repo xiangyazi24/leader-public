@@ -56,6 +56,4 @@ theorem raw_report_mean {s n rho : Nat} (N : 0<n)
       have E : 2*(ell n+1)*(n*trialU rho)=2*n*trialU rho*(ell n+1) := by ac_rfl
       rwa [E] at T)
 
-#print axioms publication_halfcell_tail
-#print axioms raw_report_mean
 end L4.ReportFourLossBridge

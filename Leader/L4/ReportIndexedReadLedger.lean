@@ -84,14 +84,6 @@ theorem read_hit_turn (p : Params) (op : Nat) (Range : IndexedOp p op)
   · rw [read_hit_hi p op R hu u a H]; rfl
   · rw [read_hit_lo p op R hu u a H]; rfl
 
-#print axioms read_hit_hop
-#print axioms read_hit_turn
-#print axioms sample_lo
-#print axioms sample_hi
-#print axioms read_hit_hi
-#print axioms read_hit_lo
-#print axioms read_nonhit
-
 variable {s n : Nat} {h : Fin n → Bool}
 
 private theorem stepPayload_reader (d : Sheet) (C : Chart h) (op : Nat)
@@ -237,8 +229,6 @@ theorem reader_walk_result (d : Sheet) (C : Chart h) (op : Nat) (x0 : Raw s n)
     | none => exact IH.elim
     | some a => exact ⟨IH.1,IH.2.1.snoc _,IH.2.2.snoc _⟩
 
-#print axioms reader_walk_result
-
 private theorem old_offset_literal (p : Params) (h : Bool) (u : BitVec p.w) :
     reportOldOffset p h u =
       if h then 0 else min (max 3 p.digits) (((ShortGeo.report p.beta p.digits p.streak).off.read u).toNat) := by
@@ -294,9 +284,6 @@ theorem reader_geometry (d : Sheet) (hh : ∃ i,h i=true) {Q : Raw s n→Prop}
   rw [cached_old_offset d hh _ (K w),J]
   exact ⟨Geom0.2 k L,Geom2.2 k L⟩
 
-#print axioms cached_old_offset
-#print axioms reader_geometry
-
 /-- Full contract-facing sample at the actual old departure. -/
 theorem Sample.ready {d : Sheet} {C : Chart h} {op : Nat} {x0 : Raw s n}
     {w : List (Fin n)} {k : Nat} {port : Fin 3} {bank value : Nat}
@@ -343,6 +330,4 @@ theorem reply_payload (d : Sheet) (C : Chart h) (op : Nat) (x : Raw s n)
   change a.lo+2^ReportByteRows.d (params d s)*a.hi=a.hi*2^ReportByteRows.d (params d s)+a.lo
   rw [Nat.mul_comm (2^ReportByteRows.d (params d s)),Nat.add_comm]
 
-#print axioms Sample.ready
-#print axioms reply_payload
 end L4.ReportIndexedReadLedger

@@ -120,6 +120,4 @@ theorem unfinished_need_at_most_one {base origin : X} {hh : ∃ i,oldH6 B base i
   intro u e v u' e' v' L R order first second
   exact one u e v u' e' v' L R order (each u e first) (each u' e' second)
 
-#print axioms raw_read_is_owned
-#print axioms unfinished_need_at_most_one
 end L4.BStarNeedPrefixFresh

@@ -75,6 +75,3 @@ theorem weight_ratio {K T : Nat} {d inc : Int}
 
 end L4.TailWeight
 
-#print axioms L4.TailWeight.weight_at_zero
-#print axioms L4.TailWeight.weight_floor
-#print axioms L4.TailWeight.weight_ratio

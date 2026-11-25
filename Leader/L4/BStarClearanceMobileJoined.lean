@@ -273,7 +273,6 @@ theorem grant_frame (g : Pair LongGeometry) (x : Pair (BitVec LW))
   intro t h
   exact h.elim (grant_site_frame g x os .left t) (grant_site_frame g x os .right t)
 
-
 open BStarLongPackets BStarLongPrep
 
 theorem read_hold (p : Patch LW) (x : BitVec LW) (s : Fin 4) (hp : Frame p) :
@@ -400,6 +399,4 @@ theorem joined_view (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
     · rw [Patch.compose_apply,read_hold _ _ _ right]
       rfl
 
-#print axioms work_view
-#print axioms joined_view
 end L4.BStarClearanceMobileJoined

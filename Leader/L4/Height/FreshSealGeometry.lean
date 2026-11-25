@@ -60,6 +60,4 @@ theorem center_and_bit {o : Owners HS} {S : List (Pos n)} {len : Nat} {fall : Po
   obtain ⟨z,z0,zL,G⟩ := k1_index g C bSite ownB
   exact ⟨i,bSite,k,z,hi,own,k0,kL,I,z0,zL,G,ord⟩
 
-#print axioms k1_index
-#print axioms center_and_bit
 end L4.Height.FreshSealGeometry

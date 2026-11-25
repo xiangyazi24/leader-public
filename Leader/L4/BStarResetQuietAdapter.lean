@@ -206,8 +206,4 @@ theorem quiet_of_frames (x : XX) (e : Fin n) (he : e≠rightNeighbor e)
       (linkAt hp x e addr len) (onTerminal hp x e addr len) :=
   quiet_of_frames_for hp x e he addr len op ho MF (resetTag op) (fun _ h => h) (fun _ h => h)
 
-#print axioms quiet_of_frames_for
-#print axioms quiet_of_frames
-#print axioms root_before_reply
-#print axioms pair_door_safe
 end L4.BStarResetQuietAdapter

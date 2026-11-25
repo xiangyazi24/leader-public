@@ -71,5 +71,4 @@ theorem actual_child_moment {base initial : X}
   rw [shift,shift,shift,self_port hh i,Nat.max_left_comm]
   exact Nat.le_refl _
 
-#print axioms actual_child_moment
 end L4.BStarRawActualChildMoment

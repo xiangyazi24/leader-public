@@ -93,9 +93,6 @@ theorem empty_behind_cut {L : Type} (digits : L→BitVec 36)
   | none => rfl
   | some tag => rw [h] at old; contradiction
 
-#print axioms deposit_ordered
-#print axioms empty_behind_cut
-
 def lanes (x : X) (i : Fin n) (sh : Sheet) : Lane := readLane (Sheet.index sh) (x i).long
 
 def NoPrepExcept (x : X) (e base : Fin n) (seam tail i : Nat) : Prop :=
@@ -221,8 +218,6 @@ theorem ring_deposit {Tag : Type} (digits : Tag→BitVec 36) (atSource : Nat→T
     simp only [deposit,if_neg J]
     exact matched j jp jt
 
-#print axioms ring_deposit
-
 /-- Same physical deposition extends the ordered ledger by the actual
 captured occurrence. The original right-side plan is a table indexed
 by strip address. At this visit the pending suffix must be the actual
@@ -258,5 +253,4 @@ theorem deposit_at_cut {Tag : Type} (digits : Tag→BitVec 36) (atSource : Nat�
     labels matched scope win gate captured (empty i (by omega) it),
     deposit_ordered _ s labels tail i ip it _ _ word empty old⟩
 
-#print axioms deposit_at_cut
 end L4.BStarCopyRightDeposit

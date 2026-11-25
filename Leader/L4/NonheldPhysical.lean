@@ -88,8 +88,6 @@ theorem joined_left_ed (x : Pair (LargeSite (production k₁ k₂ t₂ J₁ J₂
     · exact .inl (frame.2.1 E)
     · exact .inr (frame.2.2.2 ⟨q,E⟩)
 
-#print axioms joined_left_ed
-
 open BStarAcquireWaitControl
 
 /-- Any actual non-door mark preserves nonheld status at an old H6
@@ -123,5 +121,4 @@ theorem no_reentry (x : X) (root e : Fin n)
       · exact Token.noConfusion (F.symm.trans K)
   · simpa only [AllSizeS1Geometry.step,if_neg E,if_neg R] using old
 
-#print axioms no_reentry
 end L4.NonheldPhysical

@@ -62,5 +62,4 @@ theorem receipt_read_samples (d : Sheet) (N : 1<n)
   rw [Receipt]
   exact reply_payload d C r.1 _ recv End O
 
-#print axioms receipt_read_samples
 end L4.ReportReaderACK

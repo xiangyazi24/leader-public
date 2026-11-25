@@ -116,8 +116,4 @@ def exactTimingLayer {p c n : Nat} {z0 : Config p c n} (hn : 4≤n)
     (fun _ _ h => .inr h)
     (fun w h hp => exact_handoff hn S z i H q hc ha F w h (by simp [failed,hp]))
 
-#print axioms exactCreditLayer
-#print axioms exactTimingLayer
-#print axioms relaunch_exact
-#print axioms exact_handoff
 end L4.WindowA0GapOneJoin

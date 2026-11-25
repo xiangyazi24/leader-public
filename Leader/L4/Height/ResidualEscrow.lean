@@ -138,5 +138,4 @@ theorem exists_escrow {S : Type} {n : Nat} (hn : 0<n)
       omega
     exact Nat.le_of_mul_le_mul_left product dpos
 
-#print axioms exists_escrow
 end L4.Height.ResidualEscrow

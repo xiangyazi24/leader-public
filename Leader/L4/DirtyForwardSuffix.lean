@@ -87,8 +87,6 @@ theorem nominate_empty {base x : X} {hh : ∃ i,oldH6 B base i=true}
     · change (BStarLongPackets.readLane (BStarLongPackets.Sheet.index sh) (x (rightNeighbor e)).long).mobile=.empty
       simpa only [Ls,site] using M
 
-#print axioms nominate_empty
-
 /-- A post-drain forward suffix pays by the highest remaining forward
 distance, not by total traffic. If the supplied phase predicate exits
 before the source releases, the theorem stops at that literal exit. -/
@@ -189,5 +187,4 @@ theorem forward_suffix_expected {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · exact .inl Hit
   · exact .inr ⟨I,Hit,fun u _ _=>Nat.sub_le _ _⟩
 
-#print axioms forward_suffix_expected
 end L4.DirtyForwardSuffix

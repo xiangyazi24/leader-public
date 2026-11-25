@@ -260,18 +260,4 @@ theorem proper_online_attempt {p c n : Nat} {initial : Config p c n}
     ¬(onlineStage S x (cleanupAndLegs S x C)).ready [] :=
   proper_at_cleanup _ _ _ _ hl (WindowA0CleanupLaunch.properStart S J H x hx hl)
 
-#print axioms same_mark_acceptance
-#print axioms proper_online_attempt
-#print axioms fold_append
-#print axioms first_cut_resume
-#print axioms fold_before_cut
-#print axioms cleanup_goal_implies_stop
-#print axioms onlineCleanup
-#print axioms settle_accepted_iff
-#print axioms fold_snoc
-#print axioms ready_pad
-#print axioms first_accepted_iff
-#print axioms proper_at_cleanup
-#print axioms onlineStage
-
 end L4.WindowA0Cursor

@@ -80,5 +80,4 @@ theorem expected_until_nonheld_or_empty
     hl (by omega) (fun _ _=>left_labels_injective Lroot lc) (fun _ _=>right_labels_injective Rroot rc)
     step active P phys pclosed one x ⟨I,clear⟩
 
-#print axioms expected_until_nonheld_or_empty
 end L4.DirtyFenceHeldMean

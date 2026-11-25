@@ -76,7 +76,4 @@ theorem reveal_on_owner_gate (base x : X) (hh : ∃ i,oldH6 B base i=true)
     exact ⟨z.2,eq ▸ F,eq ▸ Z.2,D⟩
   · contradiction
 
-#print axioms ordinal_owner_inj
-#print axioms owner_keeps_chart
-#print axioms reveal_on_owner_gate
 end L4.BStarGateOwnerUnique

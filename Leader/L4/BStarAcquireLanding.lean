@@ -140,7 +140,4 @@ theorem joined_acquire_lands (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0
   exact joined_lands_of_split k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x pp hh phase op bound clean tag ok
     ⟨pre,post,e,H⟩
 
-#print axioms joined_acquire_lands
-#print axioms joined_lands_of_split
-#print axioms long_work_lands
 end L4.BStarAcquireLanding

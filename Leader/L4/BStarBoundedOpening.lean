@@ -106,6 +106,4 @@ theorem literal_opening_bounded {base initial : X} (u v past w : List (Fin n))
   · intro i
     exact (decode_fits r _ 1).2
 
-#print axioms opening_bounded
-#print axioms literal_opening_bounded
 end L4.BStarBoundedOpening

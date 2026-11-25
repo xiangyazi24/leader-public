@@ -80,11 +80,6 @@ theorem raw_spectator {s n : Nat} (x : Raw s n) (e i : Fin n)
   change AllSizeS1Geometry.step (rows s) x e i=x i
   simp [AllSizeS1Geometry.step,E,R]
 
-#print axioms join_work_bits
-#print axioms raw_report1_pair
-#print axioms raw_report2_pair
-#print axioms raw_spectator
-
 /-- Work observables measured as raw wire and PC. Decoding K1 ADMIT
 after the mark still needs the actual post-mark geometry gate; a
 wire equality alone must not silently replace its offset read. -/
@@ -163,6 +158,4 @@ theorem raw_report2_token_control {s n : Nat} (x : Raw s n) (e : Fin n)
   exact (congrArg (Pair.map (tokenControl (secondParams s))) (raw_report2_pair x e S)).trans
     (join_token_control _ _ _)
 
-#print axioms raw_report1_token_control
-#print axioms raw_report2_token_control
 end L4.ReportRawProjection

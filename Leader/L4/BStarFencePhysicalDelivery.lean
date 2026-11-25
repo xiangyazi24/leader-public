@@ -34,5 +34,4 @@ theorem physical_delivery {base : X} {hh : ∃ i,oldH6 B base i=true}
   exact emits_by_second_hit hp Q fiber closed ready distinct start mask
     (fun a i F=>Classical.choice (owners a i F)) b u v e (closedWords start qstart b) nv
 
-#print axioms physical_delivery
 end L4.BStarFencePhysicalDelivery

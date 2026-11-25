@@ -121,7 +121,6 @@ theorem controlled_vulnerable_mark_stops {p c n : Nat}
   rw [(controlled_ready_fibers left right raw h).1.mpr hF]
   exact vulnerable_mark_stops x left hL (poised_live _ hB) hV
 
-
 private theorem right_ne {n : Nat} (hn : 4 ≤ n) (e : Fin n) : rightNeighbor e ≠ e := by
   intro h
   have he : liftedSite e 1 = liftedSite e 0 := by
@@ -194,8 +193,6 @@ theorem no_event_preserves_start {p c n a b : Nat} (hn : 4 ≤ n)
     hs.at_least_two,?_⟩
   rw [no_event_rank_unchanged hn x e hm h]
   exact hs.arity
-
-
 
 private theorem ordinary_prefix_suffix {p c : Nat} (u v : Site p c)
     (hM : (stepPrefix u v).1.mark = false)
@@ -339,19 +336,5 @@ theorem concreteTripleClock_of_sharp (h : ConcreteTripleSharpClock) :
       _ ≤ 4096*n*n := Nat.mul_le_mul_left _ hD
       _ = _ := by rw [Nat.pow_two,Nat.mul_assoc]
   exact Nat.le_trans (h x v a b hp hc hn hQ hS t) (Nat.mul_le_mul_right _ hbound)
-
-
-#print axioms concreteTripleClock_of_sharp
-#print axioms ordinary_front_step
-#print axioms ordinary_return_step
-#print axioms hiddenGhost6_replay
-#print axioms no_event_preserves_start
-#print axioms death_iff_nativeKill
-#print axioms event_iff_death_or_retirement
-#print axioms death_iff_leader_loss
-#print axioms vulnerable_mark_stops
-#print axioms poised_live
-#print axioms controlled_ready_fibers
-#print axioms controlled_vulnerable_mark_stops
 
 end L4.TripleResidual

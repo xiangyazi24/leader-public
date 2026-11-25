@@ -29,5 +29,4 @@ theorem retain_through_consume {base out : X} {slot : Nat → Pos n} {len op : N
   have hold := step_no_forward hp _ ack s node (sep ack) no
   exact ⟨congrArg BitVec.toNat old,congrArg BitVec.toNat (hold.trans old)⟩
 
-#print axioms retain_through_consume
 end L4.BStarNativeLoadConsume

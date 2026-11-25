@@ -113,7 +113,4 @@ theorem sweep_below {S : Type} {n l r : Nat} (L : Fin l→Fin n) (R : Fin r→Fi
         (same_emitted L R (emit s e) (one s e h act).1 (one s e h act).2 dom)
     · exact ⟨h,dom⟩
 
-#print axioms mark_below
-#print axioms same_emitted
-#print axioms sweep_below
 end L4.BStarFenceShadow

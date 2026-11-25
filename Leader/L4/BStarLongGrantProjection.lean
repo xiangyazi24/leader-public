@@ -292,9 +292,4 @@ theorem joined_keeps_incidence (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp :
   rw [joined_grants]
   simp [grants,hh,BStarGrantRetention.keep_canonical _ _ _ j hc,hn]
 
-#print axioms grant_fold
-#print axioms actual_grants
-#print axioms actual_keeps_incidence
-#print axioms joined_grants
-#print axioms joined_keeps_incidence
 end L4.BStarLongGrantProjection

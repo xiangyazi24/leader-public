@@ -161,11 +161,4 @@ theorem service_joined_grants_report2 {s n : Nat} (x : Raw s n) (e : Fin n)
   have B := congrArg (fun y : Pair (BitVec p.w) => y.2.getLsbD addr) H
   exact ⟨A.trans (joined_grants _ _ _ _ _ j).1, B.trans (joined_grants _ _ _ _ _ j).2⟩
 
-#print axioms next_agrees
-#print axioms release_next_false
-#print axioms no_ask_no_create
-#print axioms work_left_grant
-#print axioms service_joined_grants_report1
-#print axioms service_joined_grants_report2
-#print axioms joined_grants
 end L4.ReportJoinedGrants

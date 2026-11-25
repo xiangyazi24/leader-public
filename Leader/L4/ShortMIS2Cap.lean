@@ -158,9 +158,4 @@ theorem mis2_chart_exists : ∃ C : Chart (mask .mis2 x), C.root=root ∧ C.L=12
   have H := gap4 _ G.atEnd
   exact ⟨chart_of_three R F G H (by decide),rfl,rfl⟩
 
-#print axioms ready
-#print axioms advice_correct
-#print axioms mask_exact
-#print axioms every_mis2_chart_has_length12
-#print axioms mis2_chart_exists
 end L4.ShortMIS2Cap

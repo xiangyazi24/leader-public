@@ -76,7 +76,6 @@ theorem steer_first_incidence (P : Production g) (o : Owners h) (live : Fin 5 â†
   change chooseBy (redirect g o live) b _=_ at chosen
   simpa only [addr.2] using chosen
 
-#print axioms steer_first_incidence
 end
 end L4.Height.ProductionClients
 

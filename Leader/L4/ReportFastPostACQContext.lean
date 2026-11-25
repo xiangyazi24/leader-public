@@ -42,5 +42,4 @@ theorem context_at_first_consume (d : Sheet) (B : Fin 5→Chart h) (D : Fin 5→
   rw [ReportFastAcqPrefix.run_raw,actual_snoc,ShortOwnerEpochJS.raw_snoc,Mark,Chart,Seed]
   rfl
 
-#print axioms context_at_first_consume
 end L4.ReportFastPostACQContext

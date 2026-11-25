@@ -190,7 +190,6 @@ theorem expected_with_preparation {α : Type} {n : Nat} {step : α → Fin n →
   rw [Nat.add_mul]
   omega
 
-
 /-- Weakening a natural-valued expected clock bound. -/
 theorem expected_mono {α : Type} {n : Nat} {step : α → Fin n → α}
     {goal : α → Prop} {x : α} {A B : Nat}
@@ -255,7 +254,6 @@ theorem quarter_overrun {α : Type} {n : Nat} {step : α → Fin n → α}
   rw [show 4*B*survival step (fun y => ¬goal y) (4*B) x =
     B*(4*survival step (fun y => ¬goal y) (4*B) x) by ac_rfl] at hh
   exact Nat.le_of_mul_le_mul_left hh hB
-
 
 /-- The event "failed at the first stop by time t" persists under
 arbitrary word extensions, regardless of what auxiliary state does later. -/
@@ -437,12 +435,4 @@ theorem failure_of_controlled_words {β γ : Type} {n : Nat}
   omega
 
 end L4.TripleRenewal
-#print axioms L4.TripleRenewal.expected_of_uniform_attempts
-#print axioms L4.TripleRenewal.expected_with_preparation
-#print axioms L4.TripleRenewal.consecutiveRootClock_of_interfaces
-#print axioms L4.TripleRenewal.quarter_overrun
-#print axioms L4.TripleRenewal.failure_bound_of_vanishing_remainder
 
-#print axioms L4.TripleRenewal.controlled_success_of_charge_bound
-
-#print axioms L4.TripleRenewal.failure_of_controlled_words

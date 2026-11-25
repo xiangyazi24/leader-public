@@ -92,8 +92,4 @@ theorem passed_of_aligned (d : Sheet) (N : 0<n) (x : Raw s n) (w : List (Fin n))
     rw [E]
     exact tapeCovers_classify d N x w ball _ _ C
 
-#print axioms writerCensus
-#print axioms prefixStates_step
-#print axioms tapeCovers_classify
-#print axioms passed_of_aligned
 end L4.ReportActualTrialMesh

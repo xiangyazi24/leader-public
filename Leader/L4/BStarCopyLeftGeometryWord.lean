@@ -102,5 +102,4 @@ theorem left_gates_word {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rw [rail,if_pos J]
     exact gate _ _ rfl (by simpa [rail,J] using O j (by omega))
 
-#print axioms left_gates_word
 end L4.BStarCopyLeftGeometryWord

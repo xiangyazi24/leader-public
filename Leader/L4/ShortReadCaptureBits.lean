@@ -118,7 +118,4 @@ private theorem low_wire_fin :
 theorem low_wire (d : Fin 64) (i : Fin 6) :
     (BitVec.ofNat 6 d.val).getLsbD i.val=bitAt d.val i.val := low_wire_fin d i
 
-#print axioms hop_bits
-#print axioms terminal_bits
-#print axioms low_wire
 end L4.ShortReadCaptureBits

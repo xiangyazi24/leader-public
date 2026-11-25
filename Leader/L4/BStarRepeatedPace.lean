@@ -133,7 +133,5 @@ theorem between_admits {base x : X} {hh : ∃ i,oldH6 B base i=true}
       rfl
     · cases eq
 
-#print axioms ready4_origin
-#print axioms between_admits
 end L4.BStarRepeatedPace
 

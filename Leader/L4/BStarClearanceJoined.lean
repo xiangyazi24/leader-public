@@ -72,6 +72,4 @@ theorem turn_charge_joined (k₁ k₂ t₂ J₁ J₂ r n p c₁ : Nat) (hp : 0<p
   rw [BStarResetQuiet.joined_work_raw _ _ _ _ _ _ _ _ _ hp x c.source (fun H _ => (no H).elim)]
   exact turn_charge _ _ c pay old hd sel d positive oldFront
 
-#print axioms move_charge_joined
-#print axioms turn_charge_joined
 end L4.BStarClearanceJoined

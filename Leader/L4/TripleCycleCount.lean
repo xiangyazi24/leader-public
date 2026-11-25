@@ -133,7 +133,6 @@ private theorem work_step_bound (b : Nat) (hb : 0<b) {p c n a : Nat}
       simp [Phase.tick,g,workOf,hit,H,cycleProgress]
       split <;> omega
 
-
 /-- The initial dummy was just fired, so no previous work can be
 credited to the next effective incoming service. Include progress
 on the stopping mark and do not assume independent sector clocks. -/

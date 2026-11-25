@@ -125,7 +125,6 @@ private theorem attempt_wins_with_cut {base x : X} {hh : ∃ i,oldH6 B base i=tr
   rw [join]
   simp only [cutpre,suffix,List.append_assoc,List.cons_append,List.nil_append]
 
-
 open BStarCommitOperands BStarCopyLeftAttemptAuthenticated
 open BStarCopyRightStrip (addr)
 open BStarCopyLeftStrip
@@ -233,6 +232,4 @@ theorem packed_left_from_actual_witness {base global : X} {hh : ∃ i,oldH6 B ba
       facts rfl W below hr flags notShort
   exact ⟨Ac,seam,before,after,strip,eq,hit,floor,pc12,drain,read⟩
 
-#print axioms selected_left_acquisition
-#print axioms packed_left_from_actual_witness
 end L4.BStarCopyLeftActualWitness

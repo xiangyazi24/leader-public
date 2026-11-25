@@ -67,10 +67,3 @@ theorem episodeQueueCompensation (t : BarrierLedger.Totals)
 
 end L4
 
-#print axioms L4.barrierQueueBonds_bond
-#print axioms L4.barrierMark_sum
-#print axioms L4.barrierDrift_sum
-#print axioms L4.episodeQueueCompensation
-
-#print axioms L4.scaledQueueMark_range
-#print axioms L4.taggedDriftMark_range

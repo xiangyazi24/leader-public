@@ -269,7 +269,4 @@ theorem bStar_writes (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
     rw [head]
     exact stage_header _ _ d valid _ which _ i
 
-#print axioms bStar_writes
-#print axioms unique_stage
-#print axioms joined_field
 end L4.BStarStageCandidateJoined

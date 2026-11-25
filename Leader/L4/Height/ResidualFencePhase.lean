@@ -81,6 +81,4 @@ theorem doubled_reserve_budget {W chart H : Nat} (pos : 0<W)
     420*(4*chart+10)+256*H≤23192*W ∧
     420*(4*chart+10)+256*H<2^15*W := by omega
 
-#print axioms exists_fence_fields
-#print axioms doubled_reserve_budget
 end L4.Height.ResidualFencePhase

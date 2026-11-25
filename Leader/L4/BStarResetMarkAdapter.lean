@@ -140,7 +140,4 @@ noncomputable def actualService (x : X) (e : Fin n) (he : e≠rightNeighbor e)
     rw [S] at F ⊢
     exact terminal_service hp x e he C op ho hC hk hd k F
 
-#print axioms mem_link
-#print axioms mem_terminal
-#print axioms actualService
 end L4.BStarResetMarkAdapter

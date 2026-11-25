@@ -302,7 +302,6 @@ theorem owned_noninject_clean {base x : X} {hh : ∃ i,oldH6 B base i=true}
   | inject => exact (nonInject op).elim
   | stop | rstop | clear | rclear | enable => simp [selectedEffects,effects,op]
 
-
 private theorem inject_sheet {g : LongGeometry} {k : Fin 11} {sh : Sheet}
     (hit : sh∈prepSites g k .inject) : g.inside=true ∧
       ∃ rev : Bool,k=sourceOccurrence rev ∧ sh=sourceLane rev := by
@@ -879,15 +878,5 @@ theorem pointed_inspection_clean {base x : X} {hh : ∃ i,oldH6 B base i=true}
   dsimp only
   rw [BStarCopyRightMark.old_access]
   exact ⟨openAll j sh act data,cleanAll j sh act data⟩
-
-#print axioms ring_clean_step
-#print axioms owned_load_clean
-#print axioms clean_original_after_clear
-#print axioms clean_before_inject
-#print axioms owned_copy_prep_clean
-#print axioms open_owner_clean_step
-#print axioms clean_copy_word
-#print axioms end_ready_of_ledgers
-#print axioms pointed_inspection_clean
 
 end L4.Height.FreshFenceGuards

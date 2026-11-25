@@ -159,7 +159,4 @@ noncomputable def actual_trace {base initial : X} (u v past w : List (Fin n))
     rw [mark] at F
     exact (F q).1
 
-#print axioms headerInc_iff
-#print axioms raw_inc_iff
-#print axioms actual_trace
 end L4.BStarRawArrival

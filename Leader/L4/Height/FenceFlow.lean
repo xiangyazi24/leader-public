@@ -40,5 +40,4 @@ theorem balance_of_updates {n h : Nat} (bond : Nat → Fin n) (e : Fin n) (u v :
     · have noIn : 1<k → e≠bond (k-1) := fun hi eq => receives ⟨hi,eq⟩
       rw [hold out noIn,no_flow noIn,Nat.add_zero]
 
-#print axioms balance_of_updates
 end L4.Height.FenceLineTransfer

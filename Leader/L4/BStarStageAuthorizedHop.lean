@@ -87,5 +87,4 @@ theorem find {base x : X} {hh : ∃ i,oldH6 B base i=true}
       · obtain ⟨pre,m,post,R,lead,ev,after,sel⟩ := ih (f+1) l rfl L (by omega) kl le ok
         exact ⟨e::pre,m,post,congrArg (List.cons e) R,.cons I E lead,ev,after,sel⟩
 
-#print axioms find
 end L4.BStarStageAuthorizedHop

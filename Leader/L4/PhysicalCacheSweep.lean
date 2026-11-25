@@ -32,6 +32,4 @@ theorem report2_raw_quadratic (N : 1<n) (h : Fin n → Bool) (hh : ∃ i,h i=tru
   exact ⟨all_closed hh F,(MonitorRawBridge.height_iff_row _ _ _ _).mp
     (all_expected_quadratic hh F x A)⟩
 
-#print axioms width_raw_quadratic
-#print axioms report2_raw_quadratic
 end L4.PhysicalCacheSweep

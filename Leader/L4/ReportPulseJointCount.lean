@@ -126,6 +126,4 @@ theorem count_on_original_tapes (F : List (Fin n)→Prop)
     exact allWords_wordSum (fun w=>if F w then 1 else 0) B
   rwa [E] at C
 
-#print axioms recodeWord_inj
-#print axioms count_on_original_tapes
 end L4.ReportPulseJointCount

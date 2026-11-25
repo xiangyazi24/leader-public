@@ -45,6 +45,4 @@ theorem original_tape_mean {X : Type} {n J : Nat} (P : 0<J) (a b : Fin n) (D : a
       (fun y e B=>stay y.1 e B) obs (fun y e B=>comm y.1 e y.2 B) t (x,false) A]
   exact arbitrary_clock_mean P a b D (obs (x,false)) t
 
-#print axioms factor_cost
-#print axioms original_tape_mean
 end L4.ReportPulseWait

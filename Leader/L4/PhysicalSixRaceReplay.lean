@@ -224,7 +224,4 @@ theorem replay_holds_credit {s n : Nat} {base x : Raw s n}
   obtain ⟨L,H⟩ := recovered_prefix_credit (tail:=tail) R
   exact ⟨credit++tail,C,0,credit.length,L,H⟩
 
-#print axioms recovered_prefix_credit
-#print axioms replay_holds_credit
-#print axioms recovered_of_six_cuts
 end L4.PhysicalSixRaceReplay

@@ -537,12 +537,4 @@ theorem repair_budget_seventeen (L m D : Nat)
         have hmul := Nat.mul_le_mul_right (L * m) hcoef
         simpa [Nat.mul_assoc] using hmul
 
-#print axioms stage_mean
-#print axioms repair_mean
-#print axioms repair_budget
-#print axioms repair_budget_eight
-#print axioms repair_budget_sixteen
-#print axioms repair_budget_sixteen_counterexample
-#print axioms repair_budget_seventeen
-
 end L4.Height

@@ -53,4 +53,3 @@ theorem concreteBarrierDebt_of_budgets
 
 end L4.TaggedTrace
 
-#print axioms L4.TaggedTrace.concreteBarrierDebt_of_budgets

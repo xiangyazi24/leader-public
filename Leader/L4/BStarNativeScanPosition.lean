@@ -59,5 +59,4 @@ theorem later_scan_positions {base x : X}
   rw [offEq,order]
   omega
 
-#print axioms later_scan_positions
 end L4.BStarNativeScanPosition

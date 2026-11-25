@@ -183,7 +183,4 @@ theorem digitAt_of_accurate {a : LargeParams} {n : Nat} (b : LargeRows a)
       have C : ¬1=r := by omega
       simp [C,B]
 
-#print axioms ordinal_right
-#print axioms joined_installs_ordinal
-#print axioms digitAt_of_accurate
 end L4.BStarH6Ordinal

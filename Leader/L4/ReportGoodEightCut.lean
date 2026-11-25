@@ -274,12 +274,6 @@ theorem expected_second_history (d : Sheet) (N : 1<n) (S : 0<s)
   rw [show start.raw.val=x.val from rfl,runs,E,ShortOwnerEpochJS.raw_append]
   exact second_history_run d hh G _ A tail
 
-#print axioms first_cut_of_exact
-#print axioms second_at_finished
-#print axioms second_owner_seed
-#print axioms second_history_closed
-#print axioms generation_seed
-#print axioms expected_second_history
 open ReportGrantTimeline ReportJoinedGrants in
 theorem second_grant_origin (d : Sheet) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
@@ -314,5 +308,4 @@ theorem second_grant_origin (d : Sheet) (N : 1<n)
   refine ⟨a,flight,lead,post,B,R,?_,Old,Win,Stay⟩
   rw [E,W,ShortOwnerEpochJS.raw_append]
   rfl
-#print axioms second_grant_origin
 end L4.ReportGoodEightCut

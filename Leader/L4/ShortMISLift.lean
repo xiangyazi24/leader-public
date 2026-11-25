@@ -976,19 +976,6 @@ theorem mis2_not_word116 (C : Chart (mask .mis2 ShortMIS2Cap.x)) (g : Nat)
   rw [winning_length C g G,ShortMIS2Cap.every_mis2_chart_has_length12 C]
   decide
 
-#print axioms Geometry.target_internal
-#print axioms Geometry.rival_fences
-#print axioms replay_from_word
-#print axioms regenerate
-#print axioms publication_expected
-#print axioms stage_expected
-#print axioms h2_fibre_closed
-#print axioms permanent_h3_from_h2
-#print axioms permanent_h3_closed
-#print axioms anchored_mis2_stage
-#print axioms mis2_not_cap9
-#print axioms mis2_not_word116
-
 end
 end L4.ShortMISLift
 

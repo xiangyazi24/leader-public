@@ -211,8 +211,6 @@ theorem from_handoff {base old x : X} {hh : ∃ i,oldH6 B base i=true}
   · rw [←parity]
     cases s <;> rfl
 
-#print axioms from_handoff
-
 open BStarAcquireAnchors BStarPhysicalPairLaw BStarPhysicalIncrementLedger BStarIncrementLedger
 
 /-- Exact known-side specialization of chart_reveal. The current gate
@@ -246,5 +244,4 @@ theorem chart_reveal_known_side {base origin x old : X}
   refine ⟨own,?_⟩
   rw [reveal_incident hp base hh origin (ownerAt hp base hh) start past gate side fresh,own]
 
-#print axioms chart_reveal_known_side
 end L4.BStarReceiptBitOrigin

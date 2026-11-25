@@ -103,10 +103,4 @@ theorem surviving_k10_data (g : Pair LongGeometry) (x : Pair (BitVec BStarTrace.
   rw [E] at H
   exact k10_old_right_data g (BStarLongPrep.view x) c.source.side p hin hf ho H
 
-#print axioms surviving_k7_data
-#print axioms surviving_k10_data
-#print axioms surviving_advance_checked
-#print axioms passed_retaining
-#print axioms k7_old_left_data
-#print axioms k10_old_right_data
 end L4.BStarFenceTerminalData

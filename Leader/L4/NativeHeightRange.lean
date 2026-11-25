@@ -165,5 +165,4 @@ theorem native_exposure_roundtrip (r : Nat) (hr : 3≤r) (input output : Bank)
   obtain ⟨h1,h2,h3,h4⟩ := native_range r hr input δ
   exact exposure_roundtrip r _ output j (Y.symm ▸ digits) (Y.symm ▸ hdr) h1 h2 h3 h4
 
-#print axioms native_exposure_roundtrip
 end L4.NativeHeightRange

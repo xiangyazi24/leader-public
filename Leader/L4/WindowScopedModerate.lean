@@ -241,7 +241,6 @@ private theorem effective_not_pred (x : WindowScopedRace.State p c n)
   · exact offset_not_pred s a ha
   · exact hn
 
-
 theorem effective_stable (s : Fin n) (a : Nat) (x : WindowScopedRace.State p c n)
     (e : Fin n) (h : e≠liftedSite s (a+1)) : effective s a x e=e := by
   simp [effective,controlledEdge,h]
@@ -330,8 +329,6 @@ theorem controlled_attack_mean (C : Context initial group cert s a b)
     | returning k r =>
       exact ⟨liftedSite s q,by simpa only [eff,hp] using hN,
         fun e => by simpa only [hp] using hA (effective s a y e)⟩
-
-
 
 open TripleCylinder BarrierIID
 open TripleCycleCount (workOf cycleProgress)
@@ -457,7 +454,6 @@ private theorem work_step_bound (hb : 0<b)
       simp [Phase.tick,g,workOf,hit,H,cycleProgress]
       split <;> omega
 
-
 /-- The initial dummy was just fired, so no previous work can be
 credited to the next effective incoming service. Include progress
 on the stopping mark and do not assume independent sector clocks. -/
@@ -490,8 +486,6 @@ theorem moderate_from_fresh_dummy (C : Context initial group cert s a b) (hb : 1
   · simp [work,hphase,workOf]
   · have h := moderate_charge_budget (a+1) (b+1) n (by omega) ha
     simpa only [show 2*(b+1)-1=2*b+1 by omega] using h
-
-
 
 open TripleRenewal
 
@@ -583,6 +577,5 @@ theorem moderate_trial_from_fresh_dummy (C : Context initial group cert s a b) (
       (liftedSite s a) (liftedSite s (a+1)) hdiff stop (Good C) orig trialHit
       (fun y => y.phys.exited=true) (fun x => ⟨x,false⟩) (agreement C)
       6 _ x hG mean moment
-
 
 end L4.WindowScopedModerate

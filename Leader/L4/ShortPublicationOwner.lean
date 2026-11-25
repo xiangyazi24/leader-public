@@ -24,5 +24,4 @@ theorem selector_change_owner {s n : Nat} (x : Raw s n) (M : H2Ready x)
   rw [R] at A
   exact A
 
-#print axioms selector_change_owner
 end L4.ShortPublicationOwner

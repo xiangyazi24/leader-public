@@ -64,6 +64,4 @@ theorem held_until_release {s n : Nat} (x : Raw s n) (e i : Fin n) (j : Fin 3)
     · rw [reset_remote_frame_raw x e i L R]
       exact held
 
-#print axioms absent_until_ask
-#print axioms held_until_release
 end L4.ShortGrantPersistence

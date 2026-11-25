@@ -260,6 +260,4 @@ theorem from_chosen_ack {base x : X} (u v tail : List (Fin n))
       ((congrArg digit ((congrArg (fun j : Fin n => headerBits (run x atBirth j).long) atSlot.symm).trans eq.symm)).trans
         (BStarCapturedCompilerInputs.header_bit src j f).symm)
 
-#print axioms wins_from_chosen_ack
-#print axioms from_chosen_ack
 end L4.BStarCanonicalAttemptBank

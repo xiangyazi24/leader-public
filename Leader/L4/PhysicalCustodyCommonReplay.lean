@@ -125,7 +125,4 @@ theorem common_replay_implies_custody {s n : Nat} {z : Raw s n} {w : List (Fin n
     g.notShort g.head g.cont g.packed g.upperWidth g.widthRatio g.charts g.sep u' v' cut
   rwa [←List.append_nil (u++v), (replay_same_cuts z hu hv).2 [], List.append_nil]
 
-#print axioms geometry_of_settled_flags
-#print axioms ready_of_actual_five_covers
-#print axioms common_replay_implies_custody
 end L4.PhysicalCustody

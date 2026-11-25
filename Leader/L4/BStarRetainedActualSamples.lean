@@ -159,6 +159,4 @@ theorem origin_consume {base x : X} {hh : ∃ i,oldH6 B base i=true}
     .consume acquire door E'
   exact ⟨pre,e,mid,W,H,consume,into6,live⟩
 
-#print axioms origin_consume
-#print axioms retained_samples
 end L4.BStarRetainedActualSamples

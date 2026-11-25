@@ -27,7 +27,6 @@ theorem block_at {p c n : Nat} (x : Config p c n) (hp : 2≤p) (hc : 12≤c)
     C.project C.projectStep, C.initial] at hh
   simpa only [Nat.mul_assoc] using hh
 
-
 theorem bounded_at (c : Nat) (hc : 12≤c) :
     ∀ {p n : Nat} (x : Config p c n), 2≤p → 4≤n → QuietEntrance x → 2≤rank x →
       IIDExpectedHittingTimeAtMost step (fun y => rank y<rank x) x
@@ -89,8 +88,6 @@ theorem bounded_at (c : Nat) (hc : 12≤c) :
   have hc' := hcost t
   simpa only [Nat.mul_assoc,Nat.mul_comm,Nat.mul_left_comm,Nat.mul_one,Nat.one_mul] using hc'
 
-
-#print axioms bounded_at
 end L4.WindowCappedRetirement
 
 namespace L4.WindowCappedPublic
@@ -195,10 +192,4 @@ theorem bounded_suffix_at_coefficient {n : Nat} (hn : 4≤n) (hN : n≤boundedN)
     (fun y e _ => BoundedPublicCodec.bounded_projects y e) (fun _ _ _ => rfl)
     x trivial _ (rooted_mean (boundedProject x) hp hn hN hroot)
 
-#print axioms retirement_eq
-#print axioms coefficient_lt
-#print axioms coefficient_eq
-#print axioms marginal
-#print axioms rooted_mean
-#print axioms bounded_suffix_at_coefficient
 end L4.WindowCappedPublic

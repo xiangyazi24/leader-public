@@ -68,7 +68,6 @@ theorem cost_eq {p c n : Nat} {initial : Config p c n} {g : List (Fin n)}
       funext e
       exact ih _ _ (match_step E s R H e)
 
-
 /-- The authentic protected observer itself has the push clock: the
 comparison needs no restart or redraw after the named kill. -/
 theorem protected_mean {p c n : Nat} {initial : Config p c n} {g : List (Fin n)}
@@ -169,9 +168,4 @@ theorem joined_hit_after_latch {α : Type} {p c n : Nat}
       .inr (runMarks pushNext (startRunning E) u) := by
   rw [runMarks_append,hlatch,joined_replay_from_protected]
 
-#print axioms match_run
-#print axioms cost_eq
-#print axioms protected_mean
-#print axioms protected_phase
-#print axioms joined_hit_after_latch
 end L4.WindowProtectedSlot

@@ -317,7 +317,6 @@ theorem work_assignments (g : Pair LongGeometry) (x : Pair (BitVec LW)) :
   · obtain ⟨a,_,rfl⟩ := List.mem_map.mp hl
     exact route_frame a
 
-
 theorem work_frame (g : Pair LongGeometry) (x : Pair (BitVec LW)) (s : Bool) :
     Frame (lane s (longWork g x)) := by
   intro i lo hi
@@ -465,11 +464,4 @@ theorem stale_width3 (axes : Headers) (x : BitVec LW) (p : Payload)
     physicalDigit correct x i (.maskB a) p=(writeNum i 0,p) := by
   simp [physicalDigit,litDigit,operand]
 
-#print axioms stale_width3
-#print axioms after_aligned_digit
-#print axioms step_cache
-#print axioms word_cache
-#print axioms after_aligned
-#print axioms work_frame
-#print axioms joined_right
 end L4.BStarEndCacheFrame

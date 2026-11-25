@@ -38,5 +38,4 @@ theorem expected_of_rank_stages {S : Type} {n : Nat} (hn : 0<n) (next : S→Fin 
         simpa only [Nat.add_mul,Nat.one_mul] using congrArg (·*budget) (show 1+(k-1)=k from by omega)] at estimate
   exact general (rank x) x B rfl
 
-#print axioms expected_of_rank_stages
 end L4.ControllerMacroIID

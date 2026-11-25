@@ -129,10 +129,4 @@ theorem doorCases (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     · exact .inl L
     · exact .inr (paid_of_root d C x _ (other_weights d C hh B F N x X) P)
 
-#print axioms root_tok
-#print axioms root_normalization
-#print axioms launch_at_door_iff
-#print axioms other_weights
-#print axioms paid_of_root
-#print axioms doorCases
 end L4.ReportPrelaunchDoorLift

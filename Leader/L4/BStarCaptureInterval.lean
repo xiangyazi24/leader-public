@@ -189,9 +189,4 @@ theorem held_operand {r : Nat} {head preHead : BitVec LW}
   · intro j
     rw [h.1,(held_trace_reads (hdig j)).2]
 
-#print axioms bStar_held_step
-#print axioms safe_from_events
-#print axioms joined_read
-#print axioms joined_protects
-#print axioms held_operand
 end L4.BStarCaptureInterval

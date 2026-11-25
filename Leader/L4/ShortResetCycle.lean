@@ -126,12 +126,6 @@ theorem turn_reverse {s n : Nat} {h : Fin n → Bool} (C : Chart h)
     subst i
     simpa [trailAt] using R
 
-#print axioms wait0_step
-#print axioms chart_exists
-#print axioms forward_root_safe
-#print axioms begin_reset
-#print axioms turn_reverse
-
 inductive Stage where
   | fwd (k : Nat)
   | rev (k : Nat)
@@ -281,9 +275,6 @@ theorem debt_step {n : Nat} {h : Fin n → Bool} (C : Chart h) (st : Stage)
         · simp only [nextStage,if_neg J,Nat.le_refl]
       · exact ⟨nextAt C.root k,by simp [nextStage,debt]⟩
 
-#print axioms active_step
-#print axioms debt_step
-
 /-- Stops only at the real consumed reply. Prior to that it takes
 exactly the same physical mark as the raw process. -/
 def monitorNext {s n : Nat} {h : Fin n → Bool}
@@ -380,8 +371,6 @@ theorem completed_reset_mean_of_issue {s n : Nat} {h : Fin n → Bool} (C : Char
   intro t
   exact Nat.le_trans (cmp t _ init) (M t)
 
-#print axioms completed_reset_mean_of_issue
-
 /-- Concrete uniform post-issue bound on every production-size ring.
 The returned finite chart is tied to this owner's actual frozen H1
 headers, so its clean target is not an existential arbitrary byte view. -/
@@ -401,5 +390,4 @@ theorem actual_owner_reset_mean {s n : Nat} (N : 9<n) (x : Raw s n)
   intro t
   exact Nat.le_trans (A t) (Nat.mul_le_mul_right (n^t) K)
 
-#print axioms actual_owner_reset_mean
 end L4.ShortResetCycle

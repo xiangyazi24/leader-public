@@ -98,8 +98,6 @@ theorem attempt_expected_linear
     rw [same,←E]
     exact advance.imp id And.left
 
-#print axioms attempt_expected_linear
-
 theorem to_issue_zero_expected_linear
     {base x : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
@@ -161,7 +159,6 @@ theorem to_issue_zero_expected_linear
   intro t
   exact Nat.le_trans (h t) (Nat.mul_le_mul_right _ (Nat.mul_le_mul_right _ R))
 
-#print axioms to_issue_zero_expected_linear
 private theorem snoc_ind {L : Type} {P : List L→Prop}
     (nil : P []) (append_singleton : ∀ w e,P w→P (w++[e])) (w : List L) : P w := by
   have H (k : Nat) : ∀ v : List L,v.length=k→P v := by
@@ -233,8 +230,6 @@ theorem launch_tape_of_observer (x : X) (root : Fin n) (K : Nat)
         exact ih _
   intro t
   exact Nat.le_trans (compare t []) (H t)
-
-#print axioms launch_tape_of_observer
 
 theorem arbitrary_to_boundary_expected_linear
     {base x : X} {hh : ∃ i,oldH6 B base i=true}
@@ -317,7 +312,6 @@ theorem arbitrary_to_boundary_expected_linear
   rw [E]
   exact before
 
-#print axioms arbitrary_to_boundary_expected_linear
 /-- From arbitrary old command/data on a settled owner chart, the
 actual IID process reaches a clean ISSUE0 in linear-width time.
 It does not assert that the following healthy RESET chain is complete. -/
@@ -361,5 +355,4 @@ theorem arbitrary_to_issue_zero_expected_linear
     exact to_issue_zero_expected_linear hp chart sep Q layout closed LF RF dp
       seam flags notShort hn hl lc rc head cont cb cx W wW width Y
 
-#print axioms arbitrary_to_issue_zero_expected_linear
 end L4.ResidualControllerIID

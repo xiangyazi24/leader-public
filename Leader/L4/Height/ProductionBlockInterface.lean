@@ -92,7 +92,4 @@ theorem strict_publication_block_of_production_block (H : ProductionBlock)
   classical
   exact H g (production_of_space g hs hadvice hspace) i
 
-#print axioms ring_le_words_times_max
-#print axioms production_of_space
-#print axioms strict_publication_block_of_production_block
 end L4.Height.ProductionCustody

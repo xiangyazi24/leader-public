@@ -240,8 +240,4 @@ theorem genuine_reset_return_on {base x : XX} {hh : ∃ i, oldH6 B base i=true}
     exact ⟨empty,closed a W.1 door,ph,opn⟩
   exact reset_prefix_then_door A y inv F door Handled handle
 
-#print axioms genuine_reset_return_on
-#print axioms genuine_reset_return
-#print axioms genuine_wait
-#print axioms chart_adapter
 end L4.BStarResetCycle

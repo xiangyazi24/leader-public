@@ -156,5 +156,4 @@ theorem indexed_sum {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [← R post,← R x]
   exact door C hc own D
 
-#print axioms indexed_sum
 end L4.BStarClearanceIndexedSum

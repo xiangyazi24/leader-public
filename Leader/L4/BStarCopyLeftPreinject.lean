@@ -67,5 +67,4 @@ theorem frozen_pc10_prefix {base origin : X} {hh : ∃ i,oldH6 B base i=true}
       layout (e::a) f b (congrArg (List.cons e) E)) F
     exact result.trans frame
 
-#print axioms frozen_pc10_prefix
 end L4.BStarCopyLeftPreinject

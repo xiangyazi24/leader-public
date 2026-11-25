@@ -41,7 +41,4 @@ theorem bind_keeps_reply_polarity (g : LongGeometry) (j : Fin 11) (p : Payload)
   · change (p.argument.toNat%2%(2^34))%2=p.argument.toNat%2
     rw [Nat.mod_mod_of_dvd _ (by decide : 2 ∣ 2^34),Nat.mod_mod]
 
-#print axioms accepted_center_polarity
-#print axioms finish_keeps_polarity
-#print axioms bind_keeps_reply_polarity
 end L4.BStarSealParity

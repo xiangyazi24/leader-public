@@ -161,5 +161,4 @@ theorem original_rs_load_visit {base x : X} {hh : ∃ i, oldH6 B base i=true}
     rw [W,spl,List.append_assoc]
   · cases bad
 
-#print axioms original_rs_load_visit
 end L4.BStarCopyRightWrappedLoadCoverage

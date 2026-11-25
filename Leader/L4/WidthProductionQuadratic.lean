@@ -52,6 +52,4 @@ theorem packed_from_certified_h6_quadratic (P : WidthLower s n) (hs : 6≤s)
     (fun y Y=>⟨paidOwnerMonitor P F (fun q=>actual_predecessor P (F.sector q))
       hs advice N y Y⟩) x X
 
-#print axioms L4.WidthPackTiming.width_packed_stage_quadratic
-#print axioms packed_from_certified_h6_quadratic
 end L4.WidthProductionEntrance

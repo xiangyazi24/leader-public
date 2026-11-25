@@ -34,7 +34,6 @@ theorem wire_frames {s n : Nat} : WireFrames s n := by
     exact parked_outgoing_right_empty x e sep j k dst _ old rfl rfl rfl gate
       (by rcases race with rfl|rfl|rfl <;> decide) right wire
 
-
 variable {s n : Nat} {h : Fin n → Bool}
 
 private theorem raw_app (x : Raw s n) (u v : List (Fin n)) :
@@ -116,7 +115,4 @@ theorem mis1_admit_same_generation_to_clear_issue3_or_reset
   rw [raw_app,raw_app,raw_app]
   exact T
 
-#print axioms wire_frames
-#print axioms first_admit_consume
-#print axioms mis1_admit_same_generation_to_clear_issue3_or_reset
 end L4.ShortAdmitSameGeneration

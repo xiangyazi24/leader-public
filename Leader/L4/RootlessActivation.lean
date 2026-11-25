@@ -125,7 +125,6 @@ theorem zero_stock_birth_mean {p c n : Nat} (hn : 4≤n) (hc : 0<c)
     _ ≤ n*(8*(2*c+1)*n) := Nat.mul_le_mul_left _ ha
     _ = _ := by rw [Nat.pow_two]; ac_rfl
 
-
 /-- Both all-ghost entry stages of the stopped attempt, with the
 already-checked 17n² drain constant and the sharp fixed timer.
 If a retirement occurs during stock drainage, the physical target
@@ -169,7 +168,3 @@ theorem rootless_stage_mean {p c n : Nat} (hp : 2≤p) (hc : 12≤c)
 
 end L4.RootlessActivation
 
-#print axioms L4.RootlessActivation.distinct_ghost_gap
-#print axioms L4.RootlessActivation.zero_stock_birth_mean
-
-#print axioms L4.RootlessActivation.rootless_stage_mean

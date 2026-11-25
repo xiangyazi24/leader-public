@@ -223,8 +223,4 @@ theorem finite_word_from_issue {tag : Tag} {len : Nat} {x : Rail} {w : List Rail
   subst d
   exact separating_return issued F.forget
 
-#print axioms outward
-#print axioms returning
-#print axioms separating_return
-#print axioms finite_word_from_issue
 end L4.BStarSeparatingRail

@@ -101,7 +101,6 @@ theorem commit_prefix_writerfree (d : Sheet) (N : 1<n) (G : GapInput h)
     exact ⟨(canonical_centre G r).2.2.1,(canonical_centre G r).2.2.2.2,
       (canonical_centre G r).2.2.2.1⟩
 
-
 theorem door_writerfree (d : Sheet) (G : GapInput h) (r : Owner h)
     (x : Raw s n) : CentreWriterFree d (charter G r) x [door (charter G r)] := by
   let C := charter G r
@@ -113,7 +112,6 @@ theorem door_writerfree (d : Sheet) (G : GapInput h) (r : Owner h)
     exact False.elim (ReportChartPartition.door_not_outgoing C C.a K H)
   · intro H
     exact False.elim (ReportChartPartition.door_not_outgoing C (C.a-1) K0 H)
-
 
 /-- One arbitrary selected mark after the outward SEAL cursor has
 passed centre cannot rewrite the installed seal or selected bank. -/
@@ -135,8 +133,4 @@ theorem postcentre_seal_front_writerfree (d : Sheet) (G : GapInput h) (r : Owner
   unfold sealOp commitOp
   omega
 
-#print axioms postcentre_seal_front_writerfree
-#print axioms door_writerfree
-#print axioms seal_reverse_writerfree
-#print axioms commit_prefix_writerfree
 end L4.ReportGuardedTailFrameTape

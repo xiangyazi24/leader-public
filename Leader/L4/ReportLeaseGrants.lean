@@ -58,7 +58,6 @@ theorem fresh_exact (g : GrantView) (Hdr : g.header=true) (j : Fin 3)
     · simp [GrantView.canonical,J,Old]
   simp [GrantView.nextValue,Hdr,C]
 
-
 /-- The old-snapshot arbiter does not hand the writer a lease on the
     same mark as receipt/release of a reader's old lease. -/
 theorem reader_blocks_center_win (g : GrantView) (H : Compatible g.old)
@@ -130,7 +129,6 @@ theorem raw_outgoing_retains_iff (d : Sheet) {s n : Nat} (x : Raw s n) (e : Fin 
   rw [D,Hdr]
   exact held_exact _ rfl H j Held
 
-
 /-- Once canonical, each site's lease arbitration stays canonical on any
     raw mark. Endpoints are distinct; no observer or fixed layout is used. -/
 theorem raw_compatible_step (d : Sheet) {s n : Nat} (x : Raw s n) (e i : Fin n)
@@ -170,7 +168,6 @@ theorem dirty_incumbent_reader_cleared (g : GrantView) (R : g.old 0=true)
   exact ⟨fun H => Bool.noConfusion ((H W).1.symm.trans R),
     by simp [GrantView.canonical,W]⟩
 
-
 theorem raw_outgoing_fresh_exact (d : Sheet) {s n : Nat} (x : Raw s n) (e : Fin n)
     (N : e≠rightNeighbor e) (Hdr : lower d (oldHeaders (rows s) (x e))=true)
     (j : Fin 3) (Empty : rawGrant d x e j=false) :
@@ -190,16 +187,4 @@ theorem release_old_token (p : Params) (h : Bool) (u : BitVec p.w) (j : Fin 3) :
   change ((_ == 2) && !_ && (_ == 0)) = true ↔ _
   simp [Bool.and_eq_true, beq_iff_eq, and_assoc]
 
-#print axioms next_compatible
-#print axioms held_exact
-#print axioms fresh_exact
-#print axioms reader_blocks_center_win
-#print axioms center_blocks_reader_win
-#print axioms raw_grant_rows
-#print axioms raw_incoming_preserves
-#print axioms raw_outgoing_retains_iff
-#print axioms raw_compatible_step
-#print axioms dirty_incumbent_reader_cleared
-#print axioms raw_outgoing_fresh_exact
-#print axioms release_old_token
 end L4.ReportLeaseGrants

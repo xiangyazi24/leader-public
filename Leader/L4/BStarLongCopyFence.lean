@@ -105,7 +105,4 @@ theorem fence_old_then_hold (g : Pair LongGeometry) (x : Pair (BitVec BStarTrace
   exact ⟨by simp [fence,gv,clean,empty,oldRet,validPayload],
     by simp [H,fence,gv,clean,inc,oldRet,Digit9.isBad]⟩
 
-#print axioms receiver_exact
-#print axioms retained_shift
-#print axioms fence_old_then_hold
 end L4.BStarLongCopyFence

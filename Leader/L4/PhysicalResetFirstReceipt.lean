@@ -89,6 +89,4 @@ theorem first_reset0_receipt_of_boundary {s n : Nat} {base x : Raw s n}
     rw [atCut]
   exact ⟨pre,tour,split,N,q,R,W.1,W.2,J,by rwa [playback],by rwa [playback]⟩
 
-#print axioms healthy_exact_receipt_clock
-#print axioms first_reset0_receipt_of_boundary
 end L4.PhysicalResetFirstReceipt

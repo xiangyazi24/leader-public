@@ -128,6 +128,4 @@ theorem unique_command_header {n : Nat} (h : Fin n → Bool) (hh : ∃ j, h j=tr
     rw [eq] at q
     exact q.trans (Int.emod_eq_of_lt (word_range h j.val hh).1 (word_range h j.val hh).2) |>.symm
 
-#print axioms unique_command_header
-#print axioms unique_header
 end L4.BStarAcquireAnchors

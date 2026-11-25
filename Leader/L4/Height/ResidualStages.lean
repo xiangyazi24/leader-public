@@ -103,7 +103,5 @@ theorem wait_on_miss {S : Type} {n : Nat} (next : S → Fin n → S) (P : S → 
     simp only [stoppedTime,if_neg off,List.length_cons]
     exact congrArg Nat.succ (ih (next y e) miss)
 
-#print axioms six_residuals
-#print axioms wait_on_miss
 end L4.Height.ResidualStages
 

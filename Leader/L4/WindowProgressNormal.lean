@@ -396,6 +396,4 @@ theorem owned_coordinates {p c n : Nat} {x : Config p c n}
     exact Option.some.inj T
   exact S.symm.trans (G.symm.trans (window_get x i d hg))
 
-#print axioms fold_invariant
-#print axioms ordinary_cut_of_fold
 end L4.WindowProgressNormal

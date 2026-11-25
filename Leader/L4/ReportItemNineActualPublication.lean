@@ -101,7 +101,6 @@ theorem publication_of_actual_acq (d : Sheet) (N : 1<n) (Spos : 0<s)
   rw [←Replay] at Result
   exact Result.2.2.2
 
-#print axioms publication_of_actual_acq
 end L4.ReportItemNineActualPublication
 
 namespace L4.ReportItemNineActualPublication
@@ -198,5 +197,4 @@ theorem publication_at_current_cut (d : Sheet) (N : 1<n) (Spos : 0<s)
   rw [←W] at Result
   exact ⟨issue,flight,post,X,I,Issue,Before,Tg,ND,W,NR,Result⟩
 
-#print axioms publication_at_current_cut
 end L4.ReportItemNineActualPublication

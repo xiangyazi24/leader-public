@@ -70,7 +70,6 @@ theorem load_routing_frame (g : Pair LongGeometry) (raw : Pair (BitVec LW))
         subst f
         simp [observe,payload,gate,admit,bitOp] at h
 
-
 theorem load_silent {base x : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
     (C : Chart hp base hh o S len fall)
@@ -141,8 +140,6 @@ theorem load_silent {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · by_cases r : (addr k).1=rightNeighbor e
     · exact touch (R (addr k).2) (Prod.ext r rfl)
     · exact ⟨.off l r tail,(BStarResetIdleRing.idle_off_pair hp x e (addr k) l r).trans F⟩
-
-#print axioms load_silent
 
 theorem load_gated (g : Pair LongGeometry) (raw : Pair (BitVec LW))
     (c : CommandClaim) (u : Nat) (width : u<64) (valid : selTriple u=true)
@@ -216,8 +213,6 @@ theorem valid_load_no_fault (g : Pair LongGeometry) (raw : Pair (BitVec LW))
     obtain ⟨s,_,E⟩ := List.mem_map.mp cm
     rw [←claim,←E]
   simp [selectedEffects,effects,load,←A,validFields] at fail
-
-#print axioms valid_load_no_fault
 
 theorem load_terminal_D (x : X) (e : Fin n) (he : e≠rightNeighbor e)
     (cl : CommandClaim) (u : Nat) (width : u<64) (valid : selTriple u=true)
@@ -325,8 +320,6 @@ theorem busy_load_word {base x : X} {hh : ∃ i,oldH6 B base i=true}
       have R := ih k l (congrArg Cursor.out eq.symm) D F'
       exact (load_silent hp C e (sep e) k u I.1 I.2.1 old width valid link notT w _ R).1
 
-#print axioms busy_load_word
-
 open BStarCopyOperand BStarClearanceSource
 
 /-- All-label healthy outward COPY LOAD extraction from the genuine
@@ -367,8 +360,6 @@ theorem generated_load_word {base x : X} {hh : ∃ i,oldH6 B base i=true}
   refine ⟨pre,e,post,eq,door,op,⟨I,_,by rwa [op],snap⟩,trace,?_⟩
   rw [eq,BStarResetSchedule.run_append]
   exact load_word_carries hp trace _ h16 ok init
-
-#print axioms generated_load_word
 
 open BStarClearanceDataChart
 
@@ -416,5 +407,4 @@ theorem generated_freezes_bank {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [Eq]
   exact V
 
-#print axioms generated_freezes_bank
 end L4.BStarCopyLoadHistory

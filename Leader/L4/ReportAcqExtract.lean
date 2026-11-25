@@ -397,14 +397,4 @@ theorem rail_after_history_consume (d : Sheet) (C : Chart h) (N : 1<n)
   obtain ⟨Z,E,PC,_,_⟩ := raw_acq_consume d C hh G F N y Y R O K Live ND _ rfl digit
   exact (strong_run d C N hh G F digit _ Z (seed_after_acq d C _ E PC) post).2.2
 
-#print axioms no_restart_prefix
-#print axioms logical_monotone_on_generation
-#print axioms rail_after_history_consume
-#print axioms acq_history_after_receipt
-#print axioms logical_after_acq_of_preseal
-#print axioms acq_progress_run
-#print axioms first_consume_outcome
-#print axioms split_first_consume
-#print axioms live_acq_pc
-#print axioms denied_consume_retry
 end L4.ReportAcqExtract

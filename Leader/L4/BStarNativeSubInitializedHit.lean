@@ -236,5 +236,4 @@ theorem actual_initialized_hit_sub {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [←replay2,←replay] at out
   exact ⟨val (readWord fresh i hiSlot),out.2.choose,out.1,outputWord,out.2.choose_spec⟩
 
-#print axioms actual_initialized_hit_sub
 end L4.BStarNativeSubInitializedHit

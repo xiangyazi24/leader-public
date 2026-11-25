@@ -231,7 +231,4 @@ theorem genuine_launch_expected_linear
     rw [Height.iidHitCost_of_target _ Stop _ (show Stop (y,true) from rfl)]
     exact Nat.zero_le _
 
-#print axioms held_release_expected
-#print axioms held_release_expected_linear
-#print axioms genuine_launch_expected_linear
 end L4.DirtyOwnerRelease

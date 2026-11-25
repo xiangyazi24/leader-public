@@ -72,7 +72,4 @@ theorem positive_rail_no_release (sheet : Sheet) (C : Chart h) (x : Raw s n)
   exact Pos ((rail_opcode sheet C x g R).trans
     (reset_token_requires_zero sheet C x g R k K B.1 B.2.1 B.2.2))
 
-#print axioms rail_opcode
-#print axioms reset_token_requires_zero
-#print axioms positive_rail_no_release
 end L4.ReportReaderRailNoRelease

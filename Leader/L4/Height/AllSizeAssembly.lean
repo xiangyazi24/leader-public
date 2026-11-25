@@ -1,16 +1,16 @@
-import Leader.L4.Height.G9WireSplit
+import Leader.L4.Height.AllSizeWireSplit
 import Leader.L4.Height.StrictPublication
 import Leader.L4.PhysicalClockDisplay
 import Leader.L4.PhysicalPublic
 
-namespace L4.Height.G9Dot
+namespace L4.Height.AllSizeAssembly
 open L4.PhysicalCustody L4.AllSizeProtocol
-open L4.Height.G9Wire
-open L4.Height.G9Wire.CustodySpec
-open L4.Height.G9Wire.ClockServiceSpec
-open L4.Height.G9Wire.ClockDisplaySpec
-open L4.Height.G9Wire.PublicSpec
-open L4.Height.G9Spine
+open L4.Height.AllSizeWire
+open L4.Height.AllSizeWire.CustodySpec
+open L4.Height.AllSizeWire.ClockServiceSpec
+open L4.Height.AllSizeWire.ClockDisplaySpec
+open L4.Height.AllSizeWire.PublicSpec
+open L4.Height.AllSizeSpine
 open L4.Compiler.Native
 
 /-- Never use the refuted unrestricted StrictBlock. The exact accepted
@@ -36,7 +36,6 @@ theorem actual_display : ClockDisplaySpec.RawDisplayTrial := by
     L4.PhysicalClockDisplay.raw_display_trial hn hs ha g legit
   refine ⟨start,lo,G,opening,cap,Open,Cap,Depth,Repr,Lower,Upper,?_⟩
   exact count_decidable_irrel _ _ _ _ _ _ Split
-
 
 open BStarH6WordChart BStarAcquireAnchors BStarPhysicalLegitimate BStarCycleGeometry
 
@@ -92,12 +91,4 @@ theorem deployed_of_custody (custody : CustodyReached) :
     exact physical_expected _ hn
       (bounded_interfaces boundedEncode boundedDecode hn hb g C (hBound hn hb)) x
 
-#print axioms production_service
-#print axioms actual_strict_count
-#print axioms actual_display_deadline
-#print axioms actual_display
-#print axioms actual_observer
-#print axioms actual_public
-#print axioms custody_contract
-#print axioms deployed_of_custody
-end L4.Height.G9Dot
+end L4.Height.AllSizeAssembly

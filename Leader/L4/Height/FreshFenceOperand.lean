@@ -78,7 +78,4 @@ theorem forward_operand {L : Type} {plan : List L} {s : Ledger L}
       gate clean).1 mobile
   exact ⟨pass,(physical_terminal digits P positive boundary lane image g old a loc retaining pass).2.1⟩
 
-#print axioms inspections_receive
-#print axioms inspection_result
-#print axioms forward_operand
 end L4.Height.FreshFenceOperand

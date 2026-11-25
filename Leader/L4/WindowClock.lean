@@ -432,13 +432,3 @@ theorem entry_quarter_of_prefix {α β : Type} {n : Nat} (next : α → Fin n �
 
 end L4.WindowClock
 
-#print axioms L4.WindowClock.stoppedWeight_of_span_step
-#print axioms L4.WindowClock.stage_of_span
-#print axioms L4.WindowClock.windowStages_mean
-#print axioms L4.WindowClock.five_stage_reward
-
-#print axioms L4.WindowClock.common_deadline
-#print axioms L4.WindowClock.sticky_mass_pad
-
-#print axioms L4.WindowClock.loss_mass_le_prefix
-#print axioms L4.WindowClock.entry_quarter_of_prefix

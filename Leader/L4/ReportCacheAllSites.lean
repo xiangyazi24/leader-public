@@ -174,11 +174,4 @@ theorem report2_raw {s n : Nat} (N : 1<n) (h : Fin n → Bool) (hh : ∃ i,h i=t
 
 end Production
 
-#print axioms all_closed
-#print axioms raw_fields_correct
-#print axioms all_expected
-#print axioms report1_all_sites
-#print axioms report2_all_sites
-#print axioms report1_raw
-#print axioms report2_raw
 end L4.ReportCacheAllSites

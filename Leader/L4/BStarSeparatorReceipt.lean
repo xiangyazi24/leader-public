@@ -71,5 +71,4 @@ theorem consume {base x : XX} {hh : ∃ i, oldH6 B base i=true}
     rw [R,wait.2.2.2] at A
     exact A
 
-#print axioms consume
 end L4.BStarSeparatorReceipt

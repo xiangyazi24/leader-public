@@ -1408,23 +1408,4 @@ theorem through_fence {L R : Type}
   rw [final] at lRead rRead lDrain rDrain
   exact ⟨H,lRead,rRead,lDrain,rDrain⟩
 
-#print axioms accept_unit
-#print axioms data_follows_fence
-#print axioms chart_data_predecessor
-#print axioms chart_region_scope
-#print axioms late_visited_scope
-#print axioms ready_after_enable
-#print axioms guarded_turn
-#print axioms fence_holds
-#print axioms mapped_guard_nofault
-#print axioms retaining_guard_nofault
-#print axioms guarded_busy_outward
-#print axioms terminal_fence_unit
-#print axioms right_terminal_clean_mark
-#print axioms right_terminal_clean_word
-#print axioms passed_region_word
-#print axioms guarded_busy_visited
-#print axioms terminal_fence_visited
-#print axioms earlier_strip_vacancy
-#print axioms through_fence
 end L4.Height.FreshFenceContinuation

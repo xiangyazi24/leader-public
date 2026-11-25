@@ -90,6 +90,4 @@ theorem phaseUpdate_bounds (r phase : Nat) (hr : 3≤r) (L C R : Snapshot) (δ :
     split <;> assumption
   · exact ⟨hx,hcd,hz,hp⟩
 
-#print axioms stageEdit_snapshot
-#print axioms phaseUpdate_bounds
 end L4.Compiler.Native

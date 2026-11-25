@@ -113,7 +113,4 @@ theorem actual_data_owner {a : LargeParams} {n : Nat} (b : LargeRows a)
   rw [physical_pair_owner,physical_pair_owner]
   exact data_owner (oldPair b x i) _ _ Rsv c r hc hr
 
-#print axioms right_word
-#print axioms actual_command_owner
-#print axioms actual_data_owner
 end L4.BStarH6WordChart

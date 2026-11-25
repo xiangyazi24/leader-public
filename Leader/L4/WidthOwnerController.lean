@@ -131,11 +131,4 @@ theorem begin_departure_fields {c : Nat} (r i : Nat) (x : BitVec (W c)) :
   · rw [get_after_put_other _ 6 5 _ _ (by decide),
       get_after_put_other _ 6 2 _ _ (by decide),get_after_put_other _ 6 1 _ _ (by decide)]
 
-#print axioms wait_on_live
-#print axioms wait_fault_or_empty
-#print axioms wait_good_reply
-#print axioms issue_begin
-#print axioms incoming_issue_begin_wire
-#print axioms incoming_issue_begin_phase
-#print axioms begin_departure_fields
 end L4.WidthOwnerController

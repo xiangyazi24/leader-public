@@ -41,7 +41,6 @@ private theorem reply_arg_cap (x : BitVec 16) (T : (decode x).tag=3) : (decode x
       · change _ % 1 < 4
         omega
 
-
 theorem incoming_reply_or_empty_phase {c : Nat} (r : Nat) (h : Bool) (u v : BitVec (W c))
     (W : phase (c:=c) v=2)
     (B : (packet (c:=c) v).tag=0 ∨ (packet (c:=c) v).tag=3) :
@@ -81,5 +80,4 @@ theorem incoming_reply_or_empty_phase {c : Nat} (r : Nat) (h : Bool) (u v : BitV
   simp only [Q,if_true,Patch.compose_apply]
   exact clearDoor_phase _ _ _ O A
 
-#print axioms incoming_reply_or_empty_phase
 end L4.WidthWaitExit

@@ -86,5 +86,3 @@ theorem a0_initialCut {p c n : Nat} (x : Config p c n) (i : Fin (rank x))
 
 end L4.WindowA0
 
-#print axioms L4.WindowA0.actual_ambient
-#print axioms L4.WindowA0.a0_initialCut

@@ -244,8 +244,4 @@ theorem win_if_guard (G : Geometry s n) (A : 2 ≤ G.A)
   rw [W]
   exact publication_of_prefix G.P i x (wordLead C) tail e K
 
-#print axioms classify_rep
-#print axioms auth_none
-#print axioms auth_if_protected
-#print axioms win_if_guard
 end L4.ShortMISPublicationLift

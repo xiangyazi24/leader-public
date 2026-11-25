@@ -132,8 +132,6 @@ theorem body_ready {p c n : Nat} {z0 : Config p c n} (hn : 4≤n)
     rw [cfg,same]
     simpa [step,Ne.symm hI,nr] using cold
 
-#print axioms body_ready
-
 open WindowA0AdjacentEntry WindowA0AdjacentMotion
 
 private def coldSite {p c : Nat} (u : Site p c) : Prop :=
@@ -259,8 +257,6 @@ theorem waiting_cold {p c n : Nat} {initial : Config p c n} (hn : 5≤n)
   rw [←E,eq]
   exact C
 
-#print axioms waiting_cold
-
 /-- Same-word ordinary release handoff. Remaining assumptions are the
 far T suffix and the original waiting source on the kept premark;
 bankruptcy of the local script or a real scoped exit cannot masquerade
@@ -304,8 +300,6 @@ theorem kept_body_ready {p c n : Nat} {initial : Config p c n} (hn : 5≤n)
   rw [hto] at hR hK ⊢
   exact body_ready (by omega) S J H u q hA hactive hg hR hK trail source cold
 
-#print axioms kept_body_ready
-
 /-- The conservative paper bit marks that the refill is not being
 used as an extra credit assumption. It does not assert available
 stock; the literal cold witness can safely be forgotten. -/
@@ -315,5 +309,4 @@ theorem ready_refilled_conservative {p c n H d : Nat} {initial : Config p c n}
     WindowA0ReturnEntry.Ready initial S J H u q d true :=
   { h with coldBeforeRefill := fun h' => Bool.noConfusion h' }
 
-#print axioms ready_refilled_conservative
 end L4.WindowA0AdjacentReady

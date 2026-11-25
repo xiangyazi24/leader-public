@@ -1,6 +1,6 @@
 import Leader.L4.TripleRenewal
 
-/-! The qualitative G9 composition on one fixed finite joined raw-mark
+/-! The qualitative all-size composition on one fixed finite joined raw-mark
 system. No quotient, lifting, access, or asymptotic FAST claim is
 inferred for any specific stratum. -/
 namespace L4.AllSizeComposition
@@ -280,7 +280,7 @@ theorem compose_means {α : Type} {n : Nat} (next : α → Fin n → α)
         (ih (by omega)) (chain.mean j (by omega))
   exact aux _ (Nat.le_refl _)
 
-/-- Paper G9 hypotheses on the actual joined pair map. The predicate
+/-- Paper all-size hypotheses on the actual joined pair map. The predicate
 should carry any lower interface description that needs to survive. -/
 structure WordChain {α : Type} {n : Nat} (next : α → Fin n → α)
     (D : Nat → α → Prop) (h : Nat) : Prop where
@@ -323,7 +323,3 @@ theorem compose_finite_words {α : Type} {n : Nat} (hn : 0<n)
 
 end L4.AllSizeComposition
 
-#print axioms L4.AllSizeComposition.block_success_of_word
-#print axioms L4.AllSizeComposition.expected_of_uniform_words
-#print axioms L4.AllSizeComposition.compose_means
-#print axioms L4.AllSizeComposition.compose_finite_words

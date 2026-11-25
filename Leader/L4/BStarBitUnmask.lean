@@ -98,5 +98,4 @@ theorem joined_first (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   exact (observed_joined k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x ⟨s,1⟩ (by change (1:Nat)≠0; decide)
     v {v with race:=firstCode s} 0 H B (observe_first _ v s G F P K)).1
 
-#print axioms joined_first
 end L4.BStarBitUnmask

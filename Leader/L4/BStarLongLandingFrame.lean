@@ -92,7 +92,6 @@ theorem grant_field_frame (j : Fin 3) (b : Bool) :
   have hj := j.isLt
   omega
 
-
 theorem data_left_frames (g : Pair LongGeometry) (old : At Sheet → BStarLongPackets.Lane)
     (ps : List BStarLongPrep.Offer) :
     ∀ t∈(BStarLongPrep.writes g old ps).map Write.patch, LeftFrame t := by
@@ -140,10 +139,4 @@ theorem routine_frames (g : Pair LongGeometry) (old : Pair (BitVec LW))
   · exact data_left_frames g _ _ t ht
   · exact k_left_frames last t ht
 
-#print axioms read_of_frame
-#print axioms fold_left_frame
-#print axioms k_frame
-#print axioms data_left_frames
-#print axioms grant_left_frames
-#print axioms routine_frames
 end L4.BStarLongLandingFrame

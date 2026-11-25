@@ -121,10 +121,4 @@ theorem projected_paid_count_le {α : Type} (advanceCount : α → Nat)
   rw [he]
   exact GGStock.paid_j_le_initial_span ht
 
-#print axioms marked_stock_drop
-#print axioms marked_stock_consumed
-#print axioms incoming_retains_label
-#print axioms no_mint_from_ghost
-#print axioms projected_paid_count_le
-
 end L4.GGStockPhysical

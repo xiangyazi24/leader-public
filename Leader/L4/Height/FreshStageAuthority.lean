@@ -98,6 +98,4 @@ theorem stage_writes_from_history (P : Production g) (o : Owners h) (a : Word n)
   have nowHead : oldH6 (rows s) y i=true := (congrArg Prod.fst YY).symm.trans head
   exact ⟨auth,StageLatchRing.stage_at_mark hp y i d p nowHead offered healthy op decoded auth⟩
 
-#print axioms idle_stage
-#print axioms stage_writes_from_history
 end L4.Height.FreshStageAuthority

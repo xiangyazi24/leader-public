@@ -95,5 +95,4 @@ theorem stage_after_fence (P : Production g) (o : Owners h) (a : Word n) (rrel :
   rw [join cut pre,←replay]
   exact stage
 
-#print axioms stage_after_fence
 end L4.Height.FreshNumericEntry

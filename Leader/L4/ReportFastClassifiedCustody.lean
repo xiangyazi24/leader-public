@@ -77,9 +77,6 @@ theorem classified_owner_guard (d : Sheet) (N : 1<n) (hh : ∃ i,h i=true)
   rw [←E]
   exact commit_guard_is_ancestry _ _ _ _ Commit
 
-#print axioms centre_covers_lower_header
-#print axioms commit_guard_is_ancestry
-#print axioms classified_owner_guard
 end L4.ReportFastClassifiedCustody
 
 namespace L4.ReportFastClassifiedCustody
@@ -136,5 +133,4 @@ theorem classified_publication (d : Sheet) (N : 1<n) (Spos : 0<s)
   rw [←J]
   exact Rest
 
-#print axioms classified_publication
 end L4.ReportFastClassifiedCustody

@@ -720,13 +720,4 @@ theorem ordered_from_issue {base origin : X} {hh : ∃ i,oldH6 B base i=true}
   rw [endWord]
   exact ⟨left,right⟩
 
-#print axioms prefix_to_release
-#print axioms ordered_from_issue
-#print axioms unit_offer
-#print axioms unit_link
-#print axioms unit_busy_outward
-#print axioms ready_from_preparation
-#print axioms terminal_unit_of_issue
-#print axioms left_frozen_of_issue
-#print axioms right_frozen_of_issue
 end L4.Height.FreshOrderedPrefix

@@ -113,5 +113,4 @@ theorem left_mark {base x : X} {hh : ∃ i,oldH6 B base i=true}
         occupied (readLane (BStarLongPackets.Sheet.index (sh j.val)) (q (addr root j.val)).long)
       rw [show y (addr root j.val)=q (addr root j.val) from W]
 
-#print axioms left_mark
 end L4.BStarFenceLeftShadow

@@ -79,7 +79,6 @@ theorem waiting_avoids (g : Pair LongGeometry) (raw : Pair (BitVec LW))
   exact (List.mem_append.mp hw).elim
     (fun N => norm_frame g raw s p B F w N E) (fun M => mid w M E)
 
-
 theorem observe_first_any (g : LongGeometry) (p : Payload) (s : Side)
     (G : gate p.opcode.toNat 1 g=true) (F : p.fault=0) (K : p.race=1) :
     observe ⟨s,1⟩ g p=some {p with race:=firstCode s} := by
@@ -244,8 +243,4 @@ theorem physical_gate_mark (k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat) (hp : 0
   rw [outside ⟨l,r⟩]
   simp [AllSizeS1Geometry.step,l,r]
 
-#print axioms physical_gate_mark
-#print axioms joined_repeat
-#print axioms joined_first
-#print axioms joined_other
 end L4.BStarGateUnmask

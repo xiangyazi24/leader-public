@@ -251,19 +251,5 @@ theorem adjacentGhost_no_more_tenures {p c1 n : Nat}
           rw [TaggedTrace.projection_step]
           exact adjacentGhost_step_of_ne htag hg)
 
-#print axioms adjacentGhost_firstLeader
-#print axioms adjacentGhost_no_more_tenures
-
-#print axioms adjacentGhost_outgoing_ends_tag
-#print axioms adjacentGhost_suffix_ends_tag
-
-#print axioms adjacentGhost_step_of_ne
-#print axioms adjacentGhost_run_of_not_mem
-
-#print axioms length_le_unused_add_one
-#print axioms tenure_bound_of_original_subset
-#print axioms tenure_bound
-#print axioms ledger_tenureCount
-
 end TaggedTenures
 end L4

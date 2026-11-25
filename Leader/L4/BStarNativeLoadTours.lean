@@ -87,7 +87,4 @@ theorem all_load_sweeps {base x : X} {hh : ∃ i,oldH6 B base i=true}
   obtain rfl := Option.some.inj (K.symm.trans code)
   exact ⟨past,out,ret,future,init,flight,launch,turn,ack,D ▸ W,E,D ▸ F,D ▸ H,Sw⟩
 
-#print axioms literal_load_slots
-#print axioms find_receipt
-#print axioms all_load_sweeps
 end L4.BStarNativeLoadTours

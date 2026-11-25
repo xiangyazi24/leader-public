@@ -90,7 +90,6 @@ theorem joined_normal (x : Pair (LargeSite P))
     joined_right_field hp x V captures (by decide)]
   exact Q
 
-
 open BStarAcquireSource in
 private theorem capture_over (f : Payload) (y : BitVec LW) :
     capturedHeaders.read ((capturePatch f).apply y)=BitVec.ofNat 27 f.argument.toNat ∧
@@ -122,7 +121,6 @@ theorem joined_capture (x : Pair (LargeSite P)) (f : Payload)
   · rw [joined_right_field hp x V captures (by decide)]
     exact BStarStageSourceFrame.door_field captures (by decide) (by decide) g raw hdr _ W
       (fun _ => BitVec.ofNat 6 (f.argument.toNat/2^27)) (fun y => (capture_over f y).2)
-
 
 local notation "X" => Fin n → LargeSite P
 local notation "step" => AllSizeS1Geometry.step B
@@ -181,7 +179,4 @@ theorem word_capture_hold (x : X) (i : Fin n) (w : List (Fin n))
   have E : captures.read y=captures.read z := W.2
   rw [BStarAcquireSource.center_read y,BStarAcquireSource.center_read z,E]
 
-#print axioms word_capture_hold
-#print axioms joined_normal
-#print axioms joined_capture
 end L4.BStarCaptureDoorHistory

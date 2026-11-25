@@ -170,15 +170,6 @@ theorem door_accepts {Q h : Nat} (d : Fin h) (k : Fin Q) (outside : Rail) :
       show ((Source.await k : Source Q) == .i1) = false from rfl,
       show (Rail.dc == Rail.x) = false from rfl]
 
-#print axioms body_outward
-#print axioms body_inward
-#print axioms body_idle
-#print axioms top_turn
-#print axioms top_idle
-#print axioms door_holds
-#print axioms door_accepts
-
-
 inductive Clock (Q h : Nat) where
   | active (count : Fin Q) (way : Direction) (front : Fin h)
   | done
@@ -262,11 +253,6 @@ theorem count_tape_exact {Q h : Nat} (hQ : 0<Q) (door : Fin h)
     j = (Q-1)*(2*h)+2*h := hh
     _ = (Q-1+1)*(2*h) := by rw [Nat.add_mul,Nat.one_mul]
     _ = 2*h*Q := by rw [hRound,Nat.mul_comm Q]
-
-#print axioms work_step
-#print axioms work_tape
-#print axioms count_tape_exact
-
 
 /-- Local command selected by the physical edge (exterior marks
 stutter). Exterior rail values are carried only at the two endpoints. -/
@@ -382,9 +368,6 @@ theorem canonical_step {Q h : Nat} (k : Fin Q) (w : Direction) (j : Fin h) (e : 
         refine ⟨.active k .inward j,hold _ (Or.inr hdj),MarkStep.stay _ _ ?_⟩
         simp [hit,needed,selected,hdj']
 
-#print axioms canonical_step
-
-
 /-- Count terminal P5 clears the source already written OFF by A2,
 and cannot change the visible rail output. -/
 theorem count_door_pair {p c h : Nat} (u v : Site p c) (w : Direction) (j d : Fin h)
@@ -432,9 +415,6 @@ theorem count_door_pair {p c h : Nat} (u v : Site p c) (w : Direction) (j d : Fi
   cases hOn : t.fire
   · simp [patrolWrite,finishBirth,pinned,hm,hl]
   · simp [patrolWrite,finishBirth,pinned,hm,hl,hF hOn]
-
-#print axioms count_door_pair
-
 
 private theorem no_pay_door_geometry {p c : Nat} (u v : Site p c)
     (hm : u.mark = true) (hl : v.leader = false)
@@ -633,9 +613,6 @@ theorem count_ring_projection {p c n d : Nat} (hn : 4 ≤ n)
         rw [stepO _ h1 h2]
         rfl
 
-#print axioms count_ring_projection
-
-
 noncomputable def rawCode {n : Nat} (y : Fin n) (d : Nat) (e : Fin n) : Option Nat :=
   codeFromOffset n d (Classical.choose (liftedSite_of_site y e))
 
@@ -737,12 +714,6 @@ theorem clean_a1_encodes {p c n d : Nat} (x : Config p c n) (y : Fin n)
     have hlt : i.val<j.val := by have := i.isLt; omega
     simp [shape,hi,hlt,he i hlt]
 
-#print axioms rawCode_eq_some
-#print axioms hit_is_raw_nomination
-#print axioms physical_count_step
-#print axioms clean_a1_encodes
-
-
 def ValidCountWord {p c n : Nat} (x : Config p c n) (y : Fin n) (d : Nat) :
     List (Fin n) → Prop
   | [] => True
@@ -809,11 +780,6 @@ theorem a1_to_clock {p c n d : Nat} (hn : 4≤n) (hQ : 0<2*c)
   · exact (hOut he.1).elim
   · have hc' := (EntranceCover.cover_closed hn x e ⟨hm,hc⟩).2
     exact ⟨j,hj,clean_a1_encodes (step x e) y hQ j hj hc' ha hR hE⟩
-
-#print axioms physical_count_word
-#print axioms physical_birth_exact
-#print axioms a1_to_clock
-
 
 /-- Literal pending epoch after a nonmerging P3. Before the first
 selected incoming service the OFF byte stays OFF, including when
@@ -889,10 +855,6 @@ theorem unpaid_death_auth_start {p c n d : Nat} (hn : 4≤n)
   let j : Fin (d+1) := ⟨d,Nat.lt_succ_self _⟩
   exact launch_authenticated _ j rfl hLeft
 
-#print axioms pending_off_epoch_step
-#print axioms unpaid_death_auth_start
-
-
 def clockNext {Q h : Nat} (s : Clock Q h) (e : Option Nat) : Clock Q h :=
   if hit s e = 0 then s else
   match s with
@@ -952,10 +914,6 @@ theorem counted_tape {Q n d : Nat} (y : Fin n) (hh : d+1<n)
         have hN : hit s (rawCode y d e)=0 := by simp [he] at hn; exact hn
         simp [hN]
         exact hI
-
-#print axioms clockNext_eq
-#print axioms counted_tape
-
 
 def pushMark {n : Nat} (w : List (Fin n)) (e : Fin n) : List (Fin n) := w++[e]
 
@@ -1037,10 +995,6 @@ theorem postA1_early_gap_tail {p c n d : Nat} (hn : 4≤n) (hc : 12≤c)
   have ht := RankRace.sharp_timer_gap_tail (rawNext y) (nominate y)
     (Clock.active ⟨0,hQ⟩ .outward j) c (d+1) (by omega) hc
   exact Nat.le_trans (Nat.mul_le_mul_left _ hh) ht
-
-#print axioms postA1_birth_le_timer_mass
-#print axioms postA1_early_gap_tail
-
 
 private theorem sConst (n a : Nat) : TaggedTail.sumEdge (fun _ : Fin n => a)=n*a := by
   induction n with
@@ -1138,7 +1092,5 @@ theorem postA1_early_le_cutoff {p c n d : Nat} (hn : 4≤n) (hc : 12≤c)
   apply Nat.le_of_mul_le_mul_left _ (show 0<n^m from Nat.pow_pos (by omega))
   rw [← Nat.pow_add,show m+t=T by omega]
   simpa only [Nat.mul_left_comm] using h
-
-#print axioms postA1_early_le_cutoff
 
 end L4.FreshCountHits

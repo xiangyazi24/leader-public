@@ -126,8 +126,4 @@ theorem gain_has_unique_owner_acquire (d : Sheet) (hh : ∃ i,h i=true)
   exact ⟨E,r,k,K,L,by rw [T]; exact A.1.1,by rw [T]; exact Fault,
     by rw [T]; exact A.2,U⟩
 
-#print axioms unique_cell
-#print axioms loss_has_unique_owner_reset
-#print axioms gain_at_old_win
-#print axioms gain_has_unique_owner_acquire
 end L4.ReportLeaseOwner

@@ -1156,29 +1156,4 @@ theorem cached_genuine_full_parked (sheet : Sheet) (C : Chart h)
   ⟨fibre_run sheet (cached_fibre sheet N hh Q F) x X w,
     genuine_full_parked sheet C (cached_fibre sheet N hh Q F) x X N w G⟩
 
-#print axioms raw_pair_work
-#print axioms raw_work_low
-#print axioms file_launch
-#print axioms file_step
-#print axioms seal_release_step
-#print axioms full_active_step
-#print axioms generated_full
-#print axioms genuine_full_parked
-#print axioms cached_genuine_full_parked
-
-
-#print axioms cached_fibre
-#print axioms rows_on_fibre
-#print axioms release_step
-#print axioms active_step
-#print axioms consume_step
-#print axioms generated_active
-#print axioms genuine_reset_parked
-#print axioms count_exact
-#print axioms reset_progress_cap
-#print axioms nominate
-#print axioms completed_mean
-#print axioms counted_events_le
-#print axioms reset_cap_on_fibre
-
 end L4.ReportOwnerResetDrain

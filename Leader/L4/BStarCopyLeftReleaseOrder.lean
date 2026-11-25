@@ -96,7 +96,6 @@ theorem k5_chart_successor {base : X} {hh : ∃ i,oldH6 B base i=true}
   subst j
   exact ⟨by omega,(List.getElem_eq_getD _).symm.trans F⟩
 
-#print axioms k5_chart_successor
 open BStarLongFiberOwner BStarLongToken BStarLongEvents
 open BStarClearanceDataChart BStarLongLiteral
 open BStarAcquireForwardTrace BStarSeparatorControl
@@ -193,9 +192,4 @@ theorem pointed_inject_wins {base x : X} {hh : ∃ i,oldH6 B base i=true}
   intro z M H
   exact pointed_inject_exclusive hp chart same e sep C f0 s j laneOwner G out ptr source op10 select z M H
 
-#print axioms pointed_inject_wins
-#print axioms pointed_inject_exclusive
-#print axioms k5_ordinal
-#print axioms release_inside
-#print axioms release_before_later
 end L4.BStarCopyLeftReleaseOrder

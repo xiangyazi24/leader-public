@@ -17,5 +17,4 @@ theorem generated_append {base x : X} {addr : Nat → Pos n} {len : Nat}
   | endpoint _ => exact V
   | next I E _ ih => exact .next I E (ih V)
 
-#print axioms generated_append
 end L4.Height.FreshGeneratedGlue

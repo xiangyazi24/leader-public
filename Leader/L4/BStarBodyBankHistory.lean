@@ -82,6 +82,4 @@ theorem body_interval (sep : ∀ e : Fin n, e≠rightNeighbor e)
     have rest := ih (step x e) (fun pre f tail E => H (e::pre) f tail (congrArg (List.cons e) E))
     exact held_concat (.next (.empty _) localStep) rest
 
-#print axioms body_no_publication
-#print axioms body_interval
 end L4.BStarBodyBankHistory

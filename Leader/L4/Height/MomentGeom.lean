@@ -6,7 +6,6 @@ open L4.Height.Recover.Chain
 open Classical
 open L4.Compiler.Native
 
-
 /-- Core-only cardinality of a decidable subset of the finite alphabet. -/
 def countFin {n : Nat} (p : Fin n → Bool) : Nat :=
   ((List.ofFn (fun e : Fin n => e)).filter p).length

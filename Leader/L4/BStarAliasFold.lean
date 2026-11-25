@@ -195,9 +195,4 @@ theorem accept_nonfinal (old : BitVec LW) (op : Nat) (p : BStarLongToken.Payload
         (BStarLongDoor.schedule (op+1)) := by
   simp [acceptFile,N,G,H]
 
-#print axioms exact_alias
-#print axioms alias_fold
-#print axioms receipt_boolean_segment
-#print axioms receipt_cmp_segment
-#print axioms accept_nonfinal
 end L4.BStarAliasFold

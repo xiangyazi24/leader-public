@@ -46,5 +46,4 @@ theorem issue8_after_ack5 {base origin : X} {slot : Nat→Pos n} {len : Nat}
       obtain ⟨rfl,_⟩ := List.cons.inj V.symm
       exact ⟨q,by rw [E,List.append_assoc]; rfl⟩
 
-#print axioms issue8_after_ack5
 end L4.BStarCopyLoadAckOrder

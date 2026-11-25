@@ -88,7 +88,4 @@ theorem nonheader_writer_safe_of_epochs (sheet : Sheet)
   rw [T,Same] at D
   exact D
 
-#print axioms canonical_middle_offset
-#print axioms lane1_owner_centre
-#print axioms nonheader_writer_safe_of_epochs
 end L4.ReportReaderWordOwner

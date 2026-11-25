@@ -76,6 +76,4 @@ theorem launch (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     contradiction
   · exact ⟨Y,V,Prod.ext V.1.1 (J.trans P1),Act,Act.symm ▸ descriptor_forward p v op Op⟩
 
-#print axioms descriptor_forward
-#print axioms launch
 end L4.ReportSealCommitLaunch

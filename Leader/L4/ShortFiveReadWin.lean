@@ -79,7 +79,4 @@ theorem target_read_departure_wins (x : Raw s n) (X : H2Ready x) (N : 21<n)
   · intro k K
     exact (R k K).1
 
-#print axioms absent_before_departure
-#print axioms read_wins_no_rival
-#print axioms target_read_departure_wins
 end L4.ShortFiveReadWin

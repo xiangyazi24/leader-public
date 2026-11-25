@@ -96,7 +96,4 @@ theorem all_current_walks_from_second_cut (d : Sheet) (N : 1<n)
   intro C M op Range PC
   exact current_walk_from_second_cut d C N hh G F digit z Z w (All C M) op Range (E ▸ PC)
 
-#print axioms current_walk_from_issue
-#print axioms current_walk_from_second_cut
-#print axioms all_current_walks_from_second_cut
 end L4.ReportIndexedCurrentWait

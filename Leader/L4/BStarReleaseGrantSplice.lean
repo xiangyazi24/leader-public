@@ -47,5 +47,4 @@ theorem first_release_grants {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact BStarRRELExtract.generated_rrel_grant_zero hp chart sep Q I layout
     (fun z f q=>closed z q f) a e i j own (hit.1 ▸ trace) hit.2.2
 
-#print axioms first_release_grants
 end L4.BStarReleaseGrantSplice

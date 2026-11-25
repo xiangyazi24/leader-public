@@ -20,7 +20,7 @@ private theorem exponent_room (t : Nat) : t+18≤2^(t+5) := by
     omega
 
 /-- The large advice band implies the production size guard, without
-assuming it independently at the display/G9 interface. -/
+assuming it independently at the display/all-size interface. -/
 theorem room_of_advice {s n : Nat} (hs : 6≤s) (ha : s=ell (ell n)) :
     3*1024*radWidth s<n := by
   have minAdv : 2^(s-1)<ell n := by
@@ -97,6 +97,4 @@ theorem production_clock_bounds {s n : Nat} {x : Raw s n} (g : CustodyWitness x)
   · rw [half]
     omega
 
-#print axioms room_of_advice
-#print axioms production_clock_bounds
 end L4.PhysicalClockDisplay

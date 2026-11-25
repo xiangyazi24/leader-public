@@ -216,4 +216,3 @@ theorem mean {p c n a : Nat} {initial : Config p c n} {group cert : List (Fin n)
 
 end L4.WindowScopedOneEdge
 
-#print axioms L4.WindowScopedOneEdge.mean

@@ -177,5 +177,4 @@ theorem radix_receipt {base initial x : X} {hh : ∃ i,oldH6 B base i=true}
   change Value.word (den (T.const cv) (readArgs regs []))=_
   rw [sem.const,Nat.mod_eq_of_lt (exactVal ▸ Bnd)]
 
-#print axioms radix_receipt
 end L4.BStarNativeRadixActual

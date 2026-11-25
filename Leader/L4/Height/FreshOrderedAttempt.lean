@@ -145,6 +145,4 @@ theorem on_stopped_history (P : Production g) (i : Header h) (base w : Word n)
   apply on_fresh_attempt g P target base w [nextR] z.candidates nextR cuts last tape
   simpa only [target,ProductionClients.service_header] using absent
 
-#print axioms on_stopped_history
-#print axioms on_fresh_attempt
 end L4.Height.FreshOrderedAttempt

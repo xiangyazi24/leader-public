@@ -89,5 +89,4 @@ theorem cube_levels (hh : ∃ i,h i=true)
     simp only [if_pos,show (2:Fin 3)≠0 by decide,ite_false]
     rw [congrFun ih i,congrFun ih (left (total_pos h hh) i),congrFun ih (right (total_pos h hh) i)]
 
-#print axioms cube_levels
 end L4.BStarLogicalConjugacy

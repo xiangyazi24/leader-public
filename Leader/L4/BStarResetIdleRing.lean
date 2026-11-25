@@ -121,7 +121,6 @@ theorem joined_live_idle (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   · rw [raw_transit _ _ _ h]
     exact live_routes _ _ _ hl hc hn hm
 
-
 private theorem fold_decode (a : AtK) (k : BitVec 52) (ws : List KWrite) (t : Token)
     (hk : decode k=t) (h : ∀ w∈ws, w.1=a → w.2=t) :
     decode (ws.foldl (fun acc w => putRaw acc a w) k)=t := by
@@ -211,7 +210,6 @@ theorem idle_off_pair {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
   unfold atCursor
   rw [BStarAcquireRingFrame.unselected _ _ _ _ hl hr]
 
-
 open BStarAcquireForwardTrace BStarH6WordChart in
 theorem idle_link {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
     (x : Fin n → BStarAcquireRingFrame.W k₁ k₂ t₂ J₁ J₂ r c p c₁) (e : Fin n)
@@ -249,9 +247,4 @@ theorem idle_terminal {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
   intro hc hk H h hn hs
   exact idle_at hp x e he C.source h hn (terminal_avoids _ _ _ hc hk H) hs
 
-#print axioms joined_live_idle
-#print axioms joined_idle
-#print axioms idle_at
-#print axioms idle_link
-#print axioms idle_terminal
 end L4.BStarResetIdleRing

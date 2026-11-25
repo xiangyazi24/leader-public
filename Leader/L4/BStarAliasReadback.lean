@@ -71,7 +71,4 @@ theorem accept_read {old y : BitVec LW} {op : Nat} {p : BStarLongToken.Payload}
   rw [BStarAliasFold.accept_nonfinal old op p j c N G H,Patch.compose_apply,schedule_scalar]
   exact exact_read _ _ _
 
-#print axioms exact_read
-#print axioms exact_nat
-#print axioms accept_read
 end L4.BStarAliasReadback

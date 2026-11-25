@@ -116,8 +116,6 @@ theorem upstream_noningress {Tag : Type} (digits : Tag→BitVec 36)
       rw [ring_exterior_frame hp x base e j jp eq pred]
       exact old j jp jt
 
-#print axioms upstream_noningress
-
 theorem ingress_quiet {Tag : Type} (digits : Tag→BitVec 36)
     (x : X) (root base : Fin n) (width seam tail : Nat)
     (C : Dest B x root width) (U : Strip B x base seam tail)
@@ -273,9 +271,6 @@ theorem data_mark {Tag : Type} (digits : Tag→BitVec 36)
     · have new : OrderedPrefix plan (s.transfer i tag) (stripWord tail label) := .mark P step
       exact ⟨s.transfer i tag,lab,rfl,E.symm ▸ new,R,F⟩
 
-#print axioms ingress_quiet
-#print axioms data_mark
-
 structure DataReady (x : X) (root base e : Fin n) (width seam tail : Nat) : Prop where
   dest : Dest B x root width
   strip : Strip B x base seam tail
@@ -311,5 +306,4 @@ theorem data_word {Tag : Type} (digits : Tag→BitVec 36)
       (fun a f b E => ready (e::a) f b (congrArg (List.cons e) E))
     exact ⟨v,m,M.trans R,A,H,Q⟩
 
-#print axioms data_word
 end L4.BStarCopyRightDataSweep

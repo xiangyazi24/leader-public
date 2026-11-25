@@ -433,9 +433,4 @@ theorem fence_from_issue {base origin : X} {hh : ∃ i,oldH6 B base i=true}
     scope init (pending id r) (planOf (fun i=>i-rSeam) rSeam rTail) (by simp [pending])
     (by simp [planOf]; omega) l t lLabels rLabels releasedL releasedR oL oR hL hR uL uR safe
 
-#print axioms release_phase
-#print axioms inject_ack_between
-#print axioms fence_after_release
-#print axioms fence_from_issue
-
 end L4.Height.FreshFenceSplice

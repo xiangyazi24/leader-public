@@ -193,7 +193,4 @@ theorem of_chart {base : X} {hh : ∃ i,oldH6 B base i=true}
   rw [show word (oldH6 B base) a=word (oldH6 B base) root from wordSame]
   exact rootO
 
-#print axioms sole_header_no_strip
-#print axioms width_one_no_strip
-#print axioms of_chart
 end L4.BStarCopyRightChartGeometry

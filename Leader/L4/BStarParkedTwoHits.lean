@@ -122,5 +122,4 @@ theorem suppressed_then_paid {base : X} {hh : ∃ i,oldH6 B base i=true}
   · rw [changeOne]
     exact Final
 
-#print axioms suppressed_then_paid
 end L4.BStarParkedTwoHits

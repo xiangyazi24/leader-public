@@ -108,6 +108,4 @@ theorem from_sixth_reset
   exact ReportFastMappedFence.target_rival_fence_of_receipts d N hh G F digit r R P
     (winAfter_rival _) x.val x.property _ (Rec w)
 
-#print axioms run_pre_driver_raw
-#print axioms from_sixth_reset
 end L4.ReportFastPreACQHandoff

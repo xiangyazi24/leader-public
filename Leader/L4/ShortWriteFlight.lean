@@ -248,11 +248,6 @@ theorem seal_ack_after_centre {s n : Nat} (x0 : Raw s n) (C : Chart (header x0))
   obtain ⟨A,R⟩ := generated_receipt x0 C X0 N .seal d D w _ G
   exact ⟨A.1,A.2,R rfl⟩
 
-#print axioms launch
-#print axioms step
-#print axioms generated_receipt
-#print axioms stage_ack_after_centre
-#print axioms seal_ack_after_centre
 -- CHECK: ShortWriteFlight.lean:56; original opens and options unchanged.
 theorem step_fixed {s n : Nat} {h : Fin n → Bool} (x : Raw s n)
     (C : Chart h) (N : 9<n) (heads : ∀ q, header x q=h q)
@@ -352,5 +347,4 @@ theorem step_fixed {s n : Nat} {h : Fin n → Bool} (x : Raw s n)
       rw [PC,old]
       cases cmd <;> cases bad <;> decide
 
-#print axioms step_fixed
 end L4.ShortWriteFlight

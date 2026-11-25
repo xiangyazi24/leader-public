@@ -123,5 +123,4 @@ theorem attempt_wins {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [join]
   simp only [cutpre,suffix,List.append_assoc,List.cons_append,List.nil_append]
 
-#print axioms attempt_wins
 end L4.BStarAttemptWins

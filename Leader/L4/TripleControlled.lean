@@ -151,7 +151,6 @@ theorem mean_of_potential {α : Type} {n : Nat} (next : α → Fin n → α)
   have H' := Int.le_trans H (Int.mul_le_mul_of_nonneg_left U (Int.natCast_nonneg n))
   exact Int.ofNat_le.mp (by simpa [Int.natCast_mul, Int.natCast_pow,Int.mul_left_comm, Int.mul_assoc, Int.mul_comm] using H')
 
-
 /-- Attack coordinate for the sealed-sector table. Offsets are forward
 bullet positions or the position of the nearest backward return signal. -/
 inductive Attack where
@@ -343,15 +342,5 @@ theorem charge_expectation {α : Type} {n : Nat} (next : α → Fin n → α)
   rw [Int.mul_neg] at H
   change _ ≤ _ + (n : Int)^t.succ * (work x : Int)
   omega
-
-#print axioms preimages_eq
-#print axioms mean_of_potential
-#print axioms Attack.value_le
-#print axioms Attack.progress_pays
-#print axioms ready_raw_drift
-#print axioms progress_raw_drift
-#print axioms attack_clock
-#print axioms charge_budget
-#print axioms charge_expectation
 
 end L4.TripleControlled

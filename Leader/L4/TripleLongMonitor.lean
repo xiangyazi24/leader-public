@@ -767,17 +767,3 @@ theorem await_incoming_exact {p c n : Nat} (hn : 4≤n) (v : Fin n) (a b : Nat)
 
 end L4.TripleLongMonitor
 
-#print axioms L4.TripleLongMonitor.project_step
-#print axioms L4.TripleLongMonitor.survive_good
-#print axioms L4.TripleLongMonitor.restart_certified
-
-#print axioms L4.TripleLongMonitor.nonready_nominated_spends
-#print axioms L4.TripleLongMonitor.sector_progress_labels_distinct
-
-#print axioms L4.TripleLongMonitor.mode_shape_step
-
-#print axioms L4.TripleLongMonitor.stage_mean
-#print axioms L4.TripleLongMonitor.attempt_of_failure_mass
-
-#print axioms L4.TripleLongMonitor.success_sound_step
-#print axioms L4.TripleLongMonitor.race_ticks_independent

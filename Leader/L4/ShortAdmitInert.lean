@@ -69,10 +69,4 @@ theorem parked_outgoing_right_empty {s n : Nat} (x : Raw s n) (e : Fin n)
   (work_to_raw x e sep k).2.trans
     (parked_outgoing_empty_pair _ _ _ _ j k dst t old tag op live gate race right wire)
 
-#print axioms parked_outgoing_right_empty
-#print axioms trail_before_live
-#print axioms incoming_ungated
-#print axioms root_incoming_wait2
-#print axioms outgoing_race3
-#print axioms incoming_race245
 end L4.ShortAdmitInert

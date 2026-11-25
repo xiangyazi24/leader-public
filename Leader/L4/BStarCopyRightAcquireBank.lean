@@ -101,11 +101,6 @@ theorem rs_word_sites {base : X} (hh : ∃ v,oldH6 B base v=true)
   have le : seam+d.val≤tail := by have := d.isLt; omega
   exact ⟨strip.rs_nonheader _ pos le,same_right_word hp hh a seam tail strip _ (by omega) le⟩
 
-#print axioms packed_eq_of_nibbles
-#print axioms right_bank_from_ack
-#print axioms right_header
-#print axioms rs_word_sites
-
 /-- Downward retention interface for the actual fixed acquisition
 witness: crop the original tape before a later mark without proving
 a new grant birth or reacquiring bytes. -/
@@ -183,5 +178,4 @@ theorem packed_before_load {base x : X} {cut whole : List (Fin n)}
   rw [equalSel] at F
   exact congrFun F j
 
-#print axioms packed_before_load
 end L4.BStarCopyRightAcquireBank

@@ -97,6 +97,5 @@ theorem mark_transfer {c : Nat} (r : Nat) (h : Pair Bool) (x : Pair (BitVec (Wid
     rw [show read (c:=c) y.2 = _ from V2]
     rfl
 
-#print axioms mark_transfer
 end L4.BStarWidthTransferMark
 

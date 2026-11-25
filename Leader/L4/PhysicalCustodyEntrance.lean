@@ -66,5 +66,4 @@ theorem custody_reached_of_geometry_and_owner {s n : Nat}
     sep := sep }
   exact two_owner_passes_quadratic g K (localMean y g (fun _ q => ⟨q.1.2,q.2⟩))
 
-#print axioms custody_reached_of_geometry_and_owner
 end L4.PhysicalCustody

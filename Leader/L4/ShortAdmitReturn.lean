@@ -48,7 +48,4 @@ theorem admit_back_raw {s n : Nat} (x : Raw s n) (e : Fin n)
   rw [ret] at H
   exact ⟨(work_to_raw x e sep j).1.trans H.1, (work_to_raw x e sep k).2.trans H.2⟩
 
-#print axioms admit_ungated_out_raw
-#print axioms admit_turn_raw
-#print axioms admit_back_raw
 end L4.ShortAdmitReturn

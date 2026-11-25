@@ -152,7 +152,4 @@ set_option maxRecDepth 4096 in
 theorem mux_file_uses_bits :
     muxInputs.all (fun (op,i) => widthAt scalarWidths i==1 && arithKind op==some .mux)=true := by decide
 
-#print axioms padding_visit
-#print axioms actual_table_lengths
-#print axioms mux_file_uses_bits
 end L4.BStarLongArithmetic

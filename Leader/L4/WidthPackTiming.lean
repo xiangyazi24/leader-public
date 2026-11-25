@@ -92,6 +92,4 @@ theorem width_packed_stage_expected (hs : 6 ≤ s) (N : 1 < n)
           owner_closed y A Y m.Receipt m.credit w (m.terminal w D))) _ m.price
   simpa only [m.base] using T
 
-#print axioms qwidth_of_prefix_receipts
-#print axioms width_packed_stage_expected
 end L4.WidthPackTiming

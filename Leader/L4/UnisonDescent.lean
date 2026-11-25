@@ -129,4 +129,3 @@ theorem flooded_keep_of_frozen {V : Type} (edge : V → V → Prop)
 
 end L4.UnisonDescent
 
-#print axioms L4.UnisonDescent.error_le_of_flooded

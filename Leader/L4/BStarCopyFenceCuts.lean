@@ -87,7 +87,6 @@ theorem split_live {base x : X} {hh : ∃ i,oldH6 B base i=true}
     have A := H (u++p) q (by rw [E,List.append_assoc])
     simpa only [BStarResetSchedule.run_append] using A
 
-
 /-- First actual successful ACK from an in-band generated owner, with
 its chronological prefix and suffix and the physical old reply. -/
 theorem first_ack {base x : X} {hh : ∃ i,oldH6 B base i=true}
@@ -135,7 +134,6 @@ theorem first_ack {base x : X} {hh : ∃ i,oldH6 B base i=true}
       subst mid
       exact ⟨[],e,w,rfl,(by intro p q W; cases p with | nil => rfl | cons f p => contradiction),
         .endpoint I,H,T,sub⟩
-
 
 /-- Specialize at the start of the actual PC10 suffix. All cuts refer
 to the literal original raw word, including the selected old ACK11
@@ -189,7 +187,6 @@ theorem copy_cuts {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [zpc] at N Nhit
   refine ⟨pre,fence,nm,last,a,c,d,?_,A,H,K,Khit,N,from_idle hp N,Nhit,Q⟩
   rw [E,F,E2]
-
 
 /-- Find the genuine accepted receipt of a specified intermediate
 in-band PC, on the actual word. Every cut keeps its real owner mode. -/
@@ -264,7 +261,6 @@ theorem from_compiler_band {base x : X} {hh : ∃ i,oldH6 B base i=true}
   obtain ⟨before10,fence,numeric,tail,a10,a11,a12,E,F⟩ :=
     copy_cuts hp chart sep Tail Live H.2.2.2.1 (endEq ▸ finish)
   exact ⟨pre,before10,fence,numeric,tail,a9,a10,a11,a12,by rw [W,E],P,H,F⟩
-
 
 /-- The receipt extraction localizes to the exact successful compiler
 interval inside the already authenticated COMMIT attempt prefix. -/
@@ -367,10 +363,4 @@ theorem original_attempt {base origin : X} {hh : ∃ i,oldH6 B base i=true}
   rw [W,M,E]
   simp only [List.append_assoc,List.cons_append]
 
-#print axioms hit_of_rise
-#print axioms first_ack
-#print axioms copy_cuts
-#print axioms ack_at
-#print axioms from_compiler_band
-#print axioms original_attempt
 end L4.BStarCopyFenceCuts

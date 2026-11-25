@@ -75,5 +75,4 @@ theorem actual_native_output {base x old : X} {hh : ∃ i,oldH6 B base i=true}
   exact ⟨pre,e,post,op,f,W,binds,auth,
     selected_native hp old mark center sites ys bank H.descriptor op f ⟨.left,H.bank⟩ published pub auth staged math⟩
 
-#print axioms actual_native_output
 end L4.BStarNativePhysicalOutput

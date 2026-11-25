@@ -56,5 +56,4 @@ theorem window_bad_count (step : X→Fin n→X) (Good : X→Prop)
         _ ≤ _ := Nat.mul_le_mul_left _ (bad _ (runWord_of_closed step Good closed x u G))
     _ = _ := by rw [wordSum_const,Nat.pow_add]; ac_rfl
 
-#print axioms window_bad_count
 end L4.ReportWindowCounts

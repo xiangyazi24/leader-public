@@ -173,10 +173,6 @@ theorem quiet_outside_mark {p : LargeParams} {n : Nat} (b : LargeRows p)
     AllSizeS1Geometry.step b x e i=x i := by
   simp [AllSizeS1Geometry.step,L',R']
 
-#print axioms left_footprint
-#print axioms right_footprint
-#print axioms quiet_outside_mark
-
 theorem left_footprint_layout {p : LargeParams} {n : Nat} {b : LargeRows p}
     {x y : Fin n → LargeSite p} {root e : Fin n} {d r j : Nat} (s : Side)
     (F : BStarCopyLeftStrip.Strip b x root d r) (J : j<d+r)
@@ -260,8 +256,4 @@ theorem selected_iff_nominal_free (g : Pair LongGeometry) (rv : List (At Sheet))
   rw [BStarClearancePrepOwner.orderedData_filter]
   exact List.mem_filter.trans (and_congr_right fun _ => free_iff _ _)
 
-#print axioms left_footprint_layout
-#print axioms right_footprint_layout
-#print axioms same_mark_disjoint
-#print axioms selected_iff_nominal_free
 end L4.BStarFenceFootprint

@@ -242,7 +242,6 @@ theorem pathTime_serviceTime
       simp only [d]
       omega
 
-
 /-- A ranking witness for a finite real dependency graph: service
 requires positive rank, and each predecessor strictly lowers rank.
 Fuel truncation is then reached only at a legitimate base cut. -/
@@ -301,8 +300,4 @@ theorem raw_path_dominates {V α : Type} {n m : Nat}
   refine ⟨s,S,?_⟩
   simpa [pathTime_serviceTime,Thru.runWord] using H
 
-#print axioms raw_path_dominates
-#print axioms family_count
-#print axioms family_length
-#print axioms bounded_on_a_path
 end L4.Height.FenceDependencyPaths

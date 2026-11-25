@@ -89,10 +89,4 @@ theorem after_at_append {S A : Type} (step : S→A→S) (pc : S→Nat)
   | nil => rfl
   | cons e u ih => exact ih (step x e)
 
-#print axioms after_at_append
-#print axioms false_excludes
-#print axioms after_append_mark
-#print axioms after_before_cut
-#print axioms first_release_mark
-#print axioms sticky_mark
 end L4.BStarReleaseLatch

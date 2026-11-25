@@ -1468,10 +1468,6 @@ theorem legitimate_of_target
     StageThree.Legitimate M hm (C.cfg x) :=
   StageThree.legitimate_of_correct_quiet hm (C.cfg x) hx.1 hx.2
 
-#print axioms L4.Height.Recover.CoverThree.cfg_runWord
-#print axioms L4.Height.Recover.CoverThree.clear_cover
-#print axioms L4.Height.Recover.CoverThree.legitimate_of_target
-
 end
 
 end L4.Height.Recover.CoverThree

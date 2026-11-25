@@ -59,9 +59,6 @@ theorem cut_grant {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact credit_grant hp sep (BStarRecoveryPass.credit_prefix step credit before) i j Q closed I
     (fun _ _ Iz recovered => recovered_zero hp sep Q Iz fiber closed recovered i j own) live
 
-#print axioms recovered_zero
-#print axioms cut_grant
-
 open BStarClearanceOffset
 
 /-- A physical record of the most recent zero-to-one change of an
@@ -110,5 +107,4 @@ theorem two_pass_births {base x : X} (hh : ∃ i,oldH6 B base i=true)
       i j Q closed I (fun _ _ Iz Rh => recovered_zero hp sep Q Iz fiber closed Rh i j own) live
     exact ⟨lead,e,t,T,by omega,W⟩
 
-#print axioms two_pass_births
 end L4.BStarFirstCut

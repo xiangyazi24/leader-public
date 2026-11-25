@@ -52,6 +52,4 @@ theorem joined_terminal (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   rw [joined_view k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x]
   exact terminal_charge _ _ u H U a ha
 
-#print axioms joined_vacant_hop
-#print axioms joined_terminal
 end L4.BStarClearanceMobileCharges

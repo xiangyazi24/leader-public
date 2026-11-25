@@ -88,10 +88,6 @@ theorem frozen_raw_owner {s n : Nat} {h : Fin n→Bool} (C D : Chart h) (x : Raw
   obtain ⟨R,S⟩ := same_cell_owner C D i j I J E
   exact ⟨R,S,(frozen C.root).trans C.rootHeader⟩
 
-#print axioms same_cell_owner
-#print axioms distinct_owners_disjoint
-#print axioms frozen_raw_owner
-
 private theorem incoming_near_selected {s n : Nat} (x : Raw s n)
     (H : rawMaximal x) (v : Fin n) :
     ∃ r : Fin n, ∃ d : Nat, 0<d ∧ d≤3 ∧ header x r=true ∧ nextAt r d=v ∧
@@ -200,8 +196,6 @@ theorem every_lane_covered {s n : Nat} (x : Raw s n) (M : rawMaximal x)
       · exact G k K (by omega)
     simpa only [B] using cover_nonheaders (cover_headers x M N j J r R) d X
 
-#print axioms every_lane_covered
-
 /-- The first selected successor of a chart root is its center. More
 precisely the chart contains this successor in its lane 1, and contains
 the intervening nonheaders in lane 0. -/
@@ -249,6 +243,4 @@ theorem next_center_owner {s n : Nat} (x : Raw s n) (M : rawMaximal x)
   have V : cell C g=(nextAt C.root g,1) := Prod.ext rfl P
   exact same_cell_owner D C i g J I (E.trans V.symm)
 
-#print axioms next_center
-#print axioms next_center_owner
 end L4.ShortChartOwnership

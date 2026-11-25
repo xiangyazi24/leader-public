@@ -89,6 +89,4 @@ theorem separator_replay {s n : Nat} {base y : Raw s n} {hh : ∃ i,oldH6 (rows 
   exact separator_gap C Q fiber closed sep a
     (fun e mem=>ind e (E.symm ▸ List.mem_append_left b mem)) q wait clean
 
-#print axioms separator_gap
-#print axioms separator_replay
 end L4.PhysicalEligibleReply

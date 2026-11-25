@@ -189,8 +189,4 @@ noncomputable def uniformAttempt (pre : Word n) (goal adm : Word n→Prop)
       (fun y d f=>Classical.byContradiction (fun N=>f (success y.1.1 y.2.1 d N y.1.2))) t (first R)
     exact Nat.le_trans (Nat.mul_le_mul_left 729 C) H
 
-#print axioms wait
-#print axioms stage
-#print axioms padded_failed_mass
-#print axioms uniformAttempt
 end L4.ScoredTapeRenewal

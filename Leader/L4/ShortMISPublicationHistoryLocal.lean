@@ -409,7 +409,6 @@ theorem actual_rivals_fenced (G : ShortMISLift.Geometry s n)
 
 end L4.ShortMISPublicationHistoryLocal
 
-
 namespace L4.ShortMISPublicationHistoryLocal
 variable {s n : Nat}
 
@@ -455,8 +454,4 @@ theorem actual_successful_read_file (P : Params s n) (C : Chart P.h)
     · cases K
     · exact K
 
-#print axioms epoch_induction
-#print axioms actual_successful_read_file
-#print axioms protected_of_captures
-#print axioms actual_rivals_fenced
 end L4.ShortMISPublicationHistoryLocal

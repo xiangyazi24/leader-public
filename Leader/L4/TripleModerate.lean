@@ -226,4 +226,3 @@ noncomputable def moderateAttempt {p c n} (hn : 4≤n) (s : Fin n) (a b : Nat)
 
 end L4.TripleModerate
 
-#print axioms L4.TripleModerate.moderateAttempt

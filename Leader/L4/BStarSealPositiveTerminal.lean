@@ -166,11 +166,6 @@ theorem turns_in_word {base x : X} {hh : ∃ i,oldH6 B base i=true}
       obtain ⟨u,a,v,split,R,reply⟩ := ih W (closed _ qx e) I P
       exact ⟨e::u,a,v,congrArg (List.cons e) split,.cons cur E R,reply⟩
 
-#print axioms seal_normal
-#print axioms nominated_turn
-#print axioms terminal_hold
-#print axioms turns_in_word
-
 private theorem split_sublist_end {α : Type} {u w : List α} {e : α}
     (T : (u++[e]).Sublist w) : ∃ a b,w=a++e::b ∧ u.Sublist a := by
   induction w generalizing u with
@@ -245,5 +240,4 @@ theorem turns_of_sublist {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · rw [List.append_assoc,BStarResetSchedule.run_append]
     exact R
 
-#print axioms turns_of_sublist
 end L4.BStarSealPositiveTerminal

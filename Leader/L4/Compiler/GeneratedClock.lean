@@ -322,8 +322,4 @@ theorem clock_run {r : Nat} (hr : 3≤r) (T : PrimTable r) (bank : Bank) (hT : P
   exact clock_finish hr T bank hT _ _ _ _ (clock_inputs_of_load (load_spec hr T bank hT))
     (decode_tick_bound r bank 0) (decode_tick_bound r bank 1) (decode_tick_bound r bank 2)
 
-#print axioms clock_run
-
-#print axioms clock_finish
-
 end L4.Compiler.Native

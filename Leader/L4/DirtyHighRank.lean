@@ -95,5 +95,4 @@ theorem expected_forward_free_of_local
   intro t
   exact Nat.le_trans (E t) (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left _ (Nat.sub_le ..)))
 
-#print axioms expected_forward_free_of_local
 end L4.DirtyHighRank

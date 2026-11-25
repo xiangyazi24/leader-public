@@ -128,7 +128,4 @@ theorem ingress_tail_frame (x : X) (a : Fin n) (seam : Nat)
   rw [eq]
   exact keep
 
-#print axioms predecessor_distinct_claims
-#print axioms ingress_upstream_touch
-#print axioms ingress_tail_frame
 end L4.BStarCopyRightWrappedPairs

@@ -170,12 +170,4 @@ theorem service_nominate :
 
 end Runner
 
-#print axioms prep_rows
-#print axioms hit_sticky
-#print axioms exact_final_cut
-#print axioms start_good
-#print axioms all_mark
-#print axioms service_debt
-#print axioms service_credit
-#print axioms service_nominate
 end L4.ReportFastSixPrepTrack

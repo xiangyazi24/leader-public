@@ -177,14 +177,4 @@ theorem read_reply0 (p : Params) (h : Bool) (x : BitVec p.w) (j : Fin 3)
   rw [H]
   exact reset0_decode_reply _ _
 
-#print axioms raw_token_control
-#print axioms dest_eq
-#print axioms raw_off_frame
-#print axioms raw_door_frame
-#print axioms raw_link_frame
-#print axioms raw_forward_hop
-#print axioms raw_forward_turn
-#print axioms raw_backward
-#print axioms read_forward0
-#print axioms read_reply0
 end L4.ReportResetRawHooks

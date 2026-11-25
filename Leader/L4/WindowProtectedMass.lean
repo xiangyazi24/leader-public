@@ -410,11 +410,4 @@ theorem protected_failure_mass {p c n d : Nat} {z0 : Config p c n} (hn : 4≤n) 
         (hb.2.2.1 (h-1) r hB) (hb.1 r hB) u
       simpa only [hh'] using H
 
-#print axioms protected_failure_mass
-#print axioms project_step
-#print axioms good_step
-#print axioms entry_bound
-#print axioms unpaid_snoc
-#print axioms birth_credit
-#print axioms present_snoc
 end L4.WindowProtectedMass

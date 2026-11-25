@@ -80,6 +80,4 @@ theorem terminal_to_actual_ack {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have equality := Token.reply.inj (A.symm.trans V)
   exact (congrArg parity equality).trans (Ve.trans P)
 
-#print axioms turn_lands_polarity
-#print axioms terminal_to_actual_ack
 end L4.BStarSealReturn

@@ -233,8 +233,6 @@ theorem active_step {X : Type} {n : Nat} {h : Fin n→Bool} {C : Chart h}
           simp only [nextStage,if_neg (fun H=>E ⟨k,by omega,H⟩)]
           exact ⟨I,pcEq.trans P,fun k K=>(frame k K).trans (All k K)⟩
 
-#print axioms issue_at
-#print axioms active_step
 end L4.ReportResetBarrier
 
 namespace L4.ReportResetBarrier
@@ -366,8 +364,4 @@ theorem completed_mean {X : Type} {n : Nat} {h : Fin n→Bool} {C : Chart h}
   · change n*(2*C.L-0)+0≤2*C.L*n
     simp [Nat.mul_comm]
 
-#print axioms monitor_raw
-#print axioms receipt_cut
-#print axioms genuine_cut_after_issue
-#print axioms completed_mean
 end L4.ReportResetBarrier

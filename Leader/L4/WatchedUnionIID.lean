@@ -207,7 +207,6 @@ theorem expected {X : Type} {q n : Nat} (Q : 1<q) {step : X → Fin n → X}
       Nat.mul_le_mul_right _ (by omega)
     _ ≤ _ := R
 
-
 open PhysicalCustody
 
 /-- A watcher for several (possibly overlapping) charts; repeated labels
@@ -263,8 +262,4 @@ theorem charts_expected {s n B q : Nat} {h : Fin n → Bool} (N : 5 ≤ n)
       exact E (List.mem_flatMap.mpr ⟨C, HC, M⟩)
   exact expected Q S W x ⟨A, heads⟩
 
-#print axioms chartsWatch_bound
-#print axioms charts_expected
-#print axioms potential_credit
-#print axioms expected
 end L4.WatchedUnionIID

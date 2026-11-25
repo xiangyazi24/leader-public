@@ -116,5 +116,4 @@ theorem non_door_step (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     have W := raw_off_frame d C x e D0 (fun j J H=>A ⟨j,J,H⟩) i I
     rw [decoded_frame d C hh G x y X Y i I W,R.2 i I]
 
-#print axioms non_door_step
 end L4.ReportOwnerReverseShape

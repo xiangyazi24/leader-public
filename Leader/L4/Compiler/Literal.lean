@@ -536,5 +536,4 @@ theorem literal_length : literal.length = 474 := by
   simp only [List.length_append]
   decide
 
-#print axioms literal_length
 end L4.Compiler.Native

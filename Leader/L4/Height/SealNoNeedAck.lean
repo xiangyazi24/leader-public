@@ -54,5 +54,4 @@ theorem ready_commit {base x : X} {addr : Nat→Pos n} {len : Nat} {e : Fin n}
   rw [commit_initial,desc]
   simp [A]
 
-#print axioms ready_commit
 end L4.Height.SealNoNeedAck

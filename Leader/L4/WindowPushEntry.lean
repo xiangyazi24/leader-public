@@ -76,7 +76,6 @@ theorem protected_entry {p c n : Nat} {initial : Config p c n} {g : List (Fin n)
       (start E.ledger (liftedSite E.supplier E.donor) w k E.donor bi ci) := by
   exact ⟨E.auth.1,rear_geometry r,rfl,⟨E.auth.2.1.1,.inr E.auth.2.1⟩⟩
 
-
 /-- Adjacent current roster addresses furnish both open sectors.  J
 and K have distinct tags, so the second gap cannot complete a lap. -/
 theorem rear_of_roster {p c n : Nat} {z : Ledger p c n}
@@ -137,7 +136,6 @@ theorem rear_of_roster {p c n : Nat} {z : Ledger p c n}
   · rw [liftedSite_advance,show gap z.config (rightNeighbor i)-1+1=
       gap z.config (rightNeighbor i) by omega,hK']
 
-
 open WindowRoster WindowSpan in
 /-- The ordinary start follows directly from four consecutive current
 roster positions and the supplier's certified live bit. -/
@@ -172,7 +170,6 @@ theorem ordinary_of_roster {p c n : Nat} {initial : Config p c n}
     liftedSite (rightNeighbor (roster z.config i)) (gap z.config i-1)
   rw [liftedSite_advance,show gap z.config i-1+1=gap z.config i by omega,H]
 
-
 open WindowRoster WindowSpan in
 /-- The protected entry's donor determines its current roster position;
 the supplied roster position cannot name another occurrence of the tag. -/
@@ -194,10 +191,4 @@ theorem protected_of_roster {p c n : Nat} {initial : Config p c n} {g : List (Fi
   rw [he] at hR ⊢
   exact protected_entry E cert _ _ b k _ _ hR
 
-#print axioms rear_geometry
-#print axioms ordinary_entry
-#print axioms protected_entry
-#print axioms rear_of_roster
-#print axioms ordinary_of_roster
-#print axioms protected_of_roster
 end L4.WindowPushEntry

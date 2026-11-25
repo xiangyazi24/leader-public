@@ -137,6 +137,5 @@ theorem decisions_le_issues (h : Fin n → Bool) (hh : ∃ i,h i=true) (gate : F
   change decisions (prescribed R) [] v ≤ _
   omega
 
-#print axioms decisions_le_issues
 end
 end L4.Height.AdmissionMask

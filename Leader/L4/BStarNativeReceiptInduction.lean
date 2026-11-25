@@ -121,5 +121,4 @@ theorem run_receipts {r : Nat} (T : PrimTable r) (bank : Bank)
       exact receipt_step lt (steps k lt) (prefix_length T bank (by omega)) (ih (by omega))
   exact ⟨P,by simpa only [prefix_final] using P 395 (by decide)⟩
 
-#print axioms run_receipts
 end L4.BStarNativeReceiptInduction

@@ -181,7 +181,6 @@ theorem five_support (d : Sheet) (N : 1<n)
   intro j
   exact two_labels d (C j) x (serial_from_bank d N hh G F digit x B (C j) (M j)).1
 
-#print axioms serial_from_bank
 theorem pairs_from_centers (hh : ∃ i,h i=true) (G : GapInput h)
     (C : Fin 5→Chart h) (inj : Function.Injective (fun j=>center (C j)))
     (active desired : Fin 5→Bool) (ban : Fin n→Option (Fin n))
@@ -209,10 +208,5 @@ theorem pairs_from_centers (hh : ∃ i,h i=true) (G : GapInput h)
 
 -- Exact old grant readback on either report sheet. This is NOT
 
-#print axioms physical_labels
-#print axioms incidence_disjoint
-#print axioms two_labels
-#print axioms five_support
-#print axioms pairs_from_centers
 end L4.ReportFastOwnerSupport
 

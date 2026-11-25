@@ -225,11 +225,4 @@ theorem quarter_of_compatible {K : Nat}
     simpa [Nat.mul_left_comm, Nat.mul_assoc, Nat.mul_comm] using L
   exact Nat.le_of_mul_le_mul_right R (Nat.pow_pos hn)
 
-#print axioms raw_prefix
-#print axioms raw_frozen
-#print axioms first_retained
-#print axioms covers
-#print axioms readVector_compatible
-#print axioms wordSum_take_factor
-#print axioms quarter_of_compatible
 end L4.BStarRevealCompletion

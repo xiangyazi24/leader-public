@@ -157,12 +157,6 @@ theorem depth_bound {k : Nat} (j : Fin k) (m : Nat) (M : m≤j.val+1) :
   unfold depth
   omega
 
-#print axioms balance_update
-#print axioms full_balance
-#print axioms crossing_ready
-#print axioms dependency_depth
-#print axioms depth_bound
-
 theorem predecessor_bound {k : Nat} {z : Fin k→Bool} {ct : Fin k→Nat}
     (B : Balance z ct) (j : Fin k) : ct j≤j.val+1 := by
   generalize E : j.val = t
@@ -243,7 +237,4 @@ theorem outlet_empty {k : Nat} {z : Fin k→Bool} {ct : Fin k→Nat}
     simp only [Bool.toNat_true] at BJ
     omega
 
-#print axioms predecessor_bound
-#print axioms crossing_ready_two
-#print axioms outlet_empty
 end L4.BStarFenceCrossing

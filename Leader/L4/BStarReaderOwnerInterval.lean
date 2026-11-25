@@ -95,8 +95,6 @@ theorem keeps_incidence (x : X) (e i : Fin n) (port : Fin 3) (sep : e≠rightNei
         contradiction
       · unfold BStarGrantReaderHistory.ports; rwa [E]
 
-
-
 theorem canonical_live (x : X) (i : Fin n) (port : Fin 3)
     (coh : conflict (BStarGrantReaderHistory.ports x i)=false)
     (H : canonical (BStarGrantReaderHistory.ports x i) port=true) :
@@ -117,7 +115,6 @@ theorem won_live (x : X) (e i : Fin n) (port : Fin 3) (sep : e≠rightNeighbor e
   cases s
   · simpa [site,AllSizeS1Geometry.step,BStarGrantReaderHistory.ports,BStarLongGrant.atOld,lane,Pair.map] using K
   · simpa [site,AllSizeS1Geometry.step,Ne.symm sep,BStarGrantReaderHistory.ports,BStarLongGrant.atOld,lane,Pair.map] using K
-
 
 /-- A won reader stays continuously live until its owning controller can
 issue a release. No COMMIT exclusion is required. -/
@@ -177,8 +174,4 @@ theorem owned_interval {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have C : Continuous hp y i port w := fun u v E => (L u v E).1
   exact ⟨C,BStarGrantReaderHistory.header_interval hp sep z birth i port ne won w C⟩
 
-#print axioms no_release_request
-#print axioms keeps_incidence
-#print axioms won_live
-#print axioms owned_interval
 end L4.BStarReaderOwnerInterval

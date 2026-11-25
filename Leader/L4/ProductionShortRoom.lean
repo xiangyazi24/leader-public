@@ -44,9 +44,4 @@ theorem chart_cap_eightyOne {s n : Nat} {h : Fin n → Bool}
     ∃ C : Chart h, C.root=r ∧ C.L≤81 :=
   chart_cap S advice (by decide) next r root
 
-#print axioms seven_gaps_fit
-#print axioms chart_cap
-#print axioms chart_cap_nine
-#print axioms chart_cap_twentySeven
-#print axioms chart_cap_eightyOne
 end L4.ProductionShortRoom

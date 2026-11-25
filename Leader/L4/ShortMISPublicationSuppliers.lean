@@ -58,9 +58,4 @@ theorem mis23_from_h2 (N : 189<n) (x : Raw s n)
   permanent_h4_from_h2 N x H (assemble _ (by change 2≤4; decide) A2 W2)
     (fun y Y=>assemble _ (by change 2≤8; decide) (A3 y Y) (W3 y Y))
 
-#print axioms auth
-#print axioms win
-#print axioms mis2_from_h2
-#print axioms mis3_from_h3
-#print axioms mis23_from_h2
 end L4.ShortMISPublicationSuppliers

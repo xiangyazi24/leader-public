@@ -129,7 +129,6 @@ theorem suffix_empty_any {base x : XX} {hh : ∃ i, oldH6 B base i=true}
     · exact selected (R (addr j).2) (Prod.ext hr rfl)
     · exact (idle_off_pair hp x e (addr j) hl hr).trans (clean.2 j hj hlen)
 
-
 theorem suffix_empty {base x : XX} {hh : ∃ i, oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fallback : Pos n}
     (C : Chart hp base hh o S len fallback)
@@ -145,7 +144,6 @@ theorem suffix_empty {base x : XX} {hh : ∃ i, oldH6 B base i=true}
   obtain ⟨v,V⟩ := (BStarResetTaggedRows.bind_finish (longGeometry B (x (S.getD 0 fallback).1)) 0 q
     (reset_of_holds op ho q H)).2
   exact ⟨v,F.trans V⟩
-
 
 theorem consumed_clean {base x : XX} {hh : ∃ i, oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fallback : Pos n}
@@ -184,7 +182,4 @@ theorem consumed_clean {base x : XX} {hh : ∃ i, oldH6 B base i=true}
     exact T.trans q.1
   · exact suffix_empty hp C wait.1 op ho clean door (distinct door) j (by omega) hj
 
-#print axioms suffix_empty_any
-#print axioms suffix_empty
-#print axioms consumed_clean
 end L4.BStarResetConsumedClean

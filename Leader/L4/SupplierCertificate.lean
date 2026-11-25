@@ -93,5 +93,3 @@ def unpaused_certificate {p c n : Nat} (hn : 4 ≤ n) (v : Fin n) (s : Obs p c n
 
 end L4.RankSupplier
 
-#print axioms L4.RankSupplier.concurrent_projects
-#print axioms L4.RankSupplier.unpaused_certificate

@@ -98,9 +98,4 @@ theorem width_raw_mean {s n : Nat} (N : 1<n) (h : Fin n→Bool) (hh : ∃ i,h i=
   (height_iff_row _ _ _ _).mp (WidthCacheAllSites.width_raw N h hh Q closed mask x A).2
 
 end Caches
-#print axioms raw_maximal_closed
-#print axioms raw_two_covers_expected
-#print axioms report1_raw_mean
-#print axioms report2_raw_mean
-#print axioms width_raw_mean
 end L4.CustodyMonitorTargets

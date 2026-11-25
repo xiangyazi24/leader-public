@@ -95,10 +95,6 @@ theorem raw_step_conditional {s n : Nat} {h : Fin n→Bool}
       exact ShortBankProjection.selector_stutter x e j.val K
         (unrecorded_selector_stutters x e j.val K no)
 
-#print axioms fixed_some
-#print axioms recorded_current_nor
-#print axioms raw_step_conditional
-
 /-- Direct two-cover consumer for the actual sheet. Good is the
 remaining all-owner provenance invariant, heads supplies the frozen
 layout, and auth is the remaining guarded current-read certificate. -/
@@ -129,5 +125,4 @@ theorem two_publication_covers_conditional {s n : Nat} {h : Fin n→Bool}
       cases K : classifyFixed h z e <;> rw [K] at Z <;> exact Z)
     x u v G (mid_good u x G) coverU coverV
 
-#print axioms two_publication_covers_conditional
 end L4.ShortGuardedNOR

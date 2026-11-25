@@ -53,6 +53,4 @@ theorem expected
       (2*ReportResetEventClock.resetCoefficient (3*G.B) (params d s).digits*n^2) :=
   monitor_expected d N S hh G F _ (owner_charts_length G) x
 
-#print axioms owner_charts_cover
-#print axioms expected
 end L4.ReportPrelaunchAllOwners

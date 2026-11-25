@@ -283,8 +283,4 @@ theorem copy_frame (g : Pair LongGeometry) (old : At Sheet → BStarLongPackets.
   obtain ⟨⟨a,u⟩,_,rfl⟩ := List.mem_map.mp hw
   exact packet_frame a u
 
-#print axioms numeric_visit
-#print axioms reply_frame
-#print axioms accept_frame
-#print axioms execute_frame
 end L4.BStarLongGrantFrame

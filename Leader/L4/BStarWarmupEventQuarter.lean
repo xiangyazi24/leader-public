@@ -223,7 +223,4 @@ theorem physical_bad_quarter {T₀ : Nat}
       unfold pred
       exact (viewEq.trans mainEq) ▸ badView)
 
-#print axioms cap_snapshot
-#print axioms main_evolve_eq
-#print axioms physical_bad_quarter
 end L4.BStarWarmupEventQuarter

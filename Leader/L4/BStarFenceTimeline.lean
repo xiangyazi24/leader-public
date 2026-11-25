@@ -99,7 +99,4 @@ theorem unfold_safe {V L : Type} (row : V→Row V L) (rank : V→Nat)
       have := ran.2
       exact law _ _ (ih _ (by omega)) (ih _ (by omega))
 
-#print axioms unfold_safe
-#print axioms count_mono
-#print axioms ready_paid
 end L4.BStarFenceTimeline

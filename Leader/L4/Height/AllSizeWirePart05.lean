@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart04
+import Leader.L4.Height.AllSizeWirePart04
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section Production
 
@@ -72,4 +72,4 @@ theorem reference_iff_permanent (x : Raw s n) :
 
 end Production
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

@@ -107,6 +107,4 @@ theorem word_padding_held (x : X) (w : List (Fin n)) (i : Fin n) (sh : Sheet)
     have E := ring_padding_held hp x e i sh (sep e) P (inactive [] e tail rfl)
     exact (ih (step x e) (fun a f b Q => inactive (e::a) f b (congrArg (List.cons e) Q))).trans E
 
-#print axioms word_padding_held
-#print axioms pair_padding_held
 end L4.BStarCopyPaddingFrame

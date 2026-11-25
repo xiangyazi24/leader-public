@@ -144,9 +144,6 @@ theorem classify {p c n : Nat} (hn : 4≤n)
       subst e
       simpa [h.jTag] using (ht j).symm)
 
-#print axioms tracked_landing
-#print axioms classify
-
 /-- All literal tag landings and the stock charge refer to the same
 selected old edge and the same completed pair. -/
 theorem tagged_charge {p c n : Nat} (hn : 4≤n)
@@ -173,8 +170,6 @@ theorem tagged_charge {p c n : Nat} (hn : 4≤n)
   by_cases he : e=j ∧ geometricPay (z.config e) (z.config (rightNeighbor e))=true
   · simpa only [if_pos he,SevenTagCharge.advance] using H
   · simpa only [if_neg he,SevenTagCharge.advance] using H
-
-#print axioms tagged_charge
 
 /-- Physical old-edge displacement flag for a named slot. -/
 def moves {p c n : Nat} (z : Ledger p c n) (e s : Fin n) : Prop :=
@@ -235,5 +230,4 @@ theorem GhostTrace.count_le_size {p c n : Nat} (hn : 4≤n)
   have h2 := interval_size_cap z.config (rightNeighbor j) d
   omega
 
-#print axioms GhostTrace.count_le_size
 end L4.WindowFourHeadTrace

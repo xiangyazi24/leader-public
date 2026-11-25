@@ -86,6 +86,4 @@ theorem raw_path_dominates_twice {V : Type}
   change cut v≤pathTime (twice (serviceTime next x served u)) 0 s at H
   simpa [doubled_pathTime_serviceTime,Thru.runWord] using H
 
-#print axioms serviceTimeTwice_eq
-#print axioms raw_path_dominates_twice
 end L4.Height.FenceDependencyTwice

@@ -81,5 +81,4 @@ theorem bank_at_commit {base x : X} (u v tail : List (Fin n))
     ((capturedHeader j f).read src).toNat
   rw [BStarCapturedCompilerInputs.header_bit,eq,header_agree header j E]
 
-#print axioms bank_at_commit
 end L4.BStarOperandBank

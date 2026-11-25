@@ -99,8 +99,6 @@ theorem busy_past {base x : X} {addr : Nat → Pos n} {len op k : Nat}
       rwa [A] at NF
     exact (ih (past_event hp passed E)).trans (step_no_forward hp x e i j (sep e) q)
 
-#print axioms busy_past
-
 private theorem centre_trail {x : X} {e : Fin n}
     (he : e≠rightNeighbor e) (C : CommandClaim) (u : Payload)
     (sel : (C,.advance u)∈actualOffers (oldPair B x e) ((x e).long,(x (rightNeighbor e)).long))
@@ -164,8 +162,6 @@ theorem aligned_before {base x : X} {addr : Nat → Pos n} {len op ku : Nat}
       have E := (BStarOwnerControlHistory.pointed_unique_forward _ len k I.2.1 I.2.2 ku hu).mp M
       omega
     exact (ih limit).trans (step_no_forward hp x e i reg (sep e) Q)
-
-#print axioms aligned_before
 
 open BStarNumericChronology BStarNumericConsecutive BStarNumericCarry
 local notation "D" => Departure (n:=n) (k₁:=k₁) (k₂:=k₂) (t₂:=t₂) (J₁:=J₁) (J₂:=J₂)
@@ -238,8 +234,6 @@ theorem record_to_word {base x : X} {addr : Nat → Pos n} {len op k l : Nat}
     rw [R]
     exact frame.trans (A.trans (by rw [G,B0]))
 
-#print axioms record_to_word
-
 open BStarAcquireLiteralChain BStarResetChartTouch
 
 /-- Accepted digit sweep plus a projection to the actual live
@@ -279,5 +273,4 @@ theorem live_sweep {base x : X} {hh : ∃ z,oldH6 B base z=true}
   have P := record_to_word hp T _ Md sep Ms i code K N N0 N1 reg
   exact ⟨P.1,P.2.symm⟩
 
-#print axioms live_sweep
 end L4.BStarNumericWordFrame

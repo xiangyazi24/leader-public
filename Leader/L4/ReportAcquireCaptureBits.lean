@@ -91,6 +91,4 @@ theorem other_acquire_frames_centre (p : Params) (hv win : Bool)
       exact (edit_not_centre (edit t.payload 3 a) b ⟨0,by decide⟩ (by decide)).trans
         (edit_not_centre t.payload a ⟨3,by decide⟩ (by decide))
 
-#print axioms other_acquire_frames_centre
-#print axioms centre_acquire_bit
 end L4.ReportAcquireCaptureBits

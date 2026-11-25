@@ -70,7 +70,6 @@ theorem liveSweep_step {p c n d0 : Nat} (hn : 4 ≤ n) (i e b b' : Fin n)
         · exact hR
         · simp [carrierStep,he,h,hR] at ht
 
-
 theorem liveSweep_fold {p c n d0 : Nat} (hn : 4 ≤ n) (i : Fin n)
     (s : Observer p c n) (b b' : Fin n) (w : List (Fin n))
     (hm : MCOV s.tag.config) (hb : s.tag.carrier = some b)
@@ -114,7 +113,6 @@ theorem liveSweep_track {p c n : Nat} (x : Config p c n) (i b : Fin n)
     .tracking (by exact Phase.noConfusion) d0 (rearAt_eq_back hd0) hd0 (by rfl)
   have hs : LiveSweep (rearInit x i) i := Or.inr (fun d _ => swept_initial x i d)
   exact ⟨d0, liveSweep_fold hn i (rearInit x i) i b w hm hi hb hg hs⟩
-
 
 private theorem birth_eq {p c : Nat} (u v : Site p c)
     (hv : v.leader = false) :
@@ -530,19 +528,3 @@ theorem phasePhysical_track {p c n : Nat} (x : Config p c n) (i b : Fin n)
 
 end L4.RearTrace
 
-#print axioms L4.RearTrace.liveSweep_step
-#print axioms L4.RearTrace.liveSweep_fold
-#print axioms L4.RearTrace.liveSweep_track
-#print axioms L4.RearTrace.ghost_to_final_is_birth
-
-#print axioms L4.RearTrace.final_rear_protected
-
-#print axioms L4.RearTrace.finalRear_step
-
-#print axioms L4.RearTrace.finalRear_of_ghost_birth
-#print axioms L4.RearTrace.finalRear_fold
-
-#print axioms L4.RearTrace.phasePhysical_step
-
-#print axioms L4.RearTrace.phasePhysical_fold
-#print axioms L4.RearTrace.phasePhysical_track

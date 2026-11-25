@@ -116,7 +116,4 @@ theorem finite_to_reset {X : Type} {n : Nat} {step : X → Fin n → X}
   have B : remaining (pc x)≤412 := by unfold remaining; split <;> omega
   exact ⟨k,w,U,Nat.le_trans U B,T,H,E⟩
 
-#print axioms finite_to_reset
-#print axioms to_reset
-#print axioms absolute_budget
 end L4.BStarControllerLoop

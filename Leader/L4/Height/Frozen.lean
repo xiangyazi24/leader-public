@@ -1131,5 +1131,4 @@ theorem frozen_established {m : Nat} (M D : Nat) (hm : 0 < m)
     obtain ⟨a, j, hbase, hj, huD, hneigh⟩ := hcap u hu
     omega
 
-
 end L4.Height.Recover.StageTwo

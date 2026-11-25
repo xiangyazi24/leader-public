@@ -43,5 +43,4 @@ theorem uniform_from_dispatchers
   · intro j y _ H
     exact H
 
-#print axioms uniform_from_dispatchers
 end L4.ReportFastSplice

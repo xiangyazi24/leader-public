@@ -256,10 +256,3 @@ theorem disjoint_sector_bonds {n : Nat} (i : Fin n) {a b u v : Nat}
 
 end L4.TripleLongRace
 
-#print axioms L4.TripleLongRace.exact_marginal
-#print axioms L4.TripleLongRace.fair_race
-
-#print axioms L4.TripleLongRace.race_mean
-#print axioms L4.TripleLongRace.fair_race_deadline
-
-#print axioms L4.TripleLongRace.disjoint_sector_bonds

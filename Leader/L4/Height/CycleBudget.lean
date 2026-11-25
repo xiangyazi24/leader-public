@@ -129,9 +129,6 @@ theorem block_of_physical_cycles {s n : Nat} {x : Raw s n} (g : CustodyWitness x
       (fun v => stages k v ∨ v.published) commute done z q cap
   exact block_of_stage_means g P i owner live stages finish init means
 
-#print axioms time_of_stage_means
-#print axioms block_of_physical_cycles
-#print axioms block_of_cycle_costs
 end
 end L4.Height.ProductionCustody
 

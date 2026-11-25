@@ -2,11 +2,11 @@ import Leader.Core.Basic
 import Leader.L4.Height.CapRepair
 import Leader.L4.Height.LeaderBridge
 import Leader.L4.Height.Physical
-import Leader.L4.Height.G9Core
+import Leader.L4.Height.RawPublicationService
 
 /-! Raw-edge composition for the padded ordered pair rule. The charts remember
 a fixed layout, custody evidence and publication history. -/
-namespace L4.Height.G9Spine
+namespace L4.Height.AllSizeSpine
 open Classical
 open L4.Compiler.Native
 
@@ -32,7 +32,7 @@ def compactTimeCoeff (g bL patrol : Nat) : Nat :=
 
 /-- Fixed-layout charts may have different header counts at the same n.
 The level map is the coherent increment count measured from a stopped epoch. -/
-structure G9Data (S : Type) (n : Nat) where
+structure AllSizeData (S : Type) (n : Nat) where
   row : S × S → S × S
   leader : S → Bool
   reference : S → Bool
@@ -51,24 +51,24 @@ structure G9Data (S : Type) (n : Nat) where
 
 variable {S : Type} {n : Nat}
 
-def G9Data.next (D : G9Data S n) (hn : 0 < n) :
+def AllSizeData.next (D : AllSizeData S n) (hn : 0 < n) :
     (Fin n → S) → Fin n → (Fin n → S) :=
   PopulationProtocol.step ⟨S, Bool, (fun a b => D.row (a,b)), D.leader⟩ ⟨hn⟩
 
-def G9Data.display (D : G9Data S n) (hn : 0 < n) :=
+def AllSizeData.display (D : AllSizeData S n) (hn : 0 < n) :=
   Permanent (D.next hn) (fun x i => D.reference (x i))
 
-def G9Data.elected (D : G9Data S n) (hn : 0 < n) :=
+def AllSizeData.elected (D : AllSizeData S n) (hn : 0 < n) :=
   Permanent (D.next hn) (fun x i => D.leader (x i))
 
-def G9Data.scale (D : G9Data S n) (bL : Nat) := 2^(5*bL+34)*n*D.r
-def G9Data.block (D : G9Data S n) (j : D.Chart) := 2^21*n*D.width j
+def AllSizeData.scale (D : AllSizeData S n) (bL : Nat) := 2^(5*bL+34)*n*D.r
+def AllSizeData.block (D : AllSizeData S n) (j : D.Chart) := 2^21*n*D.width j
 
-def G9Data.deadline (D : G9Data S n) (bL : Nat) (j : D.Chart) :=
+def AllSizeData.deadline (D : AllSizeData S n) (bL : Nat) (j : D.Chart) :=
   physicalDeadline (D.scale bL) (D.m j)
 
 /-- The crossing from cap to cap+1 publishes the phase-zero display. -/
-def G9Data.miss (D : G9Data S n) (j : D.Chart) (z : D.State j) (u : List (Fin n)) : Prop :=
+def AllSizeData.miss (D : AllSizeData S n) (j : D.Chart) (z : D.State j) (u : List (Fin n)) : Prop :=
   ∃ i, D.level j z u i ≤ D.opening j z + 32*(2^19 * D.m j)
 
 noncomputable def failureCount {k : Nat} (F : List (Fin k) → Prop) (t : Nat) :=
@@ -77,7 +77,7 @@ noncomputable def failureCount {k : Nat} (F : List (Fin k) → Prop) (t : Nat) :
 /-- Physical conformance and quantitative obligations for both production
 branches. Chart obligations concern only custody epochs. The marked predicate
 includes the certificate that subsequent public steps are ordinary. -/
-structure G9Interfaces (D : G9Data S n) (hn : 0 < n) (geometryCoeff bL patrol : Nat) : Prop where
+structure AllSizeInterfaces (D : AllSizeData S n) (hn : 0 < n) (geometryCoeff bL patrol : Nat) : Prop where
   bounded : n ≤ 2^32 → ∀ x, IIDExpectedHittingTimeAtMost (D.next hn) (D.elected hn) x
     ((2049+patrol)*n^2)
   custody : 2^32 < n → ∀ x, IIDExpectedHittingTimeAtMost (D.next hn) D.cust x
@@ -102,7 +102,7 @@ structure G9Interfaces (D : G9Data S n) (hn : 0 < n) (geometryCoeff bL patrol : 
     IIDExpectedHittingTimeAtMost (D.next hn) (D.elected hn) x ((2049+patrol)*n^2)
 
 /-- Only the chart obligations used by the direct packed readout. -/
-structure PackedDisplayInputs (D : G9Data S n) (hn : 0 < n) (bL : Nat) : Prop where
+structure PackedDisplayInputs (D : AllSizeData S n) (hn : 0 < n) (bL : Nat) : Prop where
   liftCustody : 2^32 < n → ∀ x, D.cust x → ∃ j z, D.raw j z = x ∧
     Recover.StageTwo.WellFormed (modulus D.r) ((D.clock j).cfg z)
   rawStep : ∀ j z e, D.raw j ((D.clock j).next z e) = D.next hn (D.raw j z) e
@@ -160,7 +160,7 @@ private theorem chart_budget (bL n r m : Nat) (width : m*r ≤ n) :
     _ ≤ (2^31*2^(5*bL+34)) * n * n := Nat.mul_le_mul_left _ width
     _ = 2^(5*bL+65)*n^2 := by rw [pr, Nat.pow_two, Nat.mul_assoc]
 
-theorem custody_to_display_core (D : G9Data S n) (hn : 0 < n) {bL : Nat}
+theorem custody_to_display_core (D : AllSizeData S n) (hn : 0 < n) {bL : Nat}
     (H : PackedDisplayInputs D hn bL) (hp : 2^32 < n) (x : Fin n → S) (hx : D.cust x) :
     IIDExpectedHittingTimeAtMost (D.next hn) (D.display hn) x (2^(5*bL+65)*n^2) := by
   obtain ⟨j,z,rfl,hz⟩ := H.liftCustody hp x hx
@@ -204,13 +204,13 @@ theorem custody_to_display_core (D : G9Data S n) (hn : 0 < n) {bL : Nat}
   rw [← projection_cost (D.raw j) C.next (D.next hn) (H.rawStep j)]
   exact small t
 
-theorem custody_to_display (D : G9Data S n) (hn : 0 < n) {g bL p : Nat}
-    (H : G9Interfaces D hn g bL p) (hp : 2^32 < n) (x : Fin n → S) (hx : D.cust x) :
+theorem custody_to_display (D : AllSizeData S n) (hn : 0 < n) {g bL p : Nat}
+    (H : AllSizeInterfaces D hn g bL p) (hp : 2^32 < n) (x : Fin n → S) (hx : D.cust x) :
     IIDExpectedHittingTimeAtMost (D.next hn) (D.display hn) x (2^(5*bL+65)*n^2) :=
   custody_to_display_core D hn
     ⟨H.liftCustody,H.rawStep,H.parameters,H.service,H.displaySplit,H.missQuarter⟩ hp x hx
 
-theorem packed_reference_expected (D : G9Data S n) (hn : 0 < n) {g bL : Nat}
+theorem packed_reference_expected (D : AllSizeData S n) (hn : 0 < n) {g bL : Nat}
     (H : PackedDisplayInputs D hn bL) (hp : 2^32 < n) (x : Fin n → S)
     (hc : IIDExpectedHittingTimeAtMost (D.next hn) D.cust x (g*n^2)) :
     IIDExpectedHittingTimeAtMost (D.next hn) (D.display hn) x ((g+2^(5*bL+65))*n^2) := by
@@ -218,8 +218,8 @@ theorem packed_reference_expected (D : G9Data S n) (hn : 0 < n) {g bL : Nat}
   exact addStages (D.next hn) hn hc (custody_to_display_core D hn H hp)
 
 /-- First entrance into the fixed-winner class from every Cartesian start. -/
-theorem physical_expected (D : G9Data S n) (hfour : 4 ≤ n) {g bL p : Nat}
-    (H : G9Interfaces D (by omega) g bL p) (x : Fin n → S) :
+theorem physical_expected (D : AllSizeData S n) (hfour : 4 ≤ n) {g bL p : Nat}
+    (H : AllSizeInterfaces D (by omega) g bL p) (x : Fin n → S) :
     UniformFirstHit.ExpectedHittingTimeAtMost (D.next (by omega)) (D.elected (by omega)) x
       ((timeCoeff g bL p * n^2 : Nat) : Rat) := by
   have hn : 0 < n := by omega
@@ -238,18 +238,18 @@ theorem physical_expected (D : G9Data S n) (hfour : 4 ≤ n) {g bL p : Nat}
     exact pack
 
 /-- Use the same deployed map and public readout at every size of one advice band. -/
-def G9Data.withProtocol (D : G9Data S n) (row : S × S → S × S) (leader : S → Bool) :
-    G9Data S n := { D with row := row, leader := leader }
+def AllSizeData.withProtocol (D : AllSizeData S n) (row : S × S → S × S) (leader : S → Bool) :
+    AllSizeData S n := { D with row := row, leader := leader }
 
 /-- The pair map and the site alphabet are chosen using only the advice.
 The preliminary and patrol coefficients are fixed before the circumference. -/
 theorem all_sizes_expected (Site : Nat → Type)
     (row : ∀ s, Site s × Site s → Site s × Site s)
     (leader : ∀ s, Site s → Bool) (g patrol : Nat)
-    (model : ∀ n, G9Data (Site (ceilingLogTwo (ceilingLogTwo n))) n)
+    (model : ∀ n, AllSizeData (Site (ceilingLogTwo (ceilingLogTwo n))) n)
     (interfaces : ∀ n (h : 4 ≤ n),
       let s := ceilingLogTwo (ceilingLogTwo n)
-      G9Interfaces ((model n).withProtocol (row s) (leader s)) (by omega) g (2^32) patrol)
+      AllSizeInterfaces ((model n).withProtocol (row s) (leader s)) (by omega) g (2^32) patrol)
     (n : Nat) (h : 4 ≤ n) (x : Fin n → Site (ceilingLogTwo (ceilingLogTwo n))) :
     let s := ceilingLogTwo (ceilingLogTwo n)
     let step := PopulationProtocol.step ⟨Site s, Bool, (fun a b => row s (a,b)), leader s⟩
@@ -259,5 +259,5 @@ theorem all_sizes_expected (Site : Nat → Type)
       ((timeCoeff g (2^32) patrol * n^2 : Nat) : Rat) := by
   exact physical_expected _ h (interfaces n h) x
 
-end L4.Height.G9Spine
+end L4.Height.AllSizeSpine
 

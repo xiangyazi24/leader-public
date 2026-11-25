@@ -287,6 +287,4 @@ theorem scan_from_reset {base x : X} {hh : ∃ i,oldH6 B base i=true}
     omega
   · exact A
 
-#print axioms scan_from_reset
-#print axioms reflect
 end L4.BStarGeneratedBandScan

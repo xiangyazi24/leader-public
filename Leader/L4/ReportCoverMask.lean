@@ -182,9 +182,4 @@ theorem permanent_h6_of_selection {s : Nat} (P : Raw s n → Prop)
     (fun y i => ReportByteRows.Z (p2 s) (y i).report2)
     (fun y Y i => by rw [report2_mask, lower y Y]) stable G hh x A sep dom
 
-#print axioms first_positive_selected_of_sep_dom
-#print axioms hop_bounds_of_selection
-#print axioms permanent_mask_of_selection
-#print axioms permanent_h5_of_selection
-#print axioms permanent_h6_of_selection
 end L4.ReportCoverMask

@@ -60,5 +60,4 @@ theorem flight10_of_setup {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rw [received,eq] at pc11
     exact pc11
 
-#print axioms flight10_of_setup
 end L4.BStarCopyRightSetupFlights

@@ -206,7 +206,4 @@ theorem fold_cover {p c n} (hp : 2≤p) (hc : 12≤c) (hn : 4≤n)
   rw [fold_ledger hp hc hn h A w] at hm
   exact List.any_eq_true.mpr ⟨a,hm,by simpa using hg⟩
 
-#print axioms fold_cover
-#print axioms fold_closed
-
 end L4.WindowFrontDone

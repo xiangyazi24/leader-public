@@ -76,7 +76,6 @@ theorem second_from_first_cover (I : Inputs .first h Q)
       (cacheCost .second s n+(bankCost .second J+serviceCost .second s n)) :=
   fibre_to_endpoint .second (secondOfFirstCover I advice S x A) advice S x ⟨A,rfl⟩
 
-
 def deployedStageCost (d : Sheet) (s n : Nat) : Nat :=
   cacheCost d s n+
     (2*ReportResetEventClock.resetCoefficient (3*maxWidth d s) (params d s).digits*n^2+
@@ -102,11 +101,4 @@ theorem both_from_h4 (advice : s=ell (ell n)) (S : 6≤s) (N : 189<n)
     (Endpoint .second J) (DeployedSecond advice S N)
     (fun z Z=>⟨x,A,y,Y,Z⟩) t y) (second_from_first_cover I advice S y Y t)
 
-#print axioms both_from_h4
-#print axioms actual_width
-#print axioms bank_to_endpoint
-#print axioms cached_to_endpoint
-#print axioms fibre_to_endpoint
-#print axioms first_from_h4
-#print axioms second_from_first_cover
 end L4.ReportStageMeans

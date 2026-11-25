@@ -83,6 +83,4 @@ theorem all_mark (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     · exact .inr ⟨E,.inl ⟨P,S⟩⟩
     · exact .inr ⟨E,.inr ⟨J,P,S⟩⟩
 
-#print axioms door_holds
-#print axioms all_mark
 end L4.ReportOwnerForwardControl

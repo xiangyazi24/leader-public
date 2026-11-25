@@ -132,6 +132,4 @@ theorem original_setup {base origin : X} {hh : ∃ i,oldH6 B base i=true}
   rw [W,M,W8,E]
   simp only [List.append_assoc,List.cons_append]
 
-
-#print axioms original_setup
 end L4.BStarCopySetupCuts

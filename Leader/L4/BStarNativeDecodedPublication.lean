@@ -19,7 +19,6 @@ local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r
 local notation "step" => AllSizeS1Geometry.step B
 local notation "run" => BStarResetSchedule.run step
 
-
 open NativeHeightObservation NativeHeightRange NativeUnisonBridge UnisonRows
 
 /-- Put the selected physical image in the center port of the ordinary
@@ -90,5 +89,4 @@ theorem decoded_from_original_tape {base initial : X} (u v tail : List (Fin n))
     rw [output,decoded,clockView]
     exact output_clock r rpos _ _
 
-#print axioms decoded_from_original_tape
 end L4.BStarNativeDecodedPublication

@@ -235,8 +235,4 @@ theorem frozen_after_actual_ack {base x : X} {cut whole : List (Fin n)}
   exact (after_load_frame hp chart sep lead w8 middle w10 load side C k j kl jl injectAddr
     loadLoc source own before loadEvent b8 M b10 fiber).trans (F.trans K)
 
-#print axioms after_load_frame
-#print axioms frozen_after_actual_ack
-#print axioms cut_after_matching_ack
-#print axioms packed_after_actual_ack
 end L4.BStarCopyLeftAckRetention

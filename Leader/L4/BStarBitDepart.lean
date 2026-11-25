@@ -153,7 +153,4 @@ theorem joined_depart (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
     (BStarResetQuiet.joined_work_raw k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x a
       (fun H _ => (nr H).elim)).trans Rw⟩
 
-#print axioms joined_depart
-#print axioms selected_depart
-#print axioms carried_bit
 end L4.BStarBitDepart

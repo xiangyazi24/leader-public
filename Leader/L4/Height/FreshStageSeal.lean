@@ -121,5 +121,4 @@ theorem accepted_seal_facts (P : Production g) (o : Owners h) (a : Word n) (rrel
   · rw [replay]
     exact old
 
-#print axioms accepted_seal_facts
 end L4.Height.FreshStageSeal

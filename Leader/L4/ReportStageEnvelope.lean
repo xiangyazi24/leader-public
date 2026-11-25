@@ -13,5 +13,4 @@ theorem both_from_h4 (advice : s=ell (ell n)) (S : 6≤s) (N : 189<n)
   @both_from_h4_given n s advice S N x A (trialCeiling (U2 6) n0)
     (@flat_report_service n s S advice)
 
-#print axioms both_from_h4
 end L4.ReportStageEnvelope

@@ -47,5 +47,4 @@ theorem actual_launch_at_door {base x : X} {hh : ∃ j,oldH6 B base j=true}
     exact canon
   exact ⟨E,J,payload,frame⟩
 
-#print axioms actual_launch_at_door
 end L4.Height.StageScopedLaunch

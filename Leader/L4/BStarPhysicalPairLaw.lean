@@ -310,14 +310,4 @@ theorem raw_prescribed_bound (base : X) (hh : ∃ i,oldH6 B base i=true)
     Nat.mul_left_comm (2^keys.length) (2^t)] at bound
   exact Nat.le_of_mul_le_mul_left bound (Nat.pow_pos (by decide))
 
-#print axioms chart_reveal
-#print axioms raw_at_chart
-#print axioms ownerAt_center
-#print axioms mate_writes_opposite
-#print axioms doubled_wordSum
-#print axioms raw_prescribed_bound
-#print axioms reveal_mate
-#print axioms raw_doubleMate
-#print axioms source
-#print axioms physical_prescribed_bound
 end L4.BStarPhysicalPairLaw

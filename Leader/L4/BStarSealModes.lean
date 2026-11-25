@@ -88,7 +88,4 @@ theorem commit_is_not_release (z : Cursor) :
   intro _ E
   exact (by decide : commitOp≠releaseOp) (Mode.busy.inj E).1
 
-#print axioms past_prefix
-#print axioms seal_after_center_safe
-#print axioms bit_safe
 end L4.BStarSealModes

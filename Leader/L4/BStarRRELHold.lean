@@ -80,9 +80,6 @@ theorem hold_then_ack_zero {base x : X} {hh : ∃ i,oldH6 B base i=true}
     exact ih (closed _ _ init) H (one x L e Z)
       (fun d hd => away d (List.mem_cons_of_mem _ hd))
 
-#print axioms arrived_no_win
-#print axioms hold_then_ack_zero
-
 theorem first_arrival_zero {base x : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
     (C : Chart hp base hh o S len fall)
@@ -158,5 +155,4 @@ theorem first_arrival_zero {base x : X} {hh : ∃ i,oldH6 B base i=true}
   change ¬ WonAt hp (run z (pre++e::a)) f i j at N
   rwa [BStarResetSchedule.run_append] at N
 
-#print axioms first_arrival_zero
 end L4.BStarRRELHold

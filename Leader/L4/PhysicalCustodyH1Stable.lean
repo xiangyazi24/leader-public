@@ -188,9 +188,4 @@ theorem concrete_bad_bond_service_word {n : Nat} (hn : 5≤n)
     (cyclicWindow_injective hn _) (cyclicWindow_edges hn _) sep sepTwo x auth
   exact ⟨w,L,W,by rwa [E] at R⟩
 
-#print axioms concrete_bad_bond_service_word
-#print axioms bad_bond_service_word
-#print axioms bad_bond_no_creation
-#print axioms authenticated_next
-#print axioms authenticated_run
 end L4.PhysicalCustody.H1

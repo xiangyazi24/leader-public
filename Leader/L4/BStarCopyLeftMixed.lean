@@ -249,6 +249,4 @@ theorem sole_release {Tag : Type} (digits : Tag→BitVec 36) (tag : Tag)
         exact ⟨(s.receiveFirst headTag).releaseOne tag [],deposit (clearLast label n) 0 tag,rfl,P',H,U⟩
   · exact quiet (.inl chosen)
 
-#print axioms sole_release
-#print axioms ordinary_release
 end L4.BStarCopyLeftMixed

@@ -98,10 +98,8 @@ theorem owner_strict (g : Pair LongGeometry) (raw : Pair (BitVec LW)) (m w owner
     · simpa [total,Claim.slots,E] using
         hop_gap g raw C.source a C rfl E K M ne (d C.source) (d a) (gap C hC a E)
 
-
   · obtain ⟨C,hC,H⟩ := pays
     exact ⟨C.slots,List.mem_map.mpr ⟨C,hC,rfl⟩,H⟩
-
 
 open BStarH6WordChart hiding total
 open BStarClearanceDataChart
@@ -245,7 +243,6 @@ private theorem ring_strict (base x : X) (hh : ∃ i, oldH6 B base i=true) (o : 
     exact Nat.le_of_lt P
   · exact ⟨s,List.mem_cons_self,P⟩
 
-
 open BStarLongFixedRouting in
 private theorem active_fixed (base x : X) (same : ∀ i,Layout B base i=Layout B x i)
     (e : Fin n) (a : At Sheet) :
@@ -332,7 +329,6 @@ theorem ring_compare (base x : X) (hh : ∃ i,oldH6 B base i=true)
     rw [←Y,←Xold]
     exact owner_strict g raw _ _ o d noD gaps pay
 
-
 open BStarAcquireRailCoverage BStarClearanceRightmost in
 /-- Nominating the owner-rightmost active mobile gives a strict
 whole-ring mobile-rank decrease, unless an actual same-owner command
@@ -400,7 +396,6 @@ theorem rightmost_service (x : X) (hh : ∃ i,oldH6 B x i=true) (o : Int)
       simpa [Claim.slots,E,total] using pay
   · exact .inr H
 
-
 open BStarLongFixedRouting in
 theorem rank_fixed (base x z : X) (hh : ∃ i,oldH6 B base i=true)
     (hx : ∃ i,oldH6 B x i=true) (same : ∀ i,Layout B base i=Layout B x i) (o : Int) :
@@ -453,7 +448,6 @@ theorem rightmost_fixed (base x : X) (hh : ∃ i,oldH6 B base i=true)
     exact V
   · exact .inr ⟨C,p,sel,H.symm ▸ own⟩
 
-
 private theorem total_pos {A : Type} (f : A → Nat) (xs : List A) :
     0<total f xs ↔ ∃ a∈xs, 0<f a := by
   induction xs with
@@ -497,7 +491,4 @@ theorem rank_positive (base x : X) (hh : ∃ i,oldH6 B base i=true) (o : Int) :
     refine ⟨i,List.mem_finRange _,(total_pos _ _).mpr ⟨s,?_,(P i s).mpr h⟩⟩
     cases s <;> decide
 
-#print axioms ring_compare
-#print axioms rightmost_fixed
-#print axioms rank_positive
 end L4.BStarClearanceMobileRing

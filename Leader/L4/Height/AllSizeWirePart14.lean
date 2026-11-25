@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart13
+import Leader.L4.Height.AllSizeWirePart13
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section PublicBudget
 
@@ -59,7 +59,7 @@ theorem bounded_field_of_projects
       IIDExpectedHittingTimeAtMost (boundedNextWith encode decode)
         (Permanent (boundedNextWith encode decode) (boundedLeaderWith decode)) x
         ((2049 + patrol) * n^2) := by
-  obtain ⟨C, hC⟩ := L4.row175_rooted_complete 12 (by decide)
+  obtain ⟨C, hC⟩ := L4.uniformEdge_rooted_complete 12 (by decide)
   refine ⟨C, ?_⟩
   intro n hn hUpper x
   have hNotDvd : ¬ boundedP ∣ n := by
@@ -147,4 +147,4 @@ theorem packed_observer_field_of_nominations {s n : Nat} (hn : 4 ≤ n) (hs : 6 
 
 end PublicBudget
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

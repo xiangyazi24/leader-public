@@ -312,18 +312,4 @@ theorem logical_quarter {m B : Nat}
       _ = total * Q := Nat.mul_comm _ _
   exact Nat.le_of_mul_le_mul_right hproduct hQ
 
-#print axioms runWord_heightChain
-#print axioms stoppedRun_closed_iff_runWord_closed
-#print axioms runWord_of_closed_under_invariant
-#print axioms stoppedRun_mem_iff_runWord_mem_of_invariant
-#print axioms bounded_heightChain
-#print axioms bounded_runWord_heightChain
-#print axioms anchorCount_pos
-#print axioms anchorCount_one_heightChain
-#print axioms stoppedRun_single_anchor_iff_runWord_single_anchor
-#print axioms eq_of_countP_eq_one_of_mem
-#print axioms only_anchor_of_count_one
-#print axioms single_anchor_runWord_extension
-#print axioms logical_quarter
-
 end L4.Height

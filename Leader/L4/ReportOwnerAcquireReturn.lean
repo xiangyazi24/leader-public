@@ -337,16 +337,6 @@ theorem raw_write_launch_from_capture (d : Sheet) (C : Chart h)
   exact ⟨Y,R,I,A.1,A.2.1,A.2.2.1,A.2.2.2.1.trans Captured,
     A.2.2.2.2.trans (congrArg (fun c : Nat=>1-c) Captured)⟩
 
-#print axioms raw_capture_pair
-#print axioms raw_nondoor_capture
-#print axioms raw_capture_before_ack
-#print axioms raw_acq_last_relay
-#print axioms raw_acq_consume
-#print axioms raw_postacq_step
-#print axioms raw_postacq_run
-#print axioms acq_consume_then_run
-#print axioms raw_write_launch_from_capture
-
 /-- General reverse movement preserves the entire canonical successful ACQ reply. -/
 theorem raw_acq_reverse_hop (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     (G : GapInput h) {Q : Raw s n→Prop} (F : Fibre (h:=h) d Q) (N : 1<n)
@@ -393,7 +383,6 @@ theorem raw_acq_reverse_hop (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
       simpa only [K] using S
   exact ⟨Y,⟨PC,Rev⟩,DR⟩
 
-#print axioms raw_acq_reverse_hop
 end L4.ReportOwnerAcquireReturn
 namespace L4.ReportOwnerAcquireReturn
 open AllSizeProtocol PhysicalCustody ShortResetCycle ReportResetBarrier
@@ -575,7 +564,4 @@ theorem acq_consume_then_run_six (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
   have J := raw_postacq_six_run d C hh F N digit y w A.1 H NR
   exact ⟨J.1,J.2.1,J.2.2.trans A.2.2.2⟩
 
-#print axioms raw_acq_consume_six
-#print axioms raw_postacq_six_step
-#print axioms acq_consume_then_run_six
 end L4.ReportOwnerAcquireReturn

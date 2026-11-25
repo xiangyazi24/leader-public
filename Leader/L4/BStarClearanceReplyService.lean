@@ -44,7 +44,6 @@ theorem returnRank_count (g : Pair LongGeometry) (raw : Pair (BitVec LW))
   exact congrArg (fun z : Nat × Nat × Nat => d*z.2.1)
     (BStarClearanceCommandFrame.bind_counts (geometry g a.side) a.occurrence (readK raw a))
 
-
 /-- Nominate an actual mark for a noninitial old reply once its
 predecessor is not a forward. Even a malformed reply is charged.
 The resulting strict decrease is for exactly this selected two-slot
@@ -109,8 +108,6 @@ theorem nominate_reverse {base x : X} {hh : ∃ i,oldH6 B base i=true}
   refine ⟨e,C,a,q,act,U.symm,V.symm,hA,?_⟩
   rw [dp]
   exact K
-
-#print axioms nominate_reverse
 
 /-- In an E/T suffix, a run of trails ends at the inclusive terminal
 or has an empty next position. This uses no scheduler assumption. -/
@@ -210,5 +207,4 @@ theorem nominate_trail {base x : X} {hh : ∃ i, oldH6 B base i=true}
         (not_discarded hp chart same e (j+1) (by omega) a V)
         (safe_link_destination g raw C a Cm D) (fun h _ => (nonzero h).elim)⟩⟩
 
-#print axioms nominate_trail
 end L4.BStarClearanceReplyService

@@ -73,5 +73,3 @@ end Native
 end Compiler
 end L4
 
-#print axioms L4.Compiler.Native.stageWinW_spec
-#print axioms L4.Compiler.Native.stageWinB_spec

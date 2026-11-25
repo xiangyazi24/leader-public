@@ -3,7 +3,7 @@ import Leader.L4.BStarPostCutOperands
 import Leader.L4.BStarNeedTailService
 import Leader.Wu.Scheduler.OrderedWordScheduler
 import Leader.Wu.Scheduler.UniformFirstHitExpectation
-import Leader.L4.Height.G9Core
+import Leader.L4.Height.RawPublicationService
 
 namespace L4.Height.RawServiceCore
 open AllSizeProtocol BStarLongWork BStarH6WordChart BStarAcquireLiteralChain
@@ -426,16 +426,6 @@ theorem strict_moment_after_need_seal {size n : Nat} {base origin : Raw size n} 
   intro t
   simpa only [length] using strict_moment_of_service_word (Nat.zero_lt_of_lt i.isLt)
     (rawNext size (rawRun origin lead) i) i labels covers t
-
-#print axioms different_headers_of_publication
-#print axioms singleton_publication_mass
-#print axioms singleton_refutes_block
-#print axioms singleton_strict_moment
-#print axioms empty_center_misses
-#print axioms service_moment_of_prefix_count
-#print axioms block_of_strict_moment
-#print axioms strict_moment_of_history_blocks
-#print axioms strict_moment_after_need_seal
 
 end
 end L4.Height.RawServiceCore

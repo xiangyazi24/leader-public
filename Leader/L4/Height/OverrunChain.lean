@@ -365,9 +365,5 @@ theorem overrun_chain {L h : Nat} (hM : ClockParams M) (hx : Legit M hm x.1)
 
 end FiniteClock
 
-#print axioms level_rec_finite
-#print axioms clock_depth_mean
-#print axioms overrun_chain
-
 end
 end L4.Height

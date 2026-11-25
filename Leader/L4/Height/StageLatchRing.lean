@@ -24,5 +24,4 @@ theorem stage_at_mark (x : X) (i : Fin n) (d : Descriptor) (pay : Payload)
   rw [h]
   exact L4.Height.StageLatchWrite.joined_stage_latch _ _ _ pay d head rfl offered healthy op decoded auth
 
-#print axioms stage_at_mark
 end L4.Height.StageLatchRing

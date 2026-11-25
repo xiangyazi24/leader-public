@@ -83,8 +83,6 @@ theorem observed_word_digit (d : Sheet) (N : 1<n) (hh : ∃ i,h i=true)
   · exact (sample_selected _ _ _).1
   · exact (sample_selected _ _ _).2
 
-#print axioms observed_word_digit
-
 /-- This premise identifies the capture retained in the *actual old source
 ISSUE* with the after-ACQ base selectors. Grants alone do not describe
 the source's capture bytes. -/
@@ -186,8 +184,6 @@ theorem snapshot_receipts (d : Sheet) (N : 1<n)
   rw [Payload,Nat.mul_comm hi _,Nat.mul_add_div (Nat.pow_pos (by decide : 0<2)),Nat.div_eq_of_lt Bound,
     Nat.add_zero,Nat.mul_add_mod,Nat.mod_eq_of_lt Bound]
   exact ⟨L,R⟩
-
-#print axioms snapshot_receipts
 
 private theorem acq_selector_from_prefix (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     (G : GapInput h) (F : Fibre (h:=h) d Q) (N : 1<n)
@@ -302,8 +298,6 @@ theorem actual_acq_snapshot_front (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true
   rw [Frame]
   exact ⟨B0,B2⟩
 
-#print axioms actual_acq_snapshot_front
-
 theorem snapshot_receipts_of_acq (d : Sheet) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
     (digit : 0<(params d s).digits) (Rail : RailSupplier d hh Q G)
@@ -348,5 +342,4 @@ theorem snapshot_receipts_of_acq (d : Sheet) (N : 1<n)
       (a+b) J2 H2 L2 L0 rfl
   exact snapshot_receipts d N hh G F digit Rail Root GA GB GC Room HA HC _ First v l After Ack Hold0 Hold2 Cap
 
-#print axioms snapshot_receipts_of_acq
 end L4.ReportSnapshotLease

@@ -185,8 +185,4 @@ theorem accepted_commit_no_restart_since_seal (d : Sheet) (G : GapInput h) (r : 
     d G r N hh F digit sealed (CF.closed _ _ P.1)
     (strong_step d C N hh G F old P.1 P.2.1 digit (centre C)) post No Pos End⟩
 
-#print axioms accepted_commit_no_restart_since_seal
-#print axioms no_restart_between_seal_events
-#print axioms pending_centre_zero
-#print axioms pending_centre_no_event_step
 end L4.ReportSealNoRestart

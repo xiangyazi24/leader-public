@@ -97,7 +97,4 @@ theorem receipt_actual_walk (d : Sheet) (C : Chart h) (N : 1<n)
   exact ⟨pre,fly,post,sent,recv,W.trans (by rw [U]),J,PC,Data,Seed,No,Walk,V ▸ Credit,
     V ▸ congrArg Prod.snd E,(congrArg Prod.snd E).trans Tok⟩
 
-#print axioms credit_actual_walk
-#print axioms literal_actual_launch
-#print axioms receipt_actual_walk
 end L4.ReportIndexedActualACK

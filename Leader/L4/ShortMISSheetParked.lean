@@ -29,7 +29,6 @@ theorem view_next (P : Params s n) (x : Raw s n) (X : Cached P x)
   rw [P.maskEq x X.1] at R
   exact L.trans R.symm
 
-
 /-- Both proof-only physical endpoints have idle roles; the single old
 pair mark can write roles/caches but does not change selection. We never
 iterate this invented physical state. -/
@@ -88,7 +87,4 @@ theorem parked_nondoor (P : Params s n) (C : Chart P.h) (x : Raw s n)
     rw [←B]
     exact G j J H
 
-#print axioms view_next
-#print axioms view_step_header
-#print axioms parked_nondoor
 end L4.ShortMISSheetParked

@@ -27,7 +27,6 @@ private theorem raw_clock (x : Raw s n) (w : List (Fin n)) :
   | nil => rfl
   | cons e w ih => exact ih (rawNext s x e)
 
-
 /-! Concrete frozen owner family. Choose it ONCE at the lower cut,
     before cache service. No later raw mask or receipt changes the family. -/
 
@@ -298,13 +297,6 @@ theorem width_packed_of_predecessors (P : WidthLower s n)
   let F := family_of_lower P hs advice x X
   exact width_packed_stage_expected P F (fun q=>C _ (F.sector q))
     hs advice N x X
-
-#print axioms owner_good_flags
-#print axioms receipt_credit
-#print axioms paid_max_mean
-#print axioms paid_terminal
-#print axioms paidOwnerMonitor
-#print axioms width_packed_of_predecessors
 
 end L4.WidthCycleEpoch
 

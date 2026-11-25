@@ -99,9 +99,4 @@ theorem expected_of_slice {s n K : Nat} (j : Sheet) (h : Fin n → Bool)
   rw [exact_fixed_cost j h Q frozen closed T t x X]
   exact E t
 
-#print axioms exact_fixed_cost
-#print axioms expected_of_slice
-#print axioms exact_pair
-#print axioms exact_raw_step
-#print axioms exact_fixed_run
 end L4.PhysicalShortSheet

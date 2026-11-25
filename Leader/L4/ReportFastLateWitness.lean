@@ -89,7 +89,4 @@ noncomputable def LateSealCommit.of_witness
     · exact ⟨e,.inl E⟩
     · exact ⟨e,.inr (Nat.lt_of_le_of_lt ((chooseRank_spec _ ⟨k,K⟩).2 k K) L)⟩
 
-#print axioms publicationTarget_ne_root
-#print axioms chooseRank_spec
-#print axioms LateSealCommit.of_witness
 end L4.ReportFastSplice

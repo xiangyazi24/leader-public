@@ -24,7 +24,6 @@ open BStarPhysicalDigitSem
 open BStarNativeScalarRecurrence BStarNativeOperandCustody
 open BStarNativeZeroHead BStarNumericChartCoverage
 
-
 set_option maxRecDepth 8192
 
 structure PackedRep {width : Nat} (x : X) (root : Fin n) (sites : Fin width → Fin n)
@@ -136,5 +135,4 @@ theorem step_packed {base initial : X} {hh : ∃ i,oldH6 PROTO base i=true}
       exact (runCodes_prefix table bank regs (chunk k) (start j) idx).trans
         ((packed.numeric j J₀ slot).trans (congrArg Value.word N.symm))
 
-#print axioms step_packed
 end L4.BStarNativePackedRep

@@ -50,8 +50,4 @@ theorem parked_outgoing_successor_tag_raw {s n : Nat} (x : Raw s n) (e : Fin n)
   rw [parked_outgoing_successor_raw _ _ sep _ _ link tag unready]
   exact parkedNeighborBits_tag _ _ _ _
 
-#print axioms parked_incoming_predecessor_raw
-#print axioms parked_outgoing_successor_raw
-#print axioms parked_incoming_predecessor_tag_raw
-#print axioms parked_outgoing_successor_tag_raw
 end L4.ShortParkedMIS1Ring

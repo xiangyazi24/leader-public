@@ -60,7 +60,6 @@ theorem whole_cyclic_roster {p c n : Nat} (x : Config p c n) :
       ∀ e, (∃ i, r i=e) ↔ (x e).mark=true :=
   ⟨roster x,roster_injective x,roster_exact x⟩
 
-
 /-- From the sixfold sum of actual spans, derive the short-start
 cardinality for the *filtered roster*, not just an abstract long count. -/
 theorem short_starts_many {p c n : Nat} (x : Config p c n)
@@ -91,9 +90,5 @@ theorem short_starts_many {p c n : Nat} (x : Config p c n)
         (all.filter (fun i => D<span i)).length := hl.symm.trans hc.symm
     _ ≤ _ := Nat.add_le_add_left hb _
 
-
 end L4.WindowRoster
 
-#print axioms L4.WindowRoster.whole_cyclic_roster
-
-#print axioms L4.WindowRoster.short_starts_many

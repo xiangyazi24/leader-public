@@ -100,5 +100,4 @@ theorem finish_recovered {Tag : Type} (digits : Tag→BitVec 36)
   rw [endpoint]
   exact ⟨fun i sh I => (frame i sh I).1,read⟩
 
-#print axioms finish_recovered
 end L4.BStarCopyRightWrappedFinish

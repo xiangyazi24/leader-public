@@ -79,7 +79,6 @@ private def effect (u v : BitVec 96) (hu hv : Bool)
     else (putSeal (some t.payload),none,t)
   else (none,none,t)
 
-
 private def linkStep (hu hv : Bool) (u v : BitVec 96) (win : Fin 3 → Bool)
     (ab : Pair (Patch 96)) (l : Link) : Pair (Patch 96) :=
   let (a,b) := ab
@@ -146,14 +145,12 @@ private def rowPost (hv : Bool) (v : BitVec 96) (routed : Pair (Patch 96)) : Pai
     (routed.1,(routed.2.compose p).compose (match t with | none=>.empty _ | some t=>putK 0 t))
   else routed
 
-
 def localRow (headers : Pair Bool) (old : Pair (BitVec 96)) : Pair (Patch 96) :=
   let (win,p) := rowPrefix headers old
   rowPost headers.2 old.2 ((links headers.2).foldl (linkStep headers.1 headers.2 old.1 old.2 win) p)
 
 theorem localRow_eq (h : Pair Bool) (x : Pair (BitVec 96)) :
     localRow h x=MISByteRows.row h x := rfl
-
 
 private theorem compose_empty {w : Nat} (p : Patch w) :
     p.compose (.empty w)=p := by
@@ -193,12 +190,6 @@ theorem link_trail_guard (hu hv : Bool) (u v : BitVec 96) (win : Fin 3 → Bool)
     (r : oldK hv v k=resetForward ∨ oldK hv v k=T) :
     linkStep hu hv u v win (a,b) ⟨j,some k⟩ = (a,b) := by
   rcases r with R | R <;> simp [linkStep,R,trail,ready,T,resetForward]
-
-#print axioms localRow_eq
-#print axioms link_reset_out
-#print axioms link_reset_turn
-#print axioms link_reset_back
-#print axioms link_trail_guard
 
 private def Frames (j : Fin 3) (p : Patch 96) : Prop :=
   ∀ x, (kField j).read (p.apply x)=(kField j).read x
@@ -288,9 +279,6 @@ private theorem link_right_frame (hu hv : Bool) (u v : BitVec 96) (win : Fin 3 �
         split
         · rw [Patch.compose_apply,read_putK_other _ _ ne]
         · split <;> rfl
-
-#print axioms link_left_frame
-#print axioms link_right_frame
 
 private theorem source_hi (j : Fin 3) (v : BitVec 96) (t : Token) :
     Frames j (source v t).1 := by
@@ -431,8 +419,6 @@ theorem reset_out_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fin 3)
   · rw [post_frame _ _ _ _ (post.imp_right .inl),fold_right_frame _ _ _ _ _ _ _ _ _ (Z k dst),
       Patch.compose_apply,read_putK]
 
-#print axioms reset_out_pair
-
 /-- Terminal RESET reverses at the actual complete pair, not just its link. -/
 theorem reset_turn_pair (hu hv : Bool) (u v : BitVec 96) (j : Fin 3)
     (dst : destination hv j=none) (front : oldK hu u j=resetForward) :
@@ -482,8 +468,6 @@ theorem reset_back_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fin 3)
   · rw [post_frame _ _ _ _ (post.imp_right .inl),fold_right_frame _ _ _ _ _ _ _ _ _ (Z k dst),
       Patch.compose_apply,read_putK]
 
-#print axioms reset_turn_pair
-#print axioms reset_back_pair
 /-- RESET0 issue at a literal responder header overrides the complete route fold. -/
 theorem reset_issue_pair (hu : Bool) (u v : BitVec 96)
     (phase : get v 81 2 (by decide)=1) (op : get v 78 3 (by decide)=0) :
@@ -507,8 +491,6 @@ theorem reset_consume_pair (hu : Bool) (u v : BitVec 96)
   rw [reply,reset_consume_source v phase op]
   simp only [if_true,Patch.compose_apply,read_putK]
 
-#print axioms reset_issue_pair
-#print axioms reset_consume_pair
 private theorem links_distinct_dst (h : Bool) :
     (links h).Pairwise (fun a b => a.dst≠b.dst) := by
   cases h <;> decide
@@ -582,7 +564,6 @@ theorem reset_inbound_frame_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fin 3)
     fold_right_frame _ _ _ _ _ _ _ _ _ pre_frame]
   exact prefix_right_frame hu hv u v k safe v
 
-#print axioms reset_inbound_frame_pair
 private theorem read_covered {n m : Nat} (a : Field 96 n) (b : Field 96 m)
     (v : BitVec m) (x : BitVec 96)
     (lo : b.offset≤a.offset) (hi : a.offset+n≤b.offset+m) :
@@ -640,8 +621,6 @@ theorem reset_consume_controller_pair (hu : Bool) (u v : BitVec 96)
     read_covered pc _ _ _ (by decide) (by decide)]
   decide
 
-#print axioms reset_issue_controller_pair
-#print axioms reset_consume_controller_pair
 /-- At a live root the responder door is a no-op on RESET0 forward/trail.
 The route fold cannot target responder-header slot zero. -/
 theorem reset_root_inbound_frame_pair (hu : Bool) (u v : BitVec 96)
@@ -666,7 +645,6 @@ theorem reset_root_inbound_frame_pair (hu : Bool) (u v : BitVec 96)
   rw [fold_right_frame _ _ _ _ _ _ _ _ _ H]
   exact prefix_right_frame hu true u v 0 safe v
 
-#print axioms reset_root_inbound_frame_pair
 private theorem prefix_left_trail_frame (hu hv : Bool) (u v : BitVec 96) (k : Fin 3)
     (safe : oldK hu u k=T) :
     Frames k (rowPrefix (hu,hv) (u,v)).2.1 := by
@@ -722,8 +700,6 @@ theorem reset_prefix_trail_frame_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fi
     fold_left_frame _ _ _ _ _ _ _ _ _ A,←H,
     fold_left_frame _ _ _ _ _ _ _ _ _ pre_frame]
   exact prefix_left_trail_frame hu hv u v j trail u
-
-#print axioms reset_prefix_trail_frame_pair
 
 private theorem reverse_normalizer_right_frame (hu hv : Bool) (u v : BitVec 96) (k : Fin 3)
     (safe : (oldK hv v k).fault=false)
@@ -866,9 +842,6 @@ theorem reset_reverse_inbound_frame_pair (hu hv : Bool) (u v : BitVec 96) (j k :
   apply reverse_normalizer_right_frame hu hv u v k
   · rw [clear]; rfl
   · rw [clear]; rfl
-
-#print axioms reset_reverse_outbound_frame_pair
-#print axioms reset_reverse_inbound_frame_pair
 
 set_option maxHeartbeats 2800000
 
@@ -1034,10 +1007,6 @@ theorem source_field_held_inbound_pair {w : Nat} (f : Field 96 w)
   exact (ctl_fold f low high hu true u v _ _ _ v).2.trans
     (ctl_prefix_right f low high hu u v v)
 
-#print axioms source_field_outgoing_pair
-#print axioms source_field_held_inbound_pair
-
-
 /-- One nominated outgoing incident mark promotes a parked ADMIT from
 race 1 to 3 or from race 2 to 4 in the actual MIS work pair. The latter
 is ready; the mark observes the old byte so it does not advance yet. -/
@@ -1109,8 +1078,6 @@ theorem parked_admit_left_pair (hu hv : Bool) (u v : BitVec 96) (j : Fin 3)
   rw [idle,fold_left_frame _ _ _ _ _ _ _ _ _ A,
     fold_left_frame _ _ _ _ _ _ _ _ _ pre_frame]
   exact pre_norm
-
-#print axioms parked_admit_left_pair
 
 /-- A parked ADMIT with no old F on its unique supplying predecessor
 sees the actual incoming mark: race 1→2 or race 3→5. A header's own
@@ -1188,9 +1155,6 @@ theorem parked_admit_right_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fin 3)
     fold_right_frame _ _ _ _ _ _ _ _ _ pre_frame]
   exact pre_norm
 
-#print axioms parked_admit_right_pair
-
-
 /-- A subsequent outgoing mark actually moves a ready ADMIT. Its
 reservation is converted to the selected payload, then the old target
 geometry alone decides whether the forwarded byte enters another gate. -/
@@ -1235,9 +1199,6 @@ theorem ready_admit_out_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fin 3)
   · rw [rowPost_left,fold_left_frame _ _ _ _ _ _ _ _ _ A,Patch.compose_apply,read_putK]
   · rw [post_frame _ _ _ _ (post.imp_right .inl),fold_right_frame _ _ _ _ _ _ _ _ _ (Z k link),
       Patch.compose_apply,read_putK]
-
-#print axioms ready_admit_out_pair
-
 
 /-- One selected decoded forward lane is scheduled on this mark. -/
 def forwardReady (hu : Bool) (u : BitVec 96) (j : Fin 3) : Bool :=
@@ -1320,9 +1281,6 @@ theorem forward_ready_turn_pair (hu hv : Bool) (u v : BitVec 96) (j : Fin 3)
   change (kField j).read ((suf.foldl (linkStep hu hv u v pr.1)
       (linkStep hu hv u v pr.1 p ⟨j,destination hv j⟩)).1.apply u)=_
   rw [dst,step,fold_left_frame _ _ _ _ _ _ _ _ _ A,Patch.compose_apply,read_putK]
-
-#print axioms forward_ready_out_pair
-#print axioms forward_ready_turn_pair
 
 set_option maxRecDepth 8192
 
@@ -1442,9 +1400,6 @@ theorem turnPacket_tag (hu hv : Bool) (u v : BitVec 96) (j : Fin 3)
       L4.ShortPacketTag.lowCode (turnPacket hu hv u v j)<2^17 :=
     terminal_tag_low _ (fwd_effect_shape hu hv u v j _ _ _ B S)
   rw [L4.ShortPacketTag.inherited_encode_tag _ g P.2 (by rw [P.1]; decide),P.1]
-
-#print axioms forwardPacket_tag
-#print axioms turnPacket_tag
 
 /-- An arbitrary inherited non-forward byte is held literally unless
 the row canonicalizes a declared reply fault. -/
@@ -1672,10 +1627,6 @@ theorem dirty_nonforward_empty_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fin 
     rw [←hb,fold_right_frame _ _ _ _ _ _ _ _ _ preR]
     exact dirty_right_norm hu hv u v k (by omega)
 
-#print axioms dirty_nonforward_terminal_pair
-#print axioms dirty_nonforward_reply_pair
-#print axioms dirty_nonforward_empty_pair
-
 /-- A dirty inherited trail on the right cannot alter a non-forward
 supplier, and is itself held. -/
 theorem dirty_nonforward_trail_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fin 3)
@@ -1718,9 +1669,6 @@ theorem dirty_nonforward_trail_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fin 
     change p.2=b at hb
     rw [←hb,fold_right_frame _ _ _ _ _ _ _ _ _ preR]
     exact dirty_right_norm hu hv u v k (by omega)
-
-
-#print axioms dirty_nonforward_trail_pair
 
 set_option maxHeartbeats 4000000
 
@@ -1854,8 +1802,6 @@ theorem reset_release_grant_pair (hv : Bool) (u v : BitVec 96) (j : Fin 3)
   rw [q]
   simpa [BStarShort.shortMIS,BStarShort.erase] using O
 
-#print axioms reset_release_grant_pair
-
 private theorem seal_effect_frame_noncenter (u v : BitVec 96) (hv : Bool) (l : Link)
     (w : Bool) (t : Token) (nz : l.src≠1) :
     ControllerFrame sfield (effect u v true hv l.src l.dst w t).1 := by
@@ -1914,8 +1860,6 @@ theorem reset_clear_seal_pair (hv : Bool) (u v : BitVec 96)
     omega
   exact F.trans O
 
-#print axioms reset_clear_seal_pair
-
 /-- The incoming header door composes the controller over the routed old
 pair; the final optional K0 assignment is last. The controller reads old
 v and old K0, not that already-patched base. -/
@@ -1944,9 +1888,6 @@ theorem source_door_pair (hu : Bool) (u v : BitVec 96) :
     rw [BitVec.and_allOnes]
     exact BitVec.or_zero
   · rfl
-
-#print axioms source_door_pair
-
 
 /-- If a forward target cannot be supplied by the old non-forward source,
 the literal sender lane only undergoes its own fault normalization. -/
@@ -2066,9 +2007,6 @@ theorem parked_outgoing_successor_pair (hu hv : Bool) (u v : BitVec 96) (j k : F
     fold_right_frame _ _ _ _ _ _ _ _ _ preR]
   exact parked_right_norm hu hv u v k
 
-#print axioms parked_incoming_predecessor_pair
-#print axioms parked_outgoing_successor_pair
-
 /-- A normalized neighbor at a different slot may change race but never
 changes its wire class. -/
 theorem parkedNeighborBits_tag (h g : Bool) (x : BitVec 96) (j : Fin 3) :
@@ -2120,10 +2058,6 @@ theorem normalizedNoForward_tag (h g : Bool) (x : BitVec 96) (j : Fin 3) :
   · exact ShortPacketTag.encode_decoded_tag _ _ _
   · exact ShortPacketTag.no_kind_change _ _ _
 
-#print axioms parkedNeighborBits_tag
-#print axioms parkedNeighborBits_ungated
-#print axioms normalizedNoForward_tag
-
 /-- Faulted or ungated inherited forward tokens are ready to drain.
 A held forward decodes only as a real, live ADMIT in race 1, 2 or 3. -/
 theorem unready_forward_shape (h : Bool) (x : BitVec 96) (j : Fin 3)
@@ -2151,8 +2085,6 @@ theorem unready_forward_shape (h : Bool) (x : BitVec 96) (j : Fin 3)
   rw [←D] at V
   have R : t.race=1 ∨ t.race=2 ∨ t.race=3 := by have := p.2; have := V.1; omega
   exact ⟨G,R,V.2.2⟩
-
-#print axioms unready_forward_shape
 
 /-- The responder header's K0 is excluded from every ordinary link.
 Its own source alone supplies an optional K0 assignment; absent that
@@ -2204,7 +2136,6 @@ theorem source_door_k0_pair (hu : Bool) (u v : BitVec 96) :
         · exact fun z=>read_putK_other _ _ J _ z
         · exact empty_frames _
 
-#print axioms source_door_k0_pair
 /-- The old immutable MIS1 header view used by the support wrapper. -/
 def headerGrantView (u : BitVec 96) :=
   BStarShort.grantView 89 3 true u (oldK true u)
@@ -2318,8 +2249,6 @@ theorem grant_left_short (hv : Bool) (u v : BitVec 96) (j : Fin 3) :
       exact (Patch.write _ _ _ R).symm.trans (grant_left_row hv u v j)
   · simp only [D,Bool.not_true,Bool.and_false] at K
     exact (Patch.hold _ _ _ K).trans (BStarShort.GrantView.drop_holds g j D).symm
-
-#print axioms grant_left_short
 
 private theorem right_grant_effect (u v : BitVec 96) (hu : Bool) (l : Link) (w : Bool) (t : Token) :
     ControllerFrame gfield (effect u v hu true l.src l.dst w t).2.1 := by
@@ -2446,8 +2375,6 @@ theorem grant_right_short (hu : Bool) (u v : BitVec 96) (j : Fin 3) :
         · exact Or.inr (Or.inl (Fin.ext A))
         · exact Or.inr (Or.inr (Fin.ext A))
       rcases J with rfl|rfl|rfl <;> simp [canonical,W,B.1,B.2]
-
-#print axioms grant_right_short
 
 set_option maxHeartbeats 350000
 /-- Only the bank or selector fields, not grant bits or the seal. -/
@@ -2593,7 +2520,6 @@ private theorem reader_fold {w : Nat} (f : Field 96 w)
     have T := reader_link f W hu hv u v win p l X
     exact ⟨fun A=>(H.1 A).trans (T.1 A),fun B=>(H.2 B).trans (T.2 B)⟩
 
-
 /-- Old no-writer implies bank and selector retention on the complete
 initiator row, regardless of the other endpoint or its token lanes. -/
 theorem reader_outgoing_pair {w : Nat} (f : Field 96 w) (W : ReaderWindow f)
@@ -2627,9 +2553,6 @@ theorem reader_incoming_pair {w : Nat} (f : Field 96 w) (W : ReaderWindow f)
   split
   · rw [ctl_empty f _,S,H]
   · rw [ctl_k low _ _ _,S,H]
-
-#print axioms reader_outgoing_pair
-#print axioms reader_incoming_pair
 
 set_option maxHeartbeats 150000
 private def msf : Field 96 1 := lane 92 1 (by decide)
@@ -2866,8 +2789,6 @@ theorem selector_right_pair_no_guard (hu hv : Bool) (u v : BitVec 96)
   have E := congrArg (fun z : BitVec 1=>z.getLsbD 0) Q
   simpa [msf, Field.read, BitVec.getLsbD_extractLsb', lane] using E
 
-#print axioms selector_left_pair
-#print axioms selector_right_pair_no_guard
 set_option maxHeartbeats 4000000
 
 private theorem selector_other_link (hu hv : Bool) (u v : BitVec 96)
@@ -2942,8 +2863,6 @@ theorem selector_right_pair_publish (hu : Bool) (u v : BitVec 96)
   rw [F] at H
   simpa only [msf, Field.read, BitVec.getLsbD_extractLsb', lane, Nat.add_zero,
     show (0:Nat)<1 by decide, decide_true, Bool.true_and] using H
-
-#print axioms selector_right_pair_publish
 
 set_option maxHeartbeats 6000000
 set_option maxRecDepth 8192
@@ -3166,9 +3085,6 @@ theorem bankproj_initiator_pair (hv : Bool) (u v : BitVec 96) :
   rw [rowPost_left]
   exact fold.trans (pref u)
 
-#print axioms bankproj_receiver_pair
-#print axioms bankproj_initiator_pair
-
 /-- Exact old physical header READ action, using the unpatched old-pair
 grant allocator. The two payload banks are kept distinct. -/
 def readCapture (u : BitVec 96) (j : Fin 3) (p : Nat) : Nat :=
@@ -3229,11 +3145,6 @@ private theorem loss_finite :
     ∀ (p : Fin 128), let q:=setPLane p.val 6 false
     q=p.val%64 ∧ bitAt q 6=false ∧ ∀ i : Fin 6, bitAt q i.val=bitAt p.val i.val := by decide
 
-#print axioms read_forwardPacket
-#print axioms read_turnPacket
-#print axioms capture_finite
-#print axioms loss_finite
-
 /-- Each winning capture records the two assigned low payload bits.
 The sticky flag and the other four low bits retain their old values. -/
 theorem readCapture_bits (u : BitVec 96) (j : Fin 3) (p : Nat) (P : p<128) :
@@ -3263,10 +3174,6 @@ theorem read_forwardPacket_sticky (hu hv : Bool) (u v : BitVec 96) (j k : Fin 3)
     · simpa [W] using (readLoss_bits _ P).2.1
     · simpa [W] using (readCapture_bits u j _ P).2.1
 
-#print axioms readCapture_bits
-#print axioms readLoss_bits
-#print axioms read_forwardPacket_sticky
-
 theorem read_forwardPayload_lt (hu hv : Bool) (u v : BitVec 96) (j k : Fin 3)
     (op : (oldK hu u j).opcode=3) (live : (oldK hu u j).fault=false)
     (P : (oldK hu u j).payload<128) :
@@ -3286,9 +3193,6 @@ theorem read_is_ready (h : Bool) (x : BitVec 96) (j : Fin 3)
     forwardReady h x j=true := by
   simp [forwardReady,ready,parked,F,op]
 
-#print axioms read_forwardPayload_lt
-#print axioms read_is_ready
-
 /-- The terminal's explicit success is equivalent to the old sticky
 flag surviving its own header allocation. -/
 theorem read_turnPacket_success_iff (hu hv : Bool) (u v : BitVec 96) (j : Fin 3)
@@ -3302,8 +3206,6 @@ theorem read_turnPacket_success_iff (hu hv : Bool) (u v : BitVec 96) (j : Fin 3)
   dsimp only at H ⊢
   rw [H]
   cases B : bitAt (oldK hu u j).payload 6 && (!hu || readWins hu hv u v j) <;> simp
-
-#print axioms read_turnPacket_success_iff
 
 /-- The payload records a winning capture exactly when the old grant
 view on this same outgoing mark wins that lane. -/
@@ -3338,8 +3240,6 @@ theorem readCapture_native (u : BitVec 96) (j : Fin 3) (p : Nat) (P : p<128) :
     rcases L with L|L <;> rw [L] <;> decide
   exact ⟨C.2.2.1.trans E,C.2.2.2.1⟩
 
-#print axioms readWins_header
-#print axioms readCapture_native
 end L4.ShortResetRow
 
 namespace L4.ShortResetRow
@@ -3379,10 +3279,6 @@ theorem hello_no_ask (u : BitVec 96) (j : Fin 3)
   rw [H]
   rfl
 
-#print axioms hello_ready
-#print axioms hello_forwardPacket
-#print axioms hello_turnPacket
-#print axioms hello_no_ask
 theorem hello_link_trail_guard (hu hv : Bool) (u v : BitVec 96) (win : Fin 3 → Bool)
     (a b : Patch 96) (j k : Fin 3) (trail : oldK hu u j=T)
     (r : oldK hv v k=helloForward ∨ oldK hv v k=T) :
@@ -3504,10 +3400,6 @@ theorem hello_prefix_trail_frame_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fi
     fold_left_frame _ _ _ _ _ _ _ _ _ pre_frame]
   exact prefix_left_trail_frame hu hv u v j trail u
 
-
-#print axioms hello_inbound_frame_pair
-#print axioms hello_root_inbound_frame_pair
-#print axioms hello_prefix_trail_frame_pair
 end L4.ShortResetRow
 
 namespace L4.ShortResetRow
@@ -3637,11 +3529,6 @@ theorem read_prefix_trail_frame_pair (data : Nat) (hu hv : Bool) (u v : BitVec 9
     fold_left_frame _ _ _ _ _ _ _ _ _ pre_frame]
   exact prefix_left_trail_frame hu hv u v j trail u
 
-
-
-#print axioms read_inbound_frame_pair
-#print axioms read_root_inbound_frame_pair
-#print axioms read_prefix_trail_frame_pair
 end L4.ShortResetRow
 
 namespace L4.ShortResetRow
@@ -3719,11 +3606,6 @@ theorem seal_forward_pair (hv : Bool) (u v : BitVec 96) (k : Fin 3) (t : Token)
   simp only [forwardPacket, ht, seal_effect_center _ _ _ _ _ _ hF hop] at out
   cases h : (stageSealOwner u t.payload && sealBankMatches u t.payload) <;>
     simpa [h, arrival, hF, hop, faultToken] using out
-
-#print axioms stage_effect_center
-#print axioms seal_effect_center
-#print axioms stage_forward_pair
-#print axioms seal_forward_pair
 
 private theorem effect_left_noncenter {n : Nat} (f : Field 96 n)
     (u v : BitVec 96) (hv : Bool) (l : Link) (w : Bool) (t : Token) (hn : l.src ≠ 1) :
@@ -3885,8 +3767,6 @@ theorem seal_value_pair (hv : Bool) (u v : BitVec 96) (t : Token)
       intro x X
       rw [W, W, X])).trans (W u)
 
-#print axioms stage_bank_pair
-#print axioms seal_value_pair
 end L4.ShortResetRow
 
 namespace L4.ShortResetRow
@@ -3907,8 +3787,6 @@ theorem selectorGuard_iff_commitAccept (hu : Bool) (u v : BitVec 96) :
     exact ⟨a,b,c,⟨⟨⟨d,e⟩,f⟩,g⟩,h⟩
   · rintro ⟨a,b,c,⟨⟨⟨d,e⟩,f⟩,g⟩,h⟩
     exact ⟨a,b,c,d,e,f,g,h⟩
-
-#print axioms selectorGuard_iff_commitAccept
 
 /-- COMMIT6 centre execution writes the selector and consumes the seal only
 when all guard fields agree. A rejected execution has an empty effect patch. -/
@@ -3984,13 +3862,6 @@ theorem commit_centre_out_pair (hu : Bool) (u v : BitVec 96)
   have H := forward_ready_out_pair hu true u v 0 1 rfl (commit_is_ready hu u 0 front op)
   simpa only [commit_forwardPacket_centre hu u v op live] using H
 
-#print axioms commit_is_ready
-#print axioms commit_forwardPacket_centre
-#print axioms commit_forwardPacket_relay
-#print axioms commit_turnPacket
-#print axioms commit_turnPacket_success_iff
-#print axioms commit_centre_out_pair
-
 theorem commit_relay_out_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fin 3)
     (dst : destination hv j=some k)
     (front : (oldK hu u j).tag=2) (op : (oldK hu u j).opcode=6)
@@ -4010,10 +3881,6 @@ theorem commit_terminal_pair (hu hv : Bool) (u v : BitVec 96) (j : Fin 3)
       encode (if t.fault || !t.applied then faultToken 3 else {tag:=3,opcode:=6}) := by
   have H := forward_ready_turn_pair hu hv u v j dst (commit_is_ready hu u j front op)
   simpa only [commit_turnPacket hu hv u v j op] using H
-
-#print axioms commit_centre_effect
-#print axioms commit_relay_out_pair
-#print axioms commit_terminal_pair
 
 end L4.ShortResetRow
 
@@ -4063,9 +3930,6 @@ theorem admit_terminal_ungated (hu hv : Bool) (u : BitVec 96) (j : Fin 3)
   have hvj : j.val ≠ 1 := fun h => ne (Fin.ext h)
   simp [atGate, hvj]
 
-#print axioms admit_ungated_out_pair
-#print axioms admit_ungated_turn_pair
-#print axioms admit_terminal_ungated
 end L4.ShortResetRow
 
 namespace L4.ShortResetRow
@@ -4132,10 +3996,7 @@ theorem write_ack_turn_pair (hu hv : Bool) (u v : BitVec 96) (j : Fin 3)
       terminal, op] using H
   · simpa [turnPacket, old, effect, terminal, bad] using H
 
-#print axioms write_ack_forward_pair
-#print axioms write_ack_turn_pair
 end L4.ShortResetRow
-
 
 namespace L4.ShortResetRow
 open AllSizeProtocol MISByteCodec ShortResetFlow
@@ -4271,11 +4132,6 @@ theorem nonparked_prefix_trail_frame_pair (hu hv : Bool) (u v : BitVec 96) (j k 
     fold_left_frame _ _ _ _ _ _ _ _ _ pre_frame]
   exact prefix_left_trail_frame hu hv u v j trail u
 
-
-
-#print axioms nonparked_inbound_frame_pair
-#print axioms nonparked_root_inbound_frame_pair
-#print axioms nonparked_prefix_trail_frame_pair
 end L4.ShortResetRow
 
 namespace L4.ShortResetRow
@@ -4305,11 +4161,7 @@ theorem faultToken2_terminal_pair (hu hv : Bool) (u v : BitVec 96) (j : Fin 3)
   have S := forward_ready_turn_pair hu hv u v j dst R
   simpa [turnPacket,F,effect,terminal,faultToken] using S
 
-#print axioms fault_front_is_ready
-#print axioms faultToken2_relay_pair
-#print axioms faultToken2_terminal_pair
 end L4.ShortResetRow
-
 
 namespace L4.ShortResetRow
 open AllSizeProtocol MISByteCodec ShortResetFlow
@@ -4455,8 +4307,6 @@ theorem live_prefix_trail_frame_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fin
     fold_left_frame _ _ _ _ _ _ _ _ _ pre_frame]
   exact prefix_left_trail_frame hu hv u v j trail u
 
-
-
 theorem ungated_admit_inbound_frame_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fin 3)
     (link : destination hv j=some k) (upstream : (oldK hu u j).tag≠2)
     (t : Token) (old : oldK hv v k=t) (tag : t.tag=2) (_opcode : t.opcode=2)
@@ -4517,11 +4367,6 @@ theorem live_root_inbound_frame_pair (hu : Bool) (u v : BitVec 96)
   rw [G]
   rfl
 
-#print axioms parked_admit_inert_left_pair
-#print axioms parked_admit_inert_right_pair
-#print axioms live_prefix_trail_frame_pair
-#print axioms ungated_admit_inbound_frame_pair
-#print axioms live_root_inbound_frame_pair
 end L4.ShortResetRow
 
 namespace L4.ShortResetRow
@@ -4539,5 +4384,4 @@ theorem parked_outgoing_empty_pair (hu hv : Bool) (u v : BitVec 96) (j k : Fin 3
   rw [parked_outgoing_successor_pair hu hv u v j k dst (by rw [old,tag]) N]
   simp [parkedNeighborBits,right,parked,E,wire]
 
-#print axioms parked_outgoing_empty_pair
 end L4.ShortResetRow

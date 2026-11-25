@@ -33,5 +33,4 @@ theorem raw_warmup_quarter {A K : Nat} {Slice : Type}
     (fun a=>F (slice (warm (K:=K) a)) (main (A:=A) a))
     badVec nd exactVec quarterVec compare
 
-#print axioms raw_warmup_quarter
 end L4.BStarWarmupRawQuarter

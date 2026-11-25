@@ -140,7 +140,4 @@ theorem drained_until_issue10 {base x : X} {hh : ∃ i,oldH6 B base i=true}
     obtain ⟨mode,H,C⟩ := history_prefix hp (lead++a) (e::b) (W ▸ G)
     exact no_inject_before_10 hp chart sep H C (layout a (e::b) E) (pre10 a e b E) e
 
-#print axioms drained_until_issue10
-#print axioms no_enable_before_9
-#print axioms drained_word
 end L4.BStarCopyDrainedHistory

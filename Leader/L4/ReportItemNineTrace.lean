@@ -193,10 +193,6 @@ theorem semantic_seal_descriptor (p : Params) (I : ItemNineInputs)
       simp [E,H]
   rw [L,U]
 
-#print axioms math_run
-#print axioms split_ack
-#print axioms math_seed_from_acq
-#print axioms semantic_seal_descriptor
 end L4.ReportItemNineTrace
 
 namespace L4.ReportItemNineTrace

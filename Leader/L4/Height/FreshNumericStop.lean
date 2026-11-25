@@ -87,5 +87,4 @@ theorem issue_before_reset (P : Production g) (o : Owners h) (a : Word n) (rrel 
       exact BStarResetSchedule.run_append (rawNext s) y u [e]
     exact (exit (state ▸ live.1)).elim
 
-#print axioms issue_before_reset
 end L4.Height.FreshNumericStop

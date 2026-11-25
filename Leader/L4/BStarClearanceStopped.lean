@@ -134,7 +134,4 @@ theorem rank_along {X : Type} {n : Nat} {step : X → Fin n → X}
     obtain ⟨A,J⟩ := ih (step x e) (C.closed x e I R) H
     exact ⟨Nat.le_trans A (C.nonincrease x e I R),J⟩
 
-#print axioms ready_word_of_service
-#print axioms ready_word
-#print axioms selectable_word
 end L4.BStarClearanceStopped

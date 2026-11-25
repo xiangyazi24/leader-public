@@ -132,9 +132,4 @@ theorem typed_first {width : Nat} (T : PrimTable width) (bank : Bank)
   rw [accepted_head T bank sem,wordAt_zero y site H]
   exact ⟨rfl,first_head_rep wire payload⟩
 
-#print axioms wordAt_zero
-#print axioms typed_first
-#print axioms first_actual_zero
-#print axioms accepted_head
-#print axioms first_head_rep
 end L4.BStarNativeZeroHead

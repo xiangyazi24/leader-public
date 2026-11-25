@@ -93,6 +93,4 @@ theorem drained_after_top_rebase {p c n h : Nat} (hn : 4≤n)
   rw [RestartGeometry.lift_add]
   exact hEmpty _ (by omega)
 
-#print axioms drained_after_top_rebase
-#print axioms drained_step
 end L4.WindowA0Drained

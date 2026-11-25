@@ -149,8 +149,4 @@ theorem certified_decision {X : Type} (R : Readout X (Lower h))
       contradiction
     exact ⟨out true,out false⟩
 
-#print axioms ball_symm
-#print axioms ball_triangle
-#print axioms gates_complete
-#print axioms certified_decision
 end L4.ReportTrialCone

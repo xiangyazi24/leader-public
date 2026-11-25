@@ -161,7 +161,3 @@ theorem debt_of_phase_accounts {n N X Z P M F : Nat}
 
 end L4.RearTrace
 
-#print axioms L4.RearTrace.rearTrack_tag
-#print axioms L4.RearTrace.rearFold_append
-#print axioms L4.RearTrace.scaledDebt_step
-#print axioms L4.RearTrace.debt_of_phase_accounts

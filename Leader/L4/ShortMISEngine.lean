@@ -607,23 +607,4 @@ theorem production_rooms (S : 6≤s) (advice : s=ell (ell n)) :
     ProductionShortRoom.seven_gaps_fit S advice (by decide),
     ProductionShortRoom.seven_gaps_fit S advice (by decide)⟩
 
-#print axioms Params.pair_refresh
-#print axioms Params.raw_refresh
-#print axioms Params.offset_mark
-#print axioms Params.offset_word
-#print axioms Params.cached_from_covers
-#print axioms Params.cached_closed
-#print axioms Params.cached_expected
-#print axioms Params.cached_gate
-#print axioms Params.chart_gate
-#print axioms Params.sheet_fiber
-#print axioms mis1_cached_iff
-#print axioms mis1_cache
-#print axioms mis2_cache
-#print axioms mis3_cache
-#print axioms mis1_fiber
-#print axioms mis2_fiber
-#print axioms mis3_fiber
-#print axioms production_rooms
-
 end L4.ShortMISEngine

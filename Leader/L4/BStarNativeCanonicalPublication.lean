@@ -190,6 +190,4 @@ theorem canonical_from_original_tape {base initial : X} (u v tail : List (Fin n)
   exact ⟨o,S,len,fall,pre,reset,w,entryWord,compiler,remainder,rest,A,W,C,L,p,e,V,
     hit,need,H,preSelect,sel,afterSelect,op,receipt,split,reply,auth,output⟩
 
-#print axioms canonical_from_original_tape_need
-#print axioms canonical_from_original_tape
 end L4.BStarNativeCanonicalPublication

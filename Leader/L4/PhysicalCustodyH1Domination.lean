@@ -191,8 +191,4 @@ theorem maximal_after_auth_expected {n : Nat} (N : 5≤n) (x : State n)
     ac_rfl
   rwa [Z] at T
 
-#print axioms maximal_after_auth_expected
-#print axioms domination_site_expected
-#print axioms selected_persistent
-#print axioms dominate_on_armed_commit
 end L4.PhysicalCustody.H1

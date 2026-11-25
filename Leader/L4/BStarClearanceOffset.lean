@@ -209,7 +209,4 @@ theorem gate_at_ordinal (h : Fin n → Bool) (hh : ∃ i,h i=true)
   rw [same, Nat.min_eq_right (show offsetL (x i).long ≤ 5 from Nat.min_le_left _ _)]
   exact T
 
-#print axioms gate_at_ordinal
-#print axioms five_covers
-#print axioms stable
 end L4.BStarClearanceOffset

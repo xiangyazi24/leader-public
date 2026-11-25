@@ -158,8 +158,4 @@ theorem actual_add_refines {base x : X} {hh : ∃ i,oldH6 B base i=true}
   refine ⟨E.1,_,returned,add_reply_fit sweep hiSlot ha hb initial _ rfl,?_⟩
   exact add_pending_rep _ _ _ a b _ regs rs good oldScalar
 
-#print axioms actual_add_refines
-#print axioms add_refines
-#print axioms add_reply_fit
-#print axioms add_pending_rep
 end L4.BStarNativeAddHead

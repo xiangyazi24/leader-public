@@ -23,7 +23,6 @@ local notation "step" => AllSizeS1Geometry.step B
 local notation "run" => BStarResetSchedule.run step
 local notation "pc" => BStarGeneratedBandScan.pc
 
-
 theorem actual_attempt {base x : X} (u v tail : List (Fin n))
     (facts : CutFacts hp base x u v) (hh : ∃ j,oldH6 B base j=true)
     (sep : ∀ e : Fin n,e≠rightNeighbor e)

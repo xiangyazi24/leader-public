@@ -72,6 +72,4 @@ theorem first_reset0_launch_of_boundary {s n : Nat} {base x : Raw s n}
   exact first_reset_launch_expected C Q fiber closed sep (by decide) I.lower
     ⟨I.clean,I.issue.2,zero⟩
 
-#print axioms first_reset0_launch_of_boundary
-#print axioms first_reset_launch_expected
 end L4.PhysicalResetFirstLaunch

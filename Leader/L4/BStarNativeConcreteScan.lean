@@ -154,7 +154,4 @@ theorem scan_ready_after_zero {base initial : X} {hh : ∃ i,oldH6 PROTO base i=
   exact BStarNativeScanPosition.later_scan_positions hp chart sep Z ZH (gap++before++[launch])
     after exactA (fun u _ _ i => stable u i) flags notShort
 
-#print axioms scan_ready_after_zero
-
-#print axioms scan_ready
 end L4.BStarNativeConcreteScan

@@ -137,7 +137,6 @@ theorem protected_step {p c n d : Nat} {initial : Config p c n} (hn : 4≤n)
   · rw [hJ]; exact ht
   · rw [hJ,←liftedSite_succ]; exact hl.1.2.2.2.1
 
-
 /-- The local supplier has either an ordinary certified predecessor
 or the authenticated protected corridor. Neither form filters raw marks. -/
 def Supplier {p c n : Nat} (v : Fin n) (cert : List (Fin n))
@@ -201,7 +200,6 @@ theorem physical_retained_count {p c n : Nat} {initial : Config p c n} (hn : 4�
   obtain ⟨hnext,_hret,hghost⟩ :=
     cut_step_on_keep hn v g cert a b k ha hb hk hsub y e hy (kept_route v g cert a y e he)
   exact ⟨hnext,hghost⟩
-
 
 def append {n : Nat} (u : List (Fin n)) (e : Fin n) := u++[e]
 
@@ -286,6 +284,4 @@ theorem push_mean {p c n : Nat} {initial : Config p c n}
   exact Nat.le_trans (EntranceCover.iidHitCost_le_of_projection nstep append (fun y => y.terminal=true)
     done pstate hstep (fun _ hh => hh) t []) (aux t)
 
-#print axioms physical_retained_count
-#print axioms push_mean
 end L4.WindowA0Push

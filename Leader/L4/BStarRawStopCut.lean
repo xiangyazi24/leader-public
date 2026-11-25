@@ -138,9 +138,4 @@ theorem firstTime_rebase {n : Nat} (test : List (Fin n)→Bool)
     firstTime (fun h=>test (history++h)) lead w=firstTime test (history++lead) w := by
   rw [firstTime,firstTime,splitStop_rebase]
 
-#print axioms atStop_rebase
-#print axioms firstTime_rebase
-#print axioms split_spec
-#print axioms atStop_eq_split
-#print axioms true_after_time
 end L4.BStarRawStopCut

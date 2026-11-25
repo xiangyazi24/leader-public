@@ -77,9 +77,4 @@ theorem report1_serial_from_raw (N : 243<n) (S : 0<s) (x : Raw s n) :
   exact Nat.le_trans (RankRenewal.cost_mono_target (next:=rawNext s) _
     (Report1Serial N) (fun z Z => ⟨base,B,Z⟩) t y) (A t)
 
-#print axioms report1_serial_closed
-#print axioms report1_serial_from_raw
-#print axioms report1Geometry
-#print axioms report1_ready_from_raw
-#print axioms report1_ready_closed
 end L4.ReportFirstRawEntrance

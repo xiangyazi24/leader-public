@@ -114,7 +114,4 @@ theorem actual_occurrence_next {a : LargeParams} {n : Nat} (b : LargeRows a)
   change good (oldH6 b x (rightNeighbor i)) c = true at G
   simpa [good,hd] using G
 
-#print axioms actual_occurrence_next
-#print axioms actual_link
-#print axioms header_k012
 end L4.BStarCommandChronology

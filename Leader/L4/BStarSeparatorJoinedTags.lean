@@ -103,8 +103,6 @@ theorem parked_joined (k₁ k₂ t₂ J₁ J₂ r n p c₁ : Nat) (hp : 0<p)
   · rw [raw_transit _ _ _ hz]
     exact P
 
-#print axioms parked_joined
-
 private theorem link_safety (g : Pair LongGeometry) (raw : Pair (BitVec LW))
     (c : CommandClaim) (a : AtK) (hm : c∈orderedCommands g) (hd : c.destination=some a) :
     c.source≠a ∧ DoorSafe g raw c.source ∧
@@ -235,7 +233,4 @@ theorem trail_reply_joined (k₁ k₂ t₂ J₁ J₂ r n p c₁ : Nat) (hp : 0<p
     joined_work_raw _ _ _ _ _ _ _ _ _ hp x a T]
   exact ⟨⟨q,L⟩,Rr⟩
 
-#print axioms forward_link_joined
-#print axioms forward_terminal_joined
-#print axioms trail_reply_joined
 end L4.BStarSeparatorJoinedTags

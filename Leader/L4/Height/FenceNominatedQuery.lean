@@ -1,4 +1,4 @@
-import Leader.L4.Height.G9Core
+import Leader.L4.Height.RawPublicationService
 
 namespace L4.Height.FenceNominatedQuery
 open Classical RawService
@@ -34,7 +34,7 @@ private theorem spike_mass {n : Nat} (mark : Fin n) :
 /-- A nominated candidate is a positive-step service at every old
 state, including after a restart. Nominations may depend on the
 entire augmented old state; a fixed label is the special case.
-The accepted G9 floor-moment scale is exactly 4*n. -/
+The accepted all-size floor-moment scale is exactly 4*n. -/
 theorem nominated_moment {S : Type} {n : Nat}
     (next : S→Fin n→S) (A : S→Prop) (hn : 0<n)
     (service : ∀ x,∃ mark : Fin n,A (next x mark)) (x : S) :
@@ -79,7 +79,4 @@ theorem recordHit_moment {n : Nat} (mark : Fin n) (x : Option (Fin n)) :
     Thru.MomentAt recordHit (fun last=>last=some mark) (4*n) x :=
   fixed_moment recordHit (fun last=>last=some mark) mark (fun _=>rfl) x
 
-#print axioms recordHit_moment
-#print axioms nominated_moment
-#print axioms fixed_moment
 end L4.Height.FenceNominatedQuery

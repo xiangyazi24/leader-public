@@ -37,5 +37,4 @@ theorem owner_of_center_incoming {s n : Nat} (x : Raw s n) (M : H2Ready x)
   · intro D j J Dj
     exact same_cell_owner D C j i J I (Dj.trans E.symm)
 
-#print axioms owner_of_center_incoming
 end L4.ShortChartPublishLink

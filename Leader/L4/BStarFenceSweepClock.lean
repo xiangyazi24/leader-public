@@ -146,6 +146,4 @@ theorem physical_stopped_mean (hn : 0<n) (L : Fin l→Fin n) (R : Fin r→Fin n)
   · rw [shadow_right L R full (fun _=>0)]
     exact T
 
-#print axioms wait_le_if_shadow_empty
-#print axioms physical_stopped_mean
 end L4.BStarFenceSweepClock

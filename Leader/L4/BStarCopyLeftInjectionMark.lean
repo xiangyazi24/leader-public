@@ -232,7 +232,4 @@ theorem sole_header_cross_ring {Tag : Type}
       rw [E]
       simpa only [sample,deposit,clearLast,if_neg Z,if_neg F] using old j J
 
-#print axioms sole_header_cross_ring
-#print axioms ordinary_ring
-#print axioms no_competing_prep
 end L4.BStarCopyLeftInjectionMark

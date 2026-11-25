@@ -147,8 +147,6 @@ theorem all_launch_excess {base ini : X} {hh : ∃ i,oldH6 B base i=true}
       charges (rawCharge hp base ini (fun j=>S.getD j fall) len) a w :=
   intervals_charge hp C sep layout (all_launch_intervals hp a w G)
 
-#print axioms all_launch_intervals
-#print axioms all_launch_excess
 end
 end L4.Height.ProductionAdmissions
 

@@ -128,7 +128,6 @@ theorem before_on_live_run (d : Sheet) (B : Fin 5→Chart h) (D : Fin 5→Bool)
     rw [actual_snoc]
     exact .snoc _ A NC
 
-
 theorem run_good (d : Sheet) (B : Fin 5→Chart h) (D : Fin 5→Bool)
     (Env : Trace s n→Prop)
     (Rows : ReportFastAllowedCredit.Rows (ReportFastAcqDriver.step (B 2))
@@ -175,8 +174,4 @@ theorem first_done_inputs (d : Sheet) (B : Fin 5→Chart h) (D : Fin 5→Bool)
   rw [run_raw] at T F S
   exact ⟨before_on_live_run d B D z w H L,E.2,T,F,S⟩
 
-#print axioms on_not_done_no_consume
-#print axioms before_on_live_run
-#print axioms run_good
-#print axioms first_done_inputs
 end L4.ReportFastAcqPrefix

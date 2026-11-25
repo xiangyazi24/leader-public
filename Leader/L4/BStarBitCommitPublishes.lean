@@ -67,5 +67,4 @@ theorem selected_center_publishes (x : X) (e : Fin n) (C : CommandClaim)
     change readPublication (largePair B (x e,x (rightNeighbor e))).1.long=_
     exact bStar_literal_lands k₁ k₂ t₂ J₁ J₂ r c p c₁ hp _ pub M
 
-#print axioms selected_center_publishes
 end L4.BStarBitCommitPublishes

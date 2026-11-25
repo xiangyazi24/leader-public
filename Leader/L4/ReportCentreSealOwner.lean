@@ -207,7 +207,4 @@ theorem commit_uses_last_centre_seal (d : Sheet) (G : GapInput h) (r : Owner h)
   rw [atCentre] at W
   exact ⟨seal_origin_after_receipt d G r N hh F a A flight R digit w _ Cap,W Accept⟩
 
-#print axioms commit_uses_last_centre_seal
-#print axioms seal_origin_after_receipt
-#print axioms centre_seal_marks
 end L4.ReportCentreSealOwner

@@ -97,7 +97,6 @@ private theorem noexit_prefix {p c n : Nat} (g : List (Fin n)) (a b base : Fin n
     | none => rfl
     | some t => simp [next,hz] at H
 
-
 private theorem relative_update {p c n : Nat} (z : Ledger p c n) (base e : Fin n)
     (i j : Nat) (h : i<j) (hs : GGStage.incoming base i ≠ GGStage.incoming base j)
     (hPost : i+(GGStage.moved z.config base e i).toNat <
@@ -188,7 +187,6 @@ theorem rebase_keep {p c n : Nat} {x : Config p c n} (hn : 4≤n)
   · change (next g a b base z e).heads.j<(next g a b base z e).heads.k
     rw [H]
     exact hj
-
 
 theorem actual_ghost_trace {p c n : Nat} {x : Config p c n} (hn : 4≤n)
     (g : List (Fin n)) (a b k base : Fin n) (ha : a∈g) (hb : b∈g) (hk : k∈g)
@@ -288,5 +286,4 @@ theorem entry_paid_cap {p c n : Nat} (hn : 4≤n) (x : Config p c n)
   have E := WindowA0.a0_initialCut x i hm hc short h1 h2
   exact paid_cap_of_ambient hn _ _ _ _ _ ha hb hk _ H E.2.2.2.1
 
-#print axioms entry_paid_cap
 end L4.WindowA0StockCap

@@ -1,10 +1,10 @@
-import Leader.L4.Height.G9Dot
+import Leader.L4.Height.AllSizeAssembly
 import Leader.L4.PhysicalCustodyProduction
 import Leader.L4.MonitorRawBridge
 
-namespace L4.Height.G9Dot
+namespace L4.Height.AllSizeAssembly
 open L4.AllSizeProtocol L4.PhysicalCustody L4.Compiler.Native
-open L4.Height.G9Wire L4.Height.G9Wire.CustodySpec L4.Height.G9Wire.PublicSpec
+open L4.Height.AllSizeWire L4.Height.AllSizeWire.CustodySpec L4.Height.AllSizeWire.PublicSpec
 
 theorem actual_custody : CustodyReached :=
   custody_contract L4.PhysicalCustodyProduction.K_custody
@@ -18,6 +18,4 @@ theorem all_sizes_expected :
         boundedEncode boundedDecode n hn g patrol :=
   deployed_of_custody actual_custody
 
-#print axioms actual_custody
-#print axioms all_sizes_expected
-end L4.Height.G9Dot
+end L4.Height.AllSizeAssembly

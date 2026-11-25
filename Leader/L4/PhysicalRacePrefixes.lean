@@ -99,8 +99,4 @@ theorem literal_door_local_law {α : Type} {n : Nat} (hn : 4≤n)
   exact .inr ⟨d,RearTrace.predecessor d,rightNeighbor d,Ne.symm a,c,b,winner,
     fun e E A B=>disjoint e ((disjoint_iff_not_incident d e).2 ⟨E,A,B⟩)⟩
 
-#print axioms accepted_iff
-#print axioms one_gap
-#print axioms two_gaps
-#print axioms literal_door_local_law
 end L4.PhysicalRacePrefixes

@@ -79,8 +79,6 @@ theorem selected_descriptor {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [←descriptor_of_arg same]
   exact stage_packet _ a args (show forward stageOp a=.forward q from rfl)
 
-#print axioms selected_descriptor
-
 open BStarBodyBankHistory BStarBankTrace BStarLongGrant
 
 /-- The missing chronological content is located at one old word:
@@ -147,6 +145,4 @@ theorem writer_body (x : X) (e i H : Fin n) (b : Fin 3)
     exact inside
   exact ((auth C q Q side idx own inside' ⟨fault,op⟩ d D).2).trans current
 
-#print axioms reader_body
-#print axioms writer_body
 end L4.BStarBodyStageProvenance

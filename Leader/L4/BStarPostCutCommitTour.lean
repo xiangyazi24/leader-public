@@ -77,5 +77,4 @@ theorem actual_tour {base x : X} (u v tail : List (Fin n))
   · rw [←old]
     exact N
 
-#print axioms actual_tour
 end L4.BStarPostCutCommitTour

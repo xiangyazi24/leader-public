@@ -159,6 +159,4 @@ theorem selected_endpoint_or_link {a : LargeParams} {n : Nat} (b : LargeRows a)
       simp only [s,site,K] at ho ⊢
       exact (endpoint_spec _ hh o 10).2.2 _ (H.trans T) ho
 
-#print axioms selected_endpoint_or_link
-#print axioms fixed_edges
 end L4.BStarResetChartIndex

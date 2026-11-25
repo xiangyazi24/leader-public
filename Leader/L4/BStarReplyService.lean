@@ -160,6 +160,4 @@ theorem reaches_consume {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rw [K0] at P
     exact ⟨(congrArg (bind _ 0) P).trans norm,I,At⟩
 
-#print axioms nominate_back
-#print axioms reaches_consume
 end L4.BStarReplyService

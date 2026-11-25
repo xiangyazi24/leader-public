@@ -42,7 +42,6 @@ open BStarNativePriorInputs
 open BStarNativeAtLaunch BStarNativeCmpHit BStarH6Ordinal BStarOwnerLaunchOrigin
 open BStarNativeScalarRecurrence BStarScalarFits
 
-
 open BStarNativePrefixInduction BStarNativeHeadRoster
 
 /-- LOAD remains the single interface to the selected COMMIT value proof. -/
@@ -173,5 +172,4 @@ theorem assemble {base initial : X} {hh : ∃ i,oldH6 PROTO base i=true}
   | bmux q a b => exact (isBool rfl).elim
   | phaseEq a j => exact (isBool rfl).elim
 
-#print axioms assemble
 end L4.BStarNativePartialDispatcher

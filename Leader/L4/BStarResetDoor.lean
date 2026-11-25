@@ -182,7 +182,4 @@ theorem joined_reset_advance (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0
   exact ⟨congrArg Prod.fst (joined_door_view k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x w _ hh V before WW),
     phase_control_write k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x w (fun _ => _) hh V before WC⟩
 
-#print axioms joined_reset_advance
-#print axioms joined_reset_issue
-#print axioms joined_fault_consumed
 end L4.BStarResetDoor

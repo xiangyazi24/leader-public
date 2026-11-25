@@ -1,9 +1,9 @@
-import Leader.L4.Height.G9WirePart12
+import Leader.L4.Height.AllSizeWirePart12
 set_option Elab.async false
 set_option maxHeartbeats 1200000
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section PackedFrontier
 
@@ -31,4 +31,4 @@ theorem packed_origin_reservation_margin (hn : 4 ≤ n) (hs : 6 ≤ s)
 
 end PackedFrontier
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

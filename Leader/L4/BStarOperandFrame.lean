@@ -195,8 +195,4 @@ theorem input_port_after_cuts {base initial : X} (u v tail : List (Fin n))
     (sites (r:=r) (header q)) sep head loc no
   exact ⟨digit_agree header q A,funext fun _ => congrArg (fun z : BitVec 9 => z.getLsbD _) (header_agree header q A)⟩
 
-#print axioms visible_pointwise
-#print axioms input_port_after_cuts
-#print axioms nonpublishing_after_cuts
-#print axioms nonpublishing_word_trace
 end L4.BStarOperandFrame

@@ -149,7 +149,4 @@ theorem raw_h1_selected_frozen_run {s n : Nat} (N : 5≤n) (x : Raw s n) (w : Li
     exact (ih (rawNext s x e) (raw_h1_maximal_closed N x e H)).trans
       (raw_h1_selected_frozen N x e i H)
 
-#print axioms raw_h1_selected_frozen_run
-#print axioms raw_h1_maximal_expected
-#print axioms raw_h1_maximal_closed
 end L4.PhysicalCustody.H1

@@ -6,7 +6,6 @@ namespace L4.Height
 open Classical
 open L4.Compiler.Native
 
-
 set_option maxRecDepth 8192
 set_option maxHeartbeats 30000000
 
@@ -970,11 +969,6 @@ theorem physical_snapshot_eq {m : Nat}
   · intro r i
     exact all_phase_revealed B M ellzero Q hm hdiv hzero
       choices start s0 u hstart hfinish r i
-
-#print axioms L4.Height.physSource
-#print axioms L4.Height.reveal_once
-#print axioms L4.Height.honors_readVector
-#print axioms L4.Height.physical_snapshot_eq
 
 end L4.Height
 

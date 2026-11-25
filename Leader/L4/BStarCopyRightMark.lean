@@ -87,10 +87,6 @@ theorem upstream_adjacent {n : Nat} (base : Fin n) {i j tail : Nat}
     omega
   · exact (addr_inj base (by omega) (by omega) adj).symm
 
-#print axioms joined_spectator
-#print axioms hop_no_effect
-#print axioms upstream_adjacent
-
 theorem selected_outgoing {a : LargeParams} {n : Nat} {b : LargeRows a}
     {x : Fin n→LargeSite a} {base : Fin n} {seam tail : Nat}
     (C : Strip b x base seam tail) (i : Nat) (it : i<tail)
@@ -169,8 +165,6 @@ theorem strip_pair_claim {a : LargeParams} {n : Nat} {b : LargeRows a}
       | ld => simp [rail] at h <;> split at h <;> contradiction
       | rs => exact (rr.2 (D.trans (congrArg some (T.symm.trans (congrArg R h))))).elim
       | rd => exact (rr.1 (D.trans (congrArg some (T.symm.trans (congrArg R h))))).elim
-
-#print axioms strip_pair_claim
 
 theorem strip_pair_frame {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
     (x : Fin n→LargeSite (production k₁ k₂ t₂ J₁ J₂ r c p c₁))
@@ -251,10 +245,6 @@ theorem inject_or_no_reservation (g : Pair LongGeometry) (raw : Pair (BitVec LW)
     exact .inr ⟨A.1,o,H,E,J.2,(congrArg At.occurrence origin).trans A.2⟩
   · exact .inl Rsv
 
-#print axioms strip_pair_frame
-#print axioms strip_reserved_blocks
-#print axioms inject_or_no_reservation
-
 theorem tail_claim_frame {a : LargeParams} {n : Nat} {b : LargeRows a}
     {x : Fin n→LargeSite a} {base : Fin n} {seam tail : Nat}
     (C : Strip b x base seam tail) (rs : List (At Sheet)) (d : DataClaim)
@@ -332,9 +322,6 @@ theorem ring_exterior_frame {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 
   have B : addr base i≠rightNeighbor e := fun H =>
     (incident base e i ip (.inr H)).elim non pred
   simp [AllSizeS1Geometry.step,A,B]
-
-#print axioms joined_tail_frame
-#print axioms ring_exterior_frame
 
 section JoinedRing
 variable {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
@@ -433,8 +420,6 @@ theorem ring_transport {Label : Type} (digits : Label→BitVec 36) (tag : Label)
 
 end JoinedRing
 
-#print axioms ring_transport
-
 /-- The actual ordered word exposed by an upstream mobile labeling;
 index zero is reserved for the retaining boundary. -/
 def stripWord {L : Type} (tail : Nat) (label : Nat→Option L) : List L :=
@@ -476,5 +461,4 @@ theorem stripWord_swap {L : Type} (tail i : Nat) (ip : 0<i) (it : i<tail)
   rw [P,Q,source,vacant]
   simp [swapTag]
 
-#print axioms stripWord_swap
 end L4.BStarCopyRightMark

@@ -54,5 +54,4 @@ theorem ack_of_terminal {base x : X} {hh : ∃ i,oldH6 B base i=true}
     ((congrArg BStarLongPublication.decode frame).trans D)
   exact ⟨pre,tail,W,full,ack,fresh,pc,desc⟩
 
-#print axioms ack_of_terminal
 end L4.Height.StagePositiveAck

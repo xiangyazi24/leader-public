@@ -121,6 +121,4 @@ theorem shift_ready {base initial : X} {hh : ∃ i,oldH6 PROTO base i=true}
     width_pos G L flags notShort table bank sem regs found flat hit packed
   exact ⟨G,capture,fun f R => .inr (scalar f R),fun _ _ _ bad => by contradiction,word⟩
 
-#print axioms shift_ready
-#print axioms shift_branch
 end L4.BStarNativeConcreteShift

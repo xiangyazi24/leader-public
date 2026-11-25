@@ -172,5 +172,4 @@ theorem matching_old_seal {base x : X} {hh : ∃ j,oldH6 B base j=true}
       ((y i).long,(y (rightNeighbor i)).long)
     rwa [yEq]
 
-#print axioms matching_old_seal
 end L4.BStarRawReadSealOrigin

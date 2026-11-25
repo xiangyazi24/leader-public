@@ -216,11 +216,4 @@ noncomputable def certifyLegs {α : Type} {n K P d : Nat} {step : α → Fin n �
         · exact ih (j+1) after _ ((L.pass j x before hx a ah ab).resolve_left hg))
     simpa only [Nat.succ_mul,Nat.add_comm,Nat.pow_succ'] using C
 
-#print axioms certifyLegs
-#print axioms Verified.goalMass
-#print axioms verifiedJoin
-#print axioms join_mean
-#print axioms join_failure
-#print axioms join_first
-
 end L4.WindowA0SpliceTrial

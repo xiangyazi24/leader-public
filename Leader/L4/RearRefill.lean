@@ -88,7 +88,3 @@ theorem count_refills {t : ClockAccount} {w : List ClockEvent}
 
 end L4.RearTrace
 
-#print axioms L4.RearTrace.unready_initiator
-#print axioms L4.RearTrace.unready_off_incoming
-#print axioms L4.RearTrace.clock_oneStep
-#print axioms L4.RearTrace.count_refills

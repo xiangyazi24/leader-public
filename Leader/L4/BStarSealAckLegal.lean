@@ -130,6 +130,4 @@ theorem first_door_launches_bit (x : X) (i : Fin n) (wait : List (Fin n)) (door 
     congrArg (fun v : (Token × BitVec 2) × BitVec 9 => v.1.1) L
   rwa [op] at out
 
-#print axioms actual_seal_ack_allows_bit
-#print axioms first_door_launches_bit
 end L4.BStarSealAckLegal

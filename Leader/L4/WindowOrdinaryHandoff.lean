@@ -88,9 +88,6 @@ theorem edge_handoff {p c n} {x : Config p c n} {g}
       have hmem : a∈P.cert := (WindowNamedFront.death_inv F.ledger g P.cert P.target e a pos hr).2.2.1
       exact .inr (.inr ⟨K.val.entry hn,rfl,by change K.val.victim∈P.cert; rw [K.property.1]; exact hmem⟩)
 
-#print axioms extend_length
-#print axioms edge_handoff
-
 /-- Inspect exactly the first terminal mark of an ordinary timed slot.
 The handoff refers to the actual joined cursor on the consumed word;
 no assertion is made about a later padded endpoint. -/
@@ -137,5 +134,4 @@ theorem word_handoff {p c n} {x : Config p c n} {g}
       rw [←hC]
       exact edge_handoff hp hc hn L R hM e nonkeep
 
-#print axioms word_handoff
 end L4.WindowOrdinaryHandoff

@@ -236,7 +236,6 @@ theorem afterForward_bound (z : WindowA0ForwardSweep.State p c n) :
     · exact Nat.zero_le _
     · exact Nat.le_refl _
 
-
 theorem reserve_next (hn : 4≤n) (z : State p c n) (e : Fin n)
     (h : Good initial S J H z) (hLive : ¬ready z) :
     reserve H (next S z e)+(if e=nominate z then 1 else 0)≤reserve H z := by
@@ -324,12 +323,6 @@ theorem outcome (z : State p c n) (hz : Good initial S J H z) (h : ready z) :
     · exact .inl hd
   | x _ | reverse _ | forward _ => exact False.elim h
 
-#print axioms projects
-#print axioms good_next
-#print axioms reserve_next
-#print axioms mean
-#print axioms stage
-
 def launchDecision {p c n : Nat} : State p c n → Prop
   | .done _ b => b=true
   | _ => False
@@ -384,5 +377,4 @@ theorem first_launch_iff (z : State p c n) (e : Fin n)
         simp [launchDecision,hF]
   | done z b => exact (hLive trivial).elim
 
-#print axioms first_launch_iff
 end L4.WindowA0CleanupPass

@@ -294,7 +294,4 @@ theorem nominate_noForward {s n : Nat} {h : Fin n→Bool} (C : Chart h)
       omega
     exact ⟨i,I,nominee_mem C i I,for_trail C x i I frozen nf T E⟩
 
-#print axioms rankBytes_eq
-#print axioms rankBytes_le
-#print axioms nominate_noForward
 end L4.ShortNoForwardRank

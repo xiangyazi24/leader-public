@@ -93,6 +93,4 @@ noncomputable def lateSealCommit_actual
       ((charter G r).a+2*(charter G r).L+3) :=
   lateSealCommit_of_seed d hh P G r (fun A u T End _ => late_seed_actual A u T End)
 
-#print axioms lateSealCommit_actual
-#print axioms late_seed_actual
 end L4.ReportFastSplice

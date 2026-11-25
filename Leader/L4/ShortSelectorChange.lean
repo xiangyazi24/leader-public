@@ -51,7 +51,4 @@ theorem selector_change_incoming_guard {s n : Nat} (x : Raw s n) (e i : Fin n)
   · exact H
   · exact False.elim (changed (selector_responder_raw_no_guard x e (Ne.symm N) H))
 
-#print axioms selector_initiator_raw
-#print axioms selector_responder_raw_no_guard
-#print axioms selector_change_incoming_guard
 end L4.ShortSelectorChange

@@ -94,7 +94,6 @@ theorem offset_increment (g : Pair LongGeometry) (j : Nat)
   simp only [body,Bool.false_eq_true,if_false,old]
   omega
 
-
 /-- A sector chart records saturation and the true current/successor
 END positions; it does not infer them from stale packed scratch. -/
 structure DigitAt (g : LongGeometry) (r j : Nat) : Prop where
@@ -160,10 +159,4 @@ theorem joined_end_transfer (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<
   intro H
   exact (joined_offsets k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x).1.trans H
 
-#print axioms joined_cache
-#print axioms joined_offsets
-#print axioms constants_of_chart
-#print axioms joined_offset_increment
-#print axioms joined_offset_reset
-#print axioms joined_end_transfer
 end L4.BStarLongSector

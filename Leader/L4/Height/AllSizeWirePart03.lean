@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart02
+import Leader.L4.Height.AllSizeWirePart02
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section LiteralPublication
 
@@ -168,4 +168,4 @@ theorem exists_publication_action {n m B M : Nat} {hm : 0 < m}
       have hij := hinj (hj.trans hi)
       exact ⟨b, by rw [hij]⟩
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

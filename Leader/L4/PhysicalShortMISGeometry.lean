@@ -75,7 +75,6 @@ theorem short_offset_cover {s n : Nat} (h : Fin n→Bool) (hh : ∃ i,h i=true)
       · exact .inl ⟨f,J,eq⟩
     · exact .inr (raise i (.inr already))
 
-
 theorem short_successor_word {s n : Nat} (h : Fin n→Bool)
     (sep : ∀ e : Fin n,rightNeighbor e≠e)
     (Q : Raw s n→Prop) (closed : ∀ x e,Q x→Q (rawNext s x e))
@@ -123,7 +122,6 @@ theorem short_geometry_three_covers {s n : Nat} (h : Fin n→Bool) (hh : ∃ i,h
     omega
   exact (Nat.min_eq_right bound).symm.trans L
 
-
 /-- In the actual MIS1 wire decoder, saturated offsets remove every
 spurious body-site admission gate. Header K1 is the only gate. -/
 theorem short_mis_gate_exact {s n : Nat} (h : Fin n→Bool) (hh : ∃ i,h i=true)
@@ -144,8 +142,4 @@ theorem short_mis_gate_exact {s n : Nat} (h : Fin n→Bool) (hh : ∃ i,h i=true
     rw [same i,H]
     simp [MISByteCodec.atGate,MISByteCodec.off]
 
-#print axioms short_mis_gate_exact
-#print axioms short_geometry_three_covers
-#print axioms short_offset_mark
-#print axioms short_offset_cover
 end L4.PhysicalCustody

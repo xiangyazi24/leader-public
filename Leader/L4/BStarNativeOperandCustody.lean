@@ -81,6 +81,4 @@ theorem at_launch {base initial : X} {hh : ∃ i,oldH6 B base i=true}
   rw [BStarResetSchedule.run_append,←BStarResetSchedule.run_append step initial pre mid] at hold
   exact hold.trans known
 
-#print axioms at_launch
-#print axioms retain_word
 end L4.BStarNativeOperandCustody

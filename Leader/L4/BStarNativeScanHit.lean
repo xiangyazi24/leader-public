@@ -205,5 +205,4 @@ theorem actual_initialized_hit_scan {base x : X} {hh : ∃ i,oldH6 B base i=true
       exact ⟨fun b F => keep.trans ((oldScalar j less).1 b (W.symm ▸ F)),
         fun C => by simpa only [CmpRep,W,keep] using (oldScalar j less).2 C⟩
 
-#print axioms actual_initialized_hit_scan
 end L4.BStarNativeScanHit

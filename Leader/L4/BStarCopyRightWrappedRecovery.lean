@@ -142,5 +142,4 @@ theorem recovered_right_ack_canonical {base origin preOrigin : X} {hh : ∃ i,ol
   rw [newWhole]
   exact res
 
-#print axioms recovered_right_ack_canonical
 end L4.BStarCopyRightWrappedRecovery

@@ -100,11 +100,6 @@ theorem four_head_budget (n a b c j w : Nat)
           _ = n*(4*10)*(a+b+c+1) := by ac_rfl
           _ = _ := by rw [Nat.mul_comm n (4*10)]
 
-#print axioms short_real_step
-#print axioms compare_short_mark
-#print axioms four_head_budget
-
-
 open SevenTagCharge in
 private theorem ordinary_newGhost_after_pay {p c n d : Nat} (hn : 4≤n)
     (x : Config p c n) (v : Fin n)
@@ -141,7 +136,6 @@ private theorem ordinary_newGhost_after_pay {p c n d : Nat} (hn : 4≤n)
   change (step x e w).leader=false
   have hr' : w ≠ rightNeighbor e := hr
   simpa [step,he,hr'] using hW
-
 
 open SevenTagCharge in
 theorem ordinary_follow_of_keep {p c n d : Nat} {z0 : Config p c n} (hn : 4≤n)
@@ -237,9 +231,6 @@ theorem ordinary_follow_of_keep {p c n d : Nat} {z0 : Config p c n} (hn : 4≤n)
           simp [slotsStep,hp,SevenTagCharge.move,Ne.symm he,hr,hs]
       · simp [SevenTagCharge.advance,slotsStep,hp,hs]
 
-
-#print axioms ordinary_follow_of_keep
-
 open SevenTagCharge WindowLocal in
 /-- At the quiet entrance every live impact has a nearest living
 shooter, including same-mark N0. A living W immediately after a
@@ -265,8 +256,6 @@ theorem living_after_ghost_stays {p c n d : Nat} (hn : 4≤n)
   rw [←hh.1,hg] at hLiving
   cases hLiving
 
-#print axioms living_after_ghost_stays
-
 open GGTiming RankRenewal in
 /-- Transfer the short-line dependency clock to an arbitrary actual
 observer. The wordwise premise is only required if the actual trial
@@ -287,8 +276,6 @@ theorem short_clock_of_shadow {α β : Type} {n m P : Nat} (hn : 0<n)
   intro h
   have hs := QueueDAG.outletPaths_complete rule keep b hb P w hw
   exact Nat.not_lt_of_ge hs (hcap w h)
-
-#print axioms short_clock_of_shadow
 
 private theorem native_fields {p c : Nat} (u z : Site p c) :
     (native u z).1.stock = u.stock ∧ (native u z).1.leader = u.leader ∧
@@ -352,5 +339,4 @@ theorem paid_nonliving_stock_charge {p c : Nat} (u v : Site p c)
   simp [RearFrontStock.stockBit,hs,hl,hr]
   omega
 
-#print axioms paid_nonliving_stock_charge
 end L4.WindowScopedFourHead

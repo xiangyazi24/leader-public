@@ -65,5 +65,4 @@ theorem view_input_after_clock {r : Nat} (hr : 3≤r) (T : PrimTable r)
   simp only [runCodes_append] at K ⊢
   exact view_input_of_clock_stage T bank _ clockCodes (load_spec hr T bank hT) K
 
-#print axioms view_input_after_clock
 end L4.Compiler.Native

@@ -119,6 +119,4 @@ theorem read_sample_side_lease (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
   rw [←Lane] at Seed
   exact ⟨u,v,r,Split0,Old,Win,Post,Lane ▸ Seed.trans Index⟩
 
-#print axioms seeded_reader_bank
-#print axioms read_sample_side_lease
 end L4.ReportIndexedSideLease

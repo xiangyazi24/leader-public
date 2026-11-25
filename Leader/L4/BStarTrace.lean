@@ -183,13 +183,6 @@ def bundle (a : LargeParams) (ha : a.alu=manifest)
     longScratch := longScratch
     shared := pub }
 
-#print axioms lower_apply
-#print axioms Trace.mask_iff
-#print axioms longScratch_values
-#print axioms longScratch_mask
-#print axioms longScratch_holds
-#print axioms bundle
-
 structure ScratchView where
   successorHeader : Bool
   successorEnd : Bool
@@ -264,5 +257,4 @@ theorem long_scratch : Transfer readScratch longScratch refreshScratch := by
     sameR 2363 (by decide),sameR 2362 (by decide)]
   simp only [offsetL,offL]
 
-#print axioms long_scratch
 end L4.BStarTrace

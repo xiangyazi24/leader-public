@@ -374,7 +374,6 @@ theorem both_mark
   exact same_emitted _ _ e (left_mark hp chart sep layout noRes LF e)
     (right_mark hp chart sep layout noRes RF dp (right_tail_from_flags hp RF flags notShort) e) dom
 
-
 open DirtyLeastForward DirtyFencePrep BStarClearanceIndexedWait
 open BStarClearanceIndexedSum (distance)
 open BStarClearanceCommandFrame (forwardCount)
@@ -441,8 +440,4 @@ theorem both_marks_along
   exact both_marks hp chart sep layout
     (owner_reservation_free_of_cutoff hp chart layout cutoff onPrep live) LF RF dp flags notShort e
 
-#print axioms both_marks
-#print axioms both_mark
-#print axioms owner_reservation_free_of_cutoff
-#print axioms both_marks_along
 end L4.DirtyFenceShadow

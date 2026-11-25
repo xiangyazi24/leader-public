@@ -70,8 +70,6 @@ theorem incoming_frame {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [A] at T
   exact ⟨body,by change bind _ _ (atSite (x e).long 1)=.trail; rw [T]; rfl⟩
 
-#print axioms chart_advance_incoming
-#print axioms incoming_frame
 /-- One actual mark of a Current generated gate. The old payload is read at
 the actual chart address. For the incoming side no extra trail or header
 hypothesis is needed; these follow from the generated prefix. -/
@@ -129,5 +127,4 @@ theorem physical_mark_of_current {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · rintro ⟨L,R⟩
     rw [if_neg L,if_neg R]
 
-#print axioms physical_mark_of_current
 end L4.BStarGateIncoming

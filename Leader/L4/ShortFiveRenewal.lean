@@ -101,7 +101,4 @@ theorem terminal_failure_of_potential {Y : Type} {n : Nat}
         _ ≤ n^t*(n*V y) := Nat.mul_le_mul_left _ (drift y hy d)
         _ = _ := by rw [Nat.pow_succ]; ac_rfl
 
-#print axioms terminal_failure_of_potential
-#print axioms failure_through_regeneration
-#print axioms expected
 end L4.ShortFiveRenewal

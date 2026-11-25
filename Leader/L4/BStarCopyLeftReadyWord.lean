@@ -190,7 +190,4 @@ theorem left_data_word {Tag : Type} (digits : Tag→BitVec 36) {base x : X} {hh 
   exact data_word hp digits (play x (w9++ack::bridge)) data bAddr seam width sep plan size s label P old matched
     (left_ready_word hp chart sep w9 bridge data ack endMode G9 event accepted hist valid late bAddr seam width strip root)
 
-#print axioms left_data_word
-#print axioms all_owner
-#print axioms left_ready_word
 end L4.BStarCopyLeftReadyWord

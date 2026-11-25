@@ -104,7 +104,4 @@ theorem two_owner_passes_quadratic {s n : Nat} {z : Raw s n}
   have pack := Nat.mul_le_mul_left (2*K*n) g.packed
   simpa only [Nat.pow_two, Nat.mul_assoc, Nat.mul_left_comm, Nat.mul_comm] using pack
 
-#print axioms owner_pass_mean
-#print axioms two_owner_passes_mean
-#print axioms two_owner_passes_quadratic
 end L4.PhysicalCustody

@@ -185,9 +185,4 @@ theorem entry_block_mean_of_cut {p c n s : Nat} (hn : 4≤n)
       rw [show (768 : Nat) = 2*4*3*16*2 by decide]
       ac_rfl
 
-#print axioms state_block_mean
-#print axioms entry_block_mean_of_cut
-#print axioms word_cost_le
-#print axioms mean_at_prefix
-#print axioms entry_mean_of_cut
 end L4.WindowA0Bridge

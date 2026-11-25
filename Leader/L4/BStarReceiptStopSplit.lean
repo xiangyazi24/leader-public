@@ -51,5 +51,4 @@ theorem at_stop {n : Nat}
       simp only [List.length_append] at L
       omega
 
-#print axioms at_stop
 end L4.BStarReceiptStopSplit

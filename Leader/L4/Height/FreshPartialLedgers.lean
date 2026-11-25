@@ -191,7 +191,6 @@ open BStarResetSchedule BStarSeparatingRail BStarResetMarkAdapter BStarSeparator
 open BStarAcquireHistorySample BStarAcquireForwardTrace BStarOwnerControlHistory
 open BStarCopyRightWrappedGeometry BStarCopyRightWrappedSweep BStarCopyRightWrappedRelease
 
-
 /-- Observe the original wrapped-right INJECT at any literal prefix.
 Its pending source suffix is the one associated to the actual cursor. -/
 theorem right_prefixes {Tag : Type} (digits : Tag→BitVec 36) (atSource : Nat→Tag)
@@ -892,10 +891,4 @@ theorem clean_from_issue {base origin : X} {hh : ∃ i,oldH6 B base i=true}
 
 end Issue
 
-#print axioms left_prefixes
-#print axioms right_prefixes
-#print axioms left_from_issue
-#print axioms right_from_issue
-#print axioms prepared_prefixes_from_issue
-#print axioms clean_from_issue
 end L4.Height.FreshPartialLedgers

@@ -35,6 +35,4 @@ theorem healthy_hop_opcode (d : Sheet) (C : Chart h) (x : Raw s n)
   exact rank_healthy_hop_opcode (params d s) (h (out C i)) (h (rightNeighbor (out C i)))
     (bytesL d x (out C i)) (bytesR d x (out C i)) _ _ (internal_dest C i I) R _ H
 
-#print axioms write_hop
-#print axioms healthy_hop_opcode
 end L4.ReportOwnerWriteTransport

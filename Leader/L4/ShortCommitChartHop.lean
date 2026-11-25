@@ -135,8 +135,6 @@ theorem terminal_turn {s n : Nat} {h : Fin n → Bool} (C : Chart h) (x : Raw s 
   | pending => exact ShortCommitFlightRaw.canonical_terminal_raw x e sep _ dst d false D wire
   | applied => exact ShortCommitFlightRaw.canonical_terminal_raw x e sep _ dst d true D wire
 
-#print axioms live_hop
-#print axioms terminal_turn
 -- CHECK: ShortCommitChartHop.lean:50; original opens and options unchanged.
 theorem live_hop_fixed {s n : Nat} {h : Fin n → Bool} (x : Raw s n)
     (C : Chart h) (N : 9<n) (heads : ∀ q, header x q=h q)
@@ -212,5 +210,4 @@ theorem live_hop_fixed {s n : Nat} {h : Fin n → Bool} (x : Raw s n)
       have F := ShortCommitFlightRaw.canonical_relay_raw x e sep j k L nc d true D W
       simpa [advance,same,packet] using And.intro F.1 F.2.1
 
-#print axioms live_hop_fixed
 end L4.ShortCommitChartHop

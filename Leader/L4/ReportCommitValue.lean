@@ -40,6 +40,4 @@ theorem descriptor_fields (old radius left right : Nat) (O : old≤1) :
   rcases (show old=0 ∨ old=1 by omega) with H|H <;> rw [H] <;>
     by_cases L : left<radius <;> by_cases R : right<radius <;> simp [L,R]
 
-#print axioms value_of_preserved_digits
-#print axioms descriptor_fields
 end L4.ReportCommitValue

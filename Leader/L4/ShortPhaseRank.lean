@@ -168,7 +168,4 @@ theorem chart_nominate {s n : Nat} {h : Fin n→Bool} (C : Chart h) (N : 5≤n)
   · obtain ⟨e,E,U,R⟩ := held op O W F
     exact ⟨e,E,chartRank_rail_drop C M rail _ _ (debt_nondoor C x e op H W U) R⟩
 
-#print axioms pc_fields
-#print axioms phase_choice
-#print axioms chart_nominate
 end L4.ShortPhaseRank

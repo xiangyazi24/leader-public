@@ -95,6 +95,4 @@ theorem final_to_issue (x : X) (e : Fin n) (sep : e≠rightNeighbor e) (f : Payl
   rw [stage_packet wx arg args (show forward stageOp arg=.forward p from rfl),M,K]
   exact decode_final _ h
 
-#print axioms final_arrival
-#print axioms final_to_issue
 end L4.BStarStageIssuedHistory

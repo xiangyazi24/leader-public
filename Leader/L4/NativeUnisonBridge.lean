@@ -210,6 +210,4 @@ theorem decode_publication {m : Nat} (R : Ring m) (r : Nat) (hr : 0<r)
   rw [E]
   exact raw_decode_step R _ (modulus_twice r hr).2 before e range
 
-#print axioms decode_publication
-#print axioms native_biased
 end L4.NativeUnisonBridge

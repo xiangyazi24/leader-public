@@ -127,6 +127,4 @@ theorem accepted_right {Tag : Type} (digits : Tag→BitVec 36)
   obtain ⟨F,read,V,Z⟩ := saturate_right digits (play x cut) root width plan size hw Q L accept
   exact ⟨pre,gap,back,mark,turn,t,post,E,F,read,L,M,V,Z⟩
 
-#print axioms saturate_right
-#print axioms accepted_right
 end L4.BStarCopyRightFence

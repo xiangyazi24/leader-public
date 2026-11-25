@@ -48,6 +48,4 @@ theorem nondegenerate_of_bounded_width {Site : Type} {n U : Nat} (r : Ring Site)
   noTwo i := (no_return_in_three r.right physical width go positive bounded large i).2.1
   noThree i := (no_return_in_three r.right physical width go positive bounded large i).2.2
 
-#print axioms no_return_in_three
-#print axioms nondegenerate_of_bounded_width
 end L4.SelectedNORPhysicalPeriod

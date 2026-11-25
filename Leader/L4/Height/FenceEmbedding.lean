@@ -311,9 +311,6 @@ theorem right_balance {x : X} {base : Fin n} {seam width : Nat}
         simpa only [rightStock,isRS,site,L,h] using H.trans A
       · exact comparison_off_pair hp x e _ u _ (Ne.symm he) other
 
-#print axioms left_balance
-#print axioms right_balance
-
 open BStarH6Ordinal BStarAcquireVisitOrder BStarAcquireAnchors BStarAcquireLiteralChain BStarResetChartTouch
 
 private theorem strip_length {x : X} {hh : ∃ i,oldH6 B x i=true}
@@ -375,9 +372,4 @@ theorem two_strips {base : X} {hh : ∃ i,oldH6 B base i=true}
   rw [same] at R
   exact ⟨u,v,L,R,join,strip_length hp L low high,strip_length hp R low high⟩
 
-#print axioms two_strips
-#print axioms paired_updates
-#print axioms strip_bond
-#print axioms strip_ends
-#print axioms open_sources
 end L4.Height.FenceEmbedding

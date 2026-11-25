@@ -123,8 +123,4 @@ theorem first_exit {p c n H} (hn : 4≤n) (hQ : 0<2*c) {J : Fin n} {x₀ : Confi
   · exact .inl done
   · exact .inr ⟨k,d',hk,ho,hg,ha,hp⟩
 
-#print axioms mean
-#print axioms failure
-#print axioms first_contact_not_done
-#print axioms first_exit
 end L4.WindowA0ReturnCheck

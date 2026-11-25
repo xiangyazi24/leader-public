@@ -259,8 +259,4 @@ theorem door_envelope {p c} (u v : Site p c) (q : Trip (2*c))
   simp only [hs,ht,door_wait_trail,Bool.false_eq_true,if_false] at h
   exact ⟨h.1,h.2.2⟩
 
-#print axioms actual_interior_pair
-#print axioms cold_donor_stays_cold
-#print axioms event_kernel
-
 end L4.WindowA0ReturnMonitor

@@ -109,6 +109,5 @@ theorem production_itinerary {x : Raw s n} {g : CustodyWitness x} (P : Productio
       tour busy visits ack (endEq ▸ E)
   exact ⟨pre,launch,out,turn,ret,ps,vs,by rw [W,tape],trueIssue,trace,wins,once,endEq.symm ▸ receipt⟩
 
-#print axioms production_itinerary
 end L4.Height.FreshAcquireReceipt
 

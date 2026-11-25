@@ -98,13 +98,4 @@ theorem unstocked_nonleader_pair {p c : Nat} (u v : Site p c)
   cases h1 : (pairStep u v).1.stock <;> cases h2 : (pairStep u v).2.stock <;>
     simp_all [RearFrontStock.stockBit]
 
-#print axioms unstocked_nonleader_pair
-#print axioms paid_adjacent_releases
-#print axioms marked_paid_empty
-#print axioms pinned_turn_new_source
-#print axioms return_release_empty_or_trail
-#print axioms return_lost_at_break
-#print axioms dirty_release_counter
-#print axioms paid_already_top_counter
-
 end L4.WindowA0Rows

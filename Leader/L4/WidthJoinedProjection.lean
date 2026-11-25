@@ -121,8 +121,4 @@ theorem raw_incoming_begin {s n : Nat} (x : Raw s n) (e : Fin n) (sep : e≠righ
   exact (congrArg decode (WidthOwnerController.incoming_issue_begin_wire (c:=s+11)
     (radWidth s) hu u.widthClient v.widthClient P O)).trans (by decide)
 
-#print axioms pair_bit
-#print axioms pair_packet
-#print axioms pair_phase
-#print axioms raw_incoming_begin
 end L4.WidthJoinedProjection

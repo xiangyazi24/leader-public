@@ -101,5 +101,3 @@ theorem paid_starts_fresh_epoch {p c n : Nat} (hn : 4≤n) (v e : Fin n)
 
 end L4.FreshEpochEntry
 
-#print axioms L4.FreshEpochEntry.kill_starts_fresh_epoch
-#print axioms L4.FreshEpochEntry.paid_starts_fresh_epoch

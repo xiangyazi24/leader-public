@@ -216,6 +216,4 @@ theorem expected_of_rank_trial_certificate (rank : α → Nat)
     (Nat.le_trans (expected_of_fixed_rank_trials rank mono B D hB hD trial x t)
       (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left _ hM)))
 
-#print axioms expected_of_fixed_rank_trials
-#print axioms expected_of_rank_trial_certificate
 end L4.RankRenewal

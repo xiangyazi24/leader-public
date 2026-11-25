@@ -151,8 +151,4 @@ theorem hop_decreases {a : LargeParams} {n : Nat} (b : LargeRows a)
       simp [F] at orient
       simp [distance,F,orient.1,orient.2,site,O]
 
-#print axioms hop_decreases
-#print axioms service_ports
-#print axioms terminal_case
-#print axioms reserved_hop_owner
 end L4.BStarClearanceDataChart

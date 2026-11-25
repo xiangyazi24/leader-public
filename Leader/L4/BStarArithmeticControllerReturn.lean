@@ -106,5 +106,4 @@ theorem joined_arithmetic_control (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (h
         change control ((acceptFile raw.2 op f).apply y.2) = _
         exact accept_control raw.2 y.2 op f))
 
-#print axioms joined_arithmetic_control
 end L4.BStarArithmeticControllerReturn

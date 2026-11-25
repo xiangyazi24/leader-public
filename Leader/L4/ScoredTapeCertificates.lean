@@ -104,7 +104,4 @@ noncomputable def race {n : Nat} (hn : 4≤n) (P : Word n→Prop) (d : Fin n)
         obtain ⟨H,E⟩ := exact_of_validFirst_accept P d k hk pre v V
         exact ⟨pre,v,rfl,H.1,E⟩
 
-#print axioms Certificate.bind
-#print axioms Certificate.idle
-#print axioms race
 end L4.ScoredTapeCertificates

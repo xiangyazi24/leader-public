@@ -86,5 +86,4 @@ theorem n5_identity_intent :
       (patch.1.mask.getLsbD (4+q 12))=true ∧
       (patch.1.mask.getLsbD (7+q 12))=false := by decide
 
-#print axioms n5_identity_intent
 end L4.BStarPublic

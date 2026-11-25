@@ -113,6 +113,4 @@ theorem aligned_offset {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [axis]
   exact (eff_eq hp d.old fixed d.mark).trans hi
 
-#print axioms clocked_sound
-#print axioms aligned_offset
 end L4.BStarNativeOffsetTrace

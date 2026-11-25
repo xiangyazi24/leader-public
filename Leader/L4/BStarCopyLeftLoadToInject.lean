@@ -164,5 +164,4 @@ theorem original_to_inject {base origin : X} {hh : ∃ i,oldH6 B base i=true}
   have result := F10.trans (F9.trans (F8.trans orig))
   exact ⟨pre,post,launch,bank,L,D,bidx,result⟩
 
-#print axioms original_to_inject
 end L4.BStarCopyLeftLoadToInject

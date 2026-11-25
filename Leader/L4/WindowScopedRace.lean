@@ -493,7 +493,6 @@ theorem reserve_mean (C : Context initial group cert v a b) (hA : 2*(b+1)<a+1)
     have H := reserve_step C hA (fold w) e hk.1 hk.2.1 hk.2.2 hd
     simpa only [fold,GGTiming.runMarks_append,GGTiming.runMarks] using H
 
-
 abbrev Cursor (p c n : Nat) := Ledger p c n × Bool
 
 def cursorNext (group cert : List (Fin n)) (x : Cursor p c n) (e : Fin n) :
@@ -592,11 +591,4 @@ theorem success_sound_step (x : State p c n) (e : Fin n)
         split at hm <;> contradiction
     · simp [next,hS]
 
-#print axioms project_step
-#print axioms seal_keep
-#print axioms live_no_impact
-#print axioms mode_shape_step
-#print axioms stage_mean
-#print axioms attempt_of_failure_mass
-#print axioms success_sound_step
 end L4.WindowScopedRace

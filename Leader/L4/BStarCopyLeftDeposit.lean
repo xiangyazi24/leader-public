@@ -218,10 +218,4 @@ theorem parallel_prefix {Tag : Type} {plan : List Tag} {s : Ledger Tag}
   have credit := BStarCopyUpstreamTags.old_head_credit head up P
   exact .mark (.mark P (.cross s up head vacant credit)) (.issue _ up fresh todo pending)
 
-#print axioms upstream_of_deposition
-#print axioms seam_parallel
-#print axioms parallel_prefix
-#print axioms all_behind_unvisited
-#print axioms append_at_cut
-#print axioms deposit_at_cut
 end L4.BStarCopyLeftDeposit

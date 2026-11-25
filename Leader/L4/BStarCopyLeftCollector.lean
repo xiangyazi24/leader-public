@@ -214,8 +214,6 @@ theorem mark_cross_actual {T : Type} (digits : T→BitVec 36) (tag : T)
     rw [full,clearLast,if_neg eq]
     exact M j J
 
-#print axioms mark_cross_actual
-
 /-- Fold the per-mark exact projection across the original raw word.
 The missing scheduler-side obligation is producing this witness on
 every reachable mark, not the ordered ghost induction. -/
@@ -235,8 +233,4 @@ theorem fold {T : Type} (digits : T→BitVec 36) (plan : List T)
     obtain ⟨t,v,J,R'⟩ := project x e s q R M P
     exact ih (step x e) t v R' J.physical (lift_delta P J.bookkeeping)
 
-#print axioms mark_hold_actual
-#print axioms mark_hop
-#print axioms mark_parallel
-#print axioms fold
 end L4.BStarCopyLeftCollector

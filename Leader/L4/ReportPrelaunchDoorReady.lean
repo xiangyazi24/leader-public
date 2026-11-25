@@ -24,5 +24,4 @@ theorem receipt_mean
     (cached_fibre d N hh Q F).mask
   exact ReportPrelaunchDoorClock.receipt_mean_with_gap_cap d C N hh G Q F R x
 
-#print axioms receipt_mean
 end L4.ReportPrelaunchDoorReady

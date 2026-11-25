@@ -48,7 +48,6 @@ theorem resolve_choice {n : Nat} (reserve : Key n→Option Bool) (lo cut hi : Na
     have bit := agree i b (by rw [←E]; exact firstRaw_append_some obs k history lead tail b reveal)
     simp [bit]
 
-#print axioms resolve_choice
 open AllSizeProtocol BStarTrace BStarLongWork BStarLongClaims BStarLongFixedRouting
 open BStarH6WordChart BStarAcquireAnchors BStarCustodyCuts BStarGrantWriterHistory
 open BStarNativePortGeometry BStarNativePointwise BStarNativeNeedLift BStarH6Ordinal
@@ -148,5 +147,4 @@ theorem cube_activation {base initial : X} (u v past lead : List (Fin n))
       subst center
       exact E.trans (activate_agrees hh before i _ bit (fun no=> (N no).elim))
 
-#print axioms cube_activation
 end L4.BStarWarmupReceiptChoice

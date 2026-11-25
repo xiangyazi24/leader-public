@@ -93,7 +93,6 @@ private theorem cover_ordinary_fields {p c1 n : Nat} {x : Config p c1 n} (hc : M
       have hg := hc e (Or.inr hh)
       simp_all
 
-
 private theorem open_noPay {p c1 n : Nat} {x : Config p c1 n} (hc : MCOV x)
     (e : Fin n) (hm : (x e).mark = false) :
     geometricPay (x e) (x (rightNeighbor e)) = false := by
@@ -241,7 +240,6 @@ theorem freshArc_transfer {p c1 n d : Nat} (hn : 4 ≤ n) {x : Config p c1 n}
           · omega
         rw [row_other x e _ ha hh]; exact h.signals j hJ
 
-
 /-- N1 with signal TWO starts a zero-length arc, at the responding
 living leader itself. -/
 theorem freshArc_newN1 {p c1 n : Nat} (hn : 4 ≤ n) (x : Config p c1 n) (e : Fin n)
@@ -301,7 +299,6 @@ private theorem freshArc_of_rootPeacefulAt {p c1 n : Nat} {x : Config p c1 n} {b
   exact ⟨rightNeighbor i,d,⟨h.1,h.2.2.1,h.2.2.2.1,h.2.2.2.2.2.1,h.2.2.2.2.2.2⟩,
     h.2.2.2.2.1⟩
 
-
 /-- The physical tag observer preserves the particular origin witness of
 an existing fresh survivor. Only its offset can increase, by exactly one
 when the current carrier is the selected donor. -/
@@ -320,11 +317,6 @@ theorem freshArc_of_survival {p c1 n d : Nat} (hn : 4 ≤ n)
       (TaggedTrace.carrierStep_not_selected_stays x e _ b (Ne.symm he) hs).symm⟩
 
 end L4
-
-#print axioms L4.rootPeacefulAt_of_freshArc
-#print axioms L4.freshArc_stationary
-#print axioms L4.freshArc_transfer
-#print axioms L4.freshArc_of_survival
 
 namespace L4
 
@@ -537,7 +529,3 @@ theorem freshPeaceAfterExtinction_literal : FreshPeaceAfterExtinction :=
 
 end L4
 
-#print axioms L4.pair_left_not_live
-#print axioms L4.pair_right_live_cases
-#print axioms L4.freshMaskStep_literal
-#print axioms L4.freshPeaceAfterExtinction_literal

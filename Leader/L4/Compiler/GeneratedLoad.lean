@@ -168,5 +168,4 @@ theorem generated_load (r : Nat) (hr : 3≤r) (bank : Bank) :
     LoadFacts r bank (runCodes (PrimInstance.table r hr bank) bank [] loadCodes) :=
   load_spec hr _ bank (PrimInstance.semantics r hr bank)
 
-#print axioms generated_load
 end L4.Compiler.Native

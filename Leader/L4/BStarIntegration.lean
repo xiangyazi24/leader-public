@@ -25,5 +25,4 @@ theorem production_ports (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
       b.longScratch=longScratch ∧ b.shared.ordinaryPublic=BStarPublic.publicWork hp :=
   ⟨rfl,rfl,rfl,rfl,rfl,rfl,rfl⟩
 
-#print axioms production_ports
 end L4.BStarIntegration

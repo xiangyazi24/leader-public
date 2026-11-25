@@ -158,5 +158,4 @@ theorem clock_eq (p : Params) (P : 0<p.streak) (x : BitVec p.w) (b h : Bool) :
   · have N : effective p.streak k+1<2^w := by omega
     simp [A,widen_comp,rf,kf,holdr,erase _ N]
 
-#print axioms clock_eq
 end L4.ReportPulseDecode

@@ -67,5 +67,4 @@ theorem lift_quarter {M K : Nat} (f : Fin M→Fin K) (inj : Function.Injective f
     _ ≤ 2^M*2^D := Nat.mul_le_mul_right _ q
     _ = 2^K := by rw [←Nat.pow_add,cardinal]
 
-#print axioms lift_quarter
 end L4.BStarCubePadding

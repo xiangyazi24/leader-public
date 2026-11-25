@@ -319,5 +319,4 @@ theorem packed_left_of_attempt_authenticated {base global origin : X} {hh : ∃ 
   · rw [wire,finalTape]
     exact fin
 
-#print axioms packed_left_of_attempt_authenticated
 end L4.BStarCopyLeftAttemptAuthenticated

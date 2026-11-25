@@ -280,12 +280,4 @@ theorem healthy_post_parts {s n : Nat} {base x : Raw s n}
   · rw [←w₀cut,←w₁cut]
     exact A₂.1
 
-#print axioms healthy_post_parts
-#print axioms paid0_of_race
-#print axioms paid1_of_race
-#print axioms paid2_of_race
-#print axioms certificate_from_issue0
-#print axioms paid0_at_exact_cut
-#print axioms paid1_at_exact_cut
-#print axioms paid2_at_exact_cut
 end L4.PhysicalHealthyCertificate

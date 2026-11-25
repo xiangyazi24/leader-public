@@ -123,7 +123,4 @@ theorem censored_bad_bond_trial {n : Nat} (p : Fin 5 → Fin n)
     rw [L4.BStarResetSchedule.run_append]
     exact no_bad_bond_later _ _ sep sepTwo (authenticated_run u sep sepTwo auth) H v
 
-#print axioms censored_bad_bond_trial
-#print axioms censored_replay
-#print axioms no_bad_bond_later
 end L4.PhysicalCustody.H1

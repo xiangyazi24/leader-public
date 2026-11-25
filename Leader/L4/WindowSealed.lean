@@ -132,8 +132,6 @@ theorem certified_tick_keep {p c n d : Nat} (hn : 4 ≤ n)
   · rw [hSec.terminal_site]
     exact hSec'.right_live.2
 
-#print axioms certified_tick_keep
-
 open SevenTagCharge WindowLocal in
 /-- Two adjacent sealed sectors consume the same literal old mark.
 Allows the closing endpoint to equal the first (rank two). -/
@@ -153,5 +151,4 @@ theorem certified_twin_tick_keep {p c n a b : Nat} (hn : 4 ≤ n)
   ⟨certified_tick_keep hn x z group cert target e l m s t ha hValid hSubset hl hm left hKeep lp hL,
     certified_tick_keep hn x z group cert target e m r t u hb hValid hSubset hm hr right hKeep rp hR⟩
 
-#print axioms certified_twin_tick_keep
 end L4.WindowSealed

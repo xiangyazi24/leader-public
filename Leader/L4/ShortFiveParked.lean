@@ -125,7 +125,4 @@ theorem centred_five_parked_uniform {s n : Nat} (N : 21<n) (x : Raw s n) (A : H2
     exact ShortLeastForward.nominate_forward (cs i) n5 y Y Heads g P L G none
   exact ⟨cs,mid,distinct,small,fun y Y=>fixed_five_parked_expected n5 cs small nom order y Y⟩
 
-#print axioms advance_released
-#print axioms fixed_five_parked_expected
-#print axioms centred_five_parked_uniform
 end L4.ShortFiveParked

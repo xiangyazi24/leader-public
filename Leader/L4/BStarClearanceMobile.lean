@@ -76,7 +76,6 @@ private theorem fold_away (A : List (At Sheet × Leaf)) (old : At Sheet → Lane
     rw [List.foldl_cons,ih (update old a) (fun a h => away a (List.mem_cons_of_mem _ h))]
     simp [update,ne]
 
-
 private theorem fold_at' (s : At Sheet) (A : List Leaf) (old : At Sheet → Lane) :
     ((A.map (s,·)).foldl update old) s=typedLeaves (old s) A := by
   induction A generalizing old with
@@ -137,10 +136,4 @@ theorem fence_hold_reservations (g : Pair LongGeometry) (x : Pair (BitVec LW))
     reserved (preparedBy g x (l++r)) := by
   simp [preparedBy,List.flatMap_append,checkOffer,h]
 
-#print axioms vacant_hop_charge
-#print axioms closed_hop_charge
-#print axioms fence_hold_no_offer
-#print axioms terminal_exact
-#print axioms terminal_charge
-#print axioms fence_hold_reservations
 end L4.BStarClearanceMobile

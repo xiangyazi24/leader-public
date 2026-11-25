@@ -583,11 +583,6 @@ theorem rowCases (sheet : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     exact nondoor_trail sheet C hh B F N x X NF ND i I T NT
   empty := D.empty
 
-#print axioms nondoor_casesAt
-#print axioms nondoor_front
-#print axioms nondoor_reply
-#print axioms nondoor_trail
-#print axioms rowCases
 end L4.ReportPrelaunchK1
 namespace L4.ReportPrelaunchK1
 open AllSizeProtocol PhysicalCustody ReportResetRawHooks
@@ -644,7 +639,5 @@ theorem frontLabel_frame (d : Sheet) (C : Chart h) (x y : Raw s n) (k : Nat)
   classical
   simp only [frontLabel,T,A]
 
-#print axioms frontLabel_paid
-#print axioms frontLabel_frame
 end L4.ReportPrelaunchK1
 

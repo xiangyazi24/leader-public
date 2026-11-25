@@ -344,7 +344,6 @@ theorem slow_gap_tail {α : Type} {n : Nat} (next : α → Fin n → α)
     _ ≤ (2*n)^T := by rw [Nat.mul_assoc]; exact hQ
     _ = _ := Nat.mul_pow ..
 
-
 /-- Sum contributions of distinct positive gap lengths, filling absent
 lengths by zero. Use one slot per length, not one per monitored leader. -/
 def gapSum (mass : Nat → Nat) (first : Nat) : Nat → Nat
@@ -564,7 +563,6 @@ theorem sharp_slow_gap_tail {α : Type} {n : Nat} (next : α → Fin n → α)
     _ ≤ (2*n)^T := by rw [Nat.mul_assoc]; exact hQ
     _ = _ := Nat.mul_pow ..
 
-
 private theorem sharp_geometric_gap_sum (M : Nat) (mass : Nat → Nat)
     (h : ∀ i, 0<i → 256^i * mass i ≤ M)
     (first k : Nat) (hf : 0<first) :
@@ -660,13 +658,3 @@ theorem endpointSum_le_of_common_words {α β : Type} {n : Nat}
 
 end L4.RankRace
 
-#print axioms L4.RankRace.timer_gap_tail
-#print axioms L4.RankRace.slow_gap_tail
-#print axioms L4.RankRace.quarter_of_distinct_gap_masses
-
-#print axioms L4.RankRace.sharp_timer_gap_tail
-#print axioms L4.RankRace.sharp_slow_gap_tail
-#print axioms L4.RankRace.elevenPerThousand_of_distinct_gap_masses
-
-#print axioms L4.RankRace.paySublist_of_hits
-#print axioms L4.RankRace.endpointSum_le_of_common_words

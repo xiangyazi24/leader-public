@@ -94,8 +94,4 @@ theorem paired_first {base x : X} {hh : ∃ i,oldH6 B base i=true}
     exact marks (other s)
   · cases s <;> rfl
 
-#print axioms paired_twice
-#print axioms paired_first
-#print axioms ready_after_spectators
-#print axioms paired_nonfixed
 end L4.BStarBitPhysicalSwap

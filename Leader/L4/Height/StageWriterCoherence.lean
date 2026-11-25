@@ -118,5 +118,4 @@ theorem stage_coherent {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact (BStarGrantWriterHistory.live_trace hp sep born center
     (BStarLongPublication.readSel (born center).long) word rfl coherent Hold.2.1 Hold.1).2
 
-#print axioms stage_coherent
 end L4.Height.StageWriterCoherence

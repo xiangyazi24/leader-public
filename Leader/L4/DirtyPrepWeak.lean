@@ -160,6 +160,4 @@ theorem weak_held_least
     change debt hp base y u ≤ debt hp base x u
     simp [debt,Y]
 
-#print axioms debt_rank
-#print axioms weak_held_least
 end L4.DirtyPrepWeak

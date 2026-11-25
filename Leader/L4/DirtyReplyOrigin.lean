@@ -160,7 +160,6 @@ theorem pair_reply_origin (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
     change returnCount (readK raw a)=1
     cases T : readK raw a <;> simp_all [returnCount]
 
-#print axioms pair_reply_origin
 open BStarAcquireVisitOrder BStarLongFiberOwner BStarAcquireLiteralChain
 open BStarResetChartTouch BStarLongFixedRouting BStarClearanceOffset BStarResetMarkAdapter
 open BStarClearanceIndexedSum BStarClearanceIndexedWait BStarH6WordChart DirtyLeastForward
@@ -228,7 +227,6 @@ theorem ring_reply_origin {base x : X} {hh : ∃ i,oldH6 B base i=true}
       simp [y,AllSizeS1Geometry.step,show u.1≠e from fun h => cut (.inl h),show u.1≠rightNeighbor e from fun h => cut (.inr h)]
     exact .inl (by simpa only [ringD,Y] using (show ringD y u from D))
 
-#print axioms ring_reply_origin
 open BStarClearanceReplyService BStarClearanceSource BStarAcquireForwardTrace
 
 theorem reply_distance_mem {S : List (Pos n)} (nodup : S.Nodup) {u : Pos n}
@@ -390,6 +388,4 @@ theorem reply_suffix_expected {base x : X} {hh : ∃ i,oldH6 B base i=true}
     obtain ⟨i,hi,_,E⟩ := reply_distance_mem chart.nodup U
     omega
 
-#print axioms reverse_clears_chart_reply
-#print axioms reply_suffix_expected
 end L4.DirtyReplyOrigin

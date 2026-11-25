@@ -60,7 +60,4 @@ theorem pace_excess_mass {n w W : Nat} (hn : 0<n) (hw : 0<w)
     (BStarPaceCount.departure_mass redirect nominate charge
       (fun p => partial_injective (support p)) leOne charged a) pace
 
-#print axioms pace_excess_mass
-#print axioms partial_injective
-#print axioms bit_fiber
 end L4.BStarSteeringSupport

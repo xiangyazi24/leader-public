@@ -107,10 +107,4 @@ theorem mis1_ready_run {s n : Nat} (N : 5≤n) (x : Raw s n)
   refine (funext fun i => ?_).trans Y.2
   exact H1.raw_h1_selected_frozen N y e i Y.1.1
 
-#print axioms exact_stage_cost
-#print axioms stage_closed
-#print axioms stage_mean
-#print axioms add_sheet_stage
-#print axioms next_short_masks
-#print axioms mis1_ready_run
 end L4.ShortLayerStage

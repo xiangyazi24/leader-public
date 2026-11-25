@@ -149,11 +149,4 @@ def timingLayer {p c n : Nat} (S : WindowA0Ledger.Scope n)
     · exact (hn (fail_ready w ⟨h,h'⟩ hp)).elim
   mean _ h := h.symm ▸ word_mean S i z
 
-#print axioms creditLayer
-#print axioms timingLayer
-#print axioms observe_actual
-#print axioms terminalMass_map
-#print axioms physical_mean
-#print axioms word_mean
-#print axioms word_failure
 end L4.WindowA0GapOneWord

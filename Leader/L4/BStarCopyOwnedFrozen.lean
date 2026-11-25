@@ -128,9 +128,6 @@ theorem safe_of_owner_preps (x : X) (e i : Fin n) (sh : Sheet)
   exact ok C f q H Q (own.trans (by simpa only using congrArg (fun z => dataOwner (oldH6 B x) z sh) eq))
     a.claim.op O
 
-#print axioms winner_owner
-#print axioms safe_of_owner_preps
-
 open BStarAcquireRailCoverage BStarResetChartIndex BStarResetRailRing
 
 private theorem own_slot {base x : X} {hh : ∃ i,oldH6 B base i=true}
@@ -208,9 +205,6 @@ theorem safe_returning {base x : X} {hh : ∃ i,oldH6 B base i=true}
   obtain ⟨_,bad,_⟩ := actual_owner_departure hp chart same e C q (.back j) sel H G trivial
   cases bad
 
-#print axioms actual_owner_departure
-#print axioms safe_returning
-
 theorem safe_idle {base x : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
     (chart : Chart hp base hh o S len fall)
@@ -262,9 +256,6 @@ theorem safe_outward {base x : X} {hh : ∃ i,oldH6 B base i=true}
   subst k
   exact safeFront s hs a win lane (src ▸ idx.symm)
 
-#print axioms safe_idle
-#print axioms safe_outward
-
 local notation "play" => BStarResetSchedule.run step
 
 /-- The same-owner exceptional hook needs evidence only at an outward
@@ -308,8 +299,6 @@ theorem generated_frozen_word {base x : X} {hh : ∃ i,oldH6 B base i=true}
       (fun pre tail E => layout (e::pre) tail (congrArg (List.cons e) E))
       (fun pre a post E => out (e::pre) a post (congrArg (List.cons e) E))).trans
       (ring_frozen_frame hp old e i sh (sep e) F)
-
-#print axioms generated_frozen_word
 
 /-- In an actually pointed LOAD state, even losing foreign candidates
 cannot contend with the lane of that very old command. This derives
@@ -372,8 +361,6 @@ theorem pointed_load_exclusive {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rw [S,lane] at V
     exact V.symm
 
-#print axioms pointed_load_exclusive
-
 open BStarCopyLoadCarry BStarClearanceSource BStarLongDoor
 
 /-- An authenticated LOAD cursor in its owner's pointed rail freezes
@@ -426,8 +413,6 @@ theorem pointed_freeze_from_launch {base old launched : X}
   exact selected_freeze_from_launch hp root old launched L op8 w e s rev C sep trail
     sel door origin inside ex
 
-#print axioms pointed_freeze_from_launch
-
 private theorem source_site_cases (g : LongGeometry) (j : Fin 11) (op : Prep)
     (sh : Sheet) (H : sh∈prepSites g j op) :
     (sh=.ls → j=0 ∨ j=5) ∧ (sh=.rs → j=2) := by
@@ -465,8 +450,6 @@ theorem outward_far_safe (x : X) (e i : Fin n) (sh : Sheet) (cursor : Pos n)
     · exact ((farL l).2 (pos.trans (congrArg (Prod.mk i) f))).elim
   · exact ((farR r) (pos.trans (congrArg (Prod.mk i) (cases.2 (shEq.trans r))))).elim
 
-#print axioms outward_far_safe
-
 /-- One actual generated continuation releases the same frozen digit at
 its selected INJECT, with no competing-owner assumption. The remaining
 outward guard is only for the single own cursor, and is automatic away
@@ -500,5 +483,4 @@ theorem generated_inject_frozen {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have res := ring_inject hp (play x w) e (sep e) s rev value win enabled (frame.trans old) vacant
   exact ⟨congrArg Lane.mobile res,congrArg Lane.frozen res⟩
 
-#print axioms generated_inject_frozen
 end L4.BStarCopyOwnedFrozen

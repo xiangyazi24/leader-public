@@ -312,10 +312,4 @@ theorem busy_landing {base x : X} {hh : ∃ i,oldH6 B base i=true}
     (congrArg (atCursor (step (run x w) e)) next).trans landed
   exact ⟨token,busy_cut_inject hp chart sep history empty e s rev value atJ win enabled frozen⟩
 
-#print axioms inject_not_cancelled
-#print axioms inject_unit_packet
-#print axioms inject_command_link
-#print axioms departure_at_cut
-#print axioms generated_departure
-#print axioms busy_landing
 end L4.Height.FreshInjection

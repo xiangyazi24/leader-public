@@ -329,18 +329,4 @@ theorem sum_to_K
     _ = (a₁ + a₂ + a₃ + a₄ + a₅) * n ^ 2 := by
           simp only [Nat.add_mul]
 
-#print axioms choose_zero_right
-#print axioms choose_succ_one
-#print axioms choose_mul_succ
-#print axioms choose_shifted_identity
-#print axioms choose_le_two_pow
-#print axioms pow_le_fact_choose
-#print axioms ceilingLogTwo_eq
-#print axioms ceilingLogTwo_spec
-#print axioms ceilingLog2_upper
-#print axioms clog_bound
-#print axioms anchor_physical
-#print axioms observer
-#print axioms sum_to_K
-
 end L4.Height

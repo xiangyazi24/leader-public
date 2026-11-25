@@ -125,7 +125,4 @@ theorem next_selected_gap (S : Settled f k sel l r) (q : X) (Q : sel q=true) :
   rw [show d-1+1=d by omega,(S.selectedIff _).mp V |>.1] at H
   exact ⟨d,by omega,U,V,fun j J T => Bool.eq_false_iff.mpr (W j J T)⟩
 
-#print axioms advance_add
-#print axioms selected_nonempty
-#print axioms next_selected_gap
 end L4.ReportRadiusSpacing

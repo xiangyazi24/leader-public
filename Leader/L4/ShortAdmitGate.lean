@@ -135,11 +135,4 @@ theorem root_consume_gate_result (C : Chart h) (x : Raw s n) (heads : ∀ q, hea
   rw [C.route.rootPort]
   exact A
 
-#print axioms gate_packet_old
-#print axioms arrive_gate
-#print axioms parked_out
-#print axioms parked_in
-#print axioms gate_remote_bits
-#print axioms ready_exit
-#print axioms root_consume_gate_result
 end L4.ShortAdmitGate

@@ -193,9 +193,4 @@ theorem target_first_not_incoming (d : Sheet)
   rw [F] at K
   contradiction
 
-#print axioms preTrack_init
-#print axioms preTrack_closed
-#print axioms preTrack_nominate
-#print axioms preTrack_idle
-#print axioms preTrack_budget
 end L4.ReportFastPreACQTrack

@@ -215,8 +215,4 @@ theorem healthy_late_origin_from_issue (d : Sheet) (C : Chart h) (hh : ∃ i,h i
   · rw [K] at Healthy
     contradiction
 
-#print axioms late_origin_run
-#print axioms healthy_late_origin_from_issue
-#print axioms late_forward_hold
-#print axioms late_forward_hop
 end L4.ReportSealCommitOrigin

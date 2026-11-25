@@ -204,9 +204,6 @@ theorem orderedAllEdges_then_physical {α : Type} {n : Nat}
 
 end L4.EntranceCover
 
-#print axioms L4.EntranceCover.orderedCover_bound
-#print axioms L4.EntranceCover.orderedCover_then
-
 namespace L4.EntranceCover
 
 /-- Local conjunction tracked by the entrance monitor. -/
@@ -468,9 +465,6 @@ theorem physical_cover_bound {p c1 n : Nat} (hn : 4 ≤ n) (x : Config p c1 n) :
 
 end L4.EntranceCover
 
-#print axioms L4.EntranceCover.bondCovered_step
-#print axioms L4.EntranceCover.physical_cover_bound
-
 namespace L4.EntranceCover
 
 /-- State visible before the cover completes, or a newly initialized
@@ -584,9 +578,6 @@ theorem physical_after_cover_bound {β : Type} {p c1 n : Nat} (hn : 4 ≤ n)
 
 end L4.EntranceCover
 
-#print axioms L4.EntranceCover.stagedCover_then
-#print axioms L4.EntranceCover.physical_after_cover_bound
-
 namespace L4.EntranceCover
 
 /-- If physical first-hit costs uniformly at most B from any covered
@@ -610,5 +601,3 @@ theorem cover_closed {p c1 n : Nat} (hn : 4 ≤ n) (x : Config p c1 n) (e : Fin 
 
 end L4.EntranceCover
 
-#print axioms L4.EntranceCover.physical_cover_then
-#print axioms L4.EntranceCover.cover_closed

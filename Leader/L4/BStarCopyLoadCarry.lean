@@ -94,8 +94,6 @@ theorem load_hop_joined (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   exact ⟨A.trans ((congrArg decode src).trans (decode_encode _)),
     E.trans ((congrArg decode dst).trans (decode_encode _))⟩
 
-#print axioms load_hop_joined
-
 open BStarH6WordChart BStarAcquireVisitOrder BStarResetRailRing BStarResetSchedule
 open BStarClearanceSource
 open BStarAcquireForwardTrace BStarResetQuietTable BStarResetMarkAdapter BStarLongLayout
@@ -151,9 +149,6 @@ theorem load_word_carries {x : X} {j last : Pos n} {w : List (Fin n)}
   | hop c d sep mem dst clear _ ih =>
     exact ih (load_hop_ring hp _ _ sep c d u width valid mem dst start clear).2
 
-#print axioms load_hop_ring
-#print axioms load_word_carries
-
 theorem captured_operand_index (u : Nat) (width : u<64) (valid : selTriple u=true)
     (rev : Bool) :
     ∃ k : Fin 3, captureIndex (payload u) (whichCapture rev)=some k ∧
@@ -188,9 +183,6 @@ theorem carries_from_launch (root : Fin n) (old launched : X)
   rw [cap.1] at Q
   have V := cap.1 ▸ cap.2
   exact ⟨V,load_word_carries hp trail _ (by exact (captures.read (old root).long).isLt) V Q⟩
-
-#print axioms captured_operand_index
-#print axioms carries_from_launch
 
 /-- A source-authenticated LOAD freezes the actually named old operand
 at a generated inside K0/ls or K2/rs capture. The winning lane must
@@ -248,5 +240,4 @@ theorem selected_freeze_from_launch (root : Fin n) (old launched : X)
   rw [packEq] at sel
   exact ⟨k,val,congrArg BStarLongPackets.Lane.frozen (ring_load hp x e sep s rev k sel)⟩
 
-#print axioms selected_freeze_from_launch
 end L4.BStarCopyLoadCarry

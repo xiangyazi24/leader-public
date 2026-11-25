@@ -299,19 +299,4 @@ theorem earlier_firstMark_pinned_ghost {p c1 n d d' : Nat} (hn : 4 ≤ n)
       using holdL
   · simp [step, he, hne, holdL]
 
-#print axioms earlier_firstMark_pinned_ghost
-
-#print axioms earlier_firstMark_is_adjacent
-
-#print axioms surviving_firstBarrier_kill_uses_ordinary_donor
-
-#print axioms covered_ring_leader_loss_iff
-
-#print axioms original_kill_no_reuse
-#print axioms killing_bullet_preexisting_if_no_refire
-
-#print axioms native_loses_leader_iff
-#print axioms covered_leader_loss_iff
-#print axioms kill_ends_initiator_tag
-
 end L4.TenureOrigins

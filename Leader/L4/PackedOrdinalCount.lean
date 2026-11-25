@@ -76,6 +76,4 @@ theorem total_mul_width_le_of_predecessor {n : Nat} (h : Fin n → Bool)
   intro e he
   simpa only [RearTrace.predecessor_right] using wide (rightNeighbor e) he
 
-#print axioms total_mul_width_le
-#print axioms total_mul_width_le_of_predecessor
 end L4.PackedOrdinalCount

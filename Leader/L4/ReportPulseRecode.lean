@@ -143,14 +143,6 @@ theorem flip_after_prefix (s : Armed G) (pre post : List (Label G Z))
     simp only [List.cons_append,skeleton]
     exact congrArg (List.cons (skeletonStep s e).2) (IH _ H)
 
-#print axioms relabel_twice
-#print axioms decode_encode
-#print axioms encode_decode
-#print axioms encode_length
-#print axioms step_fusion
-#print axioms skeleton_encode
-#print axioms flip_after_prefix
-
 section Finite
 variable {n : Nat}
 
@@ -249,12 +241,6 @@ theorem flip_after_prefixFin (put : G × Bool → Fin n) (inj : Function.Injecti
   simp only [List.map_append,List.map_cons,E]
   exact flip_after_prefix s _ _ i H a b
 
-#print axioms decode_encodeFin
-#print axioms encode_decodeFin
-#print axioms encodeFin_length
-#print axioms skeleton_encodeFin
-#print axioms flip_after_prefixFin
-
 /-- Completion at a given recoded mark pins its physical-label coordinate
 in the *recoded* word; it need not pin the original physical edge. -/
 theorem completion_pinsFin (put : G × Bool → Fin n) (inj : Function.Injective put)
@@ -277,6 +263,5 @@ theorem completion_pinsFin (put : G × Bool → Fin n) (inj : Function.Injective
     rw [show readLabel put (put (i,true))=.inl (i,true) from read_write put inj (.inl (i,true))]
     simp [skeletonStep,H]
 
-#print axioms completion_pinsFin
 end Finite
 end L4.ReportPulseRecode

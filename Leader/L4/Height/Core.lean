@@ -74,4 +74,3 @@ theorem runRounds_cons {m : Nat} (B : Nat) (hm : 0 < m) (bits : Fin m → Bool)
 
 end L4.Height
 
-#print axioms L4.Height.runRounds_cons

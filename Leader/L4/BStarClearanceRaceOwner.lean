@@ -272,8 +272,6 @@ theorem owner_pointwise_pays {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp :
     apply Nat.add_lt_add_of_le_of_lt (block_total_le _ _ _ all)
     exact sum_lt pre post _ u (List.mem_filter.mpr ⟨hu,by simpa using W⟩) D out
 
-#print axioms owner_pointwise_pays
-
 /-- On the literal nominated race incidence the full owner F sum
 strictly decreases. The hypotheses are exactly the usual owner partition,
 fixed distance, door frame, and settled-offset facts. -/
@@ -326,5 +324,4 @@ theorem race_owner_sum
     exact (owner_sum hp x e (sep e) o slots dist nd (sub e) (own e) (safe e) (rules e)).2
       ⟨C,q,A,E.trans P⟩
 
-#print axioms race_owner_sum
 end L4.BStarClearanceRaceOwner

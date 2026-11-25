@@ -91,5 +91,4 @@ theorem out_payload_ix (δ : Bool) (j : Fin 8) :
 theorem build_eq_literal : build=literal := by
   decide +kernel
 
-#print axioms build_eq_literal
 end L4.Compiler.Native

@@ -48,7 +48,6 @@ private theorem prep_no_mobile (old : At Sheet → Lane) (a : BStarLongPrep.Offe
   unfold selectedEffects
   cases t : a.claim.op <;> simp [t,effects,noMobile] at h ⊢
 
-
 private theorem data_gate_safe (g : Pair LongGeometry) (old : At Sheet → Lane)
     (c : DataClaim) (s : At Sheet) (l : Leaf)
     (E : (s,l)∈dataEffects g old c) : gateSafe l := by
@@ -138,9 +137,6 @@ theorem pair_gate_remains (x : Pair (LargeSite P)) (s : At Sheet) :
     · obtain ⟨d,_,hd⟩ := List.mem_flatMap.mp J
       exact data_gate_safe _ _ d s l hd
   cases l <;> simp_all [gateSafe,Leaf.put]
-
-#print axioms pair_owner_empty
-#print axioms pair_gate_remains
 
 /-- A selected ENABLE writes exactly the local gate, not mobile,
 frozen, retained, or error. Its reservation suppresses data routing on
@@ -237,9 +233,6 @@ theorem empty_word (base x : X) (w : List (Fin n)) (o : Int)
       (fun a b E => same (e::a) b (congrArg (List.cons e) E))
       (fun a b c E => no (e::a) b c (congrArg (List.cons e) E))
 
-#print axioms gate_word
-#print axioms empty_word
-
 /-- A real ENABLE followed by actual source-lane frames and an owner
 empty interval supplies the old gate and vacancy to the first
 successful release, rather than assuming them at the INJECT mark. -/
@@ -282,8 +275,6 @@ theorem first_inject_after_enable (base x : X) (o : Int) (w : List (Fin n))
   have H := ring_inject hp y release (sep release) s rev value win gate dataAt vacant
   exact ⟨congrArg Lane.mobile H,congrArg Lane.frozen H⟩
 
-#print axioms first_inject_after_enable
-
 /-- Literal cleanup on the actual old selected lane. CLEAR never changes
 the gate; it removes mobile, frozen, retained, and the error latch. -/
 theorem ring_clear (x : X) (e : Fin n) (sep : e≠rightNeighbor e)
@@ -307,9 +298,6 @@ theorem ring_stop (x : X) (e : Fin n) (sep : e≠rightNeighbor e)
   dsimp only
   have H := ring_selected_prep hp x e sep a win
   rcases op with op|op <;> simpa [selectedEffects,op,effects,typedLeaves,Leaf.put] using H
-
-#print axioms ring_clear
-#print axioms ring_stop
 
 /-- A target that is already empty cannot refill on this mark if every
 actual incoming sender is empty and no selected INJECT targets it.
@@ -355,5 +343,4 @@ theorem pair_vacancy_local (x : Pair (LargeSite P)) (s : At Sheet) :
       exact (List.not_mem_nil mem).elim
   cases l <;> simp_all [noMobile,Leaf.put]
 
-#print axioms pair_vacancy_local
 end L4.BStarCopyEntryGates

@@ -238,5 +238,4 @@ theorem release_bytes {base origin : X} {hh : ∃ i,oldH6 B base i=true}
   unfold oldBankPacket digitTable
   rw [I]
 
-#print axioms release_bytes
 end L4.BStarCopyRightReleaseCapture

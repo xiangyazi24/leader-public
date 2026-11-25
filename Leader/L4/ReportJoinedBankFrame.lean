@@ -49,8 +49,6 @@ theorem raw_inactive_chart_write (d : Sheet) (C : Chart h) (x : Raw s n)
   rw [predecessor_projection,H,P] at D
   exact D
 
-#print axioms raw_left_bank_frame
-#print axioms raw_inactive_chart_write
 end L4.ReportJoinedBankFrame
 namespace L4.ReportJoinedBankFrame
 open AllSizeProtocol PhysicalCustody ShortResetCycle ReportResetBarrier
@@ -109,6 +107,4 @@ theorem raw_all_mark_nonheader_bank_frame (d : Sheet) (x : Raw s n)
       exact raw_right_bank_frame d x e N mask sel
     · rw [raw_spectator x e a (Ne.symm E) R]
 
-#print axioms raw_right_bank_frame
-#print axioms raw_all_mark_nonheader_bank_frame
 end L4.ReportJoinedBankFrame

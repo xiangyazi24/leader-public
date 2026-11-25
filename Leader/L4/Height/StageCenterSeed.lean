@@ -13,7 +13,6 @@ local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r
 local notation "step" => AllSizeS1Geometry.step (n:=n) B
 local notation "play" => BStarResetSchedule.run step
 
-
 /-- The actual selected STAGE mark establishes the entire center seed:
 packed latch, same selected bank, continued writer and conflict freedom. -/
 theorem at_stage {base origin x : X} {hh : ∃ j,oldH6 B base j=true}
@@ -63,5 +62,4 @@ theorem at_stage {base origin x : X} {hh : ∃ j,oldH6 B base j=true}
   rw [eq]
   exact Bool.and_eq_true_iff.mpr ⟨BStarSealWriterInterval.live_at_end_bit retained.1,A.2⟩
 
-#print axioms at_stage
 end L4.Height.StageCenterSeed

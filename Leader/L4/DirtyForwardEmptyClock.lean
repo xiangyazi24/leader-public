@@ -17,7 +17,6 @@ local notation "B" => bStar k₁ k₂ t₂ J₁ J₂ r c p c₁ hp
 local notation "X" => BStarClearanceOffset.X k₁ k₂ t₂ J₁ J₂ r c p c₁ n
 local notation "step" => AllSizeS1Geometry.step (n:=n) B
 
-
 theorem expected {base x : X} {hh : ∃ i,oldH6 B base i=true}
     {o : Owners (oldH6 B base)} {S : List (Pos n)} {len : Nat} {fall : Pos n}
     (chart : Chart hp base hh o S len fall)
@@ -81,5 +80,4 @@ theorem expected {base x : X} {hh : ∃ i,oldH6 B base i=true}
       head cont dp LF RF seam (fun i=>(flags i).1) Y.2.2 j hj late F
     exact ⟨e,A ▸ DirtyForwardAdvance.ring_advance_removes_forward hp q e (sep e) C pay O N⟩
 
-#print axioms expected
 end L4.DirtyForwardEmptyClock

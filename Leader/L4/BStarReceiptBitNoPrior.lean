@@ -87,5 +87,4 @@ theorem handoff_before_publication {base x old : X}
   exact (safe_to_commit hp C Q I fiber closed sep rootCurrent [] rem H.flight H.door center H.cursor
     H.cursor_le H.atCenter own preAll launch H.issue411 H.fly).2
 
-#print axioms handoff_before_publication
 end L4.BStarReceiptBitNoPrior

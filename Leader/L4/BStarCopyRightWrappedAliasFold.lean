@@ -123,5 +123,4 @@ theorem alias_release_mark {Tag : Type} (digits : Tag→BitVec 36)
         P old mob prior fresh todo first blank dest pending sep win prep upScope gateOrig frozenOrig gates
       exact ⟨(s.receiveFirst prior).releaseOne fresh todo,deposit (clearHead label) n fresh,rfl,active⟩
 
-#print axioms alias_release_mark
 end L4.BStarCopyRightWrappedAliasFold

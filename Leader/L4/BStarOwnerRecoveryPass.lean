@@ -74,8 +74,6 @@ theorem two_recoveries {base x : X} (hh : ∃ i,oldH6 B base i=true)
     exact T₂
   exact BStarRecoveryPass.two_pass step force force owners x ⟨I,cx⟩
 
-#print axioms two_recoveries
-
 open BStarGrantBirth
 
 /-- Lift a reset endpoint's actual zero grant to the cut's common
@@ -114,5 +112,4 @@ theorem credit_grant {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · rw [BStarResetSchedule.run_append]
     exact ⟨Z,A,K⟩
 
-#print axioms credit_grant
 end L4.BStarOwnerRecoveryPass

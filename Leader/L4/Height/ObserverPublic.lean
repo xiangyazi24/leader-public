@@ -1,6 +1,5 @@
 import Leader.L4.WindowG7Complete
 
-
 /-! Fixed witnesses from the rooted proof at c=12. -/
 namespace L4.ObserverPublic
 open TaggedTail RankRenewal RankPhysical TripleRenewal Classical RankBlockContraction SevenTagCharge
@@ -85,6 +84,4 @@ theorem rooted_mean {p n : Nat} (x : Config p 12 n) (hp : 2≤p) (hn : 4≤n)
       exact tail)
   simpa only [coefficient,Nat.add_mul] using hh
 
-#print axioms marginal
-#print axioms rooted_mean
 end L4.ObserverPublic

@@ -101,10 +101,6 @@ theorem rebind_gate_race (g : LongGeometry) (bit : Bool) (v : Payload) (z : BitV
   rw [F,U] at C
   exact C
 
-#print axioms event_forward_stutter
-#print axioms old_canonical
-#print axioms rebind_gate_race
-
 variable {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
 local notation "B" => bStar k₁ k₂ t₂ J₁ J₂ r c p c₁ hp
 local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r c p c₁)
@@ -147,8 +143,6 @@ theorem encoded_race_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
   refine ⟨M,H,?_⟩
   rw [D]
   exact rebind_gate_race _ bit v z fault op U A newGate race
-
-#print axioms encoded_race_step
 
 /-- The literal FIRST or OTHER observer gives an actual stuttering
 owner event, and the updated payload binds unchanged at the next mark. -/
@@ -210,8 +204,6 @@ theorem observed_race_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact ⟨exactRaw, encoded_race_step hp C Q fiber closed distinct i e bit k q atGate cur v z
     read op fault range nextGate exactRaw⟩
 
-#print axioms observed_race_step
-
 /-- After FIRST, every mark except the opposite incidence preserves
 the actual K1 bytes (even noncanonical padding). -/
 theorem first_wait_raw {base x : X} {hh : ∃ i,oldH6 B base i=true}
@@ -245,8 +237,6 @@ theorem first_wait_raw {base x : X} {hh : ∃ i,oldH6 B base i=true}
       rw [if_pos R,observe_other_any _ v .right .right G' fault race,if_pos rfl]
       rfl
     · rw [if_neg R]
-
-#print axioms first_wait_raw
 
 /-- A suffix after an observed FIRST stays at exactly that owner cursor
 with unchanged raw/bound payload until the nominated opposite incidence. -/
@@ -288,5 +278,4 @@ theorem first_wait_word {base : X} {hh : ∃ i,oldH6 B base i=true}
     exact ih _ (closed x q e) one.2.1 one.2.2 raw
       (fun a ha => avoid a (List.mem_cons_of_mem _ ha))
 
-#print axioms first_wait_word
 end L4.BStarGateStutter

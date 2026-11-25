@@ -99,7 +99,6 @@ theorem mean_of_hit_cap {α : Type} {n : Nat} (next : α → Fin n → α)
     (ofHitCap next target start nom cap bound) t) (Nat.mul_le_mul_right _
       (Nat.mul_le_mul_left n (initial_budget_ofHitCap next target start nom cap bound)))
 
-
 /-- Reuse the same causal raw-word budget on a commuting projection.
 The physical target may trigger earlier; no independent scheduler is
 introduced at an aliased raw port or at a stopping projection. -/
@@ -123,7 +122,3 @@ def transfer {α β : Type} {n : Nat} (aStep : α → Fin n → α)
 
 end L4.HitCapCountdown
 
-#print axioms L4.HitCapCountdown.ofHitCap
-#print axioms L4.HitCapCountdown.mean_of_hit_cap
-
-#print axioms L4.HitCapCountdown.transfer

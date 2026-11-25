@@ -1,7 +1,7 @@
-import Leader.L4.Height.G9WirePart14
+import Leader.L4.Height.AllSizeWirePart14
 set_option Elab.async false
 
-namespace L4.Height.G9Wire.PublicSpec
+namespace L4.Height.AllSizeWire.PublicSpec
 
 theorem bounded_rank_pos : 0 < L4.stateCount boundedP 12 := by decide
 
@@ -60,7 +60,7 @@ raw configuration, including spare bytes. -/
 theorem bounded_projects {n : Nat} (_hn : 4 ≤ n) (x : BoundedRaw n) (e : Fin n) :
     (fun i => boundedDecode (boundedNextWith boundedEncode boundedDecode x e i)) =
       L4.step (fun i => boundedDecode (x i)) e :=
-  L4.Height.G9Wire.bounded_projects_of_section
+  L4.Height.AllSizeWire.bounded_projects_of_section
     boundedEncode boundedDecode boundedDecode_encode x e
 
 /-- Literal preservation of the completed public handoff. -/
@@ -74,4 +74,4 @@ def MarkedProjects : Prop :=
   ∀ {s n : Nat}, 4 ≤ n → ∀ {x : PhysicalCustody.Raw s n} (e : Fin n),
     Marked x → pubConfig (PhysicalCustody.rawNext s x e) = L4.step (pubConfig x) e
 
-end L4.Height.G9Wire.PublicSpec
+end L4.Height.AllSizeWire.PublicSpec

@@ -82,6 +82,4 @@ theorem actual_prefix_next_quarter {s n : Nat}
   change wordSum (fun w=>2^(RawServiceCore.strictWait y i.val w/L)) (3*L)≤2*n^(3*L) at b
   omega
 
-#print axioms actual_prefix_moment
-#print axioms actual_prefix_next_quarter
 end L4.PhysicalStrictServiceTail

@@ -75,5 +75,4 @@ theorem mobile_service (hp : 0<p)
         (x e,x (rightNeighbor e)) C.source a C rfl Z K N (d C.source) (d a) HD H OU OV⟩)
   · exact .inr (.inr H)
 
-#print axioms mobile_service
 end L4.BStarClearanceMobileService

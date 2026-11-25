@@ -171,7 +171,4 @@ theorem safe_to_commit {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rw [P]
     exact before_append hp i _ [door] flight (before_single hp _ i door cleanDoor) cleanEnd
 
-#print axioms pre_ready
-#print axioms prelude
-#print axioms safe_to_commit
 end L4.BStarAttemptSafety

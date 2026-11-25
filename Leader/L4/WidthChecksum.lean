@@ -85,8 +85,6 @@ theorem raw_checksum_step {c : Nat} (r : Nat) (hu hv : Bool) (u v : BitVec (W c)
   · unfold last
     rw [keep 4 (by decide)]
 
-#print axioms raw_checksum_step
-
 /-- Inherited canonical F-faults are genuine moving packets, not stuck
 debris: a terminal edge yields D-fault; an interior edge writes T/F. -/
 theorem raw_fault_motion {c : Nat} (r : Nat) (hu hv : Bool) (u v : BitVec (W c))
@@ -102,5 +100,4 @@ theorem raw_fault_motion {c : Nat} (r : Nat) (hu hv : Bool) (u v : BitVec (W c))
   · simp [row,F,departing,faultCode,Patch.compose_apply,tokenPatch,Field.read_assign]
   · simp [row,F,departing,faultCode,finish,Patch.compose_apply,tokenPatch,Field.read_assign]
 
-#print axioms raw_fault_motion
 end L4.WidthChecksum

@@ -560,12 +560,6 @@ theorem path_cap_from_base {m : Nat}
     (base_tick_cap_along B M hm a
       (activate B M hm c v delta) suffix hbaseAlong)
 
-#print axioms lower_chain
-#print axioms chain_cap_witness_of_caps
-#print axioms frozen_of_caps
-#print axioms path_cap
-#print axioms path_cap_from_base
-
 /-! ## Temporal closure bridges -/
 
 /-- StageTwo's raw-root quietness and StageThree's signed-value quietness are
@@ -1356,12 +1350,6 @@ theorem cap_interface {m B M : Nat}
   rw [runActivations_eq_stageThree (B := B) (M := M)
     hm c acts] at hthree
   exact hthree
-
-#print axioms quietWellFormedTrace_of
-#print axioms shortestPath_length
-#print axioms path_caps_ordered
-#print axioms cap_interface
-
 
 /-! ## StageTwo-local names for the accepted ChainTwo path interface -/
 

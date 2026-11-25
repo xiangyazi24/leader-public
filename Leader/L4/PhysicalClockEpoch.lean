@@ -118,5 +118,4 @@ theorem epoch_with_extrema
   · exact ⟨atIndex g.hh i,rfl⟩
   · exact ⟨atIndex g.hh j,rfl⟩
 
-#print axioms epoch_with_extrema
 end L4.PhysicalClockEpoch

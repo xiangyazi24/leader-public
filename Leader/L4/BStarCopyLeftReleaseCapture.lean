@@ -118,8 +118,6 @@ theorem common_bank_and_cuts {base x : X} {hh : ∃ i, oldH6 B base i=true}
   subst actualBank
   exact ⟨pre,rest,k,ee ▸ R,kl,idx,part,ee ▸ after,ee ▸ ev,ee ▸ F⟩
 
-
-
 open BStarCopyRightLoadToInject (OwnMiddle)
 open BStarCopyLeftLoadToInject BStarCopyLeftFrozen BStarCopyLeftPreinject
 open BStarAcquireVisitOrder BStarAcquireHistoryReturn BStarAcquireForwardTrace BStarResetMarkAdapter
@@ -185,7 +183,6 @@ theorem frame_after_exact_load {base origin : X} {hh : ∃ i,oldH6 B base i=true
   rw [←pre8,←BStarResetSchedule.run_append] at F8
   rw [pre8] at F8
   exact F10.trans (F9.trans F8)
-
 
 open BStarClearanceSource BStarGeneratedTapeCuts
 
@@ -309,7 +306,6 @@ theorem release_bytes {base origin : X} {hh : ∃ i,oldH6 B base i=true}
   rw [rail,if_pos R.range]
   exact forward.trans (freeze.trans valEq)
 
-
 /-- Match the common LOAD launch to the named successful ACQUIRE
 ACK already on this same tape. An earlier launch is impossible:
 its literal WAIT-8 flight would cross the old ACK5 state. -/
@@ -415,9 +411,4 @@ theorem release_bytes_on_matched_tape {base origin : X} {hh : ∃ i,oldH6 B base
       exact_match_after_ack hp chart w8 ackLead postAck ack after pc5 Gafter Bnd lead issue tail W old8 T)
     layout auth
 
-#print axioms release_bytes_on_matched_tape
-#print axioms frame_after_exact_load
-#print axioms common_bank_and_cuts
-#print axioms release_bytes
-#print axioms exact_match_after_ack
 end L4.BStarCopyLeftReleaseCapture

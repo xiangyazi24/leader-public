@@ -80,9 +80,4 @@ theorem custody_reached_of_geometry {s n : Nat} (hs : 2≤s)
   exact custody_reached_of_geometry_and_owner (adjacent_separation (by omega)) settled Kgeom
     ownerCoefficient geometryMean packedFiber (owner_credit_uniform hs prod) x
 
-#print axioms ownerCoefficient
-#print axioms attempt_width_bound
-#print axioms owner_width_bound
-#print axioms owner_credit_uniform
-#print axioms custody_reached_of_geometry
 end L4.PhysicalOwnerCustody

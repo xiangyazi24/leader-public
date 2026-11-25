@@ -290,7 +290,6 @@ theorem long_door_view (g : Pair LongGeometry) (x : Pair (BitVec LW))
   rw [long_exec,X,List.foldl_append,view_fold _ _ A,List.foldl_append]
   exact Hw _
 
-
 theorem long_issue (g : Pair LongGeometry) (x : Pair (BitVec LW))
     (hh : g.2.axes.h6=true)
     (ph : (ctrlPhase.read x.2).toNat=1) (op : (ctrlOp.read x.2).toNat=acquire) :
@@ -345,8 +344,4 @@ theorem joined_issue (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
     (acquire_issue _ _ ph op) issued_view
   exact ⟨congrArg Prod.fst V,congrArg Prod.snd V⟩
 
-#print axioms long_door_view
-#print axioms joined_door_view
-#print axioms long_issue
-#print axioms joined_issue
 end L4.BStarAcquireJoinedIssue

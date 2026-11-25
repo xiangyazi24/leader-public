@@ -156,8 +156,4 @@ theorem actual_shift_refines {base x : X} {hh : ∃ i,oldH6 B base i=true}
   refine ⟨E.1,_,returned,shift_reply_fit sweep hiSlot ha initial _ rfl,?_⟩
   exact shift_pending_rep _ _ _ a _ regs rs good oldScalar
 
-#print axioms actual_shift_refines
-#print axioms shift_refines
-#print axioms shift_reply_fit
-#print axioms shift_pending_rep
 end L4.BStarNativeShiftHead

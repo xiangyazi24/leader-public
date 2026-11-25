@@ -50,7 +50,4 @@ theorem local_stop_is_not_global :
     reward tape (window7 (WindowRoster.roster tape) first) [14] = 0 := by
   decide
 
-#print axioms quiet
-#print axioms rank_exact
-#print axioms local_stop_is_not_global
 end L4.WindowForeignWitness

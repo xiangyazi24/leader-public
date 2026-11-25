@@ -150,8 +150,4 @@ theorem rival_fences {s : Nat} (x : Raw s n) (M : rawMaximal x) (N : 21<n)
       have U := nextAt_injective_under r _ _ (by omega) (by omega) H
       omega
 
-#print axioms winning_length_le
-#print axioms winning_watch
-#print axioms winning_internal
-#print axioms rival_fences
 end L4.ShortFiveWinningWord

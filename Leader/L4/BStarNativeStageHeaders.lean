@@ -134,6 +134,4 @@ theorem decode_issued (ys : List Value) (x : BitVec LW) (pay : Payload)
   have bound := pack_bound (headerBits ys)
   rwa [header_count] at bound
 
-#print axioms decode_issued
-#print axioms low_headers
 end L4.BStarNativeStageHeaders

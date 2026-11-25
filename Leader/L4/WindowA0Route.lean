@@ -143,9 +143,4 @@ theorem gg_step_of_two_keep {p c n : Nat} {z0 : Config p c n} (hn : 4≤n)
     gI,gJ,Bool.false_or,Bool.false_eq_true,if_false]
   rfl
 
-#print axioms gg_step_of_two_keep
-#print axioms ghost_after_keep
-#print axioms keep_iff
-#print axioms selected_loss_first
-#print axioms observed_keeps_exterior_birth
 end L4.WindowA0Route

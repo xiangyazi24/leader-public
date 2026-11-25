@@ -64,5 +64,4 @@ theorem expected_from_least_fence_address
   exact DirtyFenceHeldMean.expected_until_nonheld_or_empty hp chart sep Q I layout closed LF RF dp
     flags notShort hn hl lc rc cutoff onPrep clear
 
-#print axioms expected_from_least_fence_address
 end L4.DirtyFenceEntryMean

@@ -101,5 +101,4 @@ theorem clock {p c n : Nat} (hp : 2≤p) (hc : 12≤c) (hn : 4≤n)
     (V _ (by omega) (by omega)) subCert (protected_of_roster E (certified E) r b k
       T1 T2 T3 (V _ (by omega) (by omega)) (V _ (by omega) (by omega))) heQ S (Nat.le_max_right _ _)
 
-#print axioms clock
 end L4.WindowProtectedWindow

@@ -106,8 +106,4 @@ theorem sticky_cover_expected (d : Sheet) (N : 1<n)
       x (2*n*trialU (meshRadius d s)*(ell n+1)) :=
   raw_report_mean (by omega) _ _ (deployedTrial d N hh G F advice S GapLo GapHi W Bounds Lo Room) x A
 
-#print axioms cut_of_bank
-#print axioms sticky_closed
-#print axioms deployedTrial
-#print axioms sticky_cover_expected
 end L4.ReportProductionSticky

@@ -60,8 +60,6 @@ theorem parked_fiber {n : Nat} {h : Fin n→Bool} {hh : ∃ i,h i=true}
   · rintro rfl
     exact parked_candidate_unchanged mask a i I parked s
 
-#print axioms parked_fiber
-
 theorem parked_first_candidate {n : Nat} {h : Fin n→Bool} {hh : ∃ i,h i=true}
     {fresh : Word n → Fin n → Prop} {redirect : Word n → Fin n → Option (Fin n)}
     (mask : FreshOnly h hh fresh redirect)
@@ -169,9 +167,4 @@ theorem redirectTo_charges_fresh {n : Nat} (h : Fin n→Bool) (hh : ∃ i,h i=tr
     rw [←E]
   rw [if_pos P]
 
-#print axioms redirectTo_charges_fresh
-#print axioms redirectTo_isFresh
-#print axioms redirectTo_fresh_hit
-#print axioms parked_candidate_unchanged
-#print axioms parked_first_candidate
 end L4.BStarParkedSteering

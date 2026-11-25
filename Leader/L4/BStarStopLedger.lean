@@ -22,7 +22,6 @@ open BStarGeneratedOwner BStarClearanceOffset BStarNeedServicePlan BStarNeedPref
 open BStarFirstActualPublication
 open BStarStageCandidateWrite BStarBitParity
 
-
 open BStarPhysicalIncrementLedger BStarIncrementLedger BStarLiftKeyFresh
 
 /-- Passing a stop does not reset the event counter or reindex prior
@@ -89,6 +88,4 @@ theorem no_reuse_across_stop {base initial x : X} {hh : ∃ j,oldH6 B base j=tru
   have A := a.isLt
   omega
 
-#print axioms lift_prefix
-#print axioms no_reuse_across_stop
 end L4.BStarStopLedger

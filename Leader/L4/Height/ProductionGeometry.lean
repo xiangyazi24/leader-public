@@ -93,6 +93,5 @@ theorem chart_length {base : X} {hh : ∃ i,oldH6 B base i=true}
     omega
   simpa only [List.length_map,List.length_range,C.length] using nd.length_le_of_subset sub
 
-#print axioms chart_length
 end L4.Height.ProductionGeometry
 

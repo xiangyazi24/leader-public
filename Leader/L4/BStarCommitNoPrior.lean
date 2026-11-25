@@ -52,8 +52,6 @@ theorem publishes_leaves {x : X} (e i : Fin n) (sep : e≠rightNeighbor e)
   change decode (readRaw (patchPair (longWork g raw) raw) C.source)=_
   rw [T,decode_encode]
 
-#print axioms publishes_leaves
-
 private theorem single {x : X} {addr : Nat → Pos n} {len : Nat} {e : Fin n}
     {z d : Cursor} (seen : Seen step (project addr) anyTag len x z [e] d) :
     Advance len z d := by
@@ -135,8 +133,6 @@ theorem before_center {base x : X} {addr : Nat → Pos n} {len op : Nat}
         change anyTag.F (atCursor (step x e) (addr k)) at next
         rw [A,out.2] at next
         exact (BStarSeparatorParked.forward_not_trail next).elim
-
-#print axioms before_center
 
 /-- A recovered COMMIT launch paired with a current outward centre
 cannot already have published at that centre on its post-launch tape.
@@ -248,6 +244,4 @@ theorem after_publication {base x : X} {addr : Nat → Pos n} {len op k : Nat}
         rw [addrK,T] at next
         exact (BStarSeparatorParked.forward_not_trail next).elim
 
-#print axioms found_before_center
-#print axioms after_publication
 end L4.BStarCommitNoPrior

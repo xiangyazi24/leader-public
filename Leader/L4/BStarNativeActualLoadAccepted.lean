@@ -469,5 +469,4 @@ theorem before_publication {base initial : X} (u v tail : List (Fin n))
   rw [fold12]
   exact ⟨sel,⟨mainValue,capAll⟩,readAt,H407,⟨Handoff⟩⟩
 
-#print axioms before_publication
 end L4.BStarNativeActualLoadAccepted

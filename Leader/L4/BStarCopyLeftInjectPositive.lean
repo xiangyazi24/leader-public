@@ -19,7 +19,6 @@ local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r
 local notation "ring" => AllSizeS1Geometry.step (n:=n) B
 local notation "play" => BStarResetSchedule.run ring
 
-
 open BStarCopyLeftK5Past BStarCopyRightInjectPositive
 private theorem not_center_carries (g : Pair LongGeometry) (raw : Pair (BitVec LW))
     (C : CommandClaim) (v : Payload) (N : C.source.occurrence.val≠1) :
@@ -85,8 +84,5 @@ theorem healthy_k5_crossing {base x : X} {hh : ∃ i,oldH6 B base i=true}
     ((congrArg BitVec.toNat hv.2).trans opcode) lanes
   rw [R5] at M
   exact ⟨loc,M⟩
-
-#print axioms healthy_k5_crossing
-
 
 end L4.BStarCopyLeftInjectPositive

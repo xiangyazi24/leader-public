@@ -67,7 +67,4 @@ theorem miss_count {X : Type} {n : Nat} (raw : X→Fin n→X)
   rw [T]
   exact V
 
-#print axioms miss_count
-#print axioms mean_in_height
-#print axioms monitor_true
 end L4.ReportPulseWait

@@ -56,7 +56,6 @@ theorem incoming_issue_phase {c : Nat} (r : Nat) (hu : Bool)
   rw [Field.read_other_assign _ _ _ _ (.inr (by simp [suffixField])),Field.read_assign]
   rfl
 
-
 theorem incoming_issue_opcode {c : Nat} (r : Nat) (hu : Bool)
     (u v : BitVec (W c)) (P : phase (c:=c) v=1) (O : opcode (c:=c) v≤5) :
     opcode (c:=c) ((row (c:=c) r (hu,true) (u,v)).2.apply v)=opcode (c:=c) v := by
@@ -132,11 +131,6 @@ theorem raw_incoming_issue {s n : Nat} (x : Raw s n) (e : Fin n) (sep : e≠righ
   rw [stepEq,E,G,F]
   exact ⟨incoming_issue_phase _ hu _ _ P O,incoming_issue_opcode _ hu _ _ P O,
     incoming_issue_packet _ hu _ _ P O⟩
-
-#print axioms issue_door
-#print axioms incoming_issue_packet
-#print axioms incoming_issue_opcode
-#print axioms raw_incoming_issue
 
 /-- The narrowing wrapper never suppresses COMPARE's two saved flags,
 including when the incoming matching D2 happens to leave the bits
@@ -255,6 +249,4 @@ theorem raw_incoming_compare_argument {s n : Nat} (x : Raw s n) (e : Fin n) (sep
   rw [stepEq,E]
   exact incoming_compare_argument _ hu _ _ P O T M F A
 
-#print axioms compare_not_narrowed
-#print axioms raw_incoming_compare_argument
 end L4.WidthIssueTransport

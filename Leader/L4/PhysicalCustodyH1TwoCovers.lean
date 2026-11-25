@@ -242,14 +242,4 @@ theorem two_cover_history_expected (next : S → Fin n → S) (hn : 0 < n) (x : 
   obtain ⟨blocks, hlen, hfull, hword⟩ := tapeWord_full z hz
   exact ⟨blocks, hlen, hfull, hword, congrArg (runWord next x) hword⟩
 
-#print axioms tapeWord_step
-#print axioms tapeWord_full
-#print axioms remaining_drop
-#print axioms remaining_noninc
-#print axioms coverProjection_step
-#print axioms projected_cost_le
-#print axioms projected_expected
-#print axioms two_full_covers_expected
-#print axioms two_cover_history_expected
-
 end L4.Height

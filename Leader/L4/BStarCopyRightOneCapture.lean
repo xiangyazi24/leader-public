@@ -109,5 +109,4 @@ theorem common_original_bank {base x : X} {hh : ∃ i, oldH6 B base i=true}
   subst actualBank
   exact ⟨pre,rest,k,ee ▸ R,kl,idx,ee ▸ ev,ee ▸ F⟩
 
-#print axioms common_original_bank
 end L4.BStarCopyRightOneCapture

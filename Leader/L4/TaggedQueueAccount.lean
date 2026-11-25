@@ -118,4 +118,3 @@ theorem trace_queueCompensation {p c1 n : Nat} (x : Config p c1 n)
 
 end L4.TaggedTrace
 
-#print axioms L4.TaggedTrace.trace_queueCompensation

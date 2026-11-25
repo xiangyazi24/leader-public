@@ -178,12 +178,4 @@ theorem mis1_chart {s n : Nat} (x : PhysicalCustody.Raw s n)
   obtain ⟨d,P,E,I⟩ := ShortResetChart.gap M u U
   exact ⟨d,by omega,by exact ⟨by omega,E,I⟩⟩
 
-#print axioms gap_to_submask
-#print axioms join_rejected
-#print axioms select_after_two
-#print axioms select_after_three
-#print axioms three_gap_exact
-#print axioms chart_of_three
-#print axioms chart_of_successor_law
-#print axioms mis1_chart
 end L4.ShortLayerGeometry

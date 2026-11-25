@@ -43,9 +43,6 @@ theorem dirty_nonforward_empty_raw {s n : Nat} (x : Raw s n) (e : Fin n)
     (x e).mis1 (x (rightNeighbor e)).mis1 j k link no empty
   exact ⟨(work_to_raw x e sep j).1.trans H.1,(work_to_raw x e sep k).2.trans H.2⟩
 
-#print axioms dirty_nonforward_terminal_raw
-#print axioms dirty_nonforward_reply_raw
-#print axioms dirty_nonforward_empty_raw
 /-- Exact inherited no-forward and old-trail update of the raw MIS1 link. -/
 theorem dirty_nonforward_trail_raw {s n : Nat} (x : Raw s n) (e : Fin n)
     (sep : e≠rightNeighbor e) (j k : Fin 3)
@@ -60,6 +57,4 @@ theorem dirty_nonforward_trail_raw {s n : Nat} (x : Raw s n) (e : Fin n)
     (x e).mis1 (x (rightNeighbor e)).mis1 j k link no trail
   exact ⟨(work_to_raw x e sep j).1.trans H.1,(work_to_raw x e sep k).2.trans H.2⟩
 
-
-#print axioms dirty_nonforward_trail_raw
 end L4.ShortDirtyMIS1Ring

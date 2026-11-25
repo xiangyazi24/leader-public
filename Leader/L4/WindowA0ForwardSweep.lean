@@ -105,10 +105,6 @@ theorem initial_budget {p c n : Nat} (z : WindowA0ClosedEntry.State p c n) :
   unfold budget
   split <;> simp [init] <;> omega
 
-#print axioms project
-#print axioms raw_launch
-#print axioms last_nomination_launch
-
 theorem budget_step {p c n : Nat} {initial : Config p c n} {J : Fin n} {H : Nat}
     (S : WindowA0Ledger.Scope n) (z : State p c n) (e : Fin n)
     (hz : Admitted initial S J H z.physical) (hs : Shape z) (hr : ¬ready z) :
@@ -216,9 +212,6 @@ theorem expected_forward_of_transport {p c n : Nat} {initial : Config p c n} (hn
   have H' : z.gap≤H := (hz.resolve_left hD).1.bounded
   exact Nat.le_trans (initial_budget z) (by omega)
 
-#print axioms budget_step
-#print axioms expected_forward_of_transport
-
 private theorem lift_add {n : Nat} (s : Fin n) (a b : Nat) :
     liftedSite (liftedSite s a) b=liftedSite s (a+b) := by
   apply Fin.ext
@@ -313,8 +306,6 @@ theorem top_shift_rebase {p c n : Nat} {initial : Config p c n} {J : Fin n} {H :
     rw [hg] at hj
     exact hu.2 _ (Nat.zero_le _) (by change 1+j<old.gap; omega)
 
-#print axioms top_shift_rebase
-
 private theorem noLeader {p c n : Nat} {J : Fin n} {H : Nat} {x : WindowA0IH.Cut p c n}
     (hx : WindowA0IH.Live J H x) (j : Nat) (hj : j≤x.gap) :
     (x.config (liftedSite x.top j)).leader=false := by
@@ -401,8 +392,6 @@ theorem stationary_ufree {p c n : Nat} {initial : Config p c n} {J : Fin n} {H :
         exact (ordinary_site hn h0.1 j hj HH).1
     · simpa [step,Ne.symm he,Ne.symm hR'] using hu.2 j (Nat.zero_le _) hj
 
-#print axioms stationary_ufree
-
 open FixedResidual
 
 private theorem arrived_left {Q : Nat} (z : Patrol Q) :
@@ -474,9 +463,6 @@ theorem door_clears {Q : Nat} (s : Source Q) (r : Rail)
   · rename_i k h
     exact (hL (.inr ⟨k,h⟩)).elim
   · exact H
-
-
-#print axioms door_clears
 
 /-- Restricted to the retained lift, an unpaid raw mark has exactly
 one of these two-ended door, top, body, or off-pair rail footprints. -/
@@ -609,8 +595,6 @@ theorem stationary_rows {p c n : Nat} {initial : Config p c n} {J : Fin n} {H : 
     simp [step,Ne.symm he,Ne.symm hE]
     rfl
 
-#print axioms stationary_rows
-
 private theorem body_empty_left (r : Rail) (h : Cleared r) :
     (ResidualSweep.body .e r).2=r := by
   rcases h with e|e|e <;> subst r <;> rfl
@@ -718,8 +702,6 @@ theorem front_rail_transport {n Q : Nat} (base e : Fin n) (g k : Nat)
           exact oldF j jj hjg
   exact ⟨fun j hj => (help j (by omega) (by omega)).1 hj,
     fun h => (help l (Nat.le_refl _) h).2 rfl⟩
-
-#print axioms front_rail_transport
 
 theorem stationary_shape {p c n : Nat} {initial : Config p c n} {J : Fin n} {H : Nat}
     (hn : 4≤n) (S : WindowA0Ledger.Scope n) (z : State p c n) (e : Fin n)
@@ -867,7 +849,4 @@ theorem expected_forward {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
     IIDExpectedHittingTimeAtMost (next S) ready (init z) (n*(2*H+2)) :=
   expected_forward_of_transport hn S J H (shapeTransport hn S J H) z hz hx hu
 
-#print axioms stationary_shape
-#print axioms shapeTransport
-#print axioms expected_forward
 end L4.WindowA0ForwardSweep

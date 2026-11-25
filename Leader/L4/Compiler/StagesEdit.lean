@@ -165,4 +165,3 @@ end Native
 end Compiler
 end L4
 
-#print axioms L4.Compiler.Native.stageEdit_spec

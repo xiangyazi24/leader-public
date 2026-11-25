@@ -163,8 +163,4 @@ theorem enumerate_bad {A K : Nat} {Slice : Type} (slice : Bits A → Slice)
     fun v => (mem_combined slice bad v).trans (exact _ _),
     combined_quarter slice bad q⟩
 
-#print axioms allBits_length
-#print axioms allBits_nodup
-#print axioms mem_allBits
-#print axioms enumerate_bad
 end L4.BStarWarmupQuarter

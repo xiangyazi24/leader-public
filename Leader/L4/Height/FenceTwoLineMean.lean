@@ -80,7 +80,4 @@ theorem two_line_mean {n : Nat} (hl hr horizon : Nat) (hn : 0<n)
     ⟨Nat.le_trans (leftBound w) (Nat.le_max_left _ _),
      Nat.le_trans (rightBound w) (Nat.le_max_right _ _)⟩),censored w⟩
 
-#print axioms maxWait_append
-#print axioms le_maxWait_of_mem
-#print axioms two_line_mean
 end L4.Height.FenceTwoLineMean

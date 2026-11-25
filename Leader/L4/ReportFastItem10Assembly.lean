@@ -96,7 +96,6 @@ theorem paper_kernel_of_rows
     exact five_support d N hh G F digit (project y).1 (R.bank y A) C M
   · exact R.service_program_refractory_raw
 
-#print axioms paper_kernel_of_rows
 end L4.ReportFastItem10Assembly
 
 namespace L4.ReportFastItem10Assembly
@@ -145,5 +144,4 @@ theorem item10_uniform_of_phase_rows
       (debt j) (credit j) (params d s).digits w W digit Wp (Rows j))
     sticky initQ initP comm sound
 
-#print axioms item10_uniform_of_phase_rows
 end L4.ReportFastItem10Assembly

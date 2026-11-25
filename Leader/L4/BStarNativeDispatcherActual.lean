@@ -89,5 +89,4 @@ theorem before_publication {base initial : X} (u v tail : List (Fin n))
   have rootK : (S.getD 0 fall).2=0 := congrArg Prod.snd C.root
   exact BStarNativeDispatcher.from_native_word hp C sep rootK G Band hr L flags notShort stable table bank sem pins T data
 
-#print axioms before_publication
 end L4.BStarNativeDispatcherActual

@@ -235,7 +235,4 @@ theorem chart_expected {s n B : Nat} {h : Fin n → Bool}
       exact Nat.le_of_eq (congrArg f (ShortResetWatch.outside_projection C y e E))
   exact expected D (ShortResetWatch.watch_bound C small) x ⟨A,heads⟩
 
-#print axioms potential_credit
-#print axioms expected
-#print axioms chart_expected
 end L4.WatchedRankIID

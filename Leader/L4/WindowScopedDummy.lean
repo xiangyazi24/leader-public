@@ -176,4 +176,3 @@ theorem mean {p c n a b : Nat} {initial : Config p c n} {group cert : List (Fin 
 
 end L4.WindowScopedDummy
 
-#print axioms L4.WindowScopedDummy.mean

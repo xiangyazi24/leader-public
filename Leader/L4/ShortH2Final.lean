@@ -215,8 +215,6 @@ theorem physical_suffix (N : 21<n) (x0 : Raw s n) (A : H2Ready x0)
   exact ShortNORPhysicalAdapter.layer_of_observe _ (SelectedMISLayers.h1_nonempty A.1 (by omega))
     hn (observe z) IN2 DN2
 
-#print axioms physical_suffix
-#print axioms selected_readout
 theorem literalS1 : LiteralS1 s n :=
   ShortFiveGuardTour.mis1_fenced_word_actual_publication
 
@@ -226,10 +224,4 @@ theorem permanent_h2_expected (N : 21<n)
       ((10^8095+19+2*publicationScale)*n^2) :=
   permanent_expected literalS1 N x0 A
 
-#print axioms literalS1
-#print axioms permanent_h2_expected
-#print axioms uniform_publication_of_literal
-#print axioms permanent_expected_of_service
-#print axioms permanent_expected
-#print axioms permanent_frozen
 end L4.ShortH2Final

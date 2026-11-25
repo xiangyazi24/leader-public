@@ -46,6 +46,4 @@ theorem concrete_phaseRows_of_local
       (obsBan L) (active L) (desired L) (obsDebt L) (obsCredit L) (params d s).digits w W :=
   phaseRows_of_local L inj BC _ w W Cap (pace_of_local L N F digit M inj BC w W Width)
 
-#print axioms pace_of_local
-#print axioms concrete_phaseRows_of_local
 end L4.ReportFastSplice

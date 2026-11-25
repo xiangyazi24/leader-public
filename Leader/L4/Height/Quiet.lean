@@ -966,5 +966,4 @@ theorem quiet_forever {B M : Nat} (hM : ClockParams M)
   exact quiet_runWord (B := B) hM hm post
     (runWord B M hm pre c) i hquiet
 
-
 end L4.Height.Recover.StageOne

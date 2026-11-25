@@ -129,6 +129,4 @@ theorem accepted9_terminal {base x : X} {hh : ∃ i,oldH6 B base i=true}
     (by rw [op9]; decide) returned'
   exact ⟨lead,back,turn,f,D,rebuilt,FF,cl,(congrArg BitVec.toNat op).trans op9⟩
 
-#print axioms terminal_old_healthy
-#print axioms accepted9_terminal
 end L4.BStarCopyEnableTerminal

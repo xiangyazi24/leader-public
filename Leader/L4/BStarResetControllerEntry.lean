@@ -101,7 +101,6 @@ theorem exact_empty_entry (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
         simp [oldDoor,V,phase]
       exact .inl ⟨.inr (.inl phase),selected_restart k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x hh V D⟩
 
-
 theorem issue_ignores_token (v : BitVec LW) (t : Token)
     (V : LongDoorGuard.valid manifest v=true) (phase : (ctrlPhase.read v).toNat=1) :
     oldDoor v t =
@@ -189,6 +188,4 @@ theorem wait_reply_selected (g : Pair LongGeometry) (raw : Pair (BitVec LW)) (f 
     · simp only [if_pos A]; exact ⟨trivial,trivial⟩
     · simp only [if_neg A]; exact ⟨trivial,trivial⟩
 
-#print axioms exact_issue_any_token
-#print axioms wait_reply_selected
 end L4.BStarResetControllerEntry

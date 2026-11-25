@@ -40,8 +40,4 @@ theorem issued_descriptor_valid (u : BitVec 96) :
   change 4*ix+2*(1-ix)+Y.toNat<8 ∧ descValid (4*ix+2*(1-ix)+Y.toNat)=true
   rcases D with P|P <;> rw [P] <;> cases Y <;> decide
 
-#print axioms decode_write_forward
-#print axioms decode_write_ack
-#print axioms decode_write_faults
-#print axioms issued_descriptor_valid
 end L4.ShortWritePacketCodec

@@ -247,14 +247,5 @@ theorem actual_dummy_returns_to_reset {base x : X} {addr : Nat → Pos n} {len :
   rw [dummy_successor _ _ cur.1.2.2.2 F O] at E
   exact E
 
-#print axioms actual_consume_to_admit
-#print axioms actual_pace_consumes_to_admit
-#print axioms actual_admit_consumes
-#print axioms first_door_launches_paceBand
-#print axioms pace_unit_packet
-#print axioms actual_pace_ack_then_admit_launch
-#print axioms actual_acquire_consumes
-#print axioms actual_dummy_returns_to_reset
-
 end L4.BStarPaceChronology
 

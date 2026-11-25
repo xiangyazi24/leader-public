@@ -366,5 +366,4 @@ theorem leftFrame {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
     BStarClearanceOffset.LeftFrame hp x e :=
   joined_left k₁ k₂ t₂ J₁ J₂ r c p c₁ hp (x e,x (rightNeighbor e))
 
-#print axioms joined_left
 end L4.BStarClearanceOffsetMask

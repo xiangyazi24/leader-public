@@ -51,5 +51,4 @@ theorem won_capture (x : X) (e i : Fin n) (j : Fin 3) (winAt : WonAt hp x e i j)
   unfold actualOffers BStarLongGrant.run
   exact List.mem_map.mpr ⟨_,A,update⟩
 
-#print axioms won_capture
 end L4.BStarWonCapture

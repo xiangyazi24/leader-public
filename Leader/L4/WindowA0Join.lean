@@ -37,7 +37,6 @@ theorem initial_ghosts {p c n : Nat} (x : Config p c n)
     intro hl
     exact H2 ⟨tag x i 2,occ 2,hl⟩
 
-
 abbrev AtEntry {p c n} {x : Config p c n} {g : List (Fin n)}
     (A : EntryScope g) (u : WindowLatch.Cursor (Front x g) x g) : Prop :=
   ∃ s, u=.inl s ∧ s.mode=.entry A
@@ -93,7 +92,6 @@ theorem observed_ledger {p c n} (x : Config p c n) (i : Fin (RankPhysical.rank x
             (WindowA0StockDrain.entryBase x i) z e) w from rfl,ih,WindowA0StockDrain.projection]
       rfl
   exact P _
-
 
 abbrev InEntry {p c n : Nat} (hp : 2≤p) (hc : 12≤c) (hn : 4≤n)
     (x : Config p c n) (h : QuietEntrance x) (i : Fin (RankPhysical.rank x)) (w : Word n) : Prop :=
@@ -172,9 +170,6 @@ theorem front_first_exit {p c n : Nat} (hp : 2≤p) (hc : 12≤c) (hn : 4≤n)
   · intro H
     exact ((clean_sync hp hc hn x h i he w hw.1).mp H) hw.2
 
-#print axioms initial_ghosts
-#print axioms front_first_exit
-
 /-- Entry transaction at the original front start. The enclosing
 geometry supplies only its span potential and nominated growth row;
 the hit predicate and its clock are fully physical. -/
@@ -196,5 +191,4 @@ def entryTransaction {p c n : Nat} (hn : 5≤n) (hc : 12≤c)
     have ghosts := initial_ghosts x i h he
     entry_clock hn hc x i h.1 h.2.1 short ghosts.1 ghosts.2
 
-#print axioms entryTransaction
 end L4.WindowA0Join

@@ -154,5 +154,4 @@ theorem accepted_from_tour {base start : X} {hh : ∃ i,oldH6 B base i=true}
   cases dec'
   exact ⟨pre,out,back,turn,W.trans (congrArg (fun t=>t++turn::back) V),
     Lead,Ev,Tail,⟨Z,mem,kind,dst,occ,atZ⟩,Ret',pay,H,sel,dec,auth,latch⟩
-#print axioms accepted_from_tour
 end L4.BStarSealTourAccepted

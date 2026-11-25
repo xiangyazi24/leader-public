@@ -143,7 +143,6 @@ theorem ready_nomination {p c n : Nat} (hn : 4≤n) (v : Fin n)
             (hProjection.crossing (Nat.pos_of_ne_zero hk0) hklt hs' hz)
     exact Or.inr (Or.inr ⟨hk1,Or.inr H⟩)
 
-
 /-- Contiguous segment of the nominated lifted edges, in order. This
 word is fixed at the epoch entry; matches need not be consecutive raw marks. -/
 def path {n : Nat} (v : Fin n) (i : Nat) : Nat → List (Fin n)
@@ -203,7 +202,3 @@ theorem paid_or_stopped_of_path {p c n : Nat} (hn : 4≤n)
 
 end L4.FreshPaySweep
 
-#print axioms L4.FreshPaySweep.ready_wait
-#print axioms L4.FreshPaySweep.ready_nomination
-
-#print axioms L4.FreshPaySweep.paid_or_stopped_of_path

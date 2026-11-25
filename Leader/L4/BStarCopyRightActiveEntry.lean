@@ -59,5 +59,4 @@ theorem initial_right {Tag : Type} (digits : Tag→BitVec 36) (atSource : Nat→
       exact U.rs_in _ (by omega) jT
   · exact (pending_initial atSource seam tail first).symm
 
-#print axioms initial_right
 end L4.BStarCopyRightActiveEntry

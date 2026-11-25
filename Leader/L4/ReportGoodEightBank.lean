@@ -245,12 +245,6 @@ theorem bank_expected (d : Sheet) (N : 1<n) (S : 0<s)
     (fun y Y=>history_to_bank d N hh G F
       (ReportPrelaunchDoorProducer.digits_positive d S) Rail y Y) t x.val) (E t)
 
-#print axioms write_origin_inactive
-#print axioms first_bank_safe
-#print axioms nonheader_safe
-#print axioms reader_word_protected
-#print axioms good_bank_closed
-#print axioms bank_expected
 structure FreshFileRows (d : Sheet) (hh : ∃ i,h i=true)
     (Q : Raw s n→Prop) (G : GapInput h)
     (I : Chart h→Raw s n→Prop) : Prop where
@@ -318,9 +312,5 @@ theorem full_cut_expected (d : Sheet) (N : 1<n) (S : 0<s)
     (fun y Y=>full_cut_of_history d N hh G F
       (ReportPrelaunchDoorProducer.digits_positive d S) Rail I L y Y)
     t x.val) (E t)
-
-#print axioms fresh_file_at_second
-#print axioms full_cut_closed
-#print axioms full_cut_expected
 
 end L4.ReportGoodEightBank

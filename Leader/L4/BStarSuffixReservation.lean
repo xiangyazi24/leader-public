@@ -88,7 +88,6 @@ theorem reserve_none_of_suffix_read {base initial : X} {hh : ∃ i,oldH6 B base 
     next => rfl
   next => rfl
 
-
 /-- An original suffix observation has its literal index and absolute
 INC count; all gates are admitted from common recovery onward. -/
 theorem suffix_index
@@ -163,6 +162,4 @@ theorem suffix_position_unique
   · simpa only [List.length_append,Nat.add_right_inj] using h
   · exact (impossible _ _ _ _ (by simp) h L A' A K' K).elim
 
-#print axioms separated_by_inc_or_early_pub
-#print axioms reserve_none_of_suffix_read
 end L4.BStarSuffixReservation

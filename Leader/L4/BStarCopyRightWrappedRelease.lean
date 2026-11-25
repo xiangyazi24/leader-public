@@ -165,8 +165,6 @@ private theorem rebase_same_up {Tag : Type} (s t : Ledger Tag) (up other : List 
     rw [release_transfer_commute]
     exact .interior _ _ k a src dst
 
-
-
 /-- A real left-origin release on the wrapped strip. Away from ingress
 the reserved strip hop blocks and an independent retained hop may
 act. At the full-wrap alias, the initial ingress may independently
@@ -239,5 +237,4 @@ theorem wrapped_release_mark {Tag : Type} (digits : Tag→BitVec 36) (atSource :
         (stripWord tail labels) (atSource i) rest step
       exact ⟨(s.transfer j a).releaseOne (atSource i) rest,labels,rfl,.mark W moved,after,movedUp⟩
 
-#print axioms wrapped_release_mark
 end L4.BStarCopyRightWrappedRelease

@@ -109,9 +109,4 @@ theorem mu_second_poly {s : Nat} (H : 6≤s) :
   exact Nat.mul_le_mul_right _ (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left _
     (AdviceBandRadiusBudget.t2_le H)))
 
-#print axioms accepts_iff
-#print axioms classify_iff
-#print axioms classified_snapshot
-#print axioms mu_first_constant
-#print axioms mu_second_poly
 end L4.ReportFastRawEvent

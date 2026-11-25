@@ -87,5 +87,4 @@ theorem clock {p c n : Nat} (hn : 4≤n)
   have coef : 2564≤coefficient c := Nat.le_trans (by decide : 2564≤4096) (Nat.le_max_right _ _)
   exact Nat.mul_le_mul (Nat.mul_le_mul_right n coef) (by omega)
 
-#print axioms clock
 end L4.WindowTripleWindow

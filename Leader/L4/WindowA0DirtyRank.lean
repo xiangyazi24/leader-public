@@ -153,8 +153,6 @@ theorem physical_source {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
     · simp [step,H',Ne.symm hE]
       rfl
 
-#print axioms physical_source
-
 def L1 {p c n : Nat} (z : WindowA0ClosedEntry.State p c n) (e : Fin n) : Prop :=
   e=z.tag.jSlot ∧
     (doorArrivals (z.tag.ledger.config (rightNeighbor e)).source (z.tag.ledger.config e).rail).source=.i0
@@ -222,8 +220,6 @@ theorem await_step {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
     rw [if_neg hL]
     rw [if_neg he] at good
     exact good.trans hK
-
-#print axioms await_step
 
 theorem birthless_launch_shape {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
     (S : WindowA0Ledger.Scope n) (J e : Fin n) (H : Nat)
@@ -333,8 +329,6 @@ theorem actual_l1_worker {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
   rw [phy]
   simpa [step] using hr.trans H'
 
-#print axioms actual_l1_worker
-
 theorem launch_preserves_xfree {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
     (S : WindowA0Ledger.Scope n) (J : Fin n) (H : Nat)
     (z : WindowA0CleanupPass.State p c n) (e : Fin n)
@@ -356,6 +350,4 @@ theorem launch_preserves_xfree {p c n : Nat} {initial : Config p c n} (hn : 4≤
     | reverse z => exact hz.2.2
     | forward z => exact (hz.1.2.resolve_left hz.2).2.1
 
-#print axioms birthless_launch_shape
-#print axioms launch_preserves_xfree
 end L4.WindowA0DirtyRank

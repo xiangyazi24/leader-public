@@ -154,10 +154,4 @@ set_option maxRecDepth 4096 in
 theorem all_out_digit_slots :
     (outDigits0++outDigits1).all (fun i => BStarLongRegisters.widthAt BStarLongRegisters.wordWidths i==4)=true := by decide
 
-#print axioms noncenter_hold
-#print axioms faulty_hold
-#print axioms stage_rejection
-#print axioms center_commit
-#print axioms event_sound
-#print axioms all_out_digit_slots
 end L4.BStarLongOutgoing

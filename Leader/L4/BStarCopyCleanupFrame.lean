@@ -37,7 +37,6 @@ private theorem fold_field (T : Lane → Prop) (A : List (At Sheet × Leaf))
       · exact start
     · exact fun t m => safe t (List.mem_cons_of_mem _ m)
 
-
 def Drained (v : Lane) : Prop := v.mobile=.empty ∧ v.retained=.empty
 
 private theorem prep_drained (old : At Sheet → Lane) (a : BStarLongPrep.Offer)
@@ -130,7 +129,6 @@ theorem pair_drained (x : Pair (LargeSite P)) (a : At Sheet) :
   · obtain ⟨d,D,Q⟩ := List.mem_flatMap.mp data
     exact data_drained _ _ d _ _ Q (safe.imp id (fun q => q d D (data_lane_claim _ _ d _ _ Q))) v V
 
-
 theorem ring_closed (x : X) (e i : Fin n) (sh : Sheet) (sep : e≠rightNeighbor e)
     (H : (readLane (Sheet.index sh) (x i).long).gate=false)
     (no : ∀ q∈(arbitration (round (oldPair B x e) ((x e).long,(x (rightNeighbor e)).long)).prep).1,
@@ -149,8 +147,6 @@ theorem ring_closed (x : X) (e i : Fin n) (sh : Sheet) (sep : e≠rightNeighbor 
   · by_cases hR : i=rightNeighbor e
     · exact touch .right hR.symm
     · simpa [AllSizeS1Geometry.step,hL,hR] using H
-
-#print axioms ring_closed
 
 theorem ring_drained (x : X) (e i : Fin n) (sh : Sheet) (sep : e≠rightNeighbor e)
     (H : Drained (readLane (Sheet.index sh) (x i).long))
@@ -175,7 +171,4 @@ theorem ring_drained (x : X) (e i : Fin n) (sh : Sheet) (sep : e≠rightNeighbor
     · exact touch .right hR.symm
     · simpa [AllSizeS1Geometry.step,hL,hR] using H
 
-#print axioms ring_drained
-#print axioms pair_closed
-#print axioms pair_drained
 end L4.BStarCopyCleanupFrame

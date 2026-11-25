@@ -132,7 +132,4 @@ theorem all_mark (d : Sheet) (C : Chart h) (hh : ∃ i,h i=true)
     · exact .inl ⟨P,S⟩
     · exact .inr (.inl ⟨j,J,E,P,S⟩)
 
-#print axioms door_holds_noneroot
-#print axioms door_consumes_root
-#print axioms all_mark
 end L4.ReportOwnerReverseControl

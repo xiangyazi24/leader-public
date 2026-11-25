@@ -112,7 +112,6 @@ theorem shield_typed {p c} (u v : Site p c) :
         simp only [fireResponder,fires,hL,hS] <;> rfl
     rw [R]
 
-
 set_option linter.unusedSimpArgs false in
 theorem left_shield_mask {p c : Nat} (u v : Site p c) :
     full (shieldF p c) (pubMask (u,v)).1 (fires u) := by
@@ -285,8 +284,6 @@ theorem raw_shields {p c : Nat} (hp : 0<p) (x : Pair (BitVec (publicWidth p c)))
       (congrArg Site.shield (read_pack hp t.1)) h.1,
     decoded_field (fun s => s.getLsbD 0) (shieldF p c) (publicWork hp x).2 x.2 t.2.shield
       (congrArg Site.shield (read_pack hp t.2)) h.2⟩
-
-#print axioms raw_shields
 
 end L4.BStarPublicShield
 

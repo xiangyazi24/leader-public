@@ -137,8 +137,6 @@ theorem early_outward9 {base x : X} {hh : ∃ i,oldH6 B base i=true}
       exact ih (fun a b eq => band (e::a) b (congrArg (List.cons e) eq))
         (fun a b eq => layout (e::a) b (congrArg (List.cons e) eq)) next Tend a k b J op j C
 
-#print axioms early_outward9
-
 private theorem generated_append {base x : X} {addr : Nat → Pos n} {len : Nat}
     {a b c : Mode} {u v : List (Fin n)}
     (P : GeneratedOwner hp base addr len x a u b)
@@ -189,5 +187,4 @@ theorem own_middle_of_band {base origin : X} {hh : ∃ i,oldH6 B base i=true}
     | cons v t =>
       exact early_outward9 hp chart sep hEarly band layout (.inl rfl) a v t U op j cur
 
-#print axioms own_middle_of_band
 end L4.BStarCopyRightMiddle

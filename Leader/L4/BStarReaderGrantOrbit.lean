@@ -88,7 +88,4 @@ theorem acquisition_seeds (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   rw [joined_canonical]
   simp [grants,hh,result,win]
 
-#print axioms joined_canonical
-#print axioms reader_header_keeps
-#print axioms acquisition_seeds
 end L4.BStarReaderGrantOrbit

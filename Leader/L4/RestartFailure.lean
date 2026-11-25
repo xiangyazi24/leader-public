@@ -103,7 +103,6 @@ theorem failure_at_boundary {α : Type} {n : Nat} (step : α → Fin n → α)
       exact cres _ _ (fun e => ih _ (hkeep x e hp))
     · exact hcont x hx hp (t+1)
 
-
 /-- A physical retired state may ignore the pure fresh observer; otherwise
 the tracked live pair agrees exactly, or both observers have failed. -/
 def Coupled {p c n r : Nat} (v : Fin n) (s : Obs p c n r)
@@ -138,7 +137,6 @@ theorem protect_bound_of_step {p c n r : Nat} (P : Params p c n r)
     P.size P.calibration v (RankSupplier.init x d) hp hq.2.1 hi t)
   exact RankRace.endpointSum_le_of_common_words _ _ _ _ s z
     (fun w => coupled_score _ _ _ (lift w s z ⟨rfl,rfl⟩)) t
-
 
 /-- The literal outer observer and the fresh observer share the same
 marked pairs. The outer rank test can end the trial earlier, but cannot
@@ -232,7 +230,3 @@ theorem start_failure_bound {p c n : Nat} (x : Config p c n)
 
 end L4.RestartFailure
 
-#print axioms L4.RestartFailure.coupled_step
-#print axioms L4.RestartFailure.trial_failure_bound
-
-#print axioms L4.RestartFailure.start_failure_bound

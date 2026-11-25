@@ -401,5 +401,4 @@ theorem forward_all_mark (Frames : WireFrames s n) (C : Chart h) (x : Raw s n)
         simp [G,r',r0,ingressRace]
     simpa only [nextForward,if_neg out,ValidState] using And.intro F' V'
 
-#print axioms forward_all_mark
 end L4.ShortAdmitForward

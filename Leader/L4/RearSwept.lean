@@ -116,9 +116,4 @@ theorem swept_fixed_rear {p c n d N : Nat} {x : Config p c n}
   rw [hpred,he]
   exact hc _ (Or.inl (hr.symm ▸ hl))
 
-#print axioms swept_initial
-#print axioms swept_stationary
-#print axioms swept_moves
-#print axioms swept_fixed_rear
-
 end L4.RearTrace

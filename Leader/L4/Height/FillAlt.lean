@@ -1296,19 +1296,4 @@ theorem four_bit_loss {m : Nat}
     have hstrictFinal : gA - 1 < B - gB := by omega
     exact False.elim (by omega)
 
-#print axioms phase_three_low_proposal
-#print axioms phase_three_high_proposal
-#print axioms phase_four_anchor_approves
-#print axioms phase_four_nonanchor_approval
-#print axioms phase_five_height
-#print axioms low_anchor_proposes_zero
-#print axioms high_before_anchor_proposes_top
-#print axioms filled_edge_is_strict
-#print axioms filled_edge_removes_b
-#print axioms two_anchor_filled_edge_is_strict
-#print axioms settled_prefix_grows
-#print axioms settled_prefix_rounds
-#print axioms settled_suffix_grows
-#print axioms four_bit_loss
-
 end L4.Height

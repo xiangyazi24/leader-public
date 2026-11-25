@@ -85,7 +85,4 @@ theorem seal_staged_entries (d : Sheet) (N : 1<n)
   rw [captured_selector_index,←Cap] at Sel
   exact ⟨q,M,Op,pre,fly,post,f,W,Seg,Hit,Sel.symm ▸ Value⟩
 
-#print axioms logical_injective
-#print axioms seal_has_write_receipt
-#print axioms seal_staged_entries
 end L4.ReportSealStagedBank

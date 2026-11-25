@@ -78,9 +78,6 @@ theorem safe_single (i : Fin n) (x : X) (e : Fin n)
     simp only [List.length_cons,List.length_append,List.length_nil] at H
     omega
 
-#print axioms busy_prefix_pc
-#print axioms safe_append
-
 /-- A writer's actual sampled bank remains selected across a tape
 that excludes its RELEASE and COMMIT opcodes. The generated
 controller histories at each intermediate mark follow from the
@@ -124,8 +121,6 @@ theorem follows_safe_word {base x : X} {hh : ∃ i,oldH6 B base i=true}
         exact F.2)
   exact ⟨A.1,A.2.1,(A.2.2 w [] (by simp)).1⟩
 
-#print axioms follows_safe_word
-
 /-- Join the exact interval shapes between the center win and an old
 body STAGE. An awake writer cannot release or publish during the
 remaining ACQUIRE tour, its consume, normal computation, or the
@@ -156,5 +151,4 @@ theorem safe_through_stage {base x : X}
     exact ⟨by decide,by decide⟩
   · exact safe_busy hp inFlight (by decide) (by decide)
 
-#print axioms safe_through_stage
 end L4.BStarWriterTransferWindow

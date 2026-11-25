@@ -74,8 +74,6 @@ theorem consecutive_offers {base : X} {hh : ∃ i,oldH6 B base i=true}
   rw [Q,←carried,canon _ _] at oldBound
   exact Token.forward.inj oldBound
 
-#print axioms consecutive_offers
-
 /-- Lockstep tape retaining both the old selected offer and the exact
 busy event that authenticated that record on the same raw mark. -/
 inductive Aligned (base : X) (addr : Nat → Pos n) (len op : Nat) :
@@ -147,8 +145,6 @@ theorem aligned_tape {base x : X} {hh : ∃ i,oldH6 B base i=true}
         (by have := current.2.1.1; omega) I.1 I.2.1 I.2.2 q Q hq
       exact ⟨_,.hop I E ⟨sel,hd,src,dst⟩ T⟩
 
-#print axioms aligned_tape
-
 /-- Locate the pre-mark state of any record on the exact tape, with
 its actual prefix word and the corresponding busy-event segment. -/
 theorem Aligned.prefix_to {base : X} {addr : Nat → Pos n} {len op : Nat}
@@ -206,8 +202,6 @@ theorem Aligned.gap_between {base : X} {addr : Nat → Pos n} {len op : Nat}
   obtain ⟨gap,P,R⟩ := Aligned.subword_between hp A before after preDs middle suffix split
   exact ⟨gap,P,R,pad⟩
 
-#print axioms Aligned.subword_between
-
 private theorem middle_indices {before after : D} {start count : Nat}
     (preDs middle suffix : List D)
     (E : (preDs++(before::(middle++(after::suffix)))).map Departure.index=List.range' start count) :
@@ -260,8 +254,6 @@ theorem Aligned.gap_of_records {base : X} {addr : Nat → Pos n} {len op : Nat}
   rw [←E] at J
   obtain ⟨d,hd,rfl⟩ := List.mem_map.mp J
   exact pad d hd
-
-#print axioms Aligned.gap_of_records
 
 def significant (base : X) (addr : Nat → Pos n) (d : D) : Bool :=
   ((addr d.index).2.val==1) && (longGeometry B (base (addr d.index).1)).inside
@@ -346,8 +338,6 @@ theorem next_significant_offer {base x : X} {hh : ∃ i,oldH6 B base i=true}
     (Aligned.filter_gap hp T before after preDs suffix adj)
     U V (Nat.le_of_lt bound) N N' node one inside F canon
 
-#print axioms next_significant_offer
-
 /-- The accepted DigitSweep on the exact filtered actual tape.
 Only per-packet numerical health, the fixed decoded instruction and
 canonical width of the digit result are required; adjacency and
@@ -412,5 +402,4 @@ theorem filtered_sweep {base x : X} {hh : ∃ i,oldH6 B base i=true}
       exact getElem_congr_idx atLast.symm
     exact congrArg (fun v => (digit v).2) V
 
-#print axioms filtered_sweep
 end L4.BStarNumericConsecutive

@@ -97,7 +97,6 @@ private theorem ref_paid_cold {p c n : Nat} (hn : 5≤n) (x : Config p c n)
   · have P := RearTrace.geometricPay_ready _ _ h
     simp [payer,H.2,L.2] at P
 
-
 private theorem keep_slot {p c n : Nat} (S : WindowA0Ledger.Scope n)
     (u : WindowA0ClosedEntry.State p c n) (e : Fin n)
     (h : u.tag.reason=none)
@@ -193,7 +192,6 @@ private theorem next_donor {p c n : Nat} (hn : 5≤n)
     rw [show WindowFourHeadTrace.landing u.tag.ledger e u.tag.iSlot=u.tag.iSlot from by
       simp [WindowFourHeadTrace.landing,WindowFourHeadTrace.moves,hel]]
     exact hslot
-
 
 open WindowA0ReleaseCredit in
 /-- Exact donor identity and absence of a prior physical exit on every
@@ -308,9 +306,6 @@ theorem kept_success_top {p c n : Nat} {initial : Config p c n} (hn : 5≤n)
   change asked b s 2=liftedSite b (donorOffset s 2+1)
   cases s <;> rfl
 
-#print axioms waiting_donor_on_word
-#print axioms kept_success_top
-
 /-- A credited adjacent release on a kept mark is a genuine physical
 release or matching door row on that same raw word. No caller-supplied
 top/ghost assumption is needed beyond the admitted launch snapshot. -/
@@ -328,5 +323,4 @@ theorem kept_success_released {p c n : Nat} {initial : Config p c n} (hn : 5≤n
   obtain ⟨hactive,htop⟩ := kept_success_top hn S J H z hz ha w e k hw hkeep hs
   exact routed_release_of_adjacent hn S J H q z hz ha owned w e k hw hkeep hs hactive htop
 
-#print axioms kept_success_released
 end L4.WindowA0AdjacentMotion

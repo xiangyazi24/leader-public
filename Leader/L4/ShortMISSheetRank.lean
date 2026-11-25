@@ -71,5 +71,4 @@ theorem rank_rows (P : Params s n) (C : Chart P.h) (N : 5≤n)
     rw [pre,post] at same H
     exact ⟨e,W,same,H⟩
 
-#print axioms rank_rows
 end L4.ShortMISSheetRank

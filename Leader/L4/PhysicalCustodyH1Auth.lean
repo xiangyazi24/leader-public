@@ -230,9 +230,4 @@ theorem authenticated_commit_at {n : Nat} (x : State n) (i e : Fin n)
   · subst e
     rw [step_left,selected_left,if_pos armed,L,R]
 
-#print axioms authenticated_commit_at
-#print axioms raw_h1_covers
-#print axioms raw_two_covers_authenticate
-#print axioms two_covers_authenticate
-#print axioms prospective_sound_after_cover
 end L4.PhysicalCustody.H1

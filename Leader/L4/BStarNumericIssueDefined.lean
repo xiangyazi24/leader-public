@@ -34,5 +34,4 @@ theorem initial_defined (old : BitVec LW) (op : Nat) (lo : 13≤op) (hi : op<408
       have look := (List.all_eq_true.mp mux_coverage) op (List.mem_range.mpr hi)
       simpa [scalarMux,O] using look
 
-#print axioms initial_defined
 end L4.BStarNumericIssueDefined

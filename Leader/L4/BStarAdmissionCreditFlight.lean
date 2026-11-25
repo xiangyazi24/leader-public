@@ -124,6 +124,4 @@ theorem credit_through_arrival {base x : X} {addr : Nat→Pos n} {len k j : Nat}
       obtain ⟨s,S⟩ := hit.2
       exact offsite e fmem s S
 
-#print axioms before_arrival_no_front
-#print axioms credit_through_arrival
 end L4.BStarAdmissionCreditFlight

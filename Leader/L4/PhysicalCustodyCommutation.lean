@@ -67,7 +67,4 @@ theorem adjacent_door_replay {s n : Nat} (x : Raw s n)
   simpa only [List.append_assoc,List.singleton_append] using
     commute_prefix (p++[d]) (bubble_door w v d H)
 
-#print axioms adjacent_door_replay
-#print axioms rawNext_disjoint_commute
-#print axioms rawRun_of_commuted
 end L4.PhysicalCustody

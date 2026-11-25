@@ -398,13 +398,4 @@ theorem raw_bad_bond_after_covers_expected {s n : Nat} (N : 5≤n)
   rw [raw_bad_bond_cost]
   exact ring_bad_bond_expected N i _ H t
 
-#print axioms raw_bad_bond_after_covers_expected
-#print axioms physical_bad_bond_expected
-#print axioms phase_local_bellman
-#print axioms wrong_count_le
-#print axioms freshPhase
-#print axioms idlePhase
-#print axioms consumePhase
-#print axioms matchingPotential_credit
-#print axioms matchingPotential_bellman
 end L4.PhysicalCustody.H1

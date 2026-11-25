@@ -135,9 +135,4 @@ theorem selector_before_write (sheet : Sheet) (G : GapInput h) (r : Owner h)
   exact selector_through_no_commit sheet G r hh F N x w X Rail
     (no_commit_before_noncommit_end sheet (charter G r) hh F N digit x w X H NR E)
 
-#print axioms selector_through_no_commit
-#print axioms selector_before_write
-#print axioms no_preview_from_commit
-#print axioms commit_pc_step
-#print axioms no_commit_before_noncommit_end
 end L4.ReportACQToWriteNoCommit

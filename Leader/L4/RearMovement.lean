@@ -128,7 +128,3 @@ theorem literal_ghostMovement_bound {p c n : Nat} (x : Config p c n) (i : Fin n)
 
 end L4.RearTrace
 
-#print axioms L4.RearTrace.localPhaseFacts_of_physical
-
-#print axioms L4.RearTrace.literal_phaseFacts
-#print axioms L4.RearTrace.literal_ghostMovement_bound

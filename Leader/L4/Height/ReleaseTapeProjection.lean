@@ -28,7 +28,6 @@ theorem consistency_after {s n : Nat} {x : Raw s n} {c : Word n → Fin n → Fi
   | nil => exact ok
   | cons e a ih => exact ih (consistent_next x c i y ok e)
 
-
 theorem emit_append {n : Nat} (c : Word n → Fin n → Fin n) (a u v : Word n) :
     emit c a (u ++ v) = emit c a u ++ emit c (a ++ emit c a u) v := by
   induction u generalizing a with
@@ -82,9 +81,5 @@ theorem mark_releases {s n : Nat} {base origin x : Raw s n}
     exact ⟨own,cur.1.2.2.2,generated_reset_receipt (by decide : 0<2) C sep replay 2 (by decide)
       e hist cur (.consume 2 own cleared)⟩
 
-#print axioms mark_releases
-#print axioms after_tape
-#print axioms consistency_after
-#print axioms shifted_twice
 end
 end L4.Height.ReleaseTapeProjection

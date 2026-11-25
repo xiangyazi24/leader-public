@@ -180,8 +180,5 @@ theorem pair_transfer_of_frame {p c : Nat} (hp : 0<p)
   · exact endpoint_transfer hp x.1 _ _ H.1
   · exact endpoint_transfer hp x.2 _ _ H.2
 
-#print axioms raw_left_signal
-#print axioms pair_transfer_of_frame
-
 end L4.BStarPublicFrame
 

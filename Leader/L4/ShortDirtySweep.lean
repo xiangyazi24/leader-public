@@ -211,7 +211,4 @@ theorem packed_of_no_forward {s n : Nat} {h : Fin n→Bool} (C : Chart h) (N : 5
   exact ⟨sweepWord_length C _,sweepWord_no_door C _ (Nat.le_refl _),
     sweep_down C N _ C.positive (Nat.le_refl _) x Q heads nf (fun f=>(Nat.lt_irrefl _ f).elim)⟩
 
-#print axioms descending_mark
-#print axioms sweepWord_no_door
-#print axioms packed_of_no_forward
 end L4.ShortDirtySweep

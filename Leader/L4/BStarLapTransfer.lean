@@ -219,8 +219,5 @@ theorem held_spare_fixture :
     (get (r.slots.1.apply x.1)).b=7 ∧
       (decode (get (r.slots.1.apply x.1))).b=0 := by decide
 
-#print axioms patch_transfer
-#print axioms raw_transfer
-#print axioms decoded_transfer
 end L4.BStarLapTransfer
 

@@ -100,5 +100,4 @@ theorem lift_suffix {base initial : X} (u v lead suffix : List (Fin n))
       rw [endEq,final]
       exact congrArg (fun z=>runLogical (r:=r) hh z events) D
 
-#print axioms lift_suffix
 end L4.BStarNativeLogicalTrace

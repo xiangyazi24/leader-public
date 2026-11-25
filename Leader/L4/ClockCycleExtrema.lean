@@ -77,6 +77,4 @@ theorem exists_extrema {m : Nat} (hm : 0<m) (f : Fin m → Nat) :
       have h : f k∈xs := List.mem_ofFn.mpr ⟨k,rfl⟩
       exact ⟨ri.symm ▸ lower _ h,rj.symm ▸ upper _ h⟩
 
-#print axioms span
-#print axioms exists_extrema
 end L4.ClockCycleExtrema

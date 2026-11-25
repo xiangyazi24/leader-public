@@ -84,9 +84,6 @@ theorem passed_prefix_step (g : Pair LongGeometry) (x : Pair (BitVec BStarTrace.
   simp only [Passed,F]
   exact h
 
-#print axioms passed_lane_frame
-#print axioms passed_prefix_step
-
 /-- On a genuinely active FENCE (opcode 11, nonfault, mapped sheet),
 advancing authenticates readiness of precisely the old physical lane. -/
 theorem mapped_fence_passes (g : Pair LongGeometry) (old : At Sheet → Lane)
@@ -116,5 +113,4 @@ theorem extend_passed_on_mark (g : Pair LongGeometry) (x : Pair (BitVec BStarTra
   · exact oldPassed s h
   · exact (mapped_fence_passes g (view x) j p sh hf ho hm).mp ha
 
-#print axioms extend_passed_on_mark
 end L4.BStarLongFencePrefix

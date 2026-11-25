@@ -84,9 +84,6 @@ theorem approachRead_good {p c n : Nat} {z0 : Config p c n} (hn : 4≤n)
     rw [approachRead_child]
     exact approach_step hn S J H q _ e (ih hclean) hfar
 
-#print axioms approach_step
-#print axioms approachRead_good
-
 def postApproach {p c n : Nat} (z0 : Config p c n) (S : WindowA0Ledger.Scope n)
     (J : Fin n) (H : Nat) (q : Trip (2*c)) (y : WindowA0ClosedEntry.State p c n) : Prop :=
   WindowA0ClosedEntry.Admitted z0 S J H y ∧
@@ -134,9 +131,6 @@ theorem approach_word_mean {p c n : Nat} {z0 : Config p c n} (hn : 4≤n)
   · rw [iidHitCost_of_target wordNext _ _ (show AStop (approachRead S z []) from .inl hd)]
     exact Nat.zero_le _
   · exact Nat.le_trans h (WindowA0ApproachOwned.expected_approach hn S J H q z hz.1 hw t)
-
-#print axioms boundary_dispatch
-#print axioms approach_word_mean
 
 open WindowA0ReleaseCredit WindowA0AdjacentEntry
 
@@ -210,6 +204,4 @@ theorem adjacent_word_failure {p c n : Nat} (S : WindowA0Ledger.Scope n)
   exact WindowA0RoutedRelease.failure_mass S.group S.iTag S.jTag
     (guardBase (WindowA0ClosedEntry.cut z).top) (mode z) z.tag.ledger t
 
-#print axioms adjacent_word_mean
-#print axioms adjacent_word_failure
 end L4.WindowA0Leg

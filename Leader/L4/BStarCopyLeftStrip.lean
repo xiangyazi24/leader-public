@@ -301,10 +301,4 @@ theorem selected_tail {a : LargeParams} {n : Nat} {b : LargeRows a}
     d=ending (L .ld) :=
   (raw_ld_terminal _ _ C.last D).mp (BStarLongFenceTopology.selected_data_raw _ _ _ M)
 
-#print axioms position_injective
-#print axioms source_no_ingress
-#print axioms selected_tail
-#print axioms of_chart
-#print axioms raw_hop
-#print axioms retains_at_hop
 end L4.BStarCopyLeftStrip

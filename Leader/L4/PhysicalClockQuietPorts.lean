@@ -21,7 +21,6 @@ private theorem successor_edge_of_legitimate {M : Nat} {a b : NativeRecord}
   · exact Or.inr (Or.inl (by simp [successor, ha', hb']))
   · exact Or.inr (Or.inr (by simp [successor, hb', ha']))
 
-
 /-- The accepted quiet records give the physical biased-tick relation at
 every header and port, including wrap and aliases. `read` is the old
 record reader (no logical update or wall-time transfer is used). -/
@@ -50,5 +49,4 @@ theorem quiet_ports {n : Nat} {h : Fin n→Bool} (hh : ∃ i,h i=true)
       · exact .inr (.inl H.symm)
       · exact .inr (.inr H.symm)
 
-#print axioms quiet_ports
 end L4.PhysicalClockQuietPorts

@@ -25,6 +25,4 @@ theorem permanent_h4_from_raw {s n : Nat} (N : 189<n) (x : Raw s n) :
   AllSizeComposition.additive_stage (rawNext s) (PermanentH2 (by omega)) (PermanentH4 N)
     _ _ x (permanent_h2_from_raw (by omega) x) (permanent_h4_from_permanent_h2 N)
 
-#print axioms permanent_h4_from_permanent_h2
-#print axioms permanent_h4_from_raw
 end L4.ShortMISPublicationClosed

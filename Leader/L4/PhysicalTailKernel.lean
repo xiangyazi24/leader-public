@@ -219,6 +219,3 @@ theorem drift_kernel {n : Nat} (hn : 4 ≤ n) (out : Fin n)
 
 end L4.PhysicalTailKernel
 
-#print axioms L4.PhysicalTailKernel.active_sum
-#print axioms L4.PhysicalTailKernel.inactive_sum
-#print axioms L4.PhysicalTailKernel.drift_kernel

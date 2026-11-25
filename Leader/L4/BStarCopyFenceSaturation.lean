@@ -200,10 +200,6 @@ theorem retained_reverse {L : Type} {plan : List L} {s : Ledger L} {upstream : L
   rw [(saturated_release P hr terminal B).2.2] at H
   exact H.complete
 
-#print axioms exact_handoff
-#print axioms cell_saturation
-#print axioms retained_reverse
-
 open AllSizeProtocol BStarLongClaims BStarLongPackets BStarLongFencePrefix
 
 /-- The physical receiver line is read in its travel order. -/
@@ -262,8 +258,6 @@ theorem physical_terminal {L : Type} (digits : L→BitVec 36)
   rw [(all j J).2.2.1] at E
   exact E
 
-#print axioms physical_terminal
-
 /-- Accept exactly the upstream head, never a label guessed from equal
 packet bytes. Raw upstream adapters may attach this ordered protocol
 to the physical line without changing the existing numeric ledger. -/
@@ -310,10 +304,6 @@ theorem ordered_physical_terminal {L : Type} (digits : L→BitVec 36)
     upstream=[] ∧ s.release.pending=[] :=
   physical_terminal digits (ordered_prefix P).1 hr (ordered_prefix P).2 lanes agree g opt a
     located retaining passed
-
-#print axioms ordered_prefix
-#print axioms ordered_physical_terminal
-
 
 open BStarLongPrep BStarLongCommandData BStarTrace BStarH6WordChart BStarLongWork
 
@@ -367,7 +357,6 @@ theorem empty_patch_frame (g : Pair LongGeometry) (x : Pair (BitVec BStarTrace.L
           · subst v
             exact noIncoming ⟨.hop,u,some s⟩ hc rfl
         simp only [dataEffects, hopEffects, zero, if_true, List.map_nil, List.nil_append, List.not_mem_nil] at hd
-
 
 variable {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
 local notation "B" => bStar k₁ k₂ t₂ J₁ J₂ r c p c₁ hp
@@ -433,8 +422,6 @@ theorem drained_word_frame (P : Fin n → Sheet → Prop) (x : X) (w : List (Fin
       (fun a b c E => scope (e::a) b c (congrArg (List.cons e) E)) i sh yes
     exact J.trans (frame i sh yes)
 
-#print axioms drained_word_frame
-
 /-- No reservation at PC11 or later once authoritative preparation
 provenance has identified the opcode of winners at this lane. -/
 theorem no_prep_late (g : Pair LongGeometry) (raw : Pair (BitVec LW)) (a : At Sheet)
@@ -447,8 +434,6 @@ theorem no_prep_late (g : Pair LongGeometry) (raw : Pair (BitVec LW)) (a : At Sh
   have op := ownerCode offer win loc
   unfold prepOf at op
   split at op <;> first | contradiction | omega
-
-#print axioms no_prep_late
 
 /-- Checked negative control: the count-only Prefix can synthesize
 the wrong first-receiver tag order while saturating both cells. -/
@@ -469,5 +454,4 @@ theorem counts_not_identity :
   have fP : Prefix [1,0] f := .mark eP (.transfer e 0 0 rfl rfl)
   exact ⟨f,fP,by decide +kernel,by decide +kernel⟩
 
-#print axioms counts_not_identity
 end L4.BStarCopyFenceSaturation

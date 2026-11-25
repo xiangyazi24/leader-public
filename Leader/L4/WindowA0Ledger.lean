@@ -146,9 +146,4 @@ theorem run_live_or_done {p c n : Nat} {z0 : Config p c n} (hn : 4≤n)
       exact h
     · exact live_or_terminal hn S x e h
 
-#print axioms initial_live
-#print axioms run_live_or_done
-#print axioms physical_marks
-#print axioms live_or_terminal
-#print axioms physical_exit_iff
 end L4.WindowA0Ledger

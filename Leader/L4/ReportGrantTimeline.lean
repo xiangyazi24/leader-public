@@ -89,6 +89,4 @@ theorem last_win_after_clear (d : Sheet) (N : 1<n) (i : Fin n) (j : Fin 3)
       (headers pre ⟨e::post,E⟩) Z (held_start d i j _ post T)
     exact ⟨pre,post,E,Z,W,T⟩
 
-#print axioms gain_at_old_win
-#print axioms last_win_after_clear
 end L4.ReportGrantTimeline

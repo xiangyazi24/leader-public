@@ -145,11 +145,6 @@ theorem failed_winner_faults (old : At Sheet → Lane) (P : List Offer) (a : Off
   ⟨List.mem_map.mpr ⟨a,ha,rfl⟩,
    List.mem_append_right _ (List.mem_map.mpr ⟨a,List.mem_filter.mpr ⟨ha,hf⟩,rfl⟩)⟩
 
-#print axioms arbitrate_winners
-#print axioms writes_split
-#print axioms prep_data_disjoint
-#print axioms failed_winner_faults
-
 def view (x : Pair (BitVec LW)) (s : At Sheet) : Lane :=
   readLane (Sheet.index s.occurrence) (lane (s.side == .right) x)
 
@@ -197,6 +192,4 @@ theorem failed_load_fixture :
     effects fixtureLane .stop .bad=⟨[.gate false],false⟩ := by
   decide +kernel
 
-#print axioms round_transfer
-#print axioms failed_load_fixture
 end L4.BStarLongPrep

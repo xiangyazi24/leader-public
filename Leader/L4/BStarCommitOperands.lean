@@ -207,9 +207,4 @@ theorem word_sites_of_ordinal {h : Fin n → Bool} (hh : ∃ i,h i=true)
     simpa only [back_zero] using K.2 0 positive
   · exact (congrArg (word h) (owns d).symm).trans (first_word hh _ _ K)
 
-#print axioms word_sites_of_ordinal
-#print axioms Acquisition.reader_owned
-#print axioms Acquisition.writer_owned
-#print axioms operand_at_acquire
-#print axioms precommit_three
 end L4.BStarCommitOperands

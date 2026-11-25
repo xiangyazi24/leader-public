@@ -49,7 +49,6 @@ private theorem obs_unique (g : Pair LongGeometry) (old : ReadK) (pre : List KWr
   subst j
   exact congrArg Prod.snd (Option.some.inj (F.symm.trans E))
 
-
 private theorem fold_value (a : AtK) (v : Token) (ls : List KWrite)
     (ok : ∀ z∈ls, z.1=a → z.2=v) :
     ls.foldl (fun raw z => putRaw raw a z) (encode v) = encode v := by
@@ -162,6 +161,4 @@ theorem nomination_or_overwrite (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp 
     obtain ⟨v,V⟩ := nominate_other a _ u G R
     exact .inr (observed_joined k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x a ha u v d A B V).2
 
-#print axioms observed_joined
-#print axioms nomination_or_overwrite
 end L4.BStarClearanceObserveJoined

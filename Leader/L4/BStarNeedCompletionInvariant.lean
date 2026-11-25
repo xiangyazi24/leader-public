@@ -88,8 +88,4 @@ theorem recordTrace_agrees {n r : Nat} {h : Fin n→Bool} (hh : ∃ i,h i=true)
     rw [←activate_agrees (r:=r) hh x i a b A₁]
     exact ih _ A₂
 
-#print axioms phase_ignores_unused
-#print axioms finish_ignores_unused
-#print axioms activate_agrees
-#print axioms recordTrace_agrees
 end L4.BStarNeedCompletionInvariant

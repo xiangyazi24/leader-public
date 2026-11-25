@@ -905,14 +905,6 @@ theorem mis23_from_h2_only_word (N : 189<n) (x : Raw s n)
   ShortMISPublicationSuppliers.mis23_from_h2 N x H
     (mis2_protected (by omega) x H) W2 (fun y Y=>mis3_protected N y Y) W3
 
-#print axioms owner_inv_step
-#print axioms epoch_owner
-#print axioms classified_pending
-#print axioms protected_rows
-#print axioms mis2_protected
-#print axioms mis3_protected
-#print axioms mis23_from_h2_only_word
-
 end
 end L4.ShortMISPublicationOwner
 

@@ -98,5 +98,4 @@ theorem two_raw_reads_separated {base x : X} {hh : ∃ j,oldH6 B base j=true}
   have order : remain.length<(remain++a::gap).length := by simp [List.length_append]
   exact one remain a (gap++[b]) (remain++a::gap) b [] firstSplit rfl order (time1 ▸ first) (time2 ▸ second)
 
-#print axioms two_raw_reads_separated
 end L4.BStarRawReadSeparation

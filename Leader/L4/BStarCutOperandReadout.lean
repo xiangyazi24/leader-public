@@ -73,8 +73,6 @@ theorem reader_cut_operand (base x : X) (u tail : List (Fin n)) (i : Fin n) (j :
   rw [W,BStarResetSchedule.run_append]
   exact U
 
-#print axioms reader_cut_operand
-
 /-- Writer version, on the actual old prefix before its own first
 authorized publication. Excluding that mark is necessary: that
 mark deliberately installs the new selector. -/
@@ -101,5 +99,4 @@ theorem writer_cut_operand (base x : X) (u tail pre : List (Fin n)) (e i : Fin n
   rw [W,BStarResetSchedule.run_append]
   exact U
 
-#print axioms writer_cut_operand
 end L4.BStarCutOperandReadout

@@ -239,8 +239,4 @@ theorem staged_after_seal (d : Sheet) (N : 1<n)
   exact (staged_on_ack_tape d N hh G F M Frame r x w l A S ⟨j,J⟩ I.prior
     (by omega) Past T).trans (Staged j J)
 
-#print axioms staged_on_ack_tape
-#print axioms every_write_receipt
-#print axioms staged_at_seal
-#print axioms staged_after_seal
 end L4.ReportItemNineStaging

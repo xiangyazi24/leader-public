@@ -95,6 +95,4 @@ theorem miss_quarter {s n : Nat} (hn : 4≤n) (hs : 6≤s)
   simp only [←eqT,Nat.max_left_comm]
   exact H
 
-#print axioms publication_wait_eq
-#print axioms miss_quarter
 end L4.PhysicalClockMissQuarter

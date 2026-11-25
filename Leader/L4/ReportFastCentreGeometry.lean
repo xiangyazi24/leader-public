@@ -44,6 +44,4 @@ theorem production_consecutive_for_publication (d : Sheet) (G : GapInput h)
     ∃ r : Fin 5→Owner h, Consecutive G r ∧ publicationTarget G (r 2)=j :=
   consecutive_for_publication G j (production_five_room d advice S Bound)
 
-#print axioms publicationTarget_eq_successor
-#print axioms production_consecutive_for_publication
 end L4.ReportFastSplice

@@ -157,6 +157,4 @@ theorem two_open_lines {n l r H : Nat} (hl : 0<l) (hr : 0<r) (lH : l≤H) (rH : 
       (fun w => count l left played w l=0 ∧ count r right played w r=0) a (128*n*H) := by
   exact (paired_clearance hl hr lH rH left right played two).expected (Nat.lt_of_lt_of_le hl lH) a
 
-#print axioms two_open_lines
-#print axioms transfer
 end L4.Height.FenceLineTransfer

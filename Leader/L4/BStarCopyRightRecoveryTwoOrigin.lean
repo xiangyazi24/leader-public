@@ -156,5 +156,4 @@ theorem recovered_right_ack_two_origin {base origin preOrigin : X} {hh : ∃ i,o
   rw [newWhole]
   exact res
 
-#print axioms recovered_right_ack_two_origin
 end L4.BStarCopyRightRecoveryTwoOrigin

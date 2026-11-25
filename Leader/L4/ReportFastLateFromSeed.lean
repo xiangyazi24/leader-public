@@ -57,6 +57,4 @@ noncomputable def lateSealCommit_of_seed
       ((charter G r).a+2*(charter G r).L+3) :=
   (lateHistory_of_seed d hh P G r seed).toLateSealCommit
 
-#print axioms lateHistory_of_seed
-#print axioms lateSealCommit_of_seed
 end L4.ReportFastSplice

@@ -260,5 +260,4 @@ theorem packed_right_of_attempt {base origin : X} {hh : ∃ i,oldH6 B base i=tru
   · rw [wire,wholeBody]
     exact fin
 
-#print axioms packed_right_of_attempt
 end L4.BStarCopyRightAttempt

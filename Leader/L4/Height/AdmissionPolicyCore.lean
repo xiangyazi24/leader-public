@@ -64,7 +64,6 @@ theorem admission_age {base y : Raw s n} {addr : Nat → Pos n} {len : Nat}
     obtain ⟨k,cur⟩ := busy_cut u (e::v) B
     cases idle_of_issue hp cur hit.2.1.1
 
-#print axioms admission_age
 open AllSizeProtocol BStarAcquireLiteralChain BStarH6WordChart BStarAcquireAnchors
 open BStarH6Ordinal BStarClearanceRaceMark BStarFenceReceiverChart BStarLongClaims BStarParkedSteering
 noncomputable section
@@ -76,7 +75,6 @@ def client {n : Nat} (h : Fin n → Bool) (hh : ∃ i,h i=true) (o : Owners h) (
 
 variable {s n : Nat} {x : Raw s n} (g : CustodyWitness x)
 local notation "h" => oldH6 (rows s) g.base
-
 
 def serviceOwner (i : Header h) : Owners h := ⟨commandOwner h i.val 1,commandOwner_range h g.hh i.val 1⟩
 
@@ -112,7 +110,6 @@ def live (o : Owners h) (phase : Fin 5 → Word n → Prop) (j : Fin 5) (a : Wor
     newAdmission x
     (endpoint (oldH6 (rows s) g.base) g.hh (client _ g.hh o j) 0).1 a ∧
     firstAdmission hp (base:=g.base) (hh:=g.hh) (rawRun x a) (gate g o j)
-
 
 theorem live_gate (o : Owners h) (phase : Fin 5→Word n→Prop) (j : Fin 5) (a : Word n)
     (L : live g o phase j a) :

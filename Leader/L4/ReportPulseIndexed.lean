@@ -63,6 +63,4 @@ theorem indexed_middle_paint
   unfold middleLength at C P
   exact ⟨t,A,by omega,E⟩
 
-#print axioms indexed_paint_of_no_window_miss
-#print axioms indexed_middle_paint
 end L4.ReportPulseIndexed

@@ -163,8 +163,4 @@ theorem width_roster {p c n : Nat} (x : Config p c n) (i : Fin (RankPhysical.ran
     width (roster x i) (roster x (liftedSite i 6))=span x i :=
   width_unique _ _ (spanK_lt x i 6 (by omega)) (at_spanK x i 6)
 
-#print axioms width_roster
-#print axioms width_landing
-#print axioms width_tagged_mark
-
 end L4.WindowSpanEndpoints

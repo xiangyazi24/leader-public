@@ -45,9 +45,6 @@ theorem held_reader_value_run {s n : Nat} (N : 5≤n) (x : Raw s n) (i : Fin n)
       (raw_h1_selected_frozen N x e i C.1.1).trans H
     exact (ih (rawNext s x e) (h2grant_closed N x e C) next U).trans curr
 
-#print axioms no_writer_of_reader
-#print axioms held_reader_value_run
-
 /-- Owner reads are protected up to that SAME incidence's release.
 This predicate observes the literal source of release on each mark,
 not a simultaneous empty or quiescent condition on other owners. -/
@@ -86,5 +83,4 @@ theorem protected_reader_run {s n : Nat} (N : 5≤n) (x : Raw s n) (i : Fin n)
     have tail := ih (rawNext s x e) (h2grant_closed N x e C) next hold U
     exact ⟨tail.1,tail.2.trans curr⟩
 
-#print axioms protected_reader_run
 end L4.ShortReaderTrace

@@ -18,7 +18,6 @@ local notation "B" => bStar k₁ k₂ t₂ J₁ J₂ r c p c₁ hp
 local notation "X" => Fin n → LargeSite (production k₁ k₂ t₂ J₁ J₂ r c p c₁)
 local notation "step" => AllSizeS1Geometry.step B
 
-
 def NoAcquireAt (x : X) (i : Fin n) (j : Fin 3) : Prop :=
   ∀ q, atCursor x (i,slot j)=.forward q → ¬ HealthyOp acquire q
 
@@ -95,6 +94,4 @@ theorem good_no_acquire {base x : X} {hh : ∃ i,oldH6 B base i=true}
     · exact .inr (.inr (.inr ⟨resetPayload 2, G.2.1⟩))
     · exact .inl (G.2.2.2 k gt valid)
 
-#print axioms good_no_acquire
-#print axioms no_win_at
 end L4.BStarResetNoAcquire

@@ -111,6 +111,4 @@ theorem prescribed_physical_first {base x : X} {hh : ∃ i,oldH6 B base i=true}
     atGate cur v read op fault ready (readyAll _) G side E (firstCode side) (.inl ⟨race,rfl⟩)
   exact ⟨R,Z,K⟩
 
-#print axioms first_emitted
-#print axioms prescribed_physical_first
 end L4.BStarGatePolicySplice

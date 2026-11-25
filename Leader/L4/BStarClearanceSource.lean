@@ -95,8 +95,6 @@ theorem dirty_source (x : X) (root : Fin n)
           (W.symm ▸ V) (W.symm ▸ I) (W.symm ▸ K)
         exact .inr ⟨op,(H'.elim (fun h => h.symm ▸ (by decide : 0<413)) And.right),Y⟩
 
-#print axioms dirty_source
-
 private theorem issue_outcome (x : X) (root : Fin n)
     (st : oldH6 B x root=true) (distinct : ∀ e : Fin n,e≠rightNeighbor e)
     (I : Issue (x root).long) :
@@ -157,8 +155,6 @@ theorem nonheld_three (root : Fin n) (x : X)
     rw [args] at E
     exact .inr (.inr ⟨I₂,0,args,E⟩)
 
-#print axioms nonheld_three
-
 open BStarLongClaims BStarLongTransport BStarLongEvents
 
 /-- The stopping state is tested before choosing the mark. Thus a held
@@ -185,5 +181,4 @@ theorem held_before (x : X) (root e : Fin n) (hold : Held (x root).long) :
   · rw [hp]
     exact .inr (bind_forward_class g.2 0 pay)
 
-#print axioms held_before
 end L4.BStarClearanceSource

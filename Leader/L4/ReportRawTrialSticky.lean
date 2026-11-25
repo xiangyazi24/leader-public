@@ -188,7 +188,4 @@ theorem physical_sticky_of_quiet_trials (d : Sheet) (N : 1<n) (S : 0<s)
     ⟨fun k K=>(V.isolated k K).trans (Iso k K),V.captured,V.interior,V.pair⟩
   exact carry b Z ⟨j,J,V'⟩
 
-#print axioms complete_quiet_interval
-#print axioms quiet_pass_result
-#print axioms physical_sticky_of_quiet_trials
 end L4.ReportRawTrialSticky

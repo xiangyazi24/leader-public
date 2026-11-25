@@ -81,5 +81,4 @@ theorem ring_landing (x : X) (e i : Fin n)
     rw [S,BitVec.toNat_ofNat,Nat.mod_eq_of_lt (Nat.lt_trans a.bank.isLt (by decide))]
     simp [a.bank.isLt]
 
-#print axioms ring_landing
 end L4.BStarCommitRingLanding

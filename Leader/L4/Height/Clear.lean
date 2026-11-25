@@ -966,12 +966,4 @@ theorem clear_time
   exact clear_time_bound hm s S tzero ClearedBy proc
     (D + 1) u hbound herr
 
-#print axioms error_monotone
-#print axioms error_monotone_run
-#print axioms dep_path_bound
-#print axioms clears_on_poll
-#print axioms legitimate_of_correct_quiet
-#print axioms clear_time_at_level
-#print axioms clear_time
-
 end L4.Height.Recover.StageThree

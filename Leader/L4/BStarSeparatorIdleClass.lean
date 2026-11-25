@@ -112,5 +112,4 @@ theorem joined_idle_cls (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
     · exact (mid _ P rfl).elim
   · exact obs_cls g _ _ a t P
 
-#print axioms joined_idle_cls
 end L4.BStarSeparatorIdleClass

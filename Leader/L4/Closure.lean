@@ -230,7 +230,6 @@ private theorem interiorPair_native {p c1 : Nat} (u v : Site p c1)
     all_goals
       cases hc : v.bullet <;> simp_all
 
-
 private def strip {p c1 : Nat} (a : Site p c1) : Site p c1 :=
   { a with stock := false, rail := .e }
 
@@ -512,7 +511,3 @@ theorem terminalAt_safeOneLeader {p c1 n : Nat} (hn : 4 ≤ n)
 
 end L4
 
-#print axioms L4.terminalAt_source_off
-#print axioms L4.terminalAt_step
-#print axioms L4.terminalAt_run
-#print axioms L4.terminalAt_safeOneLeader

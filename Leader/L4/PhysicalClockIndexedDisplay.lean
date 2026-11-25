@@ -39,5 +39,4 @@ theorem of_indexed_original {s n : Nat} {x : Raw s n} (g : CustodyWitness x)
   · have Hn : i≠a.val := fun e=>J (same.mpr e)
     simp [J,Hn]
 
-#print axioms of_indexed_original
 end L4.PhysicalClockDisplay

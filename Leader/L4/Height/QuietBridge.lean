@@ -345,11 +345,4 @@ theorem quiet_stream {m B M : Nat}
   intro t htt
   exact stream_quiet_mono hMone hm s w htt hquietAt
 
-#print axioms activate_one_eq
-#print axioms quiet_one_iff
-#print axioms clock_params_iff
-#print axioms quiet_preserved_holds
-#print axioms all_clear_time_unconditional
-#print axioms quiet_stream
-
 end L4.Height.Recover

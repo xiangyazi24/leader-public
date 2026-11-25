@@ -107,7 +107,3 @@ def LiteralDrainedPersistence {p c n : Nat} (x : Config p c n)
 
 end L4.GGStage
 
-#print axioms L4.GGStage.preparation_mean_of_predictable_certificate
-
-#print axioms L4.GGStage.stageCover_step
-#print axioms L4.GGStage.stageCover_run

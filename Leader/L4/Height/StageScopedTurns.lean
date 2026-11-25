@@ -146,5 +146,4 @@ theorem turns_of_sublist {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · rw [List.append_assoc,BStarResetSchedule.run_append]
     exact R
 
-#print axioms turns_of_sublist
 end L4.Height.StageScopedTurns

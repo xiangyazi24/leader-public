@@ -35,4 +35,3 @@ theorem sharp_clock_of_physical_stageB (h : ConcretePhysicalStageB) :
 
 end L4.TripleAssembly
 
-#print axioms L4.TripleAssembly.sharp_clock_of_physical_stageB

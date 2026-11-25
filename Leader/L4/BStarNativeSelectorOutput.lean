@@ -82,6 +82,4 @@ theorem selected_native {width : Nat} (old : X) (mark center : Fin n)
     visible (step old mark) center sites=(nativeSpec width inputBank).2 (receiptChoice desc receipt) :=
   (chosen_output hp old mark center sites ys desc op receipt pub publication named auth staged).trans (math _)
 
-#print axioms selected_native
-#print axioms chosen_output
 end L4.BStarNativeSelectorOutput

@@ -178,6 +178,4 @@ theorem last_entry_to_bit {base x : X} {hh : ∃ j,oldH6 B base j=true}
     cases N
     exact ⟨p,e,tail,Desc,reply,split,lead,I,E,R,stay,W,F,O,Bi,need,oldDesc⟩
 
-#print axioms enters_bit
-#print axioms last_entry_to_bit
 end L4.BStarBitControllerOrigin

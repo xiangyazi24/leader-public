@@ -127,8 +127,6 @@ private theorem carried_back (g : Pair LongGeometry) (x : Pair (BitVec LW))
     exact (visit_back _ _ _ _).trans (outgoing_back _ _ _ _ q E)
   all_goals exact failed _
 
-#print axioms carried_back
-
 private theorem grant_back (g : Pair LongGeometry) (x : Pair (BitVec LW))
     (L : List CmdOffer) (o : CmdOffer) (C : CommandClaim) (p : Payload)
     (E : BStarLongGrant.update g x L o=(C,.advance p)) :
@@ -211,9 +209,6 @@ theorem offer_outcome (g : Pair LongGeometry) (x : Pair (BitVec LW))
   have K := L.trans (T.trans (X.trans V)) F
   exact K.2 ▸ bind_back _ _ _ _ Q K.1
 
-#print axioms offer_outcome
-
-
 open BStarLongRouting BStarBitTerminalHealth
 
 /-- A healthy literal BIT landing has canonical forward outcome zero;
@@ -243,5 +238,4 @@ theorem joined_outcome (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   have bit := carried_back g raw C offer back.1
   exact (bit.2.trans back.2) ▸ offer_outcome g raw C offer M bit.1
 
-#print axioms joined_outcome
 end L4.BStarBitGateOutcome

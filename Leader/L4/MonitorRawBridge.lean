@@ -237,16 +237,4 @@ theorem anchored_sound
 end L4.MonitorRawBridge
 
 namespace L4.MonitorRawBridge
-#print axioms iid_cost_eq_height
-#print axioms height_iff_row
-#print axioms cost_project_le
-#print axioms expected_project
-#print axioms run_snoc
-#print axioms run_project
-#print axioms reachable_closed
-#print axioms reachable_sound
-#print axioms expected_of_monitor_words
-#print axioms anchored_closed
-#print axioms expected_anchored
-#print axioms anchored_sound
 end L4.MonitorRawBridge

@@ -46,5 +46,4 @@ theorem scoped_stage_until_seal {base origin : X} {hh : ∃ j, oldH6 B base j=tr
   rw [split] at H safe
   exact ⟨H,safe⟩
 
-#print axioms scoped_stage_until_seal
 end L4.Height.StageSealScoped

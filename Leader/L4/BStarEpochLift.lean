@@ -121,7 +121,4 @@ theorem epoch_coset_replay {base initial : X} (u v past : List (Fin n))
     physical_coherent_coset hp u v cuts hh sep Q I fiber closed hr flags notShort
       P M pos phase cut past w L R C⟩
 
-#print axioms epoch_coset_replay
-#print axioms count_concat
-#print axioms lift_from_epoch
 end L4.BStarEpochLift

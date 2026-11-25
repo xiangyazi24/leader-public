@@ -129,11 +129,4 @@ theorem front_flag_observed {a : Nat} {hit : Bool} (eq : a=flag hit) :
     (a==3)=true ↔ hit=true := by
   simpa [eq] using flag_hit_iff hit
 
-#print axioms hop_bit
-#print axioms left_stay_bit
-#print axioms turn_bit
-#print axioms launch_bit
-#print axioms door_stay_bit
-#print axioms front_flag_observed
-
 end L4.Height.ObserverBits

@@ -137,6 +137,4 @@ theorem arbitrary_attempt {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · obtain ⟨a,w,G⟩ := G
     exact ⟨u,a,w,L,G⟩
 
-#print axioms arbitrary_attempt
-#print axioms from_issue
 end L4.BStarClearanceAttempt

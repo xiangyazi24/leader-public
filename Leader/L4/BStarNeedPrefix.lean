@@ -81,7 +81,4 @@ theorem prefix_before_first_publish (x : X) (i : Fin n)
     have exactSplit : w=pre++i::l := by simpa [List.append_assoc] using A.symm
     exact (pub (prior pre i l exactSplit)).elim
 
-#print axioms publication_is_outgoing
-#print axioms no_earlier_publication
-#print axioms prefix_before_first_publish
 end L4.BStarNeedPrefix

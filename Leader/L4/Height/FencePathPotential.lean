@@ -173,5 +173,4 @@ theorem reserve_drift {n b m : Nat} (z : Fin n → Nat) (pos : 0<m)
   rw [Nat.pow_succ,Nat.mul_comm]
   exact Nat.mul_le_mul_left 2 low
 
-#print axioms reserve_drift
 end L4.Height.FencePathPotential

@@ -127,12 +127,6 @@ theorem ordered_three_hits {n : Nat} (p : Params) {h : Fin n→Bool} (hh : ∃ i
     · exact T1.2
     · exact T2.2
 
-#print axioms effectiveOffset_eq
-#print axioms reportK_eq
-#print axioms literal_route_step
-#print axioms unique_live_digit
-#print axioms ordered_three_hits
-
 /-- Throughout an arbitrary actual flight each sampled departure may
 have different old production bytes. The unique-hit calculation needs
 the cache invariant at each old pair, not constancy of work data. -/
@@ -183,8 +177,4 @@ theorem report2_digit_room {s gap : Nat} (S : 6≤s) (G : 16*(s+1)≤gap) :
   change ell (radiusTwo s+1)≤gap
   omega
 
-#print axioms ordered_hits_varying_old
-#print axioms report1_cache_is_literal
-#print axioms report2_cache_is_literal
-#print axioms report2_digit_room
 end L4.ReportDigitHits

@@ -64,9 +64,6 @@ theorem rs_word_sites {base : X} (hh : ∃ v,oldH6 B base v=true)
   have le : seam+d.val≤tail := by have := d.isLt; omega
   exact ⟨strip.rs_nonheader _ pos le,same_right_word hp hh a seam tail strip _ (by omega) le⟩
 
-#print axioms right_header
-#print axioms rs_word_sites
-
 /-- The full right packed-bank operand is invariant at every earlier
 LOAD cut under the original unbroken right ACQUIRE reader lifetime.
 The bank used by LOAD is matched to ACK's low/right captured selector
@@ -125,5 +122,4 @@ theorem packed_before_load {base x : X} {cut whole : List (Fin n)}
   rw [equalSel] at F
   exact congrFun F j
 
-#print axioms packed_before_load
 end L4.BStarCopyRightWrappedBank

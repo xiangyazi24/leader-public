@@ -103,7 +103,6 @@ theorem enabled_of_live (d : Sheet) (N : 1<n) (hh : ∃ i,h i=true)
       rw [P]
       exact ⟨P,H.hold,H.selector,H.data.2⟩
 
-
 private theorem off_front (d : Sheet) (C : Chart h) (x : Raw s n) (k i : Nat)
     (R : ForwardWait d C x k) (I : i<C.L) (H : k≠i) : (tok d C x i).tag≠2 := by
   rw [R.2.2 i I]
@@ -425,8 +424,4 @@ theorem live_seed (d : Sheet) (hh : ∃ i,h i=true) (G : GapInput h) (r : Owner 
     Live d hh Q G r x (x,.sealIssue) :=
   ⟨X,S,I,rfl,Compat,Held,Sel,trivial⟩
 
-#print axioms payload_step
-#print axioms live_next
-#print axioms live_seed
-#print axioms enabled_of_live
 end L4.ReportLateEnabledInvariant

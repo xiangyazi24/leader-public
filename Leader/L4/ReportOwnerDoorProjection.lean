@@ -30,5 +30,4 @@ theorem raw_door_final {s n : Nat} {h : Fin n→Bool}
   exact ⟨(congrArg (fun z=>z.2.2) H).trans (prelaunch_door_final_control p (h e) u v),
     (congrArg (fun z=>z.2.1 0) H).trans (prelaunch_door_final_wire p (h e) u v)⟩
 
-#print axioms raw_door_final
 end L4.ReportOwnerDoorProjection

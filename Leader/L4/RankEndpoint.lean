@@ -90,4 +90,3 @@ theorem boundedRank_of_block (h : ConcreteRetirementBlock) : ConcreteBoundedRank
 
 end L4.RankPhysical
 
-#print axioms L4.RankPhysical.boundedRank_of_block

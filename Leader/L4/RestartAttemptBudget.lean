@@ -102,7 +102,6 @@ theorem union_below_quarter (mass late failed : Nat) (hm : 0 < mass)
     (hl : 21*late≤5*mass) (hf : 1000*failed≤11*mass) :
     4*(late+failed)<mass := by omega
 
-
 private theorem geom100 (M : Nat) (mass : Nat → Nat)
     (h : ∀ h', 0<h' → 100^h' * mass h'≤M)
     (first k : Nat) (hf : 0<first) :
@@ -143,10 +142,3 @@ theorem failed_bound_of_distinct_gap_union (M K failed : Nat)
 
 end L4.RestartAttemptBudget
 
-#print axioms L4.RestartAttemptBudget.stageSum
-#print axioms L4.RestartAttemptBudget.calibration
-#print axioms L4.RestartAttemptBudget.concreteRestartTrial_of_observers
-#print axioms L4.RestartAttemptBudget.Observer.timeout
-#print axioms L4.RestartAttemptBudget.union_below_quarter
-
-#print axioms L4.RestartAttemptBudget.failed_bound_of_distinct_gap_union

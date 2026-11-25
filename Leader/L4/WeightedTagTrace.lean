@@ -125,5 +125,3 @@ theorem concrete_horizon_weight_of_kernel
 
 end L4.TailWeight
 
-#print axioms L4.TailWeight.debt_lower_on_live_word
-#print axioms L4.TailWeight.concrete_horizon_weight_of_kernel

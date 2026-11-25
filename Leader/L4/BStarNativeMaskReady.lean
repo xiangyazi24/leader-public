@@ -49,7 +49,6 @@ theorem scalar {width : Nat} (T : PrimTable width) (bank : Bank)
     · intro C
       exact False.elim (U (L ▸ C))
 
-
 /-- Concrete MASKB readiness on the actual raw receipt. The first genuine
 PC13 sweep supplies offsets and successor-END, while the exact native
 prefix retains the input through this head's launch. -/
@@ -108,5 +107,4 @@ theorem ready {base initial : X} {hh : ∃ i,oldH6 B base i=true}
   · intro slot
     exact eq
 
-#print axioms ready
 end L4.BStarNativeMaskReady

@@ -97,7 +97,6 @@ theorem commit_step_from_matching_seal (d : Sheet) (hh : ∃ i,h i=true)
   rw [ingress]
   exact commit_guard_of_matching_seal _ _ _ U Held Sel W
 
-
 theorem seal_centre_step_installs (d : Sheet) (hh : ∃ i,h i=true)
     (G : GapInput h) (r : Owner h) (F : Fibre (h:=h) d Q) (N : 1<n)
     (x : Raw s n) (X : Cached d hh Q x)
@@ -138,7 +137,6 @@ theorem seal_centre_step_installs (d : Sheet) (hh : ∃ i,h i=true)
   have Hop := seal_step_success d C N hh G F x X C.a room R t T H O
     (fun _ _ => ⟨Held,Sel⟩)
   exact ⟨Hop.2.1,Hop.2.2.2.2,Seal.trans (congrArg (fun a : Tok => some a.payload) P)⟩
-
 
 /-- Old cursor exclusions block the only local writers. This frame
 applies even at COMMIT opcode, before this flight's centre ingress. -/
@@ -199,7 +197,6 @@ theorem centre_frame_before_ingress (d : Sheet) (G : GapInput h) (r : Owner h)
       exact ((rankReady_iff p (h e) (bytesL d x e) 0).mp Good).1
     exact NoHit E.symm (switch_implies_commit d G r N x e mask S Change) T
 
-
 /-- Markwise condition on the sampled tape. There is no requirement
 that another chart be idle. SEAL and COMMIT can be in flight: only
 their own respective physical writer marks are excluded. -/
@@ -249,10 +246,4 @@ theorem centre_held_framed_run (d : Sheet) (G : GapInput h) (r : Owner h)
     obtain ⟨A,B,D⟩ := IH y Y S' C' Hold NR.1 NR.2 Frame.2.2
     exact ⟨A,B.trans Seal,D.trans Sel⟩
 
-#print axioms centre_held_framed_run
-#print axioms centre_frame_before_ingress
-#print axioms seal_centre_step_installs
-#print axioms seal_step_success
-#print axioms commit_guard_of_matching_seal
-#print axioms commit_step_from_matching_seal
 end L4.ReportGuardedTailSuccess

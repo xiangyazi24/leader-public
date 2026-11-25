@@ -71,5 +71,4 @@ theorem after_gate_acks_of_sublist {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rw [BStarResetSchedule.run_append]
     exact U
 
-#print axioms after_gate_acks_of_sublist
 end L4.BStarBitPostGateAck

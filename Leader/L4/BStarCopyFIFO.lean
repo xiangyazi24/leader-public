@@ -243,13 +243,4 @@ theorem right_offsets (r : Nat) (held : List Nat)
     (h : DrainedLine (List.range r) held []) : held=(List.range r).reverse :=
   h.complete
 
-#print axioms Queue.step_custody
-#print axioms literal_receive
-#print axioms sender_exact
-#print axioms literal_hop_fifo
-#print axioms selected_orientation
-#print axioms DrainedLine.complete
-#print axioms Queue.sent_lt
-#print axioms left_offsets
-#print axioms right_offsets
 end L4.BStarCopyFIFO

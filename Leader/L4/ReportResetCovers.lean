@@ -117,9 +117,4 @@ theorem E2_polynomial {s : Nat} (S : 6≤s) :
   rw [H]
   omega
 
-#print axioms split_first_cut
-#print axioms two_covers_cuts
-#print axioms raw_two_covers_mean
-#print axioms E1_value
-#print axioms E2_polynomial
 end L4.ReportResetCovers

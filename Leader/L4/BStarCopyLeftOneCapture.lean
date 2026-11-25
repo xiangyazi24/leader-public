@@ -184,6 +184,4 @@ theorem source_digit_chart {base : X} {hh : ∃ i,oldH6 B base i=true}
   intro i I
   exact ⟨ordinal i I,by rw [flags,ordinal i I,decide_eq_true_eq],ls_ord hp chart a seam width i strip root I⟩
 
-#print axioms source_digit_chart
-#print axioms common_original_bank
 end L4.BStarCopyLeftOneCapture

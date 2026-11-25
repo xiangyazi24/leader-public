@@ -159,9 +159,4 @@ theorem all_owner_released_receipts {s n : Nat} {h : Fin n → Bool} (N : 5≤n)
   obtain ⟨U,R⟩ := ShortAllOwnerClock.all_owner_first_hit_receipts x cs w E D
   exact ⟨U,released_of_first_hits N cs x w H R⟩
 
-#print axioms observed_endpoint_is_literal
-#print axioms observed_first_goal_parked
-#print axioms released_of_first_hits
-#print axioms all_owner_released_receipts
-#print axioms observed_reset_goal_has_released
 end L4.ShortObservedResetRelease

@@ -57,7 +57,6 @@ private theorem pack_bit (bs : List Bool) (i : Nat) (I : i<bs.length) :
       rw [C,if_pos (by omega),ih i (by omega)]
       rfl
 
-
 private theorem one_bit (x : BitVec 1) : x.toNat=(x.getLsbD 0).toNat := by
   have h : ∀ y : BitVec 1, y.toNat=(y.getLsbD 0).toNat := by decide +kernel
   exact h x
@@ -245,6 +244,4 @@ theorem actual_mark_logical {base initial : X} (u v tail : List (Fin n))
     rw [if_neg eq]
     exact frame i.val i.property (fun E=>eq (Subtype.ext E))
 
-#print axioms actual_mark_logical
-#print axioms decoded_neighbors
 end L4.BStarNativePortGeometry

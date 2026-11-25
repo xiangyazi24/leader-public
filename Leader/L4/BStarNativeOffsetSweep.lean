@@ -92,5 +92,4 @@ theorem replay (h : Fin n→Bool) (head : Fin n) (bound : Nat) (x : X)
       subst t
       simp [eff,digitFrom,h0])
 
-#print axioms replay
 end L4.BStarNativeOffsetSweep

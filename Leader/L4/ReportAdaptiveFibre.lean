@@ -129,7 +129,4 @@ theorem capped_transfer (step : X→Fin n→X) (steer : X→Fin n→Fin n)
     exact Nat.le_trans (weight_le_pow step steer Q stay two x G w)
       (Nat.pow_le_pow_right (by decide) (bound w W O))
 
-#print axioms wordSum_pushforward
-#print axioms weight_le_pow
-#print axioms capped_transfer
 end L4.ReportAdaptiveFibre

@@ -136,8 +136,4 @@ theorem six_rival_lanes_absent (d : Sheet) (N : 1<n)
   rw [Split,ShortOwnerEpochJS.raw_append,ShortOwnerEpochJS.raw_append]
   exact Z
 
-#print axioms six_rival_lanes_absent
-#print axioms centers_injective_of_roots
-#print axioms steered_deny_excludes_out
-#print axioms actual_mapped_deny
 end L4.ReportFastDenySteering

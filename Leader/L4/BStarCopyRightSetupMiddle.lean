@@ -47,5 +47,4 @@ theorem middle_from_actual_cuts {base origin : X} {hh : ∃ i,oldH6 B base i=tru
     exact ⟨old8 ▸ low,hh ▸ high⟩
   · exact fun a b E => (V a b E).1
 
-#print axioms middle_from_actual_cuts
 end L4.BStarCopyRightSetupMiddle

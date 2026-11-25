@@ -121,14 +121,6 @@ theorem pinned_up {p c : Nat} (u v : Site p c)
   rw [h1,h2]
   exact ⟨door_no_up_unless_launch _ _ hn hl,top_no_up _⟩
 
-#print axioms pinned_rails
-#print axioms pinned_break
-#print axioms pinned_up
-
-#print axioms ordinary_rails
-#print axioms ordinary_forward
-#print axioms pinned_top_seed
-
 /-- Forward cursor in absolute lifted indices. Seed is the obligation
 to process the current top before using a retained frontier. -/
 structure Cursor where
@@ -186,8 +178,6 @@ theorem advance_credit (J newTop : Nat) (x : Cursor)
   · exact credit_step J x {x with top := newTop} true (Nat.le_of_lt hi) (Nat.le_refl _)
       hJ hf (fun h => (Nat.lt_irrefl _ h).elim) (fun _ => Or.inl hi)
 
-#print axioms advance_credit
-
 /-- Hard check from n=16 and flat residues, using the literal P3
 and door rows. Skipping the new top leaves the dirty T/T cut. -/
 def reseedFixture : Config 2 12 16 := fun i =>
@@ -206,9 +196,4 @@ theorem reseed_replay : MCOV reseedFixture ∧ COV reseedFixture ∧
   unfold MCOV COV
   decide
 
-#print axioms ordinary_break
-#print axioms ordinary_reverse
-#print axioms credit_step
-#print axioms initial_credit
-#print axioms reseed_replay
 end L4.WindowA0Cleanup

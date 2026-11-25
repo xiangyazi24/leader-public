@@ -120,7 +120,6 @@ theorem gap_step {p c n : Nat} (hn : 4≤n) (v e : Fin n) (s : Obs p c n)
     rw [ha]
     exact ⟨rfl,Nat.lt_succ_self _⟩
 
-
 /-- Lifetime of a frozen geometric gap. This monitor does not reassign
 a later gap's birth to the old controller. -/
 inductive EarlyState (p c n : Nat) where
@@ -337,7 +336,6 @@ theorem failsHere_cylinder_cover {p c n : Nat} (v : Fin n) (s : Obs p c n)
     rw [hU]
     omega
 
-
 inductive Phase (p c n : Nat) where
   | live (s : Obs p c n)
   | retired
@@ -438,7 +436,6 @@ theorem attribution_exact {p c n : Nat} (hn : 4≤n) (v : Fin n)
             exact .entry hEq (.later hEq (hEq ▸ hm) ht0 hD hW)
           | before hD hN hW =>
             exact .before (hd ▸ hD) H (.before hD hN hW)
-
 
 inductive Watch (p c n : Nat) where
   | waiting (s : Obs p c n)
@@ -576,7 +573,6 @@ theorem watch_budget {p c n : Nat} (hn : 4≤n) (hc : 12≤c) (v : Fin n)
       rw [show n^(t+1)=sumEdge (fun _ : Fin n => n^t) by rw [s_const,Nat.pow_succ,Nat.mul_comm]]
       exact ⟨s_mono (fun e => (hEach e).1),s_mono (fun e => (hEach e).2)⟩
 
-
 theorem attributed_cap {p c n : Nat} (hn : 4≤n) (v : Fin n) (d : Nat)
     (s : Obs p c n) (w : List (Fin n)) (hs : Protected v s) (hc : COV s.config)
     (h : Attributed v d s w) : d+1<n := by
@@ -644,7 +640,6 @@ theorem fresh_failure_mass {p c n : Nat} (hn : 4≤n) (hc : 12≤c)
   intro w _
   simp only [fail,push_run,List.nil_append,Nat.le_refl]
 
-
 def Done {p c n : Nat} : Phase p c n → Prop
   | .live _ => False
   | _ => True
@@ -699,8 +694,3 @@ theorem fresh_mean_of_fixed {p c n : Nat} (v : Fin n) (s : Obs p c n) (hs : s.st
 
 end L4.FreshFailure
 
-#print axioms L4.FreshFailure.attribution_exact
-#print axioms L4.FreshFailure.attributed_credit
-#print axioms L4.FreshFailure.watch_budget
-#print axioms L4.FreshFailure.fresh_failure_mass
-#print axioms L4.FreshFailure.fresh_mean_of_fixed

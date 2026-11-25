@@ -249,8 +249,4 @@ theorem physical_commit_from_receipt {base x : X} {hh : ∃ i,oldH6 B base i=tru
   exact ⟨pre,post,before408,beforePick,afterPick,door,selecting,op,f,d,K,q,W,Spl,doorEq,
     launch,PC,Cut,reply,bankSame.symm ▸ receipt,D,Bits,sel,lit,same ▸ L⟩
 
-#print axioms physical_commit_from_receipt
-#print axioms at_ready_commit
-#print axioms before_choice_bytes
-#print axioms selecting_has_descriptor
 end L4.BStarCommitReceiptAuth

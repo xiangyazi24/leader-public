@@ -87,10 +87,6 @@ theorem tied_receiver_empty {m : Nat} (virtual real : Fin m → Option Nat)
   have he : v=k+1 := by omega
   exact vac j (he ▸ hv')
 
-#print axioms interior_exclusion
-#print axioms empty_old_head_j_absorbs
-#print axioms tied_receiver_empty
-
 /-- The implemented pause is deliberately stronger than a test for an
 untracked old-head resident: it tests any stock at J's incoming bond.
 On an unpaused mark the ghost J cannot pay, even if its own stock bit
@@ -133,9 +129,6 @@ theorem progress_at_requested_label {m : Nat} (virtual real : Fin m → Option N
     · omega
   · obtain ⟨vv,hvv,hle⟩ := hAhead i v hv
     exact ⟨vv,by simpa [he] using hvv, Nat.le_trans hle hvu⟩
-
-#print axioms unpaused_no_j_move
-#print axioms progress_at_requested_label
 
 /-- Fixed-sink dependency commit for the non-injecting stock-height
 proof. Cut 0 holds all P original bytes. On an unpaused mark there is
@@ -188,8 +181,6 @@ theorem closed_cut_commit (m P i k spent : Nat) (s : Nat → Bool)
   change C i=1+C (i+1) at hNear
   omega
 
-#print axioms closed_cut_commit
-
 open FIFOCompare in
 /-- Possible changes to tracked original stock, after excluding a newly
 exposed J byte from the mask. Removing such an extra byte is idle
@@ -226,5 +217,4 @@ theorem MaskedRow.heights {width spent spent' : Nat} {s s' : Nat → Bool}
       rw [cuts_absorb width s spent i occ hj]
       exact Nat.le_add_right _ _
 
-#print axioms MaskedRow.heights
 end L4.WindowA0FixedSink

@@ -127,7 +127,6 @@ theorem signal_hold {p c} (u v : Site p c) (h : signalIssue u v=false) :
     simp [fireResponder,hL,hS]
   all_goals simp only [fires,hL,hS] at hF; cases hF
 
-
 set_option linter.unusedSimpArgs false in
 theorem leader_mask {p c : Nat} (u v : Site p c) :
     full (leaderF p c) (pubMask (u,v)).2 (leaderIssue u v) := by
@@ -293,8 +292,6 @@ theorem raw_right_leader {p c : Nat} (hp : 0<p) (x : Pair (BitVec (publicWidth p
   exact decoded_field (fun a => a.getLsbD 0) (leaderF p c) (publicWork hp x).2 x.2 y.leader
     (congrArg Site.leader (read_pack hp y)) (leader_frame u v)
 
-#print axioms raw_right_leader
-
 theorem signal_frame {p c : Nat} (u v : Site p c) :
     FieldCase (signalF p c) (pubMask (u,v)).2 (v.signal=(pairStep u v).2.signal) := by
   have mask := signal_mask u v
@@ -310,8 +307,6 @@ theorem raw_right_signal {p c : Nat} (hp : 0<p) (x : Pair (BitVec (publicWidth p
   let y := (pairStep u v).2
   exact decoded_field (signalDecode) (signalF p c) (publicWork hp x).2 x.2 y.signal
     (congrArg Site.signal (read_pack hp y)) (signal_frame u v)
-
-#print axioms raw_right_signal
 
 end L4.BStarPublicNativeRight
 

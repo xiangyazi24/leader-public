@@ -195,10 +195,6 @@ Drop colliding offers first; order remaining END before HOP. -/
 def orderedData (g : Pair LongGeometry) (reserved : List (At Sheet)) : List DataClaim :=
   select Claim.slots reserved (offers dataKey (dataClaims g))
 
-#print axioms select_sublist
-#print axioms select_pairwise
-#print axioms select_flatten_nodup
-
 private def geo (h ins last : Bool) : LongGeometry :=
   ⟨⟨false,false,false,false,false,h⟩,ins,last,0,false⟩
 
@@ -263,10 +259,6 @@ theorem data_reservations (g : Pair LongGeometry) (reserved : List (At Sheet)) :
     (orderedData g reserved).Pairwise (fun a b => ∀ s∈b.slots, s∉a.slots) ∧
     ∀ c∈orderedData g reserved, ∀ s∈c.slots, s∉reserved :=
   ⟨select_pairwise ..,select_away Claim.slots reserved (offers dataKey (dataClaims g))⟩
-
-#print axioms seam_fixture
-#print axioms geometry_exhaustive
-#print axioms data_reservations
 
 theorem mem_insert {C : Type} (key : C → Nat) (a b : C) (L : List C) :
     b∈insert key a L ↔ b=a ∨ b∈L := by
@@ -375,7 +367,4 @@ theorem orderedData_after_prep (g : Pair LongGeometry) (P : List PrepClaim) :
       s∉reservedLanes P :=
   (data_reservations g (reservedLanes P)).2
 
-#print axioms orderedCommands_sorted
-#print axioms prep_lane_unique
-#print axioms orderedData_after_prep
 end L4.BStarLongClaims

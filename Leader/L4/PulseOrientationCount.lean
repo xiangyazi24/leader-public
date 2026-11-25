@@ -143,8 +143,6 @@ theorem count_overwrite {B k n : Nat} {S : Type} (M : Model n B k S)
   obtain ⟨f,hf⟩ := into_pinned M A p q u v orig stable pins avoid
   exact count_pinned credited hcredit p q u v pq f hf
 
-#print axioms count_pinned
-#print axioms count_overwrite
 end L4.PulseOrientation
 
 namespace L4.PulseOrientation
@@ -179,4 +177,3 @@ theorem allWords_wordSum (f : List (Fin n)→Nat) (B : Nat) :
 
 end L4.PulseOrientation
 
-#print axioms L4.PulseOrientation.allWords_wordSum

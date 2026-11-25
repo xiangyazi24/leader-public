@@ -208,7 +208,6 @@ theorem door_terminal_accept {Q : Nat} (k : Fin Q) (h : ¬ k.val+1 < Q) :
   have h₄ : (Rail.dc == Rail.di) = false := rfl
   simp [serviceDoor,patrol,sourceGuard,arrivals,h,launch,turn,move,h₁,h₂,h₃,h₄]
 
-
 /-- Only one nontrail, nonempty worker separates the empty prefix and
 the trail suffix. The same shape describes the two directions. -/
 def railShape (k : Nat) (worker : Rail) (i : Nat) : Rail :=
@@ -292,14 +291,6 @@ theorem clean_trip_clock (d k : Nat) (hk : k ≤ d) :
   simp only [tripHits,Bool.false_eq_true,if_false,if_true]
   omega
 
-#print axioms clean_outward_body
-#print axioms clean_return_body
-#print axioms clean_outward_top
-#print axioms clean_return_top
-#print axioms clean_outward_door
-#print axioms clean_return_before_door
-#print axioms clean_trip_clock
-
 /-- Native/payment prefix never writes a rail or the responder's controller.
 This removes the need to assume a matching native microstate in the fixed-corridor
 projection. -/
@@ -371,9 +362,6 @@ theorem pair_ports {p c : Nat} (u v : Site p c) :
     simp only [pinned]
     by_cases h : ((patrol (b.leader || a.mark) (!b.leader && a.mark)
       b.leader v.source u.rail v.rail).fire && (!b.leader && a.mark)) = true <;> simp [h]
-
-#print axioms prefix_ports
-#print axioms pair_ports
 
 open TaggedTail
 
@@ -478,8 +466,6 @@ theorem expected_of_countdown {α : Type} {n : Nat} (next : α → Fin n → α)
   intro t
   exact h t []
 
-#print axioms expected_of_countdown
-
 /-- The fixed-geometry stop tests the original top, and the original
 source as the first ghost after it. Topology and leader status are real
 physical fields; rail and source residual bytes are unrestricted. -/
@@ -512,19 +498,5 @@ theorem fixedResidual_expected_of_clock (cert : ConcreteFixedResidualClock)
   intro t
   exact Nat.le_trans (expected_of_countdown _ _ _ clock t)
     (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left _ hb))
-
-#print axioms fixedResidual_expected_of_clock
-
-#print axioms top_exact
-#print axioms body_exact
-#print axioms body_outward
-#print axioms body_return
-#print axioms door_exact
-#print axioms door_init
-#print axioms door_wait_trail
-#print axioms door_wait_outward
-#print axioms door_init_accept
-#print axioms door_count_accept
-#print axioms door_terminal_accept
 
 end L4.FixedResidual

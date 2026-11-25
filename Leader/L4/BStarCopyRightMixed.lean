@@ -38,7 +38,6 @@ private theorem rebase_same_up {Tag : Type} (s t : Ledger Tag) (up other : List 
     rw [release_transfer_commute]
     exact .interior _ _ k a src dst
 
-
 /-- Genuine same-mark right INJECT and its independent retained
 projection. Away from ingress, the destination RD can transfer
 while the RS source deposits. At ingress the injected slot is
@@ -115,5 +114,4 @@ theorem deposit_mark {Tag : Type} (digits : Tag→BitVec 36) (atSource : Nat→T
           (stripWord tail labels) (atSource i) rest changeQ
       exact ⟨(s.transfer k a).releaseOne (atSource i) rest,rfl,.mark ordered moved,carry,mob⟩
 
-#print axioms deposit_mark
 end L4.BStarCopyRightMixed

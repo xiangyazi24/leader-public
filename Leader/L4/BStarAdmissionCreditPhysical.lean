@@ -52,5 +52,4 @@ theorem bound_credit {base x : X} {addr : Nat→Pos n} {len k j : Nat}
   rw [K1]
   exact R
 
-#print axioms bound_credit
 end L4.BStarAdmissionCreditPhysical

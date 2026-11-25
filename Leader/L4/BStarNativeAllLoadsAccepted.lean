@@ -159,5 +159,4 @@ theorem all_loaded_accepted {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [same,Xret]
   exact ⟨after.1.trans value,after.2.trans value⟩
 
-#print axioms all_loaded_accepted
 end L4.BStarNativeAllLoadsAccepted

@@ -65,5 +65,4 @@ def parked_mark {len : Nat} {x y : BStarSeparatingRail.Rail}
       exact (disjoint_class _ A F).elim
   · exact quiet.idle j hJ notL notR (fun E T => real ⟨E,T⟩)
 
-#print axioms parked_mark
 end L4.BStarSeparatorParked

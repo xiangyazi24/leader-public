@@ -49,5 +49,4 @@ theorem main_coordinate (base initial : X) (hh : ∃ i,oldH6 B base i=true)
   change (keys reserve lo opening).length+j-(keys reserve lo opening).length=j
   omega
 
-#print axioms main_coordinate
 end L4.BStarWarmupMainCoverage

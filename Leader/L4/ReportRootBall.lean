@@ -159,9 +159,4 @@ theorem physical_ball_geometry {n L U rho : Nat} {h : Fin n→Bool}
       rw [←E,backwards_partial _ _ (rev d) c k k (Nat.le_refl _),Nat.sub_self]
       simp [centerMask,advance]
 
-#print axioms span_lower_upper
-#print axioms no_short_return
-#print axioms path_iff
-#print axioms target_iff
-#print axioms physical_ball_geometry
 end L4.ReportRootBall

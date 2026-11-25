@@ -126,6 +126,4 @@ theorem first_seed {base before x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [Z,←carried,W0 _ _] at chosen
   exact (congrArg (fun y : Payload => y.argument.toNat) (Token.forward.inj chosen).symm).trans arg
 
-#print axioms launch_seed
-#print axioms first_seed
 end L4.BStarNativeCenterLoadSeed

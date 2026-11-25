@@ -83,9 +83,6 @@ theorem commit_log_seal_receipt (d : Sheet) (C : Chart h) (x : Raw s n)
   obtain ⟨u,v,W,Exact,Credit⟩ := tape_receipt_origin d C x w l T r M
   exact ⟨u,v,W,(congrArg Prod.fst Exact).symm.trans Op,Credit⟩
 
-#print axioms split_ack_tape
-#print axioms same_opcode_file
-#print axioms commit_log_seal_receipt
 end L4.ReportItemNineTapeCut
 
 namespace L4.ReportItemNineTapeCut
@@ -193,5 +190,4 @@ theorem cut_at_actual_seal (d : Sheet) (N : 1<n)
   rw [Desc2] at Packet
   exact ⟨pre,late,lp,ll,Total,L,Before,Late,PCSeal,Packet⟩
 
-#print axioms cut_at_actual_seal
 end L4.ReportItemNineTapeCut

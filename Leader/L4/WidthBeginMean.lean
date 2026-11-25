@@ -159,7 +159,6 @@ theorem clean_begin_mean (P : WidthLower s n) (S : Sector P.h d) (op0 : Nat)
       trivial,startR.symm⟩)
   exact (MonitorRawBridge.height_iff_row _ _ _ _).mp H
 
-
 def FirstBeginAt (P : WidthLower s n) (S : Sector P.h d) (z y : Tape s n) : Prop :=
   ∃ u v op k m, y.marks=z.marks++(u++v) ∧ y.raw=rawRun z.raw (u++v) ∧
     op≤5 ∧ FirstBegin P S (rawRun z.raw u) op v k m
@@ -267,8 +266,4 @@ theorem first_begin_expected (P : WidthLower s n) (S : Sector P.h d)
     · rw [Y'',Y',Y]
       simp only [raw_app]
 
-#print axioms flush_mean
-#print axioms clean_begin_mean
-#print axioms first_begin_at_facts
-#print axioms first_begin_expected
 end L4.WidthBeginMean

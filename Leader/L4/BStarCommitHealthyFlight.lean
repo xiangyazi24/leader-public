@@ -115,8 +115,6 @@ theorem before_center {base x : X} {hh : ∃ i,oldH6 B base i=true}
     exact ih k' l pay rfl L bound FP H
       (fun u a v WW j J => safe (e::u) a v (congrArg (List.cons e) WW) j J)
 
-#print axioms before_center
-
 open BStarLongDoor BStarCommitIssue BStarAcquireAnchors BStarClearanceSource BStarLongLayout
 
 /-- A validated ISSUE411 launches a canonical, bindable packet. -/
@@ -201,9 +199,6 @@ theorem unique_center_index {base y : X} {hh : ∃ i,oldH6 B base i=true}
   exact (List.getD_inj (by omega) (by omega) C.nodup).mp
     (Prod.ext (congrArg Subtype.val (eb.trans ea.symm)) (otherK.trans centerK.symm))
 
-#print axioms launched_well
-#print axioms unique_center_index
-
 open BStarLongLiteral BStarResetControllerEntry
 
 private theorem busy_prefix_layout {base x : X} {addr : Nat→Pos n} {len op : Nat}
@@ -269,5 +264,4 @@ theorem selected_at_center {base start : X} {hh : ∃ i,oldH6 B base i=true}
     rwa [addrCenter] at R
   exact ⟨p,H,selected_well g raw (centerLink g) p (center_mem g) (show Cmd.link≠Cmd.door by decide) H wire⟩
 
-#print axioms selected_at_center
 end L4.BStarCommitHealthyFlight

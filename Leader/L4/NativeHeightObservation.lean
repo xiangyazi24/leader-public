@@ -89,6 +89,4 @@ theorem exposure_roundtrip (r : Nat) (y : NativeRecord) (bank : Bank) (j : Fin 3
   | false => rfl
   | true => simp [show ¬ modulus r/2≤t from Nat.not_le.mpr (lowError rfl)]
 
-#print axioms exposure_roundtrip
-#print axioms publication
 end L4.NativeHeightObservation

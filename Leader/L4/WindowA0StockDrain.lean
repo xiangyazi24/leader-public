@@ -122,9 +122,6 @@ theorem pending_nomination {p c n : Nat} {initial : Config p c n}
   · simp [credit,next,hz,he,e]
     omega
 
-#print axioms projection
-#print axioms pending_nomination
-
 private theorem notLoop {n : Nat} (hn : 4≤n) (e : Fin n) : rightNeighbor e≠e := by
   intro h
   have E : liftedSite e 1=liftedSite e 0 := by simpa [liftedSite_zero,liftedSite_succ] using h
@@ -219,9 +216,6 @@ theorem continuing_keep {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
     followed_slot hn g z.ledger base e k _ h.1 hk h.2.2.2.1 hG,?_,?_⟩
   · exact ghost a _ ha h.2.1 h.2.2.2.2.1 ((keep_iff g a b z.ledger e).mp he).1
   · exact ghost b _ hb h.2.2.1 h.2.2.2.2.2 ((keep_iff g a b z.ledger e).mp he).2
-
-#print axioms followed_slot
-#print axioms continuing_keep
 
 open RootedAssembly
 
@@ -367,10 +361,6 @@ theorem mean_of_certificate {p c n : Nat} {initial : Config p c n}
     rw [←Nat.add_mul]
     exact Nat.mul_le_mul_right _ hB)
 
-#print axioms tape_append
-#print axioms path_append
-#print axioms mean_of_certificate
-
 open WindowSpan
 
 abbrev entryBase {p c n : Nat} (x : Config p c n) (i : Fin (RankPhysical.rank x)) :=
@@ -441,5 +431,4 @@ theorem entry_continuing {p c n : Nat} (x : Config p c n) (i : Fin (RankPhysical
     rw [hh]
     exact two_entry_gaps_le x i
 
-#print axioms entry_continuing
 end L4.WindowA0StockDrain

@@ -74,8 +74,6 @@ theorem healthy_issued_prefix (d : Sheet) (C : Chart h) (N : 1<n)
   · rw [R] at Healthy
     contradiction
 
-#print axioms forward_wait_of_tag
-#print axioms healthy_issued_prefix
 end L4.ReportFreshSealLineage
 
 namespace L4.ReportFreshSealLineage
@@ -220,5 +218,4 @@ theorem seal_commit_after_receipt (d : Sheet) (G : GapInput h) (r : Owner h)
   · rw [←Split,←Tape]; exact No
   · rw [←Split,←Tape]; exact NR
 
-#print axioms seal_commit_after_receipt
 end L4.ReportFreshSealLineage

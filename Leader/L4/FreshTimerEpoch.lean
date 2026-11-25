@@ -292,17 +292,4 @@ theorem a1_accepts_and_launches {Q : Nat} (hQ : 0 < Q) (r : Rail) :
     show (Rail.di == Rail.x) = false from rfl,
     show (Rail.di == Rail.di) = true from rfl]
 
-#print axioms ui_crosses_dirty
-#print axioms ui_turns_at_root
-#print axioms di_clean_return
-#print axioms di_meets_break
-#print axioms a1_accepts_and_launches
-#print axioms patrol_off_launch
-#print axioms patrol_paid_reset
-#print axioms pair_off_launch
-#print axioms unpaid_kill_launch
-#print axioms paid_pair_reset
-#print axioms unpaid_ghost_launch
-#print axioms paid_landing_off
-
 end L4.FreshTimerEpoch

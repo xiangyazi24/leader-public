@@ -314,8 +314,4 @@ theorem captured_file_fields (d : Sheet) (C : Chart h) (x0 z : Raw s n)
   rw [acq_pair_fields] at B
   exact ⟨pre,post,r,E,F,W,H,congrArg Prod.fst B,congrArg Prod.snd B⟩
 
-#print axioms header_lane_geometry
-#print axioms successful_root_all_captures
-#print axioms all_captures_after_consume
-#print axioms captured_file_fields
 end L4.ReportAcquireAllCaptures

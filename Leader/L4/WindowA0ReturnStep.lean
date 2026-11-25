@@ -154,8 +154,4 @@ theorem accept_owned {p c n H} (hn : 4≤n) (hQ : 0<2*c) {J : Fin n}
     rw [h.shape.2 i (by omega)]
     simp [railShape,hi,WindowA0Machine.Writable]
 
-#print axioms cold_no_pay
-#print axioms ready_no_pay
-#print axioms accept_boundary
-#print axioms accept_owned
 end L4.WindowA0ReturnStep

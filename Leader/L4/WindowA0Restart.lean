@@ -69,7 +69,4 @@ theorem entry_mean {α : Type} {n : Nat} (step : α→Fin n→α)
       exact Nat.add_le_add_left (Nat.mul_le_mul_right _
         (Nat.mul_le_mul_right _ (by decide))) _
 
-#print axioms drained_mean
-#print axioms half_block_of_attempts
-#print axioms entry_mean
 end L4.WindowA0Restart

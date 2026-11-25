@@ -246,6 +246,4 @@ theorem physical_need_read_at_stop {base initial : X} (u v past future : List (F
       (split.symm.trans eq) tape H read)
   exact ⟨firstBit side, h.imp And.right And.right, act⟩
 
-#print axioms physical_need_read
-#print axioms physical_need_read_at_stop
 end L4.BStarNativeReceiptAligned

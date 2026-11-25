@@ -86,5 +86,4 @@ theorem clearance_mean {base x : X} {hh : ∃ i,oldH6 B base i=true}
     choose a (BStarFencePhysicalDelivery.physical_delivery hp Q layout closed ready sep x I mask owners)
     next choose phase (fun _=>True) phys (fun _ _ _ _=>True.intro) one a True.intro horizon (same a)
 
-#print axioms clearance_mean
 end L4.BStarFenceBStarMean

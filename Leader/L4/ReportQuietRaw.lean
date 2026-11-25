@@ -135,8 +135,6 @@ theorem labelled_raw_row (d : Sheet) (N : 1<n) (Spos : 0<s)
     exact ⟨AB.1,AB.2,fun dir=>congrArg (min p.radius)
       (value_frame_without_ingress d N hh G x e i.val Mask i.property Gap Fits' Safe K dir)⟩
 
-
-
 /-- Same-track no-paint on the literal marks yields a quiet interval
 whose labels are exactly raw classifier results, not a chosen
 MarkSemantics witness. Both boundary states are included in z_const. -/
@@ -182,8 +180,4 @@ theorem quiet_of_no_paint (d : Sheet) (N : 1<n) (Spos : 0<s)
     rw [Step t A B]
     exact (one t i A B).1 K
 
-#print axioms labelled_raw_row
-#print axioms quiet_of_no_paint
-#print axioms guard_of_opportunity
-#print axioms classify_iff_ingress
 end L4.ReportQuietRaw

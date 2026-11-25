@@ -160,9 +160,4 @@ theorem stock_exit_mean {p c n s : Nat} (hn : 4≤n) (initial : Config p c n)
     rw [GGTiming.runMarks_append]
     exact hd
 
-#print axioms stock_exit_mean
-#print axioms tag_commutes
-#print axioms tag_word
-#print axioms reason_word
-#print axioms admitted_of_drained
 end L4.WindowA0Cut

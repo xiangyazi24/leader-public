@@ -152,8 +152,6 @@ theorem missing_walk_of_lag {α ι : Type} {n : Nat}
         · exact hMiss old
         · exact hServ hLast
 
-#print axioms missing_walk_of_lag
-
 /-- Enumerate walks backwards from their final centre. Counts include
 duplicates (e.g. a very small ring with coincident left/right sites). -/
 def pathsAt {ι : Type} (choose : ι → Fin 3 → ι) : Nat → ι → List (List ι)
@@ -233,9 +231,6 @@ theorem ticks_of_allPaths {α : Type} {n m : Nat}
   refine ⟨i,List.mem_finRange i,?_⟩
   have h := walk_mem_pathsAt choose near (fun _ _ h => h) hWalk
   simpa [hLen] using h
-
-#print axioms allPaths_length
-#print axioms ticks_of_allPaths
 
 private theorem realized_skip_prefix {ι ε : Type} {serv : ι → ε → Prop}
     {p : List ι} {w : List ε} (h : Realized serv p w) (v : List ε) :
@@ -330,9 +325,6 @@ theorem ticks_of_greedy_allPaths {α : Type} {n m : Nat}
   intro p hp
   simpa only [List.reverse_reverse] using greedy_run_empty_sound next serv x p.reverse w (done p hp)
 
-#print axioms greedy_run_empty_sound
-#print axioms ticks_of_greedy_allPaths
-
 theorem pathsAt_member_length {ι : Type} (choose : ι → Fin 3 → ι) (d : Nat)
     (i : ι) (p : List ι) (hp : p ∈ pathsAt choose d i) :
     p.length = d+1 := by
@@ -357,6 +349,4 @@ theorem greedy_done_sticky {α ι : Type} {n : Nat} (next : α → Fin n → α)
     (greedyNext next serv z e).2 = [] := by
   simp [greedyNext,h]
 
-#print axioms allPaths_member_length
-#print axioms greedy_done_sticky
 end L4.FastClockPath

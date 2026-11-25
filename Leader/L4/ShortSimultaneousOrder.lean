@@ -131,8 +131,4 @@ theorem offset_two_on_double_left {s n : Nat} {x : Raw s n} (M : rawMaximal x)
   rw [nextAt_add,one]
   exact congrArg Subtype.val (PhysicalH1Neighbors.right_left M target)
 
-#print axioms offset_two_on_double_left
-#print axioms earlier_door_omitted
-#print axioms offset_at_header
-#print axioms clockwise_five
 end L4.ShortSimultaneousOrder

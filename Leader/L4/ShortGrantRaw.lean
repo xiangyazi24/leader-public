@@ -110,9 +110,4 @@ theorem coherent_next_at {s n : Nat} (x : Raw s n) (e i : Fin n)
   · rw [ShortResetMIS1Ring.reset_remote_frame_raw x e i E R]
     exact old
 
-#print axioms outgoing_grant_at
-#print axioms incoming_grant_at
-#print axioms outgoing_coherent_at
-#print axioms incoming_coherent_at
-#print axioms coherent_next_at
 end L4.ShortGrantRaw

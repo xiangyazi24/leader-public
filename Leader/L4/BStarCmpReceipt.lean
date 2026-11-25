@@ -98,9 +98,6 @@ theorem sweep_receipt {r : Nat} {geom : Fin r → LongGeometry} {old updated : F
   rw [hw,physical_accept]
   exact ⟨rfl,h⟩
 
-#print axioms sweep_receipt
-#print axioms terminal_cmp
-
 /-- The leading alias of this receipt uses the new physical scalar,
 never the old packed scalar at the same address. Rest of alias run is
 left to the literal allocator, with the accepted Boolean value stored
@@ -167,11 +164,6 @@ theorem exports_no_raw_cmp :
       (fun i => !(kindAt i))=true := by
   decide +kernel
 
-#print axioms receipt_index
-#print axioms physical_table
-#print axioms cmp_consumers_count
-#print axioms exports_no_raw_cmp
-
 theorem cmp_alias_index {j i : Nat} (hj : j<474) (lt : Bool)
     (E : get j=some (if lt then .cmpLt i else .cmpEq i)) :
     j=i+1 ∧ ∃ a b, get i=some (.cmp a b) := by
@@ -216,5 +208,4 @@ theorem actual_receipt (x : BitVec LW) (physical i ra rb a b : Nat) (p : Payload
   · rw [show (if false then .cmpLt i else .cmpEq i)=Code.cmpEq i from rfl,receipt_eq]; rfl
   · rw [show (if true then .cmpLt i else .cmpEq i)=Code.cmpLt i from rfl,receipt_lt]; rfl
 
-#print axioms actual_receipt
 end L4.BStarCmpReceipt

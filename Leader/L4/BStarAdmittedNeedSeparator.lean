@@ -137,8 +137,6 @@ theorem two_reveals_force_sealed_need {base x : X} {hh : ∃ i,oldH6 B base i=tr
   exact N .left rfl ⟨.left,BStarStageCandidateWrite.candidate d (BStarBitParity.firstBit s')⟩
     (by rw [published]; simp) rfl
 
-#print axioms two_reveals_force_sealed_need
-
 open BStarPhysicalReserved
 
 private theorem interval_split {A : Type} (w : List A) (a b : Fin w.length)
@@ -156,7 +154,6 @@ private theorem interval_split {A : Type} (w : List A) (a b : Fin w.length)
       rw [List.drop_eq_getElem_cons h]
       dsimp [w']
       rw [List.getElem_take,List.take_take,Nat.min_eq_left (Nat.le_of_lt lt)]
-
 
 /-- Whole stopped tapes satisfy the physical separation premise for
 their retained reservations; the separative publication need not be
@@ -222,5 +219,4 @@ theorem sealed_separator {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rfl
   exact ⟨j,by omega,jlt,jh,mark,pre.symm ▸ pub,d,need,pre.symm ▸ sealed⟩
 
-#print axioms sealed_separator
 end L4.BStarAdmittedNeedSeparator

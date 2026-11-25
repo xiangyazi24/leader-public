@@ -32,8 +32,6 @@ theorem raw_header_right_seal_step (d : Sheet) (x : Raw s n) (e : Fin n)
   exact ⟨fun H => E.trans (report_header_right_seal_clear p _ _ _ H),
     fun H => E.trans (report_header_right_seal_hold p _ _ _ H)⟩
 
-#print axioms raw_header_right_seal_step
-
 theorem raw_header_left_seal_step (d : Sheet) (x : Raw s n) (e : Fin n)
     (N : 1<n) (mask : ∀ i,lower d (oldHeaders (rows s) (x i))=h i)
     (Hdr : h e=true) :
@@ -61,8 +59,6 @@ theorem raw_header_left_seal_step (d : Sheet) (x : Raw s n) (e : Fin n)
     fun H => E.trans (report_header_left_seal_install p _ _ _ H),
     fun A B => E.trans (report_header_left_seal_hold p _ _ _ A B)⟩
 
-#print axioms raw_header_left_seal_step
-
 /-- All-mark frame when the relevant old-pair seal actions are absent.
 The two enabled cases are exported separately by the endpoint lemmas. -/
 theorem raw_header_seal_hold_of_no_event (d : Sheet) (x : Raw s n)
@@ -82,5 +78,4 @@ theorem raw_header_seal_hold_of_no_event (d : Sheet) (x : Raw s n)
       exact (raw_header_right_seal_step d x e N mask Hdr).2 (NC rfl)
     · rw [ReportRawProjection.raw_spectator x e a (Ne.symm E) R]
 
-#print axioms raw_header_seal_hold_of_no_event
 end L4.ReportJoinedSealFrame

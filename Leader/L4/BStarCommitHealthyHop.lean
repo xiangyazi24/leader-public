@@ -70,5 +70,4 @@ theorem joined_before_center (k₁ k₂ t₂ J₁ J₂ r n p c₁ : Nat) (hp : 0
     carried_before_center g raw C pay H away]
   simp [arrive,H.opcode,gate,commitOp,bitOp,admit]
 
-#print axioms joined_before_center
 end L4.BStarCommitHealthyHop

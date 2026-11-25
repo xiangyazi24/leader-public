@@ -63,7 +63,6 @@ theorem first_hit_receipts_of_finished (advance : X → Fin n → X)
           obtain ⟨u,v,E,_,Cu,U,V⟩ := ih _ B D
           exact ⟨e::u,v,congrArg (List.cons e) E,by simp,⟨HH,Cu⟩,U,V⟩
 
-#print axioms first_hit_receipts_of_finished
 end L4.SequentialMarkClock
 
 namespace L4.ShortAllOwnerClock
@@ -144,10 +143,4 @@ theorem all_owner_first_hit_receipts {s n : Nat} {h : Fin n → Bool} (x : Raw s
     SequentialMarkClock.first_hit_receipts_of_finished (rawNext s) phase goal false
       no _ w before D⟩
 
-#print axioms all_owner_first_hit_receipts
-#print axioms mem_roots
-#print axioms roots_nodup
-#print axioms roots_length_le
-#print axioms all_owner_expected
-#print axioms all_owner_actual_receipts
 end L4.ShortAllOwnerClock

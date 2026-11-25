@@ -121,9 +121,4 @@ theorem deployed_two_covers_expected
     (good_bank_closed d N hh G F D (ReportWriteRailSupplier.rail_supplier d N hh G F D))
     (mu d s) (deployed_publication_mean d N hh G F advice S Lo Hi)  (publicationSites h) Site x B
 
-#print axioms deployed_publication_mean
-#print axioms publicationSites_complete
-#print axioms deployed_two_covers_expected
-#print axioms setup_actual
-#print axioms report_publication_mean
 end L4.ReportFastDispatch

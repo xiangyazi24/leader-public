@@ -3067,8 +3067,6 @@ theorem four_prefix_observation (start : Fin 4 → Snapshot)
 
 end L4.Height.PhysicalDelay
 
-
-
 namespace L4.Height.PhysicalDelay
 open L4.Height
 open L4.Compiler.Native
@@ -3235,13 +3233,4 @@ theorem requested_deadline_delayed_singleton (L : Nat) (hL : 1≤L) :
   simpa only [hlen,htarget] using h
 
 end L4.Height.PhysicalDelay
-#print axioms L4.Height.clock_served_moment_explicit
-#print axioms L4.Height.clock_lgSet_aligned_overrun
-#print axioms L4.Height.ClockHead.clock_coset_virtual_observation
-#print axioms L4.Height.ClockHead.warm_inclusive_quarter
-#print axioms L4.Height.ClockHead.virtualNativeR_permanent
-#print axioms L4.Height.ClockHead.clock_layer_headline_of_slice
-#print axioms L4.Height.ClockHead.clock_layer_headline_counterexample
-#print axioms L4.Height.ClockHead.warm_native_trial
-#print axioms L4.Height.PhysicalDelay.requested_deadline_delayed_singleton
 

@@ -129,8 +129,6 @@ theorem retained_internal {Tag : Type} (digits : Tag→BitVec 36)
       rw [ext,show (s.transfer k tag).cells (width-1-q) = (if width-1-q=k then (s.cells k).send else if width-1-q=k+1 then (s.cells (k+1)).receive tag else s.cells (width-1-q)) by rfl,if_neg (by dsimp [k]; omega),if_neg (by dsimp [k]; omega)]
       exact old q hq
 
-#print axioms retained_internal
-
 /-- PC10/11 can never reserve the destination RD. An owner-licensed
 INJECT concerns the source RS; it does not suppress a same-mark
 retained RD transfer through aliased physical sites. -/
@@ -226,10 +224,6 @@ theorem deposit_and_transfer {Tag : Type} (digits : Tag→BitVec 36)
   rw [release_transfer_commute]
   exact .mark afterIssue (.interior (s.releaseOne d todo) _ i a outgoing vacant)
 
-#print axioms retained_header_frame
-#print axioms transport_and_transfer
-#print axioms deposit_and_transfer
-
 private def bodyGeo : LongGeometry := ⟨⟨false,false,false,false,false,false⟩,true,false,0,false⟩
 
 /-- Actual body routing has simultaneous retained RD and unretained
@@ -243,5 +237,4 @@ theorem overlap_pair_fixture :
     ((hop (R .rd) (L .rd)).slots++(hop (R .rs) (L .rs)).slots).Nodup := by
   decide +kernel
 
-#print axioms overlap_pair_fixture
 end L4.BStarCopyRightRetained

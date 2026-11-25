@@ -56,8 +56,6 @@ theorem before_weak {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · intro ft _ rt
     exact (DT ft).2 rt
 
-#print axioms before_weak
-
 open BStarAcquireAnchors BStarAcquireRailCoverage BStarLongTransport BStarClearanceChartFootprint
 
 /-- The four-priority dispatch on arbitrary bytes at a held owner:
@@ -146,8 +144,6 @@ theorem held_nominate {base x : X} {hh : ∃ i,oldH6 B base i=true}
     · exact .inr (.inr (.inl dt))
   · exact .inl ft
 
-#print axioms held_nominate
-
 /-- Access to the physical source from arbitrary long/controller bytes
 over a closed lower layout. The already selected five-cover offset
 repair can be prepended; no probability or schedule fairness is used. -/
@@ -221,6 +217,4 @@ theorem reach_launch {base x : X} {hh : ∃ i,oldH6 B base i=true}
     rw [BStarResetSchedule.run_append]
     exact ⟨J₂,closed _ e J₂,T⟩
 
-#print axioms reach_nonheld
-#print axioms reach_launch
 end L4.BStarClearancePhysical

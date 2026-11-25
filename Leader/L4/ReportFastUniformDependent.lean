@@ -62,5 +62,4 @@ theorem uniform_from_dependent_dispatchers
   rw [C] at E
   exact E
 
-#print axioms uniform_from_dependent_dispatchers
 end L4.ReportFastSplice

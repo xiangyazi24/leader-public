@@ -35,6 +35,4 @@ theorem chart_nonheld_launch_expected {base : X} {hh : ∃ i,oldH6 B base i=true
   actual_nonheld_launch_expected hp (S.getD 0 fall).1 Q closed
     (fun y q=>(BStarResetChartService.root_header hp C (fiber y q)).1) sep x qx old
 
-#print axioms actual_nonheld_launch_expected
-#print axioms chart_nonheld_launch_expected
 end L4.NonheldPhysical

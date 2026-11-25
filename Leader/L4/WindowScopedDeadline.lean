@@ -84,5 +84,4 @@ theorem unpaid_deadline {α : Type} {p c n : Nat} (hn : 4≤n) (hc : 12≤c)
   exact Nat.le_trans (Nat.mul_le_mul_left _ cmp)
     (sharp_slow_gap_tail (rawWatch v d) (nominate v) s c h (by omega) hc)
 
-#print axioms unpaid_deadline
 end L4.WindowScopedDeadline

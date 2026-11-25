@@ -50,6 +50,4 @@ theorem grant_coherent_after_cover {s n : Nat} (x : Raw s n) (w : List (Fin n))
     ∀ i, GrantClean (rawRun x w) i :=
   fun i => grant_site_after_word x w sep i (.inr ⟨i,full i,.inl rfl⟩)
 
-#print axioms grant_coherent_closed
-#print axioms grant_coherent_after_cover
 end L4.PhysicalCustody

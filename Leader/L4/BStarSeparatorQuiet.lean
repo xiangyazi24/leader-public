@@ -101,7 +101,6 @@ theorem frames_any {base x : XX} {hh : ∃ i, oldH6 B base i=true}
     · exact noSucc L
     · exact noPred i J L
 
-#print axioms frames_any
 private theorem addr_cases (e : Fin n) (v : Pos n) :
     (∃ a : AtK, v=address e a) ∨ (v.1≠e ∧ v.1≠rightNeighbor e) := by
   by_cases l : v.1=e
@@ -194,5 +193,4 @@ theorem quiet_any (x : XX) (e : Fin n) (he : e≠rightNeighbor e)
   · intro Q t
     exact (preserves (term Q (fun s E => by rw [bound,E,t]; exact .e))).2.1 t
 
-#print axioms quiet_any
 end L4.BStarSeparatorQuiet

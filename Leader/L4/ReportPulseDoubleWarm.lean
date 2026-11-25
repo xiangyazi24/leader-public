@@ -61,6 +61,4 @@ theorem same_gate_two_credits
   have W' := wire_fresh_from_clean F a A D J y Y C v
   exact ⟨C1,(wire_fresh_mark F a A D J y Y v f W').2 E'⟩
 
-#print axioms actual_paint_clean
-#print axioms same_gate_two_credits
 end L4.ReportPulseDoubleWarm

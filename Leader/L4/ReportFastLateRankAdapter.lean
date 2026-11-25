@@ -89,6 +89,4 @@ noncomputable def LateHistoryRows.toLateSealCommit
       exact .inr ⟨debt C.L C.a (nextPhase C q e),⟨nextPhase C q e,Y,rfl⟩,
         (by rw [←E]; exact V.2.2.1 N)⟩
 
-#print axioms late_debt_bound
-#print axioms LateHistoryRows.toLateSealCommit
 end L4.ReportFastSplice

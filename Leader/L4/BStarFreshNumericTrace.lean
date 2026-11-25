@@ -160,6 +160,4 @@ theorem busy_prefix_health {base x : X} {hh : ∃ b,oldH6 B base b=true}
       obtain ⟨cursor,L,R,H⟩ := all u v Q
       exact ⟨cursor,.cons I E L,R,H⟩
 
-#print axioms busy_prefix_health
-#print axioms mark_health
 end L4.BStarFreshNumericTrace

@@ -182,8 +182,4 @@ theorem window_activation_of_completion {base initial : X} (u v past lead : List
       subst center
       exact E.trans (activate_agrees hh before i _ bit (fun no=> (N no).elim))
 
-#print axioms window_activation_of_completion
-#print axioms action_of_inc
-#print axioms snapshot_of_inc
-#print axioms no_inc_stutter
 end L4.BStarSnapshotStep

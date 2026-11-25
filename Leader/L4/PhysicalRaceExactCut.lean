@@ -162,13 +162,4 @@ theorem exact_of_validFirst_accept {n : Nat} (A : List (Fin n)→Prop) (d : Fin 
   intro u rest E N old
   exact V.2 _ _ E N (by rw [(reaches_accept_iff d k K _).mpr old]; trivial)
 
-#print axioms validFirst_start
-#print axioms validFirst_step
-#print axioms exact_of_validFirst_accept
-#print axioms exact_of_tick
-#print axioms exact_racing_tick
-#print axioms single_tail_nil
-#print axioms double_tail_nil
-#print axioms exact_single_split
-#print axioms exact_double_split
 end L4.PhysicalRaceExactCut

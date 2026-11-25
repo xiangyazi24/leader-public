@@ -58,5 +58,4 @@ theorem busy_generated {base x : X} {addr : Nat→Pos n} {len op : Nat}
   | nil I => exact .endpoint I
   | cons I E _ ih => exact .next I E ih
 
-#print axioms busy_generated
 end L4.BStarNeedTrace

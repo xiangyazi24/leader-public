@@ -132,11 +132,4 @@ theorem outside_word {s n : Nat} {h : Fin n → Bool} (C : Chart h) (x : Raw s n
     exact (ih (rawNext s x e) (fun f H=>E f (List.mem_cons_of_mem e H))).trans
       (outside_projection C x e (E e (by simp)))
 
-#print axioms watch_length
-#print axioms watch_bound
-#print axioms watch_nodup
-#print axioms watch_incident
-#print axioms outside_projection
-#print axioms outside_pc
-#print axioms outside_word
 end L4.ShortResetWatch

@@ -91,7 +91,6 @@ theorem commit_forward_nominated (d : Sheet) (C : Chart h) (N : 1<n)
   · exact A
   · omega
 
-
 /-- Forward labels other than the selected old front hold the cursor
 and the source PC, regardless of the token's opcode. -/
 theorem forward_nonnominated (d : Sheet) (C : Chart h) (N : 1<n)
@@ -140,7 +139,6 @@ theorem issue_nonnominated (d : Sheet) (C : Chart h) (N : 1<n)
     (e : Fin n) (E : e≠door C) :
     LegalIssue d C (rawNext s x e) ∧ readPC d C (rawNext s x e)=readPC d C x :=
   nondoor_preserves d C hh G F N x X I e E
-
 
 def On (d : Sheet) (C : Chart h) (x : Raw s n) : Stage→Prop
   | .sealIssue => LegalIssue d C x ∧ readPC d C x=(1,sealOp (params d s))
@@ -258,7 +256,6 @@ theorem late_row (d : Sheet) (N : 1<n)
       exact .inl ⟨fun H=>D (Option.some.inj H).symm,⟨I.1,V.1,V.2.trans I.2.2⟩⟩
   | done => exact E.elim
 
-
 def paidPhase (L a : Nat) : Stage→Stage
   | .sealIssue => .sealForward 0
   | .sealForward i => if i+1<L then .sealForward (i+1) else .sealBack i
@@ -369,7 +366,6 @@ theorem expected_with_enabled_producer (d : Sheet) (N : 1<n)
   exact ResetReturnIID.iid_of_relational_rank (monitor d C) Finished live Pos Step
     (x,.sealIssue) _ (.inr ⟨Initial,rfl⟩)
 
-
 /-- Terminal credit on the monitor's same raw word, not after-the-fact
 selection of an unrelated accepting state. -/
 theorem finished_has_classified_mark (d : Sheet) (N : 1<n)
@@ -401,14 +397,4 @@ theorem finished_has_classified_mark (d : Sheet) (N : 1<n)
     · obtain ⟨u,v,a,j,W,E,B⟩ := IH y (Keep z e Initial D) Done
       exact ⟨e::u,v,a,j,by rw [W]; rfl,E,B⟩
 
-#print axioms finished_has_classified_mark
-#print axioms next_value
-#print axioms expected_with_enabled_producer
-#print axioms late_row
-#print axioms forward_nonnominated
-#print axioms seal_reverse_nonnominated
-#print axioms issue_nonnominated
-#print axioms debt_strict
-#print axioms seal_reverse_nominated
-#print axioms commit_forward_nominated
 end L4.ReportLatePhysicalNomination

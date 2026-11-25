@@ -64,5 +64,4 @@ theorem data_ready_late {base x : X} {hh : ∃ i,oldH6 B base i=true}
     fun j J s loc => noPrep ⟨s,.rd⟩ (by change dataOwner _ (site e s) .rd=o.val; rw [loc]; exact rd j J),
     fun j _ J s loc => noPrep ⟨s,rail seam j⟩ (by change dataOwner _ (site e s) (rail seam j)=o.val; rw [loc]; exact up j J)⟩
 
-#print axioms data_ready_late
 end L4.BStarCopyRightWrappedReady

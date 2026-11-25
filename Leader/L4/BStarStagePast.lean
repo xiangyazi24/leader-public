@@ -154,6 +154,4 @@ theorem busy_keeps_after_departure {base origin x : X}
     (GeneratedOwner.next (BStarGeneratedTapeCuts.at_end hp P) E (.endpoint (busy_start hp tail)))
   exact stepRetains (lead++[e]) _ _ _ _ (by rw [BStarResetSchedule.run_append]; rfl) G' tail past
 
-#print axioms departure_trail
-#print axioms busy_keeps_after_departure
 end L4.BStarStagePast

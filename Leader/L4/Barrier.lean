@@ -22,7 +22,6 @@ def EffectiveRootOn {p c1 n : Nat} (x : Config p c1 n) (e : Fin n) : Prop :=
   (x (rightNeighbor e)).leader = true ∨ (x e).mark = true ∨
     (x (rightNeighbor e)).residue ≠ nextResidue (x e).residue
 
-
 /-- A local pre-mark cut from a stationary long first-barrier tenure. To
 instantiate it, select the current barrier leader and certify that its first
 three clockwise successors are nonroots. The fact that this is the tagged
@@ -310,10 +309,3 @@ theorem barrierOutlet_not_ideal {p c1 n : Nat} (x : Config p c1 n)
 
 end L4
 
-#print axioms L4.covered_noRoot_iff
-#print axioms L4.barrierBondsDistinct
-#print axioms L4.barrierStock_step
-#print axioms L4.barrierCoupled_step
-#print axioms L4.barrierStock_run
-#print axioms L4.barrierRun_dominates
-#print axioms L4.barrierOutlet_not_ideal

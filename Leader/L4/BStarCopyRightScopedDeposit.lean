@@ -37,7 +37,6 @@ private theorem rebase_same_up {Tag : Type} (s t : Ledger Tag) (up other : List 
     rw [release_transfer_commute]
     exact .interior _ _ k a src dst
 
-
 /-- Genuine justified right INJECT with vacancy required only on the
 tracked active-source suffix, and its independent retained
 projection. Away from ingress, the destination RD can transfer
@@ -120,5 +119,4 @@ theorem scoped_deposit {Tag : Type} (digits : Tag→BitVec 36) (atSource : Nat�
           (stripWord tail labels) (atSource i) rest changeQ
       exact ⟨(s.transfer k a).releaseOne (atSource i) rest,rfl,.mark ordered moved,carry,mob⟩
 
-#print axioms scoped_deposit
 end L4.BStarCopyRightScopedDeposit

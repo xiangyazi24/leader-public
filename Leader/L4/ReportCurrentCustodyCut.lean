@@ -49,7 +49,4 @@ theorem current_custody_expected (d : Sheet) (N : 1<n) (S : 0<s)
     (current_custody_of_source_bank d N hh G F
       (ReportPrelaunchDoorProducer.digits_positive d S)) t x.val) (E t)
 
-#print axioms current_custody_of_source_bank
-#print axioms current_custody_closed
-#print axioms current_custody_expected
 end L4.ReportCurrentCustodyCut

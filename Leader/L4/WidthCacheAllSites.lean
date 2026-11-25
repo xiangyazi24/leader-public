@@ -89,8 +89,4 @@ theorem width_raw_fields {s n : Nat} (h : Fin n → Bool) (hh : ∃ i,h i=true)
     widthOff x i = min (s+11) (ordinal h hh i) ∧ widthSucc x i=h (rightNeighbor i) :=
   raw_fields_correct hh (by omega : 0<s+11) x A i
 
-#print axioms width_frame
-#print axioms width_all_sites
-#print axioms width_raw
-#print axioms width_raw_fields
 end L4.WidthCacheAllSites

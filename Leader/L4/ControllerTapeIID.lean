@@ -84,6 +84,4 @@ theorem expected_after_prefix {n : Nat} (A : List (Fin n)→Prop)
   intro t
   simpa using Nat.le_trans (C t []) (H t)
 
-#print axioms expected_of_prefix
-#print axioms expected_after_prefix
 end L4.ControllerTapeIID

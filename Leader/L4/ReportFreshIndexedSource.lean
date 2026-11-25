@@ -98,6 +98,4 @@ theorem fresh_indexed_source_rows (d : Sheet) (N : 1<n)
     have J := A.keep C x e B Bank I.1
     exact ⟨J,source_history_of_acq d N hh G F digit C _ J⟩
 
-#print axioms source_prefix_from_acq
-#print axioms fresh_indexed_source_rows
 end L4.ReportFreshIndexedSource

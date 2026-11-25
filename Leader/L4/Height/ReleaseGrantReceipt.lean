@@ -50,6 +50,5 @@ theorem released_chart {s n : Nat} {x : Raw s n} {g : CustodyWitness x}
   have post : BStarGrantBirth.bit (rawNext s (rawRun origin w) e) i j=0 := (zeros i j owner).2
   rwa [replay] at post
 
-#print axioms released_chart
 end L4.Height.ReleaseGrantReceipt
 

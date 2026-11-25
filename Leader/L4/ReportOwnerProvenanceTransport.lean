@@ -186,10 +186,4 @@ theorem idle_end_tag
   rw [tok_wire,gate_frame d C hh G x y X Y i (by omega),Row.1,workL,E,tok_wire]
   exact normalize_tag _ _ _ 3 (.inr rfl)
 
-#print axioms ready_joined
-#print axioms reverse_joined
-#print axioms reverse_locations
-#print axioms decoded_frame
-#print axioms idle_internal_tags
-#print axioms idle_end_tag
 end L4.ReportOwnerProvenanceTransport

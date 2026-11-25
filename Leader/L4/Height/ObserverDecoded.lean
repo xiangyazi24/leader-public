@@ -469,8 +469,4 @@ theorem edgeOutgoing (u v : Guard) (before ordinary : Bool × Bool)
 
 end Decoded
 
-#print axioms Decoded.decode_bounded
-#print axioms Decoded.edgeIncoming
-#print axioms Decoded.edgeOutgoing
-#print axioms Decoded.edgeInterior
 end L4.Height.ObserverDirty

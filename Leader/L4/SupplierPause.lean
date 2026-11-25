@@ -139,8 +139,3 @@ theorem pauseCredit_hit {p c n : Nat} (v : Fin n) (s : Obs p c n)
 
 end L4.RankSupplier
 
-#print axioms L4.RankSupplier.payEdge_when_stock
-#print axioms L4.RankSupplier.occupied_receiver_stays
-#print axioms L4.RankSupplier.pauseNext_ok
-#print axioms L4.RankSupplier.pauseCredit_nonincrease
-#print axioms L4.RankSupplier.pauseCredit_hit

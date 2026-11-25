@@ -104,7 +104,6 @@ theorem birth_step (x : X) (e i : Fin n) (sep : e≠rightNeighbor e)
     (writer_free_safe _ _ s bank head (win_writer_free _ _ _ j ne win))
   cases s <;> exact H
 
-
 /-- A touched old nonheader writes zero grants, so continuity across
 the current mark alone forces the old touched node to be a header. -/
 private theorem live_header (x : X) (e : Fin n) (sep : e≠rightNeighbor e)
@@ -191,7 +190,6 @@ theorem header_interval (sep : ∀ e : Fin n,e≠rightNeighbor e)
   have G := held_trace_reads T.1
   exact ⟨G.1.trans F.1,G.2.trans F.2,canonical_of_live _ i j T.2 (life u v E)⟩
 
-
 private theorem raw_readouts (x y : BitVec LW) (S : readSel y=readSel x)
     (V : payloadView (readSel x) y=payloadView (readSel x) x) :
     selectedHeader y=selectedHeader x ∧
@@ -219,8 +217,4 @@ theorem header_readout_interval (sep : ∀ e : Fin n,e≠rightNeighbor e)
   have ⟨S,V,_⟩ := header_interval hp sep x e i j ne won w life u v E
   exact raw_readouts _ _ S V
 
-#print axioms birth_step
-#print axioms live_step
-#print axioms header_interval
-#print axioms header_readout_interval
 end L4.BStarGrantReaderHistory

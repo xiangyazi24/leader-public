@@ -102,11 +102,6 @@ theorem reader_walk_live (d : Sheet) (C : Chart h) (op : Nat)
     CursorLive cur :=
   walk_live d C op x initial w cur T (fun _ _ _ _ W => (Nat.not_le_of_gt R W).elim)
 
-#print axioms next_healthy_iff
-#print axioms next_reader_healthy
-#print axioms next_write_same
-#print axioms reader_walk_live
-
 private def packetOption : Cursor → Option IndexedData
   | .forward _ q | .backward _ q => q
 
@@ -245,7 +240,4 @@ theorem write_permit_after_acq (d : Sheet) (hh : ∃ i,h i=true)
   subst k a
   exact ⟨Grant,Sel.symm.trans ((congrArg (fun z : Nat=>z/2%2) CurrentCapture).trans Seed.symm)⟩
 
-#print axioms write_walk_payload
-#print axioms walk_no_restart
-#print axioms write_permit_after_acq
 end L4.ReportIndexedNonfault

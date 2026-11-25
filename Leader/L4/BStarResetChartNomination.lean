@@ -79,5 +79,4 @@ theorem nominate {base : X} {hh : ∃ i, oldH6 B base i=true}
     exact (mem_link hp y e adr len j).mpr
       ⟨by omega,C,D,hCy,hD,haddr,(List.getElem_eq_getD _).symm.trans R⟩
 
-#print axioms nominate
 end L4.BStarResetChartNomination

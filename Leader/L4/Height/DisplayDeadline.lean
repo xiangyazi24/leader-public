@@ -31,7 +31,7 @@ historical start, opening, and trace-count witness must be used in the split
 and in that implication.
 
 This is an analytic module only. It does not prove raw-row conformance,
-historical grant coherence, or the whole G9 composition.
+historical grant coherence, or the whole all-size composition.
 -/
 
 /-- The logarithm of the sixteen-way depth factor is at most four bits
@@ -209,9 +209,5 @@ theorem display_deadline_quarter {α : Type} {n m : Nat} (hm : 0 < m)
     Nat.le_trans (Nat.mul_le_mul_left 4 hCount) hOverrun
   simpa [d] using hFinal
 
-#print axioms display_depth_budget
-#print axioms display_deadline_quarter
-
 end L4.Height
-
 

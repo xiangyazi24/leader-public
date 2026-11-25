@@ -172,8 +172,4 @@ theorem indexed_door_seed_of_forward {s n : Nat} {h : Fin n→Bool} {Q : Raw s n
   obtain ⟨Y,q,Seed,_,S⟩ := indexed_door_seed d C op Range hh G F N x X I PC t T Tag
   exact ⟨Y,Seed ▸ S⟩
 
-#print axioms indexed_door_seed_of_forward
-#print axioms params_beta_pos
-#print axioms indexed_door_seed
-#print axioms indexed_source_canonical
 end L4.ReportIndexedLaunchData

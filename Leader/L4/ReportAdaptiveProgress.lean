@@ -144,8 +144,4 @@ theorem paper_cap_quarter {t w W n : Nat}
       _ = _ := by rw [←Nat.mul_add,Nat.mul_assoc]
   omega
 
-#print axioms one_reward
-#print axioms total_driver_reward
-#print axioms cap_overflow_count
-#print axioms paper_cap_quarter
 end L4.ReportAdaptiveFibre

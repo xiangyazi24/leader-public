@@ -168,6 +168,4 @@ theorem prepared_receipts (d : Sheet) (C : Fin 6→Chart h) (N : 1<n)
   intro j
   exact T.past j (by simp [phase,H,j.isLt])
 
-#print axioms append_step
-#print axioms prepared_receipts
 end L4.ReportFastSixPrepHistory

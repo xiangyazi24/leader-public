@@ -163,7 +163,4 @@ theorem fixed_block_mean (step : X→Fin n→X) (finish : X→Bool) (Q : X→Pro
   unfold V
   split <;> omega
 
-#print axioms miss_from_mean
-#print axioms block_success_from_quarters
-#print axioms fixed_block_mean
 end L4.ReportAdaptiveFibre

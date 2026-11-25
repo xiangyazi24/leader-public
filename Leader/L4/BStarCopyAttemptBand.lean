@@ -123,8 +123,6 @@ theorem band_step {base x : X} {hh : ∃ i,oldH6 B base i=true}
         change pc x root≤pc y root
         omega
 
-#print axioms band_step
-
 theorem drop_history {base x : X} {addr : Nat → Pos n} {len : Nat}
     {m fin : Mode} (pre post : List (Fin n))
     (G : GeneratedOwner hp base addr len x m (pre++post) fin) :
@@ -201,10 +199,6 @@ theorem enable_through_same_attempt {base x : X} {hh : ∃ i,oldH6 B base i=true
     rw [p9] at V
     exact ⟨by omega,by omega⟩
 
-#print axioms band_word
-#print axioms enable_through_same_attempt
-
-
 /-- Every intermediate controller phase is crossed on the original
 raw tape; a successful PC6-to-PC12 run cannot jump a setup phase. -/
 theorem exact_crossing {base x : X} {hh : ∃ i,oldH6 B base i=true}
@@ -245,6 +239,4 @@ theorem exact_crossing {base x : X} {hh : ∃ i,oldH6 B base i=true}
       have now : pc y root=j+1 := by rcases h with h|h <;> omega
       exact ⟨[],e,w,rfl,old,now⟩
 
-#print axioms band_step_exact
-#print axioms exact_crossing
 end L4.BStarCopyAttemptBand

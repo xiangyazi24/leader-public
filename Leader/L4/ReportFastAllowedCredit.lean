@@ -130,9 +130,4 @@ theorem driver_rank_nominate
       rw [credit_plateau step rank bar Nom z a Eq]
       exact if_pos E
 
-#print axioms start_good
-#print axioms track_step
-#print axioms driver_rank_idle
-#print axioms driver_rank_nominate
-
 end L4.ReportFastAllowedCredit

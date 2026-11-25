@@ -233,8 +233,6 @@ theorem grant_frame (g : Pair LongGeometry) (x : Pair (BitVec LW))
     · contradiction
   exact ht.elim (T .left) (T .right)
 
-
-
 open BStarNumericCarry BStarLongEvents BStarLongCommand BStarLongArithmetic
 open BStarLongRegisters BStarLongRouting
 
@@ -351,8 +349,6 @@ theorem assignments_other (g : Pair LongGeometry) (x : Pair (BitVec LW)) (j : Na
   · obtain ⟨a,_,rfl⟩ := List.mem_map.mp hl
     exact field_of_frame _ _ (route_frame a)
 
-#print axioms assignments_other
-
 private theorem scratch_numeric (g : Pair LongGeometry) (orig x : Pair (BitVec LW)) (j : Nat) (s : Bool) :
     (numeric j).read (lane s (patchPair (longScratch g orig) x))=(numeric j).read (lane s x) := by
   -- Scratch masks depend on the side only, not on bytes used to
@@ -412,8 +408,6 @@ theorem joined_other (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
         exact (field_frame (numeric j) _ _ (field_of_frame _ _ repair_frame)).trans E
       · rw [LongDoorGuard.valid_no_override _ _ _ V]; exact E
 
-#print axioms joined_other
-
 open BStarH6WordChart BStarLongLiteral
 
 /-- The right endpoint can never be an old numeric-write initiator:
@@ -456,8 +450,6 @@ theorem step_other {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
       simp only [AllSizeS1Geometry.step,if_neg (Ne.symm sep)]
       exact joined_right _ _ _ _ _ _ _ _ _ hp (x e,x (rightNeighbor e)) j
     · simp [AllSizeS1Geometry.step,E,H]
-
-#print axioms step_other
 
 private theorem fold_work (g : Pair LongGeometry) (x : Pair (BitVec LW))
     (os : List CmdOffer) (a : Selected) :
@@ -552,8 +544,6 @@ theorem work_digit (g : Pair LongGeometry) (x : Pair (BitVec LW))
   rw [trace]
   exact field_one_write (numeric j) false before after x patch B A
 
-#print axioms work_digit
-
 /-- The actual published-row join's numerical initiator field is the
 projected physical digit result. Scratch is also included in this
 comparison. The full right side remains framed by joined_right. -/
@@ -583,8 +573,6 @@ theorem step_digit {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
   rw [Patch.compose_apply]
   exact Q.trans E
 
-#print axioms step_digit
-
 /-- Over a physical raw subword, only actual visits decoding the
 chosen register can alter it at the given location. The exclusion is
 on each exact old-prefix state, not on a hypothetical abstract mark. -/
@@ -612,5 +600,4 @@ theorem word_other {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
       avoid (e::pre) mark post (congrArg (List.cons e) split) eq)
     exact R.trans L
 
-#print axioms word_other
 end L4.BStarNumericFrame

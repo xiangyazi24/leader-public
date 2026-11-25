@@ -100,7 +100,6 @@ theorem terminal_avoids (g : Pair LongGeometry) (x : Pair (BitVec LW))
     avoids c.source (middle g x) :=
   hold_avoids g x c (actual_terminal_hold g x c hc hk h) _ (by simp [Claim.slots])
 
-
 /-- K0 is special: the old-right source door and outer validity guard
 are not part of the ordinary transport write list. -/
 structure DoorSafe (g : Pair LongGeometry) (raw : Pair (BitVec LW)) (a : AtK) : Prop where
@@ -168,8 +167,4 @@ theorem joined_terminal_empty (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 
   apply joined_quiet k₁ k₂ t₂ J₁ J₂ r c p c₁ hp x C.source (.inl h) hD _ hs.valid hs.holds
   exact terminal_avoids _ _ _ hc hk (by rw [quiet_bound _ _ _ (.inl h),h]; exact .e)
 
-#print axioms link_avoids
-#print axioms terminal_avoids
-#print axioms joined_link_quiet
-#print axioms joined_terminal_empty
 end L4.BStarResetQuietTable

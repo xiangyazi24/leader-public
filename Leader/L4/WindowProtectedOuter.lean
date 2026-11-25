@@ -107,5 +107,4 @@ theorem outer_failure_mass {α : Type} {p c n : Nat} {z0 : Config p c n} {group 
             g.inGroup g.ledger g.auth t
       _ = 11*n^(t+1) := by rw [sum_const,Nat.pow_succ]; ac_rfl
 
-#print axioms outer_failure_mass
 end L4.WindowProtectedOuter

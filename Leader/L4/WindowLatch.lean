@@ -216,8 +216,4 @@ theorem fresh_mass {α : Type} {p c n} {z0 : Config p c n} {group : List (Fin n)
     (fun q : Cursor α z0 group => if bad q then 1 else 0) (.inl start) t []]
   exact outer_failure_mass hn hc (front hn F) t start
 
-#print axioms latch_at_kill
-#print axioms replay_projects
-#print axioms fresh_mass
-
 end L4.WindowLatch

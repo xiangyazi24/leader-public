@@ -247,5 +247,4 @@ theorem raw_literal_commit_iff (g : Pair LongGeometry) (x : Pair (BitVec LW)) (e
     exact ⟨centerLink g,p,(actual_center_commit g x p O).mpr
       ((gated_center_commit g x p O).mpr h),he,hc⟩
 
-#print axioms raw_literal_commit_iff
 end L4.BStarLongLiteral

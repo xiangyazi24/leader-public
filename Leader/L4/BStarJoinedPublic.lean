@@ -149,7 +149,5 @@ theorem joined_public_exact_seed {a : LargeParams} (b : LargeRows a) (hp : 0<a.p
                mark := (pairStep (readPub hp x.1.publicRow) (readPub hp x.2.publicRow)).2.mark } =
              (pairStep (readPub hp x.1.publicRow) (readPub hp x.2.publicRow)).2 from rfl] at h
 
-#print axioms bStar_joined_public
-
 end L4.BStarJoinedPublic
 

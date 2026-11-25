@@ -124,6 +124,4 @@ theorem leave {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [lp,rp]
   exact ⟨(congrArg BStarLongToken.decode Lw).trans (decode_encode _), (congrArg BStarLongToken.decode Rw).trans (decode_encode _)⟩
 
-#print axioms leave
-#print axioms two_hits
 end L4.BStarBitReplay

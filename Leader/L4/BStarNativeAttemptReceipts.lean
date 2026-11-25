@@ -297,7 +297,4 @@ theorem from_chart_attempt {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact from_attempt_prefix hp (root_cuts hp C Q I closed fiber []).2 sep T
     (fun u _ _ => (root_cuts hp C Q I closed fiber u).1) A
 
-#print axioms from_chart_attempt
-#print axioms from_attempt_prefix
-#print axioms threshold
 end L4.BStarNativeAttemptReceipts

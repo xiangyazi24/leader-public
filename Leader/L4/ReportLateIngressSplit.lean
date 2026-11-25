@@ -89,7 +89,4 @@ theorem healthy_late_origin_from_real_split (d : Sheet) (C : Chart h) (N : 1<n)
     ⟨S,ReportSealCommitLaunch.descriptor_forward _ _ op Op,.inl Eq⟩ u k R K
   exact healthy_late_origin_from_issue d C hh G F N x X I op Op P Good u k B Healthy
 
-#print axioms no_prior_ingress
-#print axioms before_turn_as_late
-#print axioms healthy_late_origin_from_real_split
 end L4.ReportLateIngressSplit

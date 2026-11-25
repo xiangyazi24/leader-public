@@ -133,5 +133,4 @@ theorem literal_deadline_split {base initial : X} (u v past : List (Fin n))
   rw [wordSum_add_fun] at mass
   exact Nat.le_trans (Nat.mul_le_mul_left 4 mass) (by rw [Nat.mul_add]; omega)
 
-#print axioms literal_deadline_split
 end L4.BStarLiteralDeadlineSplit

@@ -108,5 +108,4 @@ theorem fresh_of_stage_completion
       ⟨j0,jL⟩ lead history pay well d need ⟨q.1,q.2,g.coherent _ q.1 i.val,source,darg,writer,staged,offer⟩ g.heads g.cont v noPub
     exact safe v ⟨[],List.append_nil _⟩ stop'
 
-#print axioms fresh_of_stage_completion
 end L4.Height.ProductionCycles

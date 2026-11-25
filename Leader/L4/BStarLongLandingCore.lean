@@ -108,7 +108,4 @@ theorem selected_lands (g : Pair LongGeometry) (x : Pair (BitVec LW))
   rw [av,C]
   simp [runWrite,empty_left]
 
-#print axioms actual_door_right
-#print axioms selected_offcenter
-#print axioms selected_lands
 end L4.BStarLongLandingCore

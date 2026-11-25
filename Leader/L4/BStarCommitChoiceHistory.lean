@@ -296,7 +296,6 @@ theorem foreign_mark (x : Fin n → LargeSite A) (i e : Fin n)
       left_foreign_field hp pair H choice (by decide) (by decide)⟩
   · simp only [AllSizeS1Geometry.step,if_neg E,if_neg (Ne.symm ex),and_self]
 
-
 /-- Arbitrarily many interleaved marks, none acting at the source door.
 The source must still be an old H6 at each actual mark (e.g. fixed Layout). -/
 theorem foreign_word (x : Fin n → LargeSite A) (i : Fin n) (w : List (Fin n))
@@ -315,11 +314,4 @@ theorem foreign_word (x : Fin n → LargeSite A) (i : Fin n) (w : List (Fin n))
       (fun a f b E => header (e::a) f b (congrArg (List.cons e) E))
     exact ⟨T.1.trans S.1,T.2.trans S.2⟩
 
-
-#print axioms bit_flight
-#print axioms joined_commit
-#print axioms receipt_selects_bank
-#print axioms foreign_word
-#print axioms joined_choice_receipt
-#print axioms launched_commit
 end L4.BStarCommitChoiceHistory

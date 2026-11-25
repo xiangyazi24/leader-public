@@ -202,10 +202,4 @@ theorem complete_can_redirty {s n : Nat} {h : Fin n → Bool} (C : Chart h)
   have S := L.1.symm.trans P.2.1
   contradiction
 
-#print axioms complete_can_redirty
-#print axioms next_valid
-#print axioms score_bounds
-#print axioms nominate
-#print axioms idle
-#print axioms complete_nondoor
 end L4.ShortSimulLocal

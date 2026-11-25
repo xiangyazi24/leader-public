@@ -52,5 +52,4 @@ theorem final_stage_descriptor (old : BitVec LW) (r : Payload)
   rw [stage_packet ((acceptFile old lastOp r).apply old) arg A P,
     (final_fields old r h).1,decode_final old h]
 
-#print axioms final_stage_descriptor
 end L4.BStarStageDescriptorHistory

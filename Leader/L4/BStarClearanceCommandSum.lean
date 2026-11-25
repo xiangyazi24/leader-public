@@ -311,6 +311,4 @@ theorem owner_sum {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
     exact chart_pays pre post slots blocks ns nb sub out all
       ⟨footprint e C,memBlock C hc ho,(one C (.advance q) H ho).2 q rfl⟩
 
-#print axioms block
-#print axioms owner_sum
 end L4.BStarClearanceCommandSum

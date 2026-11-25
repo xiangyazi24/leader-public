@@ -169,13 +169,4 @@ theorem prepared_mapped_receiptSuffix
         congrArg (fun z=>z++_) S
     _ = _ := List.append_assoc _ _ _
 
-#print axioms active_eq_armed
-#print axioms prep_merge_eq_steer
-#print axioms mappedWord_append
-#print axioms mappedWord_length
-#print axioms receiptSuffix_of_mapped_split
-#print axioms mappedWord_policy_prefix
-#print axioms prep_run_mapped
-#print axioms prepared_mapped_receiptSuffix
-
 end L4.ReportFastPrepMapping

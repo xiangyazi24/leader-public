@@ -78,8 +78,6 @@ theorem body_authority_after_credit {base x : X} {hh : ∃ i,oldH6 B base i=true
     · exact decoder
   rwa [replay] at C
 
-#print axioms body_authority_after_credit
-
 open BStarClearanceOffset
 
 /-- After the first completed recovery pass, every possible later
@@ -111,5 +109,4 @@ theorem all_body_after_first_cut {base x : X} (hh : ∃ i,oldH6 B base i=true)
   exact body_authority_after_credit hp sep Q I fiber closed
     (BStarRecoveryPass.credit_append step atA tail) e i center hdr own
 
-#print axioms all_body_after_first_cut
 end L4.BStarStageAfterCut

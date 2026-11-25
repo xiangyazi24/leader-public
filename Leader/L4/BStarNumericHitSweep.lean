@@ -91,6 +91,4 @@ theorem of_selected {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact ⟨u,e,w,i,code,split,Nd,J,
     BStarNumericHealthy.successful_sweep hp chart sep P (Nat.le_refl _) q (Y ▸ Q) N i code m J⟩
 
-#print axioms exists_node
-#print axioms of_selected
 end L4.BStarNumericHitSweep

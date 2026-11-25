@@ -109,8 +109,6 @@ theorem assignments_other (g : Pair LongGeometry) (x : Pair (BitVec LW)) (j : Na
   · obtain ⟨a,_,rfl⟩ := List.mem_map.mp hl
     exact field_of_frame _ _ (route_frame a)
 
-
-
 private theorem scratch_numeric (g : Pair LongGeometry) (orig x : Pair (BitVec LW)) (j : Nat) (s : Bool) :
     (numeric j).read (lane s (patchPair (longScratch g orig) x))=(numeric j).read (lane s x) := by
   -- Scratch masks depend on the side only, not on bytes used to
@@ -170,8 +168,6 @@ theorem joined_other (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
         exact (field_frame (numeric j) _ _ (field_of_frame _ _ repair_frame)).trans E
       · rw [LongDoorGuard.valid_no_override _ _ _ V]; exact E
 
-
-
 open BStarH6WordChart BStarLongLiteral
 
 /-- The right endpoint can never be an old numeric-write initiator:
@@ -214,9 +210,6 @@ theorem step_other {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p)
       simp only [AllSizeS1Geometry.step,if_neg (Ne.symm sep)]
       exact joined_right _ _ _ _ _ _ _ _ _ hp (x e,x (rightNeighbor e)) j
     · simp [AllSizeS1Geometry.step,E,H]
-
-
-
 
 open BStarGeneratedOwner BStarGeneratedTapeCuts BStarOwnerLaunchOrigin
 open BStarAcquireVisitOrder BStarAcquireLiteralChain BStarAcquireAnchors BStarResetChartTouch
@@ -362,7 +355,4 @@ theorem retain_later_native {base initial : X} {hh : ∃ i,oldH6 B base i=true}
   rw [←BStarResetSchedule.run_append] at H
   exact Nat.ne_of_gt (Nat.lt_of_lt_of_le later H)
 
-#print axioms retain_later_native
-#print axioms retain_interval
-#print axioms selected_owner_pc
 end L4.BStarNativeNumberRetention

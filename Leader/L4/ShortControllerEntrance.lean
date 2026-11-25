@@ -116,9 +116,4 @@ theorem wait_exit_debt (raw base : BitVec 96) (t : Token) (op : Nat)
   · rw [H]
     omega
 
-#print axioms wait_exit_next_pc
-#print axioms wait_exit_debt
-#print axioms wait_exit
-#print axioms issue_fresh
-#print axioms invalid_controller_resets
 end L4.ShortControllerEntrance

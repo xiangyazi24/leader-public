@@ -422,23 +422,4 @@ theorem single_anchor_runRounds (B : Nat) (hm : 0 < m) (hmb : m < B)
       · exact bounded_round B hm (by omega) bits s hs
       · exact single_anchor_stable B hm hmb bits s i hs honly
 
-#print axioms left_right
-#print axioms right_left
-#print axioms listMax_mem
-#print axioms le_listMax_of_mem
-#print axioms anchor_exists
-#print axioms phaseStep_x_eq
-#print axioms phaseStep_bounded_nonfinal
-#print axioms phaseFive_x
-#print axioms phaseStep5_bounded
-#print axioms bounded_round
-#print axioms add_sub_mod
-#print axioms strict_edge_proposals
-#print axioms strict_edge_survives
-#print axioms anchor_mono
-#print axioms countP_le_of_imp
-#print axioms anchorCount_mono
-#print axioms single_anchor_stable
-#print axioms single_anchor_runRounds
-
 end L4.Height

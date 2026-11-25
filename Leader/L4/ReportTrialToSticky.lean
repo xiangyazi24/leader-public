@@ -75,7 +75,4 @@ theorem isolated_after_test [DecidableEq I] (ball : I→I→Prop) (paint : Nat�
   · rw [Frame k B (Exclusive k B E),(Decision.mp On) k B E]
     simp [E]
 
-#print axioms last_test
-#print axioms sticky_of_two_windows
-#print axioms isolated_after_test
 end L4.ReportTrialToSticky

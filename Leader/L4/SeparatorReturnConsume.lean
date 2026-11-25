@@ -126,7 +126,6 @@ theorem return_consume_expected_of_return {base x : X} {hh : ∃ i,oldH6 B base 
     ResetReturnIID.iid_of_relational_rank ResetReturnIID.appendTape P Live
       (fun _ _ L=>L.1.symm ▸ Nat.one_pos) advance w 1 (part w T)
 
-#print axioms return_consume_expected_of_return
 /-- From a real launch the first pointed receipt and first later own door
 consume cost at most (252W+1)n expected marks on one physical IID tape. -/
 theorem return_consume_after_launch_expected_linear
@@ -161,5 +160,4 @@ theorem return_consume_after_launch_expected_linear
   exact SeparatorReturnLinear.separator_after_launch_expected_linear hp chart sep Q I layout closed
     LF RF dp seam flags notShort hn hl lc rc head cont cb cx W wW width L
 
-#print axioms return_consume_after_launch_expected_linear
 end L4.SeparatorReturnConsume

@@ -128,8 +128,4 @@ theorem after_launch {L B t : Nat} (step : X→Fin n→X)
   intro h
   exact Nat.le_trans (V h) (Nat.mul_le_mul_right _ N)
 
-#print axioms expected_of_counted_events
-#print axioms raw_expected_from_event_monitor
-#print axioms cpre_le
-#print axioms after_launch
 end L4.ReportResetEventClock

@@ -102,6 +102,4 @@ theorem physical_cmp_word {r : Nat} {geom : Fin r → LongGeometry}
   obtain ⟨h,hu⟩ := physical_cmp_prefix H ha hb h0
   exact ⟨h r (Nat.le_refl r),hu⟩
 
-#print axioms physical_cmp_prefix
-#print axioms physical_cmp_word
 end L4.BStarPhysicalCmpSem

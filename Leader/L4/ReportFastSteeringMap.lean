@@ -61,8 +61,6 @@ theorem gate_ban_disjoint (hh : ∃ i,h i=true) (G : GapInput h)
   pairs_from_centers hh G C inj active desired (gateBan C active desired)
     (gate_ban_spec hh G C inj active desired)
 
-#print axioms gate_ban_spec
-#print axioms gate_ban_disjoint
 end L4.ReportFastSteeringMap
 
 namespace L4.ReportFastSteeringMap
@@ -99,5 +97,4 @@ theorem armed_pair_steers_desired (d : Sheet)
   · subst e
     exact desired_hit _ q p Q
 
-#print axioms armed_pair_steers_desired
 end L4.ReportFastSteeringMap

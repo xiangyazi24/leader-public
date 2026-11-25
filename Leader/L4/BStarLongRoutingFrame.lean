@@ -206,8 +206,4 @@ theorem execute_frame (g : LongGeometry) (j : Fin 11) (x : BitVec LW) (p : Paylo
       · exact zero
   · exact zero
 
-#print axioms numeric_visit
-#print axioms reply_frame
-#print axioms accept_frame
-#print axioms execute_frame
 end L4.BStarLongRoutingFrame

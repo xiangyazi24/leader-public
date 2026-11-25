@@ -184,8 +184,6 @@ theorem fault_cannot_return {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have F : (1 : BitVec 1)=0 := (congrArg Payload.fault eq).trans qF
   exact (by decide : (1 : BitVec 1)≠0) F
 
-#print axioms joined_refused_seal
-#print axioms fault_cannot_return
 open BStarLongFixedRouting BStarLongLiteral
 
 /-- On the specified genuine chart tour, a healthy returned SEAL
@@ -239,5 +237,4 @@ theorem ack_certifies_center {base x : X} {hh : ∃ i,oldH6 B base i=true}
     (congrArg (atCursor (step x i)) next).trans ((new_read B x i (sep i) a).symm.trans fail)
   exact fault_cannot_return hp C sep (j+1) out turn back P Ret f F Ack post
 
-#print axioms ack_certifies_center
 end L4.BStarSealNoRefusal

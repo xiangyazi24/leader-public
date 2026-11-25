@@ -471,10 +471,4 @@ noncomputable def pureTimerCountdown {Q d n : Nat} (hQ : 0<Q) (table : Fin n →
     · rw [if_neg he,Nat.add_zero]
       exact H.2.1
 
-#print axioms pureTimerCountdown
-#print axioms timer_raw_budget
-#print axioms timer_initial_budget_eight
-
-#print axioms timer_local_step
-
 end L4.ResidualSweep

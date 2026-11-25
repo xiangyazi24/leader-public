@@ -81,6 +81,4 @@ theorem finish_origin (p q : Payload) (F : finish p=.reply q) (N : Numeric q) :
   have H : Numeric p := ⟨origin.1,by rw [origin.2]; exact N.2.1,by rw [origin.2]; exact N.2.2⟩
   exact ⟨H,origin.2,Token.reply.inj (F.symm.trans (finish_numeric p H))⟩
 
-#print axioms output_bind
-#print axioms finish_origin
 end L4.BStarNumericReceipt

@@ -140,8 +140,3 @@ def ConcreteBoundedRank : Prop :=
 
 end L4.RankPhysical
 
-#print axioms L4.RankPhysical.rank_step
-#print axioms L4.RankPhysical.rank_step_le
-#print axioms L4.RankPhysical.retirement_iff_rank_drop
-#print axioms L4.RankPhysical.quiet_step
-#print axioms L4.RankPhysical.quiet_run

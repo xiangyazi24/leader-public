@@ -124,8 +124,4 @@ theorem old_receipt_key (base initial : X) (hh : ∃ i,oldH6 B base i=true)
     count_before_publication hp base initial hh start history future i silent
   simp only [reserveAtKey,eq,if_true,live]
 
-#print axioms old_receipt_key
-#print axioms read_prefix
-#print axioms publication_prefix
-#print axioms cut_reserved_of_read
 end L4.BStarPhysicalReserved

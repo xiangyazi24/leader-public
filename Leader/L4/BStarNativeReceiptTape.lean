@@ -253,7 +253,4 @@ theorem native_395 {base x : X} {addr : Nat → Pos n} {len : Nat} {w : List (Fi
   have H := extract_count hp K sep T band (k:=395) (by omega)
   rwa [lo] at H
 
-#print axioms native_395
-#print axioms first_hit
-#print axioms one_step
 end L4.BStarNativeReceiptTape

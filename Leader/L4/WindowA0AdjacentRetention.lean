@@ -126,8 +126,6 @@ private theorem source_step {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
       exact he ▸ hS
     · simpa [step,he,Ne.symm hr] using hS
 
-
-
 private theorem waiting_trail_no_launch {Q : Nat} (q : Trip Q) :
     ¬ResidualSweep.launches (waitingFor q) .t := by
   cases q with
@@ -250,8 +248,6 @@ theorem tail_step {p c n : Nat} {initial : Config p c n} (hn : 4≤n)
     change (step a.config e (liftedSite a.top (1+i))).rail=.t
     simpa [step,hE₁,hE₂] using hT
 
-#print axioms tail_step
-
 open WindowA0ReleaseCredit in
 private theorem waiting_cases {p c n : Nat} (S : WindowA0Ledger.Scope n)
     (base : Fin n) (s : Kind) (r : WindowA0RoutedRelease.State p c n) (e : Fin n)
@@ -283,7 +279,6 @@ private theorem waiting_cases {p c n : Nat} (S : WindowA0Ledger.Scope n)
 private theorem inside_guard {n : Nat} (base : Fin n) (i : Nat) (hi : i<6) :
     liftedSite base i ∈ WindowA0Return.guardLabels base :=
   List.mem_map.2 ⟨i,List.mem_range.2 hi,rfl⟩
-
 
 private theorem controlled_labels {p c n : Nat} {initial : Config p c n} (hn : 5≤n)
     (S : WindowA0Ledger.Scope n) (J : Fin n) (H : Nat)
@@ -360,7 +355,6 @@ private theorem controlled_labels {p c n : Nat} {initial : Config p c n} (hn : 5
         omega
       · exact (out (ee.symm ▸ inside_guard b _ (by omega))).elim
 
-
 open WindowA0ReleaseCredit in
 /-- Same-word retention for every continuing guarded release prefix.
 No assumption of stutter on the exterior is used: a far door was
@@ -435,6 +429,4 @@ theorem kept_ordinary_ready {p c n : Nat} {initial : Config p c n} (hn : 5≤n)
   have T := waiting_tail hn S J H q z hz ha owned w k hw
   exact WindowA0AdjacentReady.kept_body_ready hn S J H q z hz ha owned w e k hw hkeep hs hg T.2 T.1
 
-#print axioms waiting_tail
-#print axioms kept_ordinary_ready
 end L4.WindowA0AdjacentRetention

@@ -90,10 +90,9 @@ theorem rootedBoundedRank_of_boundary (h : TripleBoundary.MissingBoundary) :
     RootedBoundedRank :=
   boundedRank_of_restartTrial (TripleBoundary.restartTrial_of_boundary h)
 
-theorem row175_rooted_of_boundary (h : TripleBoundary.MissingBoundary)
+theorem uniformEdge_rooted_of_boundary (h : TripleBoundary.MissingBoundary)
     (windows : RootedWindowMarginals) : RootedStatement :=
-  row175_rooted (rootedBoundedRank_of_boundary h) windows
+  uniformEdge_rooted (rootedBoundedRank_of_boundary h) windows
 
 end L4.RootedRetirement
 
-#print axioms L4.RootedRetirement.row175_rooted_of_boundary

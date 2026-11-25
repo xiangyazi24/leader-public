@@ -15,7 +15,6 @@ private theorem empty_apply {w : Nat} (x : BitVec w) : (Patch.empty w).apply x=x
   intro i _
   exact Patch.hold _ _ _ (by simp [Patch.empty])
 
-
 /-- The responder's source does not act on decoded F/T in valid WAIT,
 regardless of opcode/argument mismatch or whether F is faulted. -/
 theorem wait_ft_door {c : Nat} (v : BitVec (W c)) (t : Token)
@@ -85,13 +84,6 @@ theorem wait_ft_row {c : Nat} (r : Nat) (hu : Bool) (u v : BitVec (W c))
   · by_cases G : (decode (wire (c:=c) u)).tag=1 <;>
       simp [row,packet,V,F,G,Patch.compose_apply,empty_apply] <;> exact apply_canon v _
 
-#print axioms wait_ft_door
-#print axioms forward_wire
-#print axioms reverse_wire
-#print axioms terminal_trail_drains
-#print axioms empty_successor_drains
-#print axioms wait_ft_row
-
 /-- Literal codec fact: arbitrary raw padding can fault but cannot
 change the old two-bit family. -/
 theorem decode_tag (x : BitVec 16) : (decode x).tag=(x.extractLsb' 14 2).toNat := by
@@ -123,11 +115,6 @@ theorem reverse_through_empty_fixture :
     packet (c:=c) u=emptyToken ∧ packet (c:=c) v=d ∧
       packet (c:=c) (q.1.apply u)=d ∧ packet (c:=c) (q.2.apply v)=emptyToken := by decide
 
-#print axioms decode_tag
-#print axioms fault_reply_codec
-#print axioms fault_forward_codec
-#print axioms reverse_through_empty_fixture
-
 /-- The production wrapper only erases dormant controller flags at
 [16,18), so the preceding raw equations lift without losing any
 token bit on either side of the pair. -/
@@ -145,5 +132,4 @@ theorem work_wire_projection {c : Nat} (r : Nat) (h : Pair Bool) (x : Pair (BitV
       (((row (c:=c) r h x).2.apply x.2).extractLsb' 0 16).getLsbD i
   simpa [I] using E
 
-#print axioms work_wire_projection
 end L4.WidthTokenTransport

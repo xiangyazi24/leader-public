@@ -79,7 +79,4 @@ theorem receipt_uses_reserved {Owner : Type} (read : Nat→Option (Owner×Bool))
   unfold reserved
   rw [dif_pos H,E]
 
-#print axioms pending_positions_unique
-#print axioms reserved_past
-#print axioms receipt_uses_reserved
 end L4.BStarLiveReservation

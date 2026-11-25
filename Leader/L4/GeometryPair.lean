@@ -75,4 +75,3 @@ theorem incoming_safe {p c1 : Nat} (u v : Site p c1)
 
 end L4
 
-#print axioms L4.incoming_safe

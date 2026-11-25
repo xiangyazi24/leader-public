@@ -51,5 +51,4 @@ theorem identity_stopped_expected
     exact (Nat.min_eq_right (len ▸ Thru.wait_le_length next _ s w)).symm
   rwa [E]
 
-#print axioms identity_stopped_expected
 end L4.DirtyFenceIdentityMean

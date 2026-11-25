@@ -170,9 +170,4 @@ theorem roster_alias_run {r : Nat} (T : PrimTable r) (bank : Bank) (old : BitVec
   rw [aliases_take,maximal_suffix K]
   exact alias_fold T bank old literalCmp _ _ _ _ (roster_segment bank old K H) L R
 
-#print axioms roster_alias_run
-#print axioms partition
-#print axioms first_last
-#print axioms maximal_suffix
-#print axioms accept_roster
 end L4.BStarAliasRoster

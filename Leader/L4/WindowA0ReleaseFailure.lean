@@ -114,5 +114,4 @@ theorem first_release_bad_not_done {p c n : Nat} {initial : Config p c n}
     rw [D] at hu
     exact adjacent_failure hn S J H x hx hd u hu (by simpa [branchBad,hd,hw,x] using bad)
 
-#print axioms first_release_bad_not_done
 end L4.WindowA0ReleaseFailure

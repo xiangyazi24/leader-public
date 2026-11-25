@@ -225,8 +225,4 @@ theorem firstHit (P : Params s n) (C : Chart P.h) (x : Raw s n)
       · rw [V]
         rfl
 
-#print axioms firstHit
-#print axioms actual_issue
-#print axioms actual_step
-#print axioms clean
 end L4.ShortMISSheetReset

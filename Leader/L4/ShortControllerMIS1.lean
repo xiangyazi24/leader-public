@@ -89,9 +89,6 @@ theorem wait_exit_raw {s n : Nat} (x : Raw s n) (e : Fin n)
   · exact Or.inl (P.trans H)
   · exact Or.inr ⟨L,P.trans H,by rw [P,H]; omega⟩
 
-#print axioms source_door_raw
-#print axioms wait_exit_raw
-
 private theorem source_some_raw {s n : Nat} (x : Raw s n) (e : Fin n)
     (sep : e≠rightNeighbor e) (eligible : header x (rightNeighbor e)=true)
     (p : Patch 96) (t : Token)
@@ -170,6 +167,4 @@ theorem issue_fresh_raw {s n : Nat} (x : Raw s n) (e : Fin n)
       rw [M]
       exact (congrArg BitVec.toNat G.1).trans ho
 
-#print axioms invalid_resets_raw
-#print axioms issue_fresh_raw
 end L4.ShortControllerMIS1

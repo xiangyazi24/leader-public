@@ -69,8 +69,6 @@ theorem actual_door_singleton (g : Pair LongGeometry) (x : Pair (BitVec LW))
   rw [claim_door_singleton g h]
   rfl
 
-#print axioms actual_door_singleton
-
 theorem actual_door_split (g : Pair LongGeometry) (x : Pair (BitVec LW))
     (h : g.2.axes.h6=true) :
     let target : CommandClaim × Offer := (doorClaim,.door (bind g.2 0 (atSite x.2 0)))
@@ -96,5 +94,4 @@ theorem actual_door_split (g : Pair LongGeometry) (x : Pair (BitVec LW))
     exact (List.not_mem_nil Q)
   exact ⟨pre,post,E,empty_imp pre A,empty_imp post B⟩
 
-#print axioms actual_door_split
 end L4.BStarDoorUnique

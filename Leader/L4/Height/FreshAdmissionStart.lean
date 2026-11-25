@@ -379,11 +379,6 @@ theorem first_itinerary_between_releases (P : Production g) (target : Owners h)
     decide
   exact itinerary_of_visited_acquire g P target base w after candidates cuts tape miss seen ending
 
-#print axioms target_admit_returns
-#print axioms visits_acquire_between_releases
-#print axioms visits_acquire_after_five_releases
-#print axioms first_itinerary_between_releases
-
 end
 end L4.Height.FreshAdmissionStart
 

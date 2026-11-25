@@ -85,6 +85,4 @@ theorem actual_physical_digits {base x : X} (u v tail : List (Fin n))
   exact ⟨visit,A,ackPrefix,centerEq,inc,sel,heads,installed,
     readout (sites (r:=r) i) (exact_sites hh i head noShort).2.2⟩
 
-#print axioms actual_physical_digits
-#print axioms exact_sites
 end L4.BStarOperandSites

@@ -83,9 +83,6 @@ theorem consume {s n : Nat} {base y : Raw s n} {hh : ∃ i,oldH6 (rows s) base i
   have eq : (BitVec.ofNat 9 (op+1)).toNat=op+1 := (BitVec.toNat_ofNat _ _).trans (Nat.mod_eq_of_lt (by omega))
   exact ⟨empty,(congrArg BitVec.toNat phase),E.trans eq⟩
 
-#print axioms eligible_gap
-#print axioms consume
-
 open BStarOwnerControlHistory
 
 /-- Quiescent full chart between the actual first consume and the next
@@ -140,9 +137,6 @@ theorem launch {s n : Nat} {base y : Raw s n} {hh : ∃ i,oldH6 (rows s) base i=
     ⟨Nat.zero_le _,⟨_,pt⟩,fun j J => (Nat.not_lt_zero j J).elim⟩,?_⟩,pt⟩
   intro j J L
   exact empty_away_from_door hp C (fiber _ q) ready.1 door (sep door) j (.inl J) L
-
-#print axioms ready_gap
-#print axioms launch
 
 /-- The two real adjacent replay doors, with the original healthy Seen
 word for the first stage and the exact initialized second-stage chart.
@@ -200,8 +194,6 @@ theorem eligible_reply_replay {s n : Nat} {base seed : Raw s n}
   · refine ⟨pre,rfl,?_,phase,pc,seen,live.2.2⟩
     change consumed=rawRun (rawNext s seed door) (pre++[door])
     exact (BStarResetSchedule.run_append (rawNext s) (rawNext s seed door) pre [door]).symm
-
-#print axioms eligible_reply_replay
 
 open BStarResetChartNomination BStarSeparatingProgress BStarAcquireRailCoverage
 
@@ -265,8 +257,6 @@ theorem launched_gap_seen {s n : Nat} {base y : Raw s n} {hh : ∃ i,oldH6 (rows
           exact Token.noConfusion (trail.symm.trans obs)
     exact ⟨E ▸ seen,inv⟩
 
-#print axioms launched_gap_seen
-
 /-- Both waits on a successful sampled doublet can be moved after its
 two doors. The first wait separately preserves full old-reply
 eligibility; the concatenated waits are the next stage's healthy Seen
@@ -322,8 +312,6 @@ theorem two_gaps_replay {s n : Nat} {base seed : Raw s n}
   exact (eligible_gap C Q fiber closed sep (by omega : op<3) a
     (fun e mem=>A e (W.symm ▸ List.mem_append_left b mem)) qOld live).2
 
-#print axioms two_gaps_replay
-
 /-- A final successful one-door wait completes the healthy stage in
 the middle of the replay, not necessarily at its final endpoint. The
 disjoint gap is retained afterward. -/
@@ -368,5 +356,4 @@ theorem final_gap_replay {s n : Nat} {base seed : Raw s n}
       (fun e mem=>ind e (E.symm ▸ List.mem_append_left b mem))
       (qr _ pre (closed _ door qs)) live).2
 
-#print axioms final_gap_replay
 end L4.PhysicalEligibleReply

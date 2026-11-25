@@ -133,5 +133,3 @@ theorem phases_mean {α β : Type} {n m : Nat} {next : α → Fin n → α}
 
 end L4.UnisonCover
 
-#print axioms L4.UnisonCover.phase_mean
-#print axioms L4.UnisonCover.phases_mean

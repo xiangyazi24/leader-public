@@ -333,8 +333,4 @@ theorem commit_terminal_joined (d : Sheet) (C : Chart h) (x : Raw s n) (N : 1<n)
     have Fit : RankFits p t := P ▸ rank_decoded_fits p (rankGate p (h e) u j) (resetTokenRead p u j)
     exact commit_ack_decode p _ (O ▸ Fit.op)
 
-#print axioms commit_ack_decode
-#print axioms commit_terminal_joined
-#print axioms applied_ingress_at
-#print axioms applied_ingress
 end L4.ReportCommitAppliedIngress

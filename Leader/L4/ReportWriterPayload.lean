@@ -111,6 +111,4 @@ theorem nonheader_write_effect_frames_selected (p : Params) (hv win : Bool)
   · have Q : 2*d p≤j-offset p (1-sel) := by omega
     simp [BitVec.getLsbD_setWidth,BitVec.getLsbD_shiftLeft,BitVec.getLsbD_of_ge _ _ Q]
 
-#print axioms nonheader_write_effect_frames_selected
-#print axioms issue_write_banks
 end L4.ReportWriterPayload

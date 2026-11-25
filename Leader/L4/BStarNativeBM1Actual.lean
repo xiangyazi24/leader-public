@@ -189,5 +189,4 @@ theorem bm1_receipt {base initial late : X} {hh : ∃ i,oldH6 B base i=true}
   change val _<16^width at Bnd
   rwa [bm1_word (by omega)] at Bnd
 
-#print axioms bm1_receipt
 end L4.BStarNativeBM1Actual

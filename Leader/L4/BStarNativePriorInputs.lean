@@ -30,7 +30,6 @@ open BStarNativePackedRep
 open BStarLongSignatures
 open L4.Compiler.Digits
 
-
 open L4.Compiler.Digits
 
 set_option maxRecDepth 8192
@@ -107,5 +106,4 @@ theorem arg_at_launch_of_hit {base initial : X} {hh : ∃ i,oldH6 PROTO base i=t
   obtain ⟨s,V⟩ := arg_of_packed _ _ _ regs R K c' G A
   exact ⟨s,V.trans H⟩
 
-#print axioms arg_at_launch_of_hit
 end L4.BStarNativePriorInputs

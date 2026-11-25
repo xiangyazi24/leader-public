@@ -102,5 +102,4 @@ theorem from_images (P : Production g) {o : Owners h} {S : List (Pos n)} {len : 
     rw [eq]
     exact ⟨⟨_,A⟩,_,B'⟩
 
-#print axioms from_images
 end L4.Height.FreshFenceSeed

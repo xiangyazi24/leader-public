@@ -121,7 +121,4 @@ theorem entry_exit_mean {p c n : Nat} (hn : 4≤n) (x : Config p c n)
     y.heads.j-y.heads.i<n ∧ MCOV y.ledger.config ∧ COV y.ledger.config ∧ _
   exact ⟨G.cont,ji,by omega,by omega,G.cont.1.markCover,Q,noOther_left _ _ _ _ _ G⟩
 
-#print axioms trace_keep
-#print axioms noOther_left
-#print axioms entry_exit_mean
 end L4.WindowA0EntryJoin

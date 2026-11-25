@@ -201,9 +201,6 @@ theorem cut_step {p c n : Nat} (hn : 4≤n)
   have H := geom_step hn z g e j w k a b cTag b0 d (geomOf h) mc ht hA hB hC hKeep
   exact ⟨H.jTag,H.wTag,H.kTag,H.wLift,H.kLift,H.wBefore,H.width,hJ,hW,H.noOther⟩
 
-#print axioms geom_step
-#print axioms cut_step
-
 structure Cursor (p c n : Nat) where
   ledger : Ledger p c n
   j : Fin n
@@ -353,6 +350,4 @@ theorem retained_progress_cap {p c n : Nat} {x : Config p c n} (hp : 2≤p) (hc0
   · have h := WindowFourHeadStock.interval_size_cap q.ledger.config (rightNeighbor q.j) q.width
     omega
 
-#print axioms retained_progress_cap
-#print axioms retained_ghost_progress_cap
 end L4.WindowFourHeadCut

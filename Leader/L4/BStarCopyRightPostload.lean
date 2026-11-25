@@ -116,6 +116,4 @@ theorem frozen_busy_suffix {base origin : X} {hh : ∃ i,oldH6 B base i=true}
     exact (ih (lead++[e]) newly added (fun h => past_event hp (past h) ev)
       (fun a f b E => layout (e::a) f b (congrArg (List.cons e) E))).trans frame
 
-#print axioms load_enters_past
-#print axioms frozen_busy_suffix
 end L4.BStarCopyRightPostload

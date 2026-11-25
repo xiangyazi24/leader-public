@@ -110,5 +110,4 @@ theorem raw_count {A : Word n B → Prop}
     · rw [Q] at W
       cases W
 
-#print axioms raw_count
 end L4.PulseOrientation

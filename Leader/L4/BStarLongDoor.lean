@@ -140,9 +140,4 @@ theorem seal_issues_zero (x : BitVec LW) (d : BStarLongPublication.Descriptor)
   have hs : BitVec.ofNat 7 (sourceDescriptor.read x).toNat=sourceDescriptor.read x := by simp
   simp [initial,sealOp,acquire,copyLoad,stageOp,commitOp,hs,h]
 
-#print axioms invalid_owns_door
-#print axioms wait_holds_forward
-#print axioms wait_holds_trail
-#print axioms wait_empty_repairs
-#print axioms seal_issues_zero
 end L4.BStarLongDoor

@@ -26,5 +26,3 @@ theorem concrete_refill_bound_global {p c n : Nat} (hn : 4 ≤ n)
 
 end L4.RearTrace
 
-#print axioms L4.RearTrace.clockEvents_filled_eq_globalFilled
-#print axioms L4.RearTrace.concrete_refill_bound_global

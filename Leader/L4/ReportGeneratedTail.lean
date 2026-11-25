@@ -89,7 +89,6 @@ theorem commit_prefix_no_restart (d : Sheet) (C : Chart h) (N : 1<n)
     rw [←ShortOwnerEpochJS.raw_snoc]
     exact positive _ (j+1) (.hop B J No)
 
-
 /-- Once the same descriptor is installed at centre, the actual
 generated pre-ingress COMMIT prefix yields a classified trigger at the
 very next nominated ingress. Grant and selector are framed over the
@@ -150,7 +149,6 @@ theorem commit_prefix_classifies (d : Sheet) (N : 1<n)
     have Old : oldReportToken p (h e) (selectBytes d (z e)) 0=t := T
     rw [Old]
     exact ⟨Old,Hold,Sel.trans Prior,Seal.trans Installed⟩
-
 
 private theorem seal_not_commit (p : Params) : sealOp p≠commitOp p := by
   unfold sealOp commitOp
@@ -268,7 +266,6 @@ theorem generated_seal_forward (d : Sheet) (N : 1<n)
         (fun _=>.inl (no_commit z P))
       exact Q0.1.trans (Set (by change C.a<k+1 at Past; change C.a<k; omega))
 
-
 private theorem seal_reverse_positive (d : Sheet) (C : Chart h) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (F : Fibre (h:=h) d Q)
     (digit : 0<(params d s).digits) (x : Raw s n) (X : Cached d hh Q x)
@@ -342,7 +339,6 @@ theorem generated_seal_root (d : Sheet) (N : 1<n)
       rw [Arrived] at T
       simp [backTag,show 0<j by omega] at T
   exact ⟨Z,Eq ▸ R,Hold',Sel'.trans (Sel.trans Prior),Seal'.trans (Fr.1.trans Installed)⟩
-
 
 private theorem issue_nondoor_writerfree (d : Sheet) (N : 1<n)
     (hh : ∃ i,h i=true) (G : GapInput h) (r : Owner h) (F : Fibre (h:=h) d Q)
@@ -452,11 +448,4 @@ theorem seal_root_to_classified_ingress (d : Sheet) (N : 1<n)
     Fw LaunchPC Cl Hl (Sc.trans (Sel.trans (So'.trans Initial.2.2.1)))
     (St.trans (Seal.trans (Er.trans Initial.2.2.2))) w W
 
-#print axioms seal_root_to_classified_ingress
-#print axioms generated_seal_root
-#print axioms generated_seal_forward
-#print axioms commit_prefix_classifies
-#print axioms commit_hop_without_ingress
-#print axioms commit_healthy_before_ingress
-#print axioms commit_prefix_no_restart
 end L4.ReportGeneratedTail

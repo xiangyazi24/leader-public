@@ -118,6 +118,4 @@ theorem shift_first_from_launch {base before x : X} {hh : ∃ i,oldH6 B base i=t
     exact launch_shift_zero _ _ oldPC kind L
   exact first_shift_zero hp chart sep A kind start d tail first healthy
 
-
-#print axioms shift_first_from_launch
 end L4.BStarNativeShiftInitial

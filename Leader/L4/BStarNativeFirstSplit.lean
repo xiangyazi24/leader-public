@@ -35,5 +35,4 @@ theorem after_first {base initial : X} {addr : Nat → Pos n} {len : Nat}
   obtain ⟨between,E⟩ := List.prefix_of_prefix_length_le A Bp L
   exact ⟨between,by simpa [List.append_assoc] using E.symm⟩
 
-#print axioms after_first
 end L4.BStarNativeFirstSplit

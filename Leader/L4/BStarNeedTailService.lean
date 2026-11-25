@@ -282,8 +282,4 @@ theorem need_tail_service_word {base origin : X} {hh : ∃ i,oldH6 B base i=true
     need_tail_publishes hp C Q fiber closed sep i k K idx head own bSite g G gateIdx ord
       lead history pay well d need oldFacts P w sub⟩
 
-#print axioms need_tail_sealed_trace
-#print axioms need_tail_publishes_trace
-#print axioms need_tail_publishes
-#print axioms need_tail_service_word
 end L4.BStarNeedTailService

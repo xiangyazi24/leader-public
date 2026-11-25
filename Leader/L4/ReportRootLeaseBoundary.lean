@@ -134,9 +134,6 @@ theorem root_held_after_success_before_release (d : Sheet) (C : Chart h)
   exact (root_held_iff_no_release d C N hh F after
     ((cached_fibre d N hh Q F).closed y (door C) Y) C1 B v).mpr
 
-#print axioms root_grant_step_iff
-#print axioms root_held_iff_no_release
-#print axioms root_held_after_success_before_release
 /-- Authenticate the actual captured bit at the current pre-SEAL
 endpoint without assuming either NoRestartTape or OwnerRailTape.
 The sampled suffix ends before the actual old root RESET release.
@@ -169,5 +166,4 @@ theorem authentic_capture_current_no_root_release (d : Sheet) (G : GapInput h) (
     x X I P Compat digit w T Tag ND v NoRelease
   exact authentic_capture_current_while_held d G r hh F N x X I P digit w T Tag ND v Held Lo Hi
 
-#print axioms authentic_capture_current_no_root_release
 end L4.ReportRootLeaseBoundary

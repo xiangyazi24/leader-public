@@ -443,10 +443,4 @@ theorem trial_from_two {α : Type} {n D : Nat}
       simp [hr, hor]
   exact Nat.le_trans (Nat.mul_le_mul_left 2 hmass) hunion
 
-#print axioms markov_survivors
-#print axioms union_failure
-#print axioms restart_mean
-#print axioms restart_tail
-#print axioms trial_from_two
-
 end L4.Height

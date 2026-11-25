@@ -117,7 +117,4 @@ theorem digit_at_numeric_prefix {x : X} {w : List (Fin n)} {head : Fin n}
     dif_pos (BStarLongPublication.readSel (run x A.lead head).long).isLt]
   exact congrArg (some ∘ BitVec.toNat) Q
 
-#print axioms actual_center_header
-#print axioms body_of_acquisition
-#print axioms digit_at_numeric_prefix
 end L4.BStarCopyCenterActualWitness

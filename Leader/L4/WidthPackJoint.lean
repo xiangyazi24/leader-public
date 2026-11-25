@@ -120,9 +120,4 @@ theorem packed_of_width_joint {s : Nat} (hs : 6 ≤ s) (N : 1 < n)
     (fun y Y i => ((data z Z).2 i).trans ((data y Y).2 i).symm)
     _ (spacing z Z.1) (data z Z).1
 
-#print axioms ordinal_of_gap
-#print axioms site_word_coordinate
-#print axioms site_word_cover
-#print axioms settled_owner_flags
-#print axioms packed_of_width_joint
 end L4.WidthPackJoint

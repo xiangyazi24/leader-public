@@ -390,7 +390,6 @@ theorem radix_spare_fixture :
       F 2 ∧
     decode p false (BitVec.ofNat _ 31)=E := by decide
 
-#print axioms work_only
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -514,9 +513,6 @@ theorem pulse_disjoint_right_commit (p : Params) (u v : BitVec p.w) (hu win : Bo
   · rw [pulse_mask_below_tail p true 1 v i (by omega)] at H
     contradiction
 
-#print axioms pulse_mask_below_tail
-#print axioms commit_effect_mask_above_tail
-#print axioms pulse_disjoint_right_commit
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -604,8 +600,6 @@ theorem pulse_commit_Z (p : Params) (u v : BitVec p.w) (hu win : Bool)
   rw [show Z p ((pulseWiden p (effect p u v hu true 0 (some 1) win t).2.1).apply v)=Z p v
      from pulse_widen_frame p _ v _ F]
 
-#print axioms pulse_Z_from_old
-#print axioms pulse_commit_Z
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -624,7 +618,6 @@ theorem commit_effect_payload (p : Params) (hu : Bool) (u v : BitVec p.w)
         {t with applied:=true}) := by
   simp [effect,G,S,R]
 
-#print axioms commit_effect_payload
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -839,7 +832,6 @@ private theorem cmtRouteOther (p : Params) (hu hv : Bool) (u v : BitVec p.w)
         · simp only [if_neg J']
           split <;> exact ⟨rfl,rfl⟩
 
-
 private theorem cmtUnfold (p : Params) (hu hv : Bool) (u v : BitVec p.w) :
     body p (hu,hv) (u,v) =
   let fu := oldK p hu u
@@ -933,7 +925,6 @@ private theorem cmtPatch_writes (p : Params) (v : BitVec p.w) (dsc i : Nat)
   rw [(cmtMask_after p i I _ _ (cmtK p 1 _)).1,
     (cmtMask_after p i I _ _ (cmtK p 1 _)).2]
   exact ⟨by simp [Patch.compose,hit], Patch.write _ _ _ hit⟩
-
 
 private theorem cmtFieldMask (p : Params) (k b v i : Nat)
     (fit : k+b≤workW p) (L : k≤i) (R : i<k+b) :
@@ -1089,7 +1080,6 @@ theorem commit_publication (p : Params) (hu : Bool) (u v : BitVec p.w)
       rw [Patch.write _ _ _ W,cmtFieldVal p k 3 q j capB J])
   exact ⟨slotS,cmtObsBank p _ ix (dsc%4) (Z p v) slotB (Nat.mod_lt _ (by decide))⟩
 
-#print axioms commit_publication
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -1324,7 +1314,6 @@ theorem row_right_Z (p : Params) (hu hv : Bool) (u v : BitVec p.w) :
     rw [lowFoldR p u v hu hv _ _ _ i I,norm]
     exact result _ (by simpa only [if_neg H] using base)
 
-#print axioms row_right_Z
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -1342,7 +1331,6 @@ theorem same_mark_publication (p : Params) (hu : Bool) (u v : BitVec p.w)
   have C := commit_publication p hu u v dsc G
   exact ⟨C.1,C.2.1,C.2.2,row_right_Z p hu true u v⟩
 
-#print axioms same_mark_publication
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -1393,10 +1381,6 @@ theorem source_reset0_fault (p : Params) (x : BitVec p.w)
   unfold sourceOpcode at O
   simp [source,P,O,resetRestart,MISByteCodec.faultToken]
 
-#print axioms source_reset0_issue
-#print axioms source_reset0_consume
-#print axioms source_reset0_hold
-#print axioms source_reset0_fault
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -1437,8 +1421,6 @@ theorem row_reset0_consume_suffix (p : Params) (hu : Bool) (u v : BitVec p.w)
   simp only [R,source_reset0_consume p v P O]
   exact ⟨_,rfl⟩
 
-#print axioms row_reset0_issue_suffix
-#print axioms row_reset0_consume_suffix
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -1521,9 +1503,6 @@ theorem reset0_route_turn (p : Params) (hu hv : Bool) (u v : BitVec p.w)
       ((a.compose (if hu && j==1 then writeSeal p none else .empty _)).compose (writeK p j reset0Reply),b) := by
   simp only [cmtRoute,H,reset0_ready,if_true,reset0_effect,reset0_terminal,reset0_empty_comp]
 
-#print axioms reset0_effect
-#print axioms reset0_route_hop
-#print axioms reset0_route_turn
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -1554,9 +1533,6 @@ theorem reset_drain_terminal_trail (p : Params) (hu hv : Bool) (u v : BitVec p.w
       (a.compose (writeK p j MISByteCodec.E),b) := by
   simp [cmtRoute,ready,isT]
 
-#print axioms reset_drain_reverse_link
-#print axioms reset_drain_clear_link
-#print axioms reset_drain_terminal_trail
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -1678,7 +1654,6 @@ private theorem reset0EffectR (p : Params) (u v : BitVec p.w) (hu hv : Bool)
   apply reset0IfRight
   · apply reset0IfRight <;> exact em
   · exact em
-
 
 private theorem reset0IfLeft (p : Params) (P : Prop) [Decidable P]
     (a b : Patch (workW p) × Patch (workW p) × Tok)
@@ -1863,7 +1838,6 @@ private theorem reset0_tailR (p : Params) (hu hv : Bool) (u v : BitVec p.w)
         · simp only [if_neg H]
           split <;> rfl
 
-
 private def reset0Post (p : Params) (hv : Bool) (v : BitVec p.w)
     (a : Pair (Patch (workW p))) : Pair (Patch (workW p)) :=
   if hv then
@@ -1922,7 +1896,6 @@ private theorem reset0Unfold (p : Params) (hu hv : Bool) (u v : BitVec p.w) :
   let a := ((a.compose (ru 0)).compose (ru 1)).compose (ru 2)
   let b := ((b.compose (cmtNorm p hv v 0)).compose (cmtNorm p hv v 1)).compose (cmtNorm p hv v 2)
   reset0Post p hv v ((links hv).foldl (cmtRoute p hu hv u v win) (a,b)) := rfl
-
 
 private theorem reset0_foldL (p : Params) (hu hv : Bool) (u v : BitVec p.w)
     (win : Fin 3 → Bool) (suf : List (Fin 3 × Option (Fin 3)))
@@ -1986,7 +1959,6 @@ private theorem reset0_list_split (hv : Bool) (j : Fin 3) :
     · decide
     · decide
 
-
 private theorem reset0_compKSame (p : Params) (j : Fin 3)
     (a : Patch (workW p)) (u : BitVec p.w) (t : Tok) :
     resetTokenRead p ((widen p (a.compose (writeK p j t))).apply u) j=resetTokenWire p t := by
@@ -2039,8 +2011,6 @@ theorem reset0_row_turn (p : Params) (hu hv : Bool) (u v : BitVec p.w)
   rw [reset0Post_left,L,List.foldl_append,List.foldl_cons,K,reset0_foldL _ _ _ _ _ _ _ _ _ J]
   exact reset0_at_turn p hu hv u v _ _ j H
 
-#print axioms reset0_row_hop
-#print axioms reset0_row_turn
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -2103,8 +2073,6 @@ theorem reset0_decode_reply (p : Params) (gate : Bool) :
     decode p gate (resetTokenWire p reset0Reply)=reset0Reply :=
   reset0_decode_tags p gate 3 (.inr rfl)
 
-#print axioms reset0_decode_forward
-#print axioms reset0_decode_reply
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -2302,8 +2270,6 @@ theorem row_left_pulse_bits (p : Params) (hu hv : Bool) (u v : BitVec p.w)
   · rw [lowFoldL p u v hu hv _ _ _ i I,norm]
     exact pulseBase p _ (base _) _ _ _ _ I
 
-#print axioms row_left_pulse_bits
-#print axioms row_right_pulse_bits
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -2426,12 +2392,6 @@ theorem terminal_commit_requires_applied (p : Params) (t : Tok)
   have C : ¬commitOp p<writeOp p := by unfold commitOp writeOp; omega
   simp [terminal,op,A,B,C]
 
-#print axioms commit_effect_snapshot
-#print axioms acquire_capture_old
-#print axioms reader_digit_old
-#print axioms write_digit_old
-#print axioms seal_effect_old
-#print axioms terminal_commit_requires_applied
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -2471,8 +2431,6 @@ theorem row_left_Z (p : Params) (hu hv : Bool) (u v : BitVec p.w) :
   have H := row_left_pulse_bits p hu hv u v (ell p.streak+2) (by unfold tail; omega)
   exact H.trans (pulse_Z_from_old p hu 2 u u)
 
-#print axioms publication_work_congr
-#print axioms row_left_Z
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -2562,7 +2520,6 @@ theorem commit_keeps_digit_pair (p : Params) (hu : Bool) (u v : BitVec p.w)
   exact pulse_comp_out (pulse_comp_out (pulse_comp_out
     (pulse_comp_out (pulse_comp_out Q P) (N 0 i I)) (N 1 i I)) (N 2 i I)) F
 
-#print axioms commit_keeps_digit_pair
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -2631,11 +2588,6 @@ theorem admit_opposite_required :
     admitRaceAfter 3 1=3 ∧ admitRaceAfter 3 3=3 ∧ admitRaceAfter 2 3=5 ∧
     admitRaceAfter 2 1=2 ∧ admitRaceAfter 2 2=2 ∧ admitRaceAfter 3 2=4 := by decide
 
-#print axioms admit_ready_at_gate
-#print axioms admit_arrives_race1
-#print axioms admit_departure_effect
-#print axioms admit_incoming_normalization
-#print axioms admit_opposite_required
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -2677,9 +2629,6 @@ theorem admit_source_consume (p : Params) (x : BitVec p.w) (t : Tok)
   unfold sourceOpcode at op
   simp [source,phase,op,P,A,T,O,F,Q]
 
-#print axioms old_grant_free_wins
-#print axioms old_grant_free_no_query
-#print axioms admit_source_consume
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -2706,7 +2655,6 @@ theorem admit_outgoing_normalization (p : Params) (h : Bool) (x : BitVec p.w)
     · simp [H.2.1,K,advanceRace,admitNormalize,admitRaceAfter]
     · simp [H.2.1,J,K]
 
-#print axioms admit_outgoing_normalization
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -2738,8 +2686,6 @@ theorem admit_incoming_old_not_overwritten (p : Params) (hu hv : Bool) (u v : Bi
   | mk a b =>
     simp [cmtRoute,R,H.1]
 
-#print axioms admit_outgoing_old_not_ready
-#print axioms admit_incoming_old_not_overwritten
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -3061,7 +3007,6 @@ private theorem gLeftNorm (p : Params) (hu : Bool) (u : BitVec p.w) (j : Fin 3) 
   · exact gK p _ _
   · exact gEmpty p
 
-
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -3194,8 +3139,6 @@ theorem row_right_grant (p : Params) (hu hv : Bool) (u v : BitVec p.w) (j : Fin 
       rw [E]
       exact (pulse_widen_frame p _ _ _ (gEmpty p _ I))
 
-#print axioms row_left_grant
-#print axioms row_right_grant
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -3232,7 +3175,6 @@ theorem grant_old_view_bridge (p : Params) (h : Bool) (u : BitVec p.w) (j : Fin 
     unfold grantNext
     simp only [if_true,R,A]
 
-#print axioms grant_old_view_bridge
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -3268,7 +3210,6 @@ theorem reset0_row_reverse (p : Params) (hu hv : Bool) (u v : BitVec p.w)
     reset0_foldL _ _ _ _ _ _ _ _ _ J,reset0_foldR _ _ _ _ _ _ _ _ _ port]
   exact q128_reverse_at p hu hv u v _ _ j k N D
 
-#print axioms reset0_row_reverse
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -4510,23 +4451,6 @@ theorem drain_row_seal_release (p : Params) (hv : Bool) (u v : BitVec p.w)
     have B : drainSealZero p ((widen p b.1).apply u) := drSealHop p true u v win a 2 H
     exact drSealTransportL p true true u v u win b (2,none) (.inl (by decide)) B
 
-#print axioms drain_row_file_issue
-#print axioms drain_row_file_left
-#print axioms drain_row_file_wait
-#print axioms drain_row_seal_release
-#print axioms drain_row_seal_hold_left
-#print axioms drain_row_seal_hold_right
-
-#print axioms drain_decode_E
-#print axioms drain_decode_T
-#print axioms drain_read_token
-#print axioms drain_row_idle
-#print axioms drain_row_terminal_hold
-#print axioms drain_row_left_control
-#print axioms drain_row_issue
-#print axioms drain_row_consume
-#print axioms drain_row_wait_hold
-
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -4889,16 +4813,6 @@ theorem rank_idle_right (p : Params) (hu hv : Bool) (u v : BitVec p.w)
   · change (oldK p hv v k).tag≠3 at H
     simp [rankRouteR,NR,H]
 
-
-
-#print axioms rank_row_left
-#print axioms rank_row_right
-#print axioms rankReady_iff
-#print axioms rank_hop_left
-#print axioms rank_reverse_pair
-#print axioms rank_clear_left
-#print axioms rank_idle_left
-#print axioms rank_idle_right
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -5273,12 +5187,6 @@ theorem rank_norm_cases (p : Params) (g : Bool) (w : BitVec (tokenW p))
             (t.race==1 || t.race==(if side=3 then 2 else 3))
           then some (advanceRace t side) else none).elim w (resetTokenWire p))=t
       simp [F1,B,t]
-#print axioms rank_decode_tag
-#print axioms rank_decoded_fits
-#print axioms rank_reverse_tag
-#print axioms rank_admit_shape
-#print axioms rank_norm_race
-#print axioms rank_norm_cases
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -5403,9 +5311,6 @@ theorem rank_turn_tag (p : Params) (hu hv : Bool) (u v : BitVec p.w)
   simp only [rankRouteL,R,if_true,Option.elim]
   exact (rank_encode_tag p g' _ A.2).trans A.1
 
-#print axioms rank_row_left
-#print axioms rank_parked_shape
-#print axioms rank_turn_tag
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -5702,7 +5607,6 @@ theorem prelaunch_restart_controls (p : Params) (v : BitVec p.w) :
     exact T
   · simpa only [sourceOpcode,pc,reset,Nat.add_assoc] using U
 
-#print axioms prelaunch_restart_controls
 private def prePostPC (p : Params) (q : Patch (workW p)) (v : BitVec p.w) : Nat × Nat :=
   let x := (widen p q).apply v
   (sourcePhase p x,sourceOpcode p x)
@@ -5937,18 +5841,6 @@ theorem prelaunch_hold_controls (p : Params) (v : BitVec p.w) (t : Tok)
   unfold prePostPC
   rw [prelaunch_widen_empty_apply]
 
-#print axioms prelaunch_hold_controls
-#print axioms prelaunch_door_norm_tag
-#print axioms prelaunch_positive_issue_controls
-#print axioms prelaunch_wait_controls
-#print axioms prelaunch_wait_clears_token
-#print axioms prelaunch_door_final_control
-#print axioms prelaunch_door_final_wire
-#print axioms prelaunch_wait_bad_reply
-#print axioms prelaunch_issue_action
-#print axioms prelaunch_invalid_source
-#print axioms prelaunch_wait_hold
-#print axioms prelaunch_wait_empty
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -5973,7 +5865,6 @@ theorem lease_row_file_wait_live (p : Params) (hu : Bool)
   simp only [if_true,R,reset0_empty_comp]
   exact F
 
-#print axioms lease_row_file_wait_live
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -6099,7 +5990,6 @@ theorem rank_hop_tag (p : Params) (hu hv : Bool) (u v : BitVec p.w)
   simp only [rankRouteR,R,if_true,Option.elim]
   exact (rank_encode_tag p g' _ A.2).trans A.1
 
-#print axioms rank_hop_tag
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -6476,11 +6366,6 @@ theorem ancestry_acquire_consume_patch (p : Params) (v : BitVec p.w) (t : Tok)
   have B : acqOp p≠admitOp p := by unfold acqOp admitOp; omega
   simp [source,P0,O0,T0,T1,F0,R,C,Z,A,B]
 
-#print axioms ancestry_row_selector_left
-#print axioms ancestry_row_selector_right
-#print axioms ancestry_source_write_intent
-#print axioms ancestry_write_indices
-#print axioms ancestry_acquire_consume_patch
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -6632,8 +6517,6 @@ theorem rank_write_hop_token (p : Params) (hu hv : Bool) (u v : BitVec p.w)
     rw [A]
     exact rFault_roundtrip p g' 2 (.inl rfl)
 
-#print axioms rank_write_hop_token
-
 /-- The only report work effect which writes the right endpoint is the
 COMMIT crossing. An old non-COMMIT opcode cannot do so, even at K0→K1. -/
 theorem effect_noncommit_right_empty (p : Params) (hu hv : Bool) (u v : BitVec p.w)
@@ -6703,8 +6586,6 @@ theorem rank_healthy_hop_opcode (p : Params) (hu hv : Bool) (u v : BitVec p.w)
   have T1 := (rank_encode_tag p g' z ZF.2).trans ZF.1
   rw [rHealthy_forward_op p g' _ T1 H,(rReadFields p z ZF.2).2.2.1,A,B]
 
-#print axioms effect_noncommit_right_empty
-#print axioms rank_healthy_hop_opcode
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -6769,8 +6650,6 @@ theorem source_issue_fits (p : Params) (raw : BitVec p.w) (t : Tok)
   · exact .inl rfl
   · exact .inr ⟨_,rfl,rfl,⟨by change 2<4; decide,OP,Fit,by change 0<8; decide,by change 0<4; decide⟩⟩
 
-#print axioms source_issue_fits
-
 /-- An ISSUE mark jointly determines control and wire, distinguishing an
 actual new F from an E retry on the same old pair. -/
 theorem source_issue_joint (p : Params) (v : BitVec p.w) (t : Tok)
@@ -6817,7 +6696,6 @@ theorem source_issue_joint (p : Params) (v : BitVec p.w) (t : Tok)
           change (some 2 : Option Nat)=some 0 at K; contradiction
         · exact F
 
-#print axioms source_issue_joint
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -7221,17 +7099,6 @@ theorem acq_reply_roundtrip (p : Params) (g : Bool) (q : Nat)
   -- CHECK: ReportByteRows.lean:61–88,4979–5051, decoder and exact wire.
   simp [decode,A,ft,O,R,U,Q,t,V,L,M]
 
-#print axioms acq_index_low_congr
-#print axioms acq_index_of_file
-#print axioms acq_source_success
-#print axioms acq_source_success_pc
-#print axioms acq_row_success_index
-#print axioms acq_row_success_centre
-#print axioms acq_row_left_index
-#print axioms acq_row_post_index
-#print axioms acq_row_issue_index
-#print axioms acq_source_post_pc
-#print axioms acq_reply_roundtrip
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -7439,8 +7306,6 @@ theorem report_nonheader_left_bank_frame (p : Params) (hv : Bool) (u v : BitVec 
       simp [reportNonheaderDigitIntent, t, b, LM]
   · simp [reportNonheaderDigitIntent,Bool.eq_false_iff.mpr R]
 
-#print axioms report_nonheader_left_digit_mask
-#print axioms report_nonheader_left_bank_frame
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -7556,8 +7421,6 @@ theorem report_right_digit_mask (p : Params) (hu hv : Bool) (u v : BitVec p.w)
     exact pulse_comp_out (pulse_comp_out R (cmtSource p v (oldK p true v 0) q IX))
       (cmtSourceToken p (source p v (oldK p true v 0)).2 q IX)
 
-#print axioms report_right_digit_mask
-
 theorem report_nonheader_left_bank_frame_of_enabled (p : Params) (hv : Bool) (u v : BitVec p.w)
     (sel : Nat) (S : sel<2)
     (H : let t := publicationToken p false u 1
@@ -7602,8 +7465,6 @@ theorem report_nonheader_left_bank_frame_of_enabled (p : Params) (hv : Bool) (u 
       exact E0 ⟨J.1.1.1.1.1,J.1.1.1.1.2,J.1.1.1.2,J.1.1.2⟩
   · simp [reportNonheaderDigitIntent,Bool.eq_false_iff.mpr R]
 
-
-#print axioms report_nonheader_left_bank_frame_of_enabled
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -7858,12 +7719,6 @@ theorem rankAcq_turn (p : Params) (hu hv : Bool) (u v : BitVec p.w)
   rw [B]
   exact acqFlight_D_roundtrip p g' _
 
-#print axioms acqFlight_next_spec
-#print axioms acqFlight_issue
-#print axioms acqFlight_F_roundtrip
-#print axioms acqFlight_D_roundtrip
-#print axioms rankAcq_hop
-#print axioms rankAcq_turn
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -7974,7 +7829,6 @@ theorem report_header_denied_left_digit_mask (p : Params) (hv : Bool)
   simp only [PW,decide_true,Bool.true_and]
   exact R q IX
 
-#print axioms report_header_denied_left_digit_mask
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -8045,9 +7899,6 @@ theorem write_seal_ack_control (p : Params) (x : BitVec p.w) (t : Tok)
     · unfold sealOp; omega
   · unfold commitOp; omega
 
-#print axioms write_seal_ack_control
-#print axioms write_seal_ack_action
-#print axioms write_seal_ack_row_file
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -8176,9 +8027,6 @@ theorem report_header_right_seal_hold (p : Params) (hu : Bool) (u v : BitVec p.w
   unfold reportOldSeal readSeal
   rw [T]
 
-#print axioms report_header_right_seal_frame
-#print axioms report_header_right_seal_hold
-
 private theorem rSeal_routeR_zero (p : Params) (hu : Bool) (u v x : BitVec p.w)
     (win : Fin 3→Bool) (ab : Pair (Patch (workW p)))
     (l : Fin 3 × Option (Fin 3))
@@ -8262,9 +8110,6 @@ theorem report_header_right_seal_clear (p : Params) (hu : Bool) (u v : BitVec p.
     (H : ancestryCommitOpportunity p hu true u v) :
     reportOldSeal p ((row p (hu,true) (u,v)).2.apply v)=none :=
   drain_seal_none p _ (report_header_right_seal_clear_bits p hu u v H)
-
-#print axioms report_header_right_seal_clear_bits
-#print axioms report_header_right_seal_clear
 
 theorem report_seal_of_extract (p : Params) (x y : BitVec p.w)
     (H : x.extractLsb' (sealBase p) 5=y.extractLsb' (sealBase p) 5) :
@@ -8404,8 +8249,6 @@ theorem report_header_left_seal_hold (p : Params) (hv : Bool) (u v : BitVec p.w)
   rw [dr_row_eq,reset0Post_left]
   exact rSealFrame_read p _ _ (fold _ _ (rSeal_preL_frame p hv u v))
 
-#print axioms report_header_left_seal_hold
-
 private theorem rSeal_side_empty (p : Params) (hv : Bool) (u v : BitVec p.w)
     (j : Fin 3) (k : Option (Fin 3)) (w : Bool) (t : Tok) (J : j≠1) :
     (effect p u v true hv j k w t).1=.empty _ := by
@@ -8504,8 +8347,6 @@ theorem report_header_left_seal_clear (p : Params) (hv : Bool) (u v : BitVec p.w
   · intro x
     exact drain_seal_none p _ (drSealClear p x)
 
-#print axioms report_header_left_seal_clear
-
 private theorem rSeal_decoded_descriptor (p : Params) (g : Bool) (raw : BitVec (tokenW p))
     (Tag : (decode p g raw).tag=2) (Live : (decode p g raw).fault=false)
     (Op : (decode p g raw).opcode=sealOp p) :
@@ -8577,7 +8418,6 @@ theorem report_header_left_seal_install (p : Params) (hv : Bool) (u v : BitVec p
     exact congrArg Prod.fst E
   · exact fun x => rSeal_write_some p x t.payload D.1 D.2
 
-#print axioms report_header_left_seal_install
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -8867,11 +8707,6 @@ theorem rail_door_issue_aligned (p : Params) (v : BitVec p.w) (t : Tok)
     exact rail_encode_aligned p false _ z Fit
       (fun _ _=>rail_issue_opcode p v t z P O S Tag)
 
-#print axioms rail_encode_aligned
-#print axioms rail_norm_aligned
-#print axioms rail_row_left_aligned
-#print axioms rail_row_right_aligned
-#print axioms rail_door_issue_aligned
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -9145,10 +8980,6 @@ theorem acq_row_post_six (p : Params) (hu : Bool) (u v : BitVec p.w)
   acq_row_six_of_source p hu u v
     (acq_source_nonreset_frame p v _ H (acq_nonreset_of_pc p v _ NZ))
 
-#print axioms acqFlight_capture_pair
-#print axioms acqFlight_other_pair
-#print axioms acq_row_success_six
-#print axioms acq_row_post_six
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -9221,10 +9052,6 @@ theorem rank_root_norm_token (p : Params) (v : BitVec p.w) :
     rw [K]
     simp only [Bool.false_and,Bool.false_eq_true,if_false]
     exact (prelaunch_root_decode p v).symm
-
-#print axioms rank_fault2_hop
-#print axioms rank_nondadmit_norm_token
-#print axioms rank_root_norm_token
 
 private theorem rWrite_issue_fields (p : Params) (raw : BitVec p.w) (old t : Tok)
     (P : sourcePhase p raw=1) (W : writeOp p≤sourceOpcode p raw)
@@ -9327,7 +9154,6 @@ theorem rank_write_issue_roundtrip (p : Params) (v : BitVec p.w) (old t : Tok)
   have ZE : ancestryWritePayload p (ancestrySourceCentre p v) (ancestrySendDigits p v)=z := rfl
   simp [show sourceOpcode p v=op from rfl,ZE,C,AC,AD,CM,OK,LO,HI,SN,DP,Z0,Nat.mod_eq_of_lt zp]
 
-#print axioms rank_write_issue_roundtrip
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -9547,10 +9373,6 @@ theorem indexed_credit (p : Params) (v : BitVec p.w) (t : Tok)
   · exact (NZ (congrArg Prod.snd R)).elim
   · exact ⟨b,E,R⟩
 
-#print axioms indexed_row_source_file
-#print axioms indexed_image_fields
-#print axioms source_file_is_replay
-#print axioms indexed_credit
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -9644,10 +9466,6 @@ theorem indexed_reader_norm (p : Params) (side : Nat) (hu : Bool)
   rw [rankToken_wire] at H O
   simp [rankNormWire,rankNormIntent,H,O]
 
-#print axioms indexed_read_edit_left
-#print axioms indexed_read_edit_right
-#print axioms indexed_reader_nonhit
-#print axioms indexed_reader_norm
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -9915,16 +9733,6 @@ theorem seal_terminal_pair (p : Params) (hu hv : Bool) (u v : BitVec p.w)
   rw [show oldK p hu u 2=t from rfl,E]
   simp [terminal,FT,O,NC,X,N,L]
 
-#print axioms seal_terminal_pair
-#print axioms seal_commit_decoded_shape
-#print axioms seal_commit_hop_pair
-#print axioms seal_commit_held_left_row
-#print axioms seal_commit_held_right_row
-#print axioms commit_terminal_pair
-#print axioms seal_commit_wire_roundtrip
-#print axioms seal_commit_held_wire
-#print axioms seal_effect_token
-#print axioms commit_effect_token
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -10350,12 +10158,6 @@ theorem indexed_root_norm (p : Params) (v : BitVec p.w) :
     simp only [K,Bool.false_and,Bool.false_eq_true,if_false]
     exact (prelaunch_root_decode p v).symm
 
-#print axioms indexed_F_roundtrip
-#print axioms indexed_D_roundtrip
-#print axioms indexed_effect
-#print axioms rankIndexed_hop
-#print axioms rankIndexed_turn
-#print axioms indexed_zero_race_norm
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -10697,9 +10499,6 @@ theorem writehit_not_enabled_of_tag (p : Params) (hu : Bool)
   intro E
   exact H ((rankReady_iff p hu u 1).mp E.1).1
 
-#print axioms indexed_left_write_value
-#print axioms indexed_left_write_other
-#print axioms indexed_left_no_write_bank_frame
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -10810,9 +10609,6 @@ theorem indexed_write_next_permit (p : Params) (op : Nat)
     · exact E
     · simp [indexedNext,Nat.not_lt_of_ge W,Off,E] at H
 
-#print axioms indexed_write_issue_data
-#print axioms indexed_write_next_some
-#print axioms indexed_write_next_permit
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -10837,7 +10633,6 @@ theorem writehit_right_selector_regression :
     publicationSelector p v=0 ∧ publicationSelector p (y.2.apply v)=1 := by
   decide
 
-#print axioms writehit_right_selector_regression
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -11419,9 +11214,6 @@ theorem item9_at_seal (p : Params) (I : ItemNineInputs) (v : BitVec p.w)
   · exact ⟨X,C.2.1⟩
   · unfold sealOp commitOp at E; omega
 
-#print axioms item9_advance
-#print axioms item9_send_digits
-#print axioms item9_at_seal
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 theorem item9_out_components (p : Params) (I : ItemNineInputs) (j : Nat)
@@ -11447,7 +11239,6 @@ theorem fast_admit_issue_packet (p : Params) (v : BitVec p.w) (t : Tok)
   unfold sourceOpcode at O
   simp [source,P,O,H1,H2,H3,H4,H5]
 
-#print axioms fast_admit_issue_packet
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -11483,7 +11274,6 @@ theorem fast_admit_off_roundtrip (p : Params) (q : Nat) (Q : q<2) :
   simp [decode,B.1,B.2.2.1,B.2.2.2.1,B.2.2.2.2.1,
     B.2.2.2.2.2.2,F0,t,A,C,D,E,W,V,Nat.mod_eq_of_lt Q]
 
-
 theorem fast_off_route (p : Params) (hu hv : Bool)
     (u v : BitVec p.w) (j k : Fin 3) (q : Nat)
     (H : publicationToken p hu u j=
@@ -11507,7 +11297,6 @@ theorem fast_off_route (p : Params) (hu hv : Bool)
   dsimp only
   rw [if_pos R,H]
   simp [effect,parked,arrival,G,G',A,B,C,D,E,F0]
-
 
 theorem fast_off_norm (p : Params) (side : Nat) (w : BitVec (tokenW p))
     (H : healthyAdmit p (decode p false w)) :
@@ -11545,11 +11334,6 @@ theorem fast_arrive_route (p : Params) (hu hv : Bool)
   rw [if_pos R,H]
   simp [effect,parked,arrival,G,G',A,B,C,D,E,F0]
 
-#print axioms fast_arrive_route
-#print axioms fast_admit_on_roundtrip
-#print axioms fast_admit_off_roundtrip
-#print axioms fast_off_route
-#print axioms fast_off_norm
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -11592,10 +11376,7 @@ theorem fast_admit_consume_control (p : Params) (v : BitVec p.w) (t : Tok)
   · rw [if_neg H,if_neg H]
     exact ⟨prelaunch_restart_controls p v,rfl⟩
 
-#print axioms fast_depart_route
-#print axioms fast_admit_consume_control
 end L4.ReportByteRows
-
 
 namespace L4.ReportByteRows
 open AllSizeProtocol ReportDigitArithmetic
@@ -11690,7 +11471,6 @@ theorem item9_good_reply_no_retry (p : Params) (I : ItemNineInputs)
     change commitOp p<commitOp p at U
     omega
 
-#print axioms item9_good_reply_no_retry
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -11785,7 +11565,6 @@ theorem item9_good_issue_emits_forward (p : Params) (I : ItemNineInputs)
   rw [WriteNo,LateNo]
   exact ⟨_,rfl,rfl⟩
 
-#print axioms item9_good_issue_emits_forward
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -11811,7 +11590,6 @@ theorem deny_admit_terminal_wire (p : Params) (hu hv : Bool) (u v : BitVec p.w) 
   rw [A]
   simp [effect,terminal,parked,G0,Z,C,Q,L,W,H]
 
-#print axioms deny_admit_terminal_wire
 end L4.ReportByteRows
 namespace L4.ReportByteRows
 open AllSizeProtocol
@@ -12009,13 +11787,6 @@ theorem early_terminal_wire (p : Params) (hu hv : Bool)
   · have Q0 := Q AD
     simp [effect,terminal,parked,earlyF,earlyD,AD,CM,AC,M,W,S,Nat.ne_of_gt A,Q0]
 
-
-#print axioms early_terminal_wire
-#print axioms early_issue_packet
-#print axioms early_consume_control
-#print axioms early_F_roundtrip
-#print axioms early_D_roundtrip
-#print axioms early_regular_route
 end L4.ReportByteRows
 
 namespace L4.ReportByteRows
@@ -12224,7 +11995,6 @@ private theorem ab_foldR (p : Params) (hu hv : Bool) (u v : BitVec p.w)
   | cons l xs ih =>
     exact ih _ (ab_routeR p hu hv u v w ab l A H)
 
-
 theorem report_row_left_ab_bits (p : Params) (hu hv : Bool) (u v : BitVec p.w)
     (sel j : Nat) (J : j<3) :
     ((row p (hu,hv) (u,v)).1.apply u).getLsbD (bankOffset p sel+2*d p+j)=
@@ -12285,8 +12055,4 @@ theorem ab_bit_congr (p : Params) (u v : BitVec p.w) (sel : Nat)
     have E' := congrArg BitVec.toNat E
     simpa only [BitVec.extractLsb', BitVec.toNat_ofNat, Nat.shiftRight_eq_div_pow] using E'
 
-#print axioms ab_bit_congr
-#print axioms ab_bits_lt
-#print axioms report_row_left_ab_bits
-#print axioms report_row_right_ab_bits
 end L4.ReportByteRows

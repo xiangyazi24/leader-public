@@ -74,8 +74,6 @@ theorem decoded_descriptor (g : Bool) (x : BitVec 19)
   · rename_i H
     split <;> intro tag op live <;> exact False.elim (H (by change (x.extractLsb' 17 2).toNat=2 at tag; rw [tag]; decide))
 
-#print axioms decoded_descriptor
-
 /-- A guarded target selector is the complement of the old raw selector. -/
 theorem seal_selector_complement (v : BitVec 96) (p : Nat)
     (sealH : readSeal v=some p) (old : get v 92 1 (by decide)=p/4) :
@@ -94,7 +92,4 @@ theorem seal_selector_complement (v : BitVec 96) (p : Nat)
     have S : (p/2)%2=0 := by omega
     simp [S]
 
-#print axioms seal_descriptor
-#print axioms selector_toNat
-#print axioms seal_selector_complement
 end L4.ShortSelectorParity

@@ -665,15 +665,3 @@ theorem tagged_moves_le_size_add_paid_of_mcov {p c1 n : Nat} (hn : 4 ≤ n)
 
 end L4
 
-#print axioms L4.covered_pair_marks
-#print axioms L4.firstMark_stationary_step
-#print axioms L4.firstMark_transport_step
-#print axioms L4.firstMarkedEdge_eq_lifted
-#print axioms L4.geometry_advance
-#print axioms L4.geometry_track
-#print axioms L4.tagged_moves_le_size_add_paid
-
-#print axioms L4.pair_geometric_fields
-#print axioms L4.mcov_step
-#print axioms L4.covered_mark_exists_of_not_dvd
-#print axioms L4.tagged_moves_le_size_add_paid_of_mcov

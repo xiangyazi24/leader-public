@@ -210,8 +210,4 @@ theorem first_literal_display_mark {base initial : X} (u v past w : List (Fin n)
   change traceCount hp base initial hh start (hist++w.take t) i.val=cap at lev
   rwa [lev,Nat.mod_mod_of_dvd _ phase,aligned] at phaseEq
 
-#print axioms first_literal_display_mark
-#print axioms first_cross_mark
-#print axioms readRecord_anchor
-#print axioms literal_display_permanent
 end L4.BStarLiteralDisplay

@@ -278,9 +278,4 @@ theorem width_flag_fixtures :
     (((widthWork (c:=5) 3 (true,true) (0,cmp)).2.mask.extractLsb' 16 2).toNat=3) ∧
     (((widthWork (c:=5) 3 (true,true) (0,bad)).2.mask.extractLsb' 16 2).toNat=3) := by decide
 
-#print axioms shortMIS_mask
-#print axioms reportWork_mask
-#print axioms widthWork_mask
-#print axioms width_flag_fixtures
-
 end L4.BStarShort

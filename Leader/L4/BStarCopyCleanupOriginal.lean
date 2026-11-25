@@ -191,7 +191,4 @@ theorem drained_original_issue10 {base x : X} {hh : ∃ i,oldH6 B base i=true}
         change 8≤pc (play (play x (lead++a)) u) root ∧ pc (play (play x (lead++a)) u) root≤10
         exact ⟨by omega,by omega⟩
 
-#print axioms drained_original_issue10
-#print axioms cleared_original
-#print axioms stopped_original
 end L4.BStarCopyCleanupOriginal

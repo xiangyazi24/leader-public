@@ -143,14 +143,6 @@ theorem initial_budget {L P g debt : Nat} (H : debt≤2*P+2)
   change _ ≤ 10*x^2
   omega
 
-#print axioms forward_strict
-#print axioms terminal_strict
-#print axioms gate_race_strict
-#print axioms reverse_strict
-#print axioms trail_clear_strict
-#print axioms fault_nonincrease
-#print axioms source_event_strict
-#print axioms initial_budget
 end L4.ReportPrelaunchRank
 
 namespace L4.ReportPrelaunchRank
@@ -245,10 +237,6 @@ theorem pc_debt_restart {t phase op : Nat} (NotLaunch : ¬(phase=1 ∧ op=0)) :
   · rw [if_neg H]
     omega
 
-#print axioms pc_debt_cap
-#print axioms pc_debt_issue
-#print axioms pc_debt_consume
-#print axioms pc_debt_restart
 end L4.ReportPrelaunchRank
 
 namespace L4.ReportPrelaunchRank
@@ -328,6 +316,4 @@ theorem single_total_strict {m : Nat} (old new : Fin m→Nat) (i : Fin m)
   rw [parts new F,parts old (fun _ _=>rfl)]
   omega
 
-#print axioms pair_total_strict
-#print axioms single_total_strict
 end L4.ReportPrelaunchRank

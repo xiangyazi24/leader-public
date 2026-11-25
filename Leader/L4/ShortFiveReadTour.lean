@@ -118,7 +118,6 @@ theorem read_mark_wins (x : Raw s n) (X : H2Ready x) (N : 21<n) (r : Fin n)
       (C.route.port k)=true
   rwa [tag]
 
-
 private theorem before_from_live_last (C : Chart h) (x : Raw s n) (f : Flight)
     (v : List (Fin n)) (d : Fin n) (L : live (trace C x f v)) :
     beforeConsume C x f (v++[d]) := by
@@ -305,6 +304,4 @@ theorem successful_read_inputs (x : Raw s n) (X : H2Ready x) (N : 21<n) (r : Fin
   · change get (rawNext s pre d C.root).mis1 78 3 (by decide)=4
     omega
 
-#print axioms read_mark_wins
-#print axioms successful_read_inputs
 end L4.ShortFiveReadTour

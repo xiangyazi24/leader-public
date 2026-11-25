@@ -97,11 +97,4 @@ theorem c3_selected_no_ring : ¬ Nonempty (Ring {i // singleton i=true}) := by
   rintro ⟨r⟩
   exact r.noLoop c3Chosen (c3_selected_type_singleton (r.right c3Chosen))
 
-#print axioms next_two_or_three
-#print axioms nextChosen_noLoop
-#print axioms at_least_two
-#print axioms c3_ind
-#print axioms c3_dom
-#print axioms c3_singleton_mis_fixed_point
-#print axioms c3_selected_no_ring
 end L4.SelectedNORNondegenerate

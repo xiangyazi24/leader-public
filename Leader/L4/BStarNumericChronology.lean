@@ -109,10 +109,7 @@ theorem joined_slot_departure (k₁ k₂ t₂ J₁ J₂ r tune p c₁ : Nat) (hp
           obtain ⟨v,H⟩ := BStarForwardProvenance.joined_hop k₁ k₂ t₂ J₁ J₂ r tune p c₁ hp x C d q f E act F hf
           exact .inr ⟨C,v,q,act,hc,E,H⟩
 
-
 open BStarSeparatorQuiet BStarResetChartService
-
-
 
 /-- Each actual outward cursor increment of a healthy tour has a
 unique relevant selected old advance. An observation or stutter
@@ -174,8 +171,6 @@ theorem ring_departure {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · by_cases rr : (addr (k+1)).1=rightNeighbor e
     · exact active (R (addr (k+1)).2) (Prod.ext rr rfl)
     · exact (no ⟨pay,(idle_off_pair hp x e (addr (k+1)) l rr).symm.trans F⟩).elim
-
-#print axioms ring_departure
 
 /-- Literal chronological outward subtrace. The record at each
 advancing index contains its actual old state, selected mark and offer. -/
@@ -258,9 +253,6 @@ theorem busy_tape {base x : X} {hh : ∃ i,oldH6 B base i=true}
       obtain ⟨K,a,offer,sel,hd,src,dst⟩ := ring_departure hp C e (sep e) op k
         (by have := current.2.1.1; omega) I.1 I.2.1 I.2.2 q Q hq
       exact ⟨_,.hop I.1.1 ⟨sel,hd,src,dst⟩ T⟩
-
-#print axioms OutTape.indices
-#print axioms busy_tape
 
 theorem OutTape.path {base : X} {addr : Nat → Pos n} {x : X} {k w l ds}
     (P : OutTape hp base addr x k w l ds) :
@@ -368,9 +360,6 @@ theorem path_digits {base : X} {hh : ∃ i,oldH6 B base i=true} {r : Nat}
       exact digit_transition hp notShort E
   simpa [remaining,A,Z] using H
 
-#print axioms OutTape.path
-#print axioms path_digits
-
 /-- An actual selected old K1 offer contributes its physical (not
 cached, potentially clipped) digit ordinal iff the old initiator is IN. -/
 noncomputable def actualDigit (base : X) (hh : ∃ i,oldH6 B base i=true)
@@ -421,5 +410,4 @@ theorem tape_digits {base : X} {hh : ∃ i,oldH6 B base i=true}
   rw [OutTape.actual_digits hp P flags]
   exact path_digits hp notShort (OutTape.path hp P) A Z
 
-#print axioms tape_digits
 end L4.BStarNumericChronology

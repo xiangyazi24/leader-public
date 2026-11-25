@@ -108,5 +108,4 @@ theorem post_ack_outward {base origin : X} {hh : ∃ i,oldH6 B base i=true}
       obtain ⟨L,C,U,rg,ug⟩ := later u e v E
       exact ⟨L,C,U,rg,ug,cap u e v E⟩)
 
-#print axioms post_ack_outward
 end L4.BStarCopyRightRecoveryPostAck

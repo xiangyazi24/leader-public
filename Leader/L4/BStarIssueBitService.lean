@@ -105,5 +105,4 @@ theorem ready_bit_service {base x : X} {hh : ∃ i,oldH6 B base i=true}
   rw [cut,W,List.append_assoc,List.cons_append,R]
   simp only [List.append_assoc]
 
-#print axioms ready_bit_service
 end L4.BStarIssueBitService

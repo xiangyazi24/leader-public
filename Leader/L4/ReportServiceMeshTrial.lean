@@ -106,7 +106,6 @@ def trialWithMesh (d : Sheet) (N : 1<n) (hh : ∃ i,h i=true)
       exact deployed_mesh_cap d N hh G F advice S Lo Hi
         (C.writer i x) (C.cap i x) x X
 
-#print axioms trialWithMesh
 end
 end L4.ReportServiceMesh
 

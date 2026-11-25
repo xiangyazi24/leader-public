@@ -51,6 +51,4 @@ theorem one_departure_port (l m r : LongGeometry) (a b : CommandClaim) (k : Fin 
   have HH := List.all_eq_true.mp H b (BStarLongFenceTopology.selected_command_raw _ _ hb)
   simp [hA,hB,ka,kb,R,L] at HH
 
-#print axioms one_predecessor_port
-#print axioms one_departure_port
 end L4.BStarAcquireRailUniqueness

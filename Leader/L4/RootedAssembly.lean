@@ -272,7 +272,6 @@ theorem rooted_block_of_groups {p c n : Nat} (hQ : QuietClosed p c n)
   rw [eProjection step lift rank (fun z : S => z.val) (fun _ _ => rfl)] at hh
   simpa only [start,Nat.mul_assoc] using hh
 
-
 open RootedEntrance in
 /-- The former cyclic-sum assumption furnishes the decoded witness even
 before any ordered cover, because absence of every decoded root makes
@@ -291,7 +290,7 @@ def RootedStatement : Prop :=
 
 /-- The original headline is a mathematical consequence of the rooted
 export and the cyclic-sum argument; choose its Cpat conservatively. -/
-theorem headline_of_rooted (h : RootedStatement) : row175Statement := by
+theorem headline_of_rooted (h : RootedStatement) : uniformEdgeStatement := by
   intro c hc
   obtain ⟨C,hC⟩ := h c hc
   refine ⟨C,?_⟩
@@ -367,7 +366,7 @@ theorem rooted_of_stage_means
 
 /-- The remaining entrance adapter is temporary: the rooted quiet
 closure and rank-one finish are supplied by checked literal lemmas. -/
-theorem row175_rooted_of_entrance
+theorem uniformEdge_rooted_of_entrance
     (entrance : ∀ {p c n} (x : Config p c n), 2≤p → 12≤c → 4≤n →
       RootedEntrance.RootNonempty x →
       IIDExpectedHittingTimeAtMost step QuietEntrance x (2049*n^2))
@@ -378,31 +377,22 @@ theorem row175_rooted_of_entrance
 
 end L4.RootedAssembly
 
-#print axioms L4.RootedAssembly.rootNonempty_of_not_dvd
-#print axioms L4.RootedAssembly.headline_of_rooted
-#print axioms L4.RootedAssembly.rooted_tail_of_windows
-#print axioms L4.RootedAssembly.rooted_of_stage_means
-
-#print axioms L4.RootedAssembly.row175_rooted_of_entrance
-
 namespace L4
 
 /-- The public headline after H5 hands off any nonempty decoded root set.
 The only remaining inputs are the rooted G6 retirement and G7
 seven-window estimates. In particular neither the entrance nor the
 tail assumes that p does not divide n. -/
-theorem row175_rooted (retirement : RootedAssembly.RootedBoundedRank)
+theorem uniformEdge_rooted (retirement : RootedAssembly.RootedBoundedRank)
     (marginal : RootedAssembly.RootedWindowMarginals) :
     RootedAssembly.RootedStatement :=
-  RootedAssembly.row175_rooted_of_entrance rooted_rear_entrance_printed retirement marginal
+  RootedAssembly.uniformEdge_rooted_of_entrance rooted_rear_entrance_printed retirement marginal
 
 /-- Recover the original nondivisible statement, including its exact
-finite alphabet, by supplying the cyclic-sum witness to row175_rooted. -/
-theorem row175Statement_of_rooted_stages (retirement : RootedAssembly.RootedBoundedRank)
-    (marginal : RootedAssembly.RootedWindowMarginals) : row175Statement :=
-  RootedAssembly.headline_of_rooted (row175_rooted retirement marginal)
+finite alphabet, by supplying the cyclic-sum witness to uniformEdge_rooted. -/
+theorem uniformEdgeStatement_of_rooted_stages (retirement : RootedAssembly.RootedBoundedRank)
+    (marginal : RootedAssembly.RootedWindowMarginals) : uniformEdgeStatement :=
+  RootedAssembly.headline_of_rooted (uniformEdge_rooted retirement marginal)
 
 end L4
 
-#print axioms L4.row175_rooted
-#print axioms L4.row175Statement_of_rooted_stages

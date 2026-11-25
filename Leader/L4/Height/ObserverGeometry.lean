@@ -58,14 +58,4 @@ theorem root_dest (r k : Fin n) : edge r k=r ↔ k.val+1=n := by
     omega
   · intro h; simp [edge,h,terminal]
 
-#print axioms first
-#print axioms terminal
-#print axioms responder
-#print axioms edge_inj
-#print axioms edge_onto
-#print axioms edge_index
-#print axioms index_edge
-#print axioms pos_inj
-#print axioms root_source
-#print axioms root_dest
 end L4.Height.ObserverGeometry

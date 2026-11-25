@@ -167,9 +167,4 @@ theorem released_from_actual_issue {s n : Nat} {h : Fin n → Bool} (C : Chart h
   exact genuine_reset_done_released C N w (rawNext s x d) (h2_ready_closed N x d H)
     (fun i => (H1.raw_h1_selected_frozen N x d i H.1).trans (heads i)) A B D
 
-#print axioms released_from_actual_issue
-#print axioms raw_run_released
-#print axioms genuine_reset_done_released
-#print axioms step_released
-#print axioms released_at_issue
 end L4.ShortResetReleased

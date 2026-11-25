@@ -199,8 +199,4 @@ theorem strictBool_initially_outside :
 theorem strictBool_one_step_hit :
     strictBoolNext false ⟨1, by decide⟩ = true := by decide
 
-#print axioms stage_mean_strict
-#print axioms repair_mean_strict
-#print axioms wait_lt_length_hit
-
 end L4.Height

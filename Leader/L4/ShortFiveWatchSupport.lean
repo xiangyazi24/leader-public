@@ -163,7 +163,4 @@ theorem target_watch_internal {s : Nat} (x : Raw s n) (M : rawMaximal x) (N : 21
       rw [ext2]
       exact cover 3 (d 5) (by change d 3 ≤ d 5; omega) (by change d 5 < d 6; omega)
 
-#print axioms chart_extent
-#print axioms offset_add
-#print axioms target_watch_internal
 end L4.ShortFiveWatchSupport

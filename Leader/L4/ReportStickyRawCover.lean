@@ -165,9 +165,4 @@ theorem covering_raw_run (d : Sheet) {s n : Nat} (h : Fin n→Bool)
   exact ⟨(physical_cover_iff hh _ _ _).mpr ⟨T.1,T.2.1⟩,
     upper_of_same_lower_Z d h _ _ (mask _ T.1) (mask _ I.1) T.2.2⟩
 
-#print axioms raw_pulse
-#print axioms rootOf_header
-#print axioms physical_cover_iff
-#print axioms upper_eq
-#print axioms covering_raw_run
 end L4.ReportStickyRawCover

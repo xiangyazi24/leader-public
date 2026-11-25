@@ -95,8 +95,4 @@ theorem commit_support (header : Bool) (occ : Fin 11) (x : BitVec LW)
       (commit header occ x d b).2=some b ∧ ((2206≤i ∧ i<2222) ∨ (2360≤i ∧ i<2362)) := by
   cases h : guard header occ x d b <;> simp [commit,h,setter_support,Patch.empty]
 
-#print axioms commit_event
-#print axioms commit_assignment
-#print axioms setter_support
-#print axioms commit_support
 end L4.BStarLongPublication

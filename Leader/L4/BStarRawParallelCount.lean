@@ -123,9 +123,4 @@ theorem raw_quarter_miss_of_child {base : X} (initial : X)
   have A := level_moments L D U left right Z H (cap+1-lo) (index hh i)
   simpa only [U, atIndex_index] using A
 
-#print axioms raw_quarter_miss_of_child
-
-#print axioms traceCrossing_at_horizon_of_miss
-#print axioms raw_quarter_miss_of_moments
-
 end L4.BStarRawParallelCount

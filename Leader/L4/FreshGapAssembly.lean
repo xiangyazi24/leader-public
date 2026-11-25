@@ -92,5 +92,3 @@ theorem endpoint_two_cause_union {α : Type} {n : Nat} (next : α → Fin n → 
 
 end L4.FreshGapAssembly
 
-#print axioms L4.FreshGapAssembly.scaled_bound_from_first_entry
-#print axioms L4.FreshGapAssembly.endpoint_two_cause_union

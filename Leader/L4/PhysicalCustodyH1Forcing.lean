@@ -130,7 +130,4 @@ theorem apt_service_word {n : Nat} (p : Fin 5 → Fin n)
     rw [H.2] at E
     exact congrArg Fin.val E
 
-#print axioms exact_role_pair
-#print axioms fiveRoles_arm
-#print axioms apt_service_word
 end L4.PhysicalCustody.H1

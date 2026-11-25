@@ -193,10 +193,4 @@ theorem own_capture_field_fixture :
     (captureFields 2 341 1 (sample 3) true).argument.toNat =
       3 + 2*2^29 + 341*2^9 := by decide
 
-#print axioms patch_grant_support
-#print axioms own_capture_field_fixture
-#print axioms writer_no_same_mark_refill
-#print axioms support_exact
-#print axioms arbitration_fixture
-#print axioms missed_acquire_cannot_recover
 end L4.BStarLongGrant

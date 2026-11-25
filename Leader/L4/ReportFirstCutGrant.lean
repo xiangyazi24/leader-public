@@ -149,9 +149,4 @@ theorem all_serial_compatible_from_cached (d : Sheet) (N : 1<n) (S : 0<s)
   intro t
   exact Nat.le_trans (H t) (Nat.mul_le_mul_right _ up)
 
-#print axioms all_serial_compatible_closed
-#print axioms all_serial_compatible_from_cached
-#print axioms raw_compatible_on_touch
-#print axioms generated_root_compatible
-#print axioms headers_compatible_at_first_cut
 end L4.ReportFirstCutGrant

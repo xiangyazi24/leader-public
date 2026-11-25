@@ -36,7 +36,6 @@ theorem raw_rs_receive (g : Pair LongGeometry) (d : DataClaim)
     cases J : g.1.inside <;> cases K : ends g.1 <;>
     simp [H,I,J,K,hop,ending] <;> grind [L,R]
 
-
 /-- The header's RS turns onto RD across the seam; other RS positions
 continuously move left on RS. There is no destructive RS end row. -/
 theorem raw_rs_send (g : Pair LongGeometry) (d : DataClaim) (src : d.source=R .rs) :
@@ -178,9 +177,6 @@ theorem tail_no_ingress {a : LargeParams} {n : Nat} {b : LargeRows a}
   rw [T] at H
   exact Bool.noConfusion H.2.2.2.1
 
-#print axioms raw_incoming
-#print axioms tail_no_ingress
-
 open BStarH6Ordinal
 
 theorem address_ordinal_run {n : Nat} (base : Fin n)
@@ -262,8 +258,6 @@ theorem of_ordinal_layout {a : LargeParams} {n : Nat} {b : LargeRows a}
     rw [(layout _).1,(layout _).2,V _ (by omega) (by omega)]
     simp [show seam + r - 1 - seam < r by omega,show seam + r - 1 - seam + 1 = r by omega]
 
-#print axioms of_ordinal_layout
-
 theorem retains_iff_head {a : LargeParams} {n : Nat} {b : LargeRows a}
     {x : Fin n→LargeSite a} {base : Fin n} {seam tail : Nat}
     (C : Strip b x base seam tail) (i : Nat) :
@@ -330,5 +324,4 @@ theorem joined_strip_hop {k₁ k₂ t₂ J₁ J₂ r c p c₁ n : Nat} (hp : 0<p
   · exact U
   · exact V
 
-#print axioms joined_strip_hop
 end L4.BStarCopyRightStrip

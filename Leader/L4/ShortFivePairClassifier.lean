@@ -33,6 +33,4 @@ theorem matched_publication_real {s n : Nat} {h : Fin n→Bool}
     (fun x y e X Y A I => pair_local cs x y e X Y A I)
     x x X X (fun _ _=>rfl) w t M I i E
 
-#print axioms pair_local
-#print axioms matched_publication_real
 end L4.ShortFivePairClassifier

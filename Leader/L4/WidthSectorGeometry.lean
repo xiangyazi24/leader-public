@@ -83,12 +83,4 @@ theorem outbound_not_site {n d : Nat} {h : Fin n→Bool} (S : Sector h d) (i : F
   have X := nextAt_injective_under S.root _ _ D (by omega) P
   omega
 
-#print axioms site_injective
-#print axioms inlet_not_site
-#print axioms internal_right
-#print axioms internal_nonheader
-#print axioms outgoing_header
-#print axioms incoming_header
-#print axioms incident
-#print axioms outbound_not_site
 end L4.WidthSectorGeometry

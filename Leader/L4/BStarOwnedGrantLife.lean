@@ -90,6 +90,4 @@ def writer_acquisition {base x : X} {hh : ∃ i,oldH6 B base i=true}
   BStarCommitOperands.Acquisition.writer hp x cut tape i lead birth post E after won
     (continuous hp chart sep lead birth i 1 post own won atPrefix) before
 
-#print axioms continuous
-#print axioms writer_acquisition
 end L4.BStarOwnedGrantLife

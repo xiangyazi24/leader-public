@@ -195,7 +195,4 @@ theorem ingress_extend {Tag : Type} (digits : Tag→BitVec 36)
     rw [Frame,rest _ Z]
     exact old j J
 
-#print axioms ingress_extend
-#print axioms noningress_classify
-
 end L4.BStarCopyLeftRetainedClassify

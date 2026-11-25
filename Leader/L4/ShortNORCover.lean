@@ -171,8 +171,4 @@ theorem maximal_after_two_raw_segments {Raw Mark : Type} (step : Raw â†’ Mark â†
     publication_projection r step classify observe Good step_good each _ u hx]
   exact maximal_after_two_covers r _ _ _ hu hv
 
-#print axioms maximal_after_two_raw_segments
-#print axioms publication_projection
-#print axioms maximal_after_two_covers
-#print axioms maximal_step
 end L4.ShortNORCover

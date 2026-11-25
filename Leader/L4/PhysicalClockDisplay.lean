@@ -52,6 +52,4 @@ theorem raw_display_deadline {s n : Nat} (hn : 4≤n) (hs : 6≤s)
   change 2*wordSum (count bad) D ≤ n^D
   omega
 
-#print axioms raw_display_trial
-#print axioms raw_display_deadline
 end L4.PhysicalClockDisplay

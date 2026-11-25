@@ -162,7 +162,6 @@ theorem leastBullet_terminal {p c n d : Nat} (x : Config p c n) (s : Fin n)
     change (step x e (liftedSite s j)).bullet = .none
     simpa only [step,if_neg hx,if_neg hy] using h.before j (by omega)
 
-
 /-- Covers and fixed endpoints until actual stopped monitor fires. -/
 structure Geometry {p c n : Nat} (x : Config p c n) (s : Fin n) (d : Nat) : Prop where
   markCov : MCOV x
@@ -649,9 +648,4 @@ def pairPrepStage {p c n : Nat} (hn : 4≤n) (v : Fin n) (a b : Nat)
   reachStart := h
   reachStep := pair_geom_step hn v a b
 
-#print axioms reserve_step
-#print axioms expected_positive
-#print axioms expected_seal
-#print axioms expected_pair_cut
-#print axioms pairPrepStage
 end L4.TripleDirtyPrep

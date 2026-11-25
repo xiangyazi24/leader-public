@@ -112,5 +112,4 @@ theorem recovered_left_outward {base origin : X} {hh : ∃ i,oldH6 B base i=true
       obtain ⟨L,C,DL,LS⟩ := later u e v E
       exact ⟨L,C,DL,LS,cap u e v E⟩)
 
-#print axioms recovered_left_outward
 end L4.BStarCopyLeftRecovered

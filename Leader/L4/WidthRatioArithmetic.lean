@@ -104,9 +104,4 @@ theorem production_bounds {s : Nat} (S : 6≤s) :
   simp only [Nat.mul_assoc]
   exact ⟨by omega,by omega⟩
 
-#print axioms production_bounds
-#print axioms sum_between
-#print axioms coarsen_spacing
-#print axioms width_ratio
-#print axioms physical_width_ratio
 end L4.WidthRatioArithmetic

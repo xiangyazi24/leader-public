@@ -115,9 +115,6 @@ theorem keep {p c n H} (hn : 4≤n) (hQ : 0<2*c) {J : Fin n}
       · simp only [hj,if_false] at K ⊢
         exact ⟨K,ys⟩
 
-#print axioms keep
-#print axioms projection
-
 theorem terminal_sticky {p c n} (S : WindowA0Ledger.Scope n) (q : Trip (2*c))
     (z : Obs p c n) (w : List (Fin n)) (h : done (pos z)) :
     (GGTiming.runMarks (tick S q) z w).mode=z.mode := by
@@ -177,7 +174,6 @@ private theorem pos_step {p c n} (S : WindowA0Ledger.Scope n) (q : Trip (2*c))
       rfl
   simp only [if_neg hj,locate,if_neg (show (if e=liftedSite (cut x).top d then d+1 else d)≠0 by split <;> omega)]
   rfl
-
 
 private theorem labels {p c n H} {J : Fin n} {x₀ : Config p c n}
     {S : WindowA0Ledger.Scope n} {q : Trip (2*c)} {x : WindowA0ClosedEntry.State p c n}
@@ -318,9 +314,6 @@ theorem contact_bound {p c n H} (hn : 4≤n) (hQ : 0<2*c) {J : Fin n} {x₀ : Co
     subst k
     exact ⟨initial_events hr hs⟩
 
-#print axioms initial_events
-#print axioms contact_bound
-
 def work {p c n} (z : Obs p c n) : Nat :=
   match z.mode with
   | .active d _ => z.physical.gap-d
@@ -407,5 +400,4 @@ theorem mean {p c n H} (hn : 4≤n) (hQ : 0<2*c) {J : Fin n} {x₀ : Config p c 
       change work (tick S q (initial y d b) e) ≤ y.gap-d
       exact Nat.le_trans (Nat.le_add_right _ _) A
 
-#print axioms mean
 end L4.WindowA0ReturnWord

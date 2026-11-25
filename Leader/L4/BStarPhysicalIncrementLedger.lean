@@ -113,7 +113,6 @@ theorem two_reads_force_physical_inc {base initial x : X} {hh : ∃ j,oldH6 B ba
     (fun x e h=>closed x h e) i (time.symm ▸ stopped) hr flags notShort d N (time.symm ▸ sealed)
   exact ⟨u,v,split,by rw [BStarResetSchedule.run_append]; exact time ▸ inc⟩
 
-
 /-- Actual raw mark and old prefix, indexed directly by the supplied word. -/
 noncomputable def tapeInc (base : X) (hh : ∃ i,oldH6 B base i=true)
     (x : X) (w : List (Fin n)) (t : Nat) : Option (Fin n) :=
@@ -236,9 +235,4 @@ theorem count_on_shared_prefix (base : X) (hh : ∃ i,oldH6 B base i=true)
   rw [dif_pos H₁,dif_pos H₂,same left,same right,
     List.getElem_append_left J,List.getElem_append_left J]
 
-#print axioms tapeInc_on_split
-#print axioms count_on_shared_prefix
-#print axioms finite_raw_read_keys
-#print axioms two_reads_force_physical_inc
-#print axioms detects_sealed_need
 end L4.BStarPhysicalIncrementLedger

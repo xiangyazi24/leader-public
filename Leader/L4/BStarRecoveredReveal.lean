@@ -103,10 +103,6 @@ theorem agrees_if_admitted (base x : X) (hh : ∃ i,oldH6 B base i=true)
     rw [dif_neg F]
     simp only [dif_neg E]
 
-#print axioms admitted_append
-#print axioms reveal_mate
-#print axioms agrees_if_admitted
-
 open BStarCustodyCuts BStarResetChartTouch BStarRecoveredHistory BStarOwnerLaunchOrigin
 open BStarLongFixedRouting BStarGeneratedOwner BStarAcquireForwardTrace BStarResetMarkAdapter
 
@@ -162,9 +158,6 @@ theorem admitted_origin {base x : X} {hh : ∃ i,oldH6 B base i=true}
     BStarLongCommand.bitOp hf op
   exact ⟨a,b,c,S,len,fall,k,E,C,by omega,loc,h.2⟩
 
-#print axioms admitted_origin
-#print axioms common_admission
-
 open L4.Height.Couple
 
 /-- The admitted old-state observer is a paired source on the doubled
@@ -181,5 +174,4 @@ noncomputable def source (base x : X) (hh : ∃ i,oldH6 B base i=true)
     rw [raw_doubleMate]
     exact reveal_mate hp base x hh start past (rawLabel e) k b H
 
-#print axioms source
 end L4.BStarRecoveredReveal

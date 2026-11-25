@@ -286,7 +286,3 @@ theorem hittingTime_of_path_certificate {α : Type} {n : Nat}
 
 end L4.GGTiming
 
-#print axioms L4.GGTiming.contraction
-#print axioms L4.GGTiming.path_survival_le
-#print axioms L4.GGTiming.pathClock_expected
-#print axioms L4.GGTiming.hittingTime_of_path_certificate

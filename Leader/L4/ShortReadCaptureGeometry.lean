@@ -194,7 +194,4 @@ theorem capture_chart_fields {s n : Nat} (x : Raw s n) (M : H1.rawMaximal x)
   · simpa only [aex] using one
   · simpa only [aex,bex] using two
 
-#print axioms chart_unique
-#print axioms capture_indices
-#print axioms capture_chart_fields
 end L4.ShortReadCaptureGeometry

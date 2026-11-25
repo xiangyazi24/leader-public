@@ -65,8 +65,4 @@ theorem right_outlet {n h : Nat} (root : Fin n) (j : Fin h)
   have I := j.isLt
   exact ⟨if_neg last, by unfold rightCoord; omega⟩
 
-#print axioms left_labels_injective
-#print axioms right_labels_injective
-#print axioms right_hop_endpoints
-#print axioms right_outlet
 end L4.BStarFencePorts

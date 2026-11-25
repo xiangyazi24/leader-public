@@ -131,7 +131,5 @@ theorem current_mode_unique {base x : X} {addr : Nat → Pos n} {len : Nat}
             rw [A.2.1.2.2.1 j H] at hold
             contradiction
 
-#print axioms submask_redirect_two_hits
-#print axioms current_mode_unique
 end Physical
 end L4.Height

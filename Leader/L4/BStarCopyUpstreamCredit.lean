@@ -149,12 +149,4 @@ theorem physical_first_from_credit {Label : Type} (digits : Label → BitVec 36)
   exact BStarCopyMarkedLedger.physical_first digits plan s pre tag g x u v c hs hd hh sel
     ne ret gates input R vacant credit
 
-#print axioms valid_prefix
-#print axioms before_cross
-#print axioms local_nonretaining
-#print axioms local_boundary_spend
-#print axioms boundary_account
-#print axioms local_inject_gain
-#print axioms release_account
-#print axioms physical_first_from_credit
 end L4.BStarCopyUpstreamCredit

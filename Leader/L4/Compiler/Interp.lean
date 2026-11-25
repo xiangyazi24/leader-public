@@ -267,7 +267,6 @@ theorem markStep_word (regs : List Value) (p : Primitive r)
           regs := regs } := by
   simp [markStep, hj]
 
-
 /-! ### Running the machine: one instruction at a time -/
 
 theorem runMarks_add (s : MState r) (a b : Nat) :
@@ -373,14 +372,3 @@ end Interp
 end Compiler
 end L4
 
-#print axioms L4.Compiler.Interp.runPrefix_inv
-#print axioms L4.Compiler.Interp.primitive_tour_correct
-#print axioms L4.Compiler.Interp.evalProgramAux_cons
-#print axioms L4.Compiler.Interp.evalProgramAux_append
-#print axioms L4.Compiler.Interp.evalProgramAux_length
-#print axioms L4.Compiler.Interp.markStep_source
-#print axioms L4.Compiler.Interp.markStep_word
-#print axioms L4.Compiler.Interp.word_full
-#print axioms L4.Compiler.Interp.run_program
-#print axioms L4.Compiler.Interp.machine_finish
-#print axioms L4.Compiler.Interp.machine_stable

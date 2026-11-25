@@ -119,7 +119,4 @@ theorem target_publication_tail [DecidableEq J] (step : X→Fin n→X)
       simp [U,W]
   rwa [E]
 
-#print axioms nohit_pad
-#print axioms tail_from_uniform_mean
-#print axioms target_publication_tail
 end L4.ReportHalfCellClock

@@ -228,8 +228,6 @@ theorem arrived_payload {base x : X} {hh : ∃ i, oldH6 B base i=true}
     · exact .inr (new.symm.trans H)
   · exact .inl ((BStarResetIdleRing.idle_off_pair hp x e (addr 0) E R).trans D0)
 
-
-
 open scoped Classical
 
 private theorem link_safety (g : Pair LongGeometry) (raw : Pair (BitVec LW))
@@ -340,8 +338,6 @@ theorem reverse_or_hold {base x : X} {hh : ∃ i,oldH6 B base i=true}
     · by_cases rr : (addr (k+1)).1=rightNeighbor e
       · exact inside (R (addr (k+1)).2) (Prod.ext rr rfl)
       · exact .inl ((BStarResetIdleRing.idle_off_pair hp x e (addr (k+1)) l rr).trans D)
-
-
 
 open BStarOwnerLaunchOrigin BStarGeneratedOwner BStarGeneratedPCAncestry
 
@@ -528,12 +524,4 @@ theorem numeric_selected_from_hit {base x : X} {hh : ∃ i,oldH6 B base i=true}
   obtain ⟨M,J,E⟩ := joined_numeric_terminal hp (x e,x (rightNeighbor e)) C offer p K hd sel raw N
   exact ⟨M,by rw [J,O,Q],D.trans (congrArg Token.reply E)⟩
 
-#print axioms numeric_selected_from_hit
-#print axioms joined_numeric_terminal
-#print axioms from_hit
-#print axioms backwards
-
-#print axioms joined_hold
-
-#print axioms healthy_rebind
 end L4.BStarReplyBack

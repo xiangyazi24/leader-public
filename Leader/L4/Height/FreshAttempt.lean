@@ -443,15 +443,5 @@ theorem successful_acquire_receipt {base x y : X} {hh : ∃ i,oldH6 B base i=tru
   rw [if_neg success] at H
   exact H
 
-#print axioms conflicting_port_owners
-#print axioms acquire_requires_admit
-#print axioms denied_source_step
-#print axioms no_request_at
-#print axioms owned_zero_without_acquire
-#print axioms selected_acquire_wins
-#print axioms canonical_reply_returns
-#print axioms admit_gate_departure
-#print axioms consume_admit_terminal
-#print axioms successful_acquire_receipt
 end L4.Height.FreshAttempt
 

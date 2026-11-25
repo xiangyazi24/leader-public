@@ -122,8 +122,6 @@ private theorem carried_back (g : Pair LongGeometry) (x : Pair (BitVec LW))
     exact (visit_back _ _ _ _).trans (outgoing_back _ _ _ _ q E)
   all_goals exact failed _
 
-#print axioms carried_back
-
 private theorem grant_back (g : Pair LongGeometry) (x : Pair (BitVec LW))
     (L : List CmdOffer) (o : CmdOffer) (C : CommandClaim) (p : Payload)
     (E : BStarLongGrant.update g x L o=(C,.advance p)) :
@@ -206,8 +204,6 @@ theorem offer_origin (g : Pair LongGeometry) (x : Pair (BitVec LW))
   have K := L.trans (T.trans (X.trans V)) F
   obtain ⟨s,S,B,Y⟩ := bind_back _ _ _ _ Q K.1
   exact ⟨s,S,B,Y.trans K.2⟩
-
-#print axioms offer_origin
 
 open BStarLongRouting
 
@@ -343,6 +339,4 @@ theorem joined_hold (k₁ k₂ t₂ J₁ J₂ r n p c₁ : Nat) (hp : 0<p)
   · rw [raw_transit _ _ _ Z] at F
     exact T F H
 
-#print axioms joined_hop
-#print axioms joined_hold
 end L4.BStarForwardProvenance

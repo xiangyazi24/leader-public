@@ -189,9 +189,4 @@ theorem no_touch_rank_nonzero (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 
           exact Nat.le_trans (by omega) F
       · contradiction
 
-#print axioms no_touch_rank_nonzero
-#print axioms ownerBlocks_nodup
-#print axioms footprint_disjoint
-#print axioms footprint_owner
-#print axioms no_touch_frame
 end L4.BStarClearanceChartFootprint

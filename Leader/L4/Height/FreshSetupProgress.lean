@@ -98,7 +98,4 @@ theorem enter_inject (P : Production g) (o : Owners h) (a : Word n) (e : Fin n)
   exact ⟨u,f,v,W,atNine ▸ (show BStarNativeReceiptTape.Hit hp g.base
     (fun j=>S.getD j fall) len (rawRun entry u) f k from hit),allOld⟩
 
-#print axioms first_outside
-#print axioms setup_change
-#print axioms enter_inject
 end L4.Height.FreshSetupProgress

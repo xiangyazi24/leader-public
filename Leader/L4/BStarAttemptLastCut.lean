@@ -72,5 +72,4 @@ theorem append_mark (D : X → Prop) (x : X) (u v : List (Fin n))
       subst m
       exact A p e q P
 
-#print axioms unique
 end L4.BStarAttemptLastCut

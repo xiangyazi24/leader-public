@@ -28,7 +28,6 @@ private theorem slot_at_new_bits {s n : Nat} {h : Fin n→Bool} (C : Chart h)
   change decode (slotGate C y i) (bits C.route y i)=_
   rw [N]
 
-
 private theorem ungated_debt {s n : Nat} {h : Fin n→Bool} (C : Chart h)
     (x : Raw s n) (i : Nat) (G : slotGate C x i=false) :
     raceDebt (slot C.route x i)=0 := by
@@ -184,6 +183,4 @@ theorem nominate_forward {s n : Nat} {h : Fin n→Bool} (C : Chart h)
         rw [chart_except C x k j.val Kl j.isLt Hx (HY ek)
           (fun E=>L (Fin.ext E)) (fun E=>J (Fin.ext (E.trans K)))]
 
-#print axioms out_mem_notdoor
-#print axioms nominate_forward
 end L4.ShortLeastForward

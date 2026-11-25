@@ -44,6 +44,3 @@ theorem mean_4096 {p c n : Nat} {initial : Config p c n} {group cert : List (Fin
 
 end L4.WindowScopedSealedMean
 
-#print axioms L4.WindowScopedSealedMean.mean
-
-#print axioms L4.WindowScopedSealedMean.mean_4096

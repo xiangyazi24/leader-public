@@ -32,5 +32,4 @@ theorem overflow_of_excess {n : Nat} (t : Nat) (c : Fin 5 → Word n → Nat)
     simp [massInd,F,P]
   · simp [massInd,F]
 
-#print axioms overflow_of_excess
 end L4.BStarFiveClientBudget

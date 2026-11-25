@@ -64,8 +64,6 @@ theorem offer_from_launch {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have S' := BStarCommitOwnerOrigin.source_choice src a p IA (argv.trans (A.trans E))
   exact ⟨S'.1,S'.2.1⟩
 
-#print axioms offer_from_launch
-
 open BStarResetControllerEntry BStarClearanceSource
 
 private theorem foreign_controller_word (x : X) (i : Fin n) (w : List (Fin n))
@@ -143,8 +141,6 @@ theorem next_door_launch (x : X) (i : Fin n) (wait : List (Fin n)) (door : Fin n
   rw [D]
   rw [show initial (ctrlOp.read (y i).long).toNat (y i).long=some (argument src) from init]
 
-#print axioms next_door_launch
-
 /-- An actual healthy BIT consume, its first subsequent own door, and a
 selected healthy advancing COMMIT on that uninterrupted flight carry one
 descriptor and the same parity-selected bank. No publication is assumed. -/
@@ -184,5 +180,4 @@ theorem selected_after_bit_ack {base x : X} {hh : ∃ i,oldH6 B base i=true}
   have choose := bodyChoice.symm.trans ((congrArg BitVec.toNat choiceFrame).trans (congrArg BitVec.toNat choiceEq))
   exact ⟨bodyD,choose.trans (by rw [BitVec.toNat_ofNat,Nat.mod_eq_of_lt]; exact Nat.lt_trans (pick d f).isLt (by decide))⟩
 
-#print axioms selected_after_bit_ack
 end L4.BStarBitCommitFlight

@@ -151,9 +151,4 @@ theorem append_next_seen {s n : Nat} {y : Raw s n} {addr : Nat→Pos n}
     rw [←middle_race_endpoint y d g₁ g₂ A B]
     exact later
 
-#print axioms middle_race_endpoint
-#print axioms append_next_seen
-#print axioms accepted_separator_cut
-#print axioms accepted_middle_reset_cut
-#print axioms accepted_final_reset_cut
 end L4.PhysicalRaceCutAdapters

@@ -119,9 +119,6 @@ theorem suffix_empty_after_empty_root {base x : XX} {hh : ∃ i, oldH6 B base i=
     · exact selected (R (addr j).2) (Prod.ext hr rfl)
     · exact (idle_off_pair hp x e (addr j) hl hr).trans (clean j hlen)
 
-
-#print axioms suffix_empty_after_empty_root
-
 open BStarResetHealthyService BStarSeparatingProgress BStarResetReleaseHistory
 
 /-- Every old prefix of an actual clean-start reset has exactly the
@@ -174,8 +171,6 @@ theorem clean_prefix {base x : XX} {hh : ∃ i, oldH6 B base i=true}
         | turn | reverse => exact True.intro
       exact ih dst ⟨qy,W⟩ new clean' rest
 
-#print axioms clean_prefix
-
 open BStarResetCycle BStarResetTaggedRows
 
 /-- On a literal stage from an all-E owner cut, every interior mark
@@ -227,8 +222,6 @@ theorem stage_clean_prefix {base x y : XX} {hh : ∃ i,oldH6 B base i=true}
   intro before after e E
   rw [E] at seen
   exact clean_prefix hp C Q fiber closed sep op ho (.out 0) Iz G Cy before after e seen
-
-#print axioms stage_clean_prefix
 
 private theorem end_inv {Y : Type} {m : Nat} (nextMark : Y → Fin m → Y)
     (track : Y → BStarSeparatingRail.Rail) (tag : Tag) (len : Nat) (Inv : Y → Prop)
@@ -289,5 +282,4 @@ theorem stage_endpoint_clean {base x y : XX} {hh : ∃ i,oldH6 B base i=true}
   rw [BStarResetSchedule.run_append]
   exact A
 
-#print axioms stage_endpoint_clean
 end L4.BStarResetIssueClean

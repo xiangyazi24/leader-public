@@ -220,7 +220,6 @@ theorem successful_file_matches_captures {s n : Nat} {h : Fin n → Bool} (C : C
   exact ⟨(low_wire d ⟨5-j.val,by have := j.isLt; omega⟩).trans Q.1,
     (low_wire d ⟨2-j.val,by omega⟩).trans Q.2⟩
 
-
 private theorem advance_sample {s n : Nat} {h : Fin n → Bool} (C : Chart h)
     (x : Raw s n) (e : Fin n) (f : Flight) (a : Ledger s n) (j : Fin 3) (p : Sample s n)
     (H : advanceLedger C x e f a j=some p) :
@@ -323,9 +322,4 @@ theorem read_return_matches_three_captures {s n : Nat} (x : Raw s n) (H : H2Read
       rw [E] at Q
       exact ⟨p,lead,tail,i,payload,W,X,T,J,K,win,Q.1,Q.2⟩
 
-#print axioms good_step
-#print axioms good_run
-#print axioms successful_file_matches_captures
-#print axioms sample_origin
-#print axioms read_return_matches_three_captures
 end L4.ShortReadCaptureTrace

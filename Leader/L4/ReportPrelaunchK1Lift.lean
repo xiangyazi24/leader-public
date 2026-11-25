@@ -93,6 +93,4 @@ theorem raw_end_of_weights (sheet : Sheet) (C : Chart h)
   · intro E
     exact .inl ⟨PC,.inl ⟨a,frame,K.2 E⟩⟩
 
-#print axioms raw_internal_of_weights
-#print axioms raw_end_of_weights
 end L4.ReportPrelaunchK1Lift

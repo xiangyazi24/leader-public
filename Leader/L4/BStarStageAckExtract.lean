@@ -56,7 +56,6 @@ private theorem bad_issue_pc {x : X} {addr : Nat → Pos n} {e : Fin n}
     rw [←R]; simp only [AllSizeS1Geometry.step,if_neg (Ne.symm sep),if_true,pair]
   exact congrArg (fun t : _ × BitVec 9 => t.2.toNat) (eq ▸ A)
 
-
 open BStarLongToken BStarStageProvenance
 
 /-- Exact decomposition of the generated physical PreBand at its
@@ -155,6 +154,4 @@ theorem stage_tour {base x : X} {addr : Nat → Pos n} {len : Nat} {d : Mode}
   rw [BStarResetSchedule.run_append,runEq] at out
   exact out
 
-#print axioms stage_tour
-#print axioms first_stage_ack
 end L4.BStarStageAckExtract

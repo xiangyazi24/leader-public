@@ -116,9 +116,4 @@ theorem stage_written (x : BitVec LW) :
     rw [Field.read_other_assign _ _ _ _ (.inr J),
       Field.read_other_assign _ _ _ _ (.inl K)]
 
-#print axioms stage_door
-#print axioms stage_selected_issue
-#print axioms stage_written
-#print axioms bound_forward_exact
-#print axioms stage_live_of_source_descriptor
 end L4.BStarStageIssue

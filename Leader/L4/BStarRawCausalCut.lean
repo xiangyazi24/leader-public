@@ -82,7 +82,6 @@ theorem rawLevelTest_mono {base initial : X} (hh : ∃ i,oldH6 B base i=true)
       (tapeInc hp base hh (run initial a) b) i.val (Nat.zero_le b.length)
   exact Nat.le_trans (decide_eq_true_eq.mp hit) mono
 
-
 noncomputable def rawReady {base initial : X} (hh : ∃ i,oldH6 B base i=true)
     (start : Fin n→Nat) (i : Header (oldH6 B base)) (level : Nat) :
     List (Fin n)→Bool :=
@@ -104,7 +103,6 @@ theorem rawReady_firstTime {base initial : X} (hh : ∃ i,oldH6 B base i=true)
     (rawLevelTest_mono hp (initial:=initial) hh start _ _)]
   unfold rawLevelTest
   rw [firstTime_eq_firstCrossing,firstTime_eq_firstCrossing,firstTime_eq_firstCrossing]
-
 
 theorem rawLevelTest_initial {base initial : X} (hh : ∃ i,oldH6 B base i=true)
     (start : Fin n→Nat) (i : Header (oldH6 B base)) (level : Nat) (history w : List (Fin n))
@@ -152,12 +150,5 @@ theorem crossing_le_stopped_publication {base initial : X}
   dsimp only
   rw [List.length_take,Nat.min_eq_left (firstTime_length _ _ _),rawReady_firstTime]
   exact crossing_le_ready_add_publicationWait hp hh P M pos period start history w good i level
-
-#print axioms firstTime_eq_firstCrossing
-#print axioms splitStop_eq_take_drop
-#print axioms rawLevelTest_mono
-#print axioms rawReady_firstTime
-#print axioms crossing_le_stopped_publication
-#print axioms rawLevelTest_horizon_of_miss
 
 end L4.BStarRawCausalCut

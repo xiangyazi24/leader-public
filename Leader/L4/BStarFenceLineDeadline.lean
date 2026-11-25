@@ -104,5 +104,4 @@ theorem path_finishes (inj : ∀ i j,port i=port j→i=j)
   intro h A B
   exact ok fit (Nat.lt_of_lt_of_le A B)
 
-#print axioms path_finishes
 end L4.BStarFenceLineDeadline

@@ -62,8 +62,6 @@ theorem ready_at_prefix {base origin x : X} {hh : ∃ j,oldH6 B base j=true}
   · rw [latch,seed.2.2]
     exact BStarSealWriterInterval.optional_roundtrip d valid
 
-#print axioms ready_at_prefix
-
 open BStarGeneratedTapeCuts BStarOwnerLaunchOrigin BStarSeparatingRail
 open StageSealPhaseScope StageSealStay BStarAcquireHistoryReturn
 
@@ -145,5 +143,4 @@ theorem interval_scope {base x : X} {addr : Nat→Pos n} {len k : Nat} {i ack do
     LocalScope.append hp first (by rw [BStarResetSchedule.run_append]; exact two)
   simpa only [List.append_assoc,List.singleton_append] using three
 
-#print axioms interval_scope
 end L4.Height.StageSealFrameActual

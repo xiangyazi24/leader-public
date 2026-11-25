@@ -86,9 +86,4 @@ theorem read_consume_exact {s n : Nat} (x : Raw s n) (e : Fin n)
   rw [V] at F
   exact ⟨K,F⟩
 
-#print axioms decode_readReply
-#print axioms read_reply_gate_independent
-#print axioms read_reverse_one_hop
-#print axioms read_reverse_route_hop
-#print axioms read_consume_exact
 end L4.ShortReadReturnHop

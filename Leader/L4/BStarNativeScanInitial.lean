@@ -118,6 +118,4 @@ theorem scan_first_from_launch {base before x : X} {hh : ∃ i,oldH6 B base i=tr
     exact launch_scan_zero _ _ oldPC kind L
   exact first_scan_zero hp chart sep A kind start d tail first healthy
 
-
-#print axioms scan_first_from_launch
 end L4.BStarNativeScanInitial

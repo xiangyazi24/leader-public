@@ -227,9 +227,4 @@ theorem raw_block_of_separate_failures {n : Nat} (h : Fin n → Bool) (hh : ∃ 
   change n^t ≤ 2 * wordSum (fun w => ind good (out w)) t
   omega
 
-#print axioms raw_block_of_separate_failures
-#print axioms raw_block_of_steered_half
-#print axioms restore_admit
-#print axioms steered_mass
-#print axioms restore
 end L4.BStarSteeredLikelihood

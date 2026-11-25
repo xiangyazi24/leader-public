@@ -58,6 +58,4 @@ theorem commit_actual_step (P : Params s n) (C : Chart P.h) (N : 9 < n)
     (by simpa only [view_header] using geom) d D e f L A
   exact ⟨(commit_active_congr C d _ (view P (rawNext s x e)) (view_next P x X e) _).mp Q.1, Q.2⟩
 
-#print axioms write_actual_step
-#print axioms commit_actual_step
 end L4.ShortMISPublicationFlight

@@ -426,6 +426,5 @@ theorem work_transfer {c : Nat} (r : Nat) (h : Pair Bool)
   · exact left_transfer r l k x
   · exact right_transfer r l k x
 
-#print axioms work_transfer
 end L4.BStarWidthTransferFull
 

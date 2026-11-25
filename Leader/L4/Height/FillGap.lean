@@ -919,16 +919,5 @@ theorem four_bit_loss_of_gaps {m : Nat}
       hbitPenATotal hbitLastATotal hbitPenBTotal hbitLastBTotal
       hgapAForFill hgapBForFill
 
-#print axioms fillGapPath_is_path
-#print axioms gapFixed_of_live_no_internal
-#print axioms fillFixed_gapA
-#print axioms fillFixed_gapB
-#print axioms last_penultimate_separation
-#print axioms gap_draw_period_pos
-#print axioms suppliedBits_eq
-#print axioms fourDrawPositions_distinct_lt
-#print axioms gap_role_two_draws
-#print axioms four_bit_loss_of_gaps
-
 end L4.Height
 

@@ -118,8 +118,6 @@ theorem block_of_release_safety (P : Production g) (i : Header h)
     · exact pub
     · exact safe y ok cuts z hz gap e atEnd receipt
 
-#print axioms block_of_release_safety
-#print axioms block_of_releases
 end
 end L4.Height.ProductionCycles
 

@@ -87,6 +87,4 @@ theorem actual_publication {base old x : X} {addr : Nat→Pos n} {len : Nat}
   change C.source.side=.left at E
   simpa only [P,E] using mem
 
-#print axioms selecting_receipt
-#print axioms actual_publication
 end L4.BStarNativeCommitHandoff

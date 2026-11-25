@@ -34,8 +34,4 @@ theorem raw_legit_of_quiet {s n : Nat} {x : Raw s n} (g : CustodyWitness x)
   exact PhysicalClockQuietPorts.quiet_ports g.hh (modulus (radWidth s))
     (fun i=>readRecord (r:=radWidth s) x i.val) errFree quiet well
 
-#print axioms port_index_abi
-#print axioms port_neighbor_abi
-#print axioms projectedRecords
-#print axioms raw_legit_of_quiet
 end L4.PhysicalClockDisplay

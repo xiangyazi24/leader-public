@@ -143,10 +143,6 @@ theorem ring_inject (x : X) (e : Fin n) (sep : e≠rightNeighbor e)
   rw [Eff] at H
   exact H
 
-#print axioms selected_load_payload
-#print axioms ring_load
-#print axioms ring_inject
-
 private theorem data_no_frozen (g : Pair LongGeometry) (old : At Sheet → Lane)
     (C : DataClaim) (s : At Sheet) (v : Digit9) :
     (s,.frozen v)∉dataEffects g old C := by
@@ -207,9 +203,6 @@ theorem issue_load_operand (x : BitVec LW) (n : Nat) (H : initial 8 x=some n) :
     exact ⟨rfl,by assumption⟩
   · contradiction
 
-#print axioms pair_frozen_frame
-#print axioms issue_load_operand
-
 def FrozenSafe (x : X) (e i : Fin n) (sh : Sheet) : Prop :=
   ∀ s : Side, site e s=i →
     ∀ a∈(arbitration (round (oldPair B x e) ((x e).long,(x (rightNeighbor e)).long)).prep).1,
@@ -243,8 +236,6 @@ theorem word_frozen_frame (x : X) (w : List (Fin n)) (i : Fin n) (sh : Sheet)
   | cons e w ih =>
     exact (ih (step x e) (fun pre a post H => safe (e::pre) a post (congrArg (List.cons e) H))).trans
       (ring_frozen_frame hp x e i sh (sep e) (safe [] e w rfl))
-
-#print axioms word_frozen_frame
 
 /-- Actual old left/right parity can change between LOAD and INJECT.
 Only the physical site and lane must agree. The packet installed in
@@ -282,5 +273,4 @@ theorem freeze_then_inject (x : X) (load release : Fin n) (middle : List (Fin n)
   rw [same] at inj
   exact ⟨congrArg Lane.mobile inj,congrArg Lane.frozen inj⟩
 
-#print axioms freeze_then_inject
 end L4.BStarCopyOperand

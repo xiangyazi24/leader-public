@@ -206,6 +206,4 @@ theorem clean_return_of_serviced {tag : Tag} {len k : Nat} {x z : BStarSeparatin
   apply blocks_progress sane b (.out 0) ⟨Nat.zero_le _,issued,fun _ h => (Nat.not_lt_zero _ h).elim⟩
   simpa [rank] using budget
 
-#print axioms tape_progress
-#print axioms clean_return_of_serviced
 end L4.BStarSeparatingProgress

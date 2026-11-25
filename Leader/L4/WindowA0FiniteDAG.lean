@@ -100,7 +100,4 @@ theorem entry_drain_of_fixed_sink {p c n : Nat} (hn : 4≤n)
   exact Nat.le_trans (hh t)
     (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left _ (Nat.add_le_add_right hu 1)))
 
-#print axioms entry_drain_of_fixed_sink
-#print axioms completed_outlet
-#print axioms bounds
 end L4.WindowA0FiniteDAG

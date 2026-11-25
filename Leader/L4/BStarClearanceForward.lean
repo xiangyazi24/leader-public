@@ -110,7 +110,4 @@ theorem turn_charge (g : Pair LongGeometry) (x : Pair (BitVec LW))
   simp only [forwardRank]
   omega
 
-#print axioms move_lands
-#print axioms move_charge
-#print axioms turn_charge
 end L4.BStarClearanceForward

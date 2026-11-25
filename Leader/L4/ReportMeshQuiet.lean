@@ -73,6 +73,4 @@ theorem cell_covers (step : X→Fin n→X) (classify : X→Fin n→Option J)
   rw [E] at P
   exact ⟨t,by omega,R,P⟩
 
-#print axioms indexed_receipts
-#print axioms cell_covers
 end L4.ReportMeshQuiet

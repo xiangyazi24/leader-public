@@ -201,16 +201,4 @@ theorem custody_geometry_of_reports {s n : Nat} (S : 6≤s) (advice : s=ell (ell
   obtain ⟨hh,C,K,_⟩ := raw_static_geometry S advice z G H4 R1 R2
   exact ⟨WidthPackedBridge.geometry_of_certified_width S z hh C (F hh),K⟩
 
-#print axioms advance_val
-#print axioms settled_of_cut
-#print axioms hop_bounds_of_cut
-#print axioms nonempty_of_cut
-#print axioms report1_mask
-#print axioms report2_mask
-#print axioms h5_hops
-#print axioms h6_hops
-#print axioms h5_bounds
-#print axioms h6_bounds
-#print axioms raw_static_geometry
-#print axioms custody_geometry_of_reports
 end L4.ReportStaticSpacing

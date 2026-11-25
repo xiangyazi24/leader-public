@@ -66,7 +66,6 @@ theorem six_prep_driver_mean
   intro v
   exact Nat.le_trans (M v) (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left _ EB))
 
-
 theorem tracked_driver_run_base
     (d : Sheet) (C : Fin 6→Chart h) (B : Fin 5→Chart h)
     (N : 1<n) (hh : ∃ i,h i=true) (F : Fibre (h:=h) d Q)
@@ -112,12 +111,5 @@ theorem tracked_driver_finish
     ReportFastSixPrepTrack.exact_final_cut d (prepCharts B) B N hh F W z m I L H
   rw [ReportFastSixPrepTrack.step_raw,prepCharts_target] at PC Parked
   exact ⟨⟨st,Consume⟩,PC,Parked⟩
-
-#print axioms prepCharts_target
-#print axioms prepCharts_includes
-#print axioms prepCharts_width
-#print axioms six_prep_driver_mean
-#print axioms tracked_driver_run_base
-#print axioms tracked_driver_finish
 
 end L4.ReportFastPreparedMean

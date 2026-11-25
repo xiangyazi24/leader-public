@@ -70,5 +70,4 @@ theorem arg_at_flight_launch {base initial : X} {hh : ∃ i,oldH6 PROTO base i=t
   rw [BStarResetSchedule.run_append] at value
   exact value.symm
 
-#print axioms arg_at_flight_launch
 end L4.BStarNativeAtLaunch

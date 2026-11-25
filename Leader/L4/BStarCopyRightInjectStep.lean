@@ -130,6 +130,4 @@ theorem checked_pc10_step {Tag : Type} (digits : Tag→BitVec 36) (atSource : Na
       release.win gate align.1 S fall len release.k vacancy behind align.2
     exact ⟨t,_,End,H,Q⟩
 
-#print axioms release_advances
-#print axioms checked_pc10_step
 end L4.BStarCopyRightInjectStep

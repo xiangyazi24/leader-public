@@ -103,11 +103,8 @@ theorem marginals_of_short_window (h : ConcreteShortWindowReward) : ConcreteWind
     cases hi
 
 theorem main_of_short_window (restart : ConcreteRestartTrial) (h : ConcreteShortWindowReward) :
-    row175Statement :=
+    uniformEdgeStatement :=
   main_after_window_marginals restart (marginals_of_short_window h)
 
 end L4.WindowLocalAssembly
 
-#print axioms L4.WindowLocalAssembly.reward_lift_deadline
-#print axioms L4.WindowLocalAssembly.marginals_of_short_window
-#print axioms L4.WindowLocalAssembly.main_of_short_window

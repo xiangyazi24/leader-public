@@ -77,9 +77,6 @@ theorem capture_into_stage (x : X) (e : Fin n)
   refine ⟨p,finalDesc (y i).long h,fl,desc,oldSel.trans ?_⟩
   exact (congrArg BitVec.toNat frame.2.2).trans (congrArg Prod.fst fields)
 
-#print axioms capture_mark
-#print axioms capture_into_stage
-
 /-- Extract the exact retained capture file on the same marked tape
 that the computation-band scan certified. In particular the center
 selector is not read from a subsequent header state. -/
@@ -115,5 +112,4 @@ theorem origin_capture_fields (x : X) (i : Fin n) (w : List (Fin n))
   rw [W,BStarResetSchedule.run_append]
   exact BStarAcquireReadout.source_fields_payload _ a (S0.trans got) j
 
-#print axioms origin_capture_fields
 end L4.BStarAcquisitionToStage

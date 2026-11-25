@@ -255,13 +255,4 @@ theorem consume {s n a b L : Nat} {x : Raw s n} {r e : Fin n}
     exact J (nextAt_injective_under r i 0 (by omega) (by omega) (V.trans hr))
   rw [reset_remote_frame_raw _ _ _ A B,H i I,isClear (by omega : 0<i)]
 
-#print axioms reverse_outbound_raw
-#print axioms reverse_inbound_raw
-#print axioms internal_edge
-#print axioms terminal_edge
-#print axioms advance
-#print axioms idle
-#print axioms idle_before_arrival
-#print axioms idle_at_root
-#print axioms consume
 end L4.ShortResetReverseChart

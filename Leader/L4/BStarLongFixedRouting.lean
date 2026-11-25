@@ -47,6 +47,4 @@ theorem edge_fixed {a : LargeParams} {n : Nat} (b : LargeRows a)
   · rintro ⟨e,c,d,M,D,U,V⟩
     exact ⟨e,c,d,(command_eq b x y same e).symm ▸ M,D,U,V⟩
 
-#print axioms command_eq
-#print axioms edge_fixed
 end L4.BStarLongFixedRouting

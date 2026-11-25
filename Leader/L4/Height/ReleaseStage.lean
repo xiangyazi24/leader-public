@@ -192,8 +192,5 @@ theorem release (P : Production g) (i : Header h) (j : Nat)
   Cycle.mono g (release_owner g P i (releaseClient g (ProductionClients.serviceOwner g i) j) y ok)
     (fun _ hgood => Or.inr hgood)
 
-#print axioms release_owner
-#print axioms release
-
 end
 end L4.Height.ReleaseStage

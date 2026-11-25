@@ -66,6 +66,4 @@ theorem ack_issue_replay (x : X) (lead : List (Fin n)) (ack : Fin n)
   rw [E,BStarResetSchedule.run_append step x ((lead++[ack])++before) [issue]]
   rfl
 
-#print axioms issue_cut
-#print axioms ack_issue_replay
 end L4.BStarCopySetupReplay

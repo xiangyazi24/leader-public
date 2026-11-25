@@ -126,7 +126,6 @@ private theorem attempt_wins_with_cut {base x : X} {hh : ∃ i,oldH6 B base i=tr
   rw [join]
   simp only [cutpre,suffix,List.append_assoc,List.cons_append,List.nil_append]
 
-
 open BStarCommitOperands BStarCopyRightAttemptAuthenticated BStarCopyRightStrip
 open BStarCopyRightRetained BStarClearanceDataChart BStarH6Ordinal BStarCustodyCuts
 open BStarCopyRightFence BStarCopyRightFenceHold BStarCopyRightMixed BStarCopyRightReleaseCapture
@@ -234,6 +233,4 @@ theorem packed_right_from_actual_witness {base global : X} {hh : ∃ i,oldH6 B b
       facts rfl W below root a seam last dest strip join ownHead width rootAt inside notShort
   exact ⟨Ac,before,after,eq,hit,floor,pc12,mobile,read⟩
 
-#print axioms selected_right_acquisition
-#print axioms packed_right_from_actual_witness
 end L4.BStarCopyRightActualWitness

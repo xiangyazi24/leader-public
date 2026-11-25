@@ -37,8 +37,6 @@ theorem no_latch_of_stay {base x : X} {addr : Nat→Pos n} {len k op : Nat}
   rw [idx,E,trail] at F
   exact (BStarSeparatorParked.forward_not_trail F).elim
 
-#print axioms no_latch_of_stay
-
 /-- Whole real outward SEAL prefix ending at the old center cut.
 If already at center, rank trapping forces a stay; its selected-row
 absence follows from actual trail/forward disjointness, not mode alone. -/
@@ -78,5 +76,4 @@ theorem pre_seal_no_latch {base x : X} {addr : Nat→Pos n} {len k : Nat} {i : F
     cases T with
     | cons _ _ rest => exact ih rest
 
-#print axioms pre_seal_no_latch
 end L4.Height.StageSealStay

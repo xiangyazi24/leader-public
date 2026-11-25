@@ -195,10 +195,4 @@ theorem snapshot_of_finish_ge (R : Trace Owner Value Port T) (q : Nat)
     rw [atLevel.2.1]; omega)
   simpa [atLevel.2.1,Nat.add_sub_cancel_left] using H
 
-#print axioms first_exists
-#print axioms first_unique
-#print axioms curr_constant
-#print axioms representations
-#print axioms snapshot_of_finish_ge
-
 end L4.BStarFirstArrival

@@ -169,8 +169,6 @@ theorem masked_step {p c n : Nat} (hn : 4≤n)
         rw [boundary_or_exterior_mask hn x base e I J q.extra hL hR hT hD]
         exact .idle
 
-#print axioms masked_step
-
 /-- The extra bit denotes a stock byte actually present at the current
 door. Off a J payment an old extra cannot disappear: an old door hit
 would have paid, while an incoming hit preserves the resident. -/
@@ -219,9 +217,6 @@ theorem physical_heights {p c n : Nat} (hn : 4≤n)
     let H' := cuts width (stock (step x e) base q'.I q'.J q'.extra) q'.spent
     H 1 = H' 1 ∧ ∀ k, H k≤H' k :=
   (masked_step hn x base e width q good mc hOrder).heights
-
-#print axioms extra_persists
-#print axioms physical_heights
 
 /-- On precisely the unpaused raw letters, a forced vacancy transfer
 attains the bounded DAG height threshold. The initial conserved total
@@ -303,5 +298,4 @@ theorem unpaused_commit {p c n : Nat} (hn : 4≤n)
   rw [T,H,cuts_move (m+1) s q.spent i occ vac (by omega),if_pos rfl]
   exact Nat.le_refl _
 
-#print axioms unpaused_commit
 end L4.WindowA0MaskedTrace

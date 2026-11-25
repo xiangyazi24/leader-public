@@ -94,7 +94,6 @@ private theorem digit_header_range (b a : Fin 3) (i j : Fin 9) :
   rcases Nat.lt_trichotomy b.val a.val with H|H|H
   all_goals simp only [bankDigit,bankHeader,bankPart,bankBase]; omega
 
-
 def candidate (d : Descriptor) (which : Bool) : Fin 3 := if which then d.b1 else d.b0
 
 theorem candidates_distinct (d : Descriptor) (h : d.valid=true) : d.b0≠d.b1 := by
@@ -155,7 +154,6 @@ theorem stage_digit (old raw : BitVec LW) (d : Descriptor) (h : d.valid=true)
       right
       simp only [f,stage,bankDigit,bankPart,bankBase]
       omega
-
 
 def argumentHeader (arg : Nat) (which : Bool) (i : Fin 9) : BitVec 1 :=
   BitVec.ofNat 1 (arg / 2^(9*(if which then 0 else 1)+(8-i.val)))
@@ -229,7 +227,4 @@ theorem execute_stage (g : LongGeometry) (old : BitVec LW) (j : Fin 11)
   · simp [center,healthy,opcode,decodeDesc]
   · simp [center,healthy,opcode,show stageOp≠1 by decide,decodeDesc,auth H]
 
-#print axioms stage_digit
-#print axioms stage_header
-#print axioms execute_stage
 end L4.BStarStageCandidateWrite

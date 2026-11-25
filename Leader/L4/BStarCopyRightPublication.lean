@@ -66,5 +66,4 @@ theorem before_publication {base initial : X} (u v tail : List (Fin n))
   exact ⟨o,pre,reset,w,before,after,door::flight,root,(S.getD 0 fall).1,a,seam,last,
     W.trans (List.append_assoc _ _ _),P,Ac,⟨S,len,fall,preAck,e,C,rfl,eq,H⟩,floor,pc12,mobile,read⟩
 
-#print axioms before_publication
 end L4.BStarCopyRightPublication

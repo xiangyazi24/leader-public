@@ -318,7 +318,4 @@ theorem data_word {Tag : Type} (digits : Tag→BitVec 36)
       (fun a f b E => ready (e::a) f b (congrArg (List.cons e) E))
     exact ⟨v,m,M.trans R,F,H,Q⟩
 
-#print axioms data_word
-#print axioms data_mark
-#print axioms upstream_nonseam
 end L4.BStarCopyLeftDataSweep

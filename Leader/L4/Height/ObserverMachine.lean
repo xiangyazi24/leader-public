@@ -409,13 +409,5 @@ def machine (hn : 4≤n) (b : LargeRows a) (hp : 0<a.p)
     exact ⟨edge r k,(post_marks hn b hp bind x.property k).1.trans
       (Bool.or_eq_true_iff.mpr (.inr hit))⟩
 
-#print axioms literal_pulse
-#print axioms post_marks
-#print axioms launch_eq
-#print axioms outward_read
-#print axioms outward_observes
-#print axioms outward_sound
-#print axioms machine
-
 end
 end L4.Height.ObserverMachine

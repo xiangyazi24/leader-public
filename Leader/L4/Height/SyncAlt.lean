@@ -1018,9 +1018,4 @@ theorem levelCurr_successor_simulation {B M ellzero : Nat}
       (syncLevels B M ellzero hm choices start n (right hm i))
       (choices (ellzero + n) i) delta hphase
 
-#print axioms L4.Height.clock_four_lagging_counterexample
-#print axioms L4.Height.nativeClock_normal
-#print axioms L4.Height.legit_activate
-#print axioms L4.Height.levelCurr_successor_simulation
-
 end L4.Height

@@ -53,5 +53,4 @@ theorem original_load_advances {base x : X} {hh : ∃ i,oldH6 B base i=true}
   apply List.mem_map.mpr
   exact ⟨_,R,by simp [BStarLongGrant.update,payload,BStarLongCommand.acquire]⟩
 
-#print axioms original_load_advances
 end L4.BStarCopyRightLoadAdvance

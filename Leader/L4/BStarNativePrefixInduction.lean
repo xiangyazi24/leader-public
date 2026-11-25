@@ -266,6 +266,4 @@ theorem final_prefix {width : Nat} {table : PrimTable width} {bank : Bank}
         rw [E]
         exact ⟨H,P,S⟩
 
-#print axioms verify_all
-#print axioms final_prefix
 end L4.BStarNativePrefixInduction

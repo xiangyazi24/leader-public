@@ -226,7 +226,5 @@ theorem steered_drain {s n : Nat} {x : Raw s n} {g : CustodyWitness x} (P : Prod
     exact ⟨u,f,v,eq,by simpa only [play,List.append_assoc] using out⟩
   exact drain_at_custody (production_extend P emitted) o play two
 
-#print axioms steered_drain
-#print axioms drain_or_exit
 end
 end L4.Height.ProductionFence

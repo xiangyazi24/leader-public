@@ -134,7 +134,4 @@ theorem later_digit_at {base x : X} {hh : ∃ i,oldH6 B base i=true}
   exact BStarH6Ordinal.digitAt_of_accurate B d.old now d.mark radix hr inPrefix off flags
     (later_significant hp chart sep F H between later A same d M) notShort
 
-#print axioms later_digit_at
-#print axioms after_first
-#print axioms later_significant
 end L4.BStarNativeEndCache

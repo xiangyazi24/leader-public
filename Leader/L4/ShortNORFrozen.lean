@@ -44,6 +44,4 @@ theorem raw_observe_frozen {X J : Type} {n : Nat} [DecidableEq J]
     obtain ⟨A,B⟩ := IH _ R
     exact ⟨A,B.trans E⟩
 
-#print axioms update_eq_of_maximal
-#print axioms raw_observe_frozen
 end L4.ShortNORFrozen

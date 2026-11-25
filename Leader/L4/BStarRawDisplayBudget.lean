@@ -115,9 +115,6 @@ theorem quarter_missed_at_display_deadline {n m : Nat} (L h : Nat)
     _ = (4*m*12^h)*n^D := by ac_rfl
     _ ≤ E*n^D := Nat.mul_le_mul_right _ (display_exponent_budget m h mpos depth)
 
-#print axioms missed_mass_from_moments
-#print axioms quarter_missed_at_display_deadline
-
 /-- Uniform conditional stopped service is used at each dependency
 level, not serialized over all owner-level pairs. -/
 theorem level_moments {n m : Nat} (L D : Nat)
@@ -163,7 +160,5 @@ theorem level_moments {n m : Nat} (L D : Nat)
     calc
       4*(v+v+v) = 12*v := by omega
       _ = 12^(h+1)*n^D := by dsimp [v]; rw [Nat.pow_succ]; ac_rfl
-
-#print axioms level_moments
 
 end L4.BStarRawDisplayBudget

@@ -107,9 +107,4 @@ theorem ack_on_original_tape (d : Sheet) (C : Chart h) (N : 1<n)
     (Desc.trans (descriptor_of_file_eq (params d s) _ _ File))
   exact ⟨pre,post,W,OP,Credit,L,PC',Desc.trans (descriptor_of_file_eq (params d s) _ _ File),Out⟩
 
-#print axioms seal_next
-#print axioms commit_no_next
-#print axioms commit_only_holds
-#print axioms seal_credit_split
-#print axioms ack_on_original_tape
 end L4.ReportSealAckTape

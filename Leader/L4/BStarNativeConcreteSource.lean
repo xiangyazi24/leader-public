@@ -29,8 +29,6 @@ open BStarNativePackedRep
 open BStarLongSignatures
 open L4.Compiler.Digits
 
-
-
 open BStarNativePrefixInduction BStarNativeScanNat
 
 def boolOutput : Code → Bool
@@ -132,5 +130,4 @@ theorem source_ready {width : Nat} (T : PrimTable width) (bank : Bank)
   subst c'
   contradiction
 
-#print axioms source_ready
 end L4.BStarNativeConcreteSource

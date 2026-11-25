@@ -146,7 +146,4 @@ theorem no_return_before_release {base x : X} {hh : ∃ i,oldH6 B base i=true}
     · intro v f post eq
       exact stay (e::v) f post (congrArg (List.cons e) eq)
 
-#print axioms no_return_before_release
-#print axioms preserve
-#print axioms fence_receipt
 end L4.Height.ReleaseBarrier

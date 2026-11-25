@@ -221,8 +221,6 @@ theorem joined_idle_origin (k₁ k₂ t₂ J₁ J₂ r n p c₁ : Nat) (hp : 0<p
   · rw [raw_transit _ _ _ Z] at F
     exact T F H
 
-
-
 open BStarClearanceForward
 
 theorem joined_slot_origin (k₁ k₂ t₂ J₁ J₂ r tune p c₁ : Nat) (hp : 0<p)
@@ -317,7 +315,6 @@ theorem joined_slot_origin (k₁ k₂ t₂ J₁ J₂ r tune p c₁ : Nat) (hp : 
           obtain ⟨v,H⟩ := joined_hop k₁ k₂ t₂ J₁ J₂ r tune p c₁ hp x C d q f E act F hf
           exact .inr ⟨C,v,hc,E,H⟩
 
-
 open BStarSeparatorQuiet BStarResetChartService
 
 /-- In a live WAIT on the settled chart, every healthy new F at an
@@ -374,7 +371,6 @@ theorem ring_origin {base x : X} {hh : ∃ i,oldH6 B base i=true}
   · by_cases rr : (addr i).1=rightNeighbor e
     · exact active (R (addr i).2) (Prod.ext rr rfl)
     · exact ⟨i,hi,pay,(idle_off_pair hp x e (addr i) l rr).symm.trans F,H,rfl⟩
-
 
 theorem busy_start {base : X} {addr : Nat → Pos n} {len op : Nat}
     {x : X} {z d : Cursor} {w : List (Fin n)}
@@ -475,7 +471,6 @@ theorem healthy_capture_origin {base x : X} {hh : ∃ i,oldH6 B base i=true}
       Found hp base (fun j => S.getD j fall) len acquire x w (.out i) :=
   healthy_forward_origin hp C sep P now i hi pay F acquire hf A
 
-
 open BStarLongGrant BStarGrantBirth
 
 /-- The actual 0→1 grant mark witnesses its old arbitration win. If the
@@ -514,6 +509,4 @@ theorem grant_birth_origin {base x : X} {hh : ∃ i,oldH6 B base i=true}
     (congrArg (atCursor y) slot.symm).trans ((old_read y e K.source).symm.trans read)
   exact healthy_capture_origin hp C sep P now i hi f R H A
 
-#print axioms healthy_capture_origin
-#print axioms grant_birth_origin
 end L4.BStarOwnerLaunchOrigin

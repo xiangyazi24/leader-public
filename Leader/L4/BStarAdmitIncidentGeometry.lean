@@ -127,7 +127,4 @@ theorem chart_selected_gate {base x : X} {hh : ∃ i,oldH6 B base i=true}
     have imposs : (10:Fin 11)=1 := congrArg Prod.snd addr
     exact (by decide : (10:Fin 11)≠1) imposs
 
-#print axioms incident_gate_injective
-#print axioms actual_gate_bonds_injective
-#print axioms chart_selected_gate
 end L4.BStarAdmitIncidentGeometry

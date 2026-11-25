@@ -80,9 +80,6 @@ theorem captures_on_original_cut {base original : X} {hh : ∃ i,oldH6 B base i=
   exact (word_capture_hold hp y (S.getD 0 fall).1 beforeIssue sep
     (fun a e b Q => (live a e b Q).2)).2.1
 
-#print axioms live_capture_band
-#print axioms captures_on_original_cut
-
 open BStarCommitOperands BStarCutOperandReadout BStarCopyRightStrip
 open BStarCopyRightAcquireBank BStarClearanceDataChart BStarLongCommandData
 
@@ -164,6 +161,4 @@ theorem packed_after_actual_ack {base x : X} {cut whole : List (Fin n)}
   exact packed_before_load hp hh owner a seam tail strip ownerHead width A u after p V
     (P.symm.trans U) sep layout auth _ _ bank bank8 kept ack2 d
 
-#print axioms cut_after_matching_ack
-#print axioms packed_after_actual_ack
 end L4.BStarCopyRightAckRetention

@@ -250,12 +250,4 @@ theorem expected_of_certificate {p c n : Nat} (x : Config p c n) (base : Fin n)
   exact GGTiming.hittingTime_of_path_certificate (advance base) (Drained base) (init x a)
     (Nat.zero_lt_of_lt base.isLt) C.paths C.L C.length_bound C.path_bound C.forces
 
-#print axioms payments_length
-#print axioms j_increase_is_literal
-#print axioms projectsStock_of_literal
-#print axioms incoming_right
-#print axioms heads_mono_word
-#print axioms displacement_of_stock
-#print axioms expected_of_certificate
-
 end L4.GGStage

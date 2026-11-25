@@ -116,5 +116,4 @@ theorem canonical_pointwise_at_mark {base initial : X} (u v tail : List (Fin n))
     exact BStarOperandFrame.input_port_after_cuts hp u v tail cuts Q I closed fiber mark (sep mark)
       header q h (loc _ h) (no_off_initiator hp old mark _ ne)
 
-#print axioms canonical_pointwise_at_mark
 end L4.BStarNativeCanonicalPointwise

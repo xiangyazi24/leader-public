@@ -110,6 +110,4 @@ theorem chart_gate {base x : X} {hh : ∃ i,oldH6 B base i=true}
     have imposs : (10:Fin 11)=1 := congrArg Prod.snd addr
     exact (by decide : (10:Fin 11)≠1) imposs
 
-#print axioms distinct_owner_bonds
-#print axioms chart_gate
 end L4.BStarBitGateGeometry

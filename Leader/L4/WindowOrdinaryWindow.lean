@@ -119,6 +119,4 @@ theorem clock {p c n : Nat} (hp : 2≤p) (hc : 12≤c) (hn : 4≤n)
     omega
   · exact Nat.le_max_right _ _
 
-#print axioms clock
-
 end L4.WindowOrdinaryWindow

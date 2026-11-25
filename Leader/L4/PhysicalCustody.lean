@@ -82,6 +82,5 @@ theorem custody_closed {s n : Nat} {x : Raw s n} (e : Fin n)
   change rawNext s (rawRun g.initial ((g.u++g.v)++g.past)) e=_
   rw [g.here]
 
-#print axioms custody_closed
 end L4.PhysicalCustody
 

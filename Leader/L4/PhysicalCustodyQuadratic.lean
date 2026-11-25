@@ -143,8 +143,4 @@ theorem concrete_conditional_quadratic {s n : Nat}
   exact concrete_five_cover_then F.h F.nonemptyHeader sep F.carrier
     F.closed F.fixed y F.initial Custody _ rest
 
-#print axioms add_hitting_bounds
-#print axioms concrete_five_cover_then
-#print axioms conditional_quadratic
-#print axioms concrete_conditional_quadratic
 end L4.PhysicalCustody

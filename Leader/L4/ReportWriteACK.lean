@@ -70,7 +70,6 @@ theorem receipt_write_install (d : Sheet) (N : 1<n)
   exact ⟨pre,fly,post,f,W,Pack,write_flight_result d N hh G F digit
     r issue fly j f Y J Pack,D⟩
 
-#print axioms receipt_write_install
 end L4.ReportWriteACK
 
 namespace L4.ReportWriteACK
@@ -151,6 +150,4 @@ theorem receipt_write_at_current_cut (d : Sheet) (N : 1<n)
   rw [W',ShortOwnerEpochJS.raw_append,U]
   exact Last.trans (congrArg (BitVec.ofNat (2*ReportByteRows.d p)) V)
 
-#print axioms no_restart_drop
-#print axioms receipt_write_at_current_cut
 end L4.ReportWriteACK

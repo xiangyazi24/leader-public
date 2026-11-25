@@ -162,7 +162,6 @@ theorem long_snapshot (g : Pair LongGeometry) (x : Pair (BitVec LW))
   rw [long_exec,X,List.foldl_append,view_fold _ _ A,List.foldl_append]
   exact Hw _
 
-
 theorem joined_snapshot (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
     (x : Pair (LargeSite (production k₁ k₂ t₂ J₁ J₂ r c p c₁)))
     (write : Patch LW) (out : (Token × BitVec 2) × BitVec 9) :
@@ -190,7 +189,6 @@ theorem joined_snapshot (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
   rw [E,show snapshot (q.2.apply (w.2.apply raw.2))=snapshot (w.2.apply raw.2) from
     Prod.ext (Prod.ext (kFrame _ _ F) (phaseFrame _ _ F)) (opFrame _ _ F)]
   exact long_snapshot g raw hh write out hwrite hout
-
 
 open BStarResetControllerProgress BStarArithmeticControllerReturn BStarLongArithmetic
 
@@ -273,7 +271,6 @@ theorem ordinary_snapshot (old y : BitVec LW) (op : Nat) (f : Payload) :
           simp [D,S,dn,Patch.compose_apply,F _ _ (cc _),F _ _ (dl _),snapshot_schedule,snapshot_restart]
   · simp [P,snapshot_schedule]
 
-
 theorem joined_reply (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
     (x : Pair (LargeSite (production k₁ k₂ t₂ J₁ J₂ r c p c₁))) (f : Payload) :
     let b := bStar k₁ k₂ t₂ J₁ J₂ r c p c₁ hp
@@ -321,7 +318,6 @@ theorem joined_reply (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
     · rw [if_neg A] at W
       exact ⟨nextOrdinary raw.2 op f,ordinary_progress _ _ _ J,
         apply_write _ _ W (fun y => ordinary_snapshot raw.2 y op f)⟩
-
 
 open BStarLongRouting
 
@@ -429,6 +425,4 @@ theorem wait_k0_no_rise (k₁ k₂ t₂ J₁ J₂ r c p c₁ : Nat) (hp : 0<p)
       congrArg (fun s : (Token × BitVec 2) × BitVec 9 => s.1.1) J
     exact fun X => Token.noConfusion (F.symm.trans X)
 
-#print axioms joined_reply
-#print axioms wait_k0_no_rise
 end L4.BStarJoinedControllerReturn

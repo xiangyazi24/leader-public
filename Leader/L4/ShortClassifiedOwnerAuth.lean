@@ -579,22 +579,4 @@ theorem all_owner_nor_step (x0 x : Raw s n)
     (fun i E => all_owner_auth x0 x X0 A.1 N heads0 A.2.1
       (owner_cover x A) e i E)
 
-#print axioms fresh_rail_index
-#print axioms reset_no_fresh
-#print axioms hello_no_fresh
-#print axioms admit_no_fresh
-#print axioms read_no_fresh
-#print axioms write_no_fresh
-#print axioms commit_fresh_front
-#print axioms owner_fresh_pending
-#print axioms chart_eq_of_root
-#print axioms classified_pending
-#print axioms chart_read_neighbours
-#print axioms all_owner_auth
-#print axioms fixed_gate
-#print axioms all_owner_closed
-#print axioms receipt_sound
-#print axioms all_owner_inv_expected
-#print axioms all_owner_nor_step
-
 end L4.ShortClassifiedOwnerAuth

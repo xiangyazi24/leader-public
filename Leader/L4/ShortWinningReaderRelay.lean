@@ -60,7 +60,4 @@ theorem captured_bit_current_to_release {s n : Nat} (N : 5≤n)
   rw [(winning_reader_protected_to_release N x e j which C H W w R).2,selectedValue_eq]
   exact (readCapture_native (x e).mis1 j p P).2
 
-#print axioms captured_bit_current_to_release
-#print axioms winning_reader_no_old_writer
-#print axioms winning_reader_protected_to_release
 end L4.ShortWinningReaderRelay

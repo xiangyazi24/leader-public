@@ -161,8 +161,4 @@ theorem add_first_from_launch {base before x : X} {hh : ∃ i,oldH6 B base i=tru
     exact launch_zero _ _ oldPC kind L
   exact first_significant_zero hp chart sep A kind start d tail first healthy
 
-#print axioms add_first_from_launch
-#print axioms first_significant_zero
-#print axioms launch_zero
-#print axioms first_padding
 end L4.BStarNativeAddInitial

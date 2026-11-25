@@ -163,6 +163,4 @@ theorem capture_origin_from_early {base x : X} {hh : ∃ i,oldH6 B base i=true}
     omega
   · exact A
 
-#print axioms capture_origin_from_early
-#print axioms stage_origin_from_early
 end L4.BStarGeneratedIdleStage

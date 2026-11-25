@@ -557,22 +557,5 @@ theorem mis1_commit6_flight_no_orphan {s n : Nat} (x0 : Raw s n)
   | applied => exact .inl ⟨rfl,R rfl⟩
   | failed => exact .inr rfl
 
-#print axioms launch
-#print axioms generated_state
-#print axioms generated_descriptor
-#print axioms fresh_centre_outcome
-#print axioms commit_active_step
-#print axioms status_stutters_off_centre
-#print axioms decided_status_stays
-#print axioms classify_iff_fresh_centre
-#print axioms commit_fenced
-#print axioms live_file_step
-#print axioms generated_live_file
-#print axioms generated_live_descriptor
-#print axioms generated_outcome
-#print axioms clear_issue_of_done
-#print axioms commit_return0_no_orphan
-#print axioms mis1_commit6_flight_no_orphan
-
 end L4.ShortCommitMachine
 

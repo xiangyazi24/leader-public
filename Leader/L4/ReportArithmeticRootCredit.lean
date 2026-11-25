@@ -47,6 +47,4 @@ theorem healthy_root_credit (d : Sheet) (C : Chart h) (N : 1<n)
     exact (preview_changes_opcode Step (Y.symm.trans Hold.1)).elim
   · exact Credit
 
-#print axioms preview_changes_opcode
-#print axioms healthy_root_credit
 end L4.ReportArithmeticRootCredit

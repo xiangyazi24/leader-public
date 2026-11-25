@@ -25,5 +25,4 @@ theorem receipt_bit_fixed {d : Descriptor} {bank : Fin 3} {f g : Payload}
   · exact (U E.symm).elim
   · rfl
 
-#print axioms receipt_bit_fixed
 end L4.BStarReceiptChoice

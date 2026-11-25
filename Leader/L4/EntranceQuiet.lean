@@ -120,7 +120,3 @@ theorem entrance_mean_of_debt
 
 end L4
 
-#print axioms L4.allTrack_config
-#print axioms L4.cover_run
-#print axioms L4.hitCost_equiv_on_invariant
-#print axioms L4.entrance_mean_of_debt

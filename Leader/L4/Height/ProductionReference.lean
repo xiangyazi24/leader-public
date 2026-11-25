@@ -56,7 +56,5 @@ theorem generated_on_reference {base ref x : X} {addr : Nat → Pos n} {len : Na
   | endpoint cur => exact .endpoint (current_on_reference hp frame cur)
   | next cur E _ ih => exact .next (current_on_reference hp frame cur) E ih
 
-#print axioms chart_on_reference
-#print axioms generated_on_reference
 end L4.Height.ProductionReference
 

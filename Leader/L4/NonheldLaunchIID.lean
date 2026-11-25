@@ -62,5 +62,4 @@ theorem expected_of_no_reentry (root : Fin n)
   rw [equal] at out
   exact out
 
-#print axioms expected_of_no_reentry
 end L4.NonheldLaunchIID

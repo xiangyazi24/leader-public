@@ -115,14 +115,4 @@ theorem digit_write_holds_header (x : BitVec LW) (i j : Fin 3) (a b : Fin 9)
       (bankHeader j b).read x :=
   Field.read_other_assign _ _ _ _ ((bank_digit_header i j a b).elim Or.inr Or.inl)
 
-#print axioms kPart_spacing
-#print axioms lanePart_spacing
-#print axioms bankPart_spacing
-#print axioms bank_digit_header
-#print axioms digit_before_lane
-#print axioms lane_before_k
-#print axioms k_before_file
-#print axioms k0_layout
-#print axioms source_boundaries
-#print axioms digit_write_holds_header
 end L4.BStarLongLayout

@@ -279,10 +279,3 @@ theorem syncLevels_runRounds {B M ellzero k : Nat}
 
 end L4.Height
 
-#print axioms L4.Height.clockOf_mod_phase
-#print axioms L4.Height.phaseStep_high_id
-#print axioms L4.Height.phaseStep_bits_irrelevant
-#print axioms L4.Height.syncLevels_add
-#print axioms L4.Height.syncLevels_segment_period
-#print axioms L4.Height.syncLevels_round
-#print axioms L4.Height.syncLevels_runRounds

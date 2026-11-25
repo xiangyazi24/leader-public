@@ -427,10 +427,4 @@ theorem controlled_attack_mean {p c n : Nat} (hn : 4≤n)
       exact ⟨liftedSite s q,by simpa only [eff,hp] using hN,
         fun e => by simpa only [hp] using hA (effective s a y e)⟩
 
-#print axioms cycle_vulnerable
-#print axioms live_terminal_stops
-#print axioms physical_controlled_good
-#print axioms effective_ready_bounds
-#print axioms effective_nonready_bounds
-#print axioms controlled_attack_mean
 end L4.TripleVulnerable

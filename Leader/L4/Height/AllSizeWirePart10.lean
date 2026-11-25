@@ -1,8 +1,8 @@
-import Leader.L4.Height.G9WirePart09
+import Leader.L4.Height.AllSizeWirePart09
 set_option Elab.async false
 
-namespace L4.Height.G9Wire
-open G9Spine L4.Compiler.Native Classical
+namespace L4.Height.AllSizeWire
+open AllSizeSpine L4.Compiler.Native Classical
 
 section PackedService
 
@@ -65,4 +65,4 @@ theorem packed_service (hn : 4 ≤ n) (hs : 6 ≤ s)
 
 end PackedService
 
-end L4.Height.G9Wire
+end L4.Height.AllSizeWire

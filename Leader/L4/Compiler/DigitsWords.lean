@@ -264,15 +264,3 @@ end Digits
 end Compiler
 end L4
 
-#print axioms L4.Compiler.Digits.valJ_lt
-#print axioms L4.Compiler.Digits.valJ_congr
-#print axioms L4.Compiler.Digits.valJ_stable
-#print axioms L4.Compiler.Digits.valJ_mod
-#print axioms L4.Compiler.Digits.mux_word
-#print axioms L4.Compiler.Digits.max_word
-#print axioms L4.Compiler.Digits.small_word
-#print axioms L4.Compiler.Digits.p_word
-#print axioms L4.Compiler.Digits.bm1_word
-#print axioms L4.Compiler.Digits.mask_word
-#print axioms L4.Compiler.Digits.cmp_word
-#print axioms L4.Compiler.Digits.scan_word

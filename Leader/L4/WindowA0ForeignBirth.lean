@@ -34,6 +34,4 @@ theorem exterior_birth_is_not_A0_exit :
     reward tape (window7 (WindowRoster.roster tape) first) [14]=0 := by
   decide
 
-#print axioms quiet
-#print axioms exterior_birth_is_not_A0_exit
 end L4.WindowA0ForeignBirth

@@ -33,6 +33,4 @@ theorem read_turn_raw {s n : Nat} (x : Raw s n) (e : Fin n)
     (x e).mis1 (x (rightNeighbor e)).mis1 j link (read_is_ready _ _ _ F op)
   exact (work_to_raw x e sep j).1.trans P
 
-#print axioms read_out_raw
-#print axioms read_turn_raw
 end L4.ShortReadCaptureRaw
